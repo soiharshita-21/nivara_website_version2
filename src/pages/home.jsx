@@ -1,17 +1,15 @@
-import Banner from "../components/banner";
-import OurImpact from "../components/ourimpact";
-import WhyChooseUs from "../components/whychooseus";
-
+import Banner from "../components/Banner/banner";
+import OurImpact from "../components/OurImpact/ourimpact";
+import WhyChooseUs from "../components/WhyChooseUs/whychooseus";
 
 const Home = () => {
   return (
     <>
       <Banner />
-      <OurImpact/>
+      <OurImpact />
       <div className="w-full overflow-x-hidden">
-  <WhyChooseUs />
-</div>
-      
+        <WhyChooseUs />
+      </div>
     </>
   );
 };

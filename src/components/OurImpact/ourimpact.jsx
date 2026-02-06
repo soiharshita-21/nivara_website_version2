@@ -4,7 +4,9 @@ import { FaChartLine, FaBuilding, FaMapMarkerAlt, FaHeart } from "react-icons/fa
 const OurImpact = () => {
   return (
     <section className="impact-section">
+      <span className="spa">✦</span>
       <h6 className="impact-heading">Our Impact</h6>  
+       <span className="spa">✦</span>
       <h2 className="impact-title">Building Dreams Across India</h2>
       <p className="impact-subtitle">
         Transforming lives and empowering communities with accessible and
@@ -18,6 +20,7 @@ const OurImpact = () => {
           </div>
           <h3>50,000+</h3>
           <p>Loans Disbursed</p>
+           
         </div>
 
         <div className="impact-card red">

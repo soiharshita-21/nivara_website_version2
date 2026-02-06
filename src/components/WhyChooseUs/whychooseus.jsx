@@ -4,7 +4,7 @@ import {
   Home,
   FileText,
   Zap,
-  Headphones
+  Headphones,
 } from "lucide-react";
 import "./whychooseus.css";
 
@@ -51,36 +51,56 @@ const WhyChooseUs = () => {
   return (
     <section className="why-section">
       <div className="why-container">
-        <h5 className="why-heading">Why Choose Us</h5>
+        <div className="why-heading-wrapper">
+          <span className="spark">✦</span>
+          <h6 className="why-heading">Why Choose Us</h6>
+          <span className="spark">✦</span>
+        </div>
 
         <h2 className="why-title">Why Choose Nivara?</h2>
         <p className="why-subtitle">
-          We're committed to making homeownership accessible and affordable.
+          We're committed to making home ownership accessible and affordable.
         </p>
 
         <div className="why-grid">
           {features.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div className="why-card" key={index}>
+              <div className={`why-card ${item.color}`} key={index}>
                 <div className={`why-icon ${item.color}`}>
                   <Icon size={26} />
                 </div>
-
-                <h3 className={`why-card-title ${item.color}`}>
-                  {item.title}
-                </h3>
-
-                <p className="why-card-text">{item.desc}</p>
+                <h3 className={`why-card-title ${item.color}`}>{item.title}</h3>
+                <p className="why-card-desc">{item.desc}</p>
               </div>
             );
           })}
         </div>
 
+        <div className="trust-wrapper">
+          <div className="trust-badges">
+            <div className="trust-item">
+              <div className="trust-icon rbi">✓</div>
+              <div className="trust-text">
+                <span>RBI Registered</span>
+                <h4>Housing Finance Company</h4>
+              </div>
+            </div>
+
+            <div className="divider"></div>
+
+            <div className="trust-item">
+              <div className="trust-icon iso">✳</div>
+              <div className="trust-text">
+                <span>ISO Certified</span>
+                <h4>Quality Assured</h4>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
 };
 
 export default WhyChooseUs;
-

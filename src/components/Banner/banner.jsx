@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import Carousel from "react-bootstrap/Carousel";
 
 // slide images
-import slide1 from "../assets/images/slide1.jpg";
-import slide2 from "../assets/images/slide2.jpg";
-import slide3 from "../assets/images/slide3.jpg";
+import slide1 from "../../assets/images/slide1.jpg";
+import slide2 from "../../assets/images/slide2.jpg";
+import slide3 from "../../assets/images/slide3.jpg";
 
 
 const Banner = () => {
