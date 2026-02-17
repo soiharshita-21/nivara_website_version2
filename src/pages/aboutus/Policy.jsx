@@ -1,11 +1,54 @@
-import React, { Component } from 'react'
+import React from "react";
+import "./Policy.css";
+import hero from "../../assets/images/hero.jpeg";
 
-export class Policy extends Component {
-  render() {
-    return (
-      <div>Policy</div>
-    )
-  }
-}
+const policies = [
+  { name: "POSH Policy", link: "/policies/posh.pdf" },
+  { name: "Whistle Blower Policy", link: "/policies/whistle-blower.pdf" },
+  { name: "KYC & AML Policy", link: "/policies/kyc-aml.pdf" },
+  { name: "Nomination & Remuneration Policy", link: "/policies/nomination-remuneration.pdf" },
+  { name: "Conversion Policy", link: "/policies/conversion.pdf" },
+  { name: "Code of Conduct for Independent Directors", link: "/policies/code-independent-directors.pdf" },
+  { name: "Technical Valuation Policy", link: "/policies/technical-valuation.pdf" },
+  { name: "Related Party Transaction Policy", link: "/policies/related-party.pdf" },
+  { name: "Equal Opportunity Policy", link: "/policies/equal-opportunity.pdf" },
+  { name: "Corporate Social Responsibility", link: "/policies/csr.pdf" },
+  { name: "Social Media Policy", link: "/policies/social-media.pdf" },
+  { name: "Anti Bribery and Anti Corruption Policy", link: "/policies/anti-bribery.pdf" },
+];
 
-export default Policy
+const PolicyPage = () => {
+  return (
+    <section className="policy-section">
+       <section className="policy-hero">
+              <img src={hero} alt="policy" className="policy-hero-img" />
+      <div className="policy-header">
+        
+        <h2>Company Policies</h2>
+        <p>Our policies define governance, ethics and compliance</p>
+      </div>
+      </section>
+
+      <div className="policy-links">
+  <ul>
+    {policies.map((policy, index) => (
+      <li key={index}>
+        <a
+          href={policy.link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {policy.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+        
+      
+    </section>
+  );
+};
+
+export default PolicyPage;

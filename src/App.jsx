@@ -5,19 +5,22 @@ import TopBar from "./components/TopBar/topbar";
 import "./App.css";
 import Footer from "./components/Footer/footer";
 
-import AboutUs from "./pages/aboutus/AboutUs";
-import VisionMission from "./pages/aboutus/VisionMission";
-import ObjectivesCoreValues from "./pages/aboutus/ObjectivesCoreValues";
-import BoardOfDirectors from "./pages/aboutus/BoardOfDirectors";
-import ManagementTeam from "./pages/aboutus/ManagementTeam";
+import AboutUs from "./pages/aboutus/AboutUs/AboutUs";
+import VisionMission from "./pages/aboutus/VisionMission/VisionMission";
+import ObjectivesCoreValues from "./pages/aboutus/ObjectivesCoreValues/ObjectivesCoreValues";
+import Investors from "./pages/aboutus/Investors";
+import BoardOfDirectors from "./pages/aboutus/BoardOfDirectors/BoardOfDirectors";
+import ManagementTeam from "./pages/aboutus/ManagementTeam/ManagementTeam";
 import Privacy from "./pages/aboutus/Privacy";
 import Policy from "./pages/aboutus/Policy";
 
-import HomeLoanPurchase from "./pages/products/HomeLoanPurchase";
-import ConstructionLoan from "./pages/products/ConstructionLoan";
-import CompositeHomeLoan from "./pages/products/CompositeHomeLoan";
-import LoanAgainstProperty from "./pages/products/LoanAgainstProperty";
-import BalanceTransfer from "./pages/products/BalanceTransfer";
+import HomeLoanPurchase from "./pages/products/HomeLoanPurchase/HomeLoanPurchase";
+import ConstructionLoan from "./pages/products/ConstructionLoan/ConstructionLoan";
+import CompositeHomeLoan from "./pages/products/CompositeHomeLoan/CompositeHomeLoan";
+import LoanAgainstProperty from "./pages/products/LoanAgainstProperty/LoanAgainstProperty";
+import BalanceTransfer from "./pages/products/BalanceTransfer/BalanceTransfer";
+import RefinanceLoan from "./pages/products/RefinanceLoan/RefinanceLoan";
+import ImprovementAndExtension from "./pages/products/ImprovementandExtension/ImprovementandExtension";   
 import ENach from "./pages/customercenter/enach";
 import FairPractice from "./pages/customercenter/FairPractice";
 import InterestRate from "./pages/customercenter/interestrate";
@@ -44,10 +47,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/aboutus/vision-mission" element={<VisionMission />} />
-          <Route
-            path="/aboutus/core-values"
-            element={<ObjectivesCoreValues />}
-          />
+          <Route path="/aboutus/core-values" element={<ObjectivesCoreValues />} />  
+          <Route path="/aboutus/investors" element={<Investors />} />
+          
           <Route path="/aboutus/board" element={<BoardOfDirectors />} />
           <Route path="/aboutus/management" element={<ManagementTeam />} />
           <Route path="/aboutus/privacy" element={<Privacy />} />
@@ -67,6 +69,14 @@ function App() {
             path="/products/balance-transfer"
             element={<BalanceTransfer />}
           />
+          <Route
+            path="/products/refinance-loan"
+            element={<RefinanceLoan />} 
+            />
+             <Route
+            path="/products/improvementandextension"
+            element={<ImprovementAndExtension />} 
+            />
           <Route path="/customercenter/e-nach" element={<ENach />} />
           <Route
             path="/customercenter/interest-rate"

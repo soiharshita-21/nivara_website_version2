@@ -1,0 +1,620 @@
+:root{
+  --theme:#8b1d2c;   
+  --light:#fbf6f6;
+}
+.page-center.construction-page{
+  width: 100%;
+  min-height: 100vh;
+  display: block;   /* normal layout flow */
+}
+
+
+
+.conloan-card-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding:30px 30px; 
+}
+
+.cen-icon{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  width:60px;
+  height:60px;
+  background:white;
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:5;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+  transition:0.6s ease;
+}
+
+/* ===== ICON STYLE ===== */
+.icon-rotate{
+  font-size:36px;
+  color: var(--theme);
+  transition: transform 0.8s ease;
+}
+
+
+.conloan-card:hover .icon-rotate{
+  transform: rotate(360deg);
+}
+
+
+/* ===== OPTIONAL PREMIUM EFFECT ===== */
+.conloan-card:hover .cen-icon{
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow:0 15px 40px rgba(0,0,0,0.25);
+}
+
+
+/* ================= CENTER PAGE ================= */
+.page-center{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f3f4f6;
+}
+
+/* ================= CARD ================= */
+.conloan-card{
+  width: 340px;
+  background:#fff;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 20px 50px rgba(0,0,0,0.12);
+  font-family: "Poppins";
+  position: relative;
+  animation: fadeUp 0.8s ease;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* ================= IMAGE ================= */
+.conloan-image{
+  position:relative;
+  height:240px;
+}
+
+.conloan-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.image-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(139,29,44,0.35);
+}
+
+/* ================= CONTENT ================= */
+.conloan-content{
+  padding:28px;
+  background: var(--light);
+}
+
+.conloan-content h2{
+  color: var(--theme);
+  font-size:24px;
+  font-weight:800;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  color:#6b7280;
+  font-size:15px;
+  margin-bottom:22px;
+}
+
+/* ================= FEATURES ================= */
+.features{
+  list-style:none;
+  padding:0;
+  margin:0 0 26px 0;
+}
+
+.features li{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:14px;
+  color:#475569;
+  font-size:15px;
+}
+
+.features li::before{
+  content:"✓";
+  width:26px;
+  height:26px;
+  background:var(--theme);
+  color:white;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  flex-shrink:0;
+}
+
+
+.con-loan-buttons{
+  display:flex;
+  gap:14px;
+}
+
+.con-loan-btn-outline{
+  flex:1;
+  background:white;
+  border:2px solid var(--theme);
+  color:var(--theme);
+  padding:12px 0;
+  border-radius:14px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.con-loan-btn-outline:hover{
+  background:var(--theme);
+  color:white;
+}
+
+.con-loan-btn-solid{
+  flex:1;
+  background:var(--theme);
+  border:none;
+  color:white;
+  padding:12px 0;
+  border-radius:14px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.con-loan-btn-solid:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 25px rgba(139,29,44,0.35);
+}
+
+
+.con-loan-bottom-strip{
+  height:6px;
+  width:100%;
+  background:var(--theme);
+}
+
+.construction-text-section{
+  max-width: 1100px;
+  margin: 80px auto 0 auto;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.construction-title{
+  font-size: 42px;
+  font-weight: 700;
+  color:  #FF6F6F;
+  margin-bottom: 10px;
+}
+
+.construction-subtitle{
+  font-size: 20px;
+  font-weight: 500;
+  color:  #FF6F6F;
+  margin-bottom: 25px;
+}
+
+.construction-heading{
+  font-size: 28px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.construction-text{
+  font-size: 16px;
+  line-height: 1.8;
+  color: black;
+  max-width: 950px;
+}
+/* Benefits Section */
+.construction-benefits-section{
+  width: 100%;
+  max-width: 1200px;
+  margin: 90px auto 0 auto;
+  padding: 0 24px;
+}
+
+.benefits-title{
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--theme);
+  margin-bottom: 40px;
+}
+
+/* Grid Layout */
+.benefits-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px 40px;
+}
+
+/* Benefit Item */
+.benefit-item{
+  background: #fff;
+  border-left: 6px solid var(--theme);
+  padding: 18px 22px;
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+  transition: 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.benefit-item:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+/* Highlights Section */
+.loan-highlights{
+  width: 100%;
+  max-width: 1400px;
+  margin: 90px auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+/* Card */
+.highlight-card{
+  padding: 60px 20px;
+  text-align: center;
+  border-right: 1px solid #ddd;
+  transition: 0.3s ease;
+  background: #fff;
+}
+
+.highlight-card:last-child{
+  border-right: none;
+}
+
+/* Icon */
+.highlight-icon{
+  font-size: 40px;
+  margin-bottom: 18px;
+  color: #7ac142;
+}
+
+/* Text */
+.highlight-card h3{
+  font-size: 22px;
+  font-weight: 600;
+  color: #FF6F6F;
+}
+
+/* Hover */
+.highlight-card:hover{
+  background: #fafafa;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+/* Support Section */
+.support-section{
+  width: 100%;
+  padding: 100px 20px;
+  background: #fff;
+}
+
+.support-header{
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.support-header h2{
+  font-size: 42px;
+  font-weight: 800;
+  color:  #FF6F6F;
+  margin-bottom: 12px;
+}
+
+.support-header p{
+  font-size: 18px;
+  color: #6b7a90;
+}
+
+/* Grid */
+.support-grid{
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* Cards */
+.support-card{
+  background: #fff;
+  border: 1px solid #e3eaf0;
+  padding: 60px 30px;
+  text-align: center;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.support-card:hover{
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  transform: translateY(-6px);
+}
+
+/* Icon */
+.support-icon{
+  font-size: 40px;
+  color: #66b500;
+  margin-bottom: 20px;
+}
+
+/* Text */
+.support-card h3{
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a2540;
+  margin-bottom: 16px;
+}
+
+.support-card p{
+  font-size: 16px;
+  color: #6b7a90;
+  line-height: 1.6;
+}
+
+.support-phone{
+  color:  #FF6F6F;
+  font-size: 22px;
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+.support-mail{
+  color:  #FF6F6F;
+  margin-bottom: 20px;
+}
+
+/* Link */
+.support-link{
+  display: inline-block;
+  margin-top: 25px;
+  color:  #FF6F6F;
+  font-weight: 600;
+  border-bottom: 2px solid #FF6F6F;
+  cursor: pointer;
+}
+/* Construction Loan FAQ Section */
+.clfaq-section{
+  width: 100%;
+  padding: 50px 20px;
+  background: #f9fbfd;
+}
+
+.clfaq-container{
+  max-width: 1000px;
+  margin: auto;
+}
+
+.clfaq-title{
+  text-align: center;
+  font-size: 42px;
+  font-weight: 800;
+  color:  #FF6F6F;
+  margin-bottom: 60px;
+}
+
+/* FAQ List */
+.clfaq-list{
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* FAQ Item */
+.clfaq-item{
+  background: #fff;
+  padding: 28px 30px;
+  border-radius: 10px;
+  border: 1px solid #e3eaf0;
+  transition: 0.3s;
+}
+
+.clfaq-item:hover{
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transform: translateY(-3px);
+}
+
+/* Question */
+.clfaq-item h3{
+  font-size: 20px;
+  font-weight: 700;
+  color:  #FF6F6F;
+  margin-bottom: 10px;
+}
+
+/* Answer */
+.clfaq-item p{
+  font-size: 16px;
+  line-height: 1.7;
+  color: #6b7a90;
+}
+
+
+
+/* Responsive */
+@media (max-width: 1000px){
+  .loan-highlights{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .highlight-card{
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+@media (max-width: 600px){
+  .loan-highlights{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.quote-sec{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+  background: #fff;
+}
+
+
+.quote-con{
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
+}
+
+
+
+/* Title */
+.quote-ti{
+  font-size: 42px;
+  font-weight: 700;
+  color:  #FF6F6F;
+  margin-bottom: 10px;
+}
+
+/* Subtitle */
+.quote-subti{
+  font-size: 18px;
+  color: #6b7c93;
+  margin-bottom: 50px;
+}
+
+/* Form */
+.form{
+  width: 100%;
+}
+
+/* Grid layout */
+.form-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px 40px;
+}
+
+/* Inputs */
+.form-grid input{
+  width: 100%;
+  padding: 18px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 2px solid #e3eaf0;
+  outline: none;
+  transition: 0.3s ease;
+  font-family: inherit;
+}
+
+/* Focus */
+.form-grid input:focus{
+  border-color: maroon;
+}
+
+/* Button */
+.quote-b{
+  grid-column: 2 / 3;
+  background:#FF6F6F ;
+  color: #fff;
+  border: none;
+  padding: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Button hover */
+.quote-b:hover{
+  background: #c62828;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Responsive */
+@media(max-width: 900px){
+  .form-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .quote-btn{
+    grid-column: 1 / 2;
+  }
+}
+
+@media(max-width: 600px){
+  .quote-title{
+    font-size: 32px;
+  }
+
+  .quote-subtitle{
+    font-size: 16px;
+  }
+}
+
+
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+
+
+.construction-page{
+  --theme:#ff6b6b;
+  --light:#fff3f3;
+}
+
+.construction-page .image-overlay{
+  background: rgba(255,107,107,0.35);
+}
+
+.construction-page .btn-solid:hover{
+  box-shadow:0 10px 25px rgba(255,107,107,0.4);
+}
+@media (max-width: 1100px){
+  .conloan-card-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px){
+  .conloan-card-grid{
+    grid-template-columns: 1fr;
+  }
+}

@@ -25,6 +25,9 @@ const Navbar = () => {
             <li>
               <Link to="/aboutus/core-values">Objectives & Core Values</Link>
             </li>
+             <li>
+              <Link to="/aboutus/investors">Investors</Link>
+            </li>
             <li>
               <Link to="/aboutus/board">Board of Directors</Link>
             </li>
@@ -59,11 +62,17 @@ const Navbar = () => {
             <li>
               <Link to="/products/balance-transfer">Balance Transfer</Link>
             </li>
+            <li>
+              <Link to="/products/refinance-loan">Refinance Loan</Link>
+            </li>
+             <li>
+              <Link to="/products/improvementandextension">Improvement & Extension Loan</Link>
+            </li>
           </ul>
         </li>
 
         <li>
-          <Link to="/investors">Investors</Link>
+          <Link to="/investorsrelation">InvestorsRelation</Link>
         </li>
 
         {/* CUSTOMER CENTER */}

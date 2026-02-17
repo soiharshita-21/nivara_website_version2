@@ -1,0 +1,574 @@
+.improv-grid{
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+.improv-card{
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  position: relative;
+  transition: 0.4s;
+}
+
+.improv-card:hover{
+  transform: translateY(-10px);
+}
+
+
+.improv-imagebox{
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+.improv-imagebox img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+.improv-overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(221, 160, 221, 0.28);  
+  opacity: 1;
+  transition: 0.5s ease;
+}
+
+
+.improv-card:hover .improv-overlay{
+  background: rgba(221, 160, 221, 0.40);
+}
+
+
+
+
+
+/* icon box */
+.improv-icon{
+  width: 90px;
+  height: 90px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 42px;
+  color: plum;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.7s ease;
+  z-index: 2;   /* keep icon above overlay */
+}
+
+/* Rotate icon only */
+.improv-card:hover .improv-rotate-icon{
+  transform: rotate(360deg);
+  transition: 0.7s;
+}
+
+
+/* Content */
+.improv-content{
+  padding: 35px 28px 45px;
+}
+
+.improv-content h2{
+  font-size: 26px;
+  font-weight: 800;
+  color: plum;
+  margin-bottom: 10px;
+}
+
+.improv-subtitle{
+  font-size: 16px;
+  color: #6b7a90;
+  margin-bottom: 20px;
+}
+
+/* Features */
+.improv-features{
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.improv-features li{
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #425466;
+  position: relative;
+  padding-left: 22px;
+}
+
+.improv-features li::before{
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: plum;
+  font-weight: bold;
+}
+
+/* Buttons */
+.improv-buttons{
+  display: flex;
+  gap: 14px;
+}
+.improv-buttons:hover{
+    color:plum;
+}
+
+.improv-btn-outline{
+  flex: 1;
+  background: transparent;
+  border: 2px solid plum;
+  color: plum;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.improv-btn-outline:hover{
+    color: plum;
+}
+
+.improv-btn-solid{
+  flex: 1;
+  background: plum;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.improv-loan-bottom-strip{
+  height: 8px;
+  width: 100%;
+  background: plum;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.improv-text-section{
+  max-width: 1000px;
+  margin: 90px auto 60px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.improv-main-title{
+  font-size: 42px;
+  font-weight: 800;
+  color: plum;   
+  margin-bottom: 16px;
+}
+
+
+.improv-sub-heading{
+  font-size: 26px;
+  font-weight: 700;
+  color: plum;
+  margin-bottom: 14px;
+}
+
+
+.improv-highlight{
+  font-size: 20px;
+  font-weight: 600;
+  color: #2f3a4f;
+  margin-bottom: 28px;
+}
+
+
+.improv-description{
+  font-size: 17px;
+  line-height: 1.8;
+  color: #5f6c80;
+  max-width: 900px;
+  margin: auto;
+}
+
+
+
+.improv-features-section{
+  width: 100%;
+  padding: 60px 40px;
+  background: #fff;
+}
+
+.improv-features-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid #e5e5e5;
+}
+
+.improv-feature-card{
+  padding: 50px 30px;
+  text-align: center;
+  border-right: 1px solid #e5e5e5;
+  transition: all 0.3s ease;
+}
+
+.improv-feature-card:last-child{
+  border-right: none;
+}
+
+.improv-feature-card:hover{
+  background: #f9fefe;
+  transform: translateY(-6px);
+}
+
+.improv-feature-icon{
+  font-size: 42px;
+  color: #6bbd00;   
+  margin-bottom: 18px;
+}
+
+.improv-feature-card h3{
+  font-size: 22px;
+  font-weight: 600;
+  color: plum;
+}
+
+
+@media(max-width: 1024px){
+  .improv-features-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 600px){
+  .improv-features-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .improv-feature-card{
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .improv-feature-card:last-child{
+    border-bottom: none;
+  }
+}
+
+
+.improv-keyfeatures-section{
+  width: 100%;
+  padding: 80px 8%;
+  background: #f9fefe;
+}
+
+.improv-keyfeatures-title{
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 35px;
+  color: plum;   
+  position: relative;
+}
+
+
+
+.improv-keyfeatures-content{
+  max-width: 1100px;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #2f3e46;
+}
+
+.improv-keyfeatures-content p{
+  margin-bottom: 18px;
+}
+
+.improv-contact-line{
+  font-weight: 600;
+  color: #1f3b64;
+  margin-top: 25px;
+}
+.improv-quote-sec{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;   
+  
+  align-items: center;       
+  background: #fff;
+}
+
+
+.improv-quote-con{
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
+}
+
+
+
+
+.improv-quote-ti{
+  font-size: 42px;
+  font-weight: 700;
+  color: plum;
+  margin-bottom: 10px;
+}
+
+
+.improv-quote-subti{
+  font-size: 18px;
+  color: #6b7c93;
+  margin-bottom: 50px;
+}
+
+
+.improv-form{
+  width: 100%;
+}
+
+
+
+.improv-form-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px 40px;
+}
+
+
+
+.improv-form-grid input{
+  width: 100%;
+  padding: 18px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 2px solid #e3eaf0;
+  outline: none;
+  transition: 0.3s ease;
+  font-family: inherit;
+}
+
+
+
+.improv-form-grid input:focus{
+  border-color: plum;
+}
+
+
+
+.improv-quote-button{
+  grid-column: 2 / 3;
+  background: plum;
+  color: #fff;
+  border: none;
+  padding: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+
+
+.improv-quote-button:hover{
+  background: #c62828;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.improv-support-section{
+  width: 100%;
+  padding: 100px 20px;
+  background: #fff;
+}
+
+.improv-support-header{
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.improv-support-header h2{
+  font-size: 42px;
+  font-weight: 800;
+  color: plum;
+  margin-bottom: 12px;
+}
+
+.improv-support-header p{
+  font-size: 18px;
+  color: #6b7a90;
+}
+
+
+
+.improv-support-grid{
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+
+
+.improv-support-card{
+  background: #fff;
+  border: 1px solid #e3eaf0;
+  padding: 60px 30px;
+  text-align: center;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.improv-support-card:hover{
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  transform: translateY(-6px);
+}
+
+.improv-support-icon{
+  font-size: 40px;
+  color: #66b500;
+  margin-bottom: 20px;
+}
+
+
+.improv-support-card h3{
+  font-size: 18px;
+  font-weight: 700;
+  color: plum;
+  margin-bottom: 16px;
+}
+
+.improv-support-card p{
+  font-size: 16px;
+  color: #0a2540;
+  line-height: 1.6;
+}
+
+.improv-support-phone{
+  color:#6b7a90 ;
+  font-size: 22px;
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+.improv-support-mail{
+  color: plum;
+  margin-bottom: 20px;
+}
+
+
+.improv-support-link{
+  display: inline-block;
+  margin-top: 25px;
+  color: plum;
+  font-weight: 600;
+  border-bottom: 2px solid plum;
+  cursor: pointer;
+}
+
+
+.improv-faq-section{
+  width: 100%;
+  padding: 80px 8%;
+  background: #ffffff;
+}
+
+.improv-faq-title{
+  font-size: 38px;
+  font-weight: 700;
+  color: plum;   
+  margin-bottom: 40px;
+}
+
+.improv-faq-content{
+  max-width: 1100px;
+}
+
+.improv-faq-item{
+  margin-bottom: 28px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e8f3f3;
+}
+
+.improv-faq-item h4{
+  font-size: 20px;
+  font-weight: 600;
+  color: plum;
+  margin-bottom: 10px;
+}
+
+.improv-faq-item p{
+  font-size: 16.5px;
+  line-height: 1.8;
+  color: #2f3e46;
+}
+
+
+@media(max-width: 768px){
+  .improv-faq-section{
+    padding: 60px 6%;
+  }
+
+  .improv-faq-title{
+    font-size: 30px;
+  }
+
+  .improv-faq-item h4{
+    font-size: 18px;
+  }
+
+  .improv-faq-item p{
+    font-size: 15.5px;
+  }
+}
+
+
+@media(max-width: 900px){
+  .improv-form-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .improv-quote-button{
+    grid-column: 1 / 2;
+  }
+}
+
+@media(max-width: 600px){
+  .improv-quote-title{
+    font-size: 32px;
+  }
+
+  .improv-quote-subti{
+    font-size: 16px;
+  }
+}
+
+
+
+@media(max-width: 768px){
+  .improv-keyfeatures-section{
+    padding: 60px 6%;
+  }
+
+  .improv-keyfeatures-title{
+    font-size: 30px;
+  }
+
+  .improv-keyfeatures-content{
+    font-size: 16px;
+  }
+}

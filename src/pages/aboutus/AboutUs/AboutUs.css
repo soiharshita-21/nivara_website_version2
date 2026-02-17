@@ -1,0 +1,119 @@
+
+.about-page {
+  width: 100%;
+  font-family: "poppins";
+  color: #222;
+}
+.about-hero{
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+.hero{
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height: 100%;
+  object-fit:cover;
+  z-index:1;
+}
+
+.about-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  z-index:2;
+}
+
+.about-overlay{
+  position: relative;
+  z-index:3;
+  text-align:left;
+  color: white;
+  margin-top: 200px;
+  padding-left: 50px;
+}
+
+
+
+  
+
+
+
+.about-section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 30px;
+  margin-bottom: 18px;
+  color: #6b1f2b;
+  position: relative;
+}
+
+.about-section h2::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #a53a4a;
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.about-section p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #444;
+  max-width: 900px;
+  margin: 0 auto 14px;
+}
+
+
+.about-section.light {
+  background: #f9f6f7;
+  margin-bottom: 20px;
+}
+
+
+.about-section blockquote {
+  font-size: 20px;
+  font-weight: 600;
+  color: #6b1f2b;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 32px;
+  }
+
+  .about-section h2 {
+    font-size: 24px;
+  }
+
+  .about-section p {
+    font-size: 16px;
+  }
+
+  .vm-card {
+    max-width: 100%;
+  }
+}

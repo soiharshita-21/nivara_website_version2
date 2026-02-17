@@ -1,0 +1,539 @@
+.balance-section{
+  padding: 60px 30px;
+  background:#f6f9ff;
+}
+
+.balance-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:30px;
+  max-width:1200px;
+  margin:auto;
+}
+/* Light pink transparent overlay */
+.balance-image-overlay{
+  position:absolute;
+  inset:0;
+   background:rgba(255, 79, 154, 0.28); /* light pink shade */
+  z-index:1;
+}
+
+/* Keep icon above overlay */
+.balance-iconbox{
+  z-index:2;
+}
+
+/* Card */
+.balance-card{
+  background:#fff;
+  border-radius:26px;
+  overflow:hidden;
+  box-shadow:0 20px 50px rgba(0,0,0,0.12);
+  position:relative;
+  transition:transform 0.3s ease;
+}
+
+.balance-card:hover{
+  transform:translateY(-8px);
+}
+
+/* Image */
+.balance-imagebox{
+  position:relative;
+  height:220px;
+  overflow:hidden;
+}
+
+.balance-imagebox img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* Icon box */
+.balance-iconbox{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  width:70px;
+  height:70px;
+  background:#fff;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Icon */
+.balance-rotate-icon{
+  font-size:28px;
+  color:#ff4f9a;
+  transition:transform 0.7s ease;
+}
+
+/* Rotate only icon */
+.balance-iconbox:hover .balance-rotate-icon{
+  transform:rotate(360deg);
+}
+
+/* Content */
+.balance-content{
+  padding:28px;
+}
+
+.balance-title{
+  font-size:24px;
+  font-weight:700;
+  color:#ff4f9a;   /* same pink heading */
+  margin-bottom:10px;
+}
+
+.balance-subtitle{
+  font-size:15px;
+  color:#555;
+  margin-bottom:18px;
+}
+
+/* Features */
+.balance-features{
+  list-style:none;
+  padding:0;
+  margin:0 0 24px 0;
+}
+
+.balance-features li{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:10px;
+  font-size:15px;
+  color:#444;
+}
+
+.balance-features li::before{
+  content:"✓";
+  width:22px;
+  height:22px;
+  background:#ff4f9a;
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+}
+
+/* Buttons */
+.balance-buttons{
+  display:flex;
+  gap:14px;
+}
+
+.balance-btn-outline{
+  padding:10px 22px;
+  border:2px solid #ff4f9a;
+  background:transparent;
+  color:#ff4f9a;
+  border-radius:12px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.balance-btn-outline:hover{
+  background:#ff4f9a;
+  color:#fff;
+}
+
+.balance-btn-solid{
+  padding:10px 22px;
+  background:#ff4f9a;
+  color:#fff;
+  border:none;
+  border-radius:12px;
+  font-weight:600;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  transition:0.3s;
+}
+
+.balance-btn-solid:hover{
+  background:#e8438b;
+}
+
+/* Bottom strip */
+.balance-bottom-strip{
+  height:6px;
+  width:100%;
+  background:#ff4f9a;
+  position:absolute;
+  bottom:0;
+  left:0;
+}
+.balance-text-section{
+  max-width:1000px;
+  margin:70px auto 40px auto;
+  padding:0 20px;
+  text-align:center;
+}
+
+.balance-main-title{
+  font-size:36px;
+  font-weight:700;
+  color:#ff4f9a;
+  margin-bottom:8px;
+}
+
+.balance-tagline{
+  font-size:18px;
+  font-weight:500;
+  color:#444;
+  margin-bottom:28px;
+}
+
+.balance-subheading{
+  font-size:22px;
+  font-weight:600;
+  color:#111;
+  margin-bottom:14px;
+}
+
+.balance-description{
+  font-size:16px;
+  line-height:1.8;
+  color:#555;
+}
+.balance-features-strip{
+  max-width:1200px;
+  margin:70px auto;
+  border:1px solid #ddd;
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  background:#fff;
+}
+
+.balance-feature-box{
+  text-align:center;
+  padding:50px 20px;
+  border-right:1px solid #ddd;
+}
+
+.balance-feature-box:last-child{
+  border-right:none;
+}
+
+/* Icon */
+.balance-feature-icon{
+  font-size:38px;
+  color:#6bb100;   /* green tone like image */
+  margin-bottom:18px;
+}
+
+/* Text */
+.balance-feature-box h3{
+  font-size:22px;
+  font-weight:600;
+  color: #555;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .balance-features-strip{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .balance-feature-box:nth-child(2){
+    border-right:none;
+  }
+}
+
+@media(max-width:500px){
+  .balance-features-strip{
+    grid-template-columns: 1fr;
+  }
+
+  .balance-feature-box{
+    border-right:none;
+    border-bottom:1px solid #ddd;
+  }
+
+  .balance-feature-box:last-child{
+    border-bottom:none;
+  }
+}
+.balance-keyfeatures-section{
+  padding:50px 80px;
+  background:#f9fbff;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;   /* left side */
+}
+
+.balance-keyfeatures-title{
+  font-size:34px;
+  font-weight:700;
+  color:#ff4f9a;
+  margin-bottom:30px;
+  text-align:left;
+}
+
+/* Points container */
+.balance-keyfeatures-points{
+  max-width:900px;
+  text-align:left;          /* text left */
+}
+
+/* Point text */
+.balance-keyfeatures-points p{
+  font-size:16px;
+  line-height:1.9;
+  color:#444;
+  margin-bottom:14px;
+}
+
+/* Highlight last line */
+.balance-contact-line{
+  font-weight:600;
+  color:#0a5cff;
+  margin-top:10px;
+}
+
+/* Highlight last line */
+.balance-contact-line{
+  font-weight:600;
+  color:#0a5cff;
+}
+
+
+.balance-contact-line{
+  font-weight:600;
+  color:#0a5cff;
+  margin-top:22px;
+}
+.balance-quote-sec{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+  background: #fff;
+}
+
+
+.balance-quote-con{
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
+}
+
+
+
+/* Title */
+.balance-quote-ti{
+  font-size: 42px;
+  font-weight: 700;
+  color: #ff4f9a;
+  margin-bottom: 10px;
+}
+
+/* Subtitle */
+.balance-quote-subti{
+  font-size: 18px;
+  color: #6b7c93;
+  margin-bottom: 50px;
+}
+
+/* Form */
+.balance-form{
+  width: 100%;
+}
+
+/* Grid layout */
+.balance-form-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px 40px;
+}
+
+/* Inputs */
+.balance-form-grid input{
+  width: 100%;
+  padding: 18px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 2px solid #e3eaf0;
+  outline: none;
+  transition: 0.3s ease;
+  font-family: inherit;
+}
+
+/* Focus */
+.balance-form-grid input:focus{
+  border-color: #ff4f9a;
+}
+
+/* Button */
+.balance-quote-button{
+  grid-column: 2 / 3;
+  background:#ff4f9a ;
+  color: #fff;
+  border: none;
+  padding: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Button hover */
+.balance-quote-button:hover{
+  background: #c62828;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.balance-support-section{
+  width: 100%;
+  padding: 100px 20px;
+  background: #fff;
+}
+
+.balance-support-section{
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.balance-support-header h2{
+  font-size: 42px;
+  font-weight: 800;
+  color: #ff4f9a;
+  margin-bottom: 12px;
+}
+
+.balance-support-header p{
+  font-size: 18px;
+  color: #6b7a90;
+}
+
+/* Grid */
+.balance-support-grid{
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* Cards */
+.balance-support-card{
+  background: #fff;
+  border: 1px solid #e3eaf0;
+  padding: 60px 30px;
+  text-align: center;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.balance-support-card:hover{
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  transform: translateY(-6px);
+}
+
+
+.balance-support-icon{
+  font-size: 40px;
+  color: #66b500;
+  margin-bottom: 20px;
+}
+
+
+.balance-support-card h3{
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff4f9a;
+  margin-bottom: 16px;
+}
+
+.balance-support-card p{
+  font-size: 16px;
+  color: #6b7a90;
+  line-height: 1.6;
+}
+
+.balance-support-phone{
+  color:black;
+  font-size: 22px;
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+.balance-support-mail{
+  color: #ff4f9a;
+  margin-bottom: 20px;
+}
+
+/* Link */
+.balance-support-link{
+  display: inline-block;
+  margin-top: 25px;
+  color: #ff4f9a;
+  font-weight: 600;
+  border-bottom: 2px solid #ff4f9a;
+  cursor: pointer;
+}
+.balance-faq-section{
+  padding:80px 20px;
+  background:#ffffff;
+}
+
+.balance-faq-title{
+  text-align:center;
+  font-size:34px;
+  font-weight:700;
+  color:#ff4f9a;
+  margin-bottom:50px;
+  padding-right: 80px;
+}
+
+.balance-faq-content{
+  max-width:1000px;
+  margin:auto;
+}
+
+.balance-faq-item{
+  margin-bottom:28px;
+  padding-bottom:22px;
+  border-bottom:1px solid #eee;
+}
+
+.balance-faq-item h4{
+  font-size:18px;
+  font-weight:600;
+  color:#ff4f9a;
+  margin-bottom:10px;
+}
+
+.balance-faq-item p{
+  font-size:16px;
+  line-height:1.8;
+  color:#555;
+}
+
+
+/* Responsive */
+@media(max-width:1000px){
+  .balance-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width:600px){
+  .balance-grid{
+    grid-template-columns: 1fr;
+  }
+}
