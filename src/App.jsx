@@ -20,22 +20,27 @@ import CompositeHomeLoan from "./pages/products/CompositeHomeLoan/CompositeHomeL
 import LoanAgainstProperty from "./pages/products/LoanAgainstProperty/LoanAgainstProperty";
 import BalanceTransfer from "./pages/products/BalanceTransfer/BalanceTransfer";
 import RefinanceLoan from "./pages/products/RefinanceLoan/RefinanceLoan";
-import ImprovementAndExtension from "./pages/products/ImprovementandExtension/ImprovementandExtension";   
-import ENach from "./pages/customercenter/enach";
-import FairPractice from "./pages/customercenter/FairPractice";
-import InterestRate from "./pages/customercenter/interestrate";
-import QuickLink from "./pages/customercenter/quicklink";
-import Calculator from "./pages/customercenter/calculator";
+import ImprovementAndExtension from "./pages/products/ImprovementandExtension/ImprovementandExtension";
+import ENach from "./pages/customercenter/Enach/Enach";
 
-import PublicDisclosure from "./pages/customercenter/publicdisclosure";
+import InterestRate from "./pages/customercenter/InterestRate/InterestRate";
+import QuickLink from "./pages/customercenter/Quicklink/Quicklink";
+import Calculator from "./pages/customercenter/Calculator/Calculator";
+import InvestorsRelation from "./pages/InvestorsRelation/InvestorsRelation";
+
+import PublicDisclosure from "./pages/customercenter/PublicDisclosure/PublicDisclosure";
 import CorporateGovernance from "./pages/customercenter/corporategovernance";
-import Download from "./pages/customercenter/download";
-import Faqs from "./pages/customercenter/faqs";
-import Blog from "./pages/media/blog";
-import PressRelease from "./pages/media/pressrelease";
-import NivaraGallery from "./pages/media/nivaragallery";
-import Branch from "./pages/contactus/branch";
-import Offices from "./pages/contactus/offices";
+import Download from "./pages/customercenter/Download/Download";
+import Faqs from "./pages/customercenter/Faqs/Faqs";
+import Lenders from "./pages/OurPartners/Lenders/Lenders";
+import OurInsurancePartners from "./pages/OurPartners/OurInsurancePartners/OurInsurancePartners";
+import Blog from "./pages/media/Blog/Blog";
+import PressRelease from "./pages/media/pressrelease/pressrelease";
+import NivaraGallery from "./pages/media/nivaragallery/nivaragallery";
+import Career from"./pages/Career/Career";
+import Branch from "./pages/contactus/Branch/Branch";
+import Offices from "./pages/contactus/Offices/Offices";
+import FairPracticeCode from "./pages/customercenter/FairPracticeCode/FairPracticeCode";
 function App() {
   return (
     <BrowserRouter>
@@ -47,9 +52,12 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/aboutus/vision-mission" element={<VisionMission />} />
-          <Route path="/aboutus/core-values" element={<ObjectivesCoreValues />} />  
+          <Route
+            path="/aboutus/core-values"
+            element={<ObjectivesCoreValues />}
+          />
           <Route path="/aboutus/investors" element={<Investors />} />
-          
+
           <Route path="/aboutus/board" element={<BoardOfDirectors />} />
           <Route path="/aboutus/management" element={<ManagementTeam />} />
           <Route path="/aboutus/privacy" element={<Privacy />} />
@@ -69,14 +77,12 @@ function App() {
             path="/products/balance-transfer"
             element={<BalanceTransfer />}
           />
+          <Route path="/products/refinance-loan" element={<RefinanceLoan />} />
           <Route
-            path="/products/refinance-loan"
-            element={<RefinanceLoan />} 
-            />
-             <Route
             path="/products/improvementandextension"
-            element={<ImprovementAndExtension />} 
-            />
+            element={<ImprovementAndExtension />}
+          />
+          <Route path="investorsrelation" element={<InvestorsRelation />} />
           <Route path="/customercenter/e-nach" element={<ENach />} />
           <Route
             path="/customercenter/interest-rate"
@@ -84,8 +90,8 @@ function App() {
           />
           <Route path="/customercenter/quick-link" element={<QuickLink />} />
           <Route
-            path="/customercenter/fair-practice"
-            element={<FairPractice />}
+            path="/customercenter/fair-practice-code"
+            element={<FairPracticeCode />}
           />
           <Route
             path="/customercenter/publicdisclosure"
@@ -98,11 +104,18 @@ function App() {
           <Route path="/customercenter/download" element={<Download />} />
           <Route path="/customercenter/calculator" element={<Calculator />} />
           <Route path="/customercenter/faqs" element={<Faqs />} />
-          <Route path="/media/blog" element={<Blog />} />
-          <Route path="/media/press-release" element={<PressRelease />} />
-          <Route path="/media/nivara-gallery" element={<NivaraGallery />} />
-          <Route path="/contactus/branch" element={<Branch />} />
-          <Route path="/contactus/offices" element={<Offices />} />
+          <Route path="/ourpartners/lenders/lenders" element={<Lenders />} />
+          <Route
+            path="/ourpartners/ourinsurancepartners/ourinsurancepartners"
+            element={<OurInsurancePartners />}
+          />
+
+          <Route path="/media/blog/blog" element={<Blog />} />
+          <Route path="/media/pressrelease/pressrelease" element={<PressRelease />} />
+          <Route path="/media/nivara-gallery/nivara-gallery" element={<NivaraGallery />} />
+          <Route path="/career/career" element={<Career />} /> 
+          <Route path="/contactus/branch/branch" element={<Branch />} />
+          <Route path="/contactus/offices/offices" element={<Offices />} />
         </Routes>
         <Footer />
       </div>

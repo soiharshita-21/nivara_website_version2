@@ -1,0 +1,88 @@
+.gallery-page{
+  width:100%;
+  background:#f7f9fc;
+  font-family:'Poppins', sans-serif;
+  margin-top: 10px;
+}
+
+/* Banner */
+.gallery-banner{
+  position:relative;
+  width:100%;
+  height:320px;
+  overflow:hidden;
+}
+
+.gallery-banner img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.gallery-title{
+  position:absolute;
+  bottom:40px;
+  left:60px;
+  font-size:48px;
+  font-weight:600;
+  color:#fff;
+
+  padding:14px 30px;
+  border-radius:6px;
+}
+
+/* Gallery Grid */
+.gallery-container{
+  max-width:1400px;
+  margin:auto;
+  padding:60px 50px;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:30px;
+}
+
+/* Card */
+.gallery-card{
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:0.3s ease;
+}
+
+.gallery-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 16px 35px rgba(0,0,0,0.12);
+}
+
+/* Image */
+.gallery-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* Responsive */
+@media(max-width:1024px){
+  .gallery-container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-title{
+    font-size:36px;
+  }
+}
+
+@media(max-width:640px){
+  .gallery-container{
+    grid-template-columns: 1fr;
+    padding:40px 20px;
+  }
+
+  .gallery-title{
+    font-size:28px;
+    left:20px;
+    bottom:20px;
+  }
+}

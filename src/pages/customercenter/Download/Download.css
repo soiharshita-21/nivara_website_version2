@@ -1,0 +1,71 @@
+:root{
+  --theme:#8b1d2c;
+}
+
+/* Page */
+.download-page{
+  width: 100%;
+  background: #fff;
+}
+
+/* Banner */
+.download-banner{
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+
+.download-banner img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay */
+.download-overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-overlay h1{
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Content */
+.download-content{
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* Links */
+.download-links{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.download-links a{
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.download-links a:hover{
+  color: var(--theme);
+  transform: translateX(6px);
+}
+.downtit{
+    color:maroon;
+    margin-top: 20px;
+}

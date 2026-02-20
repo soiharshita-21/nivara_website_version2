@@ -1,14 +1,16 @@
 .balance-section{
-  padding: 60px 30px;
-  background:#f6f9ff;
+   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f3f4f6;
+ flex-direction: column;
 }
 
 .balance-grid{
-  display:grid;
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap:30px;
-  max-width:1200px;
-  margin:auto;
+  gap: 30px;
 }
 /* Light pink transparent overlay */
 .balance-image-overlay{
@@ -25,12 +27,15 @@
 
 /* Card */
 .balance-card{
+  width: 311px;
   background:#fff;
-  border-radius:26px;
+  border-radius:28px;
   overflow:hidden;
   box-shadow:0 20px 50px rgba(0,0,0,0.12);
-  position:relative;
-  transition:transform 0.3s ease;
+  font-family: "Poppins";
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .balance-card:hover{
@@ -237,7 +242,7 @@
 .balance-feature-box h3{
   font-size:22px;
   font-weight:600;
-  color: #555;
+  color:#ff4f9a ;
 }
 
 /* Responsive */
@@ -266,11 +271,12 @@
   }
 }
 .balance-keyfeatures-section{
-  padding:50px 80px;
-  background:#f9fbff;
+  padding:30px 50px;
+  background:white;
   display:flex;
   flex-direction:column;
-  align-items:flex-start;   /* left side */
+  align-items:flex-start; 
+  margin-bottom: 40px;  /* left side */
 }
 
 .balance-keyfeatures-title{

@@ -86,7 +86,7 @@ const LoanAgainstProperty = () => {
           <h3>Secure Loan Process</h3>
         </div>
       </div>
-      {/* Key Features Section */}
+     
       <div className="lap-keyfeatures-section">
         <h2 className="lap-section-heading">
           Key Features of Nivara Loan Against Property
@@ -140,6 +140,12 @@ const LoanAgainstProperty = () => {
     <div className="lap-support-grid">
 
     {/* Card 1 */}
+     <section className="lap-support-section">
+        <div className="lap-support-header">
+          <h2>We are Here to Help You</h2>
+          <p>Our mission is to deliver reliable, latest news and opinions.</p>
+        </div> 
+        <div className="lap-support-grid">
     <div className="lap-support-card">
       <div className="lap-support-icon">📄</div>
       <h3>APPLY FOR LOAN</h3>
@@ -166,6 +172,8 @@ const LoanAgainstProperty = () => {
       <p>Need to loan advise?</p>
       <span className="lap-support-link">Meet The Advisor</span>
     </div>
+    </div>
+    </section>
 
   </div>
   {/* FAQ Section */}

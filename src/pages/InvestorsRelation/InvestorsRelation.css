@@ -1,0 +1,64 @@
+.investor-wrapper{
+  width:100%;
+  min-height:100vh;
+  padding:40px 60px;
+  background:#fff;
+  margin-top: 40px;
+}
+
+
+.investor-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 80px;
+  align-items:flex-start;
+}
+
+
+.investor-col{
+  display:flex;
+  flex-direction:column;
+  gap:30px;
+}
+
+
+.investor-box{
+  background:maroon;
+  color:#fff;
+  text-decoration:none;
+  padding:18px 24px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-size:17px;
+  font-weight:500;
+  box-shadow:0 10px 25px rgba(0,0,0,0.12);
+  transition:0.3s ease;
+  white-space:nowrap;
+}
+
+
+.lock-icon{
+  font-size:18px;
+}
+
+
+.investor-box:hover{
+  transform: translateY(-4px);
+  background:red;
+  box-shadow:0 15px 35px rgba(0,0,0,0.18);
+}
+
+
+@media(max-width:1200px){
+  .investor-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:768px){
+  .investor-grid{
+    grid-template-columns:1fr;
+  }
+}

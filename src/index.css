@@ -12,7 +12,8 @@
 html, body {
   height: 100%;
   overflow-y: scroll; 
-  scrollbar-width: none; 
+  scrollbar-width: none;
+  font-family: 'Poppins', sans-serif; 
 }
 
 body::-webkit-scrollbar {
@@ -20,6 +21,3 @@ body::-webkit-scrollbar {
 }
 
 
-body {
-  font-family: "Poppins", sans-serif;
-}

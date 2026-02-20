@@ -1,10 +1,10 @@
 
 .composite-grid{
-  max-width: 1200px;
+  max-width: 940px;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 30px;
   margin-top: 30px;
   margin-bottom: 30px;
 }
@@ -392,7 +392,7 @@
 .com-support-header h2{
   font-size: 42px;
   font-weight: 800;
-  color: #0a2540;
+  color: #42c6b9;
   margin-bottom: 12px;
 }
 
@@ -436,7 +436,7 @@
 .com-support-card h3{
   font-size: 18px;
   font-weight: 700;
-  color: #0a2540;
+  color: #42c6b9;
   margin-bottom: 16px;
 }
 
@@ -447,7 +447,7 @@
 }
 
 .com-support-phone{
-  color: #42c6b9;
+  color: black;
   font-size: 22px;
   margin: 10px 0;
   font-weight: 700;

@@ -1,0 +1,79 @@
+
+.career-page
+{width:100%;
+background:#fff;
+padding:40px 0;} 
+
+.career-container
+{max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1.2fr 1fr;
+gap:40px;}
+
+.career-content h1{color:maroon;font-size:36px;margin-bottom:10px;}
+.career-content h2{margin-top:20px;}
+.career-content h2.red{color: maroon;}
+.career-content p{line-height:1.7;color:#333;margin-bottom:15px;}
+
+.job-section{margin-top:30px;}
+.job-card{border:1px solid #ddd;padding:15px;border-radius:6px;margin-bottom:15px;}
+.job-card h3{color:maroon;margin-bottom:8px;}
+
+/* FORM */
+.career-form
+{border:1px solid #ddd;
+border-radius:8px;
+padding:0;
+overflow:hidden;
+height: 750px;
+}
+.form-header{
+  background:maroon;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+  font-size:20px;
+  font-weight:600;
+}
+
+.career-form form{
+  padding:20px;
+}
+.career-form label{
+  display:block;
+  font-weight:600;
+  margin:10px 0 5px;}
+.career-form input,.career-form select,.career-form textarea{
+  width:100%;
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:4px;
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.upload-box{
+   background:#f0f0f0;
+  padding:15px;
+  margin:15px 0;
+  border-radius:4px;
+}
+
+.career-form button{
+  background:maroon;
+  color:#fff;
+  border:none;
+  padding:12px 35px;
+  border-radius:30px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+@media(max-width:900px){
+  .career-container{grid-template-columns:1fr;}
+}

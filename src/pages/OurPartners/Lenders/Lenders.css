@@ -1,0 +1,91 @@
+.lenders-page{
+  width: 100%;
+  background: #f7f8fa;
+  margin-top: 5px;
+}
+
+/* Banner */
+.lenders-banner{
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.lenders-banner img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lenders-overlay{
+  position: absolute;
+  inset: 0;
+  
+  display: flex;
+ top:60%;
+ left:10%;
+}
+
+.lenders-overlay h1{
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+}
+
+/* Container */
+.lenders-container{
+  max-width: 1400px;
+  margin: auto;
+  padding: 60px 30px;
+}
+
+/* Grid */
+.lenders-grid{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 35px;
+}
+
+/* Cards */
+.lender-card{
+  background: #fff;
+  height: 130px;
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+
+.lender-card img{
+  max-width: 70%;
+  max-height: 60%;
+  object-fit: contain;
+}
+
+/* Hover */
+.lender-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* Responsive */
+@media (max-width: 1200px){
+  .lenders-grid{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px){
+  .lenders-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lenders-overlay h1{
+    font-size: 34px;
+  }
+}

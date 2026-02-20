@@ -1,5 +1,5 @@
 .improv-grid{
-  max-width: 1200px;
+  max-width: 950px;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -155,15 +155,12 @@
   cursor: pointer;
 }
 
-.improv-loan-bottom-strip{
-  height: 8px;
-  width: 100%;
-  background: plum;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
 
+.improv-bottom-strip{
+  height:6px;
+  width:100%;
+  background:plum;
+}
 .improv-text-section{
   max-width: 1000px;
   margin: 90px auto 60px;
@@ -459,7 +456,7 @@
 }
 
 .improv-support-phone{
-  color:#6b7a90 ;
+  color:black ;
   font-size: 22px;
   margin: 10px 0;
   font-weight: 700;

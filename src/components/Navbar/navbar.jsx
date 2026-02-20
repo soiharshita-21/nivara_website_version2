@@ -80,7 +80,7 @@ const Navbar = () => {
           <span>Customer Center ▾</span>
           <ul className="dropdown-menu">
             <li>
-              <Link to="/customercenter/e-nach">E-Nach</Link>
+              <Link to="/customercenter/e-nach">E-Nach Mandate</Link>
             </li>
             <li>
               <Link to="/customercenter/interest-rate">Interest Rate</Link>
@@ -114,25 +114,36 @@ const Navbar = () => {
             </li>
           </ul>
         </li>
+         <li className="dropdown">
+          <span>Our Partners ▾</span>
+          <ul className="dropdown-menu">
+            <li>
+              <Link to="/ourpartners/lenders/lenders">Lenders</Link>
+            </li>
+            <li>
+              <Link to="/ourpartners/ourinsurancepartners/ourinsurancepartners">Our Insurance Partners</Link>
+            </li>
+            </ul>
+            </li>
 
         {/* MEDIA */}
         <li className="dropdown">
           <span>Media ▾</span>
           <ul className="dropdown-menu">
             <li>
-              <Link to="/media/blog">Blog</Link>
+              <Link to="/media/blog/blog">Blog</Link>
             </li>
             <li>
-              <Link to="/media/press-release">Press Release</Link>
+              <Link to="/media/pressrelease/pressrelease">Press Release</Link>
             </li>
             <li>
-              <Link to="/media/nivara-gallery">Nivara Gallery</Link>
+              <Link to="/media/nivara-gallery/nivara-gallery">Nivara Gallery</Link>
             </li>
           </ul>
         </li>
 
         <li>
-          <Link to="/career">Career</Link>
+          <Link to="/career/career">Career</Link>
         </li>
 
         {/* CONTACT */}
@@ -140,10 +151,10 @@ const Navbar = () => {
           <span>Contact Us ▾</span>
           <ul className="dropdown-menu">
             <li>
-              <Link to="/contactus/branch">Branch</Link>
+              <Link to="/contactus/branch/branch">Branch</Link>
             </li>
             <li>
-              <Link to="/contactus/offices">Offices</Link>
+              <Link to="/contactus/offices/offices">Offices</Link>
             </li>
           </ul>
         </li>

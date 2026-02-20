@@ -1,0 +1,61 @@
+:root{
+  --maroon: #8b1d2c;   /* your theme maroon */
+}
+
+/* Page layout */
+.interest-rate-page{
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Heading */
+.interest-title{
+  font-size: 48px;
+  font-weight: 700;
+  color: maroon;
+}
+
+/* Button */
+.download-btn{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 60%;
+  max-width: 700px;
+
+  padding: 18px 24px;
+  border: 2px solid #999;
+  border-radius: 6px;
+
+  text-decoration: none;
+  color: #666;
+  font-size: 18px;
+  font-weight: 500;
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: #fff;
+}
+
+/* Icon */
+.pdf-icon{
+  font-size: 22px;
+  color: #999;
+  transition: 0.3s ease;
+}
+
+/* Hover effect */
+.download-btn:hover{
+  background: var(--maroon);
+  border-color: var(--maroon);
+  color: #fff;
+}
+
+.download-btn:hover .pdf-icon{
+  color: #fff;
+}

@@ -1,0 +1,77 @@
+:root{
+  --theme:#8b1d2c;
+}
+
+/* Page wrapper */
+.quicklink-page{
+  width: 100%;
+  background: #fff;
+  margin-top: 30px;
+}
+
+/* Banner */
+.quicklink-banner{
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+
+.quicklink-banner img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay */
+.quicklink-overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quicklink-overlay h1{
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Content */
+.quicklink-content{
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  line-height: 1.8;
+  font-size: 16px;
+  color: #333;
+}
+
+.quicklink-content h3{
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: var(--theme);
+  font-size: 22px;
+}
+
+.quicklink-content p{
+  margin-bottom: 16px;
+}
+
+.quicklink-content ul{
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.quicklink-content li{
+  margin-bottom: 10px;
+}
+
+/* Highlight line */
+.quicklink-highlight{
+  font-weight: 700;
+  color: var(--theme);
+}

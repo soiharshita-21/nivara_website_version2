@@ -1,5 +1,6 @@
+
 .refinance-grid{
-  max-width: 1200px;
+  max-width: 950px;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -10,7 +11,7 @@
 
 /* Card */
 .refinance-card{
-  background: #fff;
+ background: #fff;
   border-radius: 22px;
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0,0,0,0.12);
@@ -355,7 +356,7 @@
 
 
 .refinance-form-grid input:focus{
-  border-color: maroon;
+  border-color: peru;
 }
 
 
@@ -377,7 +378,7 @@
 
 
 .refinance-quote-button:hover{
-  background: #c62828;
+  background: maroon;
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
@@ -440,7 +441,7 @@
 .refinance-support-card h3{
   font-size: 18px;
   font-weight: 700;
-  color: #0a2540;
+  color: peru;
   margin-bottom: 16px;
 }
 
@@ -451,7 +452,7 @@
 }
 
 .refinance-support-phone{
-  color: peru;
+  color: black;
   font-size: 22px;
   margin: 10px 0;
   font-weight: 700;
@@ -499,7 +500,7 @@
 .refinance-faq-item h4{
   font-size: 20px;
   font-weight: 600;
-  color: #1f3b64;
+  color: peru;
   margin-bottom: 10px;
 }
 
@@ -509,7 +510,11 @@
   color: #2f3e46;
 }
 
-
+.refinance-bottom-strip{
+  height:6px;
+  width:100%;
+  background:peru;
+}
 @media(max-width: 768px){
   .refinance-faq-section{
     padding: 60px 6%;
