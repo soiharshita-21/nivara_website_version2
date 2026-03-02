@@ -1,9 +1,11 @@
 import React from "react";
 import { FaHome } from "react-icons/fa";
-import home from "../../../assets/images/home.jpg";
+import home5 from "../../../assets/images/home5.jpg";
 import "./RefinanceLoan.css";
+import { useNavigate } from "react-router-dom";
 
 const RefinanceLoan = () => {
+  const navigate = useNavigate();
   const cards = [1, 2, 3];
 
   return (
@@ -12,7 +14,7 @@ const RefinanceLoan = () => {
         {cards.map((item, index) => (
           <div className="refinance-card" key={index}>
             <div className="refinance-imagebox">
-              <img src={home} alt="Refinance Loan" />
+              <img src={home5} alt="Refinance Loan" />
 
               {/* transparent color overlay */}
               <div className="refinance-overlay"></div>
@@ -37,7 +39,12 @@ const RefinanceLoan = () => {
 
               <div className="refinance-buttons">
                 <button className="refinance-btn-outline">Learn More</button>
-                <button className="refinance-btn-solid">Apply →</button>
+                 <button
+                  className="refinance-loan-btn-solid"
+                  onClick={() => navigate("/apply-home-loan")}
+                >
+                  Apply →
+                </button>
               </div>
             </div>
 

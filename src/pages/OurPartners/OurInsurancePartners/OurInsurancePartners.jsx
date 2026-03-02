@@ -1,5 +1,5 @@
 import React from "react";
-import home from "../../../assets/images/home.jpg";
+import home3 from "../../../assets/images/home3.jpeg";
 import "./OurInsurancePartners.css";
 
 import kotak from "../../../assets/images/kotak.png";
@@ -22,7 +22,7 @@ const OurInsurancePartners = () => {
 
       {/* Banner */}
       <div className="insurance-banner">
-        <img src={home} alt="Our Insurance Partners" />
+        <img src={home3} alt="Our Insurance Partners" />
         <h1 className="banner-title">Our Insurance Partners</h1>
       </div>
 

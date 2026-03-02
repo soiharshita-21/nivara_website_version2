@@ -1,17 +1,19 @@
 import React from "react";
-import home from "../../../assets/images/home.jpg";
+import home5 from "../../../assets/images/home5.jpg";
 import { FiCreditCard } from "react-icons/fi";
 
 import "./LoanAgainstProperty.css";
+import { useNavigate } from "react-router-dom";
 
 const LoanAgainstProperty = () => {
+    const navigate = useNavigate();
   return (
     <div className="lap-page">
       <div className="lap-card-grid">
         {[1, 2, 3].map((item, index) => (
           <div className="lap-card" key={index}>
             <div className="lap-image">
-              <img src={home} alt="Loan Against Property" />
+              <img src={home5} alt="Loan Against Property" />
               <div className="lap-image-overlay"></div>
               <div className="lap-center-icon">
                 <FiCreditCard className="lap-icon-only-rotate" />
@@ -33,8 +35,11 @@ const LoanAgainstProperty = () => {
 
               <div className="lap-buttons">
                 <button className="lap-btn-outline">Learn More</button>
-                <button className="lap-btn-solid">
-                  Apply <span>→</span>
+              <button
+                  className="lap-loan-btn-solid"
+                  onClick={() => navigate("/apply-home-loan")}
+                >
+                  Apply →
                 </button>
               </div>
             </div>

@@ -121,12 +121,12 @@
   font-size:14px;
   flex-shrink:0;
 }
-.home-loan-buttons{
+.ho-loan-buttons{
   display:flex;
   gap:14px;
 }
 
-.home-loan-btn-outline{
+.ho-loan-btn-outline{
   flex:1;
   background:white;
   border:2px solid #8b1d2c;
@@ -138,12 +138,12 @@
   transition:0.3s;
 }
 
-.home-loan-btn-outline:hover{
+.ho-loan-btn-outline:hover{
   background:#8b1d2c;
   color:white;
 }
 
-.home-loan-btn-solid{
+.ho-loan-btn-solid{
   flex:1;
   background:maroon;
   border:none;
@@ -155,7 +155,7 @@
   transition:0.3s;
 }
 
-.home-loan-btn-solid:hover{
+.ho-loan-btn-solid:hover{
   transform:translateY(-2px);
   box-shadow:0 10px 25px rgba(139,29,44,0.35);
 }

@@ -1,9 +1,11 @@
 import React from "react";
 import { FaWrench } from "react-icons/fa";
-import home from "../../../assets/images/home.jpg";
+import home5 from "../../../assets/images/home5.jpg";
 import "./ImprovementandExtension.css";
+import { useNavigate } from "react-router-dom";
 
 const ImprovmentandExtension = () => {
+  const navigate = useNavigate();
   const cards = [1, 2, 3];
 
   return (
@@ -12,7 +14,7 @@ const ImprovmentandExtension = () => {
         {cards.map((item, index) => (
           <div className="improv-card" key={index}>
             <div className="improv-imagebox">
-              <img src={home} alt="Improvement and Extension Loan" />
+              <img src={home5} alt="Improvement and Extension Loan" />
 
               {/* transparent color layer */}
               <div className="improv-overlay"></div>
@@ -37,7 +39,12 @@ const ImprovmentandExtension = () => {
 
               <div className="improv-buttons">
                 <button className="improv-btn-outline">Learn More</button>
-                <button className="improv-btn-solid">Apply →</button>
+                <button
+                  className="improv-loan-btn-solid"
+                  onClick={() => navigate("/apply-home-loan")}
+                >
+                  Apply →
+                </button>
               </div>
             </div>
 

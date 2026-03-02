@@ -2,7 +2,7 @@ import React from "react";
 import "./NivaraGallery.css";
 
 /* Banner */
-import home from "../../../assets/images/home.jpg";
+import home2 from "../../../assets/images/home2.png";
 
 /* Gallery Images */
 import slide1 from "../../../assets/images/slide1.jpg";
@@ -20,7 +20,7 @@ const NivaraGallery = () => {
 
       {/* Banner */}
       <div className="gallery-banner">
-        <img src={home} alt="Nivara Gallery" />
+        <img src={home2} alt="Nivara Gallery" />
         <h1 className="gallery-title">Nivara Gallery</h1>
       </div>
 

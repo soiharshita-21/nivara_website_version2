@@ -1,6 +1,6 @@
 import React from "react";
 import "./FairPracticeCode.css";
-import home from "../../../assets/images/home.jpg"; 
+import home3 from "../../../assets/images/home3.jpeg"; 
 
 const FairPracticeCode = () => {
   return (
@@ -8,7 +8,7 @@ const FairPracticeCode = () => {
 
       {/* Banner Section */}
       <div className="fair-banner">
-        <img src={home} alt="Fair Practice Code" />
+        <img src={home3} alt="Fair Practice Code" />
         <div className="fair-overlay">
           <h1>Fair Practice Code</h1>
         </div>

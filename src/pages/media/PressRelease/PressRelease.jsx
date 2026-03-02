@@ -2,14 +2,14 @@ import React from "react";
 import "./PressRelease.css";
 
 // Banner
-import home from "../../../assets/images/home.jpg";
+import home2 from "../../../assets/images/home2.png";
 
 // Card Images (you will import real images)
 import slide1 from "../../../assets/images/slide1.jpg";
 import slide2 from "../../../assets/images/slide2.jpg";
 import slide3 from "../../../assets/images/slide3.jpg";
-import h from "../../../assets/images/home.jpg";
-import homes from "../../../assets/images/home.jpg";
+import slide5 from "../../../assets/images/slide5.jpeg";
+import slide4 from "../../../assets/images/slide4.jpg";
 
 const pressData = [
   {
@@ -31,13 +31,13 @@ const pressData = [
     desc: "Our typical clients are workers such as carpenters, drivers, barbers or domestic helps...",
   },
   {
-    img: h,
+    img: slide5,
     title: "Micro housing finance companies choke on acute fund crunch post DHFL crisis",
     meta: "10 Jun 2019 – Business Standard",
     desc: "Micro housing finance companies are finding it increasingly difficult to raise funds...",
   },
   {
-    img: homes,
+    img: slide4,
     title: "Baring Private Equity invests $10 mn in Nivara Home Finance",
     meta: "Updated Apr 05, 2024",
     desc: "Founded in 2015, Nivara Home Finance is focused on providing affordable housing finance...",
@@ -50,7 +50,7 @@ const PressRelease = () => {
 
       {/* Banner */}
       <div className="press-banner">
-        <img src={home} alt="Press Release" />
+        <img src={home2} alt="Press Release" />
         <h1 className="press-title">Press Release</h1>
       </div>
 

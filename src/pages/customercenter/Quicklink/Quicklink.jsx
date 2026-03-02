@@ -1,6 +1,6 @@
 import React from "react";
 import "./Quicklink.css";
-import home from "../../../assets/images/home.jpg";
+import home3 from "../../../assets/images/home3.jpeg";
 
 const Quicklink = () => {
   return (
@@ -8,7 +8,7 @@ const Quicklink = () => {
 
       {/* Banner Section */}
       <div className="quicklink-banner">
-        <img src={home} alt="home" />
+        <img src={home3} alt="home" />
         <div className="quicklink-overlay">
           <h1>Privacy and Policy</h1>
         </div>

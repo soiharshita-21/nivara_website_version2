@@ -9,14 +9,16 @@
 .press-banner{
   position: relative;
   width:100%;
-  height:320px;
+  height:500px;
   overflow:hidden;
 }
 
 .press-banner img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;   /* 🔥 moves image upward */
+  filter: brightness(70%);
 }
 
 .press-title{

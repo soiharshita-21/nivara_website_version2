@@ -1,29 +1,34 @@
 import React, { useState, useEffect } from "react";
 import "./Testimonials.css";
-import home from "../../assets/images/home.jpg";
+import user1 from "../../assets/images/user1.jpg";
+import user2 from "../../assets/images/user2.jpg";
+import user3 from "../../assets/images/user3.jpg";
 
 /* Testimonials Data */
 const testimonials = [
   {
     text: "The doorstep service and minimal paperwork made everything so convenient. I highly recommend Nivara to anyone looking for a home loan.",
-    name: "Priya Menon",
-    place: "Thiruvananthapuram, Kerala",
+    name: "Ashok",
+    place: "Kadapa",
     type: "Construction Loan",
     rating: 5,
+    image: user1
   },
   {
     text: "Nivara made my dream of owning a home come true. The process was smooth, and the team was incredibly supportive throughout the journey.",
-    name: "Rajesh Kumar",
-    place: "Kochi, Kerala",
+    name: "Rajesh",
+    place: "Hyderabad",
     type: "Home Purchase Loan",
     rating: 5,
+    image: user2
   },
   {
     text: "Fast approval and competitive interest rates. The customer support team was always available to answer my questions. Very satisfied!",
-    name: "Suresh Nair",
-    place: "Kollam, Kerala",
+    name: "Suresh ",
+    place: "Tamil Nadu",
     type: "Composite Loan",
     rating: 5,
+    image: user3
   },
 ];
 
@@ -85,7 +90,7 @@ const Testimonials = () => {
 
           <div className="testimonial-user">
   <div className="avatar">
-    <img src={home} alt="home" />
+    <img src={testimonials[index].image} alt={testimonials[index].name} />
   </div>
 
   <div className="user-info">

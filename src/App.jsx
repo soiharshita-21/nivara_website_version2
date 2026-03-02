@@ -41,6 +41,7 @@ import Career from"./pages/Career/Career";
 import Branch from "./pages/contactus/Branch/Branch";
 import Offices from "./pages/contactus/Offices/Offices";
 import FairPracticeCode from "./pages/customercenter/FairPracticeCode/FairPracticeCode";
+import LoanApplyForm from "./pages/loanapplyform";
 function App() {
   return (
     <BrowserRouter>
@@ -116,6 +117,7 @@ function App() {
           <Route path="/career/career" element={<Career />} /> 
           <Route path="/contactus/branch/branch" element={<Branch />} />
           <Route path="/contactus/offices/offices" element={<Offices />} />
+          <Route path="/apply-home-loan" element={<LoanApplyForm />} />
         </Routes>
         <Footer />
       </div>

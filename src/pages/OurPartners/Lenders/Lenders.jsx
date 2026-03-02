@@ -1,6 +1,6 @@
 import React from "react";
 import "./Lenders.css";
-import home from "../../../assets/images/home.jpg"; 
+import home3 from "../../../assets/images/home3.jpeg"; 
 
 
 import nhb from "../../../assets/images/nhb.png";
@@ -37,7 +37,7 @@ const Lenders = () => {
 
       {/* Banner */}
       <div className="lenders-banner">
-        <img src={home} alt="Lenders Banner" />
+        <img src={home3} alt="Lenders Banner" />
         <div className="lenders-overlay">
           <h1>Lenders</h1>
         </div>

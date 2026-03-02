@@ -134,6 +134,7 @@ width: 300px;
   font-size:15px;
 }
 
+
 .features li::before{
   content:"✓";
   width:26px;
@@ -185,9 +186,27 @@ width: 300px;
 
 .con-loan-btn-solid:hover{
   transform:translateY(-2px);
-  box-shadow:0 10px 25px rgba(139,29,44,0.35);
+  box-shadow:#FF6F6F;
+}
+/* Normal state (before hover) */
+.home-loan-btn-solid{
+  background: #FF6F6F; /* default color */
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
+/* Hover state */
+.home-loan-btn-solid:hover{
+  background: #FF6F6F; /* hover color */
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
 
 .con-loan-bottom-strip{
   height:6px;

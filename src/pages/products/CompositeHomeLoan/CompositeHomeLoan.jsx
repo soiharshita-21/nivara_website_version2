@@ -1,9 +1,11 @@
 import React from "react";
 import { FaHome } from "react-icons/fa";
-import home from "../../../assets/images/home.jpg";
+import home5 from "../../../assets/images/home5.jpg";
 import "./CompositeHomeLoan.css";
+import { useNavigate } from "react-router-dom";
 
 const CompositeHomeLoan = () => {
+   const navigate = useNavigate();
   const cards = [1, 2, 3]; // repeat same card 3 times
 
   return (
@@ -13,7 +15,7 @@ const CompositeHomeLoan = () => {
           <div className="composite-card" key={index}>
             {/* Image */}
             <div className="composite-imagebox">
-              <img src={home} alt="Composite Home Loan" />
+              <img src={home5} alt="Composite Home Loan" />
 
               {/* transparent color overlay */}
               <div className="composite-overlay"></div>
@@ -39,7 +41,12 @@ const CompositeHomeLoan = () => {
 
               <div className="composite-buttons">
                 <button className="composite-btn-outline">Learn More</button>
-                <button className="composite-btn-solid">Apply →</button>
+                 <button
+                  className="comp-loan-btn-solid"
+                  onClick={() => navigate("/apply-home-loan")}
+                >
+                  Apply →
+                </button>
               </div>
             </div>
 

@@ -3,42 +3,38 @@ import { FaMapMarkerAlt, FaChevronDown } from "react-icons/fa";
 import map from "../../../assets/images/map.jpg";
 import "./Branch.css";
 
-
-
 const branchesData = {
-  "KARNATAKA": [
+  KARNATAKA: [
     "Nagarbhavi","Bagalur","TC Palya","Mysore","Ramnagara","Gottigere",
     "Anekal","Nelamangala","Doddabalapur","Tumkur","Mandya","Kanakpura",
     "Hunsur","Kengeri","Gauribidanur","Sarjapur","Kunigal","Chamrajnagar",
     "Kolar","Hassan","Sira","Chikkabalapur","Tiptur","Thalaghattapura",
     "Srirangapatna","Davanagere","Malur","Chitradurga","Maddur","Hubli",
     "Gadag","Haveri","Ballari","Hospet","Belagavi","Gangavathi(Kalburgi)",
-    "Gangavathi","Gokak","Sindhanur","Chikkodi","Raichur","Vijayapura","Ranebennur"
+    "Gangavathi","Gokak","Sindhanur","Chikkodi","Raichur","Vijayapura","Ranebennur",
   ],
 
   "TAMIL NADU": [
     "Hosur","Salem","Krishnagiri","Dharmapuri","Tirupattur","Tiruvanmalai",
     "Vellore","Namakkal","Erode","Pollachi","Tirupur","Coimbatore",
-    "Pochampalli","Arakkonam"
+    "Pochampalli","Arakkonam",
   ],
 
-  "TELANGANA": [
+  TELANGANA: [
     "Vanasthalipuram","Karimnagar","Warangal","Khammam","Siddipet","Kodad",
-    "Siricilla","Sangareddy","Nirmal","Medchal","Suryapet"
+    "Siricilla","Sangareddy","Nirmal","Medchal","Suryapet",
   ],
 
   "ANDHRA PRADESH": [
     "Guntur","Eluru","Ongole","Narasaraopeta","Bhimavaram","Hindupur",
     "Chirala","Kanuru","Anantapur","Adoni","Tadepalligudam","Tirupathi",
-    "Puttur","Penukonda","Nuziveedu","Machilipatnam","Kandukur"
+    "Puttur","Penukonda","Nuziveedu","Machilipatnam","Kandukur",
   ],
 
-  "MAHARASHTRA": [
-    "Nasik","Chinchwad","Ahmednagar","Aurangabad","Jalgaon","Dhule"
-  ]
+  MAHARASHTRA: [
+    "Nasik","Chinchwad","Ahmednagar","Aurangabad","Jalgaon","Dhule",
+  ],
 };
-
-
 
 const Branch = () => {
   const [search, setSearch] = useState("");
@@ -46,6 +42,25 @@ const Branch = () => {
 
   const toggleState = (state) => {
     setOpenState(openState === state ? null : state);
+  };
+
+  // ✅ Filter logic INSIDE component
+  const getFilteredData = () => {
+    if (!search.trim()) return branchesData;
+
+    const filtered = {};
+
+    Object.keys(branchesData).forEach((state) => {
+      const matchedCities = branchesData[state].filter((city) =>
+        city.toLowerCase().includes(search.toLowerCase())
+      );
+
+      if (matchedCities.length > 0) {
+        filtered[state] = matchedCities;
+      }
+    });
+
+    return filtered;
   };
 
   return (
@@ -77,7 +92,7 @@ const Branch = () => {
 
       {/* States Accordion */}
       <div className="state-list">
-        {Object.keys(branchesData).map((state, index) => (
+        {Object.keys(getFilteredData()).map((state, index) => (
           <div className="state-wrapper" key={index}>
 
             {/* State Header */}
@@ -89,17 +104,13 @@ const Branch = () => {
             </div>
 
             {/* Locations */}
-            {openState === state && (
+            {(openState === state || search) && (
               <div className="location-grid">
-                {branchesData[state]
-                  .filter((city) =>
-                    city.toLowerCase().includes(search.toLowerCase())
-                  )
-                  .map((city, i) => (
-                    <div className="location-item" key={i}>
-                      📍 {city}
-                    </div>
-                  ))}
+                {getFilteredData()[state].map((city, i) => (
+                  <div className="location-item" key={i}>
+                    📍 {city}
+                  </div>
+                ))}
               </div>
             )}
 
@@ -112,7 +123,6 @@ const Branch = () => {
         <h2 className="new-branches-title">📍 Newly Opened Branches</h2>
 
         <div className="new-branches-grid">
-
           <div className="branch-card">
             <h3>🏢 Penukonda Branch</h3>
             <p><strong>Opened:</strong> 23rd January 2026</p>
@@ -140,7 +150,6 @@ const Branch = () => {
             <p><strong>Location:</strong> 1st Floor, Simhadri Nagar, Revenue Ward No-2, Pamuru Road, Kandukur-523105</p>
             <p><strong>Contact:</strong> +91 9705999405</p>
           </div>
-
         </div>
       </div>
 

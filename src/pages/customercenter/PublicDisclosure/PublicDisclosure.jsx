@@ -1,6 +1,6 @@
 import React from "react";
 import "./PublicDisclosure.css";
-import home from "../../../assets/images/home.jpg"; // add your image
+import home3 from "../../../assets/images/home3.jpeg"; // add your image
 
 const PublicDisclosure = () => {
   return (
@@ -8,7 +8,7 @@ const PublicDisclosure = () => {
 
       {/* Banner */}
       <div className="public-banner">
-        <img src={home} alt="Public Disclosure" />
+        <img src={home3} alt="Public Disclosure" />
         <div className="public-overlay">
           <h1>Public Disclosure</h1>
         </div>

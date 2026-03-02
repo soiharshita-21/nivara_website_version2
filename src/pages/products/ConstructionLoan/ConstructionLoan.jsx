@@ -1,9 +1,11 @@
 import React from "react";
-import home from "../../../assets/images/home.jpg";
+import home5 from "../../../assets/images/home5.jpg";
 import { FaHardHat } from "react-icons/fa";
 import "./ConstructionLoan.css";
+import { useNavigate } from "react-router-dom";
 
 const ConstructionLoan = () => {
+  const navigate = useNavigate();
   return (
    <div className="page-center construction-page">
 
@@ -13,7 +15,7 @@ const ConstructionLoan = () => {
       <div className="conloan-card" key={index}>
 
         <div className="conloan-image">
-          <img src={home} alt="Construction Loan" />
+          <img src={home5} alt="Construction Loan" />
           <div className="image-overlay"></div>
 
           <div className="cen-icon">
@@ -35,7 +37,12 @@ const ConstructionLoan = () => {
 
           <div className="con-loan-buttons">
             <button className="con-loan-btn-outline">Learn More</button>
-            <button className="con-loan-btn-solid">Apply →</button>
+            <button
+                  className="home-loan-btn-solid"
+                  onClick={() => navigate("/apply-home-loan")}
+                >
+                  Apply →
+                </button>
           </div>
         </div>
 

@@ -1,76 +1,152 @@
-import React, { useState } from "react";
-import "./Calculator.css";
-import ca from "../../../assets/images/ca.jpg";
 
+import React, { useState, useEffect } from "react";
+import "./Calculator.css";
 
 const Calculator = () => {
+  const [amount, setAmount] = useState(2500000); // 25L
+  const [rate, setRate] = useState(8.9);
+  const [years, setYears] = useState(18);
+
+  const [emi, setEmi] = useState(0);
+  const [totalPayment, setTotalPayment] = useState(0);
+  const [interest, setInterest] = useState(0);
+
+  useEffect(() => {
+    const P = amount;
+    const r = rate / 12 / 100;
+    const n = years * 12;
+
+    const EMI =
+      (P * r * Math.pow(1 + r, n)) /
+      (Math.pow(1 + r, n) - 1);
+
+    const total = EMI * n;
+    const int = total - P;
+
+    setEmi(Math.round(EMI));
+    setTotalPayment(Math.round(total));
+    setInterest(Math.round(int));
+  }, [amount, rate, years]);
+
   return (
-    <div className="calculator-page">
+    <div className="emi-page">
+      <h1 className="emi-title">EMI Calculator</h1>
+      <p className="emi-subtitle">Calculate your monthly payment and plan your finances</p>
 
-      {/* Page Title */}
-      <h1 className="calculator-main-title">Calculator</h1>
+      <div className="emi-card">
 
-      {/* ================= Eligibility Calculator ================= */}
-      <section className="calculator-section">
+        {/* LEFT */}
+        <div className="emi-left">
 
-        <div className="calc-left">
-          <h2>Eligibility Calculator</h2>
+          {/* Loan Amount */}
+          <div className="slider-box">
+            <div className="label-row">
+              <span>Loan Amount</span>
+              <strong>₹{amount.toLocaleString("en-IN")}</strong>
+            </div>
 
-          <label>Monthly Income ( ₹ ):</label>
-          <input type="number" placeholder="Income" />
+            <input
+              type="range"
+              min="100000"
+              max="10000000"
+              step="50000"
+              value={amount}
+              onChange={(e) => setAmount(Number(e.target.value))}
+            />
+            <div className="range-labels">
+              <span>₹1L</span>
+              <span>₹1Cr</span>
+            </div>
+          </div>
 
-          <label>Monthly Debt Obligations ( ₹ ):</label>
-          <input type="number" placeholder="Obligations" />
+          {/* Interest */}
+          <div className="slider-box">
+            <div className="label-row">
+              <span>Interest Rate (p.a.)</span>
+              <strong>{rate}%</strong>
+            </div>
 
-          <label>Age:</label>
-          <input type="number" placeholder="Age" />
+            <input
+              type="range"
+              min="6"
+              max="15"
+              step="0.1"
+              value={rate}
+              onChange={(e) => setRate(Number(e.target.value))}
+            />
+            <div className="range-labels">
+              <span>6%</span>
+              <span>15%</span>
+            </div>
+          </div>
 
-          <button className="calc-btn">COMPUTE</button>
+          {/* Tenure */}
+          <div className="slider-box">
+            <div className="label-row">
+              <span>Loan Tenure</span>
+              <strong>{years} Years</strong>
+            </div>
+
+            <input
+              type="range"
+              min="1"
+              max="30"
+              step="1"
+              value={years}
+              onChange={(e) => setYears(Number(e.target.value))}
+            />
+            <div className="range-labels">
+              <span>1 Year</span>
+              <span>30 Years</span>
+            </div>
+          </div>
+
         </div>
 
-        <div className="calc-middle">
-          <h3>Payment Information:</h3>
-          <p><strong>Max EMI ( ₹ ):</strong></p>
-          <p><strong>Max Tenure Eligibility:</strong></p>
-          <p><strong>Max Loan Amount Eligibility ( ₹ ):</strong></p>
+        {/* RIGHT */}
+        <div className="emi-right">
+
+          {/* EMI BOX */}
+          <div className="emi-main hover-pop">
+            <span>MONTHLY EMI</span>
+            <h2>₹{emi.toLocaleString("en-IN")}</h2>
+          </div>
+
+          <div className="emi-small-grid">
+
+            <div className="emi-small hover-pop">
+              <span>Principal</span>
+              <h3>₹{amount.toLocaleString("en-IN")}</h3>
+            </div>
+
+            <div className="emi-small hover-pop">
+              <span>Interest</span>
+              <h3>₹{interest.toLocaleString("en-IN")}</h3>
+            </div>
+
+          </div>
+
+          <div className="emi-total hover-pop">
+            <span>Total Payment</span>
+            <h3>₹{totalPayment.toLocaleString("en-IN")}</h3>
+
+            <div className="progress-bar">
+              <div
+                className="progress-principal"
+                style={{ width: `${(amount / totalPayment) * 100}%` }}
+              ></div>
+              <div
+                className="progress-interest"
+                style={{ width: `${(interest / totalPayment) * 100}%` }}
+              ></div>
+            </div>
+          </div>
+
+          <button className="apply-loan-btn">Apply for This Loan</button>
+
         </div>
-         <div className="calc-right">
-          <img src={ca} alt="calculator" />
-        </div>
 
-      </section>
-
-       
-
-     
-
-      {/* ================= EMI Calculator ================= */}
-      <section className="calculator-section">
-
-        <div className="calc-left">
-          <h2>EMI Calculator</h2>
-
-          <label>Loan Amount ( ₹ ):</label>
-          <input type="number" placeholder="Loan Amount" />
-
-          <label>Rate of Interest (%):</label>
-          <input type="number" placeholder="Rate of Interest" />
-
-          <label>Repayment in Years:</label>
-          <input type="number" placeholder="Years" />
-
-          <button className="calc-btn">COMPUTE</button>
-        </div>
-
-        <div className="calc-middle">
-          <h3>Payment Information:</h3>
-          <p><strong>EMI ( ₹ ):</strong></p>
-        </div>
-
-       
-
-      </section>
-
+      </div>
     </div>
   );
 };

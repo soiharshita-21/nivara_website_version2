@@ -1,9 +1,11 @@
 import React from "react";
 import { FaSyncAlt } from "react-icons/fa"; // balance transfer icon
-import home from "../../../assets/images/home.jpg"; // you will replace this
+import home5 from "../../../assets/images/home5.jpg"; // you will replace this
 import "./BalanceTransfer.css";
+import { useNavigate } from "react-router-dom";
 
 const BalanceTransfer = () => {
+   const navigate = useNavigate();
   const cards = [1, 2, 3];
 
   return (
@@ -12,7 +14,7 @@ const BalanceTransfer = () => {
         {cards.map((item, index) => (
           <div className="balance-card" key={index}>
             <div className="balance-imagebox">
-              <img src={home} alt="Balance Transfer" />
+              <img src={home5} alt="Balance Transfer" />
 
               {/* Light pink overlay */}
               <div className="balance-image-overlay"></div>
@@ -38,8 +40,11 @@ const BalanceTransfer = () => {
 
               <div className="balance-buttons">
                 <button className="balance-btn-outline">Learn More</button>
-                <button className="balance-btn-solid">
-                  Apply <span>→</span>
+                <button
+                  className="balance-loan-btn-solid"
+                  onClick={() => navigate("/apply-home-loan")}
+                >
+                  Apply →
                 </button>
               </div>
             </div>

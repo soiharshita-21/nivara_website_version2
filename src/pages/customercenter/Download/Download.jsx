@@ -1,6 +1,6 @@
 import React from "react";
 import "./Download.css";
-import home from "../../../assets/images/home.jpg"; 
+import home3 from "../../../assets/images/home3.jpeg"; 
 
 const Download = () => {
   return (
@@ -8,7 +8,7 @@ const Download = () => {
 
       {/* Banner */}
       <div className="download-banner">
-        <img src={home} alt="Download" />
+        <img src={home3} alt="Download" />
         <div className="download-overlay">
           <h1>Download</h1>
         </div>
