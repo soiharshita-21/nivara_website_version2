@@ -20,7 +20,7 @@ const TopBar = () => {
       </div>
 
       {/* Find a Branch */}
-      <Link to="/branches" className="topbar-link">
+      <Link to="/contactus/branch/branch" className="topbar-link">
         <FaMapMarkerAlt className="location-icon" />
         <span>Find a Branch</span>
       </Link>
@@ -29,4 +29,3 @@ const TopBar = () => {
 };
 
 export default TopBar;
-

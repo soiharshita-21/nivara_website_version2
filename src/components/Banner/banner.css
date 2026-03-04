@@ -12,7 +12,7 @@
  
 }
 .carousel-inner {
-  overflow: hidden;
+  overflow: visible;
 }
 
 
@@ -24,6 +24,7 @@
   background-position: center;
   display: flex;
   align-items: center;
+  z-index: 0;
 }
 
 
@@ -35,6 +36,7 @@
   content: "";
   position: absolute;
   inset: 0;
+   z-index: 1; 
   background: rgba(0, 0, 0, 0.45);
 }
 
@@ -117,7 +119,89 @@
   padding-top: 0;
 }
 
+/* ============================= */
+/* Tablet View (1024px and below) */
+/* ============================= */
 
+@media (max-width: 1024px) {
+
+  .banner-content {
+    padding-left: 40px;
+    max-width: 500px;
+  }
+
+  .banner-content h1 {
+    font-size: 36px;
+  }
+
+  .banner-content p {
+    font-size: 16px;
+  }
+
+  .banner-slide {
+    min-height: 70vh;
+  }
+}
+
+
+/* ============================= */
+/* Mobile View (768px and below) */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .banner-slide {
+    min-height: 80vh;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .banner-content {
+    padding: 0 20px;
+    max-width: 100%;
+  }
+
+  .banner-content h1 {
+    font-size: 28px;
+  }
+
+  .banner-content p {
+    font-size: 15px;
+  }
+
+  .banner-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .primary-btn,
+  .secondary-btn,
+  .thrid-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+
+/* ============================= */
+/* Small Mobile (480px and below) */
+/* ============================= */
+
+@media (max-width: 480px) {
+
+  .banner-content h1 {
+    font-size: 22px;
+  }
+
+  .banner-content p {
+    font-size: 14px;
+  }
+
+  .banner-slide {
+    min-height: 85vh;
+  }
+}
 
 
 

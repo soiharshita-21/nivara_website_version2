@@ -1,15 +1,16 @@
-
 import "./banner.css";
 import { motion } from "framer-motion";
 import Carousel from "react-bootstrap/Carousel";
+import { useNavigate } from "react-router-dom";
 
 // slide images
 import slide1 from "../../assets/images/slide1.jpg";
 import slide2 from "../../assets/images/slide2.jpg";
 import slide3 from "../../assets/images/slide3.jpg";
 
-
 const Banner = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="banner">
       <Carousel fade controls={false} indicators={true} interval={3000}>
@@ -39,10 +40,26 @@ const Banner = () => {
               </motion.p>
 
               <div className="banner-buttons">
-                <button className="primary-btn">Apply Now</button>
-                <button className="secondary-btn">Loan Calculator</button>
-                <button className="thrid-btn">Find Your Branch</button>
-                
+                <button
+                  className="primary-btn"
+                  onClick={() => navigate("/apply-home-loan")}
+                >
+                  Apply Now
+                </button>
+
+                <button
+                  className="secondary-btn"
+                  onClick={() => navigate("/customercenter/calculator")}
+                >
+                  Loan Calculator
+                </button>
+
+                <button
+                  className="thrid-btn"
+                  onClick={() => navigate("/contactus/branch/branch")}
+                >
+                  Find Your Branch
+                </button>
               </div>
             </div>
           </div>
@@ -57,11 +74,28 @@ const Banner = () => {
             <div className="banner-content">
               <h1>Fast & Easy Home Loans</h1>
               <p>Quick approvals with minimum documentation</p>
-               <div className="banner-buttons">
-                <button className="primary-btn">Apply Now</button>
-                <button className="secondary-btn">Loan Calculator</button>
-                <button className="thrid-btn">Find Your Branch</button>
-                
+
+              <div className="banner-buttons">
+                <button
+                  className="primary-btn"
+                  onClick={() => navigate("/apply-home-loan")}
+                >
+                  Apply Now
+                </button>
+
+                <button
+                  className="secondary-btn"
+                  onClick={() => navigate("/emi-calculator")}
+                >
+                  Loan Calculator
+                </button>
+
+                <button
+                  className="thrid-btn"
+                  onClick={() => navigate("/contactus/branch/branch")}
+                >
+                  Find Your Branch
+                </button>
               </div>
             </div>
           </div>
@@ -74,13 +108,30 @@ const Banner = () => {
             style={{ backgroundImage: `url(${slide3})` }}
           >
             <div className="banner-content">
-              <h1>Your Family,Your Home</h1>
+              <h1>Your Family, Your Home</h1>
               <p>Quick Approvals</p>
-               <div className="banner-buttons">
-                <button className="primary-btn">Apply Now</button>
-                <button className="secondary-btn">Loan Calculator</button>
-                <button className="thrid-btn">Find Your Branch</button>
-                
+
+              <div className="banner-buttons">
+                <button
+                  className="primary-btn"
+                  onClick={() => navigate("/apply-home-loan")}
+                >
+                  Apply Now
+                </button>
+
+                <button
+                  className="secondary-btn"
+                  onClick={() => navigate("/emi-calculator")}
+                >
+                  Loan Calculator
+                </button>
+
+                <button
+                  className="thrid-btn"
+                  onClick={() => navigate("/contactus/branch/branch")}
+                >
+                  Find Your Branch
+                </button>
               </div>
             </div>
           </div>
@@ -92,4 +143,3 @@ const Banner = () => {
 };
 
 export default Banner;
-
