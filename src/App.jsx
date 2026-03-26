@@ -1,9 +1,11 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Navbar from "./components/Navbar/navbar";
 import Home from "./pages/home";
 import TopBar from "./components/TopBar/topbar";
 import "./App.css";
 import Footer from "./components/Footer/footer";
+import IsoBanner from "./components/IsoBanner/IsoBanner";
 
 import AboutUs from "./pages/aboutus/AboutUs/AboutUs";
 import VisionMission from "./pages/aboutus/VisionMission/VisionMission";
@@ -42,13 +44,43 @@ import Branch from "./pages/contactus/Branch/Branch";
 import Offices from "./pages/contactus/Offices/Offices";
 import FairPracticeCode from "./pages/customercenter/FairPracticeCode/FairPracticeCode";
 import LoanApplyForm from "./pages/loanapplyform";
+const ScrollAnimations = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    setTimeout(() => {
+      const elements = document.querySelectorAll(".animate-pop-up");
+      elements.forEach((el) => observer.observe(el));
+    }, 100);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [location.pathname]);
+
+  return null;
+};
+
 function App() {
   return (
     <BrowserRouter>
+      <ScrollAnimations />
       <TopBar />
       <Navbar />
 
       <div className="page-content">
+        <IsoBanner />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<AboutUs />} />
@@ -64,23 +96,23 @@ function App() {
           <Route path="/aboutus/privacy" element={<Privacy />} />
           <Route path="/aboutus/policy" element={<Policy />} />
 
-          <Route path="/products/home-loan" element={<HomeLoanPurchase />} />
+          <Route path="/services/home-loan" element={<HomeLoanPurchase />} />
           <Route
-            path="/products/construction-loan"
+            path="/services/construction-loan"
             element={<ConstructionLoan />}
           />
           <Route
-            path="/products/composite-loan"
+            path="/services/composite-loan"
             element={<CompositeHomeLoan />}
           />
-          <Route path="/products/lap" element={<LoanAgainstProperty />} />
+          <Route path="/services/lap" element={<LoanAgainstProperty />} />
           <Route
-            path="/products/balance-transfer"
+            path="/services/balance-transfer"
             element={<BalanceTransfer />}
           />
-          <Route path="/products/refinance-loan" element={<RefinanceLoan />} />
+          <Route path="/services/refinance-loan" element={<RefinanceLoan />} />
           <Route
-            path="/products/improvementandextension"
+            path="/services/improvementandextension"
             element={<ImprovementAndExtension />}
           />
           <Route path="investorsrelation" element={<InvestorsRelation />} />
@@ -103,7 +135,7 @@ function App() {
             element={<CorporateGovernance />}
           />
           <Route path="/customercenter/download" element={<Download />} />
-          <Route path="/customercenter/calculator" element={<Calculator />} />
+          <Route path="/customercenter/calculator" element={<Calculator/>} />
           <Route path="/customercenter/faqs" element={<Faqs />} />
           <Route path="/ourpartners/lenders/lenders" element={<Lenders />} />
           <Route

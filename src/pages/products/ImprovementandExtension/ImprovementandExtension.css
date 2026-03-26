@@ -1,35 +1,265 @@
-.improv-grid{
-  max-width: 950px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+/* Pop-up Animation classes */
+.animate-pop-up {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.animate-pop-up.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Stagger delays for grids */
+.improv-feature-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.improv-feature-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.improv-feature-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.improv-feature-card:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.benefit-item:nth-child(even) {
+  transition-delay: 0.2s;
+}
+
+.benefit-item:nth-child(odd) {
+  transition-delay: 0.1s;
+}
+
+.help-card:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+.help-card:nth-child(2) {
+  transition-delay: 0.4s;
+}
+
+.help-card:nth-child(3) {
+  transition-delay: 0.6s;
+}
+
+.improv-faq-item {
+  transition-delay: 0.1s;
+}
+
+.improv-grid {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0 20px;
   gap: 40px;
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
 
-.improv-card{
+.improv-card {
+  width: 100%;
+  max-width: 900px;
   background: #fff;
   border-radius: 22px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
   position: relative;
   transition: 0.4s;
 }
 
-.improv-card:hover{
+.improv-card:hover {
   transform: translateY(-10px);
 }
 
+/* Home Feature Strip */
+.improv-feature-strip {
+  width: 100%;
+  max-width: 1400px;
+  margin: 90px auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid #ddd;
+  background: #fff;
+}
 
-.improv-imagebox{
-  height: 220px;
+.improv-feature-box {
+  padding: 60px 20px;
+  text-align: center;
+  border-right: 1px solid #ddd;
+  transition: 0.3s ease;
+  background: #fff;
+}
+
+.improv-feature-box:last-child {
+  border-right: none;
+}
+
+.improv-feature-box:hover {
+  background: #fdfdfd;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.improv-feature-icon {
+  font-size: 40px;
+  margin-bottom: 18px;
+  color: #7ac142;
+}
+
+.improv-feature-box h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: plum !important;
+}
+
+
+.improv-benefits-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 90px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.improv-benefits-title {
+  font-size: 34px;
+  font-weight: 700;
+  color: plum !important;
+  margin-bottom: 45px;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.improv-benefits-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.improv-benefit-item {
+  background: #ffffff;
+  padding: 24px 30px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #374151;
+  border-left: 5px solid plum;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  min-height: 90px;
+}
+
+.improv-benefit-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  background: #fcfcfc;
+}
+
+/* Help Section */
+.improv-help-section {
+  width: 100%;
+  padding: 100px 20px;
+  background: #fff;
+}
+
+.improv-help-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: plum !important;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.improv-help-subtitle {
+  font-size: 18px;
+  color: #6b7a90;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* Grid */
+.improv-help-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* Cards */
+.improv-help-card {
+  background: #fff;
+  border: 1px solid #e3eaf0;
+  padding: 60px 30px;
+  text-align: center;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.improv-help-card:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  transform: translateY(-6px);
+}
+
+/* Icon */
+.improv-help-icon {
+  font-size: 40px;
+  color: #66b500;
+  margin-bottom: 20px;
+}
+
+/* Text */
+.improv-help-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a2540;
+  margin-bottom: 16px;
+}
+
+.improv-help-card p {
+  font-size: 16px;
+  color: #6b7a90;
+  line-height: 1.6;
+}
+
+.improv-help-green {
+  color: plum;
+  font-size: 22px;
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+.improv-help-mail {
+  color: plum;
+  margin-bottom: 20px;
+}
+
+/* Link */
+.improv-help-link {
+  display: inline-block;
+  margin-top: 25px;
+  color: plum !important;
+  font-weight: 600;
+  border-bottom: 2px solid plum !important;
+  cursor: pointer;
+}
+
+
+.improv-imagebox {
+  height: 360px;
   position: relative;
   overflow: hidden;
 }
 
-.improv-imagebox img{
+.improv-imagebox img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -37,16 +267,16 @@
 
 
 
-.improv-overlay{
+.improv-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(221, 160, 221, 0.28);  
+  background: rgba(221, 160, 221, 0.28);
   opacity: 1;
   transition: 0.5s ease;
 }
 
 
-.improv-card:hover .improv-overlay{
+.improv-card:hover .improv-overlay {
   background: rgba(221, 160, 221, 0.40);
 }
 
@@ -55,10 +285,10 @@
 
 
 /* icon box */
-.improv-icon{
+.improv-icon {
   width: 90px;
   height: 90px;
-  background: rgba(255,255,255,0.95);
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -70,42 +300,44 @@
   left: 50%;
   transform: translate(-50%, -50%);
   transition: 0.7s ease;
-  z-index: 2;   /* keep icon above overlay */
+  z-index: 2;
+  /* keep icon above overlay */
 }
 
 /* Rotate icon only */
-.improv-card:hover .improv-rotate-icon{
+.improv-card:hover .improv-rotate-icon {
   transform: rotate(360deg);
   transition: 0.7s;
 }
 
 
 /* Content */
-.improv-content{
+.improv-content {
   padding: 35px 28px 45px;
 }
 
-.improv-content h2{
+.improv-content h2 {
   font-size: 26px;
   font-weight: 800;
   color: plum;
   margin-bottom: 10px;
 }
 
-.improv-subtitle{
+.improv-subtitle {
   font-size: 16px;
   color: #6b7a90;
   margin-bottom: 20px;
+  text-align: left;
 }
 
 /* Features */
-.improv-features{
+.improv-features {
   list-style: none;
   padding: 0;
   margin-bottom: 25px;
 }
 
-.improv-features li{
+.improv-features li {
   margin-bottom: 10px;
   font-size: 15px;
   color: #425466;
@@ -113,7 +345,7 @@
   padding-left: 22px;
 }
 
-.improv-features li::before{
+.improv-features li::before {
   content: "✔";
   position: absolute;
   left: 0;
@@ -122,15 +354,17 @@
 }
 
 /* Buttons */
-.improv-buttons{
+.improv-buttons {
   display: flex;
   gap: 14px;
-}
-.improv-buttons:hover{
-    color:plum;
+  width: 100%;
 }
 
-.improv-btn-outline{
+.improv-buttons:hover {
+  color: plum;
+}
+
+.improv-btn-outline {
   flex: 1;
   background: transparent;
   border: 2px solid plum;
@@ -140,11 +374,12 @@
   font-weight: 600;
   cursor: pointer;
 }
-.improv-btn-outline:hover{
-    color: plum;
+
+.improv-btn-outline:hover {
+  color: plum;
 }
 
-.improv-loan-btn-solid{
+.improv-loan-btn-solid {
   flex: 1;
   background: plum;
   color: #fff;
@@ -153,30 +388,71 @@
   border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
 
-.improv-bottom-strip{
-  height:6px;
-  width:100%;
-  background:plum;
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
-.improv-text-section{
+
+.slide-in-text {
+  overflow: hidden;
+}
+
+.improv-card.visible .slide-in-text>* {
+  animation: slideIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 0.3s;
+}
+
+@keyframes fillStrip {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.improv-bottom-strip {
+  height: 6px;
+  width: 0%;
+  background: plum;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.improv-card.visible .improv-bottom-strip {
+  animation: fillStrip 3s ease-in-out forwards;
+}
+
+.improv-text-section {
   max-width: 1000px;
   margin: 90px auto 60px;
   text-align: center;
   padding: 0 20px;
 }
 
-.improv-main-title{
+.improv-main-title {
   font-size: 42px;
   font-weight: 800;
-  color: plum;   
+  color: plum;
   margin-bottom: 16px;
 }
 
 
-.improv-sub-heading{
+.improv-sub-heading {
   font-size: 26px;
   font-weight: 700;
   color: plum;
@@ -184,7 +460,7 @@
 }
 
 
-.improv-highlight{
+.improv-highlight {
   font-size: 20px;
   font-weight: 600;
   color: #2f3a4f;
@@ -192,7 +468,7 @@
 }
 
 
-.improv-description{
+.improv-description {
   font-size: 17px;
   line-height: 1.8;
   color: #5f6c80;
@@ -202,113 +478,122 @@
 
 
 
-.improv-features-section{
+/* Feature Strip Section */
+.improv-feature-strip {
   width: 100%;
-  padding: 60px 40px;
-  background: #fff;
-}
-
-.improv-features-grid{
+  max-width: 1400px;
+  margin: 90px auto 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border: 1px solid #e5e5e5;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
 }
 
-.improv-feature-card{
-  padding: 50px 30px;
+.improv-feature-box {
+  padding: 60px 20px;
   text-align: center;
-  border-right: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e7eb;
   transition: all 0.3s ease;
+  background: #ffffff;
 }
 
-.improv-feature-card:last-child{
+.improv-feature-box:last-child {
   border-right: none;
 }
 
-.improv-feature-card:hover{
-  background: #f9fefe;
-  transform: translateY(-6px);
+.improv-feature-box:hover {
+  background: #f9fafb;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
-.improv-feature-icon{
-  font-size: 42px;
-  color: #6bbd00;   
-  margin-bottom: 18px;
+.improv-feature-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #6bb300;
 }
 
-.improv-feature-card h3{
-  font-size: 22px;
+.improv-feature-box h3 {
+  font-size: 20px;
   font-weight: 600;
-  color: plum;
+  color: plum !important;
+  margin: 0;
 }
 
-
-@media(max-width: 1024px){
-  .improv-features-grid{
+/* Responsive Strip */
+@media (max-width: 1024px) {
+  .improv-feature-strip {
     grid-template-columns: repeat(2, 1fr);
   }
+  .improv-feature-box:nth-child(2) {
+    border-right: none;
+  }
+  .improv-feature-box:nth-child(1),
+  .improv-feature-box:nth-child(2) {
+    border-bottom: 1px solid #e5e7eb;
+  }
 }
 
-@media(max-width: 600px){
-  .improv-features-grid{
+@media (max-width: 600px) {
+  .improv-feature-strip {
     grid-template-columns: 1fr;
   }
-
-  .improv-feature-card{
+  .improv-feature-box {
     border-right: none;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 40px 20px;
   }
-
-  .improv-feature-card:last-child{
+  .improv-feature-box:last-child {
     border-bottom: none;
   }
 }
 
 
-.improv-keyfeatures-section{
+.improv-keyfeatures-section {
   width: 100%;
   padding: 80px 8%;
   background: #f9fefe;
 }
 
-.improv-keyfeatures-title{
+.improv-keyfeatures-title {
   font-size: 38px;
   font-weight: 700;
   margin-bottom: 35px;
-  color: plum;   
+  color: plum;
   position: relative;
 }
 
 
 
-.improv-keyfeatures-content{
+.improv-keyfeatures-content {
   max-width: 1100px;
   font-size: 17px;
   line-height: 1.9;
   color: #2f3e46;
 }
 
-.improv-keyfeatures-content p{
+.improv-keyfeatures-content p {
   margin-bottom: 18px;
 }
 
-.improv-contact-line{
+.improv-contact-line {
   font-weight: 600;
   color: #1f3b64;
   margin-top: 25px;
 }
-.improv-quote-sec{
+
+.improv-quote-sec {
   width: 100%;
   min-height: 100vh;
   display: flex;
-  justify-content: center;   
-  
-  align-items: center;       
+  justify-content: center;
+
+  align-items: center;
   background: #fff;
 }
 
 
-.improv-quote-con{
+.improv-quote-con {
   max-width: 1100px;
   width: 100%;
   margin: auto;
@@ -317,7 +602,7 @@
 
 
 
-.improv-quote-ti{
+.improv-quote-ti {
   font-size: 42px;
   font-weight: 700;
   color: plum;
@@ -325,20 +610,20 @@
 }
 
 
-.improv-quote-subti{
+.improv-quote-subti {
   font-size: 18px;
   color: #6b7c93;
   margin-bottom: 50px;
 }
 
 
-.improv-form{
+.improv-form {
   width: 100%;
 }
 
 
 
-.improv-form-grid{
+.improv-form-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px 40px;
@@ -346,7 +631,7 @@
 
 
 
-.improv-form-grid input{
+.improv-form-grid input {
   width: 100%;
   padding: 18px 20px;
   font-size: 16px;
@@ -359,13 +644,13 @@
 
 
 
-.improv-form-grid input:focus{
+.improv-form-grid input:focus {
   border-color: plum;
 }
 
 
 
-.improv-quote-button{
+.improv-quote-button {
   grid-column: 2 / 3;
   background: plum;
   color: #fff;
@@ -381,37 +666,38 @@
 
 
 
-.improv-quote-button:hover{
+.improv-quote-button:hover {
   background: #c62828;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
-.improv-support-section{
+
+.improv-support-section {
   width: 100%;
   padding: 100px 20px;
   background: #fff;
 }
 
-.improv-support-header{
+.improv-support-header {
   text-align: center;
   margin-bottom: 60px;
 }
 
-.improv-support-header h2{
+.improv-support-header h2 {
   font-size: 42px;
   font-weight: 800;
   color: plum;
   margin-bottom: 12px;
 }
 
-.improv-support-header p{
+.improv-support-header p {
   font-size: 18px;
   color: #6b7a90;
 }
 
 
 
-.improv-support-grid{
+.improv-support-grid {
   max-width: 1200px;
   margin: auto;
   display: grid;
@@ -421,7 +707,7 @@
 
 
 
-.improv-support-card{
+.improv-support-card {
   background: #fff;
   border: 1px solid #e3eaf0;
   padding: 60px 30px;
@@ -430,45 +716,45 @@
   transition: 0.3s;
 }
 
-.improv-support-card:hover{
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+.improv-support-card:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
   transform: translateY(-6px);
 }
 
-.improv-support-icon{
+.improv-support-icon {
   font-size: 40px;
   color: #66b500;
   margin-bottom: 20px;
 }
 
 
-.improv-support-card h3{
+.improv-support-card h3 {
   font-size: 18px;
   font-weight: 700;
   color: plum;
   margin-bottom: 16px;
 }
 
-.improv-support-card p{
+.improv-support-card p {
   font-size: 16px;
   color: #0a2540;
   line-height: 1.6;
 }
 
-.improv-support-phone{
-  color:black ;
+.improv-support-phone {
+  color: black;
   font-size: 22px;
   margin: 10px 0;
   font-weight: 700;
 }
 
-.improv-support-mail{
+.improv-support-mail {
   color: plum;
   margin-bottom: 20px;
 }
 
 
-.improv-support-link{
+.improv-support-link {
   display: inline-block;
   margin-top: 25px;
   color: plum;
@@ -478,94 +764,94 @@
 }
 
 
-.improv-faq-section{
+.improv-faq-section {
   width: 100%;
   padding: 80px 8%;
   background: #ffffff;
 }
 
-.improv-faq-title{
+.improv-faq-title {
   font-size: 38px;
   font-weight: 700;
-  color: plum;   
+  color: plum;
   margin-bottom: 40px;
 }
 
-.improv-faq-content{
+.improv-faq-content {
   max-width: 1100px;
 }
 
-.improv-faq-item{
+.improv-faq-item {
   margin-bottom: 28px;
   padding-bottom: 18px;
   border-bottom: 1px solid #e8f3f3;
 }
 
-.improv-faq-item h4{
+.improv-faq-item h4 {
   font-size: 20px;
   font-weight: 600;
   color: plum;
   margin-bottom: 10px;
 }
 
-.improv-faq-item p{
+.improv-faq-item p {
   font-size: 16.5px;
   line-height: 1.8;
   color: #2f3e46;
 }
 
 
-@media(max-width: 768px){
-  .improv-faq-section{
+@media(max-width: 768px) {
+  .improv-faq-section {
     padding: 60px 6%;
   }
 
-  .improv-faq-title{
+  .improv-faq-title {
     font-size: 30px;
   }
 
-  .improv-faq-item h4{
+  .improv-faq-item h4 {
     font-size: 18px;
   }
 
-  .improv-faq-item p{
+  .improv-faq-item p {
     font-size: 15.5px;
   }
 }
 
 
-@media(max-width: 900px){
-  .improv-form-grid{
+@media(max-width: 900px) {
+  .improv-form-grid {
     grid-template-columns: 1fr;
   }
 
-  .improv-quote-button{
+  .improv-quote-button {
     grid-column: 1 / 2;
   }
 }
 
-@media(max-width: 600px){
-  .improv-quote-title{
+@media(max-width: 600px) {
+  .improv-quote-title {
     font-size: 32px;
   }
 
-  .improv-quote-subti{
+  .improv-quote-subti {
     font-size: 16px;
   }
 }
 
 
 
-@media(max-width: 768px){
-  .improv-keyfeatures-section{
+@media(max-width: 768px) {
+  .improv-keyfeatures-section {
     padding: 60px 6%;
   }
 
-  .improv-keyfeatures-title{
+  .improv-keyfeatures-title {
     font-size: 30px;
   }
 
-  .improv-keyfeatures-content{
+  .improv-keyfeatures-content {
     font-size: 16px;
   }
 }

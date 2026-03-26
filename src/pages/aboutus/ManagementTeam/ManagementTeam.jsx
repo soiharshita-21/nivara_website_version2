@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./ManagementTeam.css"; 
 
 
@@ -55,24 +55,44 @@ const managementTeam = [
 ];
 
 const ManagementTeam = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    const elements = document.querySelectorAll(".animate-pop-up");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
-    <section className="management-section">
-      <div className="management-header">
-        <span className="management-heading">Management Team</span>
-        <h2>Our Management Leadership</h2>
+    <section className="management-section animate-pop-up">
+      <div className="management-header animate-pop-up">
+        <span className="management-heading animate-pop-up">Management Team</span>
+        <h2 className="animate-pop-up">Our Management Leadership</h2>
         <p>Experienced professionals managing operations, governance, and business excellence</p>
       </div>
 
       <div className="management-grid">
         {managementTeam.map((item, index) => (
-          <div className={`management-card ${item.color}`} key={index}>
+          <div className={`management-card ${item.color} animate-pop-up`} style={{transitionDelay: `${0.1 + index * 0.1}s`}} key={index}>
             <div className="management-image">
               <img src={item.img} alt={item.name} />
             </div>
 
-            <div className="management-content">
+            <div className="management-content animate-pop-up">
               <span className="management-role">{item.role}</span>
-              <h3>{item.name}</h3>
+              <h3 className="animate-pop-up">{item.name}</h3>
               <p>{item.desc}</p>
             </div>
           </div>

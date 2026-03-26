@@ -49,22 +49,22 @@ const PressRelease = () => {
     <div className="press-page">
 
       {/* Banner */}
-      <div className="press-banner">
+      <div className="press-banner animate-pop-up">
         <img src={home2} alt="Press Release" />
-        <h1 className="press-title">Press Release</h1>
+        <h1 className="press-title animate-pop-up">Press Release</h1>
       </div>
 
       {/* Cards */}
-      <div className="press-container">
+      <div className="press-container animate-pop-up">
         {pressData.map((item, index) => (
-          <div className="press-card" key={index}>
+          <div className="press-card animate-pop-up" key={index}>
 
             <div className="press-img">
               <img src={item.img} alt={item.title} />
             </div>
 
-            <div className="press-content">
-              <h3>{item.title}</h3>
+            <div className="press-content animate-pop-up">
+              <h3 className="animate-pop-up">{item.title}</h3>
               <span className="press-meta">{item.meta}</span>
               <p>{item.desc}</p>
               <button className="press-read">Read More</button>

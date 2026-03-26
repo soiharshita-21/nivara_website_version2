@@ -7,15 +7,15 @@ const Download = () => {
     <div className="download-page">
 
       {/* Banner */}
-      <div className="download-banner">
+      <div className="download-banner animate-pop-up">
         <img src={home3} alt="Download" />
         <div className="download-overlay">
-          <h1>Download</h1>
+          <h1 className="animate-pop-up">Download</h1>
         </div>
       </div>
 
       {/* Content */}
-      <div className="download-content">
+      <div className="download-content animate-pop-up">
 
         <div className="download-links">
           <a href="/files/application-form.pdf" target="_blank">Application Form</a>

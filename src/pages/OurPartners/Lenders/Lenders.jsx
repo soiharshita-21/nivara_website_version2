@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Lenders.css";
 import home3 from "../../../assets/images/home3.jpeg"; 
 
@@ -32,22 +32,42 @@ const lenders = [
 ];
 
 const Lenders = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    const elements = document.querySelectorAll(".animate-pop-up");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
     <div className="lenders-page">
 
       {/* Banner */}
-      <div className="lenders-banner">
+      <div className="lenders-banner animate-pop-up">
         <img src={home3} alt="Lenders Banner" />
         <div className="lenders-overlay">
-          <h1>Lenders</h1>
+          <h1 className="animate-pop-up">Lenders</h1>
         </div>
       </div>
 
       {/* Grid */}
-      <div className="lenders-container">
+      <div className="lenders-container animate-pop-up">
         <div className="lenders-grid">
           {lenders.map((logo, index) => (
-            <div className="lender-card" key={index}>
+            <div className="lender-card animate-pop-up" key={index}>
               <img src={logo} alt={`lender-${index}`} />
             </div>
           ))}

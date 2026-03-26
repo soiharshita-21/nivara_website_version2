@@ -37,22 +37,22 @@ const Blog = () => {
     <div className="blog-page">
 
       {/* Banner */}
-      <div className="blog-banner">
+      <div className="blog-banner animate-pop-up">
         <img src={home2} alt="Blog" />
-        <h1 className="blog-title">Blog</h1>
+        <h1 className="blog-title animate-pop-up">Blog</h1>
       </div>
 
       {/* Blog Cards */}
-      <div className="blog-container">
+      <div className="blog-container animate-pop-up">
         {blogs.map((item, index) => (
-          <div className="blog-card" key={index}>
+          <div className="blog-card animate-pop-up" key={index}>
 
             <div className="blog-img">
               <img src={item.img} alt={item.title} />
             </div>
 
-            <div className="blog-content">
-              <h3>{item.title}</h3>
+            <div className="blog-content animate-pop-up">
+              <h3 className="animate-pop-up">{item.title}</h3>
 
               <div className="blog-meta">
                 <span>{item.date}</span>

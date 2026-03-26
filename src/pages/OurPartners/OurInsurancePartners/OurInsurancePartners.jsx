@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import home3 from "../../../assets/images/home3.jpeg";
 import "./OurInsurancePartners.css";
 
@@ -17,19 +17,39 @@ const partners = [
 ];
 
 const OurInsurancePartners = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    const elements = document.querySelectorAll(".animate-pop-up");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
     <div className="insurance-page">
 
       {/* Banner */}
-      <div className="insurance-banner">
+      <div className="insurance-banner animate-pop-up">
         <img src={home3} alt="Our Insurance Partners" />
-        <h1 className="banner-title">Our Insurance Partners</h1>
+        <h1 className="banner-title animate-pop-up">Our Insurance Partners</h1>
       </div>
 
       {/* Cards */}
-      <div className="partners-section">
+      <div className="partners-section animate-pop-up">
         {partners.map((img, index) => (
-          <div className="partner-card" key={index}>
+          <div className="partner-card animate-pop-up" key={index}>
             <img src={img} alt={`partner-${index}`} />
           </div>
         ))}

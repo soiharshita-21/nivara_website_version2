@@ -1,20 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaHome } from "react-icons/fa";
-import home5 from "../../../assets/images/home5.jpg";
+import pol from "../../../assets/images/pol.jpg";
 import "./RefinanceLoan.css";
 import { useNavigate } from "react-router-dom";
 
 const RefinanceLoan = () => {
   const navigate = useNavigate();
-  const cards = [1, 2, 3];
+  const cards = [1];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    const elements = document.querySelectorAll(".animate-pop-up");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
 
   return (
     <section className="refinance-section">
       <div className="refinance-grid">
         {cards.map((item, index) => (
-          <div className="refinance-card" key={index}>
+          <div className="refinance-card animate-pop-up" key={index}>
             <div className="refinance-imagebox">
-              <img src={home5} alt="Refinance Loan" />
+              <img src={pol} alt="Refinance Loan" />
 
               {/* transparent color overlay */}
               <div className="refinance-overlay"></div>
@@ -24,18 +44,20 @@ const RefinanceLoan = () => {
               </div>
             </div>
 
-            <div className="refinance-content">
-              <h2>Refinance Loan</h2>
+            <div className="refinance-content animate-pop-up">
+              <h2 className="animate-pop-up">Refinance Loan</h2>
 
               <p className="refinance-subtitle">
                 Renovate or extend your existing home
               </p>
 
-              <ul className="refinance-features">
-                <li>Quick approval</li>
-                <li>Minimal documentation</li>
-                <li>Attractive rates</li>
-              </ul>
+              <div className="slide-in-text">
+                <ul className="refinance-features">
+                  <li>Quick approval</li>
+                  <li>Minimal documentation</li>
+                  <li>Attractive rates</li>
+                </ul>
+              </div>
 
               <div className="refinance-buttons">
                 <button className="refinance-btn-outline">Learn More</button>
@@ -53,10 +75,10 @@ const RefinanceLoan = () => {
         ))}
       </div>
 
-      <div className="refinance-text-section">
-        <h1 className="refinance-main-title">Refinance Loan</h1>
+      <div className="refinance-text-section animate-pop-up">
+        <h1 className="refinance-main-title animate-pop-up">Refinance Loan</h1>
 
-        <h2 className="refinance-sub-heading">
+        <h2 className="refinance-sub-heading animate-pop-up">
           Taking out a New Loan To Pay off an old onen
         </h2>
 
@@ -75,74 +97,71 @@ const RefinanceLoan = () => {
         </p>
       </div>
 
-      <section className="refinance-features-section">
-        <div className="refinance-features-grid">
-          <div className="refinance-feature-card">
-            <div className="refinance-feature-icon">📄</div>
-            <h3>Easy Loan Approvals</h3>
-          </div>
-
-          <div className="refinance-feature-card">
-            <div className="refinance-feature-icon">💰</div>
-            <h3>Lowest Possible Prices</h3>
-          </div>
-
-          <div className="refinance-feature-card">
-            <div className="refinance-feature-icon">💼</div>
-            <h3>Hassle free</h3>
-          </div>
-
-          <div className="refinance-feature-card">
-            <div className="refinance-feature-icon">✅</div>
-            <h3>Secure Loan Process</h3>
-          </div>
+      {/* Features Strip Section */}
+      <div className="refinance-feature-strip">
+        <div className="refinance-feature-box animate-pop-up">
+          <div className="refinance-feature-icon">📄</div>
+          <h3 className="animate-pop-up">Easy Loan Approvals</h3>
         </div>
-      </section>
-      <section className="refinance-keyfeatures-section">
-        <h2 className="refinance-keyfeatures-title">
+
+        <div className="refinance-feature-box animate-pop-up">
+          <div className="refinance-feature-icon">💰</div>
+          <h3 className="animate-pop-up">Lowest Possible Prices</h3>
+        </div>
+
+        <div className="refinance-feature-box animate-pop-up">
+          <div className="refinance-feature-icon">💼</div>
+          <h3 className="animate-pop-up">Hassle free</h3>
+        </div>
+
+        <div className="refinance-feature-box animate-pop-up">
+          <div className="refinance-feature-icon">✅</div>
+          <h3 className="animate-pop-up">Secure Loan Process</h3>
+        </div>
+      </div>
+      {/* Features & Benefits Section */}
+      <div className="refinance-benefits-section animate-pop-up">
+        <h2 className="refinance-benefits-title animate-pop-up">
           Key Features of Refinance Loan
         </h2>
 
-        <div className="refinance-keyfeatures-content">
-          <p>
-            One of the reasons why someone may look to refinance a home loan is
-            to reduce the loan tenure. The basic advantage of reducing the loan
-            tenure is that there are savings on interest costs.
-          </p>
+        <div className="refinance-benefits-list">
+          <div className="refinance-benefit-item animate-pop-up">
+            Reduce the loan tenure to save on interest costs.
+          </div>
 
-          <p>
-            If you’re dissatisfied with your current lender’s customer service
-            or terms, refinancing gives you the opportunity to switch to a more
-            favorable lender. Not only does this move ensure better service but
-            also helps maximize your savings.
-          </p>
+          <div className="refinance-benefit-item animate-pop-up">
+            Opportunity to switch to a more favorable lender.
+          </div>
 
-          <p>
-            It enables you to access additional funds based on the equity you’ve
-            built in your property. By refinancing with a top-up loan, you can
-            address financial needs like home improvements, education expenses,
-            or debt consolidation without the hassle of applying for a separate
-            loan.
-          </p>
+          <div className="refinance-benefit-item animate-pop-up">
+            Access additional funds based on property equity with a top-up loan.
+          </div>
 
-          <p>
-            We have a wide network and are available in rural, semi-urban, and
-            urban areas across locations.
-          </p>
+          <div className="refinance-benefit-item animate-pop-up">
+            Wide network available in rural, semi-urban, and urban areas.
+          </div>
 
-          <p>Apply with minimal documents, save time and effort..</p>
+          <div className="refinance-benefit-item animate-pop-up">
+            Apply with minimal documents, save time and effort.
+          </div>
 
-          <p>
-            Refinancing your home can also shorten the length of your loan,
-            allowing you to pay down your debt and build up equity faster. There
-            are many reasons you might want to pay off your home sooner. Perhaps
-            you want to purchase a rental property or reduce your overall debt.
-          </p>
+          <div className="refinance-benefit-item animate-pop-up">
+            Shorten the length of your loan and build up equity faster.
+          </div>
+
+          <div className="refinance-benefit-item animate-pop-up">
+            Address financial needs like home improvements or education.
+          </div>
+
+          <div className="refinance-benefit-item animate-pop-up">
+            Seamless transition to NHFL with doorstep service.
+          </div>
         </div>
-      </section>
+      </div>
 
       <section className="refinance-quote-sec">
-        <div className="refinance-quote-con">
+        <div className="refinance-quote-con animate-pop-up">
           <h2 className="refinance-quote-ti">Request Quote Now</h2>
           <p className="refinance-quote-subti">
             Easy to apply for a loan with us, Once you have complete this form.
@@ -168,46 +187,47 @@ const RefinanceLoan = () => {
           </form>
         </div>
       </section>
-      <section className="refinance-support-section">
-        <div className="refinance-support-header">
-          <h2>We are Here to Help You</h2>
-          <p>Our mission is to deliver reliable, latest news and opinions.</p>
-        </div>
+      {/* Help Section */}
+      <div className="refinance-help-section animate-pop-up">
+        <h2 className="refinance-help-title animate-pop-up">We are Here to Help You</h2>
+        <p className="refinance-help-subtitle animate-pop-up">
+          Our mission is to deliver reliable, latest news and opinions.
+        </p>
 
-        <div className="refinance-support-grid">
+        <div className="refinance-help-grid">
           {/* Card 1 */}
-          <div className="refinance-support-card">
-            <div className="refinance-support-icon">📄</div>
-            <h3>APPLY FOR LOAN</h3>
+          <div className="refinance-help-card animate-pop-up">
+            <div className="refinance-help-icon">🗓️</div>
+            <h3 className="animate-pop-up">APPLY FOR LOAN</h3>
             <p>Looking to buy a home loan? then apply for loan now.</p>
-            <span className="refinance-support-link">Get Appointment</span>
+            <span className="refinance-help-link">Get Appointment</span>
           </div>
 
           {/* Card 2 */}
-          <div className="refinance-support-card">
-            <div className="refinance-support-icon">📞</div>
-            <h3>CALL US AT</h3>
-            <h4 className="refinance-support-phone">1800-309-1516</h4>
-            <p className="refinance-support-mail">contact@nivarahousing.com</p>
-            <span className="refinance-support-link">Contact Us</span>
+          <div className="refinance-help-card animate-pop-up">
+            <div className="refinance-help-icon">📞</div>
+            <h3 className="animate-pop-up">CALL US AT</h3>
+            <p className="refinance-help-green">1800-309-1516</p>
+            <p className="refinance-help-green">contact@nivarahousing.com</p>
+            <span className="refinance-help-link">Contact Us</span>
           </div>
 
           {/* Card 3 */}
-          <div className="refinance-support-card">
-            <div className="refinance-support-icon">👥</div>
-            <h3>TALK TO ADVISOR</h3>
-            <h4 className="refinance-support-phone">+91 80 26552822</h4>
+          <div className="refinance-help-card animate-pop-up">
+            <div className="refinance-help-icon">👥</div>
+            <h3 className="animate-pop-up">TALK TO ADVISOR</h3>
+            <p className="refinance-help-green">+91 80 26552822</p>
             <p>Need to loan advise?</p>
-            <span className="refinance-support-link">Meet The Advisor</span>
+            <span className="refinance-help-link">Meet The Advisor</span>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section className="refinance-faq-section">
-        <h2 className="refinance-faq-title">Frequently Asked Questions</h2>
+      <section className="refinance-faq-section animate-pop-up">
+        <h2 className="refinance-faq-title animate-pop-up">Frequently Asked Questions</h2>
 
-        <div className="refinance-faq-content">
-          <div className="refinance-faq-item">
+        <div className="refinance-faq-content animate-pop-up">
+          <div className="refinance-faq-item animate-pop-up">
             <h4>What is refinancing a home loan?</h4>
             <p>
               Refinancing your home loan is nothing but a home loan balance
@@ -216,7 +236,7 @@ const RefinanceLoan = () => {
             </p>
           </div>
 
-          <div className="refinance-faq-item">
+          <div className="refinance-faq-item animate-pop-up">
             <h4>When can I refinance my house?</h4>
             <p>
               You can refinance your house when you believe it makes financial
@@ -225,7 +245,7 @@ const RefinanceLoan = () => {
             </p>
           </div>
 
-          <div className="refinance-faq-item">
+          <div className="refinance-faq-item animate-pop-up">
             <h4>What do the best home loan and refinancing deals offer?</h4>
             <p>
               ● Lower Interest Rates ● Reduced Monthly Payments ● Shorter Loan
@@ -233,7 +253,7 @@ const RefinanceLoan = () => {
             </p>
           </div>
 
-          <div className="refinance-faq-item">
+          <div className="refinance-faq-item animate-pop-up">
             <h4>How many times can you refinance a Home loan?</h4>
             <p>
               There is no strict limit on how many times you can refinance a
@@ -241,7 +261,7 @@ const RefinanceLoan = () => {
               and benefits for each refinancing
             </p>
           </div>
-          <div className="refinance-faq-item">
+          <div className="refinance-faq-item animate-pop-up">
             <h4>Is it beneficial to refinance a home loan?</h4>
             <p>
               Yes, refinancing a home loan can be highly beneficial. It offers
@@ -251,7 +271,7 @@ const RefinanceLoan = () => {
             </p>
           </div>
 
-          <div className="refinance-faq-item">
+          <div className="refinance-faq-item animate-pop-up">
             <h4>
               What is the correlation between home loan interest rates and
               refinancing?

@@ -5,7 +5,7 @@ import "./InterestRate.css";
 const InterestRate = () => {
   return (
     <div className="interest-rate-page">
-      <h1 className="interest-title">Interest Rate</h1>
+      <h1 className="interest-title animate-pop-up">Interest Rate</h1>
 
       <a
         href="/files/disclosure-interest-rate.pdf"   // your pdf path

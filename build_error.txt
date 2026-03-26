@@ -1,0 +1,76 @@
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+
+/images/footer-texture.png referenced in /images/footer-texture.png didn't resolve at build time, it will remain unchanged to be resolved at runtime
+[32m✓[39m 2220 modules transformed.
+[33m[esbuild css minify]
+▲ [WARNING] Unexpected "/" [css-syntax-error]
+
+    <stdin>:10907:1:
+      10907 │ */ input[type="range"]::-webkit-slider-thumb {
+            ╵  ^
+
+[39m
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                       [39m[1m[2m     0.76 kB[22m[1m[22m[2m │ gzip:   0.43 kB[22m
+[2mdist/[22m[32massets/utkarsh-DSoAKWoX.png      [39m[1m[2m     4.38 kB[22m[1m[22m
+[2mdist/[22m[32massets/chola-BNXMbNze.png        [39m[1m[2m     4.94 kB[22m[1m[22m
+[2mdist/[22m[32massets/nhb-D-XytbSn.png          [39m[1m[2m     5.68 kB[22m[1m[22m
+[2mdist/[22m[32massets/icici-BMRC_tt_.jpg        [39m[1m[2m     5.90 kB[22m[1m[22m
+[2mdist/[22m[32massets/bandhan-BkA6gpWf.jpg      [39m[1m[2m     5.98 kB[22m[1m[22m
+[2mdist/[22m[32massets/iob-CDeM5igX.png          [39m[1m[2m     6.08 kB[22m[1m[22m
+[2mdist/[22m[32massets/karnataka-CM2r2Ymy.png    [39m[1m[2m     6.71 kB[22m[1m[22m
+[2mdist/[22m[32massets/federal-Bfs8dafR.jpg      [39m[1m[2m     9.73 kB[22m[1m[22m
+[2mdist/[22m[32massets/mas-bQizfT-G.webp         [39m[1m[2m    13.15 kB[22m[1m[22m
+[2mdist/[22m[32massets/heroho-BuVpCgzk.png       [39m[1m[2m    15.95 kB[22m[1m[22m
+[2mdist/[22m[32massets/icicilam-BIg_iyaW.png     [39m[1m[2m    24.73 kB[22m[1m[22m
+[2mdist/[22m[32massets/pramerica-BgFCHKJz.png    [39m[1m[2m    25.83 kB[22m[1m[22m
+[2mdist/[22m[32massets/csb-4VeTK-Mb.png          [39m[1m[2m    37.46 kB[22m[1m[22m
+[2mdist/[22m[32massets/au-mod8kBXZ.png           [39m[1m[2m    42.20 kB[22m[1m[22m
+[2mdist/[22m[32massets/adityabirla-DJVrTgJb.png  [39m[1m[2m    57.17 kB[22m[1m[22m
+[2mdist/[22m[32massets/isoBadge-Ds59cOxm.png     [39m[1m[2m    88.98 kB[22m[1m[22m
+[2mdist/[22m[32massets/yes-B7l7U-94.png          [39m[1m[2m   105.35 kB[22m[1m[22m
+[2mdist/[22m[32massets/vision-DB-d4HmB.png       [39m[1m[2m   156.01 kB[22m[1m[22m
+[2mdist/[22m[32massets/herofin-bNdRMwQo.png      [39m[1m[2m   163.77 kB[22m[1m[22m
+[2mdist/[22m[32massets/abhome-B8u7jVks.jpg       [39m[1m[2m   194.14 kB[22m[1m[22m
+[2mdist/[22m[32massets/home3-Bh30hQ85.jpeg       [39m[1m[2m   264.81 kB[22m[1m[22m
+[2mdist/[22m[32massets/home2-jOOpIDtl.png        [39m[1m[2m   664.81 kB[22m[1m[22m
+[2mdist/[22m[32massets/ban2--f8zlDRN.png         [39m[1m[2m   667.04 kB[22m[1m[22m
+[2mdist/[22m[32massets/ban3-DJjXZvIt.png         [39m[1m[2m   690.38 kB[22m[1m[22m
+[2mdist/[22m[32massets/cs-B8K_RepI.jpg           [39m[1m[2m   777.04 kB[22m[1m[22m
+[2mdist/[22m[32massets/hr-Cn0Qa1Wp.jpg           [39m[1m[2m   919.55 kB[22m[1m[22m
+[2mdist/[22m[32massets/logo-Cr8leaAj.png         [39m[1m[2m 1,156.17 kB[22m[1m[22m
+[2mdist/[22m[32massets/cre-CYmSSRKZ.jpg          [39m[1m[2m 1,161.15 kB[22m[1m[22m
+[2mdist/[22m[32massets/exe-D_L7oidV.jpg          [39m[1m[2m 1,245.35 kB[22m[1m[22m
+[2mdist/[22m[32massets/user1-B9FCuPDd.jpg        [39m[1m[2m 1,503.48 kB[22m[1m[22m
+[2mdist/[22m[32massets/slide6-Cx2hx__L.jpg       [39m[1m[2m 1,700.36 kB[22m[1m[22m
+[2mdist/[22m[32massets/user2-DRsHkIEg.jpg        [39m[1m[2m 1,813.27 kB[22m[1m[22m
+[2mdist/[22m[32massets/cus-q5HXfnJs.jpg          [39m[1m[2m 2,117.98 kB[22m[1m[22m
+[2mdist/[22m[32massets/slide3-CatdMoU0.jpg       [39m[1m[2m 2,136.63 kB[22m[1m[22m
+[2mdist/[22m[32massets/slide4-cZlNcJJt.jpg       [39m[1m[2m 2,198.69 kB[22m[1m[22m
+[2mdist/[22m[32massets/slide5-CWsFLDXW.jpeg      [39m[1m[2m 2,421.64 kB[22m[1m[22m
+[2mdist/[22m[32massets/slide2-BM1uOStE.jpg       [39m[1m[2m 2,587.77 kB[22m[1m[22m
+[2mdist/[22m[32massets/user3-S6vz6Jtj.jpg        [39m[1m[2m 2,933.24 kB[22m[1m[22m
+[2mdist/[22m[32massets/map-BF1VJWWu.jpg          [39m[1m[2m 3,487.28 kB[22m[1m[22m
+[2mdist/[22m[32massets/pri-BUL9K_rl.jpg          [39m[1m[2m 4,703.82 kB[22m[1m[22m
+[2mdist/[22m[32massets/credit-C1mseMQY.jpg       [39m[1m[2m 4,941.65 kB[22m[1m[22m
+[2mdist/[22m[32massets/home-h6jobC3r.jpg         [39m[1m[2m 5,550.53 kB[22m[1m[22m
+[2mdist/[22m[32massets/legal-BsBqmZqu.jpg        [39m[1m[2m 6,127.70 kB[22m[1m[22m
+[2mdist/[22m[32massets/hum-Bh62on5Z.jpg          [39m[1m[2m 7,373.25 kB[22m[1m[22m
+[2mdist/[22m[32massets/collections-CWA1jvHH.jpg  [39m[1m[2m 7,383.21 kB[22m[1m[22m
+[2mdist/[22m[32massets/abhome2-hnklCWx0.jpg      [39m[1m[2m 7,681.62 kB[22m[1m[22m
+[2mdist/[22m[32massets/fin-DBdVBdD9.jpg          [39m[1m[2m 8,922.79 kB[22m[1m[22m
+[2mdist/[22m[32massets/slide1-CkKkM8bX.jpg       [39m[1m[2m11,055.22 kB[22m[1m[22m
+[2mdist/[22m[32massets/inv-CCqC3ZR4.jpg          [39m[1m[2m11,898.11 kB[22m[1m[22m
+[2mdist/[22m[32massets/op-Dg4jJtdi.jpg           [39m[1m[2m13,058.71 kB[22m[1m[22m
+[2mdist/[22m[32massets/cbo-DaeGaHaW.jpg          [39m[1m[2m18,607.76 kB[22m[1m[22m
+[2mdist/[22m[32massets/pol-CpvAuO4r.jpg          [39m[1m[2m23,485.82 kB[22m[1m[22m
+[2mdist/[22m[35massets/index-CpeP7BjE.css        [39m[1m[2m   350.94 kB[22m[1m[22m[2m │ gzip:  49.92 kB[22m
+[2mdist/[22m[36massets/index-rq1eDrti.js         [39m[1m[33m 2,393.24 kB[39m[22m[2m │ gzip: 848.14 kB[22m
+[33m
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+[32m✓ built in 7.62s[39m

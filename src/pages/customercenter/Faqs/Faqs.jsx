@@ -71,9 +71,9 @@ function Faqs() {
         <span className="active">FAQs</span>
       </div>
 
-      <h1 className="faq-title">FAQs</h1>
+      <h1 className="faq-title animate-pop-up">FAQs</h1>
 
-      <div className="faq-container">
+      <div className="faq-container animate-pop-up">
         {faqsData.map((item, index) => (
           <div
             key={index}

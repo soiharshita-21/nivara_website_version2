@@ -6,8 +6,8 @@ const LoanApplyForm = () => {
       
 
       <form className="loan-form">
-          <h2 className="form-title"> Personal Information</h2>
-        <div className="row">
+          <h2 className="form-title animate-pop-up"> Personal Information</h2>
+        <div className="row animate-pop-up">
           <div>
             <label>First name</label>
             <input type="text" />
@@ -18,7 +18,7 @@ const LoanApplyForm = () => {
           </div>
         </div>
 
-        <div className="row">
+        <div className="row animate-pop-up">
           <div>
             <label>Your email</label>
             <input type="email" />
@@ -29,7 +29,7 @@ const LoanApplyForm = () => {
           </div>
         </div>
 
-        <div className="row">
+        <div className="row animate-pop-up">
           <div>
             <label>State</label>
             <input type="text" />
@@ -40,7 +40,7 @@ const LoanApplyForm = () => {
           </div>
         </div>
 
-        <div className="row">
+        <div className="row animate-pop-up">
           <div>
             <label>City</label>
             <input type="text" />
@@ -51,7 +51,7 @@ const LoanApplyForm = () => {
           </div>
         </div>
 
-        <div className="row">
+        <div className="row animate-pop-up">
           <div>
             <label>Loan for</label>
             <input type="text" value="Home Loan for Purchase" readOnly />

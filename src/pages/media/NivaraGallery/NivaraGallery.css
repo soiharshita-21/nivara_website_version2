@@ -33,6 +33,27 @@
   border-radius:6px;
 }
 
+/* Section Headers */
+.gallery-section-header {
+  text-align: center;
+  max-width: 1400px;
+  margin: 60px auto -30px auto;
+  padding: 0 50px;
+}
+
+.gallery-section-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #d32f2f;
+  margin-bottom: 8px;
+}
+
+.gallery-section-header p {
+  font-size: 18px;
+  color: #6b7c93;
+  font-weight: 500;
+}
+
 /* Gallery Grid */
 .gallery-container{
   max-width:1400px;
@@ -44,27 +65,76 @@
 }
 
 /* Card */
-.gallery-card{
-  background:#fff;
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  transition:0.3s ease;
+.gallery-card {
+  position: relative;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+  cursor: pointer;
 }
 
-.gallery-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 16px 35px rgba(0,0,0,0.12);
+.gallery-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.12);
 }
 
 /* Image */
-.gallery-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
+/* Modal / Lightbox */
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.85);
+  z-index: 99999;
+  padding: 20px;
+  animation: fadeIn 0.3s forwards;
+}
+
+.gallery-modal-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  animation: scaleUp 0.3s forwards;
+}
+
+.gallery-modal-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: #fff;
+  font-size: 36px;
+  cursor: pointer;
+  transition: 0.2s;
+  z-index: 100000;
+}
+
+.gallery-modal-close:hover {
+  color: #d32f2f;
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.9); }
+  to { transform: scale(1); }
+}
 /* Responsive */
 @media(max-width:1024px){
   .gallery-container{

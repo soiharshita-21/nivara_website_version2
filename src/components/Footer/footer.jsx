@@ -46,7 +46,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-col">
-          <h4>Products</h4>
+          <h4>Services</h4>
           <ul>
             <li>Home Loan for Purchase</li>
             <li>Loan for Construction</li>

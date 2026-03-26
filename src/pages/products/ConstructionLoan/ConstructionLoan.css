@@ -1,77 +1,134 @@
-:root{
-  --theme:#8b1d2c;   
-  --light:#fbf6f6;
+/* Pop-up Animation classes */
+.animate-pop-up {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-.page-center.construction-page{
+
+.animate-pop-up.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Stagger delays for grids */
+.home-feature-box:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.home-feature-box:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.home-feature-box:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.home-feature-box:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.benefit-item:nth-child(even) {
+  transition-delay: 0.2s;
+}
+
+.benefit-item:nth-child(odd) {
+  transition-delay: 0.1s;
+}
+
+.help-card:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+.help-card:nth-child(2) {
+  transition-delay: 0.4s;
+}
+
+.help-card:nth-child(3) {
+  transition-delay: 0.6s;
+}
+
+.clfaq-item {
+  transition-delay: 0.1s;
+}
+
+:root {
+  --theme: #8b1d2c;
+  --light: #fbf6f6;
+}
+
+.page-center.construction-page {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #f3f4f6;
- flex-direction: column;
+  flex-direction: column;
 }
 
 
 
-.conloan-card-grid{
- display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;   
+.conloan-card-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  padding: 0 20px;
 }
 
-/* ================= CARD ================= */
-.conloan-card{
-width: 300px;
-  background:#fff;
-  border-radius:28px;
-  overflow:hidden;
-  box-shadow:0 20px 50px rgba(0,0,0,0.12);
+
+.conloan-card {
+  width: 100%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
   font-family: "Poppins";
   position: relative;
   margin-top: 30px;
-  margin-bottom: 30px; 
+  margin-bottom: 30px;
 }
 
 
-.cen-icon{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%, -50%);
-  width:60px;
-  height:60px;
-  background:white;
-  border-radius:20px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:5;
-  box-shadow:0 10px 30px rgba(0,0,0,0.15);
-  transition:0.6s ease;
+.cen-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: 0.6s ease;
 }
 
 /* ===== ICON STYLE ===== */
-.icon-rotate{
-  font-size:36px;
+.icon-rotatecon {
+  font-size: 36px;
   color: var(--theme);
   transition: transform 0.8s ease;
 }
 
 
-.conloan-card:hover .icon-rotate{
+.conloan-card:hover .icon-rotatecon {
   transform: rotate(360deg);
 }
 
 
 /* ===== OPTIONAL PREMIUM EFFECT ===== */
-.conloan-card:hover .cen-icon{
+.conloan-card:hover .cen-icon {
   transform: translate(-50%, -50%) scale(1.05);
-  box-shadow:0 15px 40px rgba(0,0,0,0.25);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
 
 /* ================= CENTER PAGE ================= */
-.page-center{
+.page-center {
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -82,115 +139,127 @@ width: 300px;
 
 
 
-.conloan-image{
-  position:relative;
-  height:240px;
+.conloan-image {
+  position: relative;
+  height: 360px;
 }
 
-.conloan-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+.conloan-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.image-overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(139,29,44,0.35);
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(139, 29, 44, 0.35);
 }
 
 /* ================= CONTENT ================= */
-.conloan-content{
-  padding:28px;
+.conloan-content {
+  padding: 28px;
   background: var(--light);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.conloan-content h2{
+.conloan-content h2 {
   color: var(--theme);
-  font-size:24px;
-  font-weight:800;
-  margin-bottom:10px;
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-align: left;
 }
 
-.subtitle{
-  color:#6b7280;
-  font-size:15px;
-  margin-bottom:22px;
+.subtitle {
+  color: #6b7280;
+  font-size: 15px;
+  margin-bottom: 20px;
+  text-align: left;
+  line-height: 1.6;
+  width: 100%;
+  margin-left: 0;
 }
 
 /* ================= FEATURES ================= */
-.features{
-  list-style:none;
-  padding:0;
-  margin:0 0 26px 0;
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 26px 0;
 }
 
-.features li{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:14px;
-  color:#475569;
-  font-size:15px;
-}
-
-
-.features li::before{
-  content:"✓";
-  width:26px;
-  height:26px;
-  background:var(--theme);
-  color:white;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:14px;
-  flex-shrink:0;
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  color: #475569;
+  font-size: 15px;
 }
 
 
-.con-loan-buttons{
-  display:flex;
-  gap:14px;
+.features li::before {
+  content: "✓";
+  width: 26px;
+  height: 26px;
+  background: var(--theme);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
 }
 
-.con-loan-btn-outline{
-  flex:1;
-  background:white;
-  border:2px solid var(--theme);
-  color:var(--theme);
-  padding:12px 0;
-  border-radius:14px;
-  font-weight:600;
-  cursor:pointer;
-  transition:0.3s;
+
+.con-loan-buttons {
+  display: flex;
+  gap: 14px;
+  width: 100%;
 }
 
-.con-loan-btn-outline:hover{
-  background:var(--theme);
-  color:white;
+.con-loan-btn-outline {
+  flex: 1;
+  background: white;
+  border: 2px solid var(--theme);
+  color: var(--theme);
+  padding: 12px 0;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.con-loan-btn-solid{
-  flex:1;
-  background:var(--theme);
-  border:none;
-  color:white;
-  padding:12px 0;
-  border-radius:14px;
-  font-weight:600;
-  cursor:pointer;
-  transition:0.3s;
+.con-loan-btn-outline:hover {
+  background: var(--theme);
+  color: white;
 }
 
-.con-loan-btn-solid:hover{
-  transform:translateY(-2px);
-  box-shadow:#FF6F6F;
+.con-loan-btn-solid {
+  flex: 1;
+  background: var(--theme);
+  border: none;
+  color: white;
+  padding: 12px 0;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
 }
+
+.con-loan-btn-solid:hover {
+  transform: translateY(-2px);
+  box-shadow: #FF6F6F;
+}
+
 /* Normal state (before hover) */
-.home-loan-btn-solid{
-  background: #FF6F6F; /* default color */
+.home-loan-btn-solid {
+  flex: 1;
+  background: #FF6F6F;
+  /* default color */
   color: #fff;
   border: none;
   padding: 12px 28px;
@@ -201,163 +270,251 @@ width: 300px;
 }
 
 /* Hover state */
-.home-loan-btn-solid:hover{
-  background: #FF6F6F; /* hover color */
+.home-loan-btn-solid:hover {
+  background: #FF6F6F;
+  /* hover color */
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-.con-loan-bottom-strip{
-  height:6px;
-  width:100%;
-  background:var(--theme);
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-.construction-text-section{
+.slide-in-text {
+  overflow: hidden;
+}
+
+.conloan-card.visible .slide-in-text>* {
+  animation: slideIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 0.3s;
+}
+
+@keyframes fillStrip {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.con-loan-bottom-strip {
+  height: 6px;
+  width: 0%;
+  background: var(--theme);
+}
+
+.conloan-card.visible .con-loan-bottom-strip {
+  animation: fillStrip 3s ease-in-out forwards;
+}
+
+.construction-text-section {
   max-width: 1100px;
   margin: 80px auto 0 auto;
   padding: 0 20px;
   text-align: left;
 }
 
-.construction-title{
+.construction-main-title {
   font-size: 42px;
+  font-weight: 800;
+  color: #FF6F6F !important;
+  margin-bottom: 16px;
+}
+
+.construction-sub-heading {
+  font-size: 26px;
   font-weight: 700;
-  color:  #FF6F6F;
-  margin-bottom: 10px;
+  color: #FF6F6F !important;
+  margin-bottom: 14px;
 }
 
-.construction-subtitle{
-  font-size: 20px;
-  font-weight: 500;
-  color:  #FF6F6F;
-  margin-bottom: 25px;
-}
-
-.construction-heading{
+.construction-heading {
   font-size: 28px;
   font-weight: 600;
   color: black;
   margin-bottom: 20px;
 }
 
-.construction-text{
+.construction-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #FF6F6F !important;
+  margin-bottom: 10px;
+}
+
+.construction-subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: #FF6F6F;
+  margin-bottom: 25px;
+}
+
+.construction-text {
   font-size: 16px;
   line-height: 1.8;
   color: black;
   max-width: 950px;
 }
+
 /* Benefits Section */
-.construction-benefits-section{
+.conloan-benefits-section {
   width: 100%;
   max-width: 1200px;
-  margin: 90px auto 0 auto;
-  padding: 0 24px;
+  margin: 90px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-.benefits-title{
-  font-size: 36px;
+.conloan-benefits-title {
+  font-size: 34px;
   font-weight: 700;
-  color: var(--theme);
-  margin-bottom: 40px;
+  color: #FF6F6F !important;
+  margin-bottom: 45px;
+  text-align: left;
+  line-height: 1.2;
 }
 
-/* Grid Layout */
-.benefits-grid{
+.conloan-benefits-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 22px 40px;
+  gap: 24px;
 }
 
-/* Benefit Item */
-.benefit-item{
-  background: #fff;
-  border-left: 6px solid var(--theme);
-  padding: 18px 22px;
-  border-radius: 10px;
+.conloan-benefit-item {
+  background: #ffffff;
+  padding: 24px 30px;
   font-size: 16px;
   line-height: 1.6;
-  color: #444;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
-  transition: 0.3s ease;
-  margin-bottom: 20px;
+  color: #374151;
+  border-left: 5px solid #FF6F6F;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  min-height: 90px;
 }
 
-.benefit-item:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+.conloan-benefit-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  background: #fcfcfc;
 }
-/* Highlights Section */
-.loan-highlights{
+
+/* Feature Strip Section */
+.conloan-feature-strip {
   width: 100%;
   max-width: 1400px;
-  margin: 90px auto 0 auto;
+  margin: 90px auto 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border: 1px solid #ddd;
-  background: #fff;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
 }
 
-/* Card */
-.highlight-card{
+.conloan-feature-box {
   padding: 60px 20px;
   text-align: center;
-  border-right: 1px solid #ddd;
-  transition: 0.3s ease;
-  background: #fff;
+  border-right: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  background: #ffffff;
 }
 
-.highlight-card:last-child{
+.conloan-feature-box:last-child {
   border-right: none;
 }
 
-/* Icon */
-.highlight-icon{
-  font-size: 40px;
-  margin-bottom: 18px;
-  color: #7ac142;
+.conloan-feature-box:hover {
+  background: #f9fafb;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
-/* Text */
-.highlight-card h3{
-  font-size: 22px;
-  font-weight: 600;
+.conloan-feature-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
   color: #FF6F6F;
 }
 
+.conloan-feature-box h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #FF6F6F !important;
+  margin: 0;
+}
+
+/* Responsive Strip */
+@media (max-width: 1024px) {
+  .conloan-feature-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .conloan-feature-box:nth-child(2) {
+    border-right: none;
+  }
+  .conloan-feature-box:nth-child(1),
+  .conloan-feature-box:nth-child(2) {
+    border-bottom: 1px solid #e5e7eb;
+  }
+}
+
+@media (max-width: 600px) {
+  .conloan-feature-strip {
+    grid-template-columns: 1fr;
+  }
+  .conloan-feature-box {
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 40px 20px;
+  }
+  .conloan-feature-box:last-child {
+    border-bottom: none;
+  }
+}
+
+
 /* Hover */
-.highlight-card:hover{
+.highlight-card:hover {
   background: #fafafa;
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
-/* Support Section */
-.support-section{
+
+/* Help Section */
+.conloan-help-section {
   width: 100%;
   padding: 100px 20px;
   background: #fff;
 }
 
-.support-header{
+.conloan-help-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #FF6F6F !important;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.conloan-help-subtitle {
+  font-size: 18px;
+  color: #6b7a90;
   text-align: center;
   margin-bottom: 60px;
 }
 
-.support-header h2{
-  font-size: 42px;
-  font-weight: 800;
-  color:  #FF6F6F;
-  margin-bottom: 12px;
-}
-
-.support-header p{
-  font-size: 18px;
-  color: #6b7a90;
-}
-
 /* Grid */
-.support-grid{
+.conloan-help-grid {
   max-width: 1200px;
   margin: auto;
   display: grid;
@@ -366,7 +523,7 @@ width: 300px;
 }
 
 /* Cards */
-.support-card{
+.conloan-help-card {
   background: #fff;
   border: 1px solid #e3eaf0;
   padding: 60px 30px;
@@ -375,82 +532,83 @@ width: 300px;
   transition: 0.3s;
 }
 
-.support-card:hover{
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+.conloan-help-card:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
   transform: translateY(-6px);
 }
 
 /* Icon */
-.support-icon{
+.conloan-help-icon {
   font-size: 40px;
   color: #66b500;
   margin-bottom: 20px;
 }
 
 /* Text */
-.support-card h3{
+.conloan-help-card h3 {
   font-size: 18px;
   font-weight: 700;
   color: #0a2540;
   margin-bottom: 16px;
 }
 
-.support-card p{
+.conloan-help-card p {
   font-size: 16px;
   color: #6b7a90;
   line-height: 1.6;
 }
 
-.support-phone{
-  color:  black;
+.conloan-help-green {
+  color: #FF6F6F;
   font-size: 22px;
   margin: 10px 0;
   font-weight: 700;
 }
 
-.support-mail{
-  color:  #FF6F6F;
+.conloan-help-mail {
+  color: #FF6F6F;
   margin-bottom: 20px;
 }
 
 /* Link */
-.support-link{
+.conloan-help-link {
   display: inline-block;
   margin-top: 25px;
-  color:  #FF6F6F;
+  color: #FF6F6F !important;
   font-weight: 600;
-  border-bottom: 2px solid #FF6F6F;
+  border-bottom: 2px solid #FF6F6F !important;
   cursor: pointer;
 }
+
 /* Construction Loan FAQ Section */
-.clfaq-section{
+.clfaq-section {
   width: 100%;
   padding: 50px 20px;
   background: #f9fbfd;
 }
 
-.clfaq-container{
+.clfaq-container {
   max-width: 1000px;
   margin: auto;
 }
 
-.clfaq-title{
+.clfaq-title {
   text-align: center;
   font-size: 42px;
   font-weight: 800;
-  color:  #FF6F6F;
+  color: #FF6F6F !important;
   margin-bottom: 60px;
 }
 
 /* FAQ List */
-.clfaq-list{
+.clfaq-list {
   display: flex;
   flex-direction: column;
   gap: 28px;
 }
 
 /* FAQ Item */
-.clfaq-item{
+.clfaq-item {
   background: #fff;
   padding: 28px 30px;
   border-radius: 10px;
@@ -458,21 +616,21 @@ width: 300px;
   transition: 0.3s;
 }
 
-.clfaq-item:hover{
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+.clfaq-item:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
   transform: translateY(-3px);
 }
 
 /* Question */
-.clfaq-item h3{
+.clfaq-item h3 {
   font-size: 20px;
   font-weight: 700;
-  color:  #FF6F6F;
+  color: #FF6F6F;
   margin-bottom: 10px;
 }
 
 /* Answer */
-.clfaq-item p{
+.clfaq-item p {
   font-size: 16px;
   line-height: 1.7;
   color: #6b7a90;
@@ -481,34 +639,36 @@ width: 300px;
 
 
 /* Responsive */
-@media (max-width: 1000px){
-  .loan-highlights{
+@media (max-width: 1000px) {
+  .loan-highlights {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .highlight-card{
+  .highlight-card {
     border-bottom: 1px solid #ddd;
   }
 }
 
-@media (max-width: 600px){
-  .loan-highlights{
+@media (max-width: 600px) {
+  .loan-highlights {
     grid-template-columns: 1fr;
   }
 }
 
 
-.quote-sec{
+.quote-sec {
   width: 100%;
   min-height: 100vh;
   display: flex;
-  justify-content: center;   /* horizontal center */
-  align-items: center;       /* vertical center */
+  justify-content: center;
+  /* horizontal center */
+  align-items: center;
+  /* vertical center */
   background: #fff;
 }
 
 
-.quote-con{
+.quote-con {
   max-width: 1100px;
   width: 100%;
   margin: auto;
@@ -517,34 +677,34 @@ width: 300px;
 
 
 /* Title */
-.quote-ti{
+.quote-ti {
   font-size: 42px;
   font-weight: 700;
-  color:  #FF6F6F;
+  color: #FF6F6F !important;
   margin-bottom: 10px;
 }
 
 /* Subtitle */
-.quote-subti{
+.quote-subti {
   font-size: 18px;
   color: #6b7c93;
   margin-bottom: 50px;
 }
 
 /* Form */
-.form{
+.form {
   width: 100%;
 }
 
 /* Grid layout */
-.form-grid{
+.form-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px 40px;
 }
 
 /* Inputs */
-.form-grid input{
+.form-grid input {
   width: 100%;
   padding: 18px 20px;
   font-size: 16px;
@@ -556,14 +716,14 @@ width: 300px;
 }
 
 /* Focus */
-.form-grid input:focus{
-  border-color:#FF6F6F ;
+.form-grid input:focus {
+  border-color: #FF6F6F;
 }
 
 /* Button */
-.quote-b{
+.quote-b {
   grid-column: 2 / 3;
-  background:#FF6F6F ;
+  background: #FF6F6F;
   color: #fff;
   border: none;
   padding: 18px;
@@ -576,68 +736,70 @@ width: 300px;
 }
 
 /* Button hover */
-.quote-b:hover{
+.quote-b:hover {
   background: #c62828;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Responsive */
-@media(max-width: 900px){
-  .form-grid{
+@media(max-width: 900px) {
+  .form-grid {
     grid-template-columns: 1fr;
   }
 
-  .quote-btn{
+  .quote-btn {
     grid-column: 1 / 2;
   }
 }
 
-@media(max-width: 600px){
-  .quote-title{
+@media(max-width: 600px) {
+  .quote-title {
     font-size: 32px;
   }
 
-  .quote-subtitle{
+  .quote-subtitle {
     font-size: 16px;
   }
 }
 
 
 
-@keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(30px);
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  to{
-    opacity:1;
-    transform:translateY(0);
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 
 
-.construction-page{
-  --theme:#ff6b6b;
-  --light:#fff3f3;
+.construction-page {
+  --theme: #ff6b6b;
+  --light: #fff3f3;
 }
 
-.construction-page .image-overlay{
-  background: rgba(255,107,107,0.35);
+.construction-page .image-overlay {
+  background: rgba(255, 107, 107, 0.35);
 }
 
-.construction-page .btn-solid:hover{
-  box-shadow:0 10px 25px rgba(255,107,107,0.4);
+.construction-page .btn-solid:hover {
+  box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
 }
-@media (max-width: 1100px){
-  .conloan-card-grid{
+
+@media (max-width: 1100px) {
+  .conloan-card-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 700px){
-  .conloan-card-grid{
+@media (max-width: 700px) {
+  .conloan-card-grid {
     grid-template-columns: 1fr;
   }
 }

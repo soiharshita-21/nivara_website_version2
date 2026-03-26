@@ -2,15 +2,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 6px 20px;
-  background: linear-gradient(90deg, #8b1d2c, #a1273a);
+  padding: 8px 20px;
+  background: #d32f2f;
   color: #fff;
-  font-size: 14px;
+  font-size: 13px;
   position: relative;
-  z-index: 1100;
-  font-family: poppins;
+  z-index: 10001; /* Above navbar box-shadow but below menu overlay */
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  box-sizing: border-box;
 }
-
 
 .topbar-left {
   display: flex;
@@ -21,17 +22,51 @@
 .topbar-link {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   color: #fff;
   text-decoration: none;
   font-weight: 500;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
 }
 
 .topbar-link:hover {
-  text-decoration: underline;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .location-icon {
-  font-size: 15px;
+  font-size: 14px;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .topbar {
+    padding: 6px 15px;
+    font-size: 11px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .topbar-left {
+    gap: 15px;
+  }
+
+  /* Hide text on very small screens to save space */
+  @media (max-width: 480px) {
+    .topbar-link span {
+      display: none;
+    }
+    
+    .topbar-link {
+      font-size: 16px; /* Larger icons for touch if text is hidden */
+      padding: 4px;
+    }
+
+    /* Keep "Find a Branch" but maybe as a standalone icon link */
+    .topbar {
+      justify-content: space-around;
+    }
+  }
+}
+

@@ -2,6 +2,19 @@
 .board-section {
   padding: 40px 20px;
   background: #fafafa;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Pop-up Animation classes */
+.animate-pop-up {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.animate-pop-up.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .board-header {
@@ -24,7 +37,7 @@
 .board-header h2 {
   font-size: 44px;
   font-weight: 700;
-  color: #5a1e2a;
+  color: #d32f2f;
   margin-bottom: 12px;
 }
 
@@ -129,14 +142,24 @@
 }
 
 
-.board-card::after{
-  content:"";
-  position:absolute;
-  bottom:0;
-  left:0;
-  width:100%;
-  height:7px;
-  border-radius:0 0 28px 28px;
+@keyframes fillStrip {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.board-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 7px;
+  border-radius: 0 0 28px 28px;
+  transition: none;
+}
+
+.board-card.visible::after {
+  animation: fillStrip 3s ease-in-out forwards;
 }
 
 .board-card.rose::after{ background:#f43f5e; }

@@ -7,15 +7,15 @@ const FairPracticeCode = () => {
     <div className="fair-page">
 
       {/* Banner Section */}
-      <div className="fair-banner">
+      <div className="fair-banner animate-pop-up">
         <img src={home3} alt="Fair Practice Code" />
         <div className="fair-overlay">
-          <h1>Fair Practice Code</h1>
+          <h1 className="animate-pop-up">Fair Practice Code</h1>
         </div>
       </div>
 
       {/* Content Section */}
-      <div className="fair-content">
+      <div className="fair-content animate-pop-up">
 
         <p>
           The National Housing Bank has framed guidelines on a Fair Practices Code for
@@ -30,7 +30,7 @@ const FairPracticeCode = () => {
           whose details are outlined in this section.
         </p>
 
-        <h3>Fair Practice Code Documents</h3>
+        <h3 className="animate-pop-up">Fair Practice Code Documents</h3>
 
         <div className="fair-links">
           <a href="/files/fpc-english.pdf" target="_blank" rel="noreferrer">Fair Practice Code English</a>

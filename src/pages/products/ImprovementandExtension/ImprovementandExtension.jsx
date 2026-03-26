@@ -1,20 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaWrench } from "react-icons/fa";
-import home5 from "../../../assets/images/home5.jpg";
+import pol from "../../../assets/images/pol.jpg";
 import "./ImprovementandExtension.css";
 import { useNavigate } from "react-router-dom";
 
 const ImprovmentandExtension = () => {
   const navigate = useNavigate();
-  const cards = [1, 2, 3];
+  const cards = [1];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    const elements = document.querySelectorAll(".animate-pop-up");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
 
   return (
     <section className="improv-section">
       <div className="improv-grid">
         {cards.map((item, index) => (
-          <div className="improv-card" key={index}>
+          <div className="improv-card animate-pop-up" key={index}>
             <div className="improv-imagebox">
-              <img src={home5} alt="Improvement and Extension Loan" />
+              <img src={pol} alt="Improvement and Extension Loan" />
 
               {/* transparent color layer */}
               <div className="improv-overlay"></div>
@@ -24,18 +44,20 @@ const ImprovmentandExtension = () => {
               </div>
             </div>
 
-            <div className="improv-content">
-              <h2>Improvement and Extension Loan</h2>
+            <div className="improv-content animate-pop-up">
+              <h2 className="animate-pop-up">Improvement and Extension Loan</h2>
 
               <p className="improv-subtitle">
                 Renovate or extend your existing home
               </p>
 
-              <ul className="improv-features">
-                <li>Quick approval</li>
-                <li>Minimal documentation</li>
-                <li>Attractive rates</li>
-              </ul>
+              <div className="slide-in-text">
+                <ul className="improv-features">
+                  <li>Quick approval</li>
+                  <li>Minimal documentation</li>
+                  <li>Attractive rates</li>
+                </ul>
+              </div>
 
               <div className="improv-buttons">
                 <button className="improv-btn-outline">Learn More</button>
@@ -53,10 +75,10 @@ const ImprovmentandExtension = () => {
         ))}
       </div>
 
-      <div className="improv-text-section">
-        <h1 className="improv-main-title">Improvement and Extension Loan</h1>
+      <div className="improv-text-section animate-pop-up">
+        <h1 className="improv-main-title animate-pop-up">Improvement and Extension Loan</h1>
 
-        <h2 className="improv-sub-heading">
+        <h2 className="improv-sub-heading animate-pop-up">
           Build Your dream house with a Nivara Improvement and Extension Loan
         </h2>
 
@@ -78,71 +100,79 @@ const ImprovmentandExtension = () => {
         </p>
       </div>
 
-      <section className="improv-features-section">
-        <div className="improv-features-grid">
-          <div className="improv-feature-card">
-            <div className="improv-feature-icon">📄</div>
-            <h3>Easy Loan Approvals</h3>
-          </div>
-
-          <div className="improv-feature-card">
-            <div className="improv-feature-icon">💰</div>
-            <h3>Lowest Possible Prices</h3>
-          </div>
-
-          <div className="improv-feature-card">
-            <div className="improv-feature-icon">💼</div>
-            <h3>Hassle free</h3>
-          </div>
-
-          <div className="improv-feature-card">
-            <div className="improv-feature-icon">✅</div>
-            <h3>Secure Loan Process</h3>
-          </div>
+      {/* Features Strip Section */}
+      <div className="improv-feature-strip">
+        <div className="improv-feature-box animate-pop-up">
+          <div className="improv-feature-icon">📄</div>
+          <h3 className="animate-pop-up">Easy Loan Approvals</h3>
         </div>
-      </section>
-      <section className="improv-keyfeatures-section">
-        <h2 className="improv-keyfeatures-title">
+
+        <div className="improv-feature-box animate-pop-up">
+          <div className="improv-feature-icon">💰</div>
+          <h3 className="animate-pop-up">Lowest Possible Prices</h3>
+        </div>
+
+        <div className="improv-feature-box animate-pop-up">
+          <div className="improv-feature-icon">💼</div>
+          <h3 className="animate-pop-up">Hassle free</h3>
+        </div>
+
+        <div className="improv-feature-box animate-pop-up">
+          <div className="improv-feature-icon">✅</div>
+          <h3 className="animate-pop-up">Secure Loan Process</h3>
+        </div>
+      </div>
+      {/* Features & Benefits Section */}
+      <div className="improv-benefits-section animate-pop-up">
+        <h2 className="improv-benefits-title animate-pop-up">
           Key Features of Improvement and Extension Loan
         </h2>
 
-        <div className="improv-keyfeatures-content">
-          <p>
+        <div className="improv-benefits-list">
+          <div className="improv-benefit-item animate-pop-up">
             Loan is available for customers with minimum wage too and with other
             non-income proof documentation.
-          </p>
+          </div>
 
-          <p>
+          <div className="improv-benefit-item animate-pop-up">
             Our process is completely transparent and without any hidden
             charges.
-          </p>
+          </div>
 
-          <p>Our loan experts provide services right at your doorstep.</p>
+          <div className="improv-benefit-item animate-pop-up">
+            Our loan experts provide services right at your doorstep.
+          </div>
 
-          <p>
+          <div className="improv-benefit-item animate-pop-up">
             We have a wide network and are available in rural, semi-urban, and
             urban areas across locations.
-          </p>
+          </div>
 
-          <p>Apply with minimal documents, save time and effort.</p>
+          <div className="improv-benefit-item animate-pop-up">
+            Apply with minimal documents, save time and effort.
+          </div>
 
-          <p>Home loan approval in simple steps with fast processing.</p>
+          <div className="improv-benefit-item animate-pop-up">
+            Home loan approval in simple steps with fast processing.
+          </div>
 
-          <p>Tailor-made home loans to suit your requirements.</p>
+          <div className="improv-benefit-item animate-pop-up">
+            Tailor-made home loans to suit your requirements.
+          </div>
 
-          <p>
+          <div className="improv-benefit-item animate-pop-up">
             We maintain high levels of transparency in our relations with
             customers.
-          </p>
+          </div>
 
-          <p className="improv-contact-line">
+          <div className="improv-benefit-item animate-pop-up">
             Connect with us on Chat, Social Media anytime, anywhere.
-          </p>
+          </div>
         </div>
-      </section>
+      </div>
 
       <section className="improv-quote-sec">
-        <div className="improv-quote-con">
+        <div className="improv-quote-con animate-pop-up">
           <h2 className="improv-quote-ti">Request Quote Now</h2>
           <p className="improv-quote-subti">
             Easy to apply for a loan with us, Once you have complete this form.
@@ -168,46 +198,47 @@ const ImprovmentandExtension = () => {
           </form>
         </div>
       </section>
-      <section className="improv-support-section">
-        <div className="improv-support-header">
-          <h2>We are Here to Help You</h2>
-          <p>Our mission is to deliver reliable, latest news and opinions.</p>
-        </div>
+      {/* Help Section */}
+      <div className="improv-help-section animate-pop-up">
+        <h2 className="improv-help-title animate-pop-up">We are Here to Help You</h2>
+        <p className="improv-help-subtitle animate-pop-up">
+          Our mission is to deliver reliable, latest news and opinions.
+        </p>
 
-        <div className="improv-support-grid">
+        <div className="improv-help-grid">
           {/* Card 1 */}
-          <div className="improv-support-card">
-            <div className="improv-support-icon">📄</div>
-            <h3>APPLY FOR LOAN</h3>
+          <div className="improv-help-card animate-pop-up">
+            <div className="improv-help-icon">🗓️</div>
+            <h3 className="animate-pop-up">APPLY FOR LOAN</h3>
             <p>Looking to buy a home loan? then apply for loan now.</p>
-            <span className="improv-support-link">Get Appointment</span>
+            <span className="improv-help-link">Get Appointment</span>
           </div>
 
           {/* Card 2 */}
-          <div className="improv-support-card">
-            <div className="improv-support-icon">📞</div>
-            <h3>CALL US AT</h3>
-            <h4 className="improv-support-phone">1800-309-1516</h4>
-            <p className="improv-support-mail">contact@nivarahousing.com</p>
-            <span className="improv-support-link">Contact Us</span>
+          <div className="improv-help-card animate-pop-up">
+            <div className="improv-help-icon">📞</div>
+            <h3 className="animate-pop-up">CALL US AT</h3>
+            <p className="improv-help-green">1800-309-1516</p>
+            <p className="improv-help-green">contact@nivarahousing.com</p>
+            <span className="improv-help-link">Contact Us</span>
           </div>
 
           {/* Card 3 */}
-          <div className="improv-support-card">
-            <div className="improv-support-icon">👥</div>
-            <h3>TALK TO ADVISOR</h3>
-            <h4 className="improv-support-phone">+91 80 26552822</h4>
+          <div className="improv-help-card animate-pop-up">
+            <div className="improv-help-icon">👥</div>
+            <h3 className="animate-pop-up">TALK TO ADVISOR</h3>
+            <p className="improv-help-green">+91 80 26552822</p>
             <p>Need to loan advise?</p>
-            <span className="improv-support-link">Meet The Advisor</span>
+            <span className="improv-help-link">Meet The Advisor</span>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section className="improv-faq-section">
-        <h2 className="improv-faq-title">Frequently Asked Questions</h2>
+      <section className="improv-faq-section animate-pop-up">
+        <h2 className="improv-faq-title animate-pop-up">Frequently Asked Questions</h2>
 
-        <div className="improv-faq-content">
-          <div className="improv-faq-item">
+        <div className="improv-faq-content animate-pop-up">
+          <div className="improv-faq-item animate-pop-up">
             <h4>What is the Home Loan Extension / Home Loan Improvement?</h4>
             <p>
               It is a loan to extend or add living space to your home such as
@@ -215,7 +246,7 @@ const ImprovmentandExtension = () => {
             </p>
           </div>
 
-          <div className="improv-faq-item">
+          <div className="improv-faq-item animate-pop-up">
             <h4>Who can avail of an Extension Home Loan?</h4>
             <p>
               Any person who wishes to add space to their existing Apartment,
@@ -225,7 +256,7 @@ const ImprovmentandExtension = () => {
             </p>
           </div>
 
-          <div className="improv-faq-item">
+          <div className="improv-faq-item animate-pop-up">
             <h4>Can a Home Renovation loan fund the purchase of furniture?</h4>
             <p>
               No. A home improvement loan can only be used to fund the
@@ -234,7 +265,7 @@ const ImprovmentandExtension = () => {
             </p>
           </div>
 
-          <div className="improv-faq-item">
+          <div className="improv-faq-item animate-pop-up">
             <h4>What comes under home renovation?</h4>
             <p>
               You can use your house renovation loan for a variety of
@@ -244,7 +275,7 @@ const ImprovmentandExtension = () => {
             </p>
           </div>
 
-          <div className="improv-faq-item">
+          <div className="improv-faq-item animate-pop-up">
             <h4>
               What are the documents required for a home loan extension from
               Nivara Home Finance?

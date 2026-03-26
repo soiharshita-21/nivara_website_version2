@@ -6,7 +6,7 @@
   text-align: center;
   font-family: "Poppins";
 }
-.s{color: #5b1b24;
+.s{color: #d32f2f;
 }
 .avatar{
   width:70px;
@@ -28,7 +28,7 @@
 .testimonials-header h2{
   font-size: 46px;
   font-weight: 800;
-  color: #5b1b24;
+  color: #d32f2f;
 }
 
 .testimonials-header p{
@@ -41,7 +41,7 @@
   padding:8px 20px;
   border-radius:20px;
   border:1px solid #f1c6cc;
-  color:#8b1d2c;
+  color:#d32f2f;
   margin-bottom:20px;
 }
 
@@ -59,7 +59,7 @@
   width:70px;
   height:70px;
   border-radius:50%;
-  background:#8b1d2c;
+  background:#d32f2f;
   color:#fff;
   display:flex;
   align-items:center;
@@ -121,7 +121,7 @@
 
 
 .testimonial-user h4{
-  color:#8b1d2c;
+  color:#d32f2f;
   font-size:20px;
   margin-bottom:4px;
 }
@@ -148,7 +148,7 @@
   border-radius:50%;
   border:2px solid #f1c6cc;
   background:#fff;
-  color:#8b1d2c;
+  color:#d32f2f;
   font-size:22px;
   cursor:pointer;
 }
@@ -175,7 +175,7 @@
 .dot.active{
   width:34px;
   border-radius:10px;
-  background:#8b1d2c;
+  background:#d32f2f;
 }
 
 .nav-btn{
@@ -190,5 +190,17 @@
   opacity: 1;
   transform: translateY(-50%) scale(1.05);
   box-shadow: 0 12px 30px rgba(139,29,44,0.25);
+}
+
+/* Pop-up Animation classes */
+.animate-pop-up {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.animate-pop-up.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 

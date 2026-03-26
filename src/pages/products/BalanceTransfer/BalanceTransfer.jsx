@@ -1,20 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaSyncAlt } from "react-icons/fa"; // balance transfer icon
-import home5 from "../../../assets/images/home5.jpg"; // you will replace this
+import pol from "../../../assets/images/pol.jpg"; // you will replace this
 import "./BalanceTransfer.css";
 import { useNavigate } from "react-router-dom";
 
 const BalanceTransfer = () => {
    const navigate = useNavigate();
-  const cards = [1, 2, 3];
+  const cards = [1];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    const elements = document.querySelectorAll(".animate-pop-up");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
 
   return (
     <section className="balance-section">
       <div className="balance-grid">
         {cards.map((item, index) => (
-          <div className="balance-card" key={index}>
+          <div className="balance-card animate-pop-up" key={index}>
             <div className="balance-imagebox">
-              <img src={home5} alt="Balance Transfer" />
+              <img src={pol} alt="Balance Transfer" />
 
               {/* Light pink overlay */}
               <div className="balance-image-overlay"></div>
@@ -25,18 +45,20 @@ const BalanceTransfer = () => {
             </div>
 
             {/* Content */}
-            <div className="balance-content">
-              <h2 className="balance-title">Balance Transfer</h2>
+            <div className="balance-content animate-pop-up">
+              <h2 className="balance-title animate-pop-up">Balance Transfer</h2>
 
               <p className="balance-subtitle">
                 Transfer your existing loan for better rates and terms
               </p>
 
-              <ul className="balance-features">
-                <li>Lower interest rates</li>
-                <li>Top-up facility</li>
-                <li>Easy process</li>
-              </ul>
+              <div className="slide-in-text">
+                <ul className="balance-features">
+                  <li>Lower interest rates</li>
+                  <li>Top-up facility</li>
+                  <li>Easy process</li>
+                </ul>
+              </div>
 
               <div className="balance-buttons">
                 <button className="balance-btn-outline">Learn More</button>
@@ -54,8 +76,8 @@ const BalanceTransfer = () => {
           </div>
         ))}
       </div>
-      <section className="balance-text-section">
-        <h2 className="balance-main-title">Balance Transfer</h2>
+      <section className="balance-text-section animate-pop-up">
+        <h2 className="balance-main-title animate-pop-up">Balance Transfer</h2>
         <p className="balance-tagline">We will lift your Loan Burden</p>
 
         <h3 className="balance-subheading">
@@ -71,62 +93,80 @@ const BalanceTransfer = () => {
         </p>
       </section>
 
-      <section className="balance-features-strip">
-        <div className="balance-feature-box">
+      {/* Features Strip Section */}
+      <div className="balance-feature-strip">
+        <div className="balance-feature-box animate-pop-up">
           <div className="balance-feature-icon">📄</div>
-          <h3>Easy Loan Approvals</h3>
+          <h3 className="animate-pop-up">Easy Loan Approvals</h3>
         </div>
 
-        <div className="balance-feature-box">
+        <div className="balance-feature-box animate-pop-up">
           <div className="balance-feature-icon">💰</div>
-          <h3>Lowest Possible Prices</h3>
+          <h3 className="animate-pop-up">Lowest Possible Prices</h3>
         </div>
 
-        <div className="balance-feature-box">
+        <div className="balance-feature-box animate-pop-up">
           <div className="balance-feature-icon">💼</div>
-          <h3>Hassle free</h3>
+          <h3 className="animate-pop-up">Hassle free</h3>
         </div>
 
-        <div className="balance-feature-box">
+        <div className="balance-feature-box animate-pop-up">
           <div className="balance-feature-icon">✅</div>
-          <h3>Secure Loan Process</h3>
+          <h3 className="animate-pop-up">Secure Loan Process</h3>
         </div>
-      </section>
-      <section className="balance-keyfeatures-section">
+      </div>
+      {/* Features & Benefits Section */}
+      <div className="balance-benefits-section animate-pop-up">
+        <h2 className="balance-benefits-title animate-pop-up">
+          Key Features of Home Loan Balance Transfer
+        </h2>
 
-  <h2 className="balance-keyfeatures-title">
-    Key Features of Home Loan Balance Transfer
-  </h2>
+        <div className="balance-benefits-list">
+          <div className="balance-benefit-item animate-pop-up">
+            Loan is available for customers with minimum wage too and with other
+            non-income proof documentation.
+          </div>
 
-  <div className="balance-keyfeatures-points">
+          <div className="balance-benefit-item animate-pop-up">
+            Our process is completely transparent and without any hidden
+            charges.
+          </div>
 
-    <p>Loan is available for customers with minimum wage too and with other non-income proof documentation.</p>
+          <div className="balance-benefit-item animate-pop-up">
+            Our loan experts will provide you services right at your doorstep.
+          </div>
 
-    <p>Our process is completely transparent and without any hidden charges.</p>
+          <div className="balance-benefit-item animate-pop-up">
+            We have a wide network and are available in rural, semi-urban, and
+            urban areas across locations.
+          </div>
 
-    <p>Our loan experts will provide you services right at your doorstep.</p>
+          <div className="balance-benefit-item animate-pop-up">
+            Apply with minimal documents, save time and effort.
+          </div>
 
-    <p>We have a wide network and are available in rural, semi-urban, and urban areas across locations.</p>
+          <div className="balance-benefit-item animate-pop-up">
+            Home loan approval in simple steps.
+          </div>
 
-    <p>Apply with minimal documents, save time and effort.</p>
+          <div className="balance-benefit-item animate-pop-up">
+            Tailor-made home loans to suit your requirements.
+          </div>
 
-    <p>Home loan approval in simple steps.</p>
+          <div className="balance-benefit-item animate-pop-up">
+            We maintain high levels of transparency in our relations with
+            customers.
+          </div>
 
-    <p>Tailor-made home loans to suit your requirements.</p>
-
-    <p>We maintain high levels of transparency in our relations with customers.</p>
-
-    <p className="balance-contact-line">
-      Connect with us on Chat, Social Media anytime, anywhere.
-    </p>
-
-  </div>
-
-</section>
+          <div className="balance-benefit-item animate-pop-up">
+            Connect with us on Chat, Social Media anytime, anywhere.
+          </div>
+        </div>
+      </div>
 
 
       <section className="balance-quote-sec">
-        <div className="balance-quote-con">
+        <div className="balance-quote-con animate-pop-up">
           <h2 className="balance-quote-ti">Request Quote Now</h2>
           <p className="balance-quote-subti">
             Easy to apply for a loan with us, Once you have complete this form.
@@ -152,47 +192,48 @@ const BalanceTransfer = () => {
           </form>
         </div>
       </section>
-      <section className="balance-support-section">
-        <div className="balance-support-header">
-          <h2>We are Here to Help You</h2>
-          <p>Our mission is to deliver reliable, latest news and opinions.</p>
-        </div>
+      {/* Help Section */}
+      <div className="balance-help-section animate-pop-up">
+        <h2 className="balance-help-title animate-pop-up">We are Here to Help You</h2>
+        <p className="balance-help-subtitle animate-pop-up">
+          Our mission is to deliver reliable, latest news and opinions.
+        </p>
 
-        <div className="balance-support-grid">
+        <div className="balance-help-grid">
           {/* Card 1 */}
-          <div className="balance-support-card">
-            <div className="balance-support-icon">📄</div>
-            <h3>APPLY FOR LOAN</h3>
+          <div className="balance-help-card animate-pop-up">
+            <div className="balance-help-icon">🗓️</div>
+            <h3 className="animate-pop-up">APPLY FOR LOAN</h3>
             <p>Looking to buy a home loan? then apply for loan now.</p>
-            <span className="balance-support-link">Get Appointment</span>
+            <span className="balance-help-link">Get Appointment</span>
           </div>
 
           {/* Card 2 */}
-          <div className="balance-support-card">
-            <div className="balance-support-icon">📞</div>
-            <h3>CALL US AT</h3>
-            <h4 className="balance-support-phone">1800-309-1516</h4>
-            <p className="balance-support-mail">contact@nivarahousing.com</p>
-            <span className="balance-support-link">Contact Us</span>
+          <div className="balance-help-card animate-pop-up">
+            <div className="balance-help-icon">📞</div>
+            <h3 className="animate-pop-up">CALL US AT</h3>
+            <p className="balance-help-green">1800-309-1516</p>
+            <p className="balance-help-green">contact@nivarahousing.com</p>
+            <span className="balance-help-link">Contact Us</span>
           </div>
 
           {/* Card 3 */}
-          <div className="balance-support-card">
-            <div className="balance-support-icon">👥</div>
-            <h3>TALK TO ADVISOR</h3>
-            <h4 className="balance-support-phone">+91 80 26552822</h4>
+          <div className="balance-help-card animate-pop-up">
+            <div className="balance-help-icon">👥</div>
+            <h3 className="animate-pop-up">TALK TO ADVISOR</h3>
+            <p className="balance-help-green">+91 80 26552822</p>
             <p>Need to loan advise?</p>
-            <span className="balance-support-link">Meet The Advisor</span>
+            <span className="balance-help-link">Meet The Advisor</span>
           </div>
         </div>
-      </section>
-      <section className="balance-faq-section">
-        <h2 className="balance-faq-title">
+      </div>
+      <section className="balance-faq-section animate-pop-up">
+        <h2 className="balance-faq-title animate-pop-up">
           Balance Transfer Home Loan – Frequently Asked Questions
         </h2>
 
-        <div className="balance-faq-content">
-          <div className="balance-faq-item">
+        <div className="balance-faq-content animate-pop-up">
+          <div className="balance-faq-item animate-pop-up">
             <h4>What is a balance transfer loan?</h4>
             <p>
               A loan balance transfer refers to the process of transferring your
@@ -200,7 +241,7 @@ const BalanceTransfer = () => {
             </p>
           </div>
 
-          <div className="balance-faq-item">
+          <div className="balance-faq-item animate-pop-up">
             <h4>Why should I think about refinancing my home loan balance?</h4>
             <p>
               Paying your home loan can sometimes get challenging with
@@ -213,7 +254,7 @@ const BalanceTransfer = () => {
             </p>
           </div>
 
-          <div className="balance-faq-item">
+          <div className="balance-faq-item animate-pop-up">
             <h4>Is there a charge to transfer the rest of my home loan?</h4>
             <p>
               Yes, we charge a processing fee for the home loan balance transfer
@@ -225,7 +266,7 @@ const BalanceTransfer = () => {
             </p>
           </div>
 
-          <div className="balance-faq-item">
+          <div className="balance-faq-item animate-pop-up">
             <h4>
               What are the documents required for a balance transfer loan?
             </h4>

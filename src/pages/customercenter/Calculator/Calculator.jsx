@@ -12,6 +12,26 @@ const Calculator = () => {
   const [interest, setInterest] = useState(0);
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    const elements = document.querySelectorAll(".animate-pop-up");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
+  useEffect(() => {
     const P = amount;
     const r = rate / 12 / 100;
     const n = years * 12;
@@ -30,17 +50,18 @@ const Calculator = () => {
 
   return (
     <div className="emi-page">
-      <h1 className="emi-title">EMI Calculator</h1>
-      <p className="emi-subtitle">Calculate your monthly payment and plan your finances</p>
 
-      <div className="emi-card">
+      <h1 className="emi-title animate-pop-up">EMI Calculator</h1>
+      <p className="emi-subtitle">Calculate your monthly payment and plan your finances</p>
+      
+      <div className="emi-card animate-pop-up">
 
         {/* LEFT */}
         <div className="emi-left">
 
           {/* Loan Amount */}
           <div className="slider-box">
-            <div className="label-row">
+            <div className="label-row animate-pop-up">
               <span>Loan Amount</span>
               <strong>₹{amount.toLocaleString("en-IN")}</strong>
             </div>
@@ -61,7 +82,7 @@ const Calculator = () => {
 
           {/* Interest */}
           <div className="slider-box">
-            <div className="label-row">
+            <div className="label-row animate-pop-up">
               <span>Interest Rate (p.a.)</span>
               <strong>{rate}%</strong>
             </div>
@@ -82,7 +103,7 @@ const Calculator = () => {
 
           {/* Tenure */}
           <div className="slider-box">
-            <div className="label-row">
+            <div className="label-row animate-pop-up">
               <span>Loan Tenure</span>
               <strong>{years} Years</strong>
             </div>
@@ -109,26 +130,26 @@ const Calculator = () => {
           {/* EMI BOX */}
           <div className="emi-main hover-pop">
             <span>MONTHLY EMI</span>
-            <h2>₹{emi.toLocaleString("en-IN")}</h2>
+            <h2 className="animate-pop-up">₹{emi.toLocaleString("en-IN")}</h2>
           </div>
 
           <div className="emi-small-grid">
 
             <div className="emi-small hover-pop">
               <span>Principal</span>
-              <h3>₹{amount.toLocaleString("en-IN")}</h3>
+              <h3 className="animate-pop-up">₹{amount.toLocaleString("en-IN")}</h3>
             </div>
 
             <div className="emi-small hover-pop">
               <span>Interest</span>
-              <h3>₹{interest.toLocaleString("en-IN")}</h3>
+              <h3 className="animate-pop-up">₹{interest.toLocaleString("en-IN")}</h3>
             </div>
 
           </div>
 
           <div className="emi-total hover-pop">
             <span>Total Payment</span>
-            <h3>₹{totalPayment.toLocaleString("en-IN")}</h3>
+            <h3 className="animate-pop-up">₹{totalPayment.toLocaleString("en-IN")}</h3>
 
             <div className="progress-bar">
               <div

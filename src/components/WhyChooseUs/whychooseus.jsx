@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   CheckCircle,
   Percent,
@@ -48,17 +49,37 @@ const features = [
 ];
 
 const WhyChooseUs = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    const elements = document.querySelectorAll(".animate-pop-up");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
     <section className="why-section">
       <div className="why-container">
-        <div className="why-heading-wrapper">
+        <div className="why-heading-wrapper animate-pop-up">
           <span className="spark">✦</span>
           <h6 className="why-heading">Why Choose Us</h6>
           <span className="spark">✦</span>
         </div>
 
-        <h2 className="why-title">Why Choose Nivara?</h2>
-        <p className="why-subtitle">
+        <h2 className="why-title animate-pop-up" style={{transitionDelay: "0.1s"}}>Why Choose Nivara?</h2>
+        <p className="why-subtitle animate-pop-up" style={{transitionDelay: "0.2s"}}>
           We're committed to making home ownership accessible and affordable.
         </p>
 
@@ -66,7 +87,7 @@ const WhyChooseUs = () => {
           {features.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div className={`why-card ${item.color}`} key={index}>
+              <div className={`why-card ${item.color} animate-pop-up`} style={{transitionDelay: `${0.1 + index * 0.15}s`}} key={index}>
                 <div className={`why-icon ${item.color}`}>
                   <Icon size={26} />
                 </div>
@@ -77,7 +98,7 @@ const WhyChooseUs = () => {
           })}
         </div>
 
-        <div className="trust-wrapper">
+        <div className="trust-wrapper animate-pop-up" style={{transitionDelay: "0.2s"}}>
           <div className="trust-badges">
             <div className="trust-item">
               <div className="trust-icon rbi">✓</div>

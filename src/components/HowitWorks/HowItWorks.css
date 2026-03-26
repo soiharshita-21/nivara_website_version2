@@ -1,0 +1,263 @@
+/* Pop-up Animation classes */
+.animate-pop-up {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.animate-pop-up.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.how-section {
+  background: radial-gradient(circle at top, #ffffff, #f3f4f6);
+  padding: 100px 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+.how-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.top-badge {
+  display: inline-block;
+  padding: 8px 24px;
+  border-radius: 30px;
+  background: rgba(139, 30, 45, 0.05);
+  border: 1px solid rgba(139, 30, 45, 0.2);
+  color: #8b1e2d;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.how-title {
+  font-size: 56px;
+  font-weight: 800;
+  color: #d32f2f;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.how-subtitle {
+  color: #6b7280;
+  font-size: 18px;
+  margin-bottom: 100px;
+  max-width: 600px; 
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Steps layout */
+.how-steps-container {
+  position: relative;
+  margin-bottom: 80px;
+}
+
+.how-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.how-step {
+  flex: 1;
+  position: relative;
+  transition: all 0.4s ease;
+  padding: 60px 20px 40px;
+  border-radius: 20px;
+  background: transparent;
+  border: 1px solid transparent;
+  z-index: 1;
+}
+
+/* Glassmorphism card on hover with matching color */
+.how-step:hover {
+  background: white;
+  border-color: var(--step-color);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.05);
+  transform: translateY(-10px);
+  z-index: 10;
+}
+
+/* Stagger delay */
+.how-step.visible {
+  transition-delay: calc(var(--index) * 0.2s);
+}
+
+.how-step-number {
+  font-size: 100px;
+  font-weight: 900;
+  opacity: 0.08;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  line-height: 1;
+  transition: all 0.3s ease;
+  z-index: 0;
+}
+
+.how-step:hover .how-step-number {
+  opacity: 0.08;
+}
+
+.how-circle-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.how-circle {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 32px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.how-circle svg {
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.how-step:hover .how-circle svg {
+  transform: rotate(360deg);
+}
+
+/* Enhanced Radiating effect */
+.how-circle::after,
+.how-circle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.how-step:hover .how-circle::after {
+  animation: radiate 1.5s infinite;
+}
+
+.how-step:hover .how-circle::before {
+  animation: radiate 1.5s infinite 0.5s;
+}
+
+@keyframes radiate {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+    border-width: 4px;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+    border-width: 1px;
+  }
+}
+
+.how-connector-arrow {
+  position: absolute;
+  top: 110px;
+  left: 100%;
+  width: 140px;
+  transform: none;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.how-step h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.how-step p {
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 200px;
+  margin: auto;
+}
+
+/* Hover effects */
+.how-step:hover .how-circle {
+  transform: translateY(-10px) scale(1.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* CTA */
+.how-cta {
+  margin-top: 40px;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.how-cta p {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #374151;
+}
+
+.how-cta button {
+  background: #8b1e2d;
+  color: white;
+  border: none;
+  padding: 18px 45px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(139, 30, 45, 0.2);
+}
+
+.how-cta button:hover {
+  background: #431a20;
+  transform: scale(1.05);
+  box-shadow: 0 15px 25px rgba(139, 30, 45, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .how-connector-arrow {
+    width: 100px;
+  }
+}
+
+@media (max-width: 900px) {
+  .how-steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+  }
+
+  .how-connector-arrow {
+    display: none;
+  }
+
+  .how-step-number {
+    top: -20px;
+  }
+
+  .how-title {
+    font-size: 40px;
+  }
+}

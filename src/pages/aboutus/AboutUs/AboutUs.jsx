@@ -1,24 +1,59 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./AboutUs.css";
-import  hero from "../../../assets/images/hero.jpeg";
+import abhome2 from "../../../assets/images/abhome2.jpg";
+import abhome from "../../../assets/images/abhome.jpg";
 
 const AboutUs = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.2, // Trigger when 20% of section is visible
+    });
+
+    const sections = document.querySelectorAll('.about-section');
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
+
   return (
     <div className="about-page">
- <section className="about-hero">
-  <img src={hero} className="hero-img" alt="Hero"  />
+      <section className="about-hero-section animate-pop-up">
+        <div className="hero-left animate-pop-up">
+          <h1 className="hero-title animate-pop-up">ABOUT<br/>US</h1>
+          <div className="hero-left-text animate-pop-up">
+            <p className="hero-subtitle animate-pop-up">Empowering Dreams. Building Homes.At Nivara, we help turn your dream home into reality.</p>
+            
+          </div>
+        </div>
+
+        <div className="hero-center animate-pop-up">
+          <img src={abhome} alt="Living Room" className="hero-main-img animate-pop-up" />
+        </div>
+
+        <div className="hero-right animate-pop-up">
+          <img src={abhome2} alt="Interior Detail" className="hero-small-img animate-pop-up" />
+          <div className="hero-philosophy animate-pop-up">
+            <h2 className="animate-pop-up">Our Philosophy</h2>
+            <p>Empowering individuals through accessible housing finance.
+Building trust through transparency, simplicity, and care.</p>
+          </div>
+        </div>
+      </section>
 
 
-  <div className="about-overlay">
-    <h1>Nivara Home Finance </h1>
-    <p>Building homes. Creating security. Empowering lives.</p>
-  </div>
-</section>
 
-
-
-      <section className="about-section">
-        <h2>Our Genesis</h2>
+      <section className="about-section slide-up animate-pop-up">
+        <h2 className="animate-pop-up">Our Genesis</h2>
         <p>
           The genesis of Nivara Home Finance Limited is rooted in the shared
           vision of seasoned professionals who brought together decades of
@@ -34,8 +69,8 @@ const AboutUs = () => {
         </p>
       </section>
 
-      <section className="about-section light">
-        <h2>Our Inspiration</h2>
+      <section className="about-section light slide-up animate-pop-up">
+        <h2 className="animate-pop-up">Our Inspiration</h2>
         <p>
           The name "Nivara" is derived from the Sanskrit roots "नि + वृ" (Ni +
           Vru), meaning to cover, shelter, protect, and provide refuge.
@@ -53,8 +88,8 @@ const AboutUs = () => {
         </p>
       </section>
 
-      <section className="about-section">
-        <h2>Our Purpose</h2>
+      <section className="about-section slide-up animate-pop-up">
+        <h2 className="animate-pop-up">Our Purpose</h2>
         <blockquote>
           To make home ownership accessible, affordable, and achievable for
           every family.
@@ -67,8 +102,8 @@ const AboutUs = () => {
         </p>
       </section>
 
-      <section className="about-section light">
-        <h2>Our Journey</h2>
+      <section className="about-section light slide-up animate-pop-up">
+        <h2 className="animate-pop-up">Our Journey</h2>
         <p>
           Nivara was incorporated under The Companies Act, 2013, with a clear
           objective of providing home loans to underserved segments of urban

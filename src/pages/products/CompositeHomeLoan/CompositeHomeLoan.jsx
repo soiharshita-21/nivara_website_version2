@@ -1,21 +1,41 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaHome } from "react-icons/fa";
-import home5 from "../../../assets/images/home5.jpg";
+import pol from "../../../assets/images/pol.jpg";
 import "./CompositeHomeLoan.css";
 import { useNavigate } from "react-router-dom";
 
 const CompositeHomeLoan = () => {
    const navigate = useNavigate();
-  const cards = [1, 2, 3]; // repeat same card 3 times
+  const cards = [1]; // display only 1 card
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    const elements = document.querySelectorAll(".animate-pop-up");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
 
   return (
     <section className="composite-section">
       <div className="composite-grid">
         {cards.map((item, index) => (
-          <div className="composite-card" key={index}>
+          <div className="composite-card animate-pop-up" key={index}>
             {/* Image */}
             <div className="composite-imagebox">
-              <img src={home5} alt="Composite Home Loan" />
+              <img src={pol} alt="Composite Home Loan" />
 
               {/* transparent color overlay */}
               <div className="composite-overlay"></div>
@@ -26,18 +46,20 @@ const CompositeHomeLoan = () => {
             </div>
 
             {/* Content */}
-            <div className="composite-content">
-              <h2>Composite Home Loan</h2>
+            <div className="composite-content animate-pop-up">
+              <h2 className="animate-pop-up">Composite Home Loan</h2>
 
               <p className="composite-subtitle">
                 Combined loan for land purchase and construction
               </p>
 
-              <ul className="composite-features">
-                <li>Single application</li>
-                <li>End-to-end financing</li>
-                <li>Tax benefits</li>
-              </ul>
+              <div className="slide-in-text">
+                <ul className="composite-features">
+                  <li>Single application</li>
+                  <li>End-to-end financing</li>
+                  <li>Tax benefits</li>
+                </ul>
+              </div>
 
               <div className="composite-buttons">
                 <button className="composite-btn-outline">Learn More</button>
@@ -56,10 +78,10 @@ const CompositeHomeLoan = () => {
         ))}
       </div>
       {/* After composite-grid */}
-      <div className="composite-text-section">
-        <h1 className="composite-main-title">Composite Home Loan</h1>
+      <div className="composite-text-section animate-pop-up">
+        <h1 className="composite-main-title animate-pop-up">Composite Home Loan</h1>
 
-        <h2 className="composite-sub-heading">
+        <h2 className="composite-sub-heading animate-pop-up">
           Build Your dream house with a Nivara Composite Home loan
         </h2>
 
@@ -78,90 +100,83 @@ const CompositeHomeLoan = () => {
       </div>
 
       {/* Composite Features Section */}
-      <section className="composite-features-section">
-        <div className="composite-features-grid">
-          <div className="composite-feature-card">
-            <div className="composite-feature-icon">📄</div>
-            <h3>Easy Loan Approvals</h3>
-          </div>
-
-          <div className="composite-feature-card">
-            <div className="composite-feature-icon">💰</div>
-            <h3>Lowest Possible Prices</h3>
-          </div>
-
-          <div className="composite-feature-card">
-            <div className="composite-feature-icon">💼</div>
-            <h3>Hassle free</h3>
-          </div>
-
-          <div className="composite-feature-card">
-            <div className="composite-feature-icon">✅</div>
-            <h3>Secure Loan Process</h3>
-          </div>
+      {/* Features Strip Section */}
+      <div className="com-feature-strip">
+        <div className="com-feature-box animate-pop-up">
+          <div className="com-feature-icon">📄</div>
+          <h3 className="animate-pop-up">Easy Loan Approvals</h3>
         </div>
-      </section>
-      {/* Composite Key Features Section */}
-      <section className="composite-keyfeatures-section">
-        <h2 className="composite-keyfeatures-title">
+
+        <div className="com-feature-box animate-pop-up">
+          <div className="com-feature-icon">💰</div>
+          <h3 className="animate-pop-up">Lowest Possible Prices</h3>
+        </div>
+
+        <div className="com-feature-box animate-pop-up">
+          <div className="com-feature-icon">💼</div>
+          <h3 className="animate-pop-up">Hassle free</h3>
+        </div>
+
+        <div className="com-feature-box animate-pop-up">
+          <div className="com-feature-icon">✅</div>
+          <h3 className="animate-pop-up">Secure Loan Process</h3>
+        </div>
+      </div>
+      {/* Features & Benefits Section */}
+      <div className="com-benefits-section animate-pop-up">
+        <h2 className="com-benefits-title animate-pop-up">
           Key Features of Composite Home Loan
         </h2>
 
-        <div className="composite-keyfeatures-content">
-          <p>
-            A composite home loan differs from a land loan in that it covers
-            both building and land expenditures. If you plan to start
-            construction immediately, you should opt for a composite loan, but
-            if you plan to construct later, a land loan might be a better
-            option.
-          </p>
+        <div className="com-benefits-list">
+          <div className="com-benefit-item animate-pop-up">
+            A composite home loan covers both building and land expenditures.
+          </div>
 
-          <p>
+          <div className="com-benefit-item animate-pop-up">
             Our process is completely transparent and without any hidden
             charges.
-          </p>
+          </div>
 
-          <p>Our loan experts provide services right at your doorstep.</p>
+          <div className="com-benefit-item animate-pop-up">
+            Our loan experts provide services right at your doorstep.
+          </div>
 
-          <p>
+          <div className="com-benefit-item animate-pop-up">
             We have a wide network and are available in rural, semi-urban, and
-            urban areas across locations.
-          </p>
+            urban areas.
+          </div>
 
-          <p>Apply with minimal documents, save time and effort.</p>
+          <div className="com-benefit-item animate-pop-up">
+            Apply with minimal documents, save time and effort.
+          </div>
 
-          <p>
+          <div className="com-benefit-item animate-pop-up">
             The composite loan limit is based on your loan repayment capacity.
-          </p>
+          </div>
 
-          <p>
-            It’s possible that you’ll have to pay prepayment fees if you go with
-            a fixed interest rate, but you may not have to do so if you go with
-            a fluctuating interest rate on your composite loan. Prepayment fees
-            may differ from one lender to the next.
-          </p>
+          <div className="com-benefit-item animate-pop-up">
+            No prepayment fees if you go with a fluctuating interest rate.
+          </div>
 
-          <p>
-            We maintain high levels of transparency in our relations with
-            customers.
-          </p>
+          <div className="com-benefit-item animate-pop-up">
+            Immediate construction is usually a mandatory requirement within 1-2
+            years.
+          </div>
 
-          <p>
-            To avail of a composite home loan, immediate construction is a
-            mandatory requirement. Lenders usually want borrowers to start
-            building within one to two years of getting a loan. If they don’t,
-            they may have to pay higher interest rates or pay off the loan and
-            close it.
-          </p>
-
-          <p className="composite-contact-line">
+          <div className="com-benefit-item animate-pop-up">
             Connect with us on Chat, Social Media anytime, anywhere.
-          </p>
+          </div>
+
+          <div className="com-benefit-item animate-pop-up">
+            Maintain high levels of transparency in our relations with
+            customers.
+          </div>
         </div>
-      </section>
+      </div>
 
       <section className="com-quote-sec">
-        <div className="com-quote-con">
+        <div className="com-quote-con animate-pop-up">
           <h2 className="com-quote-ti">Request Quote Now</h2>
           <p className="com-quote-subti">
             Easy to apply for a loan with us, Once you have complete this form.
@@ -187,46 +202,47 @@ const CompositeHomeLoan = () => {
           </form>
         </div>
       </section>
-      <section className="com-support-section">
-        <div className="com-support-header">
-          <h2>We are Here to Help You</h2>
-          <p>Our mission is to deliver reliable, latest news and opinions.</p>
-        </div>
+      {/* Help Section */}
+      <div className="com-help-section animate-pop-up">
+        <h2 className="com-help-title animate-pop-up">We are Here to Help You</h2>
+        <p className="com-help-subtitle animate-pop-up">
+          Our mission is to deliver reliable, latest news and opinions.
+        </p>
 
-        <div className="com-support-grid">
+        <div className="com-help-grid">
           {/* Card 1 */}
-          <div className="com-support-card">
-            <div className="com-support-icon">📄</div>
-            <h3>APPLY FOR LOAN</h3>
+          <div className="com-help-card animate-pop-up">
+            <div className="com-help-icon">🗓️</div>
+            <h3 className="animate-pop-up">APPLY FOR LOAN</h3>
             <p>Looking to buy a home loan? then apply for loan now.</p>
-            <span className="com-support-link">Get Appointment</span>
+            <span className="com-help-link">Get Appointment</span>
           </div>
 
           {/* Card 2 */}
-          <div className="com-support-card">
-            <div className="com-support-icon">📞</div>
-            <h3>CALL US AT</h3>
-            <h4 className="com-support-phone">1800-309-1516</h4>
-            <p className="com-support-mail">contact@nivarahousing.com</p>
-            <span className="com-support-link">Contact Us</span>
+          <div className="com-help-card animate-pop-up">
+            <div className="com-help-icon">📞</div>
+            <h3 className="animate-pop-up">CALL US AT</h3>
+            <p className="com-help-green">1800-309-1516</p>
+            <p className="com-help-green">contact@nivarahousing.com</p>
+            <span className="com-help-link">Contact Us</span>
           </div>
 
           {/* Card 3 */}
-          <div className="com-support-card">
-            <div className="com-support-icon">👥</div>
-            <h3>TALK TO ADVISOR</h3>
-            <h4 className="com-support-phone">+91 80 26552822</h4>
+          <div className="com-help-card animate-pop-up">
+            <div className="com-help-icon">👥</div>
+            <h3 className="animate-pop-up">TALK TO ADVISOR</h3>
+            <p className="com-help-green">+91 80 26552822</p>
             <p>Need to loan advise?</p>
-            <span className="com-support-link">Meet The Advisor</span>
+            <span className="com-help-link">Meet The Advisor</span>
           </div>
         </div>
-      </section>
+      </div>
       {/* Composite Loan FAQ Section */}
-      <section className="composite-faq-section">
-        <h2 className="composite-faq-title">Composite Home Loan FAQs</h2>
+      <section className="composite-faq-section animate-pop-up">
+        <h2 className="composite-faq-title animate-pop-up">Composite Home Loan FAQs</h2>
 
-        <div className="composite-faq-content">
-          <div className="composite-faq-item">
+        <div className="composite-faq-content animate-pop-up">
+          <div className="composite-faq-item animate-pop-up">
             <h4>What is a composite loan?</h4>
             <p>
               Composite loan is a loan extended by banks and financial
@@ -238,7 +254,7 @@ const CompositeHomeLoan = () => {
             </p>
           </div>
 
-          <div className="composite-faq-item">
+          <div className="composite-faq-item animate-pop-up">
             <h4>
               What is a composite home loan scheme in Nivara Home Finance?
             </h4>
@@ -251,7 +267,7 @@ const CompositeHomeLoan = () => {
             </p>
           </div>
 
-          <div className="composite-faq-item">
+          <div className="composite-faq-item animate-pop-up">
             <h4>Can we claim a composite loan?</h4>
             <p>
               By completing your house construction within three years, you
@@ -259,7 +275,7 @@ const CompositeHomeLoan = () => {
             </p>
           </div>
 
-          <div className="composite-faq-item">
+          <div className="composite-faq-item animate-pop-up">
             <h4>What are the benefits of a composite loan?</h4>
             <p>
               The composite loan tax benefits include combining land and

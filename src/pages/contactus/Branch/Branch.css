@@ -3,13 +3,68 @@
   width:100%;
   min-height:100vh;
   background:#fff;
+  font-family:'Poppins', sans-serif;
 }
 
-.branch-header{
+
+
+
+.branch-banner{
+  width:100%;
+  min-height:420px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:60px 80px;
+  padding:80px;
+  background-color:#F8F9FA;
+}
+
+
+
+
+.banner-con{
+  max-width:520px;
+}
+
+.banner-con h1{
+  font-size:44px;
+  color:#8B0000;
+  letter-spacing:3px;
+  margin-bottom:25px;
+}
+
+.banner-con p{
+  font-size:18px;
+  line-height:1.7;
+  color:#2B2B2B;
+  margin-bottom:35px;
+}
+
+
+
+
+
+.banner-map img{
+  width:500px;
+  max-width:100%;
+}
+
+
+
+
+@media(max-width:900px){
+
+  .branch-banner{
+    flex-direction:column;
+    text-align:center;
+    padding:60px 30px;
+  }
+
+  .banner-map img{
+    margin-top:40px;
+    width:380px;
+  }
+
 }
 
 .branch-left h1{
@@ -20,6 +75,7 @@
 
 .branch-right img{
   max-width:480px;
+  
 }
 
 .branch-locator{
@@ -71,7 +127,7 @@
   align-items:center;
   font-size:18px;
   font-weight:600;
-  color:maroon;
+  color:#B91C1C;
   box-shadow:0 6px 18px rgba(0,0,0,0.08);
   cursor:pointer;
   transition:0.3s;
@@ -87,15 +143,7 @@
 }
 
 @media(max-width:900px){
-  .branch-header{
-    flex-direction:column;
-    text-align:center;
-    gap:30px;
-  }
-
-  .branch-right img{
-    max-width:320px;
-  }
+  
 
   .branch-locator input{
     width:90%;
@@ -154,7 +202,7 @@
   margin:6px 0;
   color:#333;
 }
-/* Newly Opened Branches */
+
 .new-branches-section{
   width:85%;
   margin:80px auto;

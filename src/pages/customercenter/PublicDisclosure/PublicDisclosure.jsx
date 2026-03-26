@@ -7,22 +7,22 @@ const PublicDisclosure = () => {
     <div className="public-page">
 
       {/* Banner */}
-      <div className="public-banner">
+      <div className="public-banner animate-pop-up">
         <img src={home3} alt="Public Disclosure" />
         <div className="public-overlay">
-          <h1>Public Disclosure</h1>
+          <h1 className="animate-pop-up">Public Disclosure</h1>
         </div>
       </div>
 
       {/* Content */}
-      <div className="public-content">
+      <div className="public-content animate-pop-up">
 
         <p className="public-note">
           All documents are available for download. Click a document name to open or download.
         </p>
 
         {/* Public Disclosure Section */}
-        <h2>PUBLIC DISCLOSURE</h2>
+        <h2 className="animate-pop-up">PUBLIC DISCLOSURE</h2>
         <div className="public-links">
           <a href="/files/pd-mar-2021.pdf" target="_blank">Public Disclosure March 2021</a>
           <a href="/files/pd-jun-2021.pdf" target="_blank">Public Disclosure June 2021</a>
@@ -47,7 +47,7 @@ const PublicDisclosure = () => {
         </div>
 
         {/* Sarfaesi Section */}
-        <h2>SARFAESI ATTACHMENTS</h2>
+        <h2 className="animate-pop-up">SARFAESI ATTACHMENTS</h2>
         <div className="public-links">
           <a href="/files/sarfaesi-31-aug-2025.pdf" target="_blank">
             Updated list of properties under SARFAESI Act as on 31st August 2025

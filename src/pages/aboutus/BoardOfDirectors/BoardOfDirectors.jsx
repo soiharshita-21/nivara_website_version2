@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./BoardOfDirectors.css";
 import exe from "../../../assets/images/exe.jpg";
 import fin from "../../../assets/images/fin.jpg";
@@ -53,25 +53,45 @@ const boardMembers = [
 ];
 
 const BoardOfDirectors = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    const elements = document.querySelectorAll(".animate-pop-up");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
-    <section className="board-section">
-      <div className="board-header">
+    <section className="board-section animate-pop-up">
+      <div className="board-header animate-pop-up">
         <span className="board-tag">Board of Directors</span>
-        <h2>Our Leadership & Board</h2>
+        <h2 className="animate-pop-up">Our Leadership & Board</h2>
         <p>Meet the professionals guiding our vision, growth, and governance</p>
       </div>
 
       <div className="board-grid">
         {boardMembers.map((item, index) => (
-          <div className={`board-card ${item.color}`} key={index}>
+          <div className={`board-card ${item.color} animate-pop-up`} style={{transitionDelay: `${0.1 + index * 0.1}s`}} key={index}>
             <div className="image-wrapper">
               <img src={item.img} alt={item.name} />
               <span className="role-tag">{item.role}</span>
             </div>
 
-            <div className="board-content">
+            <div className="board-content animate-pop-up">
              
-              <h3>{item.name}</h3>
+              <h3 className="animate-pop-up">{item.name}</h3>
               <p>{item.desc}</p>
             </div>
           </div>

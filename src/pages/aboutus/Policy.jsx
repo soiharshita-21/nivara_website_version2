@@ -1,6 +1,6 @@
 import React from "react";
 import "./Policy.css";
-import hero from "../../assets/images/hero.jpeg";
+import pol from "../../assets/images/pol.jpg";
 
 const policies = [
   { name: "POSH Policy", link: "/policies/posh.pdf" },
@@ -19,15 +19,30 @@ const policies = [
 
 const PolicyPage = () => {
   return (
-    <section className="policy-section">
-       <section className="policy-hero">
-              <img src={hero} alt="policy" className="policy-hero-img" />
-      <div className="policy-header">
+    <section className="policy-section animate-pop-up">
+    <section className="policy-banner animate-pop-up">
+      <div className="policy-banner-container animate-pop-up">
+        <div className="policy-left">
+         
+          <h1 className="animate-pop-up">COMPANY POLICIES, ACCESSIBLE AND CLEAR</h1>
+          <p>
+            Our policies define the standards of governance, ethics, and
+            compliance that guide Nivara Home Finance. They ensure transparency,
+            accountability, and responsible business practices across all
+            operations.
+          </p>
+
+          
         
-        <h2>Company Policies</h2>
-        <p>Our policies define governance, ethics and compliance</p>
+        </div>
+
+        <div className="policy-right">
+          <div className="policy-image-wrapper">
+            <img src={pol} alt="Company Policies" className="policy-image" />
+          </div>
+        </div>
       </div>
-      </section>
+    </section>
 
       <div className="policy-links">
   <ul>

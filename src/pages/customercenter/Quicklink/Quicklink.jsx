@@ -7,15 +7,15 @@ const Quicklink = () => {
     <div className="quicklink-page">
 
       {/* Banner Section */}
-      <div className="quicklink-banner">
+      <div className="quicklink-banner animate-pop-up">
         <img src={home3} alt="home" />
         <div className="quicklink-overlay">
-          <h1>Privacy and Policy</h1>
+          <h1 className="animate-pop-up">Privacy and Policy</h1>
         </div>
       </div>
 
       {/* Content Section */}
-      <div className="quicklink-content">
+      <div className="quicklink-content animate-pop-up">
 
         <p>
           This privacy policy sets out how Nivara uses and protects any information
@@ -31,7 +31,7 @@ const Quicklink = () => {
           This policy is effective from 2026.
         </p>
 
-        <h3>What we collect</h3>
+        <h3 className="animate-pop-up">What we collect</h3>
         <ul>
           <li>Name and Job Title.</li>
           <li>Contact Information including Email Address.</li>
@@ -39,7 +39,7 @@ const Quicklink = () => {
           <li>Other Information relevant to Customer Surveys and/or Offers.</li>
         </ul>
 
-        <h3>What we do with the information we gather</h3>
+        <h3 className="animate-pop-up">What we do with the information we gather</h3>
         <p>
           We require this information to understand your needs and provide you with a better service,
           and in particular for the following reasons:

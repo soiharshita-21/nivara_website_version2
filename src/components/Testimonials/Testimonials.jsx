@@ -35,6 +35,27 @@ const testimonials = [
 const Testimonials = () => {
   const [index, setIndex] = useState(0);
 
+  // Intersection Observer for scroll animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    const elements = document.querySelectorAll(".animate-pop-up");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   /* Auto slide */
   useEffect(() => {
     const timer = setInterval(() => {
@@ -56,7 +77,7 @@ const Testimonials = () => {
     <section className="testimonials-section">
 
       {/* Header */}
-      <div className="testimonials-header">
+      <div className="testimonials-header animate-pop-up">
          <span className="s">♡   </span>
         <span className="test-tag">  Testimonials  </span>
         <span className="s">   ♡</span>
@@ -65,7 +86,7 @@ const Testimonials = () => {
       </div>
 
       {/* Slider Card */}
-      <div className="testimonial-card">
+      <div className="testimonial-card animate-pop-up" style={{transitionDelay: "0.2s"}}>
 
         {/* Left Arrow */}
         <button className="nav-btn left" onClick={prev}>‹</button>

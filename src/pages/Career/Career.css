@@ -1,7 +1,24 @@
+/* Pop-up Animation classes */
+.animate-pop-up {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.animate-pop-up.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.career-content p.animate-pop-up { transition-delay: 0.1s; }
+.job-card.animate-pop-up:nth-child(2) { transition-delay: 0.2s; }
+.job-card.animate-pop-up:nth-child(3) { transition-delay: 0.3s; }
+.career-form.animate-pop-up { transition-delay: 0.2s; }
 
 .career-page
 {width:100%;
 background:#fff;
+font-family: 'Poppins', sans-serif;
 padding:40px 0;} 
 
 .career-container
@@ -11,14 +28,14 @@ display:grid;
 grid-template-columns:1.2fr 1fr;
 gap:40px;}
 
-.career-content h1{color:maroon;font-size:36px;margin-bottom:10px;}
+.career-content h1{color:#d32f2f;font-size:36px;margin-bottom:10px;}
 .career-content h2{margin-top:20px;}
-.career-content h2.red{color: maroon;}
+.career-content h2.red{color: #d32f2f;}
 .career-content p{line-height:1.7;color:#333;margin-bottom:15px;}
 
 .job-section{margin-top:30px;}
 .job-card{border:1px solid #ddd;padding:15px;border-radius:6px;margin-bottom:15px;}
-.job-card h3{color:maroon;margin-bottom:8px;}
+.job-card h3{color:#d32f2f;margin-bottom:8px;}
 
 /* FORM */
 .career-form
@@ -29,7 +46,7 @@ overflow:hidden;
 height: 750px;
 }
 .form-header{
-  background:maroon;
+  background:#d32f2f;
   color:#fff;
   text-align:center;
   padding:20px;
@@ -65,7 +82,7 @@ height: 750px;
 }
 
 .career-form button{
-  background:maroon;
+  background:#d32f2f;
   color:#fff;
   border:none;
   padding:12px 35px;

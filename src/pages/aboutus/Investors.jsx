@@ -1,29 +1,62 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Investors.css";
-import hero from "../../assets/images/hero.jpeg";
+import inv from "../../assets/images/inv.jpg";
 
 
 
 const Investors = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    const elements = document.querySelectorAll(".animate-slide-up");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
     <div className="investors-page">
 
-      
-      <section className="investors-hero">
-        <img src={hero} alt="Investors Hero" className="hero-img" />
-        <div className="investors-hero-overlay">
-    <h1>Our Investors</h1>
-    <p>Strong partners powering Nivara’s long-term growth</p>
-  </div>
+      <section className="investors-banner animate-pop-up">
+        <img src={inv} alt="Our Investors Background" className="investors-banner-bg animate-pop-up" />
+        
+        <div className="investors-banner-overlay animate-pop-up">
+          <div className="investors-banner-content animate-slide-up animate-pop-up">
+            <h1 className="animate-pop-up">YOUR BUSINESS<br />PARTNER</h1>
+            <p>
+              Our investors are strong partners who support Nivara Home Finance in
+              achieving sustainable growth. Their trust and long-term vision help us
+              expand access to affordable housing finance across communities.
+            </p>
+            
+          </div>
+        </div>
+
+        {/* Decorative Strips */}
+        <div className="investors-strip top-strip-1"></div>
+        <div className="investors-strip top-strip-2"></div>
+        <div className="investors-strip bottom-strip-1"></div>
+        <div className="investors-strip bottom-strip-2"></div>
       </section>
 
      
-      <section className="investors-content">
+      <section className="investors-content animate-pop-up">
 
         
-        <div className="investor-card">
+        <div className="investor-card animate-pop-up">
           <div className="investor-header">
-            <h2>True North</h2>
+            <h2 className="animate-pop-up">True North</h2>
           </div>
 
           <p>
@@ -39,9 +72,9 @@ const Investors = () => {
           </a>
         </div>
 
-        <div className="investor-card">
+        <div className="investor-card animate-pop-up">
           <div className="investor-header">
-            <h2>Baring Private Equity India</h2>
+            <h2 className="animate-pop-up">Baring Private Equity India</h2>
             
           </div>
 

@@ -1,19 +1,25 @@
 import "./banner.css";
-import { motion } from "framer-motion";
 import Carousel from "react-bootstrap/Carousel";
 import { useNavigate } from "react-router-dom";
 
 // slide images
 import slide1 from "../../assets/images/slide1.jpg";
-import slide2 from "../../assets/images/slide2.jpg";
-import slide3 from "../../assets/images/slide3.jpg";
+import ban2 from "../../assets/images/ban2.png";
+import ban3 from "../../assets/images/ban3.png";
 
 const Banner = () => {
   const navigate = useNavigate();
 
   return (
     <section className="banner">
-      <Carousel fade controls={false} indicators={true} interval={3000}>
+    <Carousel
+  fade
+  controls={false}
+  indicators={true}
+  interval={2500}   // slightly increased for smooth feel
+  pause={false}     // IMPORTANT → keeps looping without stopping
+  wrap={true}       // ensures infinite looping
+>
         
         {/* SLIDE 1 */}
         <Carousel.Item>
@@ -22,22 +28,20 @@ const Banner = () => {
             style={{ backgroundImage: `url(${slide1})` }}
           >
             <div className="banner-content">
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                Your Trusted Partner for <br />
-                <span>Housing Finance</span>
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8 }}
-              >
+              <div className="trusted-badge">
+                <span className="green-dot"></span> Trusted by 50,000+ Happy Families
+              </div>
+ <h1>
+  Your{" "}
+  <span className="flip-wrapper">
+    <span className="flip-inner">Trusted</span>
+  </span>{" "}
+  Partner for <br />
+  <span>Housing Finance</span>
+</h1>
+              <p>
                 Affordable home loans with transparent processes.
-              </motion.p>
+              </p>
 
               <div className="banner-buttons">
                 <button
@@ -69,11 +73,24 @@ const Banner = () => {
         <Carousel.Item>
           <div
             className="banner-slide"
-            style={{ backgroundImage: `url(${slide2})` }}
+            style={{ backgroundImage: `url(${ban2})` }}
           >
-            <div className="banner-content">
-              <h1>Fast & Easy Home Loans</h1>
-              <p>Quick approvals with minimum documentation</p>
+             <div className="banner-content">
+              <div className="trusted-badge">
+                <span className="green-dot"></span> Trusted by 50,000+ Happy Families
+              </div>
+  <h1>
+  Your{" "}
+  <span className="flip-wrapper">
+    <span className="flip-inner">Trusted</span>
+  </span>{" "}
+  Partner for <br />
+  <span>Housing Finance</span>
+</h1>
+
+              <p>
+                Affordable home loans with transparent processes.
+              </p>
 
               <div className="banner-buttons">
                 <button
@@ -105,11 +122,23 @@ const Banner = () => {
         <Carousel.Item>
           <div
             className="banner-slide"
-            style={{ backgroundImage: `url(${slide3})` }}
+            style={{ backgroundImage: `url(${ban3})` }}
           >
-            <div className="banner-content">
-              <h1>Your Family, Your Home</h1>
-              <p>Quick Approvals</p>
+             <div className="banner-content">
+              <div className="trusted-badge">
+                <span className="green-dot"></span> Trusted by 50,000+ Happy Families
+              </div>
+  <h1>
+  Your{" "}
+  <span className="flip-wrapper">
+    <span className="flip-inner">Trusted</span>
+  </span>{" "}
+  Partner for <br />
+  <span>Housing Finance</span>
+</h1>
+              <p>
+                Affordable home loans with transparent processes.
+              </p>
 
               <div className="banner-buttons">
                 <button

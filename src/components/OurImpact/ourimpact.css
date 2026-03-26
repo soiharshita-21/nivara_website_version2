@@ -9,7 +9,7 @@
   font-weight: 600;
   letter-spacing: 1.5px;
 
-  color: #6d1f2a;                
+  color: #d32f2f;                
   background: #fdebed;           
   border: 1px solid #f3c7cd;     
 
@@ -34,7 +34,7 @@
 .impact-title {
   font-size: 44px;
   font-weight: 700;
-  color: #6d1f2a;
+  color: #d32f2f;
   margin-bottom: 16px;
 }
 
@@ -191,7 +191,7 @@
 
 .pink .impact-icon {
   background: rgba(109, 31, 42, 0.15);
-  color: #6d1f2a;
+  color: #d32f2f;
 }
 
 .red .impact-icon {
@@ -226,13 +226,18 @@
   }
 }
 
+/* Pop-up Animation classes */
+.animate-pop-up {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
 
-  
-  
-  
-  
-  
-  
+.animate-pop-up.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
   
   
   

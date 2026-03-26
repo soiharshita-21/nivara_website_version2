@@ -1,55 +1,165 @@
 .investors-page {
   width: 100%;
   background: #ffffff;
+  font-family: 'Poppins', sans-serif;
 }
 
-.investors-hero{
+/* Banner */
+.investors-banner {
   position: relative;
   width: 100%;
-  height: 80vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
   overflow: hidden;
+  background: #fff;
+  line-height: 0; /* removes inline gaps */
 }
 
-.hero-img{
-  position:absolute;
-  inset:0;
-  width:100%;
+/* Background Image */
+.investors-banner-bg {
+  position: absolute;
+  inset: 0;              /* 🔥 better than top/right/width/height */
+  width: 100%;
   height: 100%;
-  object-fit:cover;
-  z-index:1;
+  object-fit: cover;
+  z-index: 1;
+  display: block;
+  /* slight scale to hide edges during translateY */
+  transform: scale(1.05);
+  animation: bannerImageSlideUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-.investors-hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.45);
-  z-index:2;
+@keyframes bannerImageSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1.05);
+  }
 }
-
 
 /* Overlay */
-.investors-hero-overlay {
- position: relative;
-  z-index:3;
-  text-align:left;
-  color: white;
-  margin-top: 200px;
-  padding-left: 50px;
+.investors-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 55%;
+  height: 100%;
+  background-color: #6b1f2b;
+  clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
 }
 
-/* Text */
-.investors-hero-overlay h1 {
-  font-size: 48px;
+/* Content */
+.investors-banner-content {
+  width: 75%;
+  padding-left: 10%;
+  color: #fff;
+}
+
+.investors-banner-content h1 {
+  font-size: 42px;
   font-weight: 700;
-  margin-bottom: 10px;
-  z-index: 3;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.investors-hero-overlay p {
-  font-size: 18px;
-  opacity: 0.95;
+.investors-banner-content p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #fce8eb;
+  max-width: 95%;
+}
+
+/* Decorative Strips */
+.investors-strip {
+  position: absolute;
+  height: 45px;
   z-index: 3;
+  transform: translateZ(0); /* 🔥 fixes rendering gap */
+}
+
+/* Top strips */
+.top-strip-1 {
+  top: 0;
+  left: 0;
+  width: 70%;
+  background-color: #942a3b;
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+
+.top-strip-2 {
+  top: 44px; /* 🔥 reduced from 45px */
+  left: 0;
+  width: 58%;
+  background-color: #4a151d;
+  clip-path: polygon(0 0, 100% 0, 93% 100%, 0% 100%);
+}
+
+/* Bottom strips */
+.bottom-strip-1 {
+  bottom: -2px; /* 🔥 overlap fix */
+  left: 0;
+  width: 100%;
+  background-color: #942a3b;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.bottom-strip-2 {
+  bottom: 43px; /* 🔥 reduced from 45px */
+  left: 0;
+  width: 80%;
+  background-color: #6b1f2b;
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+
+/* Extra safety layer (optional but bulletproof) */
+.investors-banner::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #942a3b;
+  z-index: 4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .investors-banner-overlay {
+    width: 100%;
+    clip-path: none;
+    background-color: rgba(107, 31, 43, 0.9);
+    padding: 30px 0;
+  }
+
+  .investors-banner-content {
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .investors-banner-content h1 {
+    font-size: 32px;
+  }
+
+  .investors-banner-content p {
+    font-size: 14px;
+    margin: 0 auto 20px auto;
+  }
+
+  .investors-strip {
+    display: none;
+  }
 }
 
 /* Content */
@@ -62,18 +172,18 @@
   gap: 60px;
 }
 
-/* Investor Card */
+/* Cards */
 .investor-card {
   background: #f9fafb;
   border-radius: 18px;
   padding: 40px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .investor-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* Header */
@@ -83,7 +193,6 @@
   gap: 20px;
   margin-bottom: 25px;
 }
-
 
 .investor-header h2 {
   font-size: 26px;
@@ -112,18 +221,25 @@
   text-decoration: underline;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .investors-hero-overlay h1 {
-    font-size: 34px;
-  }
+/* Animations */
+.animate-scale-up {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 1s ease-out, transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
 
-  .investor-card {
-    padding: 25px;
-  }
+.animate-scale-up.visible {
+  opacity: 1;
+  transform: scale(1);
+}
 
-  .investor-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.animate-slide-up.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

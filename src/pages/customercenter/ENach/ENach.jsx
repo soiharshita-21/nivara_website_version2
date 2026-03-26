@@ -9,7 +9,7 @@ const ENach = () => {
   const [screen, setScreen] = useState("main");
 
   return (
-    <div className="enach-container">
+    <div className="enach-container animate-pop-up">
       {/* LEFT PANEL */}
       <div className="enach-left">
         <div className="enach-overlay">
@@ -26,7 +26,7 @@ const ENach = () => {
         {/* ================= MAIN SCREEN ================= */}
         {screen === "main" && (
           <>
-            <h2 className="enach-title">NACH E-MANDATE</h2>
+            <h2 className="enach-title animate-pop-up">NACH E-MANDATE</h2>
 
             <div className="enach-actions">
               <button
@@ -77,7 +77,7 @@ const ENach = () => {
         {/* ================= LOGIN SCREEN ================= */}
         {screen === "login" && (
           <div className="nach-login">
-            <h2 className="login-title">Nivara Nach Welcome</h2>
+            <h2 className="login-title animate-pop-up">Nivara Nach Welcome</h2>
             <p className="login-subtitle">Enter your details to log in</p>
 
             <div className="login-group">
@@ -109,7 +109,7 @@ const ENach = () => {
         {/* ================= REGISTRATION SCREEN ================= */}
         {screen === "register" && (
           <div className="nach-register">
-            <h2 className="register-title">Welcome to Nivara Nach</h2>
+            <h2 className="register-title animate-pop-up">Welcome to Nivara Nach</h2>
             <p className="register-subtitle">
               Please enter your details to register.
             </p>

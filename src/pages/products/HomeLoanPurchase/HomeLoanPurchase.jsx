@@ -1,18 +1,39 @@
-import React from "react";
-import home5 from "../../../assets/images/home5.jpg";
+import React, { useEffect } from "react";
+import pol from "../../../assets/images/pol.jpg";
 import { FiHome } from "react-icons/fi";
 import "./HomeLoanPurchase.css";
 import { useNavigate } from "react-router-dom";
 
 const HomeLoanPurchase = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    const elements = document.querySelectorAll(".animate-pop-up");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
     <div className="page-center home-page">
-      <div className="loan-card-grid">
-        {[1, 2, 3].map((item, index) => (
-          <div className="loan-card" key={index}>
+      <div className="loan-card-grid animate-pop-up">
+        {[1].map((item, index) => (
+          <div className="loan-card animate-pop-up" key={index}>
             <div className="loan-image">
-              <img src={home5} alt="Home Loan" />
+              <img src={pol} alt="Home Loan" />
               <div className="image-overlay"></div>
 
               <div className="center-icon">
@@ -20,17 +41,19 @@ const HomeLoanPurchase = () => {
               </div>
             </div>
 
-            <div className="loan-content">
-              <h2>Home Purchase Loan</h2>
+            <div className="loan-content animate-pop-up">
+              <h2 className="animate-pop-up">Home Purchase Loan</h2>
               <p className="subtitle">
                 Finance your dream home with flexible repayment options
               </p>
 
-              <ul className="features">
-                <li>Up to 90% financing</li>
-                <li>Tenure up to 30 years</li>
-                <li>Competitive rates</li>
-              </ul>
+              <div className="slide-in-text">
+                <ul className="homefeatures">
+                  <li>Up to 90% financing</li>
+                  <li>Tenure up to 30 years</li>
+                  <li>Competitive rates</li>
+                </ul>
+              </div>
 
               <div className="ho-loan-buttons">
                 <button className="ho-loan-btn-outline">Learn More</button>
@@ -47,8 +70,8 @@ const HomeLoanPurchase = () => {
           </div>
         ))}
       </div>
-      <div className="home-loan-text-section">
-        <h1 className="home-loan-title">
+      <div className="home-loan-text-section animate-pop-up">
+        <h1 className="home-loan-title animate-pop-up">
           Secure Your Dream Home with Nivara Home Finance – Top Home Purchase
           Loan Provider in Bangalore
         </h1>
@@ -73,70 +96,70 @@ const HomeLoanPurchase = () => {
         </p>
       </div>
       {/* Features Strip Section */}
-      <div className="home-feature-strip">
-        <div className="home-feature-box">
-          <div className="home-feature-icon">📄</div>
-          <h3>Easy Loan Approvals</h3>
+      <div className="homeloan-feature-strip">
+        <div className="homeloan-feature-box animate-pop-up">
+          <div className="homeloan-feature-icon">📄</div>
+          <h3 className="animate-pop-up">Easy Loan Approvals</h3>
         </div>
 
-        <div className="home-feature-box">
-          <div className="home-feature-icon">💰</div>
-          <h3>Lowest Possible Prices</h3>
+        <div className="homeloan-feature-box animate-pop-up">
+          <div className="homeloan-feature-icon">💰</div>
+          <h3 className="animate-pop-up">Lowest Possible Prices</h3>
         </div>
 
-        <div className="home-feature-box">
-          <div className="home-feature-icon">💼</div>
-          <h3>Hassle free</h3>
+        <div className="homeloan-feature-box animate-pop-up">
+          <div className="homeloan-feature-icon">💼</div>
+          <h3 className="animate-pop-up">Hassle free</h3>
         </div>
 
-        <div className="home-feature-box">
-          <div className="home-feature-icon">✅</div>
-          <h3>Secure Loan Process</h3>
+        <div className="homeloan-feature-box animate-pop-up">
+          <div className="homeloan-feature-icon">✅</div>
+          <h3 className="animate-pop-up">Secure Loan Process</h3>
         </div>
       </div>
       {/* Features & Benefits Section */}
-      <div className="benefits-section">
-        <h2 className="benefits-title">
+      <div className="homeloan-benefits-section animate-pop-up">
+        <h2 className="homeloan-benefits-title animate-pop-up">
           Features and Benefits of Nivara Home Loan Purchase
         </h2>
 
-        <div className="benefits-list">
-          <div className="benefit-item">
+        <div className="homeloan-benefits-list">
+          <div className="homeloan-benefit-item animate-pop-up">
             Loan is available for customers with minimum wage too and with other
             non-income proof documentation.
           </div>
 
-          <div className="benefit-item">
+          <div className="homeloan-benefit-item animate-pop-up">
             Our process is completely transparent and without any hidden
             charges.
           </div>
 
-          <div className="benefit-item">
+          <div className="homeloan-benefit-item animate-pop-up">
             Our Loan expert will provide you services right at your doorstep.
           </div>
 
-          <div className="benefit-item">
+          <div className="homeloan-benefit-item animate-pop-up">
             We have a wide network and are available in rural, semi-urban, and
             urban areas across locations.
           </div>
 
-          <div className="benefit-item">
+          <div className="homeloan-benefit-item animate-pop-up">
             Apply with minimal documents, save time and effort.
           </div>
 
-          <div className="benefit-item">
+          <div className="homeloan-benefit-item animate-pop-up">
             Home loan Approval in Simple steps.
           </div>
 
-          <div className="benefit-item">
+          <div className="homeloan-benefit-item animate-pop-up">
             Connect with us on Chat, Social Media anytime, anywhere.
           </div>
 
-          <div className="benefit-item">
+          <div className="homeloan-benefit-item animate-pop-up">
             Tailor-made home loans to suit your requirements.
           </div>
 
-          <div className="benefit-item">
+          <div className="homeloan-benefit-item animate-pop-up">
             We maintain high levels of transparency in our relations with
             customers.
           </div>
@@ -144,44 +167,44 @@ const HomeLoanPurchase = () => {
       </div>
 
       {/* Help Section */}
-      <div className="help-section">
-        <h2 className="help-title">We are Here to Help You</h2>
-        <p className="help-subtitle">
+      <div className="homeloan-help-section animate-pop-up">
+        <h2 className="homeloan-help-title animate-pop-up">We are Here to Help You</h2>
+        <p className="homeloan-help-subtitle animate-pop-up">
           Our mission is to deliver reliable, latest news and opinions.
         </p>
 
-        <div className="help-grid">
+        <div className="homeloan-help-grid">
           {/* Card 1 */}
-          <div className="help-card">
-            <div className="help-icon">🗓️</div>
-            <h3>APPLY FOR LOAN</h3>
+          <div className="homeloan-help-card animate-pop-up">
+            <div className="homeloan-help-icon">🗓️</div>
+            <h3 className="animate-pop-up">APPLY FOR LOAN</h3>
             <p>Looking to buy a home loan? then apply for loan now.</p>
-            <span className="help-link">Get Appointment</span>
+            <span className="homeloan-help-link">Get Appointment</span>
           </div>
 
           {/* Card 2 */}
-          <div className="help-card">
-            <div className="help-icon">📞</div>
-            <h3>CALL US AT</h3>
-            <p className="help-green">1800-309-1516</p>
-            <p className="help-green">contact@nivarahousing.com</p>
-            <span className="help-link">Contact Us</span>
+          <div className="homeloan-help-card animate-pop-up">
+            <div className="homeloan-help-icon">📞</div>
+            <h3 className="animate-pop-up">CALL US AT</h3>
+            <p className="homeloan-help-green">1800-309-1516</p>
+            <p className="homeloan-help-green">contact@nivarahousing.com</p>
+            <span className="homeloan-help-link">Contact Us</span>
           </div>
 
           {/* Card 3 */}
-          <div className="help-card">
-            <div className="help-icon">👥</div>
-            <h3>TALK TO ADVISOR</h3>
-            <p className="help-green">+91 80 26552822</p>
+          <div className="homeloan-help-card animate-pop-up">
+            <div className="homeloan-help-icon">👥</div>
+            <h3 className="animate-pop-up">TALK TO ADVISOR</h3>
+            <p className="homeloan-help-green">+91 80 26552822</p>
             <p>Need to loan advise?</p>
-            <span className="help-link">Meet The Advisor</span>
+            <span className="homeloan-help-link">Meet The Advisor</span>
           </div>
         </div>
       </div>
-      <section className="quote-section">
-        <div className="quote-wrapper">
+      <section className="quote-section animate-pop-up">
+        <div className="quote-wrapper animate-pop-up">
           <div className="quote-header">
-            <h2 className="quote-title">Request Quote Now</h2>
+            <h2 className="quote-title animate-pop-up">Request Quote Now</h2>
             <p className="quote-subtitle">
               Easy to apply for a loan with us, Once you have complete this
               form.
@@ -209,14 +232,14 @@ const HomeLoanPurchase = () => {
       </section>
 
       {/* FAQ Section */}
-      <div className="faq-section">
-        <h2 className="faq-title">
+      <div className="faq-section animate-pop-up">
+        <h2 className="faq-title animate-pop-up">
           Home Loan Purchase: Your Frequently Asked Questions Answered
         </h2>
 
         <div className="faq-list">
-          <div className="faq-item">
-            <h3>What is the need of a Home Loan?</h3>
+          <div className="faq-item animate-pop-up">
+            <h3 className="animate-pop-up">What is the need of a Home Loan?</h3>
             <p>
               Customers can avail Home Loan for a variety of purposes that
               includes but not limited to:
@@ -232,24 +255,24 @@ const HomeLoanPurchase = () => {
             </ul>
           </div>
 
-          <div className="faq-item">
-            <h3>Is a personal loan better than a home loan Purchase?</h3>
+          <div className="faq-item animate-pop-up">
+            <h3 className="animate-pop-up">Is a personal loan better than a home loan Purchase?</h3>
             <p>
               For buying a house, a home loan is more suitable due to higher
               amounts. Personal loans are ideal for non-specific personal needs.
             </p>
           </div>
 
-          <div className="faq-item">
-            <h3>Can I buy a house with two loans?</h3>
+          <div className="faq-item animate-pop-up">
+            <h3 className="animate-pop-up">Can I buy a house with two loans?</h3>
             <p>
               No, availing two home loans for the same property is considered
               fraudulent and prevented by authorities.
             </p>
           </div>
 
-          <div className="faq-item">
-            <h3>Can we buy property on loan?</h3>
+          <div className="faq-item animate-pop-up">
+            <h3 className="animate-pop-up">Can we buy property on loan?</h3>
             <p>
               Loan for land purchase is offered by banks when you need financing
               to buy a plot or a piece of land. This loan is generally provided
@@ -258,8 +281,8 @@ const HomeLoanPurchase = () => {
             </p>
           </div>
 
-          <div className="faq-item">
-            <h3>
+          <div className="faq-item animate-pop-up">
+            <h3 className="animate-pop-up">
               Can I switch from a fixed rate to a floating rate during my home
               loan tenure?
             </h3>
@@ -270,8 +293,8 @@ const HomeLoanPurchase = () => {
             </p>
           </div>
 
-          <div className="faq-item">
-            <h3>What is the meaning of home loan purchase?</h3>
+          <div className="faq-item animate-pop-up">
+            <h3 className="animate-pop-up">What is the meaning of home loan purchase?</h3>
             <p>
               A home loan is a secured loan that is obtained to purchase a
               property by offering it as collateral.
