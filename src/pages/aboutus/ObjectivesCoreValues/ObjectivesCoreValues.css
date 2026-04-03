@@ -1,8 +1,8 @@
-
 .ocv-page {
   width: 100%;
   font-family: "poppins";
 }
+
 .ocv-hero-modern {
   width: 100%;
   min-height: 90vh;
@@ -33,7 +33,8 @@
 }
 
 .text-highlight {
-  color: #d32f2f; /* Match Nivara green or reference green */
+  color: #d32f2f;
+  /* Match Nivara green or reference green */
   font-weight: 600;
 }
 
@@ -41,7 +42,8 @@
   font-size: 14px;
   max-width: 380px;
   color: #666;
-  text-align: left; /* Image has it left aligned but on the right side */
+  text-align: left;
+  /* Image has it left aligned but on the right side */
   line-height: 1.5;
 }
 
@@ -79,7 +81,8 @@
   bottom: 0px;
   left: 0;
   width: 100%;
-  height: 70%; /* Show more image */
+  height: 70%;
+  /* Show more image */
   z-index: 2;
   overflow: hidden;
   display: flex;
@@ -153,7 +156,7 @@
   height: 320px;
   background: white;
   border-radius: 50%;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -168,14 +171,21 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .cv-center-emoji {
   font-size: 70px;
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .cv-center-emoji.default {
@@ -186,7 +196,7 @@
 .cv-center-content h3 {
   color: #d32f2f;
   font-size: 28px;
-  margin-bottom: 12px;
+  margin: 0;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -196,6 +206,7 @@
   color: #444;
   font-size: 16px;
   line-height: 1.6;
+  margin-top: 0;
 }
 
 .cv-wheel-node {
@@ -211,7 +222,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   z-index: 20;
@@ -227,14 +238,14 @@
   transition: transform 0.3s ease;
 }
 
-.cv-wheel-node:hover .cv-node-emoji, 
+.cv-wheel-node:hover .cv-node-emoji,
 .cv-wheel-node.active .cv-node-emoji {
   transform: scale(1.2);
 }
 
-.cv-wheel-node:hover, 
+.cv-wheel-node:hover,
 .cv-wheel-node.active {
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   border-color: var(--node-color);
   transform: rotate(var(--angle)) translate(var(--radius)) rotate(calc(-1 * var(--angle))) scale(1.1);
 }
@@ -246,7 +257,8 @@
     gap: 20px;
   }
 
-  .ocv-top-left, .ocv-top-right {
+  .ocv-top-left,
+  .ocv-top-right {
     max-width: 100%;
     text-align: center;
   }
@@ -313,6 +325,7 @@
     width: 250px;
     height: 250px;
   }
+
   .cv-wheel-node {
     --radius: 130px;
   }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ObjectivesCoreValues.css";
-import abhome2 from "../../../assets/images/abhome2.jpg";
+import house2 from "../../../assets/images/house2.png";
 
 const objectivesText = `Nivara seeks to further its mission by catering to the housing finance needs of the un-served and under-served segments of urban and semi-urban Indian markets. The company provides organized home loan solutions to the unorganized sector, especially to the lower and middle income households. It focuses on delivering innovative credit delivery mechanisms for purchase of homes, construction of homes and undertaking home improvements. Nivara also provides mortgage solutions to the micro, small and medium enterprises including micro-entrepreneurs and small developers, and offers loans against property for either business or personal consumption.`;
 
@@ -63,7 +63,7 @@ const ObjectivesCoreValues = () => {
       threshold: 0.1,
     });
 
-    const animatedElements = document.querySelectorAll('.slide-up');
+    const animatedElements = document.querySelectorAll('.slide-up, .animate-pop-up');
     animatedElements.forEach((el) => observer.observe(el));
 
     return () => {
@@ -87,7 +87,7 @@ const ObjectivesCoreValues = () => {
         <div className="ocv-huge-title-container animate-pop-up">
           <h1 className="ocv-huge-title animate-pop-up">OBJECTIVES & CORE VALUES</h1>
           <div className="ocv-overlapping-image slide-up">
-            <img src={abhome2} alt="Objectives & Core Values" />
+            <img src={house2} alt="Objectives & Core Values" />
           </div>
         </div>
       </section>
@@ -107,15 +107,15 @@ const ObjectivesCoreValues = () => {
           <div className="cv-wheel">
             <div className="cv-wheel-center">
               {activeValue ? (
-                <div className="cv-center-content fade-in animate-pop-up">
+                <div key={activeValue.title} className="cv-center-content fade-in">
                   <span className="cv-center-emoji">{activeValue.icon}</span>
-                  <h3 className="animate-pop-up">{activeValue.title}</h3>
+                  <h3>{activeValue.title}</h3>
                   <p>{activeValue.desc}</p>
                 </div>
               ) : (
-                <div className="cv-center-content default-content fade-in animate-pop-up">
+                <div key="default" className="cv-center-content default-content fade-in">
                   <span className="cv-center-emoji default">🎯</span>
-                  <h3 className="animate-pop-up">Core Values</h3>
+                  <h3>Core Values</h3>
                 </div>
               )}
             </div>

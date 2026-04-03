@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 // slide images
 import slide1 from "../../assets/images/slide1.jpg";
-import ban2 from "../../assets/images/ban2.png";
-import ban3 from "../../assets/images/ban3.png";
+import bann from "../../assets/images/bann.jpeg";
+import house1 from "../../assets/images/house1.png";
 
 const Banner = () => {
   const navigate = useNavigate();
@@ -73,7 +73,7 @@ const Banner = () => {
         <Carousel.Item>
           <div
             className="banner-slide"
-            style={{ backgroundImage: `url(${ban2})` }}
+            style={{ backgroundImage: `url(${bann})` }}
           >
              <div className="banner-content">
               <div className="trusted-badge">
@@ -102,7 +102,7 @@ const Banner = () => {
 
                 <button
                   className="secondary-btn"
-                  onClick={() => navigate("/emi-calculator")}
+                  onClick={() => navigate("/customercenter/calculator")}
                 >
                   Loan Calculator
                 </button>
@@ -122,7 +122,7 @@ const Banner = () => {
         <Carousel.Item>
           <div
             className="banner-slide"
-            style={{ backgroundImage: `url(${ban3})` }}
+            style={{ backgroundImage: `url(${house1})` }}
           >
              <div className="banner-content">
               <div className="trusted-badge">
@@ -150,7 +150,7 @@ const Banner = () => {
 
                 <button
                   className="secondary-btn"
-                  onClick={() => navigate("/emi-calculator")}
+                  onClick={() => navigate("/customercenter/calculator")}
                 >
                   Loan Calculator
                 </button>

@@ -115,12 +115,56 @@ const branchesData = {
 const Branch = () => {
   const [search, setSearch] = useState("");
   const [openState, setOpenState] = useState(null);
+  const [showResults, setShowResults] = useState(false);
+  const [selectedBranch, setSelectedBranch] = useState(null);
 
   const toggleState = (state) => {
     setOpenState(openState === state ? null : state);
   };
 
-  // ✅ Filter logic INSIDE component
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value);
+    setShowResults(e.target.value.trim().length > 0);
+  };
+
+  const selectBranch = (state, city) => {
+    setOpenState(state);
+    setSearch(city);
+    setShowResults(false);
+    setSelectedBranch({ state, city });
+
+    // Scroll to the state wrapper
+    setTimeout(() => {
+      const element = document.getElementById(`state-${state.replace(/\s+/g, "-")}`);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }, 100);
+  };
+
+  const clearSearch = () => {
+    setSearch("");
+    setShowResults(false);
+    setOpenState(null);
+  };
+
+  const closeBranchModal = () => {
+    setSelectedBranch(null);
+  };
+
+  // ✅ Full Flat List for Search Suggestions
+  const getAllResults = () => {
+    const results = [];
+    Object.keys(branchesData).forEach((state) => {
+      branchesData[state].forEach((city) => {
+        if (city.toLowerCase().includes(search.toLowerCase())) {
+          results.push({ state, city });
+        }
+      });
+    });
+    return results;
+  };
+
   const getFilteredData = () => {
     if (!search.trim()) return branchesData;
 
@@ -164,20 +208,46 @@ const Branch = () => {
           <FaMapMarkerAlt className="pin-icon" /> NIVARA BRANCH LOCATOR
         </h2>
 
-        <input
-          type="text"
-          placeholder="Search branch name..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder="Search branch name..."
+            value={search}
+            onChange={handleSearchChange}
+            onFocus={() => search.trim() && setShowResults(true)}
+          />
+          {search && (
+            <button className="search-clear-btn" onClick={clearSearch}>
+              &times;
+            </button>
+          )}
+          {showResults && (
+            <div className="search-results-dropdown">
+              {getAllResults().length > 0 ? (
+                getAllResults().map((res, i) => (
+                  <div
+                    key={i}
+                    className="search-result-item"
+                    onClick={() => selectBranch(res.state, res.city)}
+                  >
+                    <span className="res-city">{res.city}</span>
+                    <span className="res-state">{res.state}</span>
+                  </div>
+                ))
+              ) : (
+                <div className="no-res">No branches found</div>
+              )}
+            </div>
+          )}
+        </div>
       </div>
 
       
       <div className="state-list">
-        {Object.keys(getFilteredData()).map((state, index) => (
-          <div className="state-wrapper" key={index}>
+        {Object.keys(getFilteredData()).map((state) => (
+          <div className="state-wrapper" key={state} id={`state-${state.replace(/\s+/g, "-")}`}>
           
-            <div className="state-card animate-pop-up" onClick={() => toggleState(state)}>
+            <div className="state-card" onClick={() => toggleState(state)}>
               <span>{state}</span>
               <FaChevronDown
                 className={`down-icon ${openState === state ? "rotate" : ""}`}
@@ -188,7 +258,11 @@ const Branch = () => {
             {(openState === state || search) && (
               <div className="location-grid">
                 {getFilteredData()[state].map((city, i) => (
-                  <div className="location-item" key={i}>
+                  <div 
+                    className={`location-item ${search && city.toLowerCase().includes(search.toLowerCase()) ? "highlight-branch" : ""}`} 
+                    key={city}
+                    onClick={() => setSelectedBranch({ state, city })}
+                  >
                     📍 {city}
                   </div>
                 ))}
@@ -270,6 +344,42 @@ const Branch = () => {
           </div>
         </div>
       </div>
+
+      {/* Branch Modal Card */}
+      {selectedBranch && (
+        <div className="branch-modal-overlay" onClick={closeBranchModal}>
+          <div className="branch-modal-card branch-modal-animate" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={closeBranchModal}>&times;</button>
+            <div className="modal-header">
+              <div className="modal-icon-container">
+               <FaMapMarkerAlt className="modal-icon" />
+              </div>
+              <h3>{selectedBranch.city} Branch</h3>
+              <p className="modal-state-label">{selectedBranch.state}</p>
+            </div>
+            
+            <div className="modal-body">
+              <div className="modal-info-section">
+                <div className="info-item">
+                  <span className="info-label">🏢 Company</span>
+                  <p>Nivara Home Finance LTD.</p>
+                </div>
+                <div className="info-item">
+                  <span className="info-label">📍 Address</span>
+                  <p>{selectedBranch.city}, {selectedBranch.state}, India</p>
+                </div>
+                <div className="info-item">
+                  <span className="info-label">📞 Contact Support</span>
+                  <p>+91 1800 200 XXXX</p>
+                </div>
+              </div>
+              <div className="modal-actions">
+                <button className="directions-btn" onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=Nivara+Home+Finance+${selectedBranch.city}`, '_blank')}>Get Directions</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./AboutUs.css";
-import abhome2 from "../../../assets/images/abhome2.jpg";
-import abhome from "../../../assets/images/abhome.jpg";
+import house2 from "../../../assets/images/house2.png";
+import hhh from "../../../assets/images/hhh.png";
 
 const AboutUs = () => {
   useEffect(() => {
@@ -37,11 +37,11 @@ const AboutUs = () => {
         </div>
 
         <div className="hero-center animate-pop-up">
-          <img src={abhome} alt="Living Room" className="hero-main-img animate-pop-up" />
+          <img src={hhh} alt="Living Room" className="hero-main-img animate-pop-up" />
         </div>
 
         <div className="hero-right animate-pop-up">
-          <img src={abhome2} alt="Interior Detail" className="hero-small-img animate-pop-up" />
+          <img src={house2} alt="Interior Detail" className="hero-small-img animate-pop-up" />
           <div className="hero-philosophy animate-pop-up">
             <h2 className="animate-pop-up">Our Philosophy</h2>
             <p>Empowering individuals through accessible housing finance.

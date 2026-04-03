@@ -87,7 +87,7 @@
 
 .banner-slide {
   position: relative;
-  min-height: calc(100vh - 100px);
+  min-height: 100vh;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -201,7 +201,7 @@
   }
 
   .banner-slide {
-    min-height: 70vh;
+    min-height: 85vh;
   }
 }
 
@@ -211,7 +211,7 @@
 @media (max-width: 768px) {
 
   .banner-slide {
-    min-height: 80vh;
+    min-height: 90vh;
     justify-content: center;
     text-align: center;
   }
@@ -257,7 +257,7 @@
   }
 
   .banner-slide {
-    min-height: 85vh;
+    min-height: 95vh;
   }
 }
 .flip-wrapper {
