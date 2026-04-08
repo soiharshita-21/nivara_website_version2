@@ -70,25 +70,33 @@
 
 .nav-link,
 .dropdown-trigger {
-  padding: 8px 12px;
+  padding: 8px 16px;
   border-radius: 8px;
   text-decoration: none;
-  color: #2f3b52;
-  font-weight: 500;
+  color: #2f3b52 !important;
+  font-weight: 500 !important;
   cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: 14px;
-  display: flex;
+  transition: all 0.3s ease;
+  font-size: 15px !important;
+  display: flex !important;
   align-items: center;
-  gap: 4px;
-  font-family: 'Poppins', sans-serif;
+  gap: 6px;
+  font-family: 'Poppins', sans-serif !important;
   white-space: nowrap;
+  background: transparent;
 }
 
 .nav-link:hover,
-.dropdown-trigger:hover {
-  background-color: #fdecee;
-  color: #9b1c31;
+.dropdown-trigger:hover,
+.nav-item.dropdown:hover > .dropdown-trigger {
+  background-color: #fdecee !important;
+  color: #9b1c31 !important;
+}
+
+.nav-link span,
+.dropdown-trigger span {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 500 !important;
 }
 
 .chevron {
