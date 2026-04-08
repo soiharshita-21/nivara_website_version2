@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import "./ManagementTeam.css"; 
+import "./ManagementTeam.css";
 
 
-import cbo from "../../../assets/images/cbo.jpg";
+import cbo from "../../../assets/images/blogimg1.png";
 import hr from "../../../assets/images/hr.jpg";
 import collections from "../../../assets/images/collections.jpg";
 import credit from "../../../assets/images/credit.jpg";
@@ -85,7 +85,7 @@ const ManagementTeam = () => {
 
       <div className="management-grid">
         {managementTeam.map((item, index) => (
-          <div className={`management-card ${item.color} animate-pop-up`} style={{transitionDelay: `${0.1 + index * 0.1}s`}} key={index}>
+          <div className={`management-card ${item.color} animate-pop-up`} style={{ transitionDelay: `${0.1 + index * 0.1}s` }} key={index}>
             <div className="management-image">
               <img src={item.img} alt={item.name} />
             </div>

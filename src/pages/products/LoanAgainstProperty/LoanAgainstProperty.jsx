@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import pol from "../../../assets/images/pol.jpg";
+import pol from "../../../assets/images/pol.png";
 import { FiCreditCard } from "react-icons/fi";
 
 import "./LoanAgainstProperty.css";
@@ -58,7 +58,7 @@ const LoanAgainstProperty = () => {
 
               <div className="lap-buttons">
                 <button className="lap-btn-outline">Learn More</button>
-              <button
+                <button
                   className="lap-loan-btn-solid"
                   onClick={() => navigate("/apply-home-loan")}
                 >
@@ -115,7 +115,7 @@ const LoanAgainstProperty = () => {
           <h3 className="animate-pop-up">Secure Loan Process</h3>
         </div>
       </div>
-     
+
       {/* Features & Benefits Section */}
       <div className="lap-benefits-section animate-pop-up">
         <h2 className="lap-benefits-title animate-pop-up">
@@ -147,40 +147,40 @@ const LoanAgainstProperty = () => {
         </div>
       </div>
 
-    
-     <section className="lap-quote-sec">
-      <div className="lap-quote-con animate-pop-up">
 
-        <h2 className="lap-quote-ti">Request Quote Now</h2>
-        <p className="lap-quote-subti">
-          Easy to apply for a loan with us, Once you have complete this form.
-        </p>
+      <section className="lap-quote-sec">
+        <div className="lap-quote-con animate-pop-up">
 
-        <form className="lap-form">
+          <h2 className="lap-quote-ti">Request Quote Now</h2>
+          <p className="lap-quote-subti">
+            Easy to apply for a loan with us, Once you have complete this form.
+          </p>
 
-          <div className="lap-form-grid">
+          <form className="lap-form">
 
-            <input type="text" placeholder="Full Name" />
-            <input type="email" placeholder="E-mail" />
+            <div className="lap-form-grid">
 
-            <input type="tel" placeholder="Contact Number" />
-            <input type="text" placeholder="State" />
+              <input type="text" placeholder="Full Name" />
+              <input type="email" placeholder="E-mail" />
 
-            <input type="text" placeholder="City" />
-            <input type="date" placeholder="dd-mm-yyyy" />
+              <input type="tel" placeholder="Contact Number" />
+              <input type="text" placeholder="State" />
 
-            <input type="number" placeholder="Loan Amount" />
+              <input type="text" placeholder="City" />
+              <input type="date" placeholder="dd-mm-yyyy" />
 
-            <button type="submit" className="lap-quote-b">
-              SEND A REQUEST
-            </button>
+              <input type="number" placeholder="Loan Amount" />
 
-          </div>
+              <button type="submit" className="lap-quote-b">
+                SEND A REQUEST
+              </button>
 
-        </form>
+            </div>
 
-      </div>
-    </section>
+          </form>
+
+        </div>
+      </section>
       {/* Help Section */}
       <div className="lap-help-section animate-pop-up">
         <h2 className="lap-help-title animate-pop-up">We are Here to Help You</h2>
@@ -216,74 +216,74 @@ const LoanAgainstProperty = () => {
           </div>
         </div>
       </div>
-  {/* FAQ Section */}
-<div className="lap-faq-section animate-pop-up">
+      {/* FAQ Section */}
+      <div className="lap-faq-section animate-pop-up">
 
-  <h2 className="lap-faq-heading animate-pop-up">
-    Loan Against Property FAQs
-  </h2>
+        <h2 className="lap-faq-heading animate-pop-up">
+          Loan Against Property FAQs
+        </h2>
 
-  <div className="lap-faq-list">
+        <div className="lap-faq-list">
 
-    <div className="lap-faq-item animate-pop-up">
-      <h4>What is a Loan Against Property?</h4>
-      <p>
-        A loan against property (LAP) is a secured loan that banks, housing finance companies and NBFCs 
-        provide against residential or commercial property. These loans typically have lower interest 
-        rates compared to personal or business loans and are disbursed in a reasonable time. Anyone 
-        with a pre-owned property can avail such loans, whether salaried or self-employed. The quantum 
-        of loan sanctioned is also higher than other available options.
-      </p>
-    </div>
+          <div className="lap-faq-item animate-pop-up">
+            <h4>What is a Loan Against Property?</h4>
+            <p>
+              A loan against property (LAP) is a secured loan that banks, housing finance companies and NBFCs
+              provide against residential or commercial property. These loans typically have lower interest
+              rates compared to personal or business loans and are disbursed in a reasonable time. Anyone
+              with a pre-owned property can avail such loans, whether salaried or self-employed. The quantum
+              of loan sanctioned is also higher than other available options.
+            </p>
+          </div>
 
-    <div className="lap-faq-item animate-pop-up">
-      <h4>Is loan against property a good idea?</h4>
-      <p>
-        Yes. LAP offers better benefits compared to personal loans. It provides greater flexibility, 
-        lower interest rates, higher loan amounts, and longer repayment tenure. It is best suited for 
-        business owners and self-employed professionals.
-      </p>
-    </div>
+          <div className="lap-faq-item animate-pop-up">
+            <h4>Is loan against property a good idea?</h4>
+            <p>
+              Yes. LAP offers better benefits compared to personal loans. It provides greater flexibility,
+              lower interest rates, higher loan amounts, and longer repayment tenure. It is best suited for
+              business owners and self-employed professionals.
+            </p>
+          </div>
 
-    <div className="lap-faq-item animate-pop-up">
-      <h4>Can I convert a loan against property to a home loan?</h4>
-      <p>
-        Yes, it is possible to convert a LAP (Loan Against Property) into a home loan. However, the 
-        process and eligibility criteria vary depending on the lending institution and the original 
-        loan terms.
-      </p>
-    </div>
+          <div className="lap-faq-item animate-pop-up">
+            <h4>Can I convert a loan against property to a home loan?</h4>
+            <p>
+              Yes, it is possible to convert a LAP (Loan Against Property) into a home loan. However, the
+              process and eligibility criteria vary depending on the lending institution and the original
+              loan terms.
+            </p>
+          </div>
 
-    <div className="lap-faq-item animate-pop-up">
-      <h4>How does Loan Against Property work?</h4>
-      <p>
-        Loan Against Property is a secured loan where borrowers pledge their property as collateral 
-        to avail funds. The loan amount is determined based on the property’s value and the borrower’s 
-        repayment capacity.
-      </p>
-    </div>
+          <div className="lap-faq-item animate-pop-up">
+            <h4>How does Loan Against Property work?</h4>
+            <p>
+              Loan Against Property is a secured loan where borrowers pledge their property as collateral
+              to avail funds. The loan amount is determined based on the property’s value and the borrower’s
+              repayment capacity.
+            </p>
+          </div>
 
-    <div className="lap-faq-item animate-pop-up">
-      <h4>Who can avail Loan Against Property from Nivara Home Finance?</h4>
-      <p>
-        Any Resident Indian individual, partnership firm, or company can apply for a Loan Against 
-        Property with Nivara Home Finance.
-      </p>
-    </div>
+          <div className="lap-faq-item animate-pop-up">
+            <h4>Who can avail Loan Against Property from Nivara Home Finance?</h4>
+            <p>
+              Any Resident Indian individual, partnership firm, or company can apply for a Loan Against
+              Property with Nivara Home Finance.
+            </p>
+          </div>
 
-    <div className="lap-faq-item animate-pop-up">
-      <h4>What are the documents required to apply for Loan Against Property?</h4>
-      <p>Along with the application form, the following documents are required:</p>
-      <ul>
-        <li>Proof of residence</li>
-        <li>Proof of identity</li>
-        <li>Latest financial documents</li>
-        <li>Copies of all property documents</li>
-      </ul>
-    </div>
+          <div className="lap-faq-item animate-pop-up">
+            <h4>What are the documents required to apply for Loan Against Property?</h4>
+            <p>Along with the application form, the following documents are required:</p>
+            <ul>
+              <li>Proof of residence</li>
+              <li>Proof of identity</li>
+              <li>Latest financial documents</li>
+              <li>Copies of all property documents</li>
+            </ul>
+          </div>
 
-  </div>
-</div>
+        </div>
+      </div>
 
 
 

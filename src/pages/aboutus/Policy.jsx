@@ -1,6 +1,6 @@
 import React from "react";
 import "./Policy.css";
-import pol from "../../assets/images/pol.jpg";
+import pol from "../../assets/images/pol.png";
 
 const policies = [
   { name: "POSH Policy", link: "/policies/posh.pdf" },
@@ -20,48 +20,48 @@ const policies = [
 const PolicyPage = () => {
   return (
     <section className="policy-section animate-pop-up">
-    <section className="policy-banner animate-pop-up">
-      <div className="policy-banner-container animate-pop-up">
-        <div className="policy-left">
-         
-          <h1 className="animate-pop-up">COMPANY POLICIES, ACCESSIBLE AND CLEAR</h1>
-          <p>
-            Our policies define the standards of governance, ethics, and
-            compliance that guide Nivara Home Finance. They ensure transparency,
-            accountability, and responsible business practices across all
-            operations.
-          </p>
+      <section className="policy-banner animate-pop-up">
+        <div className="policy-banner-container animate-pop-up">
+          <div className="policy-left">
 
-          
-        
-        </div>
+            <h1 className="animate-pop-up">COMPANY POLICIES, ACCESSIBLE AND CLEAR</h1>
+            <p>
+              Our policies define the standards of governance, ethics, and
+              compliance that guide Nivara Home Finance. They ensure transparency,
+              accountability, and responsible business practices across all
+              operations.
+            </p>
 
-        <div className="policy-right">
-          <div className="policy-image-wrapper">
-            <img src={pol} alt="Company Policies" className="policy-image" />
+
+
+          </div>
+
+          <div className="policy-right">
+            <div className="policy-image-wrapper">
+              <img src={pol} alt="Company Policies" className="policy-image" />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       <div className="policy-links">
-  <ul>
-    {policies.map((policy, index) => (
-      <li key={index}>
-        <a
-          href={policy.link}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {policy.name}
-        </a>
-      </li>
-    ))}
-  </ul>
-</div>
+        <ul>
+          {policies.map((policy, index) => (
+            <li key={index}>
+              <a
+                href={policy.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {policy.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-        
-      
+
+
     </section>
   );
 };

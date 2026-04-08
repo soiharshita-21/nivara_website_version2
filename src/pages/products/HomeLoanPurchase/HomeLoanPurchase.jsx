@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import pol from "../../../assets/images/pol.jpg";
+import pol from "../../../assets/images/pol.png";
 import { FiHome } from "react-icons/fi";
 import "./HomeLoanPurchase.css";
 import { useNavigate } from "react-router-dom";

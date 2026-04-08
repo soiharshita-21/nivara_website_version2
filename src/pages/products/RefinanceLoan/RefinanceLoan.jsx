@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { FaHome } from "react-icons/fa";
-import pol from "../../../assets/images/pol.jpg";
+import pol from "../../../assets/images/pol.png";
 import "./RefinanceLoan.css";
 import { useNavigate } from "react-router-dom";
 
@@ -61,7 +61,7 @@ const RefinanceLoan = () => {
 
               <div className="refinance-buttons">
                 <button className="refinance-btn-outline">Learn More</button>
-                 <button
+                <button
                   className="refinance-loan-btn-solid"
                   onClick={() => navigate("/apply-home-loan")}
                 >

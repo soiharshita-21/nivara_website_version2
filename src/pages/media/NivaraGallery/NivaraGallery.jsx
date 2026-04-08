@@ -5,15 +5,24 @@ import { FaTimes } from "react-icons/fa";
 /* Banner */
 import home2 from "../../../assets/images/home2.png";
 
-/* Gallery Images */
-import slide1 from "../../../assets/images/slide1.jpg";
-import slide2 from "../../../assets/images/slide2.jpg";
-import slide3 from "../../../assets/images/slide3.jpg";
-import slide4 from "../../../assets/images/slide4.jpg";
-import home5 from "../../../assets/images/home.jpg";
-import slide6 from "../../../assets/images/slide6.jpg";
+/* CSR Gallery Images */
+import csr1 from "../../../assets/images/gallery/csr_medical_1.png";
+import csr2 from "../../../assets/images/gallery/csr_medical_2.png";
+import csr3 from "../../../assets/images/gallery/csr_medical_3.png";
 
-const galleryImages = [slide1, slide2, slide3, slide4, home5, slide6];
+/* Anniversary Gallery Images */
+import anniversary1 from "../../../assets/images/gallery/anniversary_1.png";
+import anniversary2 from "../../../assets/images/gallery/anniversary_2.png";
+import anniversary3 from "../../../assets/images/gallery/anniversary_3.png";
+
+/* Existing Gallery Images for fallback or Navaratri */
+import nav1 from "../../../assets/images/navratri1.jpeg";
+import nav2 from "../../../assets/images/navratri2.jpeg";
+import nav3 from "../../../assets/images/navratri3.jpeg";
+
+const csrImages = [csr1, csr2, csr3];
+const anniversaryImages = [anniversary1, anniversary2, anniversary3];
+const navaratriImages = [nav1, nav2, nav3, nav2, nav1, nav3];
 
 const NivaraGallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -27,11 +36,11 @@ const NivaraGallery = () => {
           <span className="gallery-modal-close" onClick={() => setSelectedImage(null)}>
             <FaTimes />
           </span>
-          <img 
-            src={selectedImage} 
-            alt="Enlarged gallery view" 
-            className="gallery-modal-content" 
-            onClick={(e) => e.stopPropagation()} 
+          <img
+            src={selectedImage}
+            alt="Enlarged gallery view"
+            className="gallery-modal-content"
+            onClick={(e) => e.stopPropagation()}
           />
         </div>
       )}
@@ -49,7 +58,7 @@ const NivaraGallery = () => {
           <p>January 2026</p>
         </div>
         <div className="gallery-container animate-pop-up">
-          {galleryImages.map((img, index) => (
+          {csrImages.map((img, index) => (
             <div className="gallery-card animate-pop-up" key={index} onClick={() => setSelectedImage(img)}>
               <img src={img} alt={`gallery-csr-${index}`} />
             </div>
@@ -64,7 +73,7 @@ const NivaraGallery = () => {
           <p>October 2025</p>
         </div>
         <div className="gallery-container animate-pop-up">
-          {galleryImages.map((img, index) => (
+          {anniversaryImages.map((img, index) => (
             <div className="gallery-card animate-pop-up" key={index} onClick={() => setSelectedImage(img)}>
               <img src={img} alt={`gallery-anniversary-${index}`} />
             </div>
@@ -79,7 +88,7 @@ const NivaraGallery = () => {
           <p>September 2025</p>
         </div>
         <div className="gallery-container animate-pop-up">
-          {galleryImages.map((img, index) => (
+          {navaratriImages.map((img, index) => (
             <div className="gallery-card animate-pop-up" key={index} onClick={() => setSelectedImage(img)}>
               <img src={img} alt={`gallery-navaratri-${index}`} />
             </div>

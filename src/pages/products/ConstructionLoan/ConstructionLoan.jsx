@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import pol from "../../../assets/images/pol.jpg";
+import pol from "../../../assets/images/pol.png";
 import { FaHardHat } from "react-icons/fa";
 import "./ConstructionLoan.css";
 import { useNavigate } from "react-router-dom";
@@ -28,77 +28,77 @@ const ConstructionLoan = () => {
   }, []);
 
   return (
-   <div className="page-center construction-page">
+    <div className="page-center construction-page">
 
-  <div className="conloan-card-grid animate-pop-up">
+      <div className="conloan-card-grid animate-pop-up">
 
-    {[1].map((item, index) => (
-      <div className="conloan-card animate-pop-up" key={index}>
+        {[1].map((item, index) => (
+          <div className="conloan-card animate-pop-up" key={index}>
 
-        <div className="conloan-image">
-          <img src={pol} alt="Construction Loan" />
-          <div className="image-overlay"></div>
+            <div className="conloan-image">
+              <img src={pol} alt="Construction Loan" />
+              <div className="image-overlay"></div>
 
-          <div className="cen-icon">
-            <FaHardHat className="icon-rotatecon" />
-          </div>
-        </div>
+              <div className="cen-icon">
+                <FaHardHat className="icon-rotatecon" />
+              </div>
+            </div>
 
-        <div className="conloan-content animate-pop-up">
-          <h2 className="animate-pop-up">Construction Loan</h2>
-          <p className="subtitle">
-            Build your home from the ground up with our construction loans
-          </p>
+            <div className="conloan-content animate-pop-up">
+              <h2 className="animate-pop-up">Construction Loan</h2>
+              <p className="subtitle">
+                Build your home from the ground up with our construction loans
+              </p>
 
-          <div className="slide-in-text">
-            <ul className="features">
-              <li>Stage-wise disbursement</li>
-              <li>Flexible tenure</li>
-              <li>Low processing fee</li>
-            </ul>
-          </div>
+              <div className="slide-in-text">
+                <ul className="features">
+                  <li>Stage-wise disbursement</li>
+                  <li>Flexible tenure</li>
+                  <li>Low processing fee</li>
+                </ul>
+              </div>
 
-          <div className="con-loan-buttons">
-            <button className="con-loan-btn-outline">Learn More</button>
-            <button
+              <div className="con-loan-buttons">
+                <button className="con-loan-btn-outline">Learn More</button>
+                <button
                   className="home-loan-btn-solid"
                   onClick={() => navigate("/apply-home-loan")}
                 >
                   Apply →
                 </button>
-          </div>
-        </div>
+              </div>
+            </div>
 
-        <div className="con-loan-bottom-strip"></div>
+            <div className="con-loan-bottom-strip"></div>
+
+          </div>
+        ))}
 
       </div>
-    ))}
+      {/* Construction Loan Text Section */}
+      <div className="construction-text-section animate-pop-up">
 
-  </div>
-  {/* Construction Loan Text Section */}
-<div className="construction-text-section animate-pop-up">
+        <h1 className="construction-title animate-pop-up">
+          Home Construction Loan
+        </h1>
 
-  <h1 className="construction-title animate-pop-up">
-    Home Construction Loan
-  </h1>
+        <h3 className="construction-subtitle">
+          Build the home of your dreams with the loan of your choice
+        </h3>
 
-  <h3 className="construction-subtitle">
-    Build the home of your dreams with the loan of your choice
-  </h3>
+        <h2 className="construction-heading animate-pop-up">
+          Flexible Home Construction Loans in Bangalore With Nivara Home Finance
+        </h2>
 
-  <h2 className="construction-heading animate-pop-up">
-    Flexible Home Construction Loans in Bangalore With Nivara Home Finance
-  </h2>
+        <p className="construction-text">
+          A Home Construction Loan is a type of home loan that allows customers to obtain the necessary funds
+          to finance the construction of residential house property on a piece of land. We bring over
+          <strong> 9 years of expertise</strong> in Home construction loans and our customers have been able to
+          expedite their home construction at competitive interest rates on Home construction loans,
+          affordable EMIs and a hassle-free online application process.
+        </p>
 
-  <p className="construction-text">
-    A Home Construction Loan is a type of home loan that allows customers to obtain the necessary funds 
-    to finance the construction of residential house property on a piece of land. We bring over 
-    <strong> 9 years of expertise</strong> in Home construction loans and our customers have been able to 
-    expedite their home construction at competitive interest rates on Home construction loans, 
-    affordable EMIs and a hassle-free online application process.
-  </p>
-
-</div>
+      </div>
       {/* Features Strip Section */}
       <div className="conloan-feature-strip">
         <div className="conloan-feature-box animate-pop-up">
@@ -121,39 +121,39 @@ const ConstructionLoan = () => {
           <h3 className="animate-pop-up">Secure Loan Process</h3>
         </div>
       </div>
-<section className="quote-sec">
-      <div className="quote-con animate-pop-up">
+      <section className="quote-sec">
+        <div className="quote-con animate-pop-up">
 
-        <h2 className="quote-ti">Request Quote Now</h2>
-        <p className="quote-subti">
-          Easy to apply for a loan with us, Once you have complete this form.
-        </p>
+          <h2 className="quote-ti">Request Quote Now</h2>
+          <p className="quote-subti">
+            Easy to apply for a loan with us, Once you have complete this form.
+          </p>
 
-        <form className="form">
+          <form className="form">
 
-          <div className="form-grid">
+            <div className="form-grid">
 
-            <input type="text" placeholder="Full Name" />
-            <input type="email" placeholder="E-mail" />
+              <input type="text" placeholder="Full Name" />
+              <input type="email" placeholder="E-mail" />
 
-            <input type="tel" placeholder="Contact Number" />
-            <input type="text" placeholder="State" />
+              <input type="tel" placeholder="Contact Number" />
+              <input type="text" placeholder="State" />
 
-            <input type="text" placeholder="City" />
-            <input type="date" placeholder="dd-mm-yyyy" />
+              <input type="text" placeholder="City" />
+              <input type="date" placeholder="dd-mm-yyyy" />
 
-            <input type="number" placeholder="Loan Amount" />
+              <input type="number" placeholder="Loan Amount" />
 
-            <button type="submit" className="quote-b">
-              SEND A REQUEST
-            </button>
+              <button type="submit" className="quote-b">
+                SEND A REQUEST
+              </button>
 
-          </div>
+            </div>
 
-        </form>
+          </form>
 
-      </div>
-    </section>
+        </div>
+      </section>
       {/* Features & Benefits Section */}
       <div className="conloan-benefits-section animate-pop-up">
         <h2 className="conloan-benefits-title animate-pop-up">
@@ -244,78 +244,78 @@ const ConstructionLoan = () => {
           </div>
         </div>
       </div>
-{/* Construction Loan FAQ Section */}
-<section className="clfaq-section animate-pop-up">
+      {/* Construction Loan FAQ Section */}
+      <section className="clfaq-section animate-pop-up">
 
-  <div className="clfaq-container animate-pop-up">
+        <div className="clfaq-container animate-pop-up">
 
-    <h2 className="clfaq-title animate-pop-up">Your Frequently Asked Questions Answered</h2>
+          <h2 className="clfaq-title animate-pop-up">Your Frequently Asked Questions Answered</h2>
 
-    <div className="clfaq-list">
+          <div className="clfaq-list">
 
-      <div className="clfaq-item animate-pop-up">
-        <h3 className="animate-pop-up">What is a construction home loan?</h3>
-        <p>
-          A home construction loan is an Nivara Home finance product, designed to help you construct your own home.
-          If you have a plot of land and want to build a house to your own specifications, this product is ideal for you.
-        </p>
-      </div>
+            <div className="clfaq-item animate-pop-up">
+              <h3 className="animate-pop-up">What is a construction home loan?</h3>
+              <p>
+                A home construction loan is an Nivara Home finance product, designed to help you construct your own home.
+                If you have a plot of land and want to build a house to your own specifications, this product is ideal for you.
+              </p>
+            </div>
 
-      <div className="clfaq-item animate-pop-up">
-        <h3 className="animate-pop-up">How do I get a Nivara home construction loan?</h3>
-        <p>
-          Our application process is very easy. Fill out the form, and one of our relationship managers will get in
-          touch with you to get all your details.
-        </p>
-      </div>
+            <div className="clfaq-item animate-pop-up">
+              <h3 className="animate-pop-up">How do I get a Nivara home construction loan?</h3>
+              <p>
+                Our application process is very easy. Fill out the form, and one of our relationship managers will get in
+                touch with you to get all your details.
+              </p>
+            </div>
 
-      <div className="clfaq-item animate-pop-up">
-        <h3 className="animate-pop-up">What documents are needed to apply for a home construction loan?</h3>
-        <p>
-          Age proof – Birth certificate, PAN card<br/>
-          Income proof – Salary slips, bank statements<br/>
-          A legal approval for construction from the Municipal Corporation<br/>
-          Approved sanction plan from the authority<br/>
-          Residence Proof – PAN Card, Passport, or any other certificate from statutory authority<br/>
-          Processing fee cheque
-        </p>
-      </div>
+            <div className="clfaq-item animate-pop-up">
+              <h3 className="animate-pop-up">What documents are needed to apply for a home construction loan?</h3>
+              <p>
+                Age proof – Birth certificate, PAN card<br />
+                Income proof – Salary slips, bank statements<br />
+                A legal approval for construction from the Municipal Corporation<br />
+                Approved sanction plan from the authority<br />
+                Residence Proof – PAN Card, Passport, or any other certificate from statutory authority<br />
+                Processing fee cheque
+              </p>
+            </div>
 
-      <div className="clfaq-item animate-pop-up">
-        <h3 className="animate-pop-up">Can I get a home loan for house construction?</h3>
-        <p>
-          People can avail home loans to get their house constructed – either by themselves, or by employing a
-          contractor to construct the house – on a plot that they own. Such loans are commonly termed construction loans.
-        </p>
-      </div>
+            <div className="clfaq-item animate-pop-up">
+              <h3 className="animate-pop-up">Can I get a home loan for house construction?</h3>
+              <p>
+                People can avail home loans to get their house constructed – either by themselves, or by employing a
+                contractor to construct the house – on a plot that they own. Such loans are commonly termed construction loans.
+              </p>
+            </div>
 
-      <div className="clfaq-item animate-pop-up">
-        <h3 className="animate-pop-up">How to get money for house construction?</h3>
-        <p>
-          Apply for a home construction loan according to your eligibility. The lender will determine your loan
-          eligibility based on your income and repayment capacity.
-        </p>
-      </div>
+            <div className="clfaq-item animate-pop-up">
+              <h3 className="animate-pop-up">How to get money for house construction?</h3>
+              <p>
+                Apply for a home construction loan according to your eligibility. The lender will determine your loan
+                eligibility based on your income and repayment capacity.
+              </p>
+            </div>
 
-      <div className="clfaq-item animate-pop-up">
-        <h3 className="animate-pop-up">How will my EMI for a home construction loan be calculated?</h3>
-        <p>
-          Your EMI is calculated based on the rate of interest charged to you at the time of application.
-          We have two types of rates: fixed and floating, and this factors into the EMI amount you have to pay each month.
-          To get an idea of what your EMI may look like, use our EMI calculator.
-        </p>
-      </div>
+            <div className="clfaq-item animate-pop-up">
+              <h3 className="animate-pop-up">How will my EMI for a home construction loan be calculated?</h3>
+              <p>
+                Your EMI is calculated based on the rate of interest charged to you at the time of application.
+                We have two types of rates: fixed and floating, and this factors into the EMI amount you have to pay each month.
+                To get an idea of what your EMI may look like, use our EMI calculator.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
 
     </div>
-
-  </div>
-
-</section>
-
-
-
-
-</div>
 
   );
 };

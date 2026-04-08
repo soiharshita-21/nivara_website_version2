@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { FaHome } from "react-icons/fa";
-import pol from "../../../assets/images/pol.jpg";
+import pol from "../../../assets/images/pol.png";
 import "./CompositeHomeLoan.css";
 import { useNavigate } from "react-router-dom";
 
 const CompositeHomeLoan = () => {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   const cards = [1]; // display only 1 card
 
   useEffect(() => {
@@ -63,7 +63,7 @@ const CompositeHomeLoan = () => {
 
               <div className="composite-buttons">
                 <button className="composite-btn-outline">Learn More</button>
-                 <button
+                <button
                   className="comp-loan-btn-solid"
                   onClick={() => navigate("/apply-home-loan")}
                 >

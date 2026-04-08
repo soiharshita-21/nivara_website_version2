@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { FaSyncAlt } from "react-icons/fa"; // balance transfer icon
-import pol from "../../../assets/images/pol.jpg"; // you will replace this
+import pol from "../../../assets/images/pol.png"; // you will replace this
 import "./BalanceTransfer.css";
 import { useNavigate } from "react-router-dom";
 
 const BalanceTransfer = () => {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   const cards = [1];
 
   useEffect(() => {

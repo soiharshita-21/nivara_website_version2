@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { FaWrench } from "react-icons/fa";
-import pol from "../../../assets/images/pol.jpg";
+import pol from "../../../assets/images/pol.png";
 import "./ImprovementandExtension.css";
 import { useNavigate } from "react-router-dom";
 

@@ -40,7 +40,7 @@ const Navbar = () => {
         <ul className={`navbar-menu ${isOpen ? "active" : ""}`}>
           {/* HOME */}
           <li className="nav-item">
-            <Link to="/" className="nav-link">Home</Link>
+            <Link to="/" className="nav-link"><span>Home</span></Link>
           </li>
 
           {/* ABOUT US */}
@@ -92,7 +92,7 @@ const Navbar = () => {
 
           {/* INVESTOR RELATIONS */}
           <li className="nav-item">
-            <Link to="/investorsrelation" className="nav-link">Investor Relations</Link>
+            <Link to="/investorsrelation" className="nav-link"><span>Investor Relations</span></Link>
           </li>
 
           {/* MEDIA */}
@@ -110,7 +110,7 @@ const Navbar = () => {
 
           {/* CAREERS */}
           <li className="nav-item">
-            <Link to="/career/career" className="nav-link">Careers</Link>
+            <Link to="/career/career" className="nav-link"><span>Careers</span></Link>
           </li>
 
           {/* CUSTOMER CENTRE */}
