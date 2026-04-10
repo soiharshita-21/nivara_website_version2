@@ -7,7 +7,7 @@
 .vm-hero {
   position: relative;
   height: 80vh;
-  background: url("../../../assets/images/vision.png") center/cover no-repeat;
+  background: url("../../../assets/images/vision.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,14 +88,14 @@
 
 /* Card */
 .vm-card {
-  
+
   max-width: 900px;
   width: 100%;
   padding: 50px 40px;
   border-radius: 22px;
   text-align: center;
 
-  
+
 }
 
 
@@ -181,6 +181,7 @@
     text-align: center;
     gap: 30px;
   }
+
   .vm-lottie-container {
     width: 80%;
     margin: 0 auto;

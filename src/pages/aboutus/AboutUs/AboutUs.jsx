@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./AboutUs.css";
-import house2 from "../../../assets/images/house2.png";
-import hhh from "../../../assets/images/hhh.png";
+import house2 from "../../../assets/images/pol.png";
+import hhh from "../../../assets/images/3.png";
 
 const AboutUs = () => {
   useEffect(() => {

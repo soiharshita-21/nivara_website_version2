@@ -37,6 +37,7 @@ import Faqs from "./pages/customercenter/Faqs/Faqs";
 import Lenders from "./pages/OurPartners/Lenders/Lenders";
 import OurInsurancePartners from "./pages/OurPartners/OurInsurancePartners/OurInsurancePartners";
 import Blog from "./pages/media/Blog/Blog";
+import BlogDetail from "./pages/media/Blog/BlogDetail";
 import PressRelease from "./pages/media/pressrelease/pressrelease";
 import NivaraGallery from "./pages/media/nivaragallery/nivaragallery";
 import Career from"./pages/Career/Career";
@@ -48,6 +49,8 @@ const ScrollAnimations = () => {
   const location = useLocation();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -144,6 +147,7 @@ function App() {
           />
 
           <Route path="/media/blog/blog" element={<Blog />} />
+          <Route path="/media/blog/:slug" element={<BlogDetail />} />
           <Route path="/media/pressrelease/pressrelease" element={<PressRelease />} />
           <Route path="/media/nivara-gallery/nivara-gallery" element={<NivaraGallery />} />
           <Route path="/career/career" element={<Career />} /> 

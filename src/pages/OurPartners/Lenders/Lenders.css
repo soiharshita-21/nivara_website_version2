@@ -64,56 +64,106 @@
 }
 
 /* Container */
-.lenders-container{
-  max-width: 1400px;
-  margin: auto;
-  padding: 60px 30px;
-}
-
-/* Grid */
-.lenders-grid{
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 35px;
-}
-
-/* Cards */
-.lender-card{
+.lenders-marquee-container {
+  max-width: 100%;
+  padding: 80px 0;
+  overflow: hidden;
+  position: relative;
   background: #fff;
-  height: 130px;
-  border-radius: 6px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Gradient Masks for classy fade effect */
+.lenders-marquee-container::before,
+.lenders-marquee-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.lenders-marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, #fff, transparent);
+}
+
+.lenders-marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, #fff, transparent);
+}
+
+.lenders-marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.lenders-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+.lenders-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.lender-marquee-item {
+  flex-shrink: 0;
+  width: 320px;
+  height: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.3s ease;
+  margin: 0 50px;
+  background: #fff;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.lender-card img{
-  max-width: 70%;
-  max-height: 60%;
+.lender-marquee-item img {
+  max-width: 90%;
+  max-height: 85%;
   object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-/* Hover */
-.lender-card:hover, .lender-card.animate-pop-up.visible:hover {
-  transform: translateY(-6px) scale(1.05);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+.lender-marquee-item:hover {
+  transform: translateY(-5px);
+}
+
+.lender-marquee-item:hover img {
+  transform: scale(1.05);
 }
 
 /* Responsive */
-@media (max-width: 1200px){
-  .lenders-grid{
-    grid-template-columns: repeat(4, 1fr);
+@media (max-width: 768px) {
+  .lenders-marquee-container {
+    padding: 50px 0;
   }
-}
-
-@media (max-width: 768px){
-  .lenders-grid{
-    grid-template-columns: repeat(2, 1fr);
+  
+  .lender-marquee-item {
+    width: 180px;
+    height: 90px;
+    margin: 0 20px;
   }
 
-  .lenders-overlay h1{
+  .lenders-overlay h1 {
     font-size: 34px;
+  }
+
+  .lenders-marquee-container::before,
+  .lenders-marquee-container::after {
+    width: 60px;
   }
 }

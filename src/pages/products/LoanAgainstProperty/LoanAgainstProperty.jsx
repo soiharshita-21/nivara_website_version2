@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import pol from "../../../assets/images/pol.png";
+import lop from "../../../assets/images/LOP.jpg";
 import { FiCreditCard } from "react-icons/fi";
 
 import "./LoanAgainstProperty.css";
@@ -34,7 +34,7 @@ const LoanAgainstProperty = () => {
         {[1].map((item, index) => (
           <div className="lap-card animate-pop-up" key={index}>
             <div className="lap-image">
-              <img src={pol} alt="Loan Against Property" />
+              <img src={lop} alt="Loan Against Property" />
               <div className="lap-image-overlay"></div>
               <div className="lap-center-icon">
                 <FiCreditCard className="lap-icon-only-rotate" />

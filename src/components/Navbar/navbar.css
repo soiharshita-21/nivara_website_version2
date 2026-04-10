@@ -53,11 +53,13 @@
 /* Desktop Menu */
 .navbar-menu {
   display: flex;
-  gap: 12px;
+  gap: 20px;
   list-style: none;
-  margin: 0 40px 0 0; /* Reduced margin-right to shift it back towards the right edge */
+  margin: 0 40px 0 0;
+  /* Shifts the menu a bit to the left */
   padding: 0;
   align-items: center;
+  justify-content: flex-end;
   overflow: visible;
 }
 
@@ -66,11 +68,14 @@
 .nav-item {
   position: relative;
   overflow: visible;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .nav-link,
 .dropdown-trigger {
-  padding: 8px 16px;
+  padding: 8px 12px;
   border-radius: 8px;
   text-decoration: none;
   color: #2f3b52 !important;
@@ -80,17 +85,42 @@
   font-size: 15px !important;
   display: flex !important;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  gap: 4px;
   font-family: 'Poppins', sans-serif !important;
   white-space: nowrap;
-  background: transparent;
+  background: transparent !important;
+  min-height: 40px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.nav-link::before,
+.dropdown-trigger::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -8px;
+  right: -8px;
+  background-color: #fdecee;
+  border-radius: 8px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .nav-link:hover,
 .dropdown-trigger:hover,
-.nav-item.dropdown:hover > .dropdown-trigger {
-  background-color: #fdecee !important;
+.nav-item.dropdown:hover>.dropdown-trigger {
   color: #9b1c31 !important;
+}
+
+.nav-link:hover::before,
+.dropdown-trigger:hover::before,
+.nav-item.dropdown:hover>.dropdown-trigger::before {
+  opacity: 1;
 }
 
 .nav-link span,
@@ -120,7 +150,8 @@
   transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 10000;
   border: 1px solid rgba(0, 0, 0, 0.08);
-  display: none; /* Desktop default */
+  display: none;
+  /* Desktop default */
 }
 
 .dropdown-menu li a {
@@ -141,7 +172,7 @@
 
 /* Show dropdown on hover (Desktop) */
 @media (min-width: 1025px) {
-  .nav-item.dropdown:hover > .dropdown-menu {
+  .nav-item.dropdown:hover>.dropdown-menu {
     display: block;
     opacity: 1;
     visibility: visible;
@@ -181,7 +212,7 @@
     border-bottom: 1px solid #f0f0f0;
   }
 
-  .nav-link, 
+  .nav-link,
   .dropdown-trigger {
     width: 100%;
     padding: 15px 10px;
@@ -209,12 +240,12 @@
   }
 
   /* When parent has .open class, expand the child .dropdown-menu */
-  .nav-item.dropdown.open > .dropdown-menu {
+  .nav-item.dropdown.open>.dropdown-menu {
     max-height: 1000px;
     padding: 10px 0 !important;
   }
 
-  .nav-item.dropdown.open > .dropdown-trigger .chevron {
+  .nav-item.dropdown.open>.dropdown-trigger .chevron {
     transform: rotate(180deg);
   }
 
@@ -250,5 +281,5 @@
 }
 
 .page-content {
-  padding-top: 0; 
-}
+  padding-top: 0;
+}

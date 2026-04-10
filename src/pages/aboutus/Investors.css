@@ -13,13 +13,15 @@
   align-items: center;
   overflow: hidden;
   background: #fff;
-  line-height: 0; /* removes inline gaps */
+  line-height: 0;
+  /* removes inline gaps */
 }
 
 /* Background Image */
 .investors-banner-bg {
   position: absolute;
-  inset: 0;              /* 🔥 better than top/right/width/height */
+  inset: 0;
+  /* 🔥 better than top/right/width/height */
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -35,6 +37,7 @@
     opacity: 0;
     transform: translateY(40px) scale(1.05);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0) scale(1.05);
@@ -48,7 +51,7 @@
   left: 0;
   width: 55%;
   height: 100%;
-  background-color: #6b1f2b;
+  background-color: #d32f2f;
   clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
   z-index: 2;
   display: flex;
@@ -84,7 +87,8 @@
   position: absolute;
   height: 45px;
   z-index: 3;
-  transform: translateZ(0); /* 🔥 fixes rendering gap */
+  transform: translateZ(0);
+  /* 🔥 fixes rendering gap */
 }
 
 /* Top strips */
@@ -92,32 +96,35 @@
   top: 0;
   left: 0;
   width: 70%;
-  background-color: #942a3b;
+  background-color: #b7afaf;
   clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
 }
 
 .top-strip-2 {
-  top: 44px; /* 🔥 reduced from 45px */
+  top: 44px;
+  /* 🔥 reduced from 45px */
   left: 0;
   width: 58%;
-  background-color: #4a151d;
+  background-color: #ab1027;
   clip-path: polygon(0 0, 100% 0, 93% 100%, 0% 100%);
 }
 
 /* Bottom strips */
 .bottom-strip-1 {
-  bottom: -2px; /* 🔥 overlap fix */
+  bottom: -2px;
+  /* 🔥 overlap fix */
   left: 0;
   width: 100%;
-  background-color: #942a3b;
+  background-color: #b9b7b8;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 .bottom-strip-2 {
-  bottom: 43px; /* 🔥 reduced from 45px */
+  bottom: 43px;
+  /* 🔥 reduced from 45px */
   left: 0;
   width: 80%;
-  background-color: #6b1f2b;
+  background-color: #ab1027;
   clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
 }
 

@@ -185,18 +185,124 @@
 
 
 /* Responsive */
-@media (max-width: 1024px) {
-  .management-grid {
+/* View Bio Button */
+.view-bio-btn {
+  margin-top: 15px;
+  background: none;
+  border: 1.5px solid currentColor;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.view-bio-btn:hover {
+  background: currentColor;
+  min-height: 500px;
+}
+
+.modal-image-side {
+  flex: 1;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.modal-image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-info-side {
+  flex: 1.2;
+  padding: 60px;
+  text-align: left;
+}
+
+.modal-role {
+  display: inline-block;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #d32f2f;
+  margin-bottom: 15px;
+}
+
+.modal-info-side h2 {
+  font-size: 38px;
+  color: #1e293b;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.modal-divider {
+  width: 70px;
+  height: 5px;
+  background: #d32f2f;
+  margin-bottom: 35px;
+  border-radius: 3px;
+}
+
+.modal-desc {
+  font-size: 18px;
+  color: #334155;
+  line-height: 1.6;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.modal-bio-placeholder {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #64748b;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Modal color logic */
+.modal-image-side.rose { background: #fee2e2; }
+.modal-image-side.orange { background: #ffedd5; }
+.modal-image-side.green { background: #dcfce7; }
+.modal-image-side.yellow { background: #fef9c3; }
+.modal-image-side.purple { background: #f3e8ff; }
+.modal-image-side.pink { background: #fce7f3; }
+
+@media (max-width: 900px) {
+  .modal-body {
+    flex-direction: column;
+  }
+  
+  .modal-image-side {
+    height: 350px;
+  }
+  
+  .modal-info-side {
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 1200px){
+  .management-grid{
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 640px) {
-  .management-grid {
+@media (max-width: 768px){
+  .management-grid{
     grid-template-columns: 1fr;
   }
 
-  .management-header h2 {
-    font-size: 34px;
+  .management-header h2{
+    font-size: 32px;
   }
 }

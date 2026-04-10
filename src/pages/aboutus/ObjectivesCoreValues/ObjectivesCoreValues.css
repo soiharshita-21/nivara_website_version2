@@ -61,17 +61,23 @@
 }
 
 .ocv-huge-title {
-  font-size: 6vw;
-  font-weight: 500;
-  color: #d32f2f;
-  line-height: 0.85;
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
   text-align: center;
+  transform: translateY(-50%);
+  font-size: 7vw;
+  font-weight: 800;
+  color: #d32f2f;
+  line-height: 1;
   letter-spacing: -2px;
-  z-index: 1;
+  z-index: 10;
   margin: 0;
   padding: 0;
   white-space: nowrap;
-  margin-top: 20px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
 }
 
 /* IMAGE EXPERIMENT */

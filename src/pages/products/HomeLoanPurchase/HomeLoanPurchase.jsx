@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import pol from "../../../assets/images/pol.png";
+import pur from "../../../assets/images/purchase.jpg";
 import { FiHome } from "react-icons/fi";
 import "./HomeLoanPurchase.css";
 import { useNavigate } from "react-router-dom";
@@ -33,7 +33,7 @@ const HomeLoanPurchase = () => {
         {[1].map((item, index) => (
           <div className="loan-card animate-pop-up" key={index}>
             <div className="loan-image">
-              <img src={pol} alt="Home Loan" />
+              <img src={pur} alt="Home Loan" />
               <div className="image-overlay"></div>
 
               <div className="center-icon">

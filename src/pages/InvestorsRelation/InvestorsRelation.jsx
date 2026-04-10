@@ -3,7 +3,7 @@ import { FaLock } from "react-icons/fa";
 import "./InvestorsRelation.css";
 
 const annualReturns = [
-  "2019–20","2020–21","2021–22","2022–23","2023–24","2024–25"
+  "2019–20", "2020–21", "2021–22", "2022–23", "2023–24", "2024–25"
 ];
 
 const notices = [

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { FaSyncAlt } from "react-icons/fa"; // balance transfer icon
-import pol from "../../../assets/images/pol.png"; // you will replace this
+import bal from "../../../assets/images/balance.jpg"; // you will replace this
 import "./BalanceTransfer.css";
 import { useNavigate } from "react-router-dom";
 
@@ -34,7 +34,7 @@ const BalanceTransfer = () => {
         {cards.map((item, index) => (
           <div className="balance-card animate-pop-up" key={index}>
             <div className="balance-imagebox">
-              <img src={pol} alt="Balance Transfer" />
+              <img src={bal} alt="Balance Transfer" />
 
               {/* Light pink overlay */}
               <div className="balance-image-overlay"></div>

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { FaHome } from "react-icons/fa";
-import pol from "../../../assets/images/pol.png";
+import com from "../../../assets/images/composite.jpg";
 import "./CompositeHomeLoan.css";
 import { useNavigate } from "react-router-dom";
 
@@ -35,7 +35,7 @@ const CompositeHomeLoan = () => {
           <div className="composite-card animate-pop-up" key={index}>
             {/* Image */}
             <div className="composite-imagebox">
-              <img src={pol} alt="Composite Home Loan" />
+              <img src={com} alt="Composite Home Loan" />
 
               {/* transparent color overlay */}
               <div className="composite-overlay"></div>

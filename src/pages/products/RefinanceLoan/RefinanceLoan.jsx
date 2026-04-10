@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { FaHome } from "react-icons/fa";
-import pol from "../../../assets/images/pol.png";
+import ref from "../../../assets/images/refinance.jpg";
 import "./RefinanceLoan.css";
 import { useNavigate } from "react-router-dom";
 
@@ -34,7 +34,7 @@ const RefinanceLoan = () => {
         {cards.map((item, index) => (
           <div className="refinance-card animate-pop-up" key={index}>
             <div className="refinance-imagebox">
-              <img src={pol} alt="Refinance Loan" />
+              <img src={ref} alt="Refinance Loan" />
 
               {/* transparent color overlay */}
               <div className="refinance-overlay"></div>

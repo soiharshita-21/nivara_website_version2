@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { FaWrench } from "react-icons/fa";
-import pol from "../../../assets/images/pol.png";
+import rev from "../../../assets/images/Renovation.jpg";
 import "./ImprovementandExtension.css";
 import { useNavigate } from "react-router-dom";
 
@@ -34,7 +34,7 @@ const ImprovmentandExtension = () => {
         {cards.map((item, index) => (
           <div className="improv-card animate-pop-up" key={index}>
             <div className="improv-imagebox">
-              <img src={pol} alt="Improvement and Extension Loan" />
+              <img src={rev} alt="Improvement and Extension Loan" />
 
               {/* transparent color layer */}
               <div className="improv-overlay"></div>

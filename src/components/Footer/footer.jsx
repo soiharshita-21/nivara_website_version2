@@ -8,6 +8,7 @@ import {
   FaPhoneAlt,
   FaEnvelope,
 } from "react-icons/fa";
+import logo from "../../assets/images/Nivara_logo.png"; // adjust path if needed
 
 const Footer = () => {
   return (
@@ -17,7 +18,8 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-col brand">
           <div className="brand-logo">
-            <div className="logo-circle">N</div>
+            <img src={logo} alt="Nivara Logo" className="footer-logo" />
+
             <div>
               <h2>NIVARA</h2>
               <span>Housing Finance</span>
@@ -89,11 +91,7 @@ const Footer = () => {
               <FaMapMarkerAlt />
             </span>
             <p>
-              Nivara Head Office,
-              <br />
-              MG Road, Kochi,
-              <br />
-              Kerala - 682016
+              3rd Floor, BNR Complex, 25/101/3, opposite RBI Layout Main Road, Puttenahalli, JP Nagar 7th Phase, J. P. Nagar, Bengaluru, Karnataka 560078
             </p>
           </div>
 

@@ -55,32 +55,110 @@
   text-shadow:0 4px 10px rgba(0,0,0,0.4);
 }
 
-/* Cards section */
-.partners-section{
-  padding:60px 80px;
-  display:grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap:30px;
+/* Marquee Container */
+.insurance-marquee-container {
+  max-width: 100%;
+  padding: 80px 0;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
 }
 
-.partner-card{
-  background:#fff;
-  height:140px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 6px 18px rgba(0,0,0,0.08);
-  border-radius:6px;
-  transition:0.3s ease;
+/* Gradient Masks */
+.insurance-marquee-container::before,
+.insurance-marquee-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
 }
 
-.partner-card:hover, .partner-card.animate-pop-up.visible:hover{
-  transform:translateY(-6px) scale(1.05);
-  box-shadow:0 12px 26px rgba(0,0,0,0.15);
+.insurance-marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, #fff, transparent);
 }
 
-.partner-card img{
-  max-width:80%;
-  max-height:80%;
-  object-fit:contain;
+.insurance-marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, #fff, transparent);
+}
+
+.insurance-marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.insurance-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scrollInsurance 30s linear infinite;
+}
+
+.insurance-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollInsurance {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.insurance-marquee-item {
+  flex-shrink: 0;
+  width: 320px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 50px;
+  background: #fff;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Added slight shadow for classy look */
+}
+
+.insurance-marquee-item img {
+  max-width: 90%;
+  max-height: 85%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.insurance-marquee-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.insurance-marquee-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .insurance-marquee-container {
+    padding: 50px 0;
+  }
+  
+  .insurance-marquee-item {
+    width: 220px;
+    height: 110px;
+    margin: 0 25px;
+  }
+
+  .banner-title {
+    font-size: 34px;
+    left: 30px;
+  }
+
+  .insurance-marquee-container::before,
+  .insurance-marquee-container::after {
+    width: 60px;
+  }
 }

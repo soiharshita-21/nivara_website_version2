@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import pol from "../../../assets/images/pol.png";
+import con from "../../../assets/images/construction.jpg";
 import { FaHardHat } from "react-icons/fa";
 import "./ConstructionLoan.css";
 import { useNavigate } from "react-router-dom";
@@ -36,7 +36,7 @@ const ConstructionLoan = () => {
           <div className="conloan-card animate-pop-up" key={index}>
 
             <div className="conloan-image">
-              <img src={pol} alt="Construction Loan" />
+              <img src={con} alt="Construction Loan" />
               <div className="image-overlay"></div>
 
               <div className="cen-icon">

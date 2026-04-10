@@ -55,6 +55,8 @@ const managementTeam = [
 ];
 
 const ManagementTeam = () => {
+  const [selectedMember, setSelectedMember] = React.useState(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -76,29 +78,61 @@ const ManagementTeam = () => {
   }, []);
 
   return (
-    <section className="management-section animate-pop-up">
-      <div className="management-header animate-pop-up">
-        <span className="management-heading animate-pop-up">Management Team</span>
-        <h2 className="animate-pop-up">Our Management Leadership</h2>
-        <p>Experienced professionals managing operations, governance, and business excellence</p>
-      </div>
+    <>
+      <section className="management-section animate-pop-up">
+        <div className="management-header animate-pop-up">
+          <span className="management-heading animate-pop-up">Management Team</span>
+          <h2 className="animate-pop-up">Our Management Leadership</h2>
+          <p>Experienced professionals managing operations, governance, and business excellence</p>
+        </div>
 
-      <div className="management-grid">
-        {managementTeam.map((item, index) => (
-          <div className={`management-card ${item.color} animate-pop-up`} style={{ transitionDelay: `${0.1 + index * 0.1}s` }} key={index}>
-            <div className="management-image">
-              <img src={item.img} alt={item.name} />
+        <div className="management-grid">
+          {managementTeam.map((item, index) => (
+            <div 
+              className={`management-card ${item.color} animate-pop-up`} 
+              style={{ transitionDelay: `${0.1 + index * 0.1}s` }} 
+              key={index}
+              onClick={() => setSelectedMember(item)}
+            >
+              <div className="management-image">
+                <img src={item.img} alt={item.name} />
+              </div>
+
+              <div className="management-content animate-pop-up">
+                <span className="management-role">{item.role}</span>
+                <h3 className="animate-pop-up">{item.name}</h3>
+                <p>{item.desc}</p>
+                <button className="view-bio-btn" onClick={() => setSelectedMember(item)}>View Details</button>
+              </div>
             </div>
+          ))}
+        </div>
+      </section>
 
-            <div className="management-content animate-pop-up">
-              <span className="management-role">{item.role}</span>
-              <h3 className="animate-pop-up">{item.name}</h3>
-              <p>{item.desc}</p>
+      {/* Profile Modal */}
+      {selectedMember && (
+        <div className="team-modal-overlay" onClick={() => setSelectedMember(null)}>
+          <div className="team-modal-content animate-pop-up visible" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close-btn" onClick={() => setSelectedMember(null)}>&times;</button>
+            
+            <div className="modal-body">
+              <div className={`modal-image-side ${selectedMember.color}`}>
+                <img src={selectedMember.img} alt={selectedMember.name} />
+              </div>
+              <div className="modal-info-side">
+                <span className="modal-role">{selectedMember.role}</span>
+                <h2>{selectedMember.name}</h2>
+                <div className="modal-divider"></div>
+                <p className="modal-desc">{selectedMember.desc}</p>
+                <p className="modal-bio-placeholder">
+                  As part of the core management team at Nivara, {selectedMember.name} brings extensive expertise in {selectedMember.role}. Their leadership is instrumental in our operational success and commitment to providing accessible home finance.
+                </p>
+              </div>
             </div>
           </div>
-        ))}
-      </div>
-    </section>
+        </div>
+      )}
+    </>
   );
 };
 

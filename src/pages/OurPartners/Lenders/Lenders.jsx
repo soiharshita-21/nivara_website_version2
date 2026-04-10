@@ -63,14 +63,17 @@ const Lenders = () => {
         </div>
       </div>
 
-      {/* Grid */}
-      <div className="lenders-container animate-pop-up">
-        <div className="lenders-grid">
-          {lenders.map((logo, index) => (
-            <div className="lender-card animate-pop-up" key={index}>
-              <img src={logo} alt={`lender-${index}`} />
-            </div>
-          ))}
+      {/* Continuous Marquee */}
+      <div className="lenders-marquee-container animate-pop-up">
+        <div className="lenders-marquee-wrapper">
+          <div className="lenders-marquee-track">
+            {/* Double the lenders for seamless loop */}
+            {[...lenders, ...lenders].map((logo, index) => (
+              <div className="lender-marquee-item" key={index}>
+                <img src={logo} alt={`lender-${index}`} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

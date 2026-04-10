@@ -77,7 +77,7 @@ const OurImpact = () => {
           <div className="impact-icon">
             <FaChartLine />
           </div>
-          <h3><AnimatedNumber end={50000} suffix="+" /></h3>
+          <h3><AnimatedNumber end={12000} suffix="+" /></h3>
           <p>Loans Disbursed</p>
            
         </div>
@@ -86,7 +86,7 @@ const OurImpact = () => {
           <div className="impact-icon">
             <FaBuilding />
           </div>
-          <h3><AnimatedNumber end={150} suffix="+" /></h3>
+          <h3><AnimatedNumber end={100} suffix="+" /></h3>
           <p>Branches</p>
         </div>
 
@@ -94,7 +94,7 @@ const OurImpact = () => {
           <div className="impact-icon">
             <FaMapMarkerAlt />
           </div>
-          <h3><AnimatedNumber end={12} /></h3>
+          <h3><AnimatedNumber end={5} /></h3>
           <p>States Covered</p>
         </div>
 
