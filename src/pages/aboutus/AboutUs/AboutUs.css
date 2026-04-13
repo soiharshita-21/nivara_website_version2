@@ -8,13 +8,13 @@
 .about-hero-section {
   display: grid;
   grid-template-columns: 1fr 1.5fr 1fr;
-  gap: 30px;
-  padding: 50px 5%;
+  gap: 40px;
+  padding: 80px 5%;
   background: #ffffff;
   color: #000;
   max-width: 1400px;
   margin: 0 auto;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .hero-left {
@@ -47,9 +47,8 @@
 
 .hero-center {
   display: flex;
-  align-items: flex-start;
-  margin-top: clamp(55px, 8vw, 115px);
-  min-height: 450px;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-main-img {
@@ -65,8 +64,8 @@
 .hero-right {
   display: flex;
   flex-direction: column;
-  margin-top: clamp(55px, 8vw, 115px);
-  min-height: 450px;
+  justify-content: center;
+  gap: 30px;
 }
 
 .hero-small-img {
@@ -110,10 +109,23 @@
   .about-hero-section {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
+    padding: 40px 5%;
   }
 
   .hero-right {
     grid-column: span 2;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+  }
+  
+  .hero-small-img {
+    width: 50%;
+    margin-bottom: 0;
+  }
+  
+  .hero-philosophy {
+    width: 50%;
   }
 }
 

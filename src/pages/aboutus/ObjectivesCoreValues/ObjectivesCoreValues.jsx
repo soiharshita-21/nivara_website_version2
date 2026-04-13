@@ -85,9 +85,12 @@ const ObjectivesCoreValues = () => {
         </div>
 
         <div className="ocv-huge-title-container animate-pop-up">
-          <h1 className="ocv-huge-title animate-pop-up">OBJECTIVES & CORE VALUES</h1>
           <div className="ocv-overlapping-image slide-up">
             <img src={house2} alt="Objectives & Core Values" />
+
+            <h1 className="ocv-huge-title animate-pop-up">
+              OBJECTIVES & CORE VALUES
+            </h1>
           </div>
         </div>
       </section>
@@ -102,7 +105,7 @@ const ObjectivesCoreValues = () => {
 
       <section className="ocv-section light animate-pop-up">
         <h2 className="section-title animate-pop-up">Our Core Values</h2>
-        
+
         <div className="cv-wheel-wrapper">
           <div className="cv-wheel">
             <div className="cv-wheel-center">
@@ -123,10 +126,10 @@ const ObjectivesCoreValues = () => {
             {coreValues.map((val, index) => {
               const angle = (index * (360 / coreValues.length)) - 90;
               return (
-                <div 
+                <div
                   className={`cv-wheel-node ${activeValue === val ? 'active' : ''}`}
                   key={index}
-                  style={{ 
+                  style={{
                     '--angle': `${angle}deg`,
                     '--node-color': val.color
                   }}

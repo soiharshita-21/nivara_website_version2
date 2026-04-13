@@ -1,42 +1,40 @@
-:root{
-  --theme:#8b1d2c;
+:root {
+  --theme: #8b1d2c;
 }
 
 /* Page */
-.public-page{
+.public-page {
   width: 100%;
   background: #fff;
 }
 
 /* Banner */
-.public-banner{
+.public-banner {
   position: relative;
   width: 100%;
   height: 400px;
   overflow: hidden;
 }
 
-.public-banner img{
-     width: 100%;
+.public-banner img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center bottom;   /* 🔥 moves image upward */
+  object-position: center bottom;
   filter: brightness(70%);
 }
 
-
 /* Overlay */
-.public-overlay{
+.public-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0, 0, 0, 0.45);
   display: flex;
   align-items: center;
-justify-content: center;
-  
+  justify-content: center;
 }
 
-.public-overlay h1{
+.public-overlay h1 {
   color: #fff;
   font-size: 48px;
   font-weight: 700;
@@ -44,42 +42,108 @@ justify-content: center;
 }
 
 /* Content */
-.public-content{
+.public-content {
   max-width: 1200px;
   margin: 60px auto;
   padding: 0 20px;
   color: #333;
 }
 
-.public-note{
+.public-note {
   margin-bottom: 30px;
-  font-size: 16px;
+  font-size: 26px;
 }
 
-/* Section Headings */
-.public-content h2{
+/* Grid Layout for Cards */
+.public-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
   margin-top: 40px;
-  margin-bottom: 15px;
-  color: var(--theme);
-  font-size: 22px;
+  align-items: start;
+  /* Prevents shorter cards from stretching */
+}
+
+/* Individual Cards */
+.public-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  /* Softer shadow like blog */
+  overflow: hidden;
+  border: 1px solid #eef0f3;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.public-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.public-card-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.public-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.public-card:hover .public-card-image img {
+  transform: scale(1.05);
+}
+
+.public-card-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  /* Pushes content down */
+}
+
+/* Card titles */
+.public-card-content h2 {
+  margin: 0 0 20px 0;
+  font-size: 24px;
   font-weight: 700;
+  color: red;
+  /* Dark blue from blog titles */
+  line-height: 1.3;
 }
 
 /* Links */
-.public-links{
+.public-links {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
-.public-links a{
+.public-links a {
   text-decoration: none;
-  color: #333;
-  font-size: 16px;
-  transition: 0.3s ease;
+  color: #666;
+  font-size: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eaeaea;
+  transition: all 0.3s ease;
+  line-height: 1.6;
 }
 
-.public-links a:hover{
+.public-links a:hover {
   color: var(--theme);
-  transform: translateX(6px);
+  /* Turns red on hover, like the read more */
+  transform: translateX(4px);
+  border-bottom-color: var(--theme);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .public-grid {
+    grid-template-columns: 1fr;
+  }
 }

@@ -8,9 +8,14 @@ import {
   FaPhoneAlt,
   FaEnvelope,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import logo from "../../assets/images/Nivara_logo.png"; // adjust path if needed
 
 const Footer = () => {
+  const handleLinkClick = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <footer className="footer">
       <div className="footer-pattern"></div>
@@ -19,11 +24,11 @@ const Footer = () => {
         <div className="footer-col brand">
           <div className="brand-logo">
             <img src={logo} alt="Nivara Logo" className="footer-logo" />
-
+            {/* 
             <div>
               <h2>NIVARA</h2>
               <span>Housing Finance</span>
-            </div>
+            </div> */}
           </div>
 
           <p className="brand-desc">
@@ -50,36 +55,36 @@ const Footer = () => {
         <div className="footer-col">
           <h4>Services</h4>
           <ul>
-            <li>Home Loan for Purchase</li>
-            <li>Loan for Construction</li>
-            <li>Composite Home Loan</li>
-            <li>Loan Against Property</li>
-            <li>Balance Transfer</li>
-            <li>Refinance Loan</li>
+            <li><Link to="/services/home-loan" onClick={handleLinkClick}>Home Loan for Purchase</Link></li>
+            <li><Link to="/services/construction-loan" onClick={handleLinkClick}>Loan for Construction</Link></li>
+            <li><Link to="/services/composite-loan" onClick={handleLinkClick}>Composite Home Loan</Link></li>
+            <li><Link to="/services/lap" onClick={handleLinkClick}>Loan Against Property</Link></li>
+            <li><Link to="/services/balance-transfer" onClick={handleLinkClick}>Balance Transfer</Link></li>
+            <li><Link to="/services/refinance-loan" onClick={handleLinkClick}>Refinance Loan</Link></li>
           </ul>
         </div>
 
         <div className="footer-col">
           <h4>Quick Links</h4>
           <ul>
-            <li>About Us</li>
-            <li>Vision & Mission</li>
-            <li>Board of Directors</li>
-            <li>Management Team</li>
-            <li>Career</li>
-            <li>Contact Us</li>
+            <li><Link to="/aboutus" onClick={handleLinkClick}>About Us</Link></li>
+            <li><Link to="/aboutus/vision-mission" onClick={handleLinkClick}>Vision & Mission</Link></li>
+            <li><Link to="/aboutus/board" onClick={handleLinkClick}>Board of Directors</Link></li>
+            <li><Link to="/aboutus/management" onClick={handleLinkClick}>Management Team</Link></li>
+            <li><Link to="/career/career" onClick={handleLinkClick}>Career</Link></li>
+            <li><Link to="/contactus/offices/offices" onClick={handleLinkClick}>Contact Us</Link></li>
           </ul>
         </div>
 
         <div className="footer-col">
           <h4>Customer Centre</h4>
           <ul>
-            <li>Interest Rate</li>
-            <li>EMI Calculator</li>
-            <li>FAQs</li>
-            <li>Fair Practice Code</li>
-            <li>Public Disclosure</li>
-            <li>Download Forms</li>
+            <li><Link to="/customercenter/interest-rate" onClick={handleLinkClick}>Interest Rate</Link></li>
+            <li><Link to="/customercenter/calculator" onClick={handleLinkClick}>EMI Calculator</Link></li>
+            <li><Link to="/customercenter/faqs" onClick={handleLinkClick}>FAQs</Link></li>
+            <li><Link to="/customercenter/fair-practice-code" onClick={handleLinkClick}>Fair Practice Code</Link></li>
+            <li><Link to="/customercenter/publicdisclosure" onClick={handleLinkClick}>Public Disclosure</Link></li>
+            <li><Link to="/customercenter/download" onClick={handleLinkClick}>Download Forms</Link></li>
           </ul>
         </div>
 

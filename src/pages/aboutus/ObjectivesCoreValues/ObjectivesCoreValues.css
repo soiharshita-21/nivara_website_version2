@@ -51,48 +51,43 @@
 
 .ocv-huge-title-container {
   position: relative;
-  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
-  margin-top: 10px;
-  min-height: 60vh;
+  margin-top: -20px;
+  min-height: 400px;
 }
 
 .ocv-huge-title {
   position: absolute;
-  top: 45%;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  transform: translateY(-50%);
-  font-size: 7vw;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  padding: 15px 40px;
+  font-size: 4.5vw;
   font-weight: 800;
   color: #d32f2f;
-  line-height: 1;
-  letter-spacing: -2px;
-  z-index: 10;
-  margin: 0;
-  padding: 0;
+  background-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  text-align: center;
   white-space: nowrap;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.4);
+  letter-spacing: -1px;
   text-transform: uppercase;
+  margin-left: -490px;
 }
 
 /* IMAGE EXPERIMENT */
 
 .ocv-overlapping-image {
-  position: absolute;
-  bottom: 0px;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 70%;
-  /* Show more image */
-  z-index: 2;
+  height: 550px;
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
 }
 
 .ocv-overlapping-image img {
@@ -270,11 +265,26 @@
   }
 
   .ocv-huge-title {
-    font-size: 10vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 10;
+    padding: 15px 40px;
+    font-size: 4.5vw;
+    font-weight: 800;
+    color: #d32f2f;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    text-align: center;
+    text-transform: uppercase;
   }
 
   .ocv-overlapping-image {
-    height: 50%;
+    height: 350px;
   }
 
   .section-title {

@@ -40,7 +40,7 @@ import Blog from "./pages/media/Blog/Blog";
 import BlogDetail from "./pages/media/Blog/BlogDetail";
 import PressRelease from "./pages/media/pressrelease/pressrelease";
 import NivaraGallery from "./pages/media/nivaragallery/nivaragallery";
-import Career from"./pages/Career/Career";
+import Career from "./pages/Career/Career";
 import Branch from "./pages/contactus/Branch/Branch";
 import Offices from "./pages/contactus/Offices/Offices";
 import FairPracticeCode from "./pages/customercenter/FairPracticeCode/FairPracticeCode";
@@ -50,6 +50,9 @@ const ScrollAnimations = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 0);
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -138,7 +141,7 @@ function App() {
             element={<CorporateGovernance />}
           />
           <Route path="/customercenter/download" element={<Download />} />
-          <Route path="/customercenter/calculator" element={<Calculator/>} />
+          <Route path="/customercenter/calculator" element={<Calculator />} />
           <Route path="/customercenter/faqs" element={<Faqs />} />
           <Route path="/ourpartners/lenders/lenders" element={<Lenders />} />
           <Route
@@ -150,7 +153,7 @@ function App() {
           <Route path="/media/blog/:slug" element={<BlogDetail />} />
           <Route path="/media/pressrelease/pressrelease" element={<PressRelease />} />
           <Route path="/media/nivara-gallery/nivara-gallery" element={<NivaraGallery />} />
-          <Route path="/career/career" element={<Career />} /> 
+          <Route path="/career/career" element={<Career />} />
           <Route path="/contactus/branch/branch" element={<Branch />} />
           <Route path="/contactus/offices/offices" element={<Offices />} />
           <Route path="/apply-home-loan" element={<LoanApplyForm />} />
