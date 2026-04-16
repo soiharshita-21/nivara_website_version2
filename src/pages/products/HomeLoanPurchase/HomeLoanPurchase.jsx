@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import pur from "../../../assets/images/purchase.jpg";
-import { FiHome } from "react-icons/fi";
+import { FaHome, FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 import "./HomeLoanPurchase.css";
 import { useNavigate } from "react-router-dom";
 
@@ -37,7 +37,7 @@ const HomeLoanPurchase = () => {
               <div className="image-overlay"></div>
 
               <div className="center-icon">
-                <FiHome className="icon-rotate" />
+                <FaHome className="icon-rotate" />
               </div>
             </div>
 
@@ -98,22 +98,24 @@ const HomeLoanPurchase = () => {
       {/* Features Strip Section */}
       <div className="homeloan-feature-strip">
         <div className="homeloan-feature-box animate-pop-up">
-          <div className="homeloan-feature-icon">📄</div>
+          <div className="homeloan-feature-icon"><FaFileAlt /></div>
           <h3 className="animate-pop-up">Easy Loan Approvals</h3>
         </div>
 
         <div className="homeloan-feature-box animate-pop-up">
-          <div className="homeloan-feature-icon">💰</div>
+          <div className="homeloan-feature-icon"><FaCoins /></div>
           <h3 className="animate-pop-up">Lowest Possible Prices</h3>
         </div>
 
         <div className="homeloan-feature-box animate-pop-up">
-          <div className="homeloan-feature-icon">💼</div>
+          <div className="homeloan-feature-icon"><FaBriefcase /></div>
           <h3 className="animate-pop-up">Hassle free</h3>
         </div>
 
         <div className="homeloan-feature-box animate-pop-up">
-          <div className="homeloan-feature-icon">✅</div>
+          <div className="homeloan-circle-check-icon">
+            <FaCheck />
+          </div>
           <h3 className="animate-pop-up">Secure Loan Process</h3>
         </div>
       </div>
@@ -176,7 +178,7 @@ const HomeLoanPurchase = () => {
         <div className="homeloan-help-grid">
           {/* Card 1 */}
           <div className="homeloan-help-card animate-pop-up">
-            <div className="homeloan-help-icon">🗓️</div>
+            <div className="homeloan-help-icon"><FaCalendarAlt /></div>
             <h3 className="animate-pop-up">APPLY FOR LOAN</h3>
             <p>Looking to buy a home loan? then apply for loan now.</p>
             <span className="homeloan-help-link">Get Appointment</span>
@@ -184,7 +186,7 @@ const HomeLoanPurchase = () => {
 
           {/* Card 2 */}
           <div className="homeloan-help-card animate-pop-up">
-            <div className="homeloan-help-icon">📞</div>
+            <div className="homeloan-help-icon"><FaPhoneAlt /></div>
             <h3 className="animate-pop-up">CALL US AT</h3>
             <p className="homeloan-help-green">1800-309-1516</p>
             <p className="homeloan-help-green">contact@nivarahousing.com</p>
@@ -193,7 +195,7 @@ const HomeLoanPurchase = () => {
 
           {/* Card 3 */}
           <div className="homeloan-help-card animate-pop-up">
-            <div className="homeloan-help-icon">👥</div>
+            <div className="homeloan-help-icon"><FaUserTie /></div>
             <h3 className="animate-pop-up">TALK TO ADVISOR</h3>
             <p className="homeloan-help-green">+91 80 26552822</p>
             <p>Need to loan advise?</p>

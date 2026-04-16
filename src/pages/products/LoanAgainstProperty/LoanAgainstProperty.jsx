@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import lop from "../../../assets/images/LOP.jpg";
 import { FiHome } from "react-icons/fi";
+import { FaHome, FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 
 import "./LoanAgainstProperty.css";
 import { useNavigate } from "react-router-dom";
@@ -96,22 +97,24 @@ const LoanAgainstProperty = () => {
       {/* Features Strip Section */}
       <div className="lap-feature-strip">
         <div className="lap-feature-box animate-pop-up">
-          <div className="lap-feature-icon">📄</div>
+          <div className="lap-feature-icon"><FaFileAlt /></div>
           <h3 className="animate-pop-up">Easy Loan Approvals</h3>
         </div>
 
         <div className="lap-feature-box animate-pop-up">
-          <div className="lap-feature-icon">💰</div>
+          <div className="lap-feature-icon"><FaCoins /></div>
           <h3 className="animate-pop-up">Lowest Possible Prices</h3>
         </div>
 
         <div className="lap-feature-box animate-pop-up">
-          <div className="lap-feature-icon">💼</div>
+          <div className="lap-feature-icon"><FaBriefcase /></div>
           <h3 className="animate-pop-up">Hassle free</h3>
         </div>
 
         <div className="lap-feature-box animate-pop-up">
-          <div className="lap-feature-icon">✅</div>
+          <div className="lap-circle-check-icon">
+            <FaCheck />
+          </div>
           <h3 className="animate-pop-up">Secure Loan Process</h3>
         </div>
       </div>
@@ -191,7 +194,7 @@ const LoanAgainstProperty = () => {
         <div className="lap-help-grid">
           {/* Card 1 */}
           <div className="lap-help-card animate-pop-up">
-            <div className="lap-help-icon">🗓️</div>
+            <div className="lap-help-icon"><FaCalendarAlt /></div>
             <h3 className="animate-pop-up">APPLY FOR LOAN</h3>
             <p>Looking to buy a home loan? then apply for loan now.</p>
             <span className="lap-help-link">Get Appointment</span>
@@ -199,7 +202,7 @@ const LoanAgainstProperty = () => {
 
           {/* Card 2 */}
           <div className="lap-help-card animate-pop-up">
-            <div className="lap-help-icon">📞</div>
+            <div className="lap-help-icon"><FaPhoneAlt /></div>
             <h3 className="animate-pop-up">CALL US AT</h3>
             <p className="lap-help-green">1800-309-1516</p>
             <p className="lap-help-green">contact@nivarahousing.com</p>
@@ -208,7 +211,7 @@ const LoanAgainstProperty = () => {
 
           {/* Card 3 */}
           <div className="lap-help-card animate-pop-up">
-            <div className="lap-help-icon">👥</div>
+            <div className="lap-help-icon"><FaUserTie /></div>
             <h3 className="animate-pop-up">TALK TO ADVISOR</h3>
             <p className="lap-help-green">+91 80 26552822</p>
             <p>Need to loan advise?</p>

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { FiHome } from "react-icons/fi";// balance transfer icon
+import { FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 import bal from "../../../assets/images/balance.jpg"; // you will replace this
 import "./BalanceTransfer.css";
 import { useNavigate } from "react-router-dom";
@@ -96,22 +97,24 @@ const BalanceTransfer = () => {
       {/* Features Strip Section */}
       <div className="balance-feature-strip">
         <div className="balance-feature-box animate-pop-up">
-          <div className="balance-feature-icon">📄</div>
+          <div className="balance-feature-icon"><FaFileAlt /></div>
           <h3 className="animate-pop-up">Easy Loan Approvals</h3>
         </div>
 
         <div className="balance-feature-box animate-pop-up">
-          <div className="balance-feature-icon">💰</div>
+          <div className="balance-feature-icon"><FaCoins /></div>
           <h3 className="animate-pop-up">Lowest Possible Prices</h3>
         </div>
 
         <div className="balance-feature-box animate-pop-up">
-          <div className="balance-feature-icon">💼</div>
+          <div className="balance-feature-icon"><FaBriefcase /></div>
           <h3 className="animate-pop-up">Hassle free</h3>
         </div>
 
         <div className="balance-feature-box animate-pop-up">
-          <div className="balance-feature-icon">✅</div>
+          <div className="balance-circle-check-icon">
+            <FaCheck />
+          </div>
           <h3 className="animate-pop-up">Secure Loan Process</h3>
         </div>
       </div>
@@ -202,7 +205,7 @@ const BalanceTransfer = () => {
         <div className="balance-help-grid">
           {/* Card 1 */}
           <div className="balance-help-card animate-pop-up">
-            <div className="balance-help-icon">🗓️</div>
+            <div className="balance-help-icon"><FaCalendarAlt /></div>
             <h3 className="animate-pop-up">APPLY FOR LOAN</h3>
             <p>Looking to buy a home loan? then apply for loan now.</p>
             <span className="balance-help-link">Get Appointment</span>
@@ -210,7 +213,7 @@ const BalanceTransfer = () => {
 
           {/* Card 2 */}
           <div className="balance-help-card animate-pop-up">
-            <div className="balance-help-icon">📞</div>
+            <div className="balance-help-icon"><FaPhoneAlt /></div>
             <h3 className="animate-pop-up">CALL US AT</h3>
             <p className="balance-help-green">1800-309-1516</p>
             <p className="balance-help-green">contact@nivarahousing.com</p>
@@ -219,7 +222,7 @@ const BalanceTransfer = () => {
 
           {/* Card 3 */}
           <div className="balance-help-card animate-pop-up">
-            <div className="balance-help-icon">👥</div>
+            <div className="balance-help-icon"><FaUserTie /></div>
             <h3 className="animate-pop-up">TALK TO ADVISOR</h3>
             <p className="balance-help-green">+91 80 26552822</p>
             <p>Need to loan advise?</p>

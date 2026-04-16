@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import con from "../../../assets/images/construction.jpg";
 import { FiHome } from "react-icons/fi";
+import { FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 import "./ConstructionLoan.css";
 import { useNavigate } from "react-router-dom";
 
@@ -102,22 +103,24 @@ const ConstructionLoan = () => {
       {/* Features Strip Section */}
       <div className="conloan-feature-strip">
         <div className="conloan-feature-box animate-pop-up">
-          <div className="conloan-feature-icon">📄</div>
+          <div className="conloan-feature-icon"><FaFileAlt /></div>
           <h3 className="animate-pop-up">Easy Loan Approvals</h3>
         </div>
 
         <div className="conloan-feature-box animate-pop-up">
-          <div className="conloan-feature-icon">💰</div>
+          <div className="conloan-feature-icon"><FaCoins /></div>
           <h3 className="animate-pop-up">Lowest Possible Prices</h3>
         </div>
 
         <div className="conloan-feature-box animate-pop-up">
-          <div className="conloan-feature-icon">💼</div>
+          <div className="conloan-feature-icon"><FaBriefcase /></div>
           <h3 className="animate-pop-up">Hassle free</h3>
         </div>
 
         <div className="conloan-feature-box animate-pop-up">
-          <div className="conloan-feature-icon">✅</div>
+          <div className="conloan-circle-check-icon">
+            <FaCheck />
+          </div>
           <h3 className="animate-pop-up">Secure Loan Process</h3>
         </div>
       </div>
@@ -219,7 +222,7 @@ const ConstructionLoan = () => {
         <div className="conloan-help-grid">
           {/* Card 1 */}
           <div className="conloan-help-card animate-pop-up">
-            <div className="conloan-help-icon">🗓️</div>
+            <div className="conloan-help-icon"><FaCalendarAlt /></div>
             <h3 className="animate-pop-up">APPLY FOR LOAN</h3>
             <p>Looking to buy a home loan? then apply for loan now.</p>
             <span className="conloan-help-link">Get Appointment</span>
@@ -227,7 +230,7 @@ const ConstructionLoan = () => {
 
           {/* Card 2 */}
           <div className="conloan-help-card animate-pop-up">
-            <div className="conloan-help-icon">📞</div>
+            <div className="conloan-help-icon"><FaPhoneAlt /></div>
             <h3 className="animate-pop-up">CALL US AT</h3>
             <p className="conloan-help-green">1800-309-1516</p>
             <p className="conloan-help-green">contact@nivarahousing.com</p>
@@ -236,7 +239,7 @@ const ConstructionLoan = () => {
 
           {/* Card 3 */}
           <div className="conloan-help-card animate-pop-up">
-            <div className="conloan-help-icon">👥</div>
+            <div className="conloan-help-icon"><FaUserTie /></div>
             <h3 className="animate-pop-up">TALK TO ADVISOR</h3>
             <p className="conloan-help-green">+91 80 26552822</p>
             <p>Need to loan advise?</p>

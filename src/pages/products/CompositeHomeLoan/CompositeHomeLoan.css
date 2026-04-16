@@ -199,19 +199,29 @@
 }
 
 .composite-features li {
-  margin-bottom: 10px;
-  font-size: 15px;
+  margin-bottom: 12px;
+  font-size: 16px;
   color: #425466;
   position: relative;
-  padding-left: 22px;
+  padding-left: 35px;
+  display: flex;
+  align-items: center;
 }
 
 .composite-features li::before {
-  content: "✔";
+  content: "✓";
   position: absolute;
   left: 0;
-  color: #42c6b9;
-  font-weight: bold;
+  width: 22px;
+  height: 22px;
+  background-color: #42c6b9;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 900;
 }
 
 
@@ -375,13 +385,29 @@
 .com-feature-icon {
   font-size: 40px;
   margin-bottom: 20px;
-  color: #6bb300;
+  color: #42c6b9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.com-circle-check-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #42c6b9;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  margin: 0 auto 20px;
 }
 
 .com-feature-box h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #42c6b9 !important;
+  color: #000 !important;
   margin: 0;
 }
 
@@ -553,7 +579,7 @@
 /* Icon */
 .com-help-icon {
   font-size: 40px;
-  color: #66b500;
+  color: #42c6b9;
   margin-bottom: 20px;
 }
 

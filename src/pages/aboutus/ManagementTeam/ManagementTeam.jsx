@@ -19,6 +19,7 @@ const managementTeam = [
     name: "Mr. Shreyas Ramanathan",
     role: "Chief Business Officer",
     desc: "Over 18 years of experience in Retail and SME lending, having worked extensively in credit underwriting and policy at ICICI Bank and OLA.",
+    longDesc: "Mr. Shreyas Ramanathan is a Chartered Accountant and holds an MBA from Asian Institute of Management, Manila. He has more than 18 years of work experience in Retail and SME lending, having worked at ICICI Bank for 12 years and later managing the leasing portfolio at OLA.",
     color: "rose",
     img: shreyas,
   },
@@ -26,6 +27,7 @@ const managementTeam = [
     name: "Mr. Srinivasan C V",
     role: "Chief Financial Officer",
     desc: "Chartered Accountant with 25+ years of experience across financial services, manufacturing, and IT sectors, previously CFO at Chaitanya India.",
+    longDesc: "Mr. Srinivasan CV is a Chartered Accountant and a Cost Accountant with more than 25 years of experience. He completed the AGMP from IIM Ahmedabad. Previously, he was CFO at Chaitanya India Fin Credit Pvt. Ltd and has experience in diverse industries such as financial services, manufacturing, and IT distribution.",
     color: "orange",
     img: srinivasan,
   },
@@ -33,6 +35,7 @@ const managementTeam = [
     name: "Mr. Suresh G",
     role: "Head of Collections",
     desc: "22 years of experience in Risk and Debt management, specializing in Collections, Recovery, and Process Improvement.",
+    longDesc: "Mr. Suresh G has about 21 years of experience in Financial services and Telecom. He specializes in Collections and Recovery and has worked with Karvy Financial Services (now SBFC) as Head – Collections for AP and Telangana, as well as ICICI Bank and Bharti Airtel.",
     color: "green",
     img: suresh,
   },
@@ -40,6 +43,7 @@ const managementTeam = [
     name: "Mr. Aditya PVN",
     role: "Head of HR",
     desc: "20+ years of experience in HR across BFSI and Telecom, with previous leadership roles at Jana Small Finance Bank and Tata Teleservices.",
+    longDesc: "Mr. Aditya PVN holds an MBA in HR with about 14 years of experience in the BFSI sector. He previously worked with Karvy Financial Services Ltd. (now SBFC) as HR-Manager for AP & Telangana, focusing on talent acquisition, performance management, and employee relations.",
     color: "yellow",
     img: aditya,
   },
@@ -47,6 +51,7 @@ const managementTeam = [
     name: "Mr. Sidharth Vij",
     role: "National Credit Manager",
     desc: "Two decades of experience in Strategic Credit Solutions and Risk Management, with a proven track record in establishing mortgage businesses.",
+    longDesc: "Mr. Sidharth Vij is an MBA in Finance with over 13 years of experience in Retail Lending (HL, LAP, and Mortgage loans). He was previously Area Credit Manager at Piramal Capital and has worked with DHFL and ICICI Bank.",
     color: "purple",
     img: sidharth,
   },
@@ -54,6 +59,7 @@ const managementTeam = [
     name: "Mr. Nagesh H S",
     role: "State Head – Karnataka",
     desc: "Nearly 20 years of experience in Banking and Mortgage industries, expert in setting up retail branch networks and distribution channels.",
+    longDesc: "Mr. Nagesh H S is an MBA graduate with nearly 20 years of experience in banking and finance. A founder member of Nivara, he has also worked with Karvy Financial Services, Aviom India Housing Finance, and IDFC First Bank.",
     color: "pink",
     img: nagesh,
   },
@@ -61,6 +67,7 @@ const managementTeam = [
     name: "Mr. Venkat Sharma Konduri",
     role: "State Head – AP & Telangana",
     desc: "24 years of experience in Sales Distribution, Home Loans, and Mortgages, with expertise in building businesses from scratch.",
+    longDesc: "Mr. Venkat Sharma Konduri has 24 years of experience in Sales Distribution in Home Loans and Mortgages. He holds an MBA from IIM Amritsar and has worked at Adani Capital, Vistaar Finance, and Karvy Financial services.",
     color: "rose",
     img: venkat,
   },
@@ -68,6 +75,7 @@ const managementTeam = [
     name: "Mr. Babu Abraham",
     role: "Legal Head",
     desc: "In-house Legal Counsel with 20+ years of experience in corporate law, litigation, and regulatory compliance.",
+    longDesc: "Mr. Babu Abraham has over 20 years of experience as an In-house Legal Counsel. He holds LLB and MBA degrees and is skilled in litigation, regulatory compliance, and legal recovery. He previously worked with Mantri Developers, Tata Motor Finance, and Fullerton.",
     color: "orange",
     img: babu,
   },
@@ -75,6 +83,7 @@ const managementTeam = [
     name: "Mrs. Raina D’ Silva",
     role: "Company Secretary",
     desc: "CS and Law graduate with 10 years of experience in secretarial compliance and corporate governance.",
+    longDesc: "Mrs. Raina D' Silva is a CS and Law graduate with 10 years of experience. She previously worked with Fineotex Chemical Ltd and HSBC Electronic Data Processing India Pvt. Ltd and is well-versed in the Companies Act and RBI/SEBI directions.",
     color: "green",
     img: raina,
   },
@@ -82,6 +91,7 @@ const managementTeam = [
     name: "Mr. Bonojit Ukil",
     role: "Chief Compliance Officer",
     desc: "Four decades of experience in policy formulation and process management within the Banking and Financial Services space.",
+    longDesc: "Mr. Bonojit Ukil has four decades of experience in banking and finance. Previously, he worked at UCO Bank, Bank of Punjab, Ujjivan Small Finance Bank, and Aye Finance, specializing in policy formulation and compliance risk.",
     color: "yellow",
     img: bonojit,
   },
@@ -89,6 +99,7 @@ const managementTeam = [
     name: "Mr. C. G. Thimmaiah",
     role: "Head – Audit",
     desc: "30+ years of experience in Retail Asset management, credit appraisal, and audit across multiple states in India.",
+    longDesc: "Mr. C. G. Thimmaiah has about 12 years of experience in internal audit within the BFSI sector. He previously worked at Karvy Financial Services (now SBFC), HDB Financial Services, and ICICI Bank.",
     color: "purple",
     img: thimmaiah,
   },
@@ -96,6 +107,7 @@ const managementTeam = [
     name: "Mr. Raja Shankarasubramanian",
     role: "Head – IT & Digital",
     desc: "Techno Ops leader with 30 years of experience in transforming IT into a core business enabler through digital initiatives.",
+    longDesc: "Mr. Raja Shankarasubramanian is an IT professional with over 13 years of experience. He was previously Manager-IT at Karvy Financial Services and has worked with Tata Business Support Services and TVS Sundaram Iyengar & Sons.",
     color: "pink",
     img: raja,
   },
@@ -220,19 +232,19 @@ const ManagementTeam = () => {
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
-              <div style={{ flex: '0 0 55%', padding: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'center', backgroundColor: '#fff', overflowY: 'auto' }}>
-                <span style={{ display: 'block', fontSize: '14px', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '1.5px', color: '#d32f2f', marginBottom: '12px' }}>
-                  {selectedMember.role}
-                </span>
-                <h2 style={{ fontWeight: 900, fontSize: '42px', margin: '0 0 15px 0', color: '#1a1a1a', lineHeight: '1.1' }}>
-                  {selectedMember.name}
+              <div style={{ flex: '0 0 55%', padding: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: '#fff', overflowY: 'auto' }}>
+                <h2 style={{ fontWeight: 900, fontSize: '42px', margin: '0 0 5px 0', color: '#1a1a1a', lineHeight: '1.1' }}>
+                   {selectedMember.name}
                 </h2>
+                <span style={{ display: 'block', fontSize: '14px', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '1.5px', color: '#d32f2f', marginBottom: '20px' }}>
+                   {selectedMember.role}
+                </span>
                 <div style={{ width: '60px', height: '6px', backgroundColor: '#d32f2f', marginBottom: '30px', borderRadius: '3px' }}></div>
                 <p style={{ fontSize: '18px', fontWeight: 700, color: '#1a1a1a', marginBottom: '25px', lineHeight: '1.5' }}>
                   {selectedMember.desc}
                 </p>
                 <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#4b5563', fontWeight: 400 }}>
-                  As part of the core management team at Nivara, {selectedMember.name} brings extensive expertise in {selectedMember.role}. Their leadership is instrumental in our operational success and commitment to providing accessible home finance.
+                  {selectedMember.longDesc}
                 </p>
               </div>
             </div>

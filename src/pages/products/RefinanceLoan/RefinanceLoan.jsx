@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 import ref from "../../../assets/images/refinance.jpg";
 import "./RefinanceLoan.css";
 import { useNavigate } from "react-router-dom";
@@ -100,22 +100,24 @@ const RefinanceLoan = () => {
       {/* Features Strip Section */}
       <div className="refinance-feature-strip">
         <div className="refinance-feature-box animate-pop-up">
-          <div className="refinance-feature-icon">📄</div>
+          <div className="refinance-feature-icon"><FaFileAlt /></div>
           <h3 className="animate-pop-up">Easy Loan Approvals</h3>
         </div>
 
         <div className="refinance-feature-box animate-pop-up">
-          <div className="refinance-feature-icon">💰</div>
+          <div className="refinance-feature-icon"><FaCoins /></div>
           <h3 className="animate-pop-up">Lowest Possible Prices</h3>
         </div>
 
         <div className="refinance-feature-box animate-pop-up">
-          <div className="refinance-feature-icon">💼</div>
+          <div className="refinance-feature-icon"><FaBriefcase /></div>
           <h3 className="animate-pop-up">Hassle free</h3>
         </div>
 
         <div className="refinance-feature-box animate-pop-up">
-          <div className="refinance-feature-icon">✅</div>
+          <div className="refinance-circle-check-icon">
+            <FaCheck />
+          </div>
           <h3 className="animate-pop-up">Secure Loan Process</h3>
         </div>
       </div>
@@ -197,7 +199,7 @@ const RefinanceLoan = () => {
         <div className="refinance-help-grid">
           {/* Card 1 */}
           <div className="refinance-help-card animate-pop-up">
-            <div className="refinance-help-icon">🗓️</div>
+            <div className="refinance-help-icon"><FaCalendarAlt /></div>
             <h3 className="animate-pop-up">APPLY FOR LOAN</h3>
             <p>Looking to buy a home loan? then apply for loan now.</p>
             <span className="refinance-help-link">Get Appointment</span>
@@ -205,7 +207,7 @@ const RefinanceLoan = () => {
 
           {/* Card 2 */}
           <div className="refinance-help-card animate-pop-up">
-            <div className="refinance-help-icon">📞</div>
+            <div className="refinance-help-icon"><FaPhoneAlt /></div>
             <h3 className="animate-pop-up">CALL US AT</h3>
             <p className="refinance-help-green">1800-309-1516</p>
             <p className="refinance-help-green">contact@nivarahousing.com</p>
@@ -214,7 +216,7 @@ const RefinanceLoan = () => {
 
           {/* Card 3 */}
           <div className="refinance-help-card animate-pop-up">
-            <div className="refinance-help-icon">👥</div>
+            <div className="refinance-help-icon"><FaUserTie /></div>
             <h3 className="animate-pop-up">TALK TO ADVISOR</h3>
             <p className="refinance-help-green">+91 80 26552822</p>
             <p>Need to loan advise?</p>

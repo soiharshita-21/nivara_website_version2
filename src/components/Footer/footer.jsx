@@ -114,14 +114,14 @@ const Footer = () => {
             <span className="icon">
               <FaPhoneAlt />
             </span>
-            <p>1800-XXX-XXXX</p>
+            <p>1800-309-1516</p>
           </div>
 
           <div className="contact-item">
             <span className="icon">
               <FaEnvelope />
             </span>
-            <p>info@nivara.com</p>
+            <p>info@nivarahousing.com</p>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { FiHome } from "react-icons/fi";
+import { FaHome, FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 import rev from "../../../assets/images/Renovation.jpg";
 import "./ImprovementandExtension.css";
 import { useNavigate } from "react-router-dom";
@@ -40,7 +40,7 @@ const ImprovmentandExtension = () => {
               <div className="improv-overlay"></div>
 
               <div className="improv-icon">
-                <FiHome className="improv-rotate-icon" />
+                <FaHome className="improv-rotate-icon" />
               </div>
             </div>
 
@@ -103,22 +103,24 @@ const ImprovmentandExtension = () => {
       {/* Features Strip Section */}
       <div className="improv-feature-strip">
         <div className="improv-feature-box animate-pop-up">
-          <div className="improv-feature-icon">📄</div>
+          <div className="improv-feature-icon"><FaFileAlt /></div>
           <h3 className="animate-pop-up">Easy Loan Approvals</h3>
         </div>
 
         <div className="improv-feature-box animate-pop-up">
-          <div className="improv-feature-icon">💰</div>
+          <div className="improv-feature-icon"><FaCoins /></div>
           <h3 className="animate-pop-up">Lowest Possible Prices</h3>
         </div>
 
         <div className="improv-feature-box animate-pop-up">
-          <div className="improv-feature-icon">💼</div>
+          <div className="improv-feature-icon"><FaBriefcase /></div>
           <h3 className="animate-pop-up">Hassle free</h3>
         </div>
 
         <div className="improv-feature-box animate-pop-up">
-          <div className="improv-feature-icon">✅</div>
+          <div className="improv-circle-check-icon">
+            <FaCheck />
+          </div>
           <h3 className="animate-pop-up">Secure Loan Process</h3>
         </div>
       </div>
@@ -208,7 +210,7 @@ const ImprovmentandExtension = () => {
         <div className="improv-help-grid">
           {/* Card 1 */}
           <div className="improv-help-card animate-pop-up">
-            <div className="improv-help-icon">🗓️</div>
+            <div className="improv-help-icon"><FaCalendarAlt /></div>
             <h3 className="animate-pop-up">APPLY FOR LOAN</h3>
             <p>Looking to buy a home loan? then apply for loan now.</p>
             <span className="improv-help-link">Get Appointment</span>
@@ -216,7 +218,7 @@ const ImprovmentandExtension = () => {
 
           {/* Card 2 */}
           <div className="improv-help-card animate-pop-up">
-            <div className="improv-help-icon">📞</div>
+            <div className="improv-help-icon"><FaPhoneAlt /></div>
             <h3 className="animate-pop-up">CALL US AT</h3>
             <p className="improv-help-green">1800-309-1516</p>
             <p className="improv-help-green">contact@nivarahousing.com</p>
@@ -225,7 +227,7 @@ const ImprovmentandExtension = () => {
 
           {/* Card 3 */}
           <div className="improv-help-card animate-pop-up">
-            <div className="improv-help-icon">👥</div>
+            <div className="improv-help-icon"><FaUserTie /></div>
             <h3 className="animate-pop-up">TALK TO ADVISOR</h3>
             <p className="improv-help-green">+91 80 26552822</p>
             <p>Need to loan advise?</p>

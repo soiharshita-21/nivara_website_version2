@@ -223,20 +223,37 @@ const Branch = () => {
         📍 Newly Opened Branches
       </h2>
 
-      <div className="new-branches-grid">
-        <div className="branch-card animate-pop-up">
-          <h3>🏢 Penukonda Branch</h3>
-          <p><strong>Opened:</strong> 23rd January 2026</p>
-          <p><strong>Location:</strong> Penukonda, Andhra Pradesh</p>
-          <p><strong>Contact:</strong> +91 9742366443</p>
-          <button
-            className="branch-card-directions"
-            onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=Nivara+Home+Finance+Penukonda`, "_blank")}
-          >
-            Get Directions
-          </button>
-        </div>
-      </div>
+     <div className="new-branches-grid">
+
+  <div className="branch-card animate-pop-up">
+    <h3>🏢 Kolhapur Branch</h3>
+    <p><strong>Opened:</strong> 17th March 2026</p>
+    <p><strong>Location:</strong> No. 115-B, First Floor, Parag Complex, 596/1, E Ward, Shahupuri, 1st Lane, Kolhapur – 416001.</p>
+    <p><strong>Contact:</strong> +91 9373059622</p>
+  </div>
+
+  <div className="branch-card animate-pop-up">
+    <h3>🏢 Kurnool Branch</h3>
+    <p><strong>Opened:</strong> 25th March 2026</p>
+    <p><strong>Location:</strong> Shop No. 420, 421 & 422, 4th Floor, Ucon Legend Complex, Kurnool District, Andhra Pradesh – 518004.</p>
+    <p><strong>Contact:</strong> +91 9494438553</p>
+  </div>
+
+  <div className="branch-card animate-pop-up">
+    <h3>🏢 Bangarpet Branch</h3>
+    <p><strong>Opened:</strong> 30th March 2026</p>
+    <p><strong>Location:</strong> 1st Floor, #3191, opp Indian Bank, Seshachalam Mudaliar Road, Bangarpet – 563114.</p>
+    <p><strong>Contact:</strong> +91 9742366443</p>
+  </div>
+
+  <div className="branch-card animate-pop-up">
+    <h3>🏢 Viluppuram Branch</h3>
+    <p><strong>Opened:</strong> 7th April 2026</p>
+    <p><strong>Location:</strong> 3rd Floor, TNHB Shop Site No.11 (VPM-030A), Keelperumbakkam Phase-II, Ward-B, Block-26, Viluppuram, Tamil Nadu – 605602.</p>
+    <p><strong>Contact:</strong> +91 9865310336</p>
+  </div>
+
+</div>
 
       {/* Modal Overlay */}
       {selectedBranch && (

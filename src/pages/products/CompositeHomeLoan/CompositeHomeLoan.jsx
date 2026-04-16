@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 import com from "../../../assets/images/composite.jpg";
 import "./CompositeHomeLoan.css";
 import { useNavigate } from "react-router-dom";
@@ -103,22 +103,24 @@ const CompositeHomeLoan = () => {
       {/* Features Strip Section */}
       <div className="com-feature-strip">
         <div className="com-feature-box animate-pop-up">
-          <div className="com-feature-icon">📄</div>
+          <div className="com-feature-icon"><FaFileAlt /></div>
           <h3 className="animate-pop-up">Easy Loan Approvals</h3>
         </div>
 
         <div className="com-feature-box animate-pop-up">
-          <div className="com-feature-icon">💰</div>
+          <div className="com-feature-icon"><FaCoins /></div>
           <h3 className="animate-pop-up">Lowest Possible Prices</h3>
         </div>
 
         <div className="com-feature-box animate-pop-up">
-          <div className="com-feature-icon">💼</div>
+          <div className="com-feature-icon"><FaBriefcase /></div>
           <h3 className="animate-pop-up">Hassle free</h3>
         </div>
 
         <div className="com-feature-box animate-pop-up">
-          <div className="com-feature-icon">✅</div>
+          <div className="com-circle-check-icon">
+            <FaCheck />
+          </div>
           <h3 className="animate-pop-up">Secure Loan Process</h3>
         </div>
       </div>
@@ -212,7 +214,7 @@ const CompositeHomeLoan = () => {
         <div className="com-help-grid">
           {/* Card 1 */}
           <div className="com-help-card animate-pop-up">
-            <div className="com-help-icon">🗓️</div>
+            <div className="com-help-icon"><FaCalendarAlt /></div>
             <h3 className="animate-pop-up">APPLY FOR LOAN</h3>
             <p>Looking to buy a home loan? then apply for loan now.</p>
             <span className="com-help-link">Get Appointment</span>
@@ -220,7 +222,7 @@ const CompositeHomeLoan = () => {
 
           {/* Card 2 */}
           <div className="com-help-card animate-pop-up">
-            <div className="com-help-icon">📞</div>
+            <div className="com-help-icon"><FaPhoneAlt /></div>
             <h3 className="animate-pop-up">CALL US AT</h3>
             <p className="com-help-green">1800-309-1516</p>
             <p className="com-help-green">contact@nivarahousing.com</p>
@@ -229,7 +231,7 @@ const CompositeHomeLoan = () => {
 
           {/* Card 3 */}
           <div className="com-help-card animate-pop-up">
-            <div className="com-help-icon">👥</div>
+            <div className="com-help-icon"><FaUserTie /></div>
             <h3 className="animate-pop-up">TALK TO ADVISOR</h3>
             <p className="com-help-green">+91 80 26552822</p>
             <p>Need to loan advise?</p>

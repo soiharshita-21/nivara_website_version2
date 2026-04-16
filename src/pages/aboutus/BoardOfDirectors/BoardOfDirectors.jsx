@@ -12,6 +12,7 @@ const boardMembers = [
     name: "Mr. C V Rao",
     role: "MD & CEO",
     desc: "Brings over 30 years of leadership experience in banking and financial services, with deep expertise in portfolio risk management and retail lending.",
+    longDesc: "Mr. C. V. Rao brings over 30 years of leadership experience in banking and financial services, with deep expertise in portfolio risk management and retail lending across economic cycles. His career spans the full breadth of retail banking, encompassing secured and unsecured lending, investment and liability products, financial inclusion, and key functions such as product design, business development and marketing, sales and distribution, underwriting, credit risk strategy, and debt management. CV has held senior leadership roles with leading private sector banks in India, including ICICI Bank, IndusInd Bank, and ING Vysya Bank. At ICICI Bank (1992–2008), he was part of the core team that launched and scaled the mortgage business. At ING Vysya Bank (2009–2014), he headed Agriculture & Rural Banking and Consumer Assets. He holds an M.Com and MBA from Osmania University and served as a Research Assistant at IIM Ahmedabad.",
     color: "rose",
     img: rao,
   },
@@ -19,6 +20,7 @@ const boardMembers = [
     name: "Mr. Sunil Rohokale",
     role: "Director",
     desc: "Over 29 years of experience in banking, lending, and asset management. Sets the vision for the ASK Asset & Wealth Management Group.",
+    longDesc: "Mr. Sunil Rohokale has over 29 years of experience in banking and financial services, encompassing lending, asset, and wealth management. He is responsible for setting the vision for ASK Asset & Wealth Management Group. He was instrumental in driving ASK’s foray into Alternates and previously credited with setting up ICICI Bank’s Mortgage Financing Business and served as the MD & CEO of ICICI Home Finance Co. Ltd. He serves as a Board Director at the Association of Portfolio Managers of India (APMI) and holds a degree in Mechanical Engineering from the Government College of Engineering, Pune, and a master’s degree in management from Symbiosis Institute of Management.",
     color: "orange",
     img: rohokale,
   },
@@ -26,6 +28,7 @@ const boardMembers = [
     name: "Mr. Monik Koticha",
     role: "Director",
     desc: "Part of the promoter family of the ASK Group and responsible for the corporate philanthropic initiatives of the group.",
+    longDesc: "Mr. Monik Koticha is the Co-founder and CEO of ASK Capital Management. He has over 30 years of experience in the investment management industry and has played a pivotal role in establishing ASK as a premier investment management house. He is responsible for the overall strategy and business development of ASK Capital Management and is actively involved in philanthropy in Education, Housing, and Nation Building.",
     color: "green",
     img: koticha,
   },
@@ -33,6 +36,7 @@ const boardMembers = [
     name: "Ms. Debanshi Basu",
     role: "Nominee Director",
     desc: "Partner at Baring Private Equity India and a qualified Chartered Accountant with over 21 years of experience in private equity and investment banking.",
+    longDesc: "Ms. Debanshi Basu is a qualified Chartered Accountant with over 21 years of experience across private equity, investment banking, and audit. A Partner at Baring Private Equity India, she leads investments and portfolio management in sectors including financial services and fintech. She serves on the boards of Nivara Home Finance, SK Finance, and Nehat Technologies. Previously, she was part of the founding investment banking team at Goldman Sachs India and worked with Ernst & Young.",
     color: "yellow",
     img: debanshi,
   },
@@ -40,6 +44,7 @@ const boardMembers = [
     name: "Mr. Muthuswamy Venkata Jayaraman",
     role: "Independent Director",
     desc: "39 years of experience in risk management, retail/corporate banking, and foreign exchange.",
+    longDesc: "Mr. Muthuswamy Venkata Jayaraman is an Independent Director with nearly 40 years of experience in retail, MSME, corporate banking, and risk management. He holds a Master of Business Law from NLS, Bangalore, and is a Certified Associate of the Indian Institute of Bankers (CAIIB). He recently served as the Chief Risk Officer at Fincare Small Finance Bank and has held senior roles at Kotak Mahindra Bank, ICICI Bank, Corporation Bank, and Andhra Bank.",
     color: "purple",
     img: jayaraman,
   },
@@ -47,6 +52,7 @@ const boardMembers = [
     name: "Mr. Krishna Gopalaraman",
     role: "Independent Director",
     desc: "Mechanical Engineer and CFA with over 35 years of experience in manufacturing, financial services, and IT-enabled transformation.",
+    longDesc: "Mr. Krishna Gopalaraman is an Independent Director with over 35 years of experience in management consulting, data analytics, and digital transformation. He holds a degree in Electronics and Communication Engineering from Anna University and a postgraduate degree in Management from IIM Bangalore. He has led consulting engagements for clients like IDBI, Tata Exports, and Cholamandalam, and has driven strategic initiatives for General Electric and ArcelorMittal. Since 2020, he has been on secondment to The Global Fund in Geneva.",
     color: "pink",
     img: krishna,
   },
@@ -171,19 +177,19 @@ const BoardOfDirectors = () => {
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
-              <div style={{ flex: '0 0 55%', padding: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'center', backgroundColor: '#fff', overflowY: 'auto' }}>
-                <span style={{ display: 'block', fontSize: '14px', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '1.5px', color: '#d32f2f', marginBottom: '12px' }}>
-                  {selectedMember.role}
-                </span>
-                <h2 style={{ fontWeight: 900, fontSize: '42px', margin: '0 0 15px 0', color: '#1a1a1a', lineHeight: '1.1' }}>
+              <div style={{ flex: '0 0 55%', padding: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: '#fff', overflowY: 'auto' }}>
+                <h2 style={{ fontWeight: 900, fontSize: '42px', margin: '0 0 5px 0', color: '#1a1a1a', lineHeight: '1.1' }}>
                   {selectedMember.name}
                 </h2>
+                <span style={{ display: 'block', fontSize: '14px', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '1.5px', color: '#d32f2f', marginBottom: '20px' }}>
+                  {selectedMember.role}
+                </span>
                 <div style={{ width: '60px', height: '6px', backgroundColor: '#d32f2f', marginBottom: '30px', borderRadius: '3px' }}></div>
                 <p style={{ fontSize: '18px', fontWeight: 700, color: '#1a1a1a', marginBottom: '25px', lineHeight: '1.5' }}>
                   {selectedMember.desc}
                 </p>
                 <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#4b5563', fontWeight: 400 }}>
-                  With years of experience in the industry, {selectedMember.name} has played a pivotal role in shaping Nivara's mission. Their expertise in {selectedMember.role} continues to drive our excellence in housing finance solutions.
+                  {selectedMember.longDesc}
                 </p>
               </div>
             </div>
