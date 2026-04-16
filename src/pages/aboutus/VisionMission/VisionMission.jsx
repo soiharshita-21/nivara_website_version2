@@ -30,7 +30,7 @@ const VisionMission = () => {
     <div className="vm-page">
 
       {/* Hero Section */}
-      <section 
+      <section
         className="vm-hero vm-pop-up animate-pop-up"
         ref={(el) => (sectionRefs.current[2] = el)}
       >
@@ -44,8 +44,8 @@ const VisionMission = () => {
       </section>
 
       {/* Vision Section */}
-      <section 
-        className="vm-section vm-pop-up animate-pop-up" 
+      <section
+        className="vm-section vm-pop-up animate-pop-up"
         ref={(el) => (sectionRefs.current[0] = el)}
       >
         <div className="vm-content-wrapper animate-pop-up">
@@ -68,14 +68,14 @@ const VisionMission = () => {
       </section>
 
       {/* Mission Section */}
-      <section 
-        className="vm-section light vm-pop-up animate-pop-up" 
+      <section
+        className="vm-section light vm-pop-up animate-pop-up"
         ref={(el) => (sectionRefs.current[1] = el)}
       >
         <div className="vm-content-wrapper animate-pop-up">
           <div className="vm-card animate-pop-up">
             <h2 className="animate-pop-up">Our Mission</h2>
-            <p className="vm-quote">“Housing for All”</p>
+            <p className="vm-quote"><b>“Housing for All”</b></p>
             <p>
               The aim is to provide easy access to home loans to the un-served and
               under-served segments in the lower and middle income categories,

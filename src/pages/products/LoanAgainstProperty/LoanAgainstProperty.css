@@ -524,9 +524,11 @@
   .lap-feature-strip {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .lap-feature-box:nth-child(2) {
     border-right: none;
   }
+
   .lap-feature-box:nth-child(1),
   .lap-feature-box:nth-child(2) {
     border-bottom: 1px solid #e5e7eb;
@@ -537,11 +539,13 @@
   .lap-feature-strip {
     grid-template-columns: 1fr;
   }
+
   .lap-feature-box {
     border-right: none;
     border-bottom: 1px solid #e5e7eb;
     padding: 40px 20px;
   }
+
   .lap-feature-box:last-child {
     border-bottom: none;
   }

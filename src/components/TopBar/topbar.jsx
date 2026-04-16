@@ -9,13 +9,18 @@ const TopBar = () => {
         {/* Phone */}
         <a href="tel:1800XXXXXXX" className="topbar-link">
           <FaPhoneAlt />
-          <span>1800-XXX-XXXX (Toll Free)</span>
+          <span>1800-309-1516 (Toll Free)</span>
         </a>
 
         {/* Email */}
         <a href="mailto:info@nivara.com" className="topbar-link">
           <FaEnvelope />
-          <span>info@nivara.com</span>
+          <span>info@nivarahousing.com</span>
+        </a>
+
+        <a className="topbar-link">
+          <span>Credit Rating:: A-; Stable
+          </span>
         </a>
       </div>
 

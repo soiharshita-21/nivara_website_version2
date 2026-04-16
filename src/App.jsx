@@ -45,6 +45,8 @@ import Branch from "./pages/contactus/Branch/Branch";
 import Offices from "./pages/contactus/Offices/Offices";
 import FairPracticeCode from "./pages/customercenter/FairPracticeCode/FairPracticeCode";
 import LoanApplyForm from "./pages/loanapplyform";
+
+
 const ScrollAnimations = () => {
   const location = useLocation();
 
@@ -157,6 +159,8 @@ function App() {
           <Route path="/contactus/branch/branch" element={<Branch />} />
           <Route path="/contactus/offices/offices" element={<Offices />} />
           <Route path="/apply-home-loan" element={<LoanApplyForm />} />
+
+
         </Routes>
         <Footer />
       </div>

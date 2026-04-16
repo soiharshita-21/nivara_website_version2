@@ -29,6 +29,81 @@
   background-size: cover;
 }
 
+/* Newsletter Section */
+.footer-newsletter {
+  position: relative;
+  max-width: 1400px;
+  margin: -20px auto 60px;
+  z-index: 2;
+}
+
+.newsletter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.newsletter-title {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.newsletter-form {
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 16px 20px;
+  border: none;
+  background: white;
+  border-radius: 4px 0 0 4px;
+  font-size: 15px;
+  outline: none;
+  font-family: inherit;
+  color: #333;
+}
+
+.newsletter-form input::placeholder {
+  color: #7a828e;
+}
+
+.newsletter-form button {
+  background-color: #e3282b;
+  color: white;
+  border: none;
+  padding: 0 35px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.newsletter-form button:hover {
+  background-color: #cc1e21;
+}
+
+@media(max-width: 900px) {
+  .newsletter-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .newsletter-form {
+    max-width: 100%;
+  }
+}
+
 /* grid layout */
 .footer-container {
   position: relative;

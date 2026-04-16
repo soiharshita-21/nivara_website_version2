@@ -3,32 +3,34 @@ import "./Lenders.css";
 import home3 from "../../../assets/images/home3.jpeg"; 
 
 
-import nhb from "../../../assets/images/nhb.png";
-import sbi from "../../../assets/images/sbi.png";
-import iob from "../../../assets/images/iob.png";
-import icici from "../../../assets/images/icici.jpg";
-import kotak from "../../../assets/images/kotak.png";
-import federal from "../../../assets/images/federal.jpg";
-
-import au from "../../../assets/images/au.png";
-import karnataka from "../../../assets/images/karnataka.png";
-import bandhan from "../../../assets/images/bandhan.jpg";
-import csb from "../../../assets/images/csb.png";
-import utkarsh from "../../../assets/images/utkarsh.png";
-import yes from "../../../assets/images/yes.png";
-
-import bajaj from "../../../assets/images/bajaj.png";
-import chola from "../../../assets/images/chola.png";
-import hinduja from "../../../assets/images/hinduja.png";
-import herofin from "../../../assets/images/herofin.png";
-import heroho from "../../../assets/images/heroho.png";
-import mas from "../../../assets/images/mas.webp";
+import img8 from "../../../assets/images/Lenders/8.jpg";
+import auB from "../../../assets/images/Lenders/AU-B.jpg";
+import bj from "../../../assets/images/Lenders/BJ.jpg";
+import bandhanB from "../../../assets/images/Lenders/Badhan-B.jpg";
+import csbBankNew from "../../../assets/images/Lenders/CSB-Bank-New.jpg";
+import federalB from "../../../assets/images/Lenders/Federal-b.jpg";
+import iciciBank1 from "../../../assets/images/Lenders/ICICI-bank-1.png";
+import iob2j from "../../../assets/images/Lenders/IOB2j.jpg";
+import kb1 from "../../../assets/images/Lenders/KB1.jpg";
+import kot1 from "../../../assets/images/Lenders/Kot1 (1).jpg";
+import mas from "../../../assets/images/Lenders/MAS.jpg";
+import mhfl1 from "../../../assets/images/Lenders/MHFL-1.jpg";
+import nhb from "../../../assets/images/Lenders/NHB.jpg";
+import piramal from "../../../assets/images/Lenders/Piramal.jpg";
+import sbi from "../../../assets/images/Lenders/SBI.jpg";
+import sf from "../../../assets/images/Lenders/SF.jpg";
+import utkarshSmallFinanceBank from "../../../assets/images/Lenders/Utakarsh-Small-Finance-Bank.jpg";
+import chola from "../../../assets/images/Lenders/chola.jpg";
+import hfc1 from "../../../assets/images/Lenders/h-fc1.jpg";
+import heroHf1 from "../../../assets/images/Lenders/hero-hf (1).jpg";
+import hhf1 from "../../../assets/images/Lenders/hhf-1.jpg";
+import idfc from "../../../assets/images/Lenders/idfc.jpg";
+import yes from "../../../assets/images/Lenders/yes.jpg";
 
 const lenders = [
-  nhb, sbi, iob, icici, kotak, federal,
-  au,karnataka,bandhan,csb,utkarsh,yes,
-  bajaj,chola,hinduja,herofin,heroho,mas
-
+  img8, auB, bj, bandhanB, csbBankNew, federalB, iciciBank1, iob2j, kb1, kot1,
+  mas, mhfl1, nhb, piramal, sbi, sf, utkarshSmallFinanceBank, chola, hfc1,
+  heroHf1, hhf1, idfc, yes
 ];
 
 const Lenders = () => {

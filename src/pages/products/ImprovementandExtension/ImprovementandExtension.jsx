@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { FaWrench } from "react-icons/fa";
+import { FiHome } from "react-icons/fi";
 import rev from "../../../assets/images/Renovation.jpg";
 import "./ImprovementandExtension.css";
 import { useNavigate } from "react-router-dom";
@@ -40,7 +40,7 @@ const ImprovmentandExtension = () => {
               <div className="improv-overlay"></div>
 
               <div className="improv-icon">
-                <FaWrench className="improv-rotate-icon" />
+                <FiHome className="improv-rotate-icon" />
               </div>
             </div>
 

@@ -20,6 +20,16 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-pattern"></div>
 
+      <div className="footer-newsletter">
+        <div className="newsletter-container">
+          <h2 className="newsletter-title">Signup Our Newsletter</h2>
+          <div className="newsletter-form">
+            <input type="email" placeholder="Write E-Mail Address" />
+            <button type="submit">GO!</button>
+          </div>
+        </div>
+      </div>
+
       <div className="footer-container">
         <div className="footer-col brand">
           <div className="brand-logo">
@@ -126,6 +136,8 @@ const Footer = () => {
         </div>
 
         <p>© 2026 Nivara Housing Finance. All rights reserved.</p>
+
+
       </div>
     </footer>
   );

@@ -45,7 +45,7 @@ const Career = () => {
             Needless to mention, the opportunities for growth will be tremendous.
             The added attraction is the satisfaction of serving the housing
             finance needs of those near the bottom of the pyramid as well as
-            contributing to the larger mission of “Housing for All”.
+            contributing to the larger mission of <b>“Housing for All”</b>.
           </p>
 
           <h2 className="red animate-pop-up">Careers with Nivara</h2>

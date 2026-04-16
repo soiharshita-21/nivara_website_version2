@@ -148,9 +148,11 @@
   .balance-feature-strip {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .balance-feature-box:nth-child(2) {
     border-right: none;
   }
+
   .balance-feature-box:nth-child(1),
   .balance-feature-box:nth-child(2) {
     border-bottom: 1px solid #e5e7eb;
@@ -161,11 +163,13 @@
   .balance-feature-strip {
     grid-template-columns: 1fr;
   }
+
   .balance-feature-box {
     border-right: none;
     border-bottom: 1px solid #e5e7eb;
     padding: 40px 20px;
   }
+
   .balance-feature-box:last-child {
     border-bottom: none;
   }

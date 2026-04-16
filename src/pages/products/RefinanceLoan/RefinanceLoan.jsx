@@ -79,7 +79,7 @@ const RefinanceLoan = () => {
         <h1 className="refinance-main-title animate-pop-up">Refinance Loan</h1>
 
         <h2 className="refinance-sub-heading animate-pop-up">
-          Taking out a New Loan To Pay off an old onen
+          Taking out a New Loan To Pay off an old one
         </h2>
 
         <h3 className="refinance-highlight">

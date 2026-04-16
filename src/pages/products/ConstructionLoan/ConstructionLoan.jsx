@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import con from "../../../assets/images/construction.jpg";
-import { FaHardHat } from "react-icons/fa";
+import { FiHome } from "react-icons/fi";
 import "./ConstructionLoan.css";
 import { useNavigate } from "react-router-dom";
 
@@ -40,7 +40,7 @@ const ConstructionLoan = () => {
               <div className="image-overlay"></div>
 
               <div className="cen-icon">
-                <FaHardHat className="icon-rotatecon" />
+                <FiHome className="icon-rotatecon" />
               </div>
             </div>
 

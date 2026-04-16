@@ -279,6 +279,30 @@
   }
 }
 
-.page-content {
-  padding-top: 0;
+.admin-btn {
+  background-color: #e63946 !important;
+  color: white !important;
+  padding: 8px 20px !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  margin-left: 10px;
 }
+
+.admin-btn::before {
+  display: none !important;
+}
+
+.admin-btn:hover {
+  background-color: #d62839 !important;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .admin-btn {
+    margin-left: 0;
+    margin-top: 10px;
+    width: fit-content;
+  }
+}

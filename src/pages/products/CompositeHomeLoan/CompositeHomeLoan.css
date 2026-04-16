@@ -390,9 +390,11 @@
   .com-feature-strip {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .com-feature-box:nth-child(2) {
     border-right: none;
   }
+
   .com-feature-box:nth-child(1),
   .com-feature-box:nth-child(2) {
     border-bottom: 1px solid #e5e7eb;
@@ -403,11 +405,13 @@
   .com-feature-strip {
     grid-template-columns: 1fr;
   }
+
   .com-feature-box {
     border-right: none;
     border-bottom: 1px solid #e5e7eb;
     padding: 40px 20px;
   }
+
   .com-feature-box:last-child {
     border-bottom: none;
   }

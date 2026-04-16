@@ -6,30 +6,30 @@ import BranchMap from "../../../components/BranchMap";
 
 const branchesData = {
   KARNATAKA: [
-    "Nagarbhavi","Bagalur","TC Palya","Mysore","Ramnagara","Gottigere",
-    "Anekal","Nelamangala","Doddabalapur","Tumkur","Mandya","Kanakpura",
-    "Hunsur","Kengeri","Gauribidanur","Sarjapur","Kunigal","Chamrajnagar",
-    "Kolar","Hassan","Sira","Chikkabalapur","Tiptur","Thalaghattapura",
-    "Srirangapatna","Davanagere","Malur","Chitradurga","Maddur","Hubli",
-    "Gadag","Haveri","Ballari","Hospet","Belagavi","Gangavathi(Kalburgi)",
-    "Gangavathi","Gokak","Sindhanur","Chikkodi","Raichur","Vijayapura","Ranebennur",
+    "Nagarbhavi", "Bagalur", "TC Palya", "Mysore", "Ramnagara", "Gottigere",
+    "Anekal", "Nelamangala", "Doddabalapur", "Tumkur", "Mandya", "Kanakpura",
+    "Hunsur", "Kengeri", "Gauribidanur", "Sarjapur", "Kunigal", "Chamrajnagar",
+    "Kolar", "Hassan", "Sira", "Chikkabalapur", "Tiptur", "Thalaghattapura",
+    "Srirangapatna", "Davanagere", "Malur", "Chitradurga", "Maddur", "Hubli",
+    "Gadag", "Haveri", "Ballari", "Hospet", "Belagavi", "Gangavathi(Kalburgi)",
+    "Gangavathi", "Gokak", "Sindhanur", "Chikkodi", "Raichur", "Vijayapura", "Ranebennur",
   ],
   "TAMIL NADU": [
-    "Hosur","Salem","Krishnagiri","Dharmapuri","Tirupattur","Tiruvanmalai",
-    "Vellore","Namakkal","Erode","Pollachi","Tirupur","Coimbatore",
-    "Pochampalli","Arakkonam",
+    "Hosur", "Salem", "Krishnagiri", "Dharmapuri", "Tirupattur", "Tiruvanmalai",
+    "Vellore", "Namakkal", "Erode", "Pollachi", "Tirupur", "Coimbatore",
+    "Pochampalli", "Arakkonam",
   ],
   TELANGANA: [
-    "Vanasthalipuram","Karimnagar","Warangal","Khammam","Siddipet",
-    "Kodad","Siricilla","Sangareddy","Nirmal","Medchal","Suryapet",
+    "Vanasthalipuram", "Karimnagar", "Warangal", "Khammam", "Siddipet",
+    "Kodad", "Siricilla", "Sangareddy", "Nirmal", "Medchal", "Suryapet",
   ],
   "ANDHRA PRADESH": [
-    "Guntur","Eluru","Ongole","Narasaraopeta","Bhimavaram","Hindupur",
-    "Chirala","Kanuru","Anantapur","Adoni","Tadepalligudam","Tirupathi",
-    "Puttur","Penukonda","Nuziveedu","Machilipatnam","Kandukur",
+    "Guntur", "Eluru", "Ongole", "Narasaraopeta", "Bhimavaram", "Hindupur",
+    "Chirala", "Kanuru", "Anantapur", "Adoni", "Tadepalligudam", "Tirupathi",
+    "Puttur", "Penukonda", "Nuziveedu", "Machilipatnam", "Kandukur",
   ],
   MAHARASHTRA: [
-    "Nasik","Chinchwad","Ahmednagar","Aurangabad","Jalgaon","Dhule",
+    "Nasik", "Chinchwad", "Ahmednagar", "Aurangabad", "Jalgaon", "Dhule",
   ],
 };
 
@@ -176,9 +176,8 @@ const Branch = () => {
             >
               <span>{state}</span>
               <FaChevronDown
-                className={`down-icon ${
-                  openState === state ? "rotate" : ""
-                }`}
+                className={`down-icon ${openState === state ? "rotate" : ""
+                  }`}
               />
             </div>
 
@@ -187,12 +186,11 @@ const Branch = () => {
                 {getFilteredData()[state].map((city) => (
                   <div
                     key={city}
-                    className={`location-item ${
-                      search &&
+                    className={`location-item ${search &&
                       city.toLowerCase().includes(search.toLowerCase())
-                        ? "highlight-branch"
-                        : ""
-                    }`}
+                      ? "highlight-branch"
+                      : ""
+                      }`}
                     onClick={() =>
                       setSelectedBranch({ state, city })
                     }
@@ -207,16 +205,18 @@ const Branch = () => {
       </div>
 
       {/* Map */}
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.2415755045326!2d77.57655268885497!3d12.892181900000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1508883a7c43%3A0xd91f65ff71753711!2sNivara%20Home%20Finance%20LTD.!5e0!3m2!1sen!2sin!4v1773817509951!5m2!1sen!2sin"
-        width="100%"
-        height="450"
-        style={{ border: 0 }}
-        allowFullScreen
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-        title="Nivara Map"
-      />
+      <div className="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.2415755045326!2d77.57655268885497!3d12.892181900000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1508883a7c43%3A0xd91f65ff71753711!2sNivara%20Home%20Finance%20LTD.!5e0!3m2!1sen!2sin!4v1773817509951!5m2!1sen!2sin"
+          width="50%"
+          height="450"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Nivara Map"
+        />
+      </div>
 
       {/* New Branches */}
       <h2 className="new-branches-title animate-pop-up">
@@ -229,69 +229,60 @@ const Branch = () => {
           <p><strong>Opened:</strong> 23rd January 2026</p>
           <p><strong>Location:</strong> Penukonda, Andhra Pradesh</p>
           <p><strong>Contact:</strong> +91 9742366443</p>
+          <button
+            className="branch-card-directions"
+            onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=Nivara+Home+Finance+Penukonda`, "_blank")}
+          >
+            Get Directions
+          </button>
         </div>
       </div>
 
-      {/* Modal */}
+      {/* Modal Overlay */}
       {selectedBranch && (
-        <div
-          className="branch-modal-overlay"
-          onClick={closeBranchModal}
-        >
-          <div
-            className="branch-modal-card branch-modal-animate"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="close-btn"
-              onClick={closeBranchModal}
-            >
-              &times;
-            </button>
+        <div className="branch-modal-overlay" onClick={closeBranchModal}>
+          <div className="branch-modal-card" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={closeBranchModal}>&times;</button>
 
             <div className="modal-header">
               <div className="modal-icon-container">
                 <FaMapMarkerAlt className="modal-icon" />
               </div>
               <h3>{selectedBranch.city} Branch</h3>
-              <p className="modal-state-label">
-                {selectedBranch.state}
-              </p>
+              <p className="modal-state-label">{selectedBranch.state}</p>
             </div>
 
             <div className="modal-body">
-              <div className="modal-info-section">
-                <div className="info-item">
-                  <span className="info-label">🏢 Company</span>
-                  <p>Nivara Home Finance LTD.</p>
-                </div>
-
-                <div className="info-item">
-                  <span className="info-label">📍 Address</span>
-                  <p>
-                    {selectedBranch.city}, {selectedBranch.state}, India
-                  </p>
-                </div>
-
-                <div className="info-item">
-                  <span className="info-label">📞 Contact</span>
-                  <p>+91 1800 200 XXXX</p>
-                </div>
+              <div className="info-item">
+                <span className="info-label">🏢 COMPANY</span>
+                <p>Nivara Home Finance LTD.</p>
               </div>
+              <div className="info-divider"></div>
 
-              <div className="modal-actions">
-                <button
-                  className="directions-btn"
-                  onClick={() =>
-                    window.open(
-                      `https://www.google.com/maps/search/?api=1&query=Nivara+Home+Finance+${selectedBranch.city}`,
-                      "_blank"
-                    )
-                  }
-                >
-                  Get Directions
-                </button>
+              <div className="info-item">
+                <span className="info-label">📍 ADDRESS</span>
+                <p>{selectedBranch.city}, {selectedBranch.state}, India</p>
               </div>
+              <div className="info-divider"></div>
+
+              <div className="info-item">
+                <span className="info-label">📞 CONTACT SUPPORT</span>
+                <p>1800-309-1516</p>
+              </div>
+            </div>
+
+            <div className="modal-actions-container">
+              <button
+                className="btn-get-directions-final"
+                onClick={() =>
+                  window.open(
+                    `https://www.google.com/maps/search/?api=1&query=Nivara+Home+Finance+${selectedBranch.city}`,
+                    "_blank"
+                  )
+                }
+              >
+                Get Directions
+              </button>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { FaSyncAlt } from "react-icons/fa"; // balance transfer icon
+import { FiHome } from "react-icons/fi";// balance transfer icon
 import bal from "../../../assets/images/balance.jpg"; // you will replace this
 import "./BalanceTransfer.css";
 import { useNavigate } from "react-router-dom";
@@ -40,7 +40,7 @@ const BalanceTransfer = () => {
               <div className="balance-image-overlay"></div>
 
               <div className="balance-iconbox">
-                <FaSyncAlt className="balance-rotate-icon" />
+                <FiHome className="balance-rotate-icon" />
               </div>
             </div>
 

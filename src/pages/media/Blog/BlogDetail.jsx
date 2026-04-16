@@ -1,17 +1,42 @@
 import React, { useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { blogData } from "./blogData";
+// import { blogData } from "./blogData"; // Removed in favor of initialBlogData fallback
+
 import "./BlogDetail.css";
 import home2 from "../../../assets/images/home2.png";
 
 const BlogDetail = () => {
     const { slug } = useParams();
     const navigate = useNavigate();
-    const post = blogData[slug];
+    
+    const [post, setPost] = React.useState(null);
+    const [allPosts, setAllPosts] = React.useState([]);
+    const [loading, setLoading] = React.useState(true);
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        
+        const saved = JSON.parse(localStorage.getItem("nivara_blogs")) || [];
+        setAllPosts(saved);
+        
+        const found = saved.find(b => (b.slug || b.id.toString()) === slug);
+        if (found) {
+            setPost({
+                ...found,
+                image: found.image,
+                content: typeof found.content === 'string' 
+                    ? <div dangerouslySetInnerHTML={{ __html: found.content }} /> 
+                    : found.content,
+                author: found.author || "ADMIN",
+                comments: found.comments || "0 comments",
+                tags: found.tags || ["Blog", "Nivara"]
+            });
+        }
+        
+        setLoading(false);
     }, [slug]);
+
+    if (loading) return <div>Loading...</div>;
 
     if (!post) {
         return (
@@ -22,8 +47,8 @@ const BlogDetail = () => {
         );
     }
 
-    // Get related posts (the other two in our list)
-    const relatedSlugs = Object.keys(blogData).filter((s) => s !== slug).slice(0, 2);
+    // Get related posts
+    const relatedPosts = allPosts.filter((p) => (p.slug || p.id.toString()) !== slug).slice(0, 2);
 
     return (
         <div className="blog-detail-page">
@@ -82,8 +107,8 @@ const BlogDetail = () => {
                         <div className="related-blogs-section">
                             <h3>Related post</h3>
                             <div className="related-grid">
-                                {relatedSlugs.map((rSlug) => {
-                                    const rPost = blogData[rSlug];
+                                {relatedPosts.map((rPost) => {
+                                    const rSlug = rPost.slug || rPost.id.toString();
                                     return (
                                         <div className="related-item" key={rSlug} onClick={() => navigate(`/media/blog/${rSlug}`)}>
                                             <span className="category">Bangalore housing loan blog</span>
@@ -141,14 +166,18 @@ const BlogDetail = () => {
                         <div className="sidebar-widget">
                             <h3>Recent Posts</h3>
                             <ul className="recent-posts">
-                                {Object.keys(blogData).map((s) => (
-                                    <li key={s}>
-                                        <Link to={`/media/blog/${s}`}>{blogData[s].title}</Link>
-                                        <span className="recent-date">{blogData[s].date}</span>
-                                    </li>
-                                ))}
+                                {allPosts.map((p) => {
+                                    const pSlug = p.slug || p.id.toString();
+                                    return (
+                                        <li key={pSlug}>
+                                            <Link to={`/media/blog/${pSlug}`}>{p.title}</Link>
+                                            <span className="recent-date">{p.date}</span>
+                                        </li>
+                                    );
+                                })}
                             </ul>
                         </div>
+
 
                         <div className="sidebar-widget">
                             <h3>Recent Comments</h3>

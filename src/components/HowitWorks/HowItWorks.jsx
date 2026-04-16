@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./HowItWorks.css";
 import { useLocation, useNavigate } from "react-router-dom";
-import { FaFileAlt, FaCheckCircle, FaMoneyBillWave, FaHeadphones } from "react-icons/fa";
+import { FaFileAlt, FaCheckCircle, FaMoneyBillWave, FaHeadphones, FaHeadset } from "react-icons/fa";
 
 const steps = [
   {
@@ -23,7 +23,7 @@ const steps = [
     color: "#5CC1B3",
   },
   {
-    icon: <FaHeadphones />,
+    icon: <FaHeadset />,
     title: "Support",
     desc: "Continuous support throughout your loan journey",
     color: "#F4B942",

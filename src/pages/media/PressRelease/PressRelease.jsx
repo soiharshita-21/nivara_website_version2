@@ -16,7 +16,8 @@ import pressrelease3 from "../../../assets/images/pressrelease3.png";
 import pressrelease4 from "../../../assets/images/pressrelease4.png";
 import pressrelease5 from "../../../assets/images/pressrelease5.png";
 
-const pressData = [
+export const pressData = [
+
   {
     img: pressrelease1,
     title: "True North leads Series B funding in Nivara Home Finance",
@@ -50,6 +51,24 @@ const pressData = [
 ];
 
 const PressRelease = () => {
+  const [allNews, setAllNews] = React.useState(pressData);
+
+  React.useEffect(() => {
+    const saved = JSON.parse(localStorage.getItem("nivara_news"));
+    if (saved && saved.length > 0) {
+      const formattedSaved = saved.map(n => ({
+        img: n.image,
+        title: n.title,
+        meta: n.meta || n.date,
+        desc: n.desc
+      }));
+      setAllNews(formattedSaved);
+    } else {
+      setAllNews(pressData);
+    }
+  }, []);
+
+
   return (
     <div className="press-page">
 
@@ -61,7 +80,7 @@ const PressRelease = () => {
 
       {/* Cards */}
       <div className="press-container animate-pop-up">
-        {pressData.map((item, index) => (
+        {allNews.map((item, index) => (
           <div className="press-card animate-pop-up" key={index}>
 
             <div className="press-img">
@@ -82,5 +101,6 @@ const PressRelease = () => {
     </div>
   );
 };
+
 
 export default PressRelease;

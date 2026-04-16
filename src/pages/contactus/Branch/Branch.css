@@ -5,9 +5,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-
-
-
 .branch-banner {
   width: 100%;
   min-height: 420px;
@@ -17,9 +14,6 @@
   padding: 80px;
   background-color: #F8F9FA;
 }
-
-
-
 
 .banner-con {
   max-width: 520px;
@@ -39,20 +33,12 @@
   margin-bottom: 35px;
 }
 
-
-
-
-
 .banner-map img {
   width: 500px;
   max-width: 100%;
 }
 
-
-
-
 @media(max-width:900px) {
-
   .branch-banner {
     flex-direction: column;
     text-align: center;
@@ -63,18 +49,6 @@
     margin-top: 40px;
     width: 380px;
   }
-
-}
-
-.branch-left h1 {
-  color: #d32f2f;
-  font-size: 30px;
-  font-weight: 500;
-}
-
-.branch-right img {
-  max-width: 480px;
-
 }
 
 .branch-locator {
@@ -96,6 +70,17 @@
   gap: 12px;
 }
 
+.new-branches-title {
+  color: #d32f2f;
+  font-size: 25px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 50px;
+}
+
 .pin-icon {
   color: #d32f2f;
   font-size: 28px;
@@ -110,7 +95,6 @@
 .branch-locator input {
   width: 100%;
   padding: 18px 50px 18px 22px;
-  /* Added right padding for clear btn */
   border-radius: 12px;
   border: 1px solid #ddd;
   font-size: 18px;
@@ -130,11 +114,6 @@
   color: #888;
   cursor: pointer;
   z-index: 10;
-  transition: 0.2s;
-}
-
-.search-clear-btn:hover {
-  color: #d32f2f;
 }
 
 .branch-locator input:focus {
@@ -168,10 +147,6 @@
   transition: 0.2s;
 }
 
-.search-result-item:last-child {
-  border-bottom: none;
-}
-
 .search-result-item:hover {
   background: #fff5f5;
 }
@@ -186,19 +161,6 @@
   text-transform: uppercase;
   color: #888;
   letter-spacing: 1px;
-}
-
-.no-res {
-  padding: 20px;
-  color: #888;
-  text-align: center;
-}
-
-.location-item.highlight-branch {
-  background: #d32f2f;
-  color: #fff;
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(139, 0, 0, 0.2);
 }
 
 .state-list {
@@ -233,129 +195,10 @@
   color: #d32f2f;
 }
 
-@media(max-width:900px) {
-
-
-  .branch-locator input {
-    width: 90%;
-  }
-
-  .state-list {
-    width: 95%;
-  }
-
-  .new-branches-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-.new-branches-section {
-  width: 85%;
-  margin: 80px auto;
-}
-
-.new-branches-title {
-  text-align: center;
-  font-size: 25px;
-  font-weight: 800;
-  color: #d32f2f;
-  margin-bottom: 40px;
-}
-
-.new-branches-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-}
-
-.branch-card {
-  background: #fff;
-  border-radius: 18px;
-  padding: 28px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: 0.3s ease;
-}
-
-.branch-card:hover {
-  transform: translateY(-6px);
-}
-
-.branch-card h3 {
-  color: #d32f2f;
-  font-size: 20px;
-  margin-bottom: 12px;
-}
-
-.branch-card p {
-  font-size: 15px;
-  line-height: 1.6;
-  margin: 6px 0;
-  color: #333;
-}
-
-.new-branches-section {
-  width: 85%;
-  margin: 80px auto;
-}
-
-.new-branches-title {
-  text-align: center;
-  font-size: 34px;
-  font-weight: 800;
-  color: #d32f2f;
-  margin-bottom: 40px;
-}
-
-.new-branches-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-}
-
-.branch-card {
-  background: #fff;
-  border-radius: 18px;
-  padding: 28px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: 0.3s ease;
-}
-
-.branch-card:hover {
-  transform: translateY(-6px);
-}
-
-.branch-card h3 {
-  color: #d32f2f;
-  font-size: 22px;
-  margin-bottom: 12px;
-}
-
-.branch-card p {
-  font-size: 15px;
-  line-height: 1.6;
-  margin: 6px 0;
-  color: #333;
-}
-
-@media(max-width:900px) {
-  .new-branches-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.state-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-
 .down-icon.rotate {
   transform: rotate(180deg);
   transition: 0.3s ease;
 }
-
 
 .location-grid {
   background: #fff;
@@ -366,9 +209,19 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-  animation: fadeIn 0.3s ease-in-out;
 }
 
+.map-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.map-frame {
+  width: 50%;
+  height: 450px;
+  border: 0;
+}
 
 .location-item {
   background: #fbf6f6;
@@ -387,22 +240,7 @@
 .location-item:hover {
   background: #d32f2f;
   color: #fff;
-  transform: translateY(-3px);
 }
-
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 
 @media(max-width:1100px) {
   .location-grid {
@@ -416,214 +254,227 @@
     padding: 18px;
   }
 
-  .location-item {
-    font-size: 14px;
-    padding: 10px 12px;
+  .state-list {
+    width: 95%;
   }
 }
 
-@media(max-width:480px) {
-  .location-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 768px) {
+  .map-frame {
+    width: 90%;
   }
 }
 
-/* --- BRANCH MODAL STYLES --- */
+/* --- CLEAN PREMIUM MODAL --- */
 .branch-modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(5px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 99999;
   padding: 20px;
-  animation: fadeIn 0.3s ease;
 }
 
 .branch-modal-card {
-  background: #fff !important;
-  width: 90% !important;
-  max-width: 400px !important;
-  height: fit-content !important;
-  min-height: auto !important;
-  max-height: 90vh !important;
-  border-radius: 24px !important;
-  padding: 32px 32px 32px 32px !important;
+  background: #ffffff !important;
+  width: 100% !important;
+  max-width: 550px !important;
+  /* 🔥 increase from 400px → 550px */
+
+  border-radius: 32px !important;
+  padding: 30px !important;
+  /* 🔥 good inner spacing */
+
   display: flex !important;
   flex-direction: column !important;
   position: relative !important;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15) !important;
-  border: 1px solid rgba(0, 0, 0, 0.05) !important;
-  z-index: 2001 !important;
-  overflow: hidden !important;
-}
 
-.branch-page .branch-modal-overlay .branch-modal-card * {
+  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.4) !important;
   height: auto !important;
-  min-height: auto !important;
+  max-height: 85vh;
+
+  overflow-y: auto;
 }
 
-.branch-modal-animate {
-  animation: modalPopUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+.branch-modal-card::-webkit-scrollbar {
+  display: none;
 }
 
-@keyframes modalPopUp {
-  from {
-    opacity: 0;
-    transform: scale(0.8) translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+.close-btn {
+  position: absolute !important;
+  top: 20px !important;
+  right: 20px !important;
+  background: #f5f5f5 !important;
+  border: none !important;
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #666 !important;
+  font-size: 18px !important;
+  transition: 0.2s !important;
 }
 
-.branch-modal-card .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: none;
-  font-size: 26px;
-  color: #888;
-  cursor: pointer;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: 0.2s;
-}
-
-.branch-modal-card .close-btn:hover {
-  background: #f5f5f5;
-  color: #333;
+.close-btn:hover {
+  background: #eee !important;
+  color: #333 !important;
 }
 
 .modal-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 12px;
-  gap: 2px;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  margin-bottom: 25px !important;
+  width: 100% !important;
 }
 
 .modal-icon-container {
-  width: 45px;
-  height: 45px;
-  background: #FFF5F5;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 5px;
+  width: 56px !important;
+  height: 56px !important;
+  background: #FFF5F5 !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 12px !important;
 }
 
 .modal-icon {
-  font-size: 24px;
-  color: #d32f2f;
+  font-size: 26px !important;
+  color: #d32f2f !important;
 }
 
 .modal-header h3 {
-  font-size: 20px;
-  color: #d32f2f;
-  margin-bottom: 2px;
-  font-weight: 800;
+  font-size: 26px !important;
+  color: #d32f2f !important;
+  margin: 0 !important;
+  font-weight: 800 !important;
 }
 
 .modal-state-label {
-  text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  color: #d32f2f;
-  font-weight: 600;
-  margin: 0;
+  font-size: 13px !important;
+  color: #d32f2f !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  margin-top: 4px !important;
 }
 
 .modal-body {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.modal-info-section {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 8px;
+  width: 100% !important;
+  margin-bottom: 5px !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .info-item {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.info-item:last-child {
-  padding-bottom: 0;
-  border-bottom: none;
+  padding: 12px 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
 }
 
 .info-label {
-  font-size: 11px;
-  color: #888;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-size: 11px !important;
+  color: #999 !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
 }
 
 .info-item p {
-  font-size: 15px;
-  color: #333;
+  font-size: 16px !important;
+  color: #333 !important;
+  margin: 0 !important;
+  font-weight: 600 !important;
+}
+
+.info-divider {
+  height: 1px !important;
+  background: #eee !important;
+  width: 100% !important;
+}
+
+.modal-actions-container {
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  padding-top: 10px;
+}
+
+.btn-get-directions-final {
+  width: 100% !important;
+  background: linear-gradient(135deg, #d32f2f, #b71c1c) !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 16px !important;
+  border-radius: 14px !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  cursor: pointer !important;
+  box-shadow: 0 8px 20px rgba(211, 47, 47, 0.25) !important;
+  transition: all 0.3s ease !important;
+  display: block !important;
+  text-align: center;
+}
+
+.btn-get-directions-final:hover {
+  background: linear-gradient(135deg, #b71c1c, #9c1717) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 24px rgba(211, 47, 47, 0.35) !important;
+}
+
+/* --- NEWLY OPENED BRANCH CARD STYLES --- */
+.branch-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.branch-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.branch-card h3 {
+  color: #d32f2f;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.branch-card p {
+  font-size: 14px;
+  color: #555;
   margin: 0;
-  font-weight: 500;
-  line-height: 1.4;
 }
 
-.branch-page .branch-modal-overlay .modal-actions {
-  display: flex !important;
-  justify-content: center !important;
-  margin-top: 20px !important;
-  padding-bottom: 0px !important;
+.branch-card-directions {
+  margin-top: 15px;
+  padding: 12px;
+  background: #f8f9fa;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  color: #d32f2f;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.directions-btn {
+.branch-card-directions:hover {
   background: #d32f2f;
   color: #fff;
-  border: none;
-  padding: 14px 20px;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 100%;
-  box-shadow: 0 4px 15px rgba(211, 47, 47, 0.25);
-}
-
-.directions-btn:hover {
-  background: #ba2323;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(211, 47, 47, 0.35);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  border-color: #d32f2f;
 }

@@ -9,34 +9,29 @@ import home2 from "../../../assets/images/home2.png";
 import cbo from "../../../assets/images/blogimg1.png";
 import cbo1 from "../../../assets/images/cbo1.jpg";
 import cbo2 from "../../../assets/images/cbo2.jpg";
-const blogs = [
-  {
-    slug: "nivara-wins-nhb-excellence-award",
-    img: cbo,
-    title: "Nivara Wins NHB Excellence Award for Housing Loans to Women",
-    date: "AUGUST 18, 2025",
-    author: "JISHO P JOHNY",
-    desc: "Nivara Wins NHB Excellence Award for Housing Loans to Women...",
-  },
-  {
-    slug: "exploring-features-and-advantages-bangalore-housing",
-    img: cbo1,
-    title: "Exploring the Features and Advantages of Using a Bangalore Housing Finance Company",
-    date: "FEBRUARY 29, 2024",
-    author: "ADMIN",
-    desc: "Introduction of Home Loan : Everyone dreams of owning their own...",
-  },
-  {
-    slug: "home-loan-types-and-products-bangalore",
-    img: cbo2,
-    title: "What is a home loan & Different types of home loan products in Bangalore",
-    date: "FEBRUARY 29, 2024",
-    author: "ADMIN",
-    desc: "Introduction of Home Loan : Everyone dreams of owning their own...",
-  },
-];
+// Hardcoded blogs array removed - using blogData.initialBlogData
+
 
 const Blog = () => {
+  const [allBlogs, setAllBlogs] = React.useState([]);
+
+  React.useEffect(() => {
+    // We already have a mechanism in AdminDashboard to populate this.
+    // However, if a user visits this page directly without ever going to admin,
+    // we should still show the initial data.
+    let saved = JSON.parse(localStorage.getItem("nivara_blogs"));
+    if (!saved || saved.length === 0) {
+      // Fallback if localStorage is totally empty (e.g. first visit)
+      // Note: In a real app, you'd fetch this from a DB.
+      // Importing initialBlogData here just for fallback.
+      import("./blogData").then(module => {
+        setAllBlogs(module.initialBlogData);
+      });
+    } else {
+      setAllBlogs(saved);
+    }
+  }, []);
+
   return (
     <div className="blog-page">
 
@@ -55,11 +50,11 @@ const Blog = () => {
 
       {/* Blog Cards */}
       <div className="blog-container animate-pop-up">
-        {blogs.map((item, index) => (
+        {allBlogs.map((item, index) => (
           <div className="blog-card animate-pop-up" key={index}>
 
             <div className="blog-img">
-              <img src={item.img} alt={item.title} />
+              <img src={item.image} alt={item.title} />
             </div>
 
             <div className="blog-content">
@@ -68,14 +63,14 @@ const Blog = () => {
               <div className="blog-meta">
                 <span>{item.date}</span>
                 <span>|</span>
-                <span className="author-name">BY {item.author}</span>
+                <span className="author-name">BY {item.author || "ADMIN"}</span>
               </div>
 
               <p>{item.desc}</p>
 
               <Link 
                 className="read-more" 
-                to={`/media/blog/${item.slug}`}
+                to={`/media/blog/${item.slug || item.id}`}
                 onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}
               >
                 Read more
@@ -89,5 +84,7 @@ const Blog = () => {
     </div>
   );
 };
+
+
 
 export default Blog;

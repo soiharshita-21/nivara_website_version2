@@ -115,7 +115,7 @@
 .improv-feature-box h3 {
   font-size: 22px;
   font-weight: 600;
-  color: plum !important;
+  color: #7b1fa2 !important;
 }
 
 
@@ -130,7 +130,7 @@
 .improv-benefits-title {
   font-size: 34px;
   font-weight: 700;
-  color: plum !important;
+  color: #7b1fa2 !important;
   margin-bottom: 45px;
   text-align: left;
   line-height: 1.2;
@@ -148,7 +148,7 @@
   font-size: 16px;
   line-height: 1.6;
   color: #374151;
-  border-left: 5px solid plum;
+  border-left: 5px solid #7b1fa2;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -173,7 +173,7 @@
 .improv-help-title {
   font-size: 42px;
   font-weight: 800;
-  color: plum !important;
+  color: #7b1fa2 !important;
   margin-bottom: 12px;
   text-align: center;
 }
@@ -231,14 +231,14 @@
 }
 
 .improv-help-green {
-  color: plum;
+  color: #7b1fa2;
   font-size: 22px;
   margin: 10px 0;
   font-weight: 700;
 }
 
 .improv-help-mail {
-  color: plum;
+  color: #7b1fa2;
   margin-bottom: 20px;
 }
 
@@ -246,9 +246,9 @@
 .improv-help-link {
   display: inline-block;
   margin-top: 25px;
-  color: plum !important;
+  color: #7b1fa2 !important;
   font-weight: 600;
-  border-bottom: 2px solid plum !important;
+  border-bottom: 2px solid #7b1fa2 !important;
   cursor: pointer;
 }
 
@@ -294,7 +294,7 @@
   justify-content: center;
   align-items: center;
   font-size: 42px;
-  color: plum;
+  color: #7b1fa2;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -319,7 +319,7 @@
 .improv-content h2 {
   font-size: 26px;
   font-weight: 800;
-  color: plum;
+  color: #7b1fa2;
   margin-bottom: 10px;
 }
 
@@ -349,7 +349,16 @@
   content: "✔";
   position: absolute;
   left: 0;
-  color: plum;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+  background-color: #7b1fa2;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
   font-weight: bold;
 }
 
@@ -361,14 +370,14 @@
 }
 
 .improv-buttons:hover {
-  color: plum;
+  color: #7b1fa2;
 }
 
 .improv-btn-outline {
   flex: 1;
   background: transparent;
-  border: 2px solid plum;
-  color: plum;
+  border: 2px solid #7b1fa2;
+  color: #7b1fa2;
   padding: 12px;
   border-radius: 10px;
   font-weight: 600;
@@ -376,12 +385,12 @@
 }
 
 .improv-btn-outline:hover {
-  color: plum;
+  color: #7b1fa2;
 }
 
 .improv-loan-btn-solid {
   flex: 1;
-  background: plum;
+  background: #7b1fa2;
   color: #fff;
   border: none;
   padding: 12px;
@@ -427,7 +436,7 @@
 .improv-bottom-strip {
   height: 6px;
   width: 0%;
-  background: plum;
+  background: #7b1fa2;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -447,7 +456,7 @@
 .improv-main-title {
   font-size: 42px;
   font-weight: 800;
-  color: plum;
+  color: #7b1fa2;
   margin-bottom: 16px;
 }
 
@@ -455,7 +464,7 @@
 .improv-sub-heading {
   font-size: 26px;
   font-weight: 700;
-  color: plum;
+  color: #7b1fa2;
   margin-bottom: 14px;
 }
 
@@ -516,7 +525,7 @@
 .improv-feature-box h3 {
   font-size: 20px;
   font-weight: 600;
-  color: plum !important;
+  color: #7b1fa2 !important;
   margin: 0;
 }
 
@@ -559,7 +568,7 @@
   font-size: 38px;
   font-weight: 700;
   margin-bottom: 35px;
-  color: plum;
+  color: #7b1fa2;
   position: relative;
 }
 
@@ -605,7 +614,7 @@
 .improv-quote-ti {
   font-size: 42px;
   font-weight: 700;
-  color: plum;
+  color: #7b1fa2;
   margin-bottom: 10px;
 }
 
@@ -645,14 +654,14 @@
 
 
 .improv-form-grid input:focus {
-  border-color: plum;
+  border-color: #7b1fa2;
 }
 
 
 
 .improv-quote-button {
   grid-column: 2 / 3;
-  background: plum;
+  background: #7b1fa2;
   color: #fff;
   border: none;
   padding: 18px;
@@ -686,7 +695,7 @@
 .improv-support-header h2 {
   font-size: 42px;
   font-weight: 800;
-  color: plum;
+  color: #7b1fa2;
   margin-bottom: 12px;
 }
 
@@ -731,7 +740,7 @@
 .improv-support-card h3 {
   font-size: 18px;
   font-weight: 700;
-  color: plum;
+  color: #7b1fa2;
   margin-bottom: 16px;
 }
 
@@ -749,7 +758,7 @@
 }
 
 .improv-support-mail {
-  color: plum;
+  color: #7b1fa2;
   margin-bottom: 20px;
 }
 
@@ -757,9 +766,9 @@
 .improv-support-link {
   display: inline-block;
   margin-top: 25px;
-  color: plum;
+  color: #7b1fa2;
   font-weight: 600;
-  border-bottom: 2px solid plum;
+  border-bottom: 2px solid #7b1fa2;
   cursor: pointer;
 }
 
@@ -773,7 +782,7 @@
 .improv-faq-title {
   font-size: 38px;
   font-weight: 700;
-  color: plum;
+  color: #7b1fa2;
   margin-bottom: 40px;
 }
 
@@ -790,7 +799,7 @@
 .improv-faq-item h4 {
   font-size: 20px;
   font-weight: 600;
-  color: plum;
+  color: #7b1fa2;
   margin-bottom: 10px;
 }
 

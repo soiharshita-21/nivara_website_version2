@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import lop from "../../../assets/images/LOP.jpg";
-import { FiCreditCard } from "react-icons/fi";
+import { FiHome } from "react-icons/fi";
 
 import "./LoanAgainstProperty.css";
 import { useNavigate } from "react-router-dom";
@@ -37,7 +37,7 @@ const LoanAgainstProperty = () => {
               <img src={lop} alt="Loan Against Property" />
               <div className="lap-image-overlay"></div>
               <div className="lap-center-icon">
-                <FiCreditCard className="lap-icon-only-rotate" />
+                <FiHome className="lap-icon-only-rotate" />
               </div>
             </div>
 
