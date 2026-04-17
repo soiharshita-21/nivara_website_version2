@@ -64,6 +64,9 @@
   transition: all 0.5s ease;
   position: relative;
   cursor: pointer;
+  display: flex; /* Ensure inner content pushes footer */
+  flex-direction: column;
+  height: 100%;
 }
 
 .management-card:hover {
@@ -102,6 +105,9 @@
   padding: 20px 20px 35px;
   position: relative;
   z-index: 2;
+  flex: 1; /* Stretch to fill card */
+  display: flex;
+  flex-direction: column;
 }
 
 .management-role {
@@ -132,55 +138,7 @@
   opacity: 1;
 }
 
-@keyframes fillStrip {
-  from {
-    width: 0%;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
-.management-card::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 7px;
-  border-radius: 0 0 28px 28px;
-  opacity: 1;
-}
-
-.management-card.visible::after {
-  animation: fillStrip 3s ease-in-out forwards;
-}
-
-.management-card.rose::after {
-  background: #f43f5e;
-}
-
-.management-card.orange::after {
-  background: #fb923c;
-}
-
-.management-card.green::after {
-  background: #22c55e;
-}
-
-.management-card.yellow::after {
-  background: #facc15;
-}
-
-.management-card.purple::after {
-  background: #8b5cf6;
-}
-
-.management-card.pink::after {
-  background: #ec4899;
-}
-
+/* Removed solid line animation to use multi-color-line component */
 .management-card.rose h3 {
   color: #be123c;
 }
@@ -237,7 +195,7 @@
 
 /* View Bio Button */
 .view-bio-btn {
-  margin-top: 15px;
+  margin-top: auto;
   background: none;
   border: 1.5px solid currentColor;
   padding: 8px 16px;
@@ -247,6 +205,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   opacity: 0.8;
+  align-self: flex-start;
 }
 
 .view-bio-btn:hover {

@@ -49,34 +49,11 @@ import AdminLogin from "./pages/Admin/AdminLogin";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 
 
-const ScrollAnimations = () => {
+const ScrollToTop = () => {
   const location = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 0);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    setTimeout(() => {
-      const elements = document.querySelectorAll(".animate-pop-up");
-      elements.forEach((el) => observer.observe(el));
-    }, 100);
-
-    return () => {
-      observer.disconnect();
-    };
   }, [location.pathname]);
 
   return null;
@@ -88,7 +65,7 @@ function AppContent() {
 
   return (
     <>
-      <ScrollAnimations />
+      <ScrollToTop />
       {!isAdminPath && <TopBar />}
       {!isAdminPath && <Navbar />}
 

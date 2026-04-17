@@ -97,25 +97,7 @@
   z-index: 0;
 }
 
-/* LINE ANIMATION */
-.why-card::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 4px;
-  background: rgba(var(--c), 0.7);
-  border-radius: 0 0 24px 24px;
-  z-index: 1;
-  transition: width 1s ease-out;
-  transition-delay: 0.3s;
-}
-
-.why-card.visible::after {
-  width: 100%;
-}
-
+/* Removed solid line animation to use multi-color-line component */
 .why-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
@@ -185,26 +167,32 @@
 /* COLORS */
 .why-card.rose {
   --c: 155, 28, 49;
+  --line-bg: linear-gradient(90deg, #9b1c31, #f43f5e);
 }
 
 .why-card.orange {
   --c: 249, 115, 22;
+  --line-bg: linear-gradient(90deg, #c2410c, #fb923c);
 }
 
 .why-card.teal {
   --c: 13, 148, 136;
+  --line-bg: linear-gradient(90deg, #0f766e, #2dd4bf);
 }
 
 .why-card.yellow {
   --c: 202, 138, 4;
+  --line-bg: linear-gradient(90deg, #a16207, #facc15);
 }
 
 .why-card.purple {
   --c: 124, 58, 237;
+  --line-bg: linear-gradient(90deg, #6d28d9, #a78bfa);
 }
 
 .why-card.pink {
   --c: 219, 39, 119;
+  --line-bg: linear-gradient(90deg, #9d174d, #f472b6);
 }
 
 /* TRUST SECTION */

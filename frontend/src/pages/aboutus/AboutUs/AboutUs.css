@@ -1,35 +1,42 @@
 .about-page {
   width: 100%;
   font-family: 'Poppins', sans-serif;
- 
+
 }
- 
+
 /* Features Section */
 .features-section {
   padding: 60px 20px;
   background: #f9f9f9;
   font-family: 'Poppins', sans-serif;
 }
- 
+
 .features-title {
   text-align: center;
   font-size: 32px;
   margin-bottom: 40px;
   color: #111;
 }
- 
+
 .features-grid {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+  justify-content: center;
 }
- 
+
+.features-grid::after {
+  content: "";
+  grid-column: span 1;
+}
+
 /* Card */
 .feature-card {
-  flex: 0 0 calc(25% - 15px);
+  flex: 0 1 calc(25% - 20px);
+  /* 4 per row */
+  min-width: 250px;
   box-sizing: border-box;
   background: #fff;
   border-radius: 16px;
@@ -37,46 +44,47 @@
   text-align: center;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  height: 100%;
 }
- 
+
 .feature-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
 }
- 
+
 /* Icon */
 .feature-card .icon {
   font-size: 32px;
   display: block;
   margin-bottom: 12px;
 }
- 
+
 /* Text */
 .feature-card h3 {
   font-size: 18px;
   margin-bottom: 10px;
   color: #111;
 }
- 
+
 .feature-card p {
   font-size: 14px;
   color: #555;
 }
- 
+
 /* Tablet */
 @media (max-width: 992px) {
-  .feature-card {
-    flex: 0 0 calc(50% - 10px);
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
- 
+
 /* Mobile */
 @media (max-width: 600px) {
-  .feature-card {
-    flex: 0 0 100%;
+  .features-grid {
+    grid-template-columns: 1fr;
   }
 }
- 
+
 .about-hero-section {
   display: grid;
   grid-template-columns: 1fr 1.5fr 1fr;
@@ -88,12 +96,12 @@
   margin: 0 auto;
   align-items: center;
 }
- 
+
 .hero-left {
   display: flex;
   flex-direction: column;
 }
- 
+
 .hero-title {
   font-size: clamp(30px, 6vw, 120px);
   font-weight: 500;
@@ -102,27 +110,27 @@
   letter-spacing: -3px;
   color: #d32f2f;
 }
- 
+
 .hero-left-text {
   margin-top: clamp(20px, 4vw, 50px);
   display: flex;
   flex-direction: column;
 }
- 
+
 .hero-subtitle {
   font-size: 16px;
   font-weight: 500;
   color: #333;
 }
- 
- 
- 
+
+
+
 .hero-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
- 
+
 .hero-main-img {
   width: 100%;
   height: 360px;
@@ -132,14 +140,14 @@
   opacity: 0;
   animation: popUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
- 
+
 .hero-right {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 30px;
 }
- 
+
 .hero-small-img {
   width: 100%;
   height: auto;
@@ -151,19 +159,19 @@
   opacity: 0;
   animation: popUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s forwards;
 }
- 
+
 @keyframes popUp {
   0% {
     transform: scale(0.8) translateY(20px);
     opacity: 0;
   }
- 
+
   100% {
     transform: scale(1) translateY(0);
     opacity: 1;
   }
 }
- 
+
 .hero-philosophy h2 {
   font-size: 32px;
   font-weight: 700;
@@ -171,71 +179,62 @@
   color: #d32f2f;
   letter-spacing: -1px;
 }
- 
+
 .hero-philosophy p {
   font-size: 16px;
   line-height: 1.6;
   color: #333;
 }
- 
+
 @media (max-width: 1100px) {
   .about-hero-section {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     padding: 40px 5%;
   }
- 
+
   .hero-right {
     grid-column: span 2;
     flex-direction: row;
     align-items: flex-start;
     gap: 40px;
   }
- 
+
   .hero-small-img {
     width: 50%;
     margin-bottom: 0;
   }
- 
+
   .hero-philosophy {
     width: 50%;
   }
 }
- 
+
 @media (max-width: 768px) {
   .about-hero-section {
     grid-template-columns: 1fr;
   }
- 
+
   .hero-right {
     grid-column: span 1;
   }
 }
- 
+
 .about-section {
   max-width: 1100px;
   margin: auto;
   padding: 70px 20px;
   text-align: center;
 }
- 
-.slide-up {
-  opacity: 0;
-  transform: translateY(60px);
-  transition: opacity 0.2s ease-out, transform 0.8s ease-out;
-}
- 
-.slide-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
- 
+
+/* Removed slide-up to use ScrollReveal */
+
 .features-section {
   text-align: center;
   /* center everything like Our Genesis */
   padding: 70px 20px;
 }
- 
+
 .features-section h2 {
   font-size: 30px;
   margin-bottom: 18px;
@@ -243,7 +242,7 @@
   position: relative;
   display: inline-block;
 }
- 
+
 /* underline same as Our Genesis */
 .features-section h2::after {
   content: "";
@@ -254,20 +253,20 @@
   margin: 12px auto 0;
   border-radius: 2px;
 }
- 
+
 .feature-card .icon {
   color: #d32f2f;
   font-size: 28px;
   margin-bottom: 10px;
 }
- 
+
 .about-section h2 {
   font-size: 30px;
   margin-bottom: 18px;
   color: #d32f2f;
   position: relative;
 }
- 
+
 .about-section h2::after {
   content: "";
   width: 60px;
@@ -277,7 +276,7 @@
   margin: 12px auto 0;
   border-radius: 2px;
 }
- 
+
 .about-section p {
   font-size: 17px;
   line-height: 1.8;
@@ -285,13 +284,13 @@
   max-width: 900px;
   margin: 0 auto 14px;
 }
- 
+
 .about-section.light {
   background: #f9f6f7;
   margin-bottom: 20px;
 }
- 
- 
+
+
 .about-section blockquote {
   font-size: 20px;
   font-weight: 600;
@@ -299,20 +298,20 @@
   margin: 20px auto;
   max-width: 800px;
 }
- 
+
 @media (max-width: 768px) {
   .about-hero h1 {
     font-size: 32px;
   }
- 
+
   .about-section h2 {
     font-size: 24px;
   }
- 
+
   .about-section p {
     font-size: 16px;
   }
- 
+
   .vm-card {
     max-width: 100%;
   }

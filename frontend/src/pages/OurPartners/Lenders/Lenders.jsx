@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Lenders.css";
 import home3 from "../../../assets/images/home3.jpeg"; 
-
+import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 
 import img8 from "../../../assets/images/Lenders/8.jpg";
 import auB from "../../../assets/images/Lenders/AU-B.jpg";
@@ -34,54 +34,37 @@ const lenders = [
 ];
 
 const Lenders = () => {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    const elements = document.querySelectorAll(".animate-pop-up");
-    elements.forEach((el) => observer.observe(el));
-
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
-
   return (
     <div className="lenders-page">
-
       {/* Banner */}
-      <div className="lenders-banner animate-pop-up">
-        <img src={home3} alt="Lenders Banner" />
-        <div className="lenders-overlay">
-          <h1 className="animate-pop-up">Lenders</h1>
-        </div>
-      </div>
-
-      {/* Continuous Marquee */}
-      <div className="lenders-marquee-container animate-pop-up">
-        <div className="lenders-marquee-wrapper">
-          <div className="lenders-marquee-track">
-            {/* Double the lenders for seamless loop */}
-            {[...lenders, ...lenders].map((logo, index) => (
-              <div className="lender-marquee-item" key={index}>
-                <img src={logo} alt={`lender-${index}`} />
-              </div>
-            ))}
+      <ScrollReveal direction="down">
+        <div className="lenders-banner">
+          <img src={home3} alt="Lenders Banner" />
+          <div className="lenders-overlay">
+            <h1>Lenders</h1>
           </div>
         </div>
-      </div>
+      </ScrollReveal>
 
+      {/* Continuous Marquee */}
+      <ScrollReveal direction="up" delay={0.2}>
+        <div className="lenders-marquee-container">
+          <div className="lenders-marquee-wrapper">
+            <div className="lenders-marquee-track">
+              {/* Double the lenders for seamless loop */}
+              {[...lenders, ...lenders].map((logo, index) => (
+                <div className="lender-marquee-item" key={index}>
+                  <img src={logo} alt={`lender-${index}`} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </ScrollReveal>
     </div>
   );
 };
 
 export default Lenders;
+
 

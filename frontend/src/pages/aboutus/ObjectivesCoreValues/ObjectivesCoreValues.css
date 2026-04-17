@@ -59,13 +59,15 @@
   text-transform: uppercase;
 }
 
-.last-card {
+.full-width-reveal {
   grid-column: 1 / -1;
-  /* take full row */
+  display: flex;
+  justify-content: center;
+}
+
+.last-card {
   max-width: 500px;
-  /* control width */
-  justify-self: center;
-  /* center in grid */
+  width: 100%;
 }
 
 /* ================= SECTION BASE ================= */

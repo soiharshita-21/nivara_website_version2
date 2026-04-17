@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./ManagementTeam.css";
-
 import shreyas from "../../../assets/images/CET/Shreyas_Ramanathan (1).jpg";
 import srinivasan from "../../../assets/images/CET/Srinivasan-CV_NEW (1).jpg";
 import suresh from "../../../assets/images/CET/Suresh (2).jpg";
@@ -13,6 +12,8 @@ import raina from "../../../assets/images/CET/Raina DSilva.jpg";
 import bonojit from "../../../assets/images/CET/Mr. Bonojit Ukil.jpg";
 import thimmaiah from "../../../assets/images/CET/C-G-Thimmah.jpg";
 import raja from "../../../assets/images/CET/Mr. Raja Shankarasubramanian.webp";
+import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
+import { AnimatePresence, motion } from "framer-motion";
 
 const managementTeam = [
   {
@@ -116,143 +117,140 @@ const managementTeam = [
 const ManagementTeam = () => {
   const [selectedMember, setSelectedMember] = React.useState(null);
 
-  useEffect(() => {
-    console.log("Management Modal Layout Unique Loaded");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    const elements = document.querySelectorAll(".animate-pop-up");
-    elements.forEach((el) => observer.observe(el));
-
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
-
   return (
     <>
-      <section className="management-section animate-pop-up">
-        <div className="management-header animate-pop-up">
-          <span className="management-heading animate-pop-up">Management Team</span>
-          <h2 className="animate-pop-up">Our Management Leadership</h2>
-          <p>Experienced professionals managing operations, governance, and business excellence</p>
-        </div>
+      <section className="management-section">
+        <ScrollReveal direction="up">
+          <div className="management-header">
+            <span className="management-heading">Management Team</span>
+            <h2>Our Management Leadership</h2>
+            <p>Experienced professionals managing operations, governance, and business excellence</p>
+          </div>
+        </ScrollReveal>
 
         <div className="management-grid">
           {managementTeam.map((item, index) => (
-            <div
-              className={`management-card ${item.color} animate-pop-up`}
-              style={{ transitionDelay: `${0.1 + index * 0.1}s` }}
-              key={index}
-              onClick={() => setSelectedMember(item)}
+            <ScrollReveal 
+              key={index} 
+              direction="up" 
+              delay={0.1 + (index % 4) * 0.1} 
+              distance={40}
+              scale={0.9}
             >
-              <div className="management-image">
-                <img src={item.img} alt={item.name} />
-              </div>
+              <div
+                className={`management-card ${item.color}`}
+                onClick={() => setSelectedMember(item)}
+              >
+                <div className="management-image">
+                  <img src={item.img} alt={item.name} />
+                </div>
 
-              <div className="management-content animate-pop-up">
-                <span className="management-role">{item.role}</span>
-                <h3 className="animate-pop-up">{item.name}</h3>
-                <p>{item.desc}</p>
-                <button className="view-bio-btn" onClick={() => setSelectedMember(item)}>View Details</button>
+                <div className="management-content">
+                  <span className="management-role">{item.role}</span>
+                  <h3>{item.name}</h3>
+                  <p>{item.desc}</p>
+                  <button className="view-bio-btn" onClick={() => setSelectedMember(item)}>View Details</button>
+                  <div className="multi-color-line"></div>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
 
       {/* Profile Modal */}
-      {selectedMember && (
-        <div
-          className="unique-management-modal-overlay"
-          onClick={() => setSelectedMember(null)}
-          style={{
-            position: 'fixed',
-            inset: 0,
-            background: 'rgba(0,0,0,0.8)',
-            backdropFilter: 'blur(10px)',
-            zIndex: 99999,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '20px'
-          }}
-        >
-          <div
-            className="unique-management-modal-content"
-            onClick={(e) => e.stopPropagation()}
+      <AnimatePresence>
+        {selectedMember && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="unique-management-modal-overlay"
+            onClick={() => setSelectedMember(null)}
             style={{
+              position: 'fixed',
+              inset: 0,
+              background: 'rgba(0,0,0,0.8)',
+              backdropFilter: 'blur(10px)',
+              zIndex: 99999,
               display: 'flex',
-              flexDirection: 'row',
-              maxWidth: '1000px',
-              height: '550px',
-              width: '100%',
-              borderRadius: '30px',
-              overflow: 'hidden',
-              backgroundColor: '#fff',
-              position: 'relative',
-              boxShadow: '0 40px 100px rgba(0,0,0,0.5)'
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '20px'
             }}
           >
-            <button
-              onClick={() => setSelectedMember(null)}
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="unique-management-modal-content"
+              onClick={(e) => e.stopPropagation()}
               style={{
-                position: 'absolute',
-                top: '20px',
-                right: '20px',
-                zIndex: 100,
-                width: '40px',
-                height: '40px',
-                borderRadius: '50%',
-                border: 'none',
-                background: '#f3f4f6',
-                cursor: 'pointer',
-                fontSize: '24px',
                 display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
+                flexDirection: 'row',
+                maxWidth: '1000px',
+                height: '550px',
+                width: '100%',
+                borderRadius: '30px',
+                overflow: 'hidden',
+                backgroundColor: '#fff',
+                position: 'relative',
+                boxShadow: '0 40px 100px rgba(0,0,0,0.5)'
               }}
             >
-              &times;
-            </button>
+              <button
+                onClick={() => setSelectedMember(null)}
+                style={{
+                  position: 'absolute',
+                  top: '20px',
+                  right: '20px',
+                  zIndex: 100,
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  border: 'none',
+                  background: '#f3f4f6',
+                  cursor: 'pointer',
+                  fontSize: '24px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
+              >
+                &times;
+              </button>
 
-            <div style={{ display: 'flex', flexDirection: 'row', width: '100%', height: '100%' }}>
-              <div style={{ flex: '0 0 45%', height: '100%', overflow: 'hidden' }}>
-                <img
-                  src={selectedMember.img}
-                  alt={selectedMember.name}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
+              <div style={{ display: 'flex', flexDirection: 'row', width: '100%', height: '100%' }}>
+                <div style={{ flex: '0 0 45%', height: '100%', overflow: 'hidden' }}>
+                  <img
+                    src={selectedMember.img}
+                    alt={selectedMember.name}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                </div>
+                <div style={{ flex: '0 0 55%', padding: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: '#fff', overflowY: 'auto' }}>
+                  <h2 style={{ fontWeight: 900, fontSize: '42px', margin: '0 0 5px 0', color: '#1a1a1a', lineHeight: '1.1' }}>
+                    {selectedMember.name}
+                  </h2>
+                  <span style={{ display: 'block', fontSize: '14px', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '1.5px', color: '#d32f2f', marginBottom: '20px' }}>
+                    {selectedMember.role}
+                  </span>
+                  <div style={{ width: '60px', height: '6px', backgroundColor: '#d32f2f', marginBottom: '30px', borderRadius: '3px' }}></div>
+                  <p style={{ fontSize: '18px', fontWeight: 700, color: '#1a1a1a', marginBottom: '25px', lineHeight: '1.5' }}>
+                    {selectedMember.desc}
+                  </p>
+                  <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#4b5563', fontWeight: 400 }}>
+                    {selectedMember.longDesc}
+                  </p>
+                </div>
               </div>
-              <div style={{ flex: '0 0 55%', padding: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: '#fff', overflowY: 'auto' }}>
-                <h2 style={{ fontWeight: 900, fontSize: '42px', margin: '0 0 5px 0', color: '#1a1a1a', lineHeight: '1.1' }}>
-                   {selectedMember.name}
-                </h2>
-                <span style={{ display: 'block', fontSize: '14px', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '1.5px', color: '#d32f2f', marginBottom: '20px' }}>
-                   {selectedMember.role}
-                </span>
-                <div style={{ width: '60px', height: '6px', backgroundColor: '#d32f2f', marginBottom: '30px', borderRadius: '3px' }}></div>
-                <p style={{ fontSize: '18px', fontWeight: 700, color: '#1a1a1a', marginBottom: '25px', lineHeight: '1.5' }}>
-                  {selectedMember.desc}
-                </p>
-                <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#4b5563', fontWeight: 400 }}>
-                  {selectedMember.longDesc}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
 
-export default ManagementTeam;
+export default ManagementTeam;

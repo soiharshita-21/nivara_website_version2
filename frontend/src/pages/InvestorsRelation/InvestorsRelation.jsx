@@ -1,6 +1,7 @@
 import React from "react";
 import { FaLock } from "react-icons/fa";
 import "./InvestorsRelation.css";
+import ScrollReveal from "../../components/ScrollReveal/ScrollReveal";
 
 const annualReturns = [
   "2019–20", "2020–21", "2021–22", "2022–23", "2023–24", "2024–25"
@@ -31,43 +32,47 @@ const transcripts = [
 const InvestorsRelation = () => {
   return (
     <div className="investor-wrapper">
-
       <div className="investor-grid">
-
         {/* COLUMN 1 */}
         <div className="investor-col">
           {annualReturns.map((year, i) => (
-            <a key={i} className="investor-box" href="#">
-              <FaLock className="lock-icon" />
-              <span>Annual Return {year}</span>
-            </a>
+            <ScrollReveal key={i} direction="up" delay={i * 0.05} distance={20}>
+              <a className="investor-box" href="#">
+                <FaLock className="lock-icon" />
+                <span>Annual Return {year}</span>
+              </a>
+            </ScrollReveal>
           ))}
         </div>
 
         {/* COLUMN 2 */}
         <div className="investor-col">
           {notices.map((item, i) => (
-            <a key={i} className="investor-box" href="#">
-              <FaLock className="lock-icon" />
-              <span>{item}</span>
-            </a>
+            <ScrollReveal key={i} direction="up" delay={i * 0.05 + 0.1} distance={20}>
+              <a className="investor-box" href="#">
+                <FaLock className="lock-icon" />
+                <span>{item}</span>
+              </a>
+            </ScrollReveal>
           ))}
         </div>
 
         {/* COLUMN 3 */}
         <div className="investor-col">
           {transcripts.map((item, i) => (
-            <a key={i} className="investor-box" href="#">
-              <FaLock className="lock-icon" />
-              <span>{item}</span>
-            </a>
+            <ScrollReveal key={i} direction="up" delay={i * 0.05 + 0.2} distance={20}>
+              <a className="investor-box" href="#">
+                <FaLock className="lock-icon" />
+                <span>{item}</span>
+              </a>
+            </ScrollReveal>
           ))}
         </div>
-
       </div>
     </div>
   );
 };
 
 export default InvestorsRelation;
+
 

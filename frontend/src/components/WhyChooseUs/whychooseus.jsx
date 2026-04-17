@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import {
   CheckCircle,
   Percent,
@@ -8,6 +7,7 @@ import {
   Headphones,
 } from "lucide-react";
 import "./whychooseus.css";
+import ScrollReveal from "../ScrollReveal/ScrollReveal";
 
 const features = [
   {
@@ -49,79 +49,78 @@ const features = [
 ];
 
 const WhyChooseUs = () => {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    const elements = document.querySelectorAll(".animate-pop-up");
-    elements.forEach((el) => observer.observe(el));
-
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
-
   return (
     <section className="why-section">
       <div className="why-container">
-        <div className="why-heading-wrapper animate-pop-up">
-          <span className="spark">✦</span>
-          <h6 className="why-heading">Why Choose Us</h6>
-          <span className="spark">✦</span>
-        </div>
+        <ScrollReveal direction="down" distance={20}>
+          <div className="why-heading-wrapper">
+            <span className="spark">✦</span>
+            <h6 className="why-heading">Why Choose Us</h6>
+            <span className="spark">✦</span>
+          </div>
+        </ScrollReveal>
 
-        <h2 className="why-title animate-pop-up" style={{transitionDelay: "0.1s"}}>Why Choose Nivara?</h2>
-        <p className="why-subtitle animate-pop-up" style={{transitionDelay: "0.2s"}}>
-          We're committed to making home ownership accessible and affordable.
-        </p>
+        <ScrollReveal direction="up" delay={0.1} distance={30}>
+          <h2 className="why-title">Why Choose Nivara?</h2>
+        </ScrollReveal>
+
+        <ScrollReveal direction="up" delay={0.2} distance={30}>
+          <p className="why-subtitle">
+            We're committed to making home ownership accessible and affordable.
+          </p>
+        </ScrollReveal>
 
         <div className="why-grid">
           {features.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div className={`why-card ${item.color} animate-pop-up`} style={{transitionDelay: `${0.1 + index * 0.15}s`}} key={index}>
-                <div className={`why-icon ${item.color}`}>
-                  <Icon size={26} />
+              <ScrollReveal 
+                key={index} 
+                direction="up" 
+                delay={0.1 + index * 0.1} 
+                distance={40}
+                scale={0.9}
+              >
+                <div className={`why-card ${item.color}`}>
+                  <div className={`why-icon ${item.color}`}>
+                    <Icon size={26} />
+                  </div>
+                  <h3 className={`why-card-title ${item.color}`}>{item.title}</h3>
+                  <p className="why-card-desc">{item.desc}</p>
+                  <div className="multi-color-line"></div>
                 </div>
-                <h3 className={`why-card-title ${item.color}`}>{item.title}</h3>
-                <p className="why-card-desc">{item.desc}</p>
-              </div>
+              </ScrollReveal>
             );
           })}
         </div>
 
-        <div className="trust-wrapper animate-pop-up" style={{transitionDelay: "0.2s"}}>
-          <div className="trust-badges">
-            <div className="trust-item">
-              <div className="trust-icon rbi">✓</div>
-              <div className="trust-text">
-                <span>RBI Registered</span>
-                <h4>Housing Finance Company</h4>
+        <ScrollReveal direction="up" delay={0.3}>
+          <div className="trust-wrapper">
+            <div className="trust-badges">
+              <div className="trust-item">
+                <div className="trust-icon rbi">✓</div>
+                <div className="trust-text">
+                  <span>RBI Registered</span>
+                  <h4>Housing Finance Company</h4>
+                </div>
               </div>
-            </div>
 
-            <div className="divider"></div>
+              <div className="divider"></div>
 
-            <div className="trust-item">
-              <div className="trust-icon iso">✳</div>
-              <div className="trust-text">
-                <span>ISO Certified</span>
-                <h4>Quality Assured</h4>
+              <div className="trust-item">
+                <div className="trust-icon iso">✳</div>
+                <div className="trust-text">
+                  <span>ISO Certified</span>
+                  <h4>Quality Assured</h4>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
 };
 
 export default WhyChooseUs;
+

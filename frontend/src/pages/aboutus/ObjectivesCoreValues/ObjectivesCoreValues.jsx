@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./ObjectivesCoreValues.css";
 import house2 from "../../../assets/images/objectives.jpg";
 import { 
@@ -11,6 +11,7 @@ import {
   FaLeaf,
   FaBullseye
 } from "react-icons/fa";
+import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 
 const objectivesList = [
   "Catering to the housing finance needs of the un-served and under-served segments of urban and semi-urban Indian markets.",
@@ -68,99 +69,97 @@ const coreValues = [
 const ObjectivesCoreValues = () => {
   const [activeValue, setActiveValue] = useState(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, { threshold: 0.1 });
-
-    const animatedElements = document.querySelectorAll(".slide-up, .animate-pop-up");
-    animatedElements.forEach((el) => observer.observe(el));
-
-    return () => {
-      animatedElements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
-
   return (
     <div className="ocv-page">
 
       {/* HERO */}
-      <section className="ocv-hero-modern animate-pop-up">
-        <div className="ocv-huge-title-container">
-          <div className="ocv-overlapping-image slide-up">
-            <img src={house2} alt="Objectives & Core Values" />
-            <h1 className="ocv-huge-title">OBJECTIVES & CORE VALUES</h1>
+      <ScrollReveal direction="down">
+        <section className="ocv-hero-modern">
+          <div className="ocv-huge-title-container">
+            <div className="ocv-overlapping-image">
+              <img src={house2} alt="Objectives & Core Values" />
+              <h1 className="ocv-huge-title">OBJECTIVES & CORE VALUES</h1>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       {/* OBJECTIVES CARDS */}
-      <section className="ocv-section slide-up">
-        <h2 className="section-title">Our Objectives</h2>
+      <section className="ocv-section">
+        <ScrollReveal direction="up">
+          <h2 className="section-title">Our Objectives</h2>
+        </ScrollReveal>
 
         <div className="objectives-cards">
           {objectivesList.map((item, index) => (
-            <div
-              key={index}
-              className={`objective-card animate-pop-up ${index === objectivesList.length - 1 ? "last-card" : ""
-                }`}
+            <ScrollReveal 
+              key={index} 
+              direction="up" 
+              delay={index * 0.1} 
+              distance={30}
+              className={index === objectivesList.length - 1 ? "full-width-reveal" : ""}
             >
-              <p>{item}</p>
-            </div>
+              <div
+                className={`objective-card ${index === objectivesList.length - 1 ? "last-card" : ""
+                  }`}
+              >
+                <p>{item}</p>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
 
       {/* CORE VALUES */}
-      <section className="ocv-section light animate-pop-up">
-        <h2 className="section-title">Our Core Values</h2>
+      <section className="ocv-section light">
+        <ScrollReveal direction="up">
+          <h2 className="section-title">Our Core Values</h2>
+        </ScrollReveal>
 
-        <div className="cv-wheel-wrapper">
-          <div className="cv-wheel">
-            <div className="cv-wheel-center">
-              {activeValue ? (
-                <div 
-                  className="cv-center-content fade-in"
-                  style={{ "--node-color": activeValue.color }}
-                >
-                  <span className="cv-center-emoji">{activeValue.icon}</span>
-                  <h3>{activeValue.title}</h3>
-                  <p>{activeValue.desc}</p>
-                </div>
-              ) : (
-                <div className="cv-center-content default-content fade-in">
-                  <span className="cv-center-emoji"><FaBullseye /></span>
-                  <h3>Core Values</h3>
-                </div>
-              )}
+        <ScrollReveal direction="up" delay={0.2} scale={0.8}>
+          <div className="cv-wheel-wrapper">
+            <div className="cv-wheel">
+              <div className="cv-wheel-center">
+                {activeValue ? (
+                  <div 
+                    className="cv-center-content fade-in"
+                    style={{ "--node-color": activeValue.color }}
+                  >
+                    <span className="cv-center-emoji">{activeValue.icon}</span>
+                    <h3>{activeValue.title}</h3>
+                    <p>{activeValue.desc}</p>
+                  </div>
+                ) : (
+                  <div className="cv-center-content default-content fade-in">
+                    <span className="cv-center-emoji"><FaBullseye /></span>
+                    <h3>Core Values</h3>
+                  </div>
+                )}
+              </div>
+
+              {coreValues.map((val, index) => {
+                const angle = (index * (360 / coreValues.length)) - 90;
+                return (
+                  <div
+                    key={index}
+                    className="cv-wheel-node"
+                    style={{
+                      "--angle": `${angle}deg`,
+                      "--node-color": val.color
+                    }}
+                    onMouseEnter={() => setActiveValue(val)}
+                    onMouseLeave={() => setActiveValue(null)}
+                  >
+                    <span className="cv-node-emoji">{val.icon}</span>
+                  </div>
+                );
+              })}
             </div>
-
-            {coreValues.map((val, index) => {
-              const angle = (index * (360 / coreValues.length)) - 90;
-              return (
-                <div
-                  key={index}
-                  className="cv-wheel-node"
-                  style={{
-                    "--angle": `${angle}deg`,
-                    "--node-color": val.color
-                  }}
-                  onMouseEnter={() => setActiveValue(val)}
-                  onMouseLeave={() => setActiveValue(null)}
-                >
-                  <span className="cv-node-emoji">{val.icon}</span>
-                </div>
-              );
-            })}
           </div>
-        </div>
+        </ScrollReveal>
       </section>
     </div>
   );
 };
 
-export default ObjectivesCoreValues;
+export default ObjectivesCoreValues;
