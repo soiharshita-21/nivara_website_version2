@@ -13,7 +13,7 @@ const AboutUs = () => {
           <div className="hero-left">
             <h1 className="hero-title">ABOUT<br />US</h1>
             <div className="hero-left-text">
-              <p className="hero-subtitle">Empowering dreams and building homes. At Nivara, we help you turn your dream home into reality.</p>
+              <p className="about-subtitle">Empowering dreams and building homes. At Nivara, we help you turn your dream home into reality.</p>
             </div>
           </div>
 
@@ -63,7 +63,7 @@ const AboutUs = () => {
         <section className="about-section">
           <h2>Our Genesis</h2>
           <p>
-            The genesis of Nivara Home Finance Limited is traced to C V Rao and Sunil Rohokale, professional colleagues for two decades and veterans in the retail banking industry, primarily in the housing finance & real estate sectors.
+            The genesis of <b>Nivara Home Finance Limited </b>is traced to <b>C V Rao and Sunil Rohokale</b>, professional colleagues for two decades and veterans in the retail banking industry, primarily in the housing finance & real estate sectors.
             It all started over a telephonic conversation between the two during the Spring of 2014 where both felt the need to pursue their passion, leverage their experience and unique ideas to create a lasting, well-respected organization in the affordable housing finance business. Subsequently, the company Nivara Home Finance Limited was born and has as its promoters C V Rao, Sunil Rohokale and a group of like-minded professionals having decades of rich experience in this field.
           </p>
           <p>

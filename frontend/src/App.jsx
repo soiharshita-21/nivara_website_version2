@@ -34,6 +34,7 @@ import PublicDisclosure from "./pages/customercenter/PublicDisclosure/PublicDisc
 import CorporateGovernance from "./pages/customercenter/corporategovernance";
 import Download from "./pages/customercenter/Download/Download";
 import Faqs from "./pages/customercenter/Faqs/Faqs";
+import AuctionProperties from "./pages/customercenter/AuctionProperties/AuctionProperties";
 import Lenders from "./pages/OurPartners/Lenders/Lenders";
 import OurInsurancePartners from "./pages/OurPartners/OurInsurancePartners/OurInsurancePartners";
 import Blog from "./pages/media/Blog/Blog";
@@ -47,6 +48,8 @@ import FairPracticeCode from "./pages/customercenter/FairPracticeCode/FairPracti
 import LoanApplyForm from "./pages/loanapplyform";
 import AdminLogin from "./pages/Admin/AdminLogin";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
+import WhyChooseUs from "./pages/WhyChooseUs/WhyChooseUs";
+import KycAmlMeasures from "./pages/KycAmlMeasures/KycAmlMeasures";
 
 
 const ScrollToTop = () => {
@@ -127,6 +130,7 @@ function AppContent() {
           <Route path="/customercenter/download" element={<Download />} />
           <Route path="/customercenter/calculator" element={<Calculator />} />
           <Route path="/customercenter/faqs" element={<Faqs />} />
+          <Route path="/customercenter/auction-properties" element={<AuctionProperties />} />
           <Route path="/ourpartners/lenders/lenders" element={<Lenders />} />
           <Route
             path="/ourpartners/ourinsurancepartners/ourinsurancepartners"
@@ -143,6 +147,8 @@ function AppContent() {
           <Route path="/apply-home-loan" element={<LoanApplyForm />} />
           <Route path="/admin" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/why-choose-us" element={<WhyChooseUs />} />
+          <Route path="/kyc-aml-measures" element={<KycAmlMeasures />} />
         </Routes>
         {!isAdminPath && <Footer />}
       </div>

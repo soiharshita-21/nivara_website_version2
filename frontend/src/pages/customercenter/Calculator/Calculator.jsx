@@ -73,6 +73,9 @@ const Calculator = () => {
               step="50000"
               value={amount}
               onChange={(e) => setAmount(Number(e.target.value))}
+              style={{
+                accentColor: `rgb(${255 - (amount - 100000) / 9900000 * 255}, ${ (amount - 100000) / 9900000 * 200}, 0)`
+              }}
             />
             <div className="range-labels">
               <span>₹1L</span>
@@ -94,6 +97,9 @@ const Calculator = () => {
               step="0.1"
               value={rate}
               onChange={(e) => setRate(Number(e.target.value))}
+              style={{
+                accentColor: `rgb(${255 - (rate - 6) / 9 * 255}, ${(rate - 6) / 9 * 200}, 0)`
+              }}
             />
             <div className="range-labels">
               <span>6%</span>
@@ -115,6 +121,9 @@ const Calculator = () => {
               step="1"
               value={years}
               onChange={(e) => setYears(Number(e.target.value))}
+              style={{
+                accentColor: `rgb(${255 - (years - 1) / 29 * 255}, ${(years - 1) / 29 * 200}, 0)`
+              }}
             />
             <div className="range-labels">
               <span>1 Year</span>

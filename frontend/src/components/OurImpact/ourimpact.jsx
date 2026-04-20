@@ -44,10 +44,10 @@ const OurImpact = () => {
   return (
     <section className="impact-section">
       <ScrollReveal direction="down">
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <span className="spa">✦</span>
-          <h6 className="impact-heading">Our Impact</h6>  
-          <span className="spa">✦</span>
+        <div className="section-badge-wrapper">
+          <span className="section-badge-spark">✦</span>
+          <h6 className="section-badge-title">Our Impact</h6>  
+          <span className="section-badge-spark">✦</span>
         </div>
       </ScrollReveal>
 

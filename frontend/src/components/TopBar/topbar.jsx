@@ -17,8 +17,12 @@ const TopBar = () => {
           <FaEnvelope />
           <span>info@nivarahousing.com</span>
         </a>
+        <a href="mailto:info@nivara.com" className="topbar-link">
+          {/* <FaEnvelope /> */}
+          <span>ISO 27001:2022 Certified!</span>
+        </a>
 
-        
+
       </div>
 
       {/* Find a Branch */}

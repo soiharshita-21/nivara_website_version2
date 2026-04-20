@@ -1,35 +1,44 @@
 import React, { useState, useEffect } from "react";
 import "./Testimonials.css";
-import user1 from "../../assets/images/user1.jpg";
-import user2 from "../../assets/images/user2.jpg";
-import user3 from "../../assets/images/user3.jpg";
 import ScrollReveal from "../ScrollReveal/ScrollReveal";
+import googleIcon from "../../assets/images/google.png"; // adjust path if needed
 
 /* Testimonials Data */
 const testimonials = [
   {
-    text: "The doorstep service and minimal paperwork made everything so convenient. I highly recommend Nivara to anyone looking for a home loan.",
-    name: "Ashok",
-    place: "Kadapa",
-    type: "Construction Loan",
+    text: "Exceptional customer service and competitive interest rates! Nivara Home Finance made my dream of owning a home a reality. The loan processing was smooth, and the staff was helpful throughout. Highly satisfied and would definitely recommend.",
+    name: "goutham 786",
     rating: 5,
-    image: user1
   },
   {
-    text: "Nivara made my dream of owning a home come true. The process was smooth, and the team was incredibly supportive throughout the journey.",
-    name: "Rajesh",
-    place: "Hyderabad",
-    type: "Home Purchase Loan",
+    text: "From the application stage until the disbursement, I had a fantastic experience. The staff was quite helpful. They were completely open and honest throughout the entire process. On the day of distribution, every employee in the bank was doing their part to assist me in completing the registration process on time. Nivara home finance is grateful.",
+    name: "Mano Cool",
     rating: 5,
-    image: user2
   },
   {
-    text: "Fast approval and competitive interest rates. The customer support team was always available to answer my questions. Very satisfied!",
-    name: "Suresh ",
-    place: "Tamil Nadu",
-    type: "Composite Loan",
+    text: "iam happy with the overall service provided by nivara home finance always in touch and kept me updated on the loan status. recommend people to use it.",
+    name: "Gautam Krishna",
+    rating: 4.5,
+  },
+  {
+    text: "Great experience on getting the home loan processed. The process is fast and the process would gets completed in just couple of visits. Keep up the quality of service in Nivara Home finance in Bangalore.",
+    name: "Vijay Adhitiya",
     rating: 5,
-    image: user3
+  },
+  {
+    text: "I am very happy banking for Nivara Home Finance bangalore. Documentation are fine and the bank executives are well co-ordinates. Process is much faster completed within just 20 days. I think the rate of interest is standard as per the market rate for Nivara home finance in bangalore. Thanks to Nivara....",
+    name: "Rajesh Rs",
+    rating: 4,
+  },
+  {
+    text: "Recently I had applied for a home loan through Nivara Home Finance Bangalore. And I'm very much happy with their service and processing my home loan on the fast track ...",
+    name: "Vijay J",
+    rating: 4.5,
+  },
+  {
+    text: "Applied loan in this bank at Thalaghattapura branch..found them very helpful..good service ..quick process",
+    name: "Anitha Anitha K",
+    rating: 5,
   },
 ];
 
@@ -58,9 +67,11 @@ const Testimonials = () => {
       {/* Header */}
       <ScrollReveal direction="up">
         <div className="testimonials-header">
-           <span className="s">♡   </span>
-          <span className="test-tag">  Testimonials  </span>
-          <span className="s">   ♡</span>
+          <div className="section-badge-wrapper">
+            <span className="section-badge-spark">✦</span>
+            <span className="section-badge-title">Testimonials</span>
+            <span className="section-badge-spark">✦</span>
+          </div>
           <h2>What Our Customers Say</h2>
           <p>Real stories from real people who achieved their dreams with Nivara</p>
         </div>
@@ -75,7 +86,9 @@ const Testimonials = () => {
           {/* Content */}
           <div className="testimonial-content">
             {/* Quote */}
-            <div className="quote-icon">❝</div>
+            <div className="quote-icon">
+              <img src={googleIcon} alt="Google" />
+            </div>
 
             {/* Stars */}
             <div className="stars">
@@ -90,9 +103,9 @@ const Testimonials = () => {
             </p>
 
             <div className="testimonial-user">
-              <div className="avatar">
+              {/* <div className="avatar">
                 <img src={testimonials[index].image} alt={testimonials[index].name} />
-              </div>
+              </div> */}
 
               <div className="user-info">
                 <h4>{testimonials[index].name}</h4>
@@ -101,7 +114,7 @@ const Testimonials = () => {
               </div>
             </div>
           </div>
-          
+
           <button className="nav-btn right" onClick={next}>›</button>
         </div>
       </ScrollReveal>

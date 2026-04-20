@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Investors.css";
-import inv from "../../assets/images/inv.jpg";
+import inv from "../../assets/images/inv.png";
 import tnLogo from "../../assets/images/TN.png";
 import bpeLogo from "../../assets/images/BPE.png";
 
@@ -30,7 +30,7 @@ const Investors = () => {
 
       <section className="investors-banner animate-pop-up">
         <img src={inv} alt="Our Investors Background" className="investors-banner-bg" />
-        
+
         <div className="investors-banner-overlay">
           <div className="investors-banner-content animate-slide-up">
             <h1>YOUR BUSINESS<br />PARTNER</h1>
@@ -50,7 +50,7 @@ const Investors = () => {
       </section>
 
       <section className="investors-content">
-        
+
         <div className="investor-card-horizontal animate-slide-up">
           <div className="investor-logo-container">
             <img src={tnLogo} alt="True North Logo" className="investor-logo" />

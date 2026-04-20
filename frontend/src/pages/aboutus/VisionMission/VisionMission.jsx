@@ -64,7 +64,7 @@ const VisionMission = () => {
           <ScrollReveal direction="right" distance={100} delay={0.1}>
             <div className="vm-lottie-container">
               <DotLottieReact
-                src="/src/assets/images/Vision (3).lottie"
+                src="/src/assets/images/Mission (3).lottie"
                 loop
                 autoplay
               />
@@ -77,4 +77,3 @@ const VisionMission = () => {
 };
 
 export default VisionMission;
-

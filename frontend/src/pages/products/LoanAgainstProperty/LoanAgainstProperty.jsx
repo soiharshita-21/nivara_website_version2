@@ -126,27 +126,22 @@ const LoanAgainstProperty = () => {
         </h2>
 
         <div className="lap-benefits-list">
-          <div className="lap-benefit-item animate-pop-up">
-            Lower interest rates compared to other unsecured loans
-          </div>
-          <div className="lap-benefit-item animate-pop-up">
-            Higher loan amount based on property value
-          </div>
-          <div className="lap-benefit-item animate-pop-up">
-            Repayment tenure up to 20 years
-          </div>
-          <div className="lap-benefit-item animate-pop-up">
-            Completely transparent process with no hidden charges
-          </div>
-          <div className="lap-benefit-item animate-pop-up">
-            Doorstep service by our loan experts
-          </div>
-          <div className="lap-benefit-item animate-pop-up">
-            Wide network across rural, semi-urban, and urban areas
-          </div>
-          <div className="lap-benefit-item animate-pop-up">
-            Apply with minimal documents and save time and effort
-          </div>
+          {[
+            "Competitive interest rates",
+            "Higher loan amount",
+            "Customized Repayment Options",
+            "No hidden charges",
+            "Doorstep service",
+            "Easily available in rural India",
+            "Easy documentation",
+            "End to End Process",
+            "24x7 assistance",
+            "Transparent client interactions"
+          ].map((benefit, index) => (
+            <div key={index} className="lap-benefit-item animate-pop-up">
+              {benefit}
+            </div>
+          ))}
         </div>
       </div>
 

@@ -1,0 +1,245 @@
+.why-choose-us-page {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero Section */
+.why-hero {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.why-hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.why-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%);
+  z-index: 2;
+}
+
+.why-hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.why-hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.why-hero-content p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+
+/* Main Content */
+.why-content-section {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.why-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.why-intro {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.why-intro h2 {
+  font-size: 2.5rem;
+  color: #d32f2f;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.why-intro p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.benefit-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  width: 100%;
+  max-width: 370px;
+  display: flex;
+  flex-direction: column;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(211, 47, 47, 0.1);
+  border-color: #ffeaea;
+}
+
+.benefit-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background-color: #ffeaea;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.benefit-icon {
+  color: #d32f2f;
+  width: 30px;
+  height: 30px;
+}
+
+.benefit-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.benefit-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Footer CTA */
+.why-footer-cta {
+  background: linear-gradient(135deg, #e0d7d7 0%, #7675759d 100%);
+  border-radius: 30px;
+  padding: 60px 40px;
+  text-align: center;
+  color: black;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.why-footer-cta h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.why-footer-cta p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+
+.cta-steps {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.cta-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.step-num {
+  width: 40px;
+  height: 40px;
+  background-color: #d32f2f;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.cta-step h4 {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.apply-btn-large {
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  padding: 18px 50px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(211, 47, 47, 0.3);
+}
+
+.apply-btn-large:hover {
+  background-color: #b71c1c;
+  transform: scale(1.05);
+  box-shadow: 0 15px 25px rgba(211, 47, 47, 0.4);
+}
+
+@media (max-width: 768px) {
+  .why-hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .why-intro h2 {
+    font-size: 2rem;
+  }
+
+  .cta-steps {
+    gap: 30px;
+  }
+}

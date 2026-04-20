@@ -11,8 +11,8 @@
 }
 
 .how-section {
-  background: radial-gradient(circle at top, #ffffff, #f3f4f6);
-  padding: 100px 20px;
+  background: #ffffff; /* Changed from radial-gradient ... to white */
+  padding: 100px 0; /* Changed from 100px 20px to 100px 0 */
   text-align: center;
   font-family: "Poppins", sans-serif;
   overflow: hidden;
@@ -21,6 +21,7 @@
 .how-container {
   max-width: 1200px;
   margin: auto;
+  padding: 0 20px; /* Added padding here to keep internal content centered */
 }
 
 .top-badge {
@@ -29,10 +30,7 @@
   border-radius: 30px;
   background: rgba(139, 30, 45, 0.05);
   border: 1px solid rgba(139, 30, 45, 0.2);
-  color: #8b1e2d;
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 25px;
+
 }
 
 .how-title {
@@ -47,7 +45,7 @@
   color: #6b7280;
   font-size: 18px;
   margin-bottom: 100px;
-  max-width: 600px; 
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -165,6 +163,7 @@
     opacity: 0.6;
     border-width: 4px;
   }
+
   100% {
     transform: scale(1.8);
     opacity: 0;
@@ -233,6 +232,82 @@
   background: #431a20;
   transform: scale(1.05);
   box-shadow: 0 15px 25px rgba(139, 30, 45, 0.3);
+}
+
+/* HERO CTA BANNER */
+.how-cta-banner {
+  margin-top: 60px;
+
+  /* Full width */
+  width: 100%;
+  margin-left: 0;
+
+  height: 500px;
+
+  border-radius: 0;
+  /* remove rounded corners for full-width look */
+  overflow: hidden;
+
+  background: url("../../assets/images/startyourapplication.jpg") center/cover no-repeat;
+  background-attachment: scroll; /* Changed from fixed to scroll for performance */
+  position: relative;
+}
+
+/* Dark overlay for readability */
+.how-cta-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Content on top of image */
+.how-cta-overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  color: white;
+  text-align: center;
+}
+
+/* Text */
+.how-cta-overlay p {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Button */
+.how-cta-overlay button {
+  background: linear-gradient(135deg, #7a1422, #ff0026);
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-arrow {
+  transition: transform 0.3s ease;
+}
+
+
+.how-cta-overlay button:hover {
+  background: #431a20;
+  transform: scale(1.05);
+}
+
+.how-cta-overlay button:hover .btn-arrow {
+  transform: translateX(5px);
 }
 
 /* Responsive */

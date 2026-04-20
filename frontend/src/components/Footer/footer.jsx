@@ -83,6 +83,7 @@ const Footer = () => {
             <li><Link to="/aboutus/management" onClick={handleLinkClick}>Management Team</Link></li>
             <li><Link to="/career/career" onClick={handleLinkClick}>Career</Link></li>
             <li><Link to="/contactus/offices/offices" onClick={handleLinkClick}>Contact Us</Link></li>
+            <li><Link to="/why-choose-us" onClick={handleLinkClick}>Why Choose Us</Link></li>
           </ul>
         </div>
 
@@ -95,6 +96,7 @@ const Footer = () => {
             <li><Link to="/customercenter/fair-practice-code" onClick={handleLinkClick}>Fair Practice Code</Link></li>
             <li><Link to="/customercenter/publicdisclosure" onClick={handleLinkClick}>Public Disclosure</Link></li>
             <li><Link to="/customercenter/download" onClick={handleLinkClick}>Download Forms</Link></li>
+            <li><Link to="/kyc-aml-measures" onClick={handleLinkClick}>KYC & AML Measures</Link></li>
           </ul>
         </div>
 
@@ -123,17 +125,28 @@ const Footer = () => {
             </span>
             <p>info@nivarahousing.com</p>
           </div>
+
+          <div className="officers-item">
+            <p>Grievance Officer: - Rajesh CA
+              Phone: +91 80 26552822</p>
+          </div>
+
+          <div className="rating-item">
+            <p>CIN: U65922KA2014PLC077547
+              Credit Rating: A-; Stable</p>
+          </div>
+
         </div>
       </div>
 
       <div className="footer-bottom">
-        <div className="footer-links">
+        {/* <div className="footer-links">
           <span>Privacy Policy</span>
           <span>Terms & Conditions</span>
           <span>KYC & AML</span>
           <span>Loan Process</span>
           <span>Grievance Redressal</span>
-        </div>
+        </div> */}
 
         <p>© 2026 Nivara Housing Finance. All rights reserved.</p>
 

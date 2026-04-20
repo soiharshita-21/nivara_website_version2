@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import "./HowItWorks.css";
-import { useLocation, useNavigate } from "react-router-dom";
-import { FaFileAlt, FaCheckCircle, FaMoneyBillWave, FaHeadphones, FaHeadset } from "react-icons/fa";
+import applyImg from "../../assets/images/startyourapplication.jpg";
+import { useNavigate } from "react-router-dom";
+import { FaFileAlt, FaCheckCircle, FaMoneyBillWave, FaHeadphones, FaHeadset, FaArrowRight } from "react-icons/fa";
 
 const steps = [
   {
@@ -54,7 +55,11 @@ export default function HowItWorks() {
   return (
     <section className="how-section">
       <div className="how-container">
-        <div className="top-badge animate-pop-up">Simple Process</div>
+        <div className="section-badge-wrapper animate-pop-up">
+          <span className="section-badge-spark">✦</span>
+          <div className="section-badge-title">Simple Process</div>
+          <span className="section-badge-spark">✦</span>
+        </div>
         <h2 className="how-title animate-pop-up">How It Works</h2>
         <p className="how-subtitle animate-pop-up">
           Four simple steps to get your home loan approved and disbursed
@@ -92,10 +97,12 @@ export default function HowItWorks() {
           </div>
         </div>
 
-        <div className="how-cta animate-pop-up">
+      </div>
+      <div className="how-cta-banner animate-pop-up">
+        <div className="how-cta-overlay">
           <p>Ready to get started?</p>
           <button onClick={() => navigate("/apply-home-loan")}>
-            Start Your Application →
+            Start Your Application <FaArrowRight className="btn-arrow" />
           </button>
         </div>
       </div>

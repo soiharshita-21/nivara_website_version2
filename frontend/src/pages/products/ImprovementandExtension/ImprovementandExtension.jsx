@@ -131,45 +131,20 @@ const ImprovmentandExtension = () => {
         </h2>
 
         <div className="improv-benefits-list">
-          <div className="improv-benefit-item animate-pop-up">
-            Loan is available for customers with minimum wage too and with other
-            non-income proof documentation.
-          </div>
-
-          <div className="improv-benefit-item animate-pop-up">
-            Our process is completely transparent and without any hidden
-            charges.
-          </div>
-
-          <div className="improv-benefit-item animate-pop-up">
-            Our loan experts provide services right at your doorstep.
-          </div>
-
-          <div className="improv-benefit-item animate-pop-up">
-            We have a wide network and are available in rural, semi-urban, and
-            urban areas across locations.
-          </div>
-
-          <div className="improv-benefit-item animate-pop-up">
-            Apply with minimal documents, save time and effort.
-          </div>
-
-          <div className="improv-benefit-item animate-pop-up">
-            Home loan approval in simple steps with fast processing.
-          </div>
-
-          <div className="improv-benefit-item animate-pop-up">
-            Tailor-made home loans to suit your requirements.
-          </div>
-
-          <div className="improv-benefit-item animate-pop-up">
-            We maintain high levels of transparency in our relations with
-            customers.
-          </div>
-
-          <div className="improv-benefit-item animate-pop-up">
-            Connect with us on Chat, Social Media anytime, anywhere.
-          </div>
+          {[
+            "Available for with & without income proof customers",
+            "No hidden charges",
+            "Doorstep service",
+            "Easily available in rural India",
+            "Easy documentation",
+            "End to End Process",
+            "24x7 assistance",
+            "Customized Repayment Options"
+          ].map((benefit, index) => (
+            <div key={index} className="improv-benefit-item animate-pop-up">
+              {benefit}
+            </div>
+          ))}
         </div>
       </div>
 

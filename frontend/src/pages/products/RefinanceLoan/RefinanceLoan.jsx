@@ -128,37 +128,25 @@ const RefinanceLoan = () => {
         </h2>
 
         <div className="refinance-benefits-list">
-          <div className="refinance-benefit-item animate-pop-up">
-            Reduce the loan tenure to save on interest costs.
-          </div>
-
-          <div className="refinance-benefit-item animate-pop-up">
-            Opportunity to switch to a more favorable lender.
-          </div>
-
-          <div className="refinance-benefit-item animate-pop-up">
-            Access additional funds based on property equity with a top-up loan.
-          </div>
-
-          <div className="refinance-benefit-item animate-pop-up">
-            Wide network available in rural, semi-urban, and urban areas.
-          </div>
-
-          <div className="refinance-benefit-item animate-pop-up">
-            Apply with minimal documents, save time and effort.
-          </div>
-
-          <div className="refinance-benefit-item animate-pop-up">
-            Shorten the length of your loan and build up equity faster.
-          </div>
-
-          <div className="refinance-benefit-item animate-pop-up">
-            Address financial needs like home improvements or education.
-          </div>
-
-          <div className="refinance-benefit-item animate-pop-up">
-            Seamless transition to NHFL with doorstep service.
-          </div>
+          {[
+            "Easy Loan Approvals",
+            "Lowest Possible Prices",
+            "Hassle free",
+            "Secure Loan Process",
+            "Loan Tenure Change",
+            "Switching Lenders",
+            "Top-up Facility",
+            "Easily available in rural India",
+            "Easy documentation",
+            "Pay Off Your Home Loan Sooner",
+            "Switch from a Floating Interest Rate to a Fixed Interest Rate",
+            "Lower Your Interest Rate",
+            "Lower Your Monthly Payment"
+          ].map((benefit, index) => (
+            <div key={index} className="refinance-benefit-item animate-pop-up">
+              {benefit}
+            </div>
+          ))}
         </div>
       </div>
 

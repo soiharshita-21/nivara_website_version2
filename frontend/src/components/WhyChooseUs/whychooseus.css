@@ -1,49 +1,14 @@
 .why-section {
-  padding: 80px 20px;
+  padding: 100px 0;
   background: #ffffff;
   font-family: 'Poppins', sans-serif;
 }
 
-/* Pop-up Animation */
-.animate-pop-up {
-  opacity: 0;
-  transform: translateY(30px) scale(0.95);
-  transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.animate-pop-up.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
 .why-container {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
+  padding: 0 20px;
   text-align: center;
-}
-
-.why-heading {
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 1.2px;
-  color: #d32f2f;
-  background: #fdebed;
-  border: 1px solid #f3c7cd;
-  padding: 5px 30px;
-  border-radius: 999px;
-  display: inline-block;
-}
-
-.why-heading-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-.spark {
-  color: #d32f2f;
-  font-size: 18px;
 }
 
 .why-title {
@@ -65,6 +30,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+  grid-auto-rows: 1fr;
 }
 
 .why-card>* {
@@ -75,10 +41,28 @@
 .why-card {
   background: whitesmoke;
   border-radius: 24px;
-  padding: 40px;
-  transition: background 0.4s ease, transform 0.3s ease;
+  padding: 50px 40px;
+  transition: all 0.4s ease;
   overflow: hidden;
   position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  flex: 1;
+}
+
+.why-grid > * {
+  display: flex;
+}
+
+.why-card .multi-color-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 /* ✅ REDUCED CARD GLOW */
@@ -177,7 +161,7 @@
 
 .why-card.teal {
   --c: 13, 148, 136;
-  --line-bg: linear-gradient(90deg, #0f766e, #2dd4bf);
+  --line-bg: linear-gradient(90deg, #0f766e, #34d4bf55);
 }
 
 .why-card.yellow {
@@ -200,17 +184,51 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
-  padding: 22px 32px;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-  max-width: 760px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 32px 50px;
+  border-radius: 24px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  max-width: 850px;
+  position: relative;
+  z-index: 5;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.trust-badges:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-8px);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.2);
+}
+
+.trust-banner-container {
+  margin-top: 100px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.2);
 }
 
 .trust-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  align-items: center;
+  min-height: 400px;
+  padding: 80px 20px;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), 
+    url('../../assets/images/rbi.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll; /* Changed from fixed to scroll to fix lag */
+  position: relative;
+  transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.trust-banner-container:hover .trust-wrapper {
+  transform: none;
 }
 
 .trust-item {
@@ -264,13 +282,48 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .why-grid {
     grid-template-columns: 1fr;
   }
 
   .why-title {
     font-size: 32px;
+  }
+
+  .trust-banner-container {
+    border-radius: 24px;
+    margin-top: 60px;
+  }
+
+  .trust-wrapper {
+    min-height: 450px;
+    background-attachment: scroll; /* Fixed bg can be jittery on mobile */
+  }
+
+  .trust-badges {
+    flex-direction: column;
+    padding: 30px 24px;
+    gap: 20px;
+    width: 90%;
+  }
+
+  .divider {
+    width: 60%;
+    height: 1px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-title {
+    font-size: 28px;
+  }
+  
+  .trust-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
   }
 }
 

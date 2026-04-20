@@ -113,15 +113,15 @@ const HomeLoanPurchase = () => {
 
           <div className="homeloan-benefits-list">
             {[
-              "Loan is available for customers with minimum wage too and with other non-income proof documentation.",
-              "Our process is completely transparent and without any hidden charges.",
-              "Our Loan expert will provide you services right at your doorstep.",
-              "We have a wide network and are available in rural, semi-urban, and urban areas across locations.",
-              "Apply with minimal documents, save time and effort.",
-              "Home loan Approval in Simple steps.",
-              "Connect with us on Chat, Social Media anytime, anywhere.",
-              "Tailor-made home loans to suit your requirements.",
-              "We maintain high levels of transparency in our relations with customers."
+              "Available for with & without income proof customers",
+              "No hidden charges",
+              "Doorstep service",
+              "Easily available in rural India",
+              "Easy documentation",
+              "End to End Process",
+              "24x7 assistance",
+              "Customized Repayment Options",
+              "Transparent client interactions"
             ].map((benefit, index) => (
               <ScrollReveal 
                 key={index} 

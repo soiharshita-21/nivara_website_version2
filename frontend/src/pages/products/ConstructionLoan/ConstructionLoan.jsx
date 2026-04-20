@@ -94,7 +94,7 @@ const ConstructionLoan = () => {
         <p className="construction-text">
           A Home Construction Loan is a type of home loan that allows customers to obtain the necessary funds
           to finance the construction of residential house property on a piece of land. We bring over
-          <strong> 9 years of expertise</strong> in Home construction loans and our customers have been able to
+          <strong> 10 years of expertise</strong> in Home construction loans and our customers have been able to
           expedite their home construction at competitive interest rates on Home construction loans,
           affordable EMIs and a hassle-free online application process.
         </p>
@@ -164,52 +164,22 @@ const ConstructionLoan = () => {
         </h2>
 
         <div className="conloan-benefits-list">
-          <div className="conloan-benefit-item animate-pop-up">
-            Loan is available for customers with minimum wage too and with other
-            non-income proof documentation.
-          </div>
-
-          <div className="conloan-benefit-item animate-pop-up">
-            Our process is completely transparent and without any hidden
-            charges.
-          </div>
-
-          <div className="conloan-benefit-item animate-pop-up">
-            Our Loan expert will provide you services right at your doorstep.
-          </div>
-
-          <div className="conloan-benefit-item animate-pop-up">
-            We have a wide network and are available in rural, semi-urban, and
-            urban areas across locations.
-          </div>
-
-          <div className="conloan-benefit-item animate-pop-up">
-            Apply with minimal documents, save time and effort.
-          </div>
-
-          <div className="conloan-benefit-item animate-pop-up">
-            Home loan Approval in Simple steps.
-          </div>
-
-          <div className="conloan-benefit-item animate-pop-up">
-            Get quick construction loan approval and disbursal with Nivara Home
-            Finance. Say goodbye to delays and obstacles with our doorstep
-            services.
-          </div>
-
-          <div className="conloan-benefit-item animate-pop-up">
-            Connect with us on Chat, Social Media anytime, anywhere.
-          </div>
-
-          <div className="conloan-benefit-item animate-pop-up">
-            Pay your EMIs or pre-payments using multiple repayment options.
-          </div>
-
-          <div className="conloan-benefit-item animate-pop-up">
-            Tailor your offer to match your budget, eligibility, and
-            construction needs. Build your dream house with a generous loan and
-            flexible 20+ year tenure.
-          </div>
+          {[
+            "Available for with & without income proof customers",
+            "No hidden charges",
+            "Doorstep service",
+            "Easily available in rural India",
+            "Easy documentation",
+            "End to End Process",
+            "Quick and Smooth Construction Loan Disbursal",
+            "24x7 assistance",
+            "Multiple Repayment Options",
+            "Customized Construction Loan"
+          ].map((benefit, index) => (
+            <div key={index} className="conloan-benefit-item animate-pop-up">
+              {benefit}
+            </div>
+          ))}
         </div>
       </div>
       {/* Help Section */}

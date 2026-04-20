@@ -21,6 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
   box-sizing: border-box;
   overflow: visible;
 }
@@ -28,6 +29,7 @@
 .logo-link {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
   text-decoration: none;
 }
  
@@ -50,10 +52,84 @@
   z-index: 10001;
 }
  
+/* Search Group */
+.search-group {
+  margin-left: 20px;
+  flex-grow: 1;
+  max-width: 400px;
+  position: relative;
+  z-index: 10002;
+}
+
+.search-wrapper {
+  position: relative;
+  background: #f1f5f9;
+  border-radius: 12px;
+  width: 100%;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.search-wrapper.active {
+  background: white;
+  border-color: #7a142233;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 10px 40px 10px 16px;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  pointer-events: none;
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  overflow: hidden;
+  border: 1px solid #f1f5f9;
+}
+
+.search-results li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: #1e293b;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.search-results li a:hover {
+  background: #fdf2f2;
+  color: #7a1422;
+}
+
 /* Desktop Menu */
 .navbar-menu {
   display: flex;
-  gap: 30px;
+  gap: 20px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -181,6 +257,20 @@
  
 /* Mobile Responsive Styles */
 @media (max-width: 1024px) {
+  .search-group {
+    margin-left: 20px;
+    margin-right: 20px;
+    flex: 1;
+  }
+
+  .search-wrapper {
+    width: 100%;
+  }
+
+  .search-wrapper.active {
+    width: 100%;
+  }
+
   .menu-toggle {
     display: block;
   }

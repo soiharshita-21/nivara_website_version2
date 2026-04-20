@@ -53,10 +53,10 @@ const WhyChooseUs = () => {
     <section className="why-section">
       <div className="why-container">
         <ScrollReveal direction="down" distance={20}>
-          <div className="why-heading-wrapper">
-            <span className="spark">✦</span>
-            <h6 className="why-heading">Why Choose Us</h6>
-            <span className="spark">✦</span>
+          <div className="section-badge-wrapper">
+            <span className="section-badge-spark">✦</span>
+            <h6 className="section-badge-title">Why Choose Us</h6>
+            <span className="section-badge-spark">✦</span>
           </div>
         </ScrollReveal>
 
@@ -74,10 +74,10 @@ const WhyChooseUs = () => {
           {features.map((item, index) => {
             const Icon = item.icon;
             return (
-              <ScrollReveal 
-                key={index} 
-                direction="up" 
-                delay={0.1 + index * 0.1} 
+              <ScrollReveal
+                key={index}
+                direction="up"
+                delay={0.1 + index * 0.1}
                 distance={40}
                 scale={0.9}
               >
@@ -93,8 +93,10 @@ const WhyChooseUs = () => {
             );
           })}
         </div>
+      </div>
 
-        <ScrollReveal direction="up" delay={0.3}>
+      <ScrollReveal direction="up" delay={0.3} distance={40} scale={1}>
+        <div className="trust-banner-container">
           <div className="trust-wrapper">
             <div className="trust-badges">
               <div className="trust-item">
@@ -110,17 +112,16 @@ const WhyChooseUs = () => {
               <div className="trust-item">
                 <div className="trust-icon iso">✳</div>
                 <div className="trust-text">
-                  <span>ISO Certified</span>
+                  <span>ISO 27001:2022 Certified</span>
                   <h4>Quality Assured</h4>
                 </div>
               </div>
             </div>
           </div>
-        </ScrollReveal>
-      </div>
+        </div>
+      </ScrollReveal>
     </section>
   );
 };
 
 export default WhyChooseUs;
-

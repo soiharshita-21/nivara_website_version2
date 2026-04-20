@@ -131,49 +131,22 @@ const CompositeHomeLoan = () => {
         </h2>
 
         <div className="com-benefits-list">
-          <div className="com-benefit-item animate-pop-up">
-            A composite home loan covers both building and land expenditures.
-          </div>
-
-          <div className="com-benefit-item animate-pop-up">
-            Our process is completely transparent and without any hidden
-            charges.
-          </div>
-
-          <div className="com-benefit-item animate-pop-up">
-            Our loan experts provide services right at your doorstep.
-          </div>
-
-          <div className="com-benefit-item animate-pop-up">
-            We have a wide network and are available in rural, semi-urban, and
-            urban areas.
-          </div>
-
-          <div className="com-benefit-item animate-pop-up">
-            Apply with minimal documents, save time and effort.
-          </div>
-
-          <div className="com-benefit-item animate-pop-up">
-            The composite loan limit is based on your loan repayment capacity.
-          </div>
-
-          <div className="com-benefit-item animate-pop-up">
-            No prepayment fees if you go with a fluctuating interest rate.
-          </div>
-
-          <div className="com-benefit-item animate-pop-up">
-            Immediate construction is usually a mandatory requirement within 1-2
-            years.
-          </div>
-
-          <div className="com-benefit-item animate-pop-up">
-            Connect with us on Chat, Social Media anytime, anywhere.
-          </div>
-
-          <div className="com-benefit-item animate-pop-up">
-            Maintain high levels of transparency in our relations with
-            customers.
-          </div>
+          {[
+            "Different from land loans",
+            "No hidden charges",
+            "Doorstep service",
+            "Easily available in rural India",
+            "Easy documentation",
+            "Loan Amount Of Composite Home Loan (Varies based on eligibility)",
+            "Repayment Charges (Transparently disclosed)",
+            "Transparent client interactions",
+            "Immediate construction requirement",
+            "24x7 assistance"
+          ].map((benefit, index) => (
+            <div key={index} className="com-benefit-item animate-pop-up">
+              {benefit}
+            </div>
+          ))}
         </div>
       </div>
 

@@ -79,7 +79,7 @@
 .vm-section {
   display: flex;
   justify-content: center;
-  padding: 80px 20px;
+  padding: 100px 20px;
 }
 
 .vm-section.light {
@@ -88,39 +88,38 @@
 
 /* Card */
 .vm-card {
-
-  max-width: 900px;
+  max-width: 650px;
   width: 100%;
-  padding: 50px 40px;
+  padding: 40px;
   border-radius: 22px;
   text-align: center;
-
-
+  /* Centered as per screenshot */
 }
 
-
 .vm-card h2 {
-  font-size: 44px;
+  font-size: 40px;
   color: #6b1f2b;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   position: relative;
 }
 
 .vm-card h2::after {
   content: "";
-  width: 70px;
-  height: 3px;
+  width: 60px;
+  height: 4px;
   background: #a53a4a;
   display: block;
   margin: 12px auto 0;
-  border-radius: 3px;
+  /* Center the underline */
+  border-radius: 2px;
 }
 
 .vm-card p {
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.8;
   color: #444;
   margin-top: 14px;
+  text-align: center;
 }
 
 /* Mission Quote */
@@ -158,32 +157,71 @@
   }
 }
 
-/* Content Wrapper for Vision Section (Side by Side) */
 .vm-content-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 50px;
-  max-width: 1200px;
+  gap: 60px;
+  /* Perfect spacing as per image */
+  max-width: 1400px;
   width: 100%;
 }
 
 .vm-lottie-container {
-  width: 45%;
-  max-width: 450px;
-  flex-shrink: 0;
-  height: 200px;
+  max-width: 500px;
+  width: 100%;
+  flex-shrink: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure Vision Anime is perfectly aligned with text */
+.vm-section:not(.light) .vm-lottie-container {
+  margin-top: -20px;
+  /* Slight adjustment for Vision character height */
+  animation: vm-float 3s ease-in-out infinite;
+  /* Match the mission floating effect */
+}
+
+/* Ensure Mission Anime is centered to align with the text block */
+.vm-section.light .vm-content-wrapper {
+  align-items: center;
+  /* Explicit centering */
+}
+
+@keyframes vm-float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.vm-section.light .vm-lottie-container {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: vm-float 3s ease-in-out infinite;
+  /* Added dynamic floating effect */
 }
 
 @media (max-width: 900px) {
   .vm-content-wrapper {
-    flex-direction: column;
+    flex-direction: column !important;
     text-align: center;
     gap: 30px;
   }
 
   .vm-lottie-container {
-    width: 80%;
+    max-width: 350px;
     margin: 0 auto;
   }
 }

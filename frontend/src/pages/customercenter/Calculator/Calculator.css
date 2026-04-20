@@ -170,16 +170,7 @@ input[type="range"] {
 }
 
 input[type="range"]::-webkit-slider-thumb {
-  background: #7a1422;
-}
-
-input[type="range"]::-webkit-slider-runnable-track {
-  accent-color: #7a1422;
-}
-
-
-input[type="range"] {
-  accent-color: #f80324;
+  /* Dynamic color handled in JSX via accentColor */
 }
 
 @media (max-width: 1024px) {
