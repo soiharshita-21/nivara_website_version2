@@ -96,9 +96,7 @@
   margin-bottom: 30px;
 }
 
-.balance-card:hover {
-  transform: translateY(-8px);
-}
+
 
 /* Home Feature Strip */
 /* Feature Strip Section */
@@ -831,7 +829,8 @@
 }
 
 .balance-faq-section {
-  padding: 80px 20px;
+  margin-top: 60px;
+  padding: 120px 20px 80px 20px;
   background: #ffffff;
 }
 

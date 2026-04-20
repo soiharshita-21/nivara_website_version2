@@ -51,6 +51,15 @@
   transition-delay: 0.1s;
 }
 
+.page-center.improv-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f3f4f6;
+  flex-direction: column;
+}
+
 .improv-grid {
   display: flex;
   justify-content: center;
@@ -73,9 +82,7 @@
   transition: 0.4s;
 }
 
-.improv-card:hover {
-  transform: translateY(-10px);
-}
+
 
 /* Home Feature Strip */
 .improv-feature-strip {
