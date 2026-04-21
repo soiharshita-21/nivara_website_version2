@@ -5,6 +5,7 @@ import { FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, Fa
 import "./ConstructionLoan.css";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
+import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
 
 const ConstructionLoan = () => {
   const navigate = useNavigate();
@@ -197,60 +198,8 @@ const ConstructionLoan = () => {
         </div>
       </div>
 
-      <div className="clfaq-section">
-        <ScrollReveal direction="up">
-          <h2 className="clfaq-title">Your Frequently Asked Questions Answered</h2>
-        </ScrollReveal>
-
-        <div className="clfaq-list">
-          {[
-            {
-              q: "What is a construction home loan?",
-              a: "A home construction loan is an Nivara Home finance product, designed to help you construct your own home. If you have a plot of land and want to build a house to your own specifications, this product is ideal for you."
-            },
-            {
-              q: "How do I get a Nivara home construction loan?",
-              a: "Our application process is very easy. Fill out the form, and one of our relationship managers will get in touch with you to get all your details."
-            },
-            {
-              q: "What documents are needed to apply for a home construction loan?",
-              a: (
-                <>
-                  Age proof – Birth certificate, PAN card<br />
-                  Income proof – Salary slips, bank statements<br />
-                  A legal approval for construction from the Municipal Corporation<br />
-                  Approved sanction plan from the authority<br />
-                  Residence Proof – PAN Card, Passport, or any other certificate from statutory authority<br />
-                  Processing fee cheque
-                </>
-              )
-            },
-            {
-              q: "Can I get a home loan for house construction?",
-              a: "People can avail home loans to get their house constructed – either by themselves, or by employing a contractor to construct the house – on a plot that they own. Such loans are commonly termed construction loans."
-            },
-            {
-              q: "How to get money for house construction?",
-              a: "Apply for a home construction loan according to your eligibility. The lender will determine your loan eligibility based on your income and repayment capacity."
-            },
-            {
-              q: "How will my EMI for a home construction loan be calculated?",
-              a: "Your EMI is calculated based on the rate of interest charged to you at the time of application. We have two types of rates: fixed and floating, and this factors into the EMI amount you have to pay each month. To get an idea of what your EMI may look like, use our EMI calculator."
-            }
-          ].map((faq, index) => (
-            <ScrollReveal 
-              key={index} 
-              direction="up" 
-              delay={index * 0.1}
-            >
-              <div className="clfaq-item">
-                <h3>{faq.q}</h3>
-                <p>{faq.a}</p>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
-      </div>
+      {/* FAQ Section */}
+      <ServiceFaqs />
     </div>
   );
 };

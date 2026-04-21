@@ -602,61 +602,6 @@
   cursor: pointer;
 }
 
-/* Construction Loan FAQ Section */
-.clfaq-section {
-  width: 100%;
-  padding: 50px 20px;
-  background: #f9fbfd;
-}
-
-.clfaq-container {
-  max-width: 1000px;
-  margin: auto;
-}
-
-.clfaq-title {
-  text-align: center;
-  font-size: 42px;
-  font-weight: 800;
-  color: #FF6F6F !important;
-  margin-bottom: 60px;
-}
-
-/* FAQ List */
-.clfaq-list {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-
-/* FAQ Item */
-.clfaq-item {
-  background: #fff;
-  padding: 28px 30px;
-  border-radius: 10px;
-  border: 1px solid #e3eaf0;
-  transition: 0.3s;
-}
-
-.clfaq-item:hover {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  transform: translateY(-3px);
-}
-
-/* Question */
-.clfaq-item h3 {
-  font-size: 20px;
-  font-weight: 700;
-  color: #FF6F6F;
-  margin-bottom: 10px;
-}
-
-/* Answer */
-.clfaq-item p {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #6b7a90;
-}
 
 
 

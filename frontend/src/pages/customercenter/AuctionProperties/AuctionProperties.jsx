@@ -71,13 +71,13 @@ const AuctionProperties = () => {
               <div className="header-line"></div>
             </div>
           </ScrollReveal>
-          
+
           <div className="documents-grid">
             {documents.map((doc, index) => (
-              <ScrollReveal 
-                key={index} 
-                direction="up" 
-                distance={50} 
+              <ScrollReveal
+                key={index}
+                direction="up"
+                distance={50}
                 delay={0.1 * index}
                 className="doc-reveal-wrapper"
               >

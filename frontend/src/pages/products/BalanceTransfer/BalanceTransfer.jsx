@@ -5,6 +5,7 @@ import bal from "../../../assets/images/balance.jpg"; // you will replace this
 import "./BalanceTransfer.css";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
+import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
 
 const BalanceTransfer = () => {
   const navigate = useNavigate();
@@ -195,45 +196,8 @@ const BalanceTransfer = () => {
         </div>
       </div>
 
-      <div className="balance-faq-section">
-        <ScrollReveal direction="up">
-          <h2 className="balance-faq-title">
-            Balance Transfer Home Loan – Frequently Asked Questions
-          </h2>
-        </ScrollReveal>
-
-        <div className="balance-faq-content">
-          {[
-            {
-              q: "What is a balance transfer loan?",
-              a: "A loan balance transfer refers to the process of transferring your outstanding loans to a new lender."
-            },
-            {
-              q: "Why should I think about refinancing my home loan balance?",
-              a: "Paying your home loan can sometimes get challenging with high-interest rates. Refinancing can offer you a way out. If you find a lender offering lower interest rates or better loan terms than your current lender, you can think about refinancing your home loan balance. Refinancing can help you reduce your monthly EMI (Equated Monthly Installment) payments, save on interest costs, and in some cases, shorten the loan term."
-            },
-            {
-              q: "Is there a charge to transfer the rest of my home loan?",
-              a: "Yes, we charge a processing fee for the home loan balance transfer facility to TCHFL (Tata Capital Home Finance Limited). The fee can differ based on the home loan amount and other factors. You can find the exact charge in the MITC (Most Important Terms and Conditions) document that will be shared with you when you apply for refinancing to Nivara Home Finance Limited."
-            },
-            {
-              q: "What are the documents required for a balance transfer loan?",
-              a: "Age Proof, Address Proof, KYC Documents, Home Loan Approval Letter, Interest certificates from the initial lender, and with or without income proof documents."
-            }
-          ].map((faq, index) => (
-            <ScrollReveal 
-              key={index} 
-              direction="up" 
-              delay={index * 0.1}
-            >
-              <div className="balance-faq-item">
-                <h4>{faq.q}</h4>
-                <p>{faq.a}</p>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
-      </div>
+      {/* FAQ Section */}
+      <ServiceFaqs />
     </section>
   );
 };

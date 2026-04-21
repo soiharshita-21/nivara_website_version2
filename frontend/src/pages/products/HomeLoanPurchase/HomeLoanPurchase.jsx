@@ -4,6 +4,7 @@ import { FaHome, FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhon
 import "./HomeLoanPurchase.css";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
+import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
 
 const HomeLoanPurchase = () => {
   const navigate = useNavigate();
@@ -206,66 +207,9 @@ const HomeLoanPurchase = () => {
       </ScrollReveal>
 
       {/* FAQ Section */}
-      <div className="faq-section">
-        <ScrollReveal direction="up">
-          <h2 className="faq-title">
-            Home Loan Purchase: Your Frequently Asked Questions Answered
-          </h2>
-        </ScrollReveal>
-
-        <div className="faq-list">
-          {[
-            {
-              q: "What is the need of a Home Loan?",
-              a: (
-                <>
-                  <p>Customers can avail Home Loan for a variety of purposes that includes but not limited to:</p>
-                  <ul>
-                    <li>For the purpose of purchasing the Home/Flat.</li>
-                    <li>For the purpose of Renovation.</li>
-                    <li>For the purpose of Construction of Home.</li>
-                    <li>For the purpose of Balance transfer of running Home Loan to NHFL.</li>
-                  </ul>
-                </>
-              )
-            },
-            {
-              q: "Is a personal loan better than a home loan Purchase?",
-              a: "For buying a house, a home loan is more suitable due to higher amounts. Personal loans are ideal for non-specific personal needs."
-            },
-            {
-              q: "Can I buy a house with two loans?",
-              a: "No, availing two home loans for the same property is considered fraudulent and prevented by authorities."
-            },
-            {
-              q: "Can we buy property on loan?",
-              a: "Loan for land purchase is offered by banks when you need financing to buy a plot or a piece of land. This loan is generally provided for residential purposes and in urban areas. However, some banks do let you use the loan amount to purchase land in a rural area."
-            },
-            {
-              q: "Can I switch from a fixed rate to a floating rate during my home loan tenure?",
-              a: "Yes, you can switch from a fixed to floating rate of interest on your home loan during the repayment tenure. However, you will be charged a conversion fee by the lender in such cases."
-            },
-            {
-              q: "What is the meaning of home loan purchase?",
-              a: "A home loan is a secured loan that is obtained to purchase a property by offering it as collateral."
-            }
-          ].map((faq, index) => (
-            <ScrollReveal 
-              key={index} 
-              direction="up" 
-              delay={index * 0.1}
-            >
-              <div className="faq-item">
-                <h3>{faq.q}</h3>
-                {typeof faq.a === 'string' ? <p>{faq.a}</p> : faq.a}
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
-      </div>
+      <ServiceFaqs />
     </div>
   );
 };
 
 export default HomeLoanPurchase;
-

@@ -6,6 +6,7 @@ import { FaHome, FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhon
 import "./LoanAgainstProperty.css";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
+import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
 
 const LoanAgainstProperty = () => {
   const navigate = useNavigate();
@@ -197,61 +198,8 @@ const LoanAgainstProperty = () => {
         </div>
       </div>
 
-      <div className="lap-faq-section">
-        <ScrollReveal direction="up">
-          <h2 className="lap-faq-heading">Loan Against Property FAQs</h2>
-        </ScrollReveal>
-
-        <div className="lap-faq-list">
-          {[
-            {
-              q: "What is a Loan Against Property?",
-              a: "A loan against property (LAP) is a secured loan that banks, housing finance companies and NBFCs provide against residential or commercial property. These loans typically have lower interest rates compared to personal or business loans and are disbursed in a reasonable time. Anyone with a pre-owned property can avail such loans, whether salaried or self-employed. The quantum of loan sanctioned is also higher than other available options."
-            },
-            {
-              q: "Is loan against property a good idea?",
-              a: "Yes. LAP offers better benefits compared to personal loans. It provides greater flexibility, lower interest rates, higher loan amounts, and longer repayment tenure. It is best suited for business owners and self-employed professionals."
-            },
-            {
-              q: "Can I convert a loan against property to a home loan?",
-              a: "Yes, it is possible to convert a LAP (Loan Against Property) into a home loan. However, the process and eligibility criteria vary depending on the lending institution and the original loan terms."
-            },
-            {
-              q: "How does Loan Against Property work?",
-              a: "Loan Against Property is a secured loan where borrowers pledge their property as collateral to avail funds. The loan amount is determined based on the property’s value and the borrower’s repayment capacity."
-            },
-            {
-              q: "Who can avail Loan Against Property from Nivara Home Finance?",
-              a: "Any Resident Indian individual, partnership firm, or company can apply for a Loan Against Property with Nivara Home Finance."
-            },
-            {
-              q: "What are the documents required to apply for Loan Against Property?",
-              a: (
-                <>
-                  <p>Along with the application form, the following documents are required:</p>
-                  <ul>
-                    <li>Proof of residence</li>
-                    <li>Proof of identity</li>
-                    <li>Latest financial documents</li>
-                    <li>Copies of all property documents</li>
-                  </ul>
-                </>
-              )
-            }
-          ].map((faq, index) => (
-            <ScrollReveal 
-              key={index} 
-              direction="up" 
-              delay={index * 0.1}
-            >
-              <div className="lap-faq-item">
-                <h4>{faq.q}</h4>
-                {typeof faq.a === 'string' ? <p>{faq.a}</p> : faq.a}
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
-      </div>
+      {/* FAQ Section */}
+      <ServiceFaqs />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import com from "../../../assets/images/composite.jpg";
 import "./CompositeHomeLoan.css";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
+import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
 
 const CompositeHomeLoan = () => {
   const navigate = useNavigate();
@@ -198,43 +199,8 @@ const CompositeHomeLoan = () => {
         </div>
       </div>
 
-      <div className="composite-faq-section">
-        <ScrollReveal direction="up">
-          <h2 className="composite-faq-title">Composite Home Loan FAQs</h2>
-        </ScrollReveal>
-
-        <div className="composite-faq-content">
-          {[
-            {
-              q: "What is a composite loan?",
-              a: "Composite loan is a loan extended by banks and financial institutions for the purpose of purchasing a plot or land and constructing a house on it within a given timeline. It’s a combination of a plot loan and a construction loan. In this type of loan, the cost of both land or plot and construction of the house is covered."
-            },
-            {
-              q: "What is a composite home loan scheme in Nivara Home Finance?",
-              a: "A composite home loan scheme is a similar housing loan that includes all components of home development, such as land purchase and construction costs. This loan is different from regular home loans because it lets you buy land and build a house within a certain amount of time."
-            },
-            {
-              q: "Can we claim a composite loan?",
-              a: "By completing your house construction within three years, you become eligible for tax benefits on your composite loan."
-            },
-            {
-              q: "What are the benefits of a composite loan?",
-              a: "The composite loan tax benefits include combining land and construction costs and tax incentives."
-            }
-          ].map((faq, index) => (
-            <ScrollReveal 
-              key={index} 
-              direction="up" 
-              delay={index * 0.1}
-            >
-              <div className="composite-faq-item">
-                <h4>{faq.q}</h4>
-                <p>{faq.a}</p>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
-      </div>
+      {/* FAQ Section */}
+      <ServiceFaqs />
     </div>
   );
 };

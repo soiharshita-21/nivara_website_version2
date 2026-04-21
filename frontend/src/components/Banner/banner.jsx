@@ -36,8 +36,8 @@ const Banner = () => {
   <span className="flip-wrapper">
     <span className="flip-inner">Trusted</span>
   </span>{" "}
-  Partner for <br />
-  <span>Housing Finance</span>
+  Partner <br />
+  for <span>Housing Finance</span>
 </h1>
               <p>
                 Affordable home loans with transparent processes.
@@ -84,8 +84,8 @@ const Banner = () => {
   <span className="flip-wrapper">
     <span className="flip-inner">Trusted</span>
   </span>{" "}
-  Partner for <br />
-  <span>Housing Finance</span>
+  Partner <br />
+  for <span>Housing Finance</span>
 </h1>
 
               <p>
@@ -133,8 +133,8 @@ const Banner = () => {
   <span className="flip-wrapper">
     <span className="flip-inner">Trusted</span>
   </span>{" "}
-  Partner for <br />
-  <span>Housing Finance</span>
+  Partner <br />
+  for <span>Housing Finance</span>
 </h1>
               <p>
                 Affordable home loans with transparent processes.

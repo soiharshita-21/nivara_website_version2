@@ -627,64 +627,8 @@
 }
 
 /* ============================ */
-/* Composite Loan FAQ Section */
-/* ============================ */
-
-.composite-faq-section {
-  width: 100%;
-  padding: 80px 8%;
-  background: #ffffff;
-}
-
-.composite-faq-title {
-  font-size: 38px;
-  font-weight: 700;
-  color: #42c6b9;
-  /* same as strip color */
-  margin-bottom: 40px;
-}
-
-.composite-faq-content {
-  max-width: 1100px;
-}
-
-.composite-faq-item {
-  margin-bottom: 28px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid #e8f3f3;
-}
-
-.composite-faq-item h4 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #42c6b9;
-  margin-bottom: 10px;
-}
-
-.composite-faq-item p {
-  font-size: 16.5px;
-  line-height: 1.8;
-  color: #2f3e46;
-}
 
 /* Responsive */
-@media(max-width: 768px) {
-  .composite-faq-section {
-    padding: 60px 6%;
-  }
-
-  .composite-faq-title {
-    font-size: 30px;
-  }
-
-  .composite-faq-item h4 {
-    font-size: 18px;
-  }
-
-  .composite-faq-item p {
-    font-size: 15.5px;
-  }
-}
 
 /* Responsive */
 @media(max-width: 900px) {

@@ -4,6 +4,7 @@ import ref from "../../../assets/images/refinance.jpg";
 import "./RefinanceLoan.css";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
+import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
 
 const RefinanceLoan = () => {
   const navigate = useNavigate();
@@ -200,51 +201,8 @@ const RefinanceLoan = () => {
         </div>
       </div>
 
-      <div className="refinance-faq-section">
-        <ScrollReveal direction="up">
-          <h2 className="refinance-faq-title">Frequently Asked Questions</h2>
-        </ScrollReveal>
-
-        <div className="refinance-faq-content">
-          {[
-            {
-              q: "What is refinancing a home loan?",
-              a: "Refinancing your home loan is nothing but a home loan balance transfer. It simply means the option to switch to another lender who can give a lower home loan interest rate."
-            },
-            {
-              q: "When can I refinance my house?",
-              a: "You can refinance your house when you believe it makes financial sense, typically when you can secure lower interest rates, better loan terms, or achieve other financial goals through the process."
-            },
-            {
-              q: "What do the best home loan and refinancing deals offer?",
-              a: "● Lower Interest Rates ● Reduced Monthly Payments ● Shorter Loan Terms ● Switching Loan Types"
-            },
-            {
-              q: "How many times can you refinance a Home loan?",
-              a: "There is no strict limit on how many times you can refinance a mortgage loan, but it’s essential to consider the associated costs and benefits for each refinancing"
-            },
-            {
-              q: "Is it beneficial to refinance a home loan?",
-              a: "Yes, refinancing a home loan can be highly beneficial. It offers the opportunity to secure lower interest rates, adjust loan terms, consolidate debts, access home equity, and enhance your overall financial situation"
-            },
-            {
-              q: "What is the correlation between home loan interest rates and refinancing?",
-              a: "The decision to refinance a home loan is heavily influenced by interest rates. When interest rates fall by even a modest amount, it can result in significant savings over the life of the loan. Keep an eye on the economy and interest rate forecasts. If rates are predicted to climb, you might wish to refinance sooner rather than later to secure favorable home loan refinancing rates."
-            }
-          ].map((faq, index) => (
-            <ScrollReveal 
-              key={index} 
-              direction="up" 
-              delay={index * 0.1}
-            >
-              <div className="refinance-faq-item">
-                <h3>{faq.q}</h3>
-                <p>{faq.a}</p>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
-      </div>
+      {/* FAQ Section */}
+      <ServiceFaqs />
     </div>
   );
 };

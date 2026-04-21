@@ -46,17 +46,14 @@ const OurInsurancePartners = () => {
         <h1 className="banner-title animate-pop-up">Our Insurance Partners</h1>
       </div>
 
-      {/* Continuous Marquee */}
-      <div className="insurance-marquee-container animate-pop-up">
-        <div className="insurance-marquee-wrapper">
-          <div className="insurance-marquee-track">
-            {/* Repeat partners for seamless loop */}
-            {[...partners, ...partners, ...partners].map((img, index) => (
-              <div className="insurance-marquee-item" key={index}>
-                <img src={img} alt={`partner-${index}`} />
-              </div>
-            ))}
-          </div>
+      {/* Partners Grid */}
+      <div className="insurance-grid-container">
+        <div className="insurance-grid">
+          {partners.map((img, index) => (
+            <div className="insurance-card animate-pop-up" key={index}>
+              <img src={img} alt={`partner-${index}`} />
+            </div>
+          ))}
         </div>
       </div>
 

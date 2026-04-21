@@ -46,21 +46,18 @@ const Lenders = () => {
         </div>
       </ScrollReveal>
 
-      {/* Continuous Marquee */}
-      <ScrollReveal direction="up" delay={0.2}>
-        <div className="lenders-marquee-container">
-          <div className="lenders-marquee-wrapper">
-            <div className="lenders-marquee-track">
-              {/* Double the lenders for seamless loop */}
-              {[...lenders, ...lenders].map((logo, index) => (
-                <div className="lender-marquee-item" key={index}>
-                  <img src={logo} alt={`lender-${index}`} />
-                </div>
-              ))}
-            </div>
-          </div>
+      {/* Lenders Grid */}
+      <div className="lenders-grid-container">
+        <div className="lenders-grid">
+          {lenders.map((logo, index) => (
+            <ScrollReveal direction="up" delay={(index % 4) * 0.1} key={index}>
+              <div className="lender-card">
+                <img src={logo} alt={`lender-${index}`} />
+              </div>
+            </ScrollReveal>
+          ))}
         </div>
-      </ScrollReveal>
+      </div>
     </div>
   );
 };

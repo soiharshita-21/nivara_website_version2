@@ -4,6 +4,7 @@ import rev from "../../../assets/images/Renovation.jpg";
 import "./ImprovementandExtension.css";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
+import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
 
 const ImprovementandExtension = () => {
   const navigate = useNavigate();
@@ -198,47 +199,8 @@ const ImprovementandExtension = () => {
         </div>
       </div>
 
-      <div className="improv-faq-section">
-        <ScrollReveal direction="up">
-          <h2 className="improv-faq-title">Frequently Asked Questions</h2>
-        </ScrollReveal>
-
-        <div className="improv-faq-content">
-          {[
-            {
-              q: "What is the Home Loan Extension / Home Loan Improvement?",
-              a: "It is a loan to extend or add living space to your home such as additional rooms, floors, and other structural extensions."
-            },
-            {
-              q: "Who can avail of an Extension Home Loan?",
-              a: "Any person who wishes to add space to their existing Apartment, Floor, or Row house can avail a Home Extension Loan from Nivara Home Finance. Existing home loan customers can also avail a Home Extension Loan."
-            },
-            {
-              q: "Can a Home Renovation loan fund the purchase of furniture?",
-              a: "No. A home improvement loan can only be used to fund the structural renovation of your home. It cannot be used to purchase movable objects such as furniture or electronic gadgets."
-            },
-            {
-              q: "What comes under home renovation?",
-              a: "You can use your house renovation loan for a variety of improvements such as renovations, repairs, flooring, extensions, and painting. In short, the loan can be utilized for overall development and improvement of your home."
-            },
-            {
-              q: "What are the documents required for a home loan extension from Nivara Home Finance?",
-              a: "The following documents are required: PAN Card (mandatory), Passport, Voter ID, Aadhar Card, Driving License, Construction Estimate, and Property Documents."
-            }
-          ].map((faq, index) => (
-            <ScrollReveal 
-              key={index} 
-              direction="up" 
-              delay={index * 0.1}
-            >
-              <div className="improv-faq-item">
-                <h4>{faq.q}</h4>
-                <p>{faq.a}</p>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
-      </div>
+      {/* FAQ Section */}
+      <ServiceFaqs />
     </div>
   );
 };

@@ -795,43 +795,6 @@
   cursor: pointer;
 }
 
-
-.refinance-faq-section {
-  width: 100%;
-  padding: 80px 8%;
-  background: #ffffff;
-}
-
-.refinance-faq-title {
-  font-size: 38px;
-  font-weight: 700;
-  color: peru;
-  margin-bottom: 40px;
-}
-
-.refinance-faq-content {
-  max-width: 1100px;
-}
-
-.refinance-faq-item {
-  margin-bottom: 28px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid #e8f3f3;
-}
-
-.refinance-faq-item h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: peru;
-  margin-bottom: 10px;
-}
-
-.refinance-faq-item p {
-  font-size: 16.5px;
-  line-height: 1.8;
-  color: #2f3e46;
-}
-
 .refinance-bottom-strip {
   height: 6px;
   width: 100%;
@@ -839,21 +802,6 @@
 }
 
 @media(max-width: 768px) {
-  .refinance-faq-section {
-    padding: 60px 6%;
-  }
-
-  .refinance-faq-title {
-    font-size: 30px;
-  }
-
-  .refinance-faq-item h3 {
-    font-size: 18px;
-  }
-
-  .refinance-faq-item p {
-    font-size: 15.5px;
-  }
 }
 
 

@@ -1,0 +1,137 @@
+.service-faq-wrapper {
+  padding: 80px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-faq-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.service-faq-title {
+  font-size: 36px;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.service-faq-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--primary-color, #ed1c24);
+  border-radius: 2px;
+}
+
+.service-faq-subtitle {
+  color: #666;
+  font-size: 18px;
+}
+
+.service-faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.service-faq-item {
+  background: #ffffff;
+  border: 1px solid #eef0f2;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.service-faq-item:hover {
+  border-color: var(--primary-color, #ed1c24);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.service-faq-item.active {
+  border-color: var(--primary-color, #ed1c24);
+  background: #fffafa;
+}
+
+.service-faq-question {
+  padding: 22px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.service-faq-question h3 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 600;
+  color: #2d3436;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.service-faq-item.active .service-faq-question h3 {
+  color: var(--primary-color, #ed1c24);
+}
+
+.service-faq-icon {
+  color: #b2bec3;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.service-faq-item.active .service-faq-icon {
+  color: var(--primary-color, #ed1c24);
+  transform: rotate(0deg);
+}
+
+.service-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-faq-item.active .service-faq-answer {
+  max-height: 500px; /* Large enough to fit content */
+}
+
+.answer-content {
+  padding: 0 30px 25px 30px;
+}
+
+.answer-content p {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .service-faq-wrapper {
+    padding: 60px 20px;
+  }
+  
+  .service-faq-title {
+    font-size: 28px;
+  }
+  
+  .service-faq-question {
+    padding: 18px 20px;
+  }
+  
+  .service-faq-question h3 {
+    font-size: 17px;
+  }
+  
+  .answer-content {
+    padding: 0 20px 20px 20px;
+  }
+}

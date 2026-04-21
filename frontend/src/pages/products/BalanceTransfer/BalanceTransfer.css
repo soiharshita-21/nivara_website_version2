@@ -828,44 +828,6 @@
   cursor: pointer;
 }
 
-.balance-faq-section {
-  margin-top: 60px;
-  padding: 120px 20px 80px 20px;
-  background: #ffffff;
-}
-
-.balance-faq-title {
-  text-align: center;
-  font-size: 34px;
-  font-weight: 700;
-  color: #ff4f9a;
-  margin-bottom: 50px;
-  padding-right: 80px;
-}
-
-.balance-faq-content {
-  max-width: 1000px;
-  margin: auto;
-}
-
-.balance-faq-item {
-  margin-bottom: 28px;
-  padding-bottom: 22px;
-  border-bottom: 1px solid #eee;
-}
-
-.balance-faq-item h4 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #ff4f9a;
-  margin-bottom: 10px;
-}
-
-.balance-faq-item p {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #555;
-}
 
 
 /* Responsive */
