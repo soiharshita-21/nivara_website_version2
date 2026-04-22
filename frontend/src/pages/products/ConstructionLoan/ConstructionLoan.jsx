@@ -18,9 +18,9 @@ const ConstructionLoan = () => {
             <div className="conloan-card" key={index}>
               <div className="conloan-image">
                 <img src={con} alt="Construction Loan" />
-                <div className="image-overlay"></div>
-                <div className="cen-icon">
-                  <FiHome className="icon-rotatecon" />
+                <div className="conloan-overlay"></div>
+                <div className="conloan-center-icon">
+                  <FiHome className="conloan-icon-rotate" />
                 </div>
               </div>
 

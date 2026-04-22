@@ -52,8 +52,8 @@
 }
 
 :root {
-  --theme: #8b1d2c;
-  --light: #fbf6f6;
+  --theme: #2e7d32;
+  --light: #f0f7f0;
 }
 
 .page-center.construction-page {
@@ -90,13 +90,13 @@
 }
 
 
-.cen-icon {
+.conloan-center-icon {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   background: white;
   border-radius: 20px;
   display: flex;
@@ -108,20 +108,20 @@
 }
 
 /* ===== ICON STYLE ===== */
-.icon-rotatecon {
-  font-size: 36px;
-  color: var(--theme);
-  transition: transform 0.8s ease;
+.conloan-icon-rotate {
+  font-size: 34px;
+  color: #2e7d32;
+  transition: transform 0.6s ease;
 }
 
 
-.conloan-card:hover .icon-rotatecon {
+.conloan-card:hover .conloan-icon-rotate {
   transform: rotate(360deg);
 }
 
 
 /* ===== OPTIONAL PREMIUM EFFECT ===== */
-.conloan-card:hover .cen-icon {
+.conloan-card:hover .conloan-center-icon {
   transform: translate(-50%, -50%) scale(1.05);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
@@ -150,10 +150,10 @@
   object-fit: cover;
 }
 
-.image-overlay {
+.conloan-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(139, 29, 44, 0.35);
+  background: rgba(46, 125, 50, 0.28);
 }
 
 /* ================= CONTENT ================= */
@@ -166,14 +166,14 @@
 }
 
 .conloan-content h2 {
-  color: var(--theme);
+  color: #2e7d32;
   font-size: 24px;
   font-weight: 800;
   margin-bottom: 10px;
   text-align: left;
 }
 
-.subtitle {
+.construction-page .subtitle {
   color: #6b7280;
   font-size: 15px;
   margin-bottom: 20px;
@@ -184,13 +184,13 @@
 }
 
 /* ================= FEATURES ================= */
-.features {
+.construction-page .features {
   list-style: none;
   padding: 0;
   margin: 0 0 26px 0;
 }
 
-.features li {
+.construction-page .features li {
   margin-bottom: 12px;
   font-size: 16px;
   color: #475569;
@@ -200,13 +200,13 @@
   align-items: center;
 }
 
-.features li::before {
+.construction-page .features li::before {
   content: "✓";
   position: absolute;
   left: 0;
   width: 22px;
   height: 22px;
-  background-color: var(--theme);
+  background-color: #2e7d32;
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -254,13 +254,13 @@
 
 .con-loan-btn-solid:hover {
   transform: translateY(-2px);
-  box-shadow: #FF6F6F;
+  box-shadow: 0 10px 25px rgba(46, 125, 50, 0.2);
 }
 
 /* Normal state (before hover) */
 .home-loan-btn-solid {
   flex: 1;
-  background: #FF6F6F;
+  background: #2e7d32;
   /* default color */
   color: #fff;
   border: none;
@@ -273,7 +273,7 @@
 
 /* Hover state */
 .home-loan-btn-solid:hover {
-  background: #FF6F6F;
+  background: #1b5e20;
   /* hover color */
   color: #fff;
   transform: translateY(-2px);
@@ -301,7 +301,7 @@
   animation-delay: 0.3s;
 }
 
-@keyframes fillStrip {
+@keyframes fillStripGreen {
   from {
     width: 0%;
   }
@@ -311,14 +311,14 @@
   }
 }
 
-.con-loan-bottom-strip {
+.construction-page .con-loan-bottom-strip {
   height: 6px;
   width: 0%;
-  background: var(--theme);
+  background: #2e7d32;
 }
 
-.conloan-card.visible .con-loan-bottom-strip {
-  animation: fillStrip 3s ease-in-out forwards;
+.construction-page .conloan-card.visible .con-loan-bottom-strip {
+  animation: fillStripGreen 3s ease-in-out forwards;
 }
 
 .construction-text-section {
@@ -331,14 +331,14 @@
 .construction-main-title {
   font-size: 42px;
   font-weight: 800;
-  color: #FF6F6F !important;
+  color: #2e7d32 !important;
   margin-bottom: 16px;
 }
 
 .construction-sub-heading {
   font-size: 26px;
   font-weight: 700;
-  color: #FF6F6F !important;
+  color: #2e7d32 !important;
   margin-bottom: 14px;
 }
 
@@ -352,14 +352,14 @@
 .construction-title {
   font-size: 42px;
   font-weight: 700;
-  color: #FF6F6F !important;
+  color: #2e7d32 !important;
   margin-bottom: 10px;
 }
 
 .construction-subtitle {
   font-size: 20px;
   font-weight: 500;
-  color: #FF6F6F;
+  color: #2e7d32;
   margin-bottom: 25px;
 }
 
@@ -382,7 +382,7 @@
 .conloan-benefits-title {
   font-size: 34px;
   font-weight: 700;
-  color: #FF6F6F !important;
+  color: #2e7d32 !important;
   margin-bottom: 45px;
   text-align: left;
   line-height: 1.2;
@@ -400,7 +400,7 @@
   font-size: 16px;
   line-height: 1.6;
   color: #374151;
-  border-left: 5px solid #FF6F6F;
+  border-left: 5px solid #2e7d32;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -447,7 +447,7 @@
 .conloan-feature-icon {
   font-size: 40px;
   margin-bottom: 20px;
-  color: #FF6F6F;
+  color: #2e7d32;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -456,7 +456,7 @@
 .conloan-circle-check-icon {
   width: 50px;
   height: 50px;
-  background-color: #FF6F6F;
+  background-color: #2e7d32;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -523,7 +523,7 @@
 .conloan-help-title {
   font-size: 42px;
   font-weight: 800;
-  color: #FF6F6F !important;
+  color: #2e7d32 !important;
   margin-bottom: 12px;
   text-align: center;
 }
@@ -562,7 +562,7 @@
 /* Icon */
 .conloan-help-icon {
   font-size: 40px;
-  color: #FF6F6F;
+  color: #2e7d32;
   margin-bottom: 20px;
 }
 
@@ -581,14 +581,14 @@
 }
 
 .conloan-help-green {
-  color: #FF6F6F;
+  color: #2e7d32;
   font-size: 22px;
   margin: 10px 0;
   font-weight: 700;
 }
 
 .conloan-help-mail {
-  color: #FF6F6F;
+  color: #2e7d32;
   margin-bottom: 20px;
 }
 
@@ -596,9 +596,9 @@
 .conloan-help-link {
   display: inline-block;
   margin-top: 25px;
-  color: #FF6F6F !important;
+  color: #2e7d32 !important;
   font-weight: 600;
-  border-bottom: 2px solid #FF6F6F !important;
+  border-bottom: 2px solid #2e7d32 !important;
   cursor: pointer;
 }
 
@@ -647,7 +647,7 @@
 .quote-ti {
   font-size: 42px;
   font-weight: 700;
-  color: #FF6F6F !important;
+  color: #2e7d32 !important;
   margin-bottom: 10px;
 }
 
@@ -684,13 +684,13 @@
 
 /* Focus */
 .form-grid input:focus {
-  border-color: #FF6F6F;
+  border-color: #2e7d32;
 }
 
 /* Button */
 .quote-b {
   grid-column: 2 / 3;
-  background: #FF6F6F;
+  background: #2e7d32;
   color: #fff;
   border: none;
   padding: 18px;
@@ -704,7 +704,7 @@
 
 /* Button hover */
 .quote-b:hover {
-  background: #c62828;
+  background: #1b5e20;
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
@@ -747,16 +747,16 @@
 
 
 .construction-page {
-  --theme: #ff6b6b;
-  --light: #fff3f3;
+  --theme: #2e7d32;
+  --light: #f0f7f0;
 }
 
 .construction-page .image-overlay {
-  background: rgba(255, 107, 107, 0.35);
+  background: rgba(46, 125, 50, 0.35);
 }
 
 .construction-page .btn-solid:hover {
-  box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+  box-shadow: 0 10px 25px rgba(46, 125, 50, 0.4);
 }
 
 @media (max-width: 1100px) {

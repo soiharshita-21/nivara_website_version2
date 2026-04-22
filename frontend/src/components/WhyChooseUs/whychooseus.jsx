@@ -14,7 +14,7 @@ const features = [
     title: "Easy Approval",
     desc: "Hassle-free and fast loan approvals",
     icon: CheckCircle,
-    color: "rose",
+    color: "red",
   },
   {
     title: "Competitive Rates",
@@ -32,7 +32,7 @@ const features = [
     title: "Minimal Paperwork",
     desc: "Simple and transparent process",
     icon: FileText,
-    color: "yellow",
+    color: "gold",
   },
   {
     title: "Quick Disbursement",

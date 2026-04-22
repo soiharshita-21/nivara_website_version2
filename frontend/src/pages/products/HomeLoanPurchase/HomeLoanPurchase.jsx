@@ -15,11 +15,11 @@ const HomeLoanPurchase = () => {
         <div className="loan-card-grid">
           {[1].map((item, index) => (
             <div className="loan-card" key={index}>
-              <div className="loan-image">
-                <img src={pur} alt="Home Loan" />
-                <div className="image-overlay"></div>
-                <div className="center-icon">
-                  <FaHome className="icon-rotate" />
+              <div className="homeloan-image">
+                <img src={pur} alt="Home Purchase Loan" />
+                <div className="homeloan-overlay"></div>
+                <div className="homeloan-center-icon">
+                  <FaHome className="homeloan-icon-rotate" />
                 </div>
               </div>
 

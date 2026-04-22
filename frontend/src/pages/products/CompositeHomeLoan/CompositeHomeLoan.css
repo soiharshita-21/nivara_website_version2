@@ -71,15 +71,17 @@
 }
 
 
-.composite-card {
+.comploan-card {
   width: 100%;
   max-width: 900px;
   background: #fff;
-  border-radius: 22px;
+  border-radius: 28px;
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  font-family: "Poppins";
   position: relative;
-  transition: 0.4s;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 
@@ -96,7 +98,7 @@
 .com-benefits-title {
   font-size: 34px;
   font-weight: 700;
-  color: #42c6b9 !important;
+  color: #d32f2f !important;
   margin-bottom: 45px;
   text-align: left;
   line-height: 1.2;
@@ -114,7 +116,7 @@
   font-size: 16px;
   line-height: 1.6;
   color: #374151;
-  border-left: 5px solid #42c6b9;
+  border-left: 5px solid #d32f2f;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -130,53 +132,57 @@
 }
 
 
-.composite-imagebox {
+.comploan-image {
   height: 360px;
   position: relative;
   overflow: hidden;
 }
 
-.composite-imagebox img {
+.comploan-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-
-.composite-icon {
-  width: 90px;
-  height: 90px;
-  background: #fff;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 42px;
-  color: #42c6b9;
+.comploan-center-icon {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: 0.7s ease;
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: 0.6s ease;
 }
 
 
-.composite-card:hover .composite-rotate-icon {
+.comploan-icon-rotate {
+  font-size: 38px;
+  color: #d32f2f;
+  transition: transform 0.6s ease-in-out;
+}
+
+.comploan-card:hover .comploan-icon-rotate {
   transform: rotate(360deg);
   transition: 0.7s;
 }
 
-.composite-overlay {
+.comploan-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(66, 198, 185, 0.28);
-  opacity: 1;
+  background: rgba(211, 47, 47, 0.28);
   transition: 0.5s ease;
 }
 
 
-.composite-card:hover .composite-overlay {
-  background: rgba(66, 198, 185, 0.42);
+.comploan-card:hover .comploan-overlay {
+  background: rgba(211, 47, 47, 0.42);
 }
 
 
@@ -187,15 +193,16 @@
 .composite-content h2 {
   font-size: 26px;
   font-weight: 800;
-  color: #42c6b9;
+  color: #d32f2f;
   margin-bottom: 10px;
 }
 
-.composite-subtitle {
-  font-size: 16px;
-  color: #6b7a90;
+.composite-page .composite-subtitle {
+  font-size: 15px;
+  color: #6b7280;
   margin-bottom: 20px;
   text-align: left;
+  line-height: 1.6;
 }
 
 
@@ -221,7 +228,7 @@
   left: 0;
   width: 22px;
   height: 22px;
-  background-color: #42c6b9;
+  background-color: #d32f2f;
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -232,40 +239,47 @@
 }
 
 
-.composite-buttons {
+.composite-page .composite-buttons {
   display: flex;
   gap: 14px;
   width: 100%;
 }
 
-.composite-buttons:hover {
-  color: whitesmoke;
-}
-
-.composite-btn-outline {
+.composite-page .composite-btn-outline {
   flex: 1;
+  padding: 10px 22px;
+  border: 2px solid #d32f2f;
   background: transparent;
-  border: 2px solid #42c6b9;
-  color: #42c6b9;
-  padding: 12px;
-  border-radius: 10px;
+  color: #d32f2f;
+  border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-.composite-btn-outline:hover {
-  color: aqua;
+.composite-page .composite-btn-outline:hover {
+  background: #d32f2f;
+  color: #fff;
 }
 
-.comp-loan-btn-solid {
+.composite-page .comp-loan-btn-solid {
   flex: 1;
-  background: #42c6b9;
+  padding: 10px 22px;
+  background: #d32f2f;
   color: #fff;
   border: none;
-  padding: 12px;
-  border-radius: 10px;
+  border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.composite-page .comp-loan-btn-solid:hover {
+  background: #b71c1c;
 }
 
 @keyframes slideIn {
@@ -289,7 +303,7 @@
   animation-delay: 0.3s;
 }
 
-@keyframes fillStrip {
+@keyframes fillStripRedComp {
   from {
     width: 0%;
   }
@@ -299,17 +313,17 @@
   }
 }
 
-.composite-loan-bottom-strip {
-  height: 8px;
+.composite-page .home-loan-bottom-strip {
+  height: 6px;
   width: 0%;
-  background: #42c6b9;
+  background: #d32f2f;
   position: absolute;
   bottom: 0;
   left: 0;
 }
 
-.composite-card.visible .composite-loan-bottom-strip {
-  animation: fillStrip 3s ease-in-out forwards;
+.composite-page .comploan-card.visible .home-loan-bottom-strip {
+  animation: fillStripRedComp 3s ease-in-out forwards;
 }
 
 .composite-text-section {
@@ -323,7 +337,7 @@
 .composite-main-title {
   font-size: 42px;
   font-weight: 800;
-  color: #42c6b9;
+  color: #d32f2f;
   margin-bottom: 16px;
 }
 
@@ -331,7 +345,7 @@
 .composite-sub-heading {
   font-size: 26px;
   font-weight: 700;
-  color: #42c6b9;
+  color: #d32f2f;
   margin-bottom: 14px;
 }
 
@@ -339,7 +353,7 @@
 .composite-highlight {
   font-size: 20px;
   font-weight: 600;
-  color: #42c6b9;
+  color: #d32f2f;
   margin-bottom: 28px;
 }
 
@@ -392,7 +406,7 @@
 .com-feature-icon {
   font-size: 40px;
   margin-bottom: 20px;
-  color: #42c6b9;
+  color: #d32f2f;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -401,7 +415,7 @@
 .com-circle-check-icon {
   width: 50px;
   height: 50px;
-  background-color: #42c6b9;
+  background-color: #d32f2f;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -474,14 +488,14 @@
 .com-quote-ti {
   font-size: 42px;
   font-weight: 700;
-  color: #42c6b9;
+  color: #d32f2f;
   margin-bottom: 10px;
 }
 
 /* Subtitle */
 .com-quote-subti {
   font-size: 18px;
-  color: #42c6b9;
+  color: #d32f2f;
 
   margin-bottom: 50px;
 }
@@ -512,13 +526,13 @@
 
 /* Focus */
 .com-form-grid input:focus {
-  border-color: #42c6b9;
+  border-color: #d32f2f;
 }
 
 /* Button */
 .com-quote-button {
   grid-column: 2 / 3;
-  background: #42c6b9;
+  background: #d32f2f;
   color: #fff;
   border: none;
   padding: 18px;
@@ -547,7 +561,7 @@
 .com-help-title {
   font-size: 42px;
   font-weight: 800;
-  color: #42c6b9 !important;
+  color: #d32f2f !important;
   margin-bottom: 12px;
   text-align: center;
 }
@@ -586,7 +600,7 @@
 /* Icon */
 .com-help-icon {
   font-size: 40px;
-  color: #42c6b9;
+  color: #d32f2f;
   margin-bottom: 20px;
 }
 
@@ -605,14 +619,14 @@
 }
 
 .com-help-green {
-  color: #42c6b9;
+  color: #d32f2f;
   font-size: 22px;
   margin: 10px 0;
   font-weight: 700;
 }
 
 .com-help-mail {
-  color: #42c6b9;
+  color: #d32f2f;
   margin-bottom: 20px;
 }
 
@@ -620,9 +634,9 @@
 .com-help-link {
   display: inline-block;
   margin-top: 25px;
-  color: #42c6b9 !important;
+  color: #d32f2f !important;
   font-weight: 600;
-  border-bottom: 2px solid #42c6b9 !important;
+  border-bottom: 2px solid #d32f2f !important;
   cursor: pointer;
 }
 

@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import home3 from "../../../assets/images/home3.jpeg";
 import "./OurInsurancePartners.css";
+import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 
 import kotak from "../../../assets/images/kotak.png";
 import pramerica from "../../../assets/images/pramerica.png";
@@ -17,42 +18,28 @@ const partners = [
 ];
 
 const OurInsurancePartners = () => {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    const elements = document.querySelectorAll(".animate-pop-up");
-    elements.forEach((el) => observer.observe(el));
-
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
-
   return (
     <div className="insurance-page">
 
       {/* Banner */}
-      <div className="insurance-banner animate-pop-up">
-        <img src={home3} alt="Our Insurance Partners" />
-        <h1 className="banner-title animate-pop-up">Our Insurance Partners</h1>
-      </div>
+      <ScrollReveal direction="down">
+        <div className="insurance-banner">
+          <img src={home3} alt="Our Insurance Partners" />
+          <div className="insurance-overlay">
+            <h1 className="banner-title">Our Insurance Partners</h1>
+          </div>
+        </div>
+      </ScrollReveal>
 
       {/* Partners Grid */}
       <div className="insurance-grid-container">
         <div className="insurance-grid">
           {partners.map((img, index) => (
-            <div className="insurance-card animate-pop-up" key={index}>
-              <img src={img} alt={`partner-${index}`} />
-            </div>
+            <ScrollReveal direction="up" delay={(index % 4) * 0.1} key={index}>
+              <div className="insurance-card">
+                <img src={img} alt={`partner-${index}`} />
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

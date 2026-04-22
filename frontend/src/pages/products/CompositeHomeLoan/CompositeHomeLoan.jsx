@@ -15,13 +15,13 @@ const CompositeHomeLoan = () => {
       <ScrollReveal direction="down">
         <div className="composite-grid">
           {cards.map((item, index) => (
-            <div className="composite-card" key={index}>
+            <div className="comploan-card" key={index}>
               {/* Image */}
-              <div className="composite-imagebox">
+              <div className="comploan-image">
                 <img src={com} alt="Composite Home Loan" />
-                <div className="composite-overlay"></div>
-                <div className="composite-icon">
-                  <FaHome className="composite-rotate-icon" />
+                <div className="comploan-overlay"></div>
+                <div className="comploan-center-icon">
+                  <FaHome className="comploan-icon-rotate" />
                 </div>
               </div>
 

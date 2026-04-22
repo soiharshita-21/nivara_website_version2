@@ -60,7 +60,7 @@
   flex-direction: column;
 }
 
-.loan-card-grid {
+.home-page .loan-card-grid {
   display: flex;
   justify-content: center;
   gap: 40px;
@@ -68,7 +68,7 @@
   padding: 0 20px;
 }
 
-.loan-card {
+.home-page .loan-card {
   width: 100%;
   max-width: 900px;
   background: #fff;
@@ -81,18 +81,18 @@
   margin-bottom: 30px;
 }
 
-.loan-image {
+.home-page .homeloan-image {
   position: relative;
   height: 360px;
 }
 
-.loan-image img {
+.home-page .homeloan-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.center-icon {
+.home-page .homeloan-center-icon {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -110,31 +110,31 @@
 }
 
 /* ===== ICON STYLE ===== */
-.icon-rotate {
+.homeloan-icon-rotate {
   font-size: 36px;
   color: #d32f2f !important;
   transition: transform 0.8s ease;
 }
 
 /* ===== ROTATE EFFECT ===== */
-.loan-card:hover .icon-rotate {
+.loan-card:hover .homeloan-icon-rotate {
   transform: rotate(360deg);
 }
 
 /* ===== OPTIONAL PREMIUM EFFECT ===== */
-.loan-card:hover .center-icon {
+.loan-card:hover .homeloan-center-icon {
   transform: translate(-50%, -50%) scale(1.05);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
 
-.image-overlay {
+.home-page .homeloan-overlay {
   position: absolute;
   inset: 0;
-  background: #d32f2f;
+  background: rgba(211, 47, 47, 0.28);
 }
 
-.loan-content {
+.home-page .loan-content {
   padding: 28px;
   background: #fbf6f6;
   display: flex;
@@ -150,7 +150,7 @@
   text-align: left;
 }
 
-.subtitle {
+.home-page .subtitle {
   color: #6b7280;
   font-size: 15px;
   margin-bottom: 20px;
@@ -253,7 +253,7 @@
   animation-delay: 0.3s;
 }
 
-@keyframes fillStrip {
+@keyframes fillStripRed {
   from {
     width: 0%;
   }
@@ -263,14 +263,14 @@
   }
 }
 
-.home-loan-bottom-strip {
+.home-page .home-loan-bottom-strip {
   height: 6px;
   width: 0%;
   background: #d32f2f;
 }
 
-.loan-card.visible .home-loan-bottom-strip {
-  animation: fillStrip 3s ease-in-out forwards;
+.home-page .loan-card.visible .home-loan-bottom-strip {
+  animation: fillStripRed 3s ease-in-out forwards;
 }
 
 .home-loan-text-section {

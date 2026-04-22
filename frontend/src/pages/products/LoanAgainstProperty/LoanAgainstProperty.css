@@ -105,7 +105,7 @@
 .lap-image-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(122, 109, 255, 0.55);
+  background: rgba(46, 125, 50, 0.45);
 }
 
 
@@ -126,7 +126,7 @@
 
 .lap-icon-only-rotate {
   font-size: 36px;
-  color: #7a6dff;
+  color: #2e7d32;
   transition: transform 0.6s ease;
 }
 
@@ -177,7 +177,7 @@
 .lap-title {
   font-size: 26px;
   font-weight: 700;
-  color: #7a6dff;
+  color: #2e7d32;
   margin-bottom: 10px;
 }
 
@@ -212,7 +212,7 @@
   left: 0;
   width: 22px;
   height: 22px;
-  background-color: #7a6dff;
+  background-color: #2e7d32;
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -230,7 +230,7 @@
 }
 
 .loan-against-title {
-  color: #7a6dff;
+  color: #2e7d32;
 
 }
 
@@ -239,8 +239,8 @@
   padding: 12px 26px;
   border-radius: 12px;
   background: transparent;
-  border: 2px solid #7a6dff;
-  color: #7a6dff;
+  border: 2px solid #2e7d32;
+  color: #2e7d32;
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
@@ -283,7 +283,7 @@
 .lap-feature-box h3 {
   font-size: 22px;
   font-weight: 600;
-  color: #7a6dff !important;
+  color: #2e7d32 !important;
 }
 
 .lap-benefits-section {
@@ -297,7 +297,7 @@
 .lap-benefits-title {
   font-size: 34px;
   font-weight: 700;
-  color: #7a6dff !important;
+  color: #2e7d32 !important;
   margin-bottom: 45px;
   text-align: left;
   line-height: 1.2;
@@ -315,7 +315,7 @@
   font-size: 16px;
   line-height: 1.6;
   color: #374151;
-  border-left: 5px solid #7a6dff;
+  border-left: 5px solid #2e7d32;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -340,7 +340,7 @@
 .lap-help-title {
   font-size: 42px;
   font-weight: 800;
-  color: #7a6dff !important;
+  color: #2e7d32 !important;
   margin-bottom: 12px;
   text-align: center;
 }
@@ -379,7 +379,7 @@
 /* Icon */
 .lap-help-icon {
   font-size: 40px;
-  color: #7a6dff;
+  color: #2e7d32;
   margin-bottom: 20px;
 }
 
@@ -398,14 +398,14 @@
 }
 
 .lap-help-green {
-  color: #7a6dff;
+  color: #2e7d32;
   font-size: 22px;
   margin: 10px 0;
   font-weight: 700;
 }
 
 .lap-help-mail {
-  color: #7a6dff;
+  color: #2e7d32;
   margin-bottom: 20px;
 }
 
@@ -413,14 +413,14 @@
 .lap-help-link {
   display: inline-block;
   margin-top: 25px;
-  color: #7a6dff !important;
+  color: #2e7d32 !important;
   font-weight: 600;
-  border-bottom: 2px solid #7a6dff !important;
+  border-bottom: 2px solid #2e7d32 !important;
   cursor: pointer;
 }
 
 .lap-btn-outline:hover {
-  background: #7a6dff;
+  background: #2e7d32;
   color: #ffffff;
 }
 
@@ -429,7 +429,7 @@
   padding: 12px 28px;
   border-radius: 12px;
   border: none;
-  background: #7a6dff;
+  background: #2e7d32;
   color: #ffffff;
   font-weight: 600;
   cursor: pointer;
@@ -474,7 +474,7 @@
 .lap-strip {
   height: 8px;
   width: 0%;
-  background: #7a6dff;
+  background: #2e7d32;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -516,7 +516,7 @@
 .lap-feature-icon {
   font-size: 40px;
   margin-bottom: 20px;
-  color: #7a6dff;
+  color: #2e7d32;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -525,7 +525,7 @@
 .lap-circle-check-icon {
   width: 50px;
   height: 50px;
-  background-color: #7a6dff;
+  background-color: #2e7d32;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -586,7 +586,7 @@
   font-size: 30px;
   font-weight: 600;
   margin-bottom: 30px;
-  color: #7a6dff;
+  color: #2e7d32;
   text-align: center;
 }
 
@@ -616,7 +616,7 @@
   left: 0;
   width: 22px;
   height: 22px;
-  background-color: #7a6dff;
+  background-color: #2e7d32;
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -650,7 +650,7 @@
 .lap-quote-ti {
   font-size: 42px;
   font-weight: 700;
-  color: #7a6dff;
+  color: #2e7d32;
   margin-bottom: 10px;
 }
 
@@ -687,13 +687,13 @@
 
 /* Focus */
 .lap-form-grid input:focus {
-  border-color: #7a6dff;
+  border-color: #2e7d32;
 }
 
 /* Button */
 .lap-quote-b {
   grid-column: 2 / 3;
-  background: #7a6dff;
+  background: #2e7d32;
   color: #fff;
   border: none;
   padding: 18px;
@@ -707,7 +707,7 @@
 
 /* Button hover */
 .lap-quote-b:hover {
-  background: #c62828;
+  background: #1b5e20;
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
@@ -741,10 +741,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.help-title {
+.lap-help-title {
   font-size: 42px;
   font-weight: 700;
-  color: #d32f2f;
+  color: #2e7d32;
   margin-bottom: 12px;
 }
 

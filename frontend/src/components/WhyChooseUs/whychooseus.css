@@ -54,15 +54,17 @@
   flex: 1;
 }
 
-.why-grid > * {
+.why-grid>* {
   display: flex;
 }
 
-.why-card .multi-color-line {
+.multi-color-line {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
+  background: linear-gradient(90deg, rgba(var(--c), 1) 70%, rgba(var(--c), 0.6) 100%);
+  height: 6px;
 }
 
 /* ✅ REDUCED CARD GLOW */
@@ -148,36 +150,13 @@
   max-width: 90%;
 }
 
-/* COLORS */
-.why-card.rose {
-  --c: 155, 28, 49;
-  --line-bg: linear-gradient(90deg, #9b1c31, #f43f5e);
-}
-
-.why-card.orange {
-  --c: 249, 115, 22;
-  --line-bg: linear-gradient(90deg, #c2410c, #fb923c);
-}
-
-.why-card.teal {
-  --c: 13, 148, 136;
-  --line-bg: linear-gradient(90deg, #0f766e, #34d4bf55);
-}
-
-.why-card.yellow {
-  --c: 202, 138, 4;
-  --line-bg: linear-gradient(90deg, #a16207, #facc15);
-}
-
-.why-card.purple {
-  --c: 124, 58, 237;
-  --line-bg: linear-gradient(90deg, #6d28d9, #a78bfa);
-}
-
-.why-card.pink {
-  --c: 219, 39, 119;
-  --line-bg: linear-gradient(90deg, #9d174d, #f472b6);
-}
+/* COLORS (Exact Image 1 Shades) */
+.why-card.red { --c: 176, 33, 61; }      /* Crimson */
+.why-card.orange { --c: 215, 96, 30; }   /* Sienna */
+.why-card.teal { --c: 12, 139, 124; }    /* Dark Teal */
+.why-card.gold { --c: 199, 145, 33; }    /* Deep Gold */
+.why-card.purple { --c: 124, 76, 209; }  /* Royal Purple */
+.why-card.pink { --c: 199, 33, 106; }    /* Berry Pink */
 
 /* TRUST SECTION */
 .trust-badges {
@@ -217,12 +196,13 @@
   align-items: center;
   min-height: 400px;
   padding: 80px 20px;
-  background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), 
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
     url('../../assets/images/rbi.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: scroll; /* Changed from fixed to scroll to fix lag */
+  background-attachment: scroll;
+  /* Changed from fixed to scroll to fix lag */
   position: relative;
   transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
 }
@@ -298,7 +278,8 @@
 
   .trust-wrapper {
     min-height: 450px;
-    background-attachment: scroll; /* Fixed bg can be jittery on mobile */
+    background-attachment: scroll;
+    /* Fixed bg can be jittery on mobile */
   }
 
   .trust-badges {
@@ -319,7 +300,7 @@
   .why-title {
     font-size: 28px;
   }
-  
+
   .trust-item {
     flex-direction: column;
     text-align: center;

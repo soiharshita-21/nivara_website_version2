@@ -72,8 +72,8 @@
 .balance-image-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(255, 79, 154, 0.28);
-  /* light pink shade */
+  background: rgba(211, 47, 47, 0.28);
+  /* Nivara Red shade */
   z-index: 1;
 }
 
@@ -131,7 +131,7 @@
 .balance-feature-icon {
   font-size: 40px;
   margin-bottom: 20px;
-  color: #6bb300;
+  color: #d32f2f;
 }
 
 .balance-feature-box h3 {
@@ -185,7 +185,7 @@
 .balance-benefits-title {
   font-size: 34px;
   font-weight: 700;
-  color: #ff4f9a !important;
+  color: #d32f2f !important;
   margin-bottom: 45px;
   text-align: left;
   line-height: 1.2;
@@ -203,7 +203,7 @@
   font-size: 16px;
   line-height: 1.6;
   color: #374151;
-  border-left: 5px solid #ff4f9a;
+  border-left: 5px solid #d32f2f;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -228,7 +228,7 @@
 .balance-help-title {
   font-size: 42px;
   font-weight: 800;
-  color: #ff4f9a !important;
+  color: #d32f2f !important;
   margin-bottom: 12px;
   text-align: center;
 }
@@ -267,7 +267,7 @@
 /* Icon */
 .balance-help-icon {
   font-size: 40px;
-  color: #ff4f9a;
+  color: #d32f2f;
   margin-bottom: 20px;
 }
 
@@ -286,14 +286,14 @@
 }
 
 .balance-help-green {
-  color: #ff4f9a;
+  color: #d32f2f;
   font-size: 22px;
   margin: 10px 0;
   font-weight: 700;
 }
 
 .balance-help-mail {
-  color: #ff4f9a;
+  color: #d32f2f;
   margin-bottom: 20px;
 }
 
@@ -301,9 +301,9 @@
 .balance-help-link {
   display: inline-block;
   margin-top: 25px;
-  color: #ff4f9a !important;
+  color: #d32f2f !important;
   font-weight: 600;
-  border-bottom: 2px solid #ff4f9a !important;
+  border-bottom: 2px solid #d32f2f !important;
   cursor: pointer;
 }
 
@@ -339,7 +339,7 @@
 /* Icon */
 .balance-rotate-icon {
   font-size: 28px;
-  color: #ff4f9a;
+  color: #d32f2f;
   transition: transform 0.7s ease;
 }
 
@@ -356,8 +356,8 @@
 .balance-title {
   font-size: 24px;
   font-weight: 700;
-  color: #ff4f9a;
-  /* same pink heading */
+  color: #d32f2f;
+  /* same Red heading */
   margin-bottom: 10px;
 }
 
@@ -391,7 +391,7 @@
   left: 0;
   width: 22px;
   height: 22px;
-  background: #ff4f9a;
+  background: #d32f2f;
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -411,9 +411,9 @@
 .balance-btn-outline {
   flex: 1;
   padding: 10px 22px;
-  border: 2px solid #ff4f9a;
+  border: 2px solid #d32f2f;
   background: transparent;
-  color: #ff4f9a;
+  color: #d32f2f;
   border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
@@ -421,14 +421,14 @@
 }
 
 .balance-btn-outline:hover {
-  background: #ff4f9a;
+  background: #d32f2f;
   color: #fff;
 }
 
 .balance-loan-btn-solid {
   flex: 1;
   padding: 10px 22px;
-  background: #ff4f9a;
+  background: #d32f2f;
   color: #fff;
   border: none;
   border-radius: 12px;
@@ -442,7 +442,7 @@
 }
 
 .balance-btn-solid:hover {
-  background: #e8438b;
+  background: #c62828;
 }
 
 /* Bottom strip */
@@ -480,7 +480,7 @@
 .balance-bottom-strip {
   height: 6px;
   width: 0%;
-  background: #ff4f9a;
+  background: #d32f2f;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -500,7 +500,7 @@
 .balance-main-title {
   font-size: 36px;
   font-weight: 700;
-  color: #ff4f9a;
+  color: #d32f2f;
   margin-bottom: 8px;
 }
 
@@ -547,7 +547,7 @@
 .balance-feature-icon {
   font-size: 40px;
   margin-bottom: 20px;
-  color: #ff4f9a;
+  color: #d32f2f;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -556,7 +556,7 @@
 .balance-circle-check-icon {
   width: 50px;
   height: 50px;
-  background-color: #ff4f9a;
+  background-color: #d32f2f;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -570,7 +570,7 @@
 .balance-feature-box h3 {
   font-size: 22px;
   font-weight: 600;
-  color: #ff4f9a;
+  color: #d32f2f;
 }
 
 /* Responsive */
@@ -612,7 +612,7 @@
 .balance-keyfeatures-title {
   font-size: 34px;
   font-weight: 700;
-  color: #ff4f9a;
+  color: #d32f2f;
   margin-bottom: 30px;
   text-align: left;
 }
@@ -676,7 +676,7 @@
 .balance-quote-ti {
   font-size: 42px;
   font-weight: 700;
-  color: #ff4f9a;
+  color: #d32f2f;
   margin-bottom: 10px;
 }
 
@@ -713,13 +713,13 @@
 
 /* Focus */
 .balance-form-grid input:focus {
-  border-color: #ff4f9a;
+  border-color: #d32f2f;
 }
 
 /* Button */
 .balance-quote-button {
   grid-column: 2 / 3;
-  background: #ff4f9a;
+  background: #d32f2f;
   color: #fff;
   border: none;
   padding: 18px;
@@ -752,7 +752,7 @@
 .balance-support-header h2 {
   font-size: 42px;
   font-weight: 800;
-  color: #ff4f9a;
+  color: #d32f2f;
   margin-bottom: 12px;
 }
 
@@ -796,7 +796,7 @@
 .balance-support-card h3 {
   font-size: 18px;
   font-weight: 700;
-  color: #ff4f9a;
+  color: #d32f2f;
   margin-bottom: 16px;
 }
 
@@ -814,7 +814,7 @@
 }
 
 .balance-support-mail {
-  color: #ff4f9a;
+  color: #d32f2f;
   margin-bottom: 20px;
 }
 
@@ -822,9 +822,9 @@
 .balance-support-link {
   display: inline-block;
   margin-top: 25px;
-  color: #ff4f9a;
+  color: #d32f2f;
   font-weight: 600;
-  border-bottom: 2px solid #ff4f9a;
+  border-bottom: 2px solid #d32f2f;
   cursor: pointer;
 }
 

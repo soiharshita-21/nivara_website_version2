@@ -1,11 +1,11 @@
 import React from "react";
 import "./BoardOfDirectors.css";
-import rao from "../../../assets/images/director/Rao (1).jpg";
-import rohokale from "../../../assets/images/director/Rohokale (1).jpg";
-import koticha from "../../../assets/images/director/Koticha.jpg";
-import debanshi from "../../../assets/images/director/Debanshi-Photo.png";
-import jayaraman from "../../../assets/images/director/Nivara.jpg";
-import krishna from "../../../assets/images/director/Nivara-2.jpg";
+import rao from "../../../assets/images/Director/Rao (1).jpg";
+import rohokale from "../../../assets/images/Director/Rohokale (1).jpg";
+import koticha from "../../../assets/images/Director/Koticha.jpg";
+import debanshi from "../../../assets/images/Director/Debanshi-Photo.png";
+import jayaraman from "../../../assets/images/Director/Nivara.jpg";
+import krishna from "../../../assets/images/Director/Nivara-2.jpg";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -15,7 +15,7 @@ const boardMembers = [
     role: "MD & CEO",
     desc: "Brings over 30 years of leadership experience in banking and financial services, with deep expertise in portfolio risk management and retail lending.",
     longDesc: "Mr. C. V. Rao brings over 30 years of leadership experience in banking and financial services, with deep expertise in portfolio risk management and retail lending across economic cycles. His career spans the full breadth of retail banking, encompassing secured and unsecured lending, investment and liability products, financial inclusion, and key functions such as product design, business development and marketing, sales and distribution, underwriting, credit risk strategy, and debt management. CV has held senior leadership roles with leading private sector banks in India, including ICICI Bank, IndusInd Bank, and ING Vysya Bank. At ICICI Bank (1992–2008), he was part of the core team that launched and scaled the mortgage business. At ING Vysya Bank (2009–2014), he headed Agriculture & Rural Banking and Consumer Assets. He holds an M.Com and MBA from Osmania University and served as a Research Assistant at IIM Ahmedabad.",
-    color: "rose",
+    color: "red",
     img: rao,
   },
   {
@@ -23,7 +23,7 @@ const boardMembers = [
     role: "Director",
     desc: "Over 29 years of experience in banking, lending, and asset management. Sets the vision for the ASK Asset & Wealth Management Group.",
     longDesc: "Mr. Sunil Rohokale has over 29 years of experience in banking and financial services, encompassing lending, asset, and wealth management. He is responsible for setting the vision for ASK Asset & Wealth Management Group. He was instrumental in driving ASK’s foray into Alternates and previously credited with setting up ICICI Bank’s Mortgage Financing Business and served as the MD & CEO of ICICI Home Finance Co. Ltd. He serves as a Board Director at the Association of Portfolio Managers of India (APMI) and holds a degree in Mechanical Engineering from the Government College of Engineering, Pune, and a master’s degree in management from Symbiosis Institute of Management.",
-    color: "orange",
+    color: "green",
     img: rohokale,
   },
   {
@@ -31,7 +31,7 @@ const boardMembers = [
     role: "Director",
     desc: "Part of the promoter family of the ASK Group and responsible for the corporate philanthropic initiatives of the group.",
     longDesc: "Mr. Monik Koticha is the Co-founder and CEO of ASK Capital Management. He has over 30 years of experience in the investment management industry and has played a pivotal role in establishing ASK as a premier investment management house. He is responsible for the overall strategy and business development of ASK Capital Management and is actively involved in philanthropy in Education, Housing, and Nation Building.",
-    color: "green",
+    color: "red",
     img: koticha,
   },
   {
@@ -39,7 +39,7 @@ const boardMembers = [
     role: "Nominee Director",
     desc: "Partner at Baring Private Equity India and a qualified Chartered Accountant with over 21 years of experience in private equity and investment banking.",
     longDesc: "Ms. Debanshi Basu is a qualified Chartered Accountant with over 21 years of experience across private equity, investment banking, and audit. A Partner at Baring Private Equity India, she leads investments and portfolio management in sectors including financial services and fintech. She serves on the boards of Nivara Home Finance, SK Finance, and Nehat Technologies. Previously, she was part of the founding investment banking team at Goldman Sachs India and worked with Ernst & Young.",
-    color: "yellow",
+    color: "green",
     img: debanshi,
   },
   {
@@ -47,7 +47,7 @@ const boardMembers = [
     role: "Independent Director",
     desc: "39 years of experience in risk management, retail/corporate banking, and foreign exchange.",
     longDesc: "Mr. Muthuswamy Venkata Jayaraman is an Independent Director with nearly 40 years of experience in retail, MSME, corporate banking, and risk management. He holds a Master of Business Law from NLS, Bangalore, and is a Certified Associate of the Indian Institute of Bankers (CAIIB). He recently served as the Chief Risk Officer at Fincare Small Finance Bank and has held senior roles at Kotak Mahindra Bank, ICICI Bank, Corporation Bank, and Andhra Bank.",
-    color: "purple",
+    color: "red",
     img: jayaraman,
   },
   {
@@ -55,7 +55,7 @@ const boardMembers = [
     role: "Independent Director",
     desc: "Mechanical Engineer and CFA with over 35 years of experience in manufacturing, financial services, and IT-enabled transformation.",
     longDesc: "Mr. Krishna Gopalaraman is an Independent Director with over 35 years of experience in management consulting, data analytics, and digital transformation. He holds a degree in Electronics and Communication Engineering from Anna University and a postgraduate degree in Management from IIM Bangalore. He has led consulting engagements for clients like IDBI, Tata Exports, and Cholamandalam, and has driven strategic initiatives for General Electric and ArcelorMittal. Since 2020, he has been on secondment to The Global Fund in Geneva.",
-    color: "pink",
+    color: "green",
     img: krishna,
   },
 ];
@@ -69,8 +69,8 @@ const BoardOfDirectors = () => {
         <ScrollReveal direction="up">
           <div className="board-header">
             <span className="board-tag">Board of Directors</span>
-            <h2>Our Leadership & Board</h2>
-            <p>Meet the professionals guiding our vision, growth, and governance</p>
+            <h2>Our Visionary Leadership</h2>
+            <p>Guiding our mission to provide affordable housing finance to every Indian family</p>
           </div>
         </ScrollReveal>
 
@@ -96,8 +96,9 @@ const BoardOfDirectors = () => {
                   <h3>{item.name}</h3>
                   <p>{item.desc}</p>
                   <button className="view-bio-btn" onClick={() => setSelectedMember(item)}>View Details</button>
-                  <div className="multi-color-line"></div>
                 </div>
+
+                <div className="leadership-strip-animated"></div>
               </div>
             </ScrollReveal>
           ))}
@@ -199,4 +200,4 @@ const BoardOfDirectors = () => {
   );
 };
 
-export default BoardOfDirectors;
+export default BoardOfDirectors;

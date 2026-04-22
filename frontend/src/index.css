@@ -35,19 +35,20 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-/* Multi-color Line Animation */
+/* Multi-color Line Animation (Defaulted to Nivara Red & Green) */
 .multi-color-line {
   position: absolute;
   bottom: 0;
   left: 0;
   height: 5px;
   width: 0%;
-  background: var(--line-bg, linear-gradient(90deg, #d32f2f, #fbc02d, #2e7d32, #1976d2, #d32f2f));
+  background: var(--line-bg, linear-gradient(90deg, #d32f2f, #2e7d32, #d32f2f));
   background-size: 200% 100%;
   transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1);
   z-index: 10;
   border-radius: 0 0 24px 24px; /* Matches card corner */
 }
+
 
 /* Specific radius for management/board cards if different */
 .board-card .multi-color-line,
