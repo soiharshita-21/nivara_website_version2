@@ -30,6 +30,7 @@ const allPages = [
   { name: "Calculator", path: "/customercenter/calculator" },
   { name: "FAQs", path: "/customercenter/faqs" },
   { name: "Auction Properties", path: "/customercenter/auction-properties" },
+  { name: "Recovery Agents", path: "/customercenter/recovery-agents" },
   { name: "Branch Locations", path: "/contactus/branch/branch" },
   { name: "Office Locations", path: "/contactus/offices/offices" },
 ];
@@ -212,6 +213,7 @@ const Navbar = () => {
               <li><Link to="/customercenter/publicdisclosure">Public Disclosure</Link></li>
               <li><Link to="/customercenter/corporategovernance">Corporate Governance</Link></li>
               <li><Link to="/customercenter/auction-properties">Auction Properties</Link></li>
+              <li><Link to="/customercenter/recovery-agents">Recovery Agents</Link></li>
               <li><Link to="/customercenter/download">Download</Link></li>
               <li><Link to="/customercenter/calculator">Calculator</Link></li>
               <li><Link to="/customercenter/faqs">FAQs</Link></li>

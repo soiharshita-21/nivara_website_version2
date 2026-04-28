@@ -6,6 +6,7 @@ import "./ConstructionLoan.css";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
+import RequestQuote from "../../../components/RequestQuote/RequestQuote";
 
 const ConstructionLoan = () => {
   const navigate = useNavigate();
@@ -45,9 +46,9 @@ const ConstructionLoan = () => {
                   </ul>
                 </div> */}
 
-                <div className="con-loan-buttons">
+                <div className="conloan-buttons">
                   <button
-                    className="home-loan-btn-solid"
+                    className="conloan-loan-btn-solid"
                     onClick={() => navigate("/apply-home-loan")}
                   >
                     Apply →
@@ -105,31 +106,7 @@ const ConstructionLoan = () => {
         ))}
       </div>
 
-      <ScrollReveal direction="up">
-        <section className="quote-sec">
-          <div className="quote-con">
-            <h2 className="quote-ti">Request Quote Now</h2>
-            <p className="quote-subti">
-              Easy to apply for a loan with us, Once you have complete this form.
-            </p>
-
-            <form className="form">
-              <div className="form-grid">
-                <input type="text" placeholder="Full Name" />
-                <input type="email" placeholder="E-mail" />
-                <input type="tel" placeholder="Contact Number" />
-                <input type="text" placeholder="State" />
-                <input type="text" placeholder="City" />
-                <input type="date" placeholder="dd-mm-yyyy" />
-                <input type="number" placeholder="Loan Amount" />
-                <button type="submit" className="quote-b">
-                  SEND A REQUEST
-                </button>
-              </div>
-            </form>
-          </div>
-        </section>
-      </ScrollReveal>
+      <RequestQuote themeColor="#2e7d32" />
 
       {/* Features & Benefits Section */}
       <ScrollReveal direction="up">

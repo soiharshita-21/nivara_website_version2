@@ -5,6 +5,7 @@ import "./ImprovementandExtension.css";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
+import RequestQuote from "../../../components/RequestQuote/RequestQuote";
 
 const ImprovementandExtension = () => {
   const navigate = useNavigate();
@@ -141,31 +142,7 @@ const ImprovementandExtension = () => {
         </div>
       </ScrollReveal>
 
-      <ScrollReveal direction="up">
-        <section className="improv-quote-sec">
-          <div className="improv-quote-con">
-            <h2 className="improv-quote-ti">Request Quote Now</h2>
-            <p className="improv-quote-subti">
-              Easy to apply for a loan with us, Once you have complete this form.
-            </p>
-
-            <form className="improv-form">
-              <div className="improv-form-grid">
-                <input type="text" placeholder="Full Name" />
-                <input type="email" placeholder="E-mail" />
-                <input type="tel" placeholder="Contact Number" />
-                <input type="text" placeholder="State" />
-                <input type="text" placeholder="City" />
-                <input type="date" placeholder="dd-mm-yyyy" />
-                <input type="number" placeholder="Loan Amount" />
-                <button type="submit" className="improv-quote-button">
-                  SEND A REQUEST
-                </button>
-              </div>
-            </form>
-          </div>
-        </section>
-      </ScrollReveal>
+      <RequestQuote themeColor="#d32f2f" />
 
       {/* Help Section */}
       <div className="improv-help-section">

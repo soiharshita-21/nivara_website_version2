@@ -1,0 +1,254 @@
+.terms-page {
+  width: 100%;
+  background: #fff; /* Match fair practice page background */
+  font-family: "Poppins", sans-serif;
+  color: #1e293b;
+}
+
+/* HERO SECTION - Reference from Fair Practice Code */
+.terms-banner-section {
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/policy.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax effect like fair practice */
+  color: white;
+  padding: 220px 20px 200px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 60px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.terms-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Subtle inner gradients like fair practice */
+.terms-banner-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.terms-banner-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to top, rgba(255,255,255,0.2), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.terms-banner-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.terms-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+.terms-banner-container h1 {
+  font-size: 56px;
+  font-weight: 800;
+  margin: 0 0 20px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #d32f2f;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.terms-hero-subtitle {
+  font-size: 18px;
+  color: #fecdd3; /* Light pink/red tint subtitle like fair practice */
+  max-width: 700px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+/* Intro Section after Banner */
+.terms-intro-section {
+  padding: 60px 20px;
+  background: white;
+}
+
+.terms-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.mitc-intro {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #475569;
+  text-align: justify;
+}
+
+/* Accordion Section */
+.terms-accordion-section {
+  padding: 80px 20px;
+  background: #f8fafc;
+  display: flex;
+  justify-content: center;
+}
+
+.terms-accordion-container {
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.accordion-item {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.accordion-item.active {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-color: #d32f2f;
+}
+
+.accordion-header {
+  padding: 24px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.accordion-header:hover {
+  background: #f1f5f9;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-box {
+  width: 50px;
+  height: 50px;
+  background: #f0f7f0;
+  color: #d32f2f;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion-header h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 1200px;
+}
+
+.content-inner {
+  padding: 0 30px 30px 100px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 30px;
+}
+
+.terms-detail h4 {
+  font-size: 18px;
+  color: #d32f2f;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.terms-detail p {
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.terms-sub-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.terms-sub-list li {
+  font-size: 15px;
+  color: #475569;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.terms-sub-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .terms-banner-section {
+    padding: 100px 20px 80px;
+    border-radius: 0;
+  }
+  .terms-banner-container h1 {
+    font-size: 36px;
+  }
+  .content-inner {
+    padding-left: 30px;
+  }
+}

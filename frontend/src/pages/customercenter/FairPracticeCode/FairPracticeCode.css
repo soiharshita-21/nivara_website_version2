@@ -1,9 +1,9 @@
-:root{
-  --theme:#8b1d2c;
+:root {
+  --theme: #8b1d2c;
 }
 
 /* Page wrapper */
-.fair-page{
+.fair-page {
   width: 100%;
   background: #fff;
   margin-top: 15px;
@@ -106,7 +106,7 @@
 }
 
 /* Content */
-.fair-content{
+.fair-content {
   max-width: 1200px;
   margin: 60px auto;
   padding: 0 20px;
@@ -115,7 +115,7 @@
   color: #333;
 }
 
-.fair-content h3{
+.fair-content h3 {
   margin-top: 30px;
   margin-bottom: 15px;
   color: var(--theme);
@@ -123,14 +123,14 @@
 }
 
 /* Links */
-.fair-links{
+.fair-links {
   display: flex;
   flex-direction: column;
   gap: 12px;
   margin-top: 10px;
 }
 
-.fair-links a{
+.fair-links a {
   text-decoration: none;
   color: var(--theme);
   font-weight: 600;
@@ -138,7 +138,7 @@
   transition: 0.3s ease;
 }
 
-.fair-links a:hover{
+.fair-links a:hover {
   color: #000;
   transform: translateX(6px);
 }

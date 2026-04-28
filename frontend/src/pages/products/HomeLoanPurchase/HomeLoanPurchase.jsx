@@ -5,6 +5,7 @@ import "./HomeLoanPurchase.css";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
+import RequestQuote from "../../../components/RequestQuote/RequestQuote";
 
 const HomeLoanPurchase = () => {
   const navigate = useNavigate();
@@ -183,34 +184,7 @@ const HomeLoanPurchase = () => {
         </div>
       </div>
 
-      <ScrollReveal direction="up">
-        <section className="quote-section">
-          <div className="quote-wrapper">
-            <div className="quote-header">
-              <h2 className="quote-title">Request Quote Now</h2>
-              <p className="quote-subtitle">
-                Easy to apply for a loan with us, Once you have complete this
-                form.
-              </p>
-            </div>
-
-            <form className="quote-form">
-              <div className="quote-form-grid">
-                <input type="text" placeholder="Full Name" />
-                <input type="email" placeholder="E-mail" />
-                <input type="text" placeholder="Contact Number" />
-                <input type="text" placeholder="State" />
-                <input type="text" placeholder="City" />
-                <input type="date" />
-                <input type="text" placeholder="Loan Amount" />
-                <button type="submit" className="quote-btn">
-                  SEND A REQUEST
-                </button>
-              </div>
-            </form>
-          </div>
-        </section>
-      </ScrollReveal>
+      <RequestQuote themeColor="#d32f2f" />
 
       {/* FAQ Section */}
       <ServiceFaqs />

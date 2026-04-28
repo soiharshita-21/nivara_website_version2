@@ -5,6 +5,7 @@ import "./RefinanceLoan.css";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
+import RequestQuote from "../../../components/RequestQuote/RequestQuote";
 
 const RefinanceLoan = () => {
   const navigate = useNavigate();
@@ -143,31 +144,7 @@ const RefinanceLoan = () => {
         </div>
       </ScrollReveal>
 
-      <ScrollReveal direction="up">
-        <section className="refinance-quote-sec">
-          <div className="refinance-quote-con">
-            <h2 className="refinance-quote-ti">Request Quote Now</h2>
-            <p className="refinance-quote-subti">
-              Easy to apply for a loan with us, Once you have complete this form.
-            </p>
-
-            <form className="refinance-form">
-              <div className="refinance-form-grid">
-                <input type="text" placeholder="Full Name" />
-                <input type="email" placeholder="E-mail" />
-                <input type="tel" placeholder="Contact Number" />
-                <input type="text" placeholder="State" />
-                <input type="text" placeholder="City" />
-                <input type="date" placeholder="dd-mm-yyyy" />
-                <input type="number" placeholder="Loan Amount" />
-                <button type="submit" className="refinance-quote-button">
-                  SEND A REQUEST
-                </button>
-              </div>
-            </form>
-          </div>
-        </section>
-      </ScrollReveal>
+      <RequestQuote themeColor="#2e7d32" />
 
       {/* Help Section */}
       <div className="refinance-help-section">

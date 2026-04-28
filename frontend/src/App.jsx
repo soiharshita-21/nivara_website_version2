@@ -50,6 +50,9 @@ import AdminLogin from "./pages/Admin/AdminLogin";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 import WhyChooseUs from "./pages/WhyChooseUs/WhyChooseUs";
 import KycAmlMeasures from "./pages/KycAmlMeasures/KycAmlMeasures";
+import RecoveryAgents from "./pages/customercenter/RecoveryAgents/RecoveryAgents";
+import TermsConditions from "./pages/TermsConditions/TermsConditions";
+import CsrInitiatives from "./pages/CsrInitiatives/CsrInitiatives";
 
 
 const ScrollToTop = () => {
@@ -149,6 +152,9 @@ function AppContent() {
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/why-choose-us" element={<WhyChooseUs />} />
           <Route path="/kyc-aml-measures" element={<KycAmlMeasures />} />
+          <Route path="/customercenter/recovery-agents" element={<RecoveryAgents />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="/csr-initiatives" element={<CsrInitiatives />} />
         </Routes>
         {!isAdminPath && <Footer />}
       </div>

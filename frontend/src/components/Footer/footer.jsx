@@ -74,6 +74,7 @@ const Footer = () => {
               <li><Link to="/career/career" onClick={handleLinkClick}>Career</Link></li>
               <li><Link to="/contactus/offices/offices" onClick={handleLinkClick}>Contact Us</Link></li>
               <li><Link to="/why-choose-us" onClick={handleLinkClick}>Why Choose Us</Link></li>
+              <li><Link to="/terms-conditions" onClick={handleLinkClick}>Terms & Conditions</Link></li>
             </ul>
           </div>
 
@@ -87,6 +88,7 @@ const Footer = () => {
               <li><Link to="/customercenter/publicdisclosure" onClick={handleLinkClick}>Public Disclosure</Link></li>
               <li><Link to="/customercenter/download" onClick={handleLinkClick}>Download Forms</Link></li>
               <li><Link to="/kyc-aml-measures" onClick={handleLinkClick}>KYC & AML Measures</Link></li>
+              <li><Link to="/customercenter/recovery-agents" onClick={handleLinkClick}>Recovery Agents</Link></li>
             </ul>
           </div>
 
