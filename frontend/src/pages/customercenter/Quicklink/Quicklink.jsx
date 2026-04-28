@@ -1,17 +1,24 @@
 import React from "react";
 import "./Quicklink.css";
-import home3 from "../../../assets/images/home3.jpeg";
+import { ShieldCheck, Zap } from 'lucide-react';
+import ScrollReveal from '../../../components/ScrollReveal/ScrollReveal';
+import home3 from "../../../assets/images/quicklink.png";
 
 const Quicklink = () => {
   return (
     <div className="quicklink-page">
 
-      {/* Banner Section */}
-      <div className="quicklink-banner animate-pop-up">
-        <img src={home3} alt="home" />
-        <div className="quicklink-overlay">
-          <h1 className="animate-pop-up">Privacy and Policy</h1>
-        </div>
+      {/* Hero Section */}
+      <div className="quicklink-hero" style={{ backgroundImage: `url(${home3})` }}>
+        <div className="hero-overlay"></div>
+        <ScrollReveal direction="down" distance={30} className="hero-content-wrapper">
+          <div className="hero-badge">
+            <ShieldCheck size={16} />
+            <span>Privacy & Security</span>
+          </div>
+          <h1 className="quicklink-title">Privacy Policy</h1>
+          <p className="hero-subtitle">Our commitment to protecting your information and privacy</p>
+        </ScrollReveal>
       </div>
 
       {/* Content Section */}

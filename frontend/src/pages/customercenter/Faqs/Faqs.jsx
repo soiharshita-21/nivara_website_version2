@@ -11,8 +11,7 @@ import {
   BadgeCheck,
 } from "lucide-react";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
-
-/* IMPORT YOUR HERO IMAGE */
+import faqBg from "../../../assets/images/FAQ.png";
 
 const faqsData = [
   {
@@ -112,25 +111,17 @@ function Faqs() {
     <div className="faq-page">
 
       {/* ================= HERO ================= */}
-      <div className="faq-hero">
-        <div className="faq-hero-content">
-          <ScrollReveal direction="down" distance={30}>
-            <div className="faq-badge">
-              <HelpCircle size={14} />
-              <span>Support Center</span>
-            </div>
-            <h1 style={{
-              color: "white",
-              fontFamily: "'Poppins', sans-serif",
-              fontSize: "64px",
-              fontWeight: "700",
-              letterSpacing: "-0.02em"
-            }}>
-              FAQ's
-            </h1>
-            <p className="faq-subtitle">Find answers to commonly asked questions about our home loan solutions.</p>
-          </ScrollReveal>
-        </div>
+      {/* Hero Section */}
+      <div className="faq-hero" style={{ backgroundImage: `url(${faqBg})` }}>
+        <div className="hero-overlay"></div>
+        <ScrollReveal direction="down" distance={30} className="hero-content-wrapper">
+          <div className="hero-badge">
+            <HelpCircle size={16} />
+            <span>Support Center</span>
+          </div>
+          <h1 className="faq-title">FAQ's</h1>
+          <p className="hero-subtitle">Find answers to commonly asked questions about our home loan solutions</p>
+        </ScrollReveal>
       </div>
 
       {/* ================= FAQ SECTION ================= */}

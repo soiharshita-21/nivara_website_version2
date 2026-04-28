@@ -2,7 +2,7 @@ import React from 'react';
 import './AuctionProperties.css';
 import { FileText, Download, ExternalLink, ShieldCheck } from 'lucide-react';
 import ScrollReveal from '../../../components/ScrollReveal/ScrollReveal';
-import auctionBg from '../../../assets/images/auction.jpg';
+import auctionBg from '../../../assets/images/auction.png';
 
 const AuctionProperties = () => {
   const documents = [

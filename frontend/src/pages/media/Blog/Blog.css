@@ -8,16 +8,24 @@
 .blog-hero-banner {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   overflow: hidden;
+  padding-left: 8%;
 }
 
 .blog-hero-banner img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center bottom;
-  filter: brightness(70%);
+  object-position: center;
+  filter: brightness(90%);
+  z-index: 1;
 }
 
 /* Optional overlay (recommended) */
@@ -25,14 +33,15 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 2;
 }
 
 /* Breadcrumb */
 .blog-breadcrumb {
   position: absolute;
-  top: 30px;
-  left: 60px;
+  top: 100px;
+  left: 8%;
   z-index: 10;
   font-size: 1rem;
   font-weight: 500;
@@ -54,14 +63,17 @@
 
 /* Title */
 .blog-hero-title {
-  position: absolute;
-  bottom: 40px;
-  left: 60px;
-  font-size: 48px;
-  font-weight: 600;
-  color: #fff;
-  padding: 14px 30px;
-  border-radius: 6px;
+  position: relative;
+  z-index: 3;
+  font-size: 5rem;
+  font-weight: 800;
+  color: #d32f2f;
+  line-height: 1;
+  border-left: 10px solid #d32f2f;
+  padding-left: 30px;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  margin: 0;
 }
 
 

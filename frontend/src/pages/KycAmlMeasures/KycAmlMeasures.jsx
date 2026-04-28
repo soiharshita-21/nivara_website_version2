@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { FileText, ShieldCheck, UserCheck, Eye, AlertTriangle } from "lucide-react";
 import "./KycAmlMeasures.css";
-import amlBanner from "../../assets/images/aml.jpg";
+import amlBanner from "../../assets/images/kyc.png";
 
 const KycAmlMeasures = () => {
   useEffect(() => {
@@ -45,8 +45,8 @@ const KycAmlMeasures = () => {
             </div>
             <div className="policy-body">
               <p>
-                NHB guidelines on <strong>‘KNOW YOUR CUSTOMER’</strong> & <strong>‘ANTI MONEY LAUNDERING MEASURES’</strong> 
-                for HFCs issued vide circular no NHB/ND/DRS/Pol-No. 33/2010-11 dated 11th October 2010 and 
+                NHB guidelines on <strong>‘KNOW YOUR CUSTOMER’</strong> & <strong>‘ANTI MONEY LAUNDERING MEASURES’</strong>
+                for HFCs issued vide circular no NHB/ND/DRS/Pol-No. 33/2010-11 dated 11th October 2010 and
                 subsequent revisions are the basis for Nivara’s policies and processes.
               </p>
               <p>
@@ -91,7 +91,7 @@ const KycAmlMeasures = () => {
 
           <div className="kyc-footer-note animate-on-scroll">
             <p>
-              Interested in reading our full Fair Practice Code? 
+              Interested in reading our full Fair Practice Code?
               <a href="https://nivarahousing.com/download/Fair%20Practice%20Code.pdf" target="_blank" rel="noopener noreferrer">
                 Download PDF here
               </a>

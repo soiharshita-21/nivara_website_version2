@@ -1,5 +1,5 @@
 import React from "react";
-import pur from "../../../assets/images/purchase.jpg";
+import pur from "../../../assets/images/Home Loan.png";
 import { FaHome, FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 import "./HomeLoanPurchase.css";
 import { useNavigate } from "react-router-dom";
@@ -18,9 +18,16 @@ const HomeLoanPurchase = () => {
               <div className="homeloan-image">
                 <img src={pur} alt="Home Purchase Loan" />
                 <div className="homeloan-overlay"></div>
-                <div className="homeloan-center-icon">
-                  <FaHome className="homeloan-icon-rotate" />
+                
+                {/* NEW: Overlay Points */}
+                <div className="homeloan-image-points">
+                  <h4 className="points-title">Why Choose Us</h4>
+                  <div className="point">Up to 90% financing</div>
+                  <div className="point">Tenure up to 30 years</div>
+                  <div className="point">Competitive rates</div>
                 </div>
+
+
               </div>
 
               <div className="loan-content">
@@ -29,16 +36,15 @@ const HomeLoanPurchase = () => {
                   Finance your dream home with flexible repayment options
                 </p>
 
-                <div className="slide-in-text">
+                {/* <div className="slide-in-text">
                   <ul className="homefeatures">
                     <li>Up to 90% financing</li>
                     <li>Tenure up to 30 years</li>
                     <li>Competitive rates</li>
                   </ul>
-                </div>
+                </div> */}
 
                 <div className="ho-loan-buttons">
-                  <button className="ho-loan-btn-outline">Learn More</button>
                   <button
                     className="ho-loan-btn-solid"
                     onClick={() => navigate("/apply-home-loan")}
@@ -89,10 +95,10 @@ const HomeLoanPurchase = () => {
           { icon: <FaBriefcase />, title: "Hassle free" },
           { icon: <FaCheck />, title: "Secure Loan Process", circle: true }
         ].map((feature, index) => (
-          <ScrollReveal 
-            key={index} 
-            direction="up" 
-            delay={index * 0.1 + 0.2} 
+          <ScrollReveal
+            key={index}
+            direction="up"
+            delay={index * 0.1 + 0.2}
             distance={20}
           >
             <div className="homeloan-feature-box">
@@ -124,10 +130,10 @@ const HomeLoanPurchase = () => {
               "Customized Repayment Options",
               "Transparent client interactions"
             ].map((benefit, index) => (
-              <ScrollReveal 
-                key={index} 
-                direction="up" 
-                delay={index * 0.05} 
+              <ScrollReveal
+                key={index}
+                direction="up"
+                delay={index * 0.05}
                 distance={10}
               >
                 <div className="homeloan-benefit-item">
@@ -154,9 +160,9 @@ const HomeLoanPurchase = () => {
             { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", green: true },
             { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", green: true }
           ].map((card, index) => (
-            <ScrollReveal 
-              key={index} 
-              direction="up" 
+            <ScrollReveal
+              key={index}
+              direction="up"
               delay={index * 0.1 + 0.1}
             >
               <div className="homeloan-help-card">

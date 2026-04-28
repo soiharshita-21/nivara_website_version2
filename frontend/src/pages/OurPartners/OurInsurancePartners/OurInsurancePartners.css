@@ -19,14 +19,13 @@
   width:100%;
   min-height:100vh;
   background:#fff;
-  margin-top: 20px;
 }
 
 /* Banner */
 .insurance-banner{
   position:relative;
   width:100%;
-  height:400px;
+  height:100vh;
   overflow:hidden;
 }
 
@@ -34,8 +33,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center bottom;   /* 🔥 moves image upward */
-  filter: brightness(70%);
+  object-position: center;
+  filter: brightness(60%);
 }
 
 .insurance-overlay {
@@ -50,26 +49,38 @@
 
 .banner-title {
   color: #fff;
-  font-size: 64px;
-  font-weight: 800;
-  letter-spacing: 2px;
+  font-size: 100px;
+  font-weight: 900;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   margin-bottom: 20px;
   position: relative;
   text-align: center;
+  animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .banner-title::after {
   content: "";
   position: absolute;
-  bottom: -10px;
+  bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
-  width: 120px;
-  height: 4px;
+  width: 180px;
+  height: 6px;
   background: #df1e3c;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 /* Grid Container */

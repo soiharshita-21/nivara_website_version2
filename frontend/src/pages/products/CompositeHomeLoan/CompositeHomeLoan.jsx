@@ -1,6 +1,6 @@
 import React from "react";
 import { FaHome, FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
-import com from "../../../assets/images/composite.jpg";
+import com from "../../../assets/images/Composite Home Loan.png";
 import "./CompositeHomeLoan.css";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
@@ -20,9 +20,16 @@ const CompositeHomeLoan = () => {
               <div className="comploan-image">
                 <img src={com} alt="Composite Home Loan" />
                 <div className="comploan-overlay"></div>
-                <div className="comploan-center-icon">
-                  <FaHome className="comploan-icon-rotate" />
+                
+                {/* NEW: Overlay Points */}
+                <div className="composite-image-points">
+                  <h4 className="points-title">Why Choose Us</h4>
+                  <div className="point">Single application</div>
+                  <div className="point">End-to-end financing</div>
+                  <div className="point">Tax benefits</div>
                 </div>
+
+
               </div>
 
               {/* Content */}
@@ -32,16 +39,15 @@ const CompositeHomeLoan = () => {
                   Combined loan for land purchase and construction
                 </p>
 
-                <div className="slide-in-text">
+                {/* <div className="slide-in-text">
                   <ul className="composite-features">
                     <li>Single application</li>
                     <li>End-to-end financing</li>
                     <li>Tax benefits</li>
                   </ul>
-                </div>
+                </div> */}
 
                 <div className="composite-buttons">
-                  <button className="composite-btn-outline">Learn More</button>
                   <button
                     className="comp-loan-btn-solid"
                     onClick={() => navigate("/apply-home-loan")}
@@ -84,10 +90,10 @@ const CompositeHomeLoan = () => {
           { icon: <FaBriefcase />, title: "Hassle free" },
           { icon: <FaCheck />, title: "Secure Loan Process", circle: true }
         ].map((feature, index) => (
-          <ScrollReveal 
-            key={index} 
-            direction="up" 
-            delay={index * 0.1 + 0.2} 
+          <ScrollReveal
+            key={index}
+            direction="up"
+            delay={index * 0.1 + 0.2}
             distance={20}
           >
             <div className="com-feature-box">
@@ -120,10 +126,10 @@ const CompositeHomeLoan = () => {
               "Immediate construction requirement",
               "24x7 assistance"
             ].map((benefit, index) => (
-              <ScrollReveal 
-                key={index} 
-                direction="up" 
-                delay={index * 0.05} 
+              <ScrollReveal
+                key={index}
+                direction="up"
+                delay={index * 0.05}
                 distance={10}
               >
                 <div className="com-benefit-item">
@@ -176,9 +182,9 @@ const CompositeHomeLoan = () => {
             { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", green: true },
             { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", green: true }
           ].map((card, index) => (
-            <ScrollReveal 
-              key={index} 
-              direction="up" 
+            <ScrollReveal
+              key={index}
+              direction="up"
               delay={index * 0.1 + 0.1}
             >
               <div className="com-help-card">

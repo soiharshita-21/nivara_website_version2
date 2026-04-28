@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { CheckCircle, Clock, ShieldCheck, TrendingUp, UserCheck, Smartphone } from "lucide-react";
 import "./WhyChooseUs.css";
-import whyChooseImage from "../../assets/images/home2.png"; // Using an existing image for banner
+import whyChooseImage from "../../assets/images/whychooseus.jpg"; // Using an existing image for banner
 
 const WhyChooseUs = () => {
   useEffect(() => {

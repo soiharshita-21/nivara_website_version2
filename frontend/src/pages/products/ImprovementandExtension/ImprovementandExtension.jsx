@@ -1,6 +1,6 @@
 import React from "react";
 import { FaHome, FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
-import rev from "../../../assets/images/Renovation.jpg";
+import rev from "../../../assets/images/Improvement Extension.png";
 import "./ImprovementandExtension.css";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
@@ -19,9 +19,16 @@ const ImprovementandExtension = () => {
               <div className="improv-imagebox">
                 <img src={rev} alt="Improvement and Extension Loan" />
                 <div className="improv-overlay"></div>
-                <div className="improv-icon">
-                  <FaHome className="improv-rotate-icon" />
+                
+                {/* NEW: Overlay Points */}
+                <div className="improv-image-points">
+                  <h4 className="points-title">Why Choose Us</h4>
+                  <div className="point">Quick approval</div>
+                  <div className="point">Minimal documentation</div>
+                  <div className="point">Attractive rates</div>
                 </div>
+
+
               </div>
 
               <div className="improv-content">
@@ -30,16 +37,15 @@ const ImprovementandExtension = () => {
                   Renovate or extend your existing home
                 </p>
 
-                <div className="slide-in-text">
+                {/* <div className="slide-in-text">
                   <ul className="improv-features">
                     <li>Quick approval</li>
                     <li>Minimal documentation</li>
                     <li>Attractive rates</li>
                   </ul>
-                </div>
+                </div> */}
 
                 <div className="improv-buttons">
-                  <button className="improv-btn-outline">Learn More</button>
                   <button
                     className="improv-loan-btn-solid"
                     onClick={() => navigate("/apply-home-loan")}
@@ -86,10 +92,10 @@ const ImprovementandExtension = () => {
           { icon: <FaBriefcase />, title: "Hassle free" },
           { icon: <FaCheck />, title: "Secure Loan Process", circle: true }
         ].map((feature, index) => (
-          <ScrollReveal 
-            key={index} 
-            direction="up" 
-            delay={index * 0.1 + 0.2} 
+          <ScrollReveal
+            key={index}
+            direction="up"
+            delay={index * 0.1 + 0.2}
             distance={20}
           >
             <div className="improv-feature-box">
@@ -120,10 +126,10 @@ const ImprovementandExtension = () => {
               "24x7 assistance",
               "Customized Repayment Options"
             ].map((benefit, index) => (
-              <ScrollReveal 
-                key={index} 
-                direction="up" 
-                delay={index * 0.05} 
+              <ScrollReveal
+                key={index}
+                direction="up"
+                delay={index * 0.05}
                 distance={10}
               >
                 <div className="improv-benefit-item">
@@ -176,9 +182,9 @@ const ImprovementandExtension = () => {
             { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", green: true },
             { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", green: true }
           ].map((card, index) => (
-            <ScrollReveal 
-              key={index} 
-              direction="up" 
+            <ScrollReveal
+              key={index}
+              direction="up"
               delay={index * 0.1 + 0.1}
             >
               <div className="improv-help-card">
@@ -206,5 +212,5 @@ const ImprovementandExtension = () => {
 };
 
 export default ImprovementandExtension;
- 
+
 

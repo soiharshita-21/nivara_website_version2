@@ -1,6 +1,6 @@
 import React from "react";
 import "./Policy.css";
-import pol from "../../assets/images/pol.png";
+import pol from "../../assets/images/policy.png";
 
 const policies = [
   { name: "POSH Policy", link: "/policies/posh.pdf" },

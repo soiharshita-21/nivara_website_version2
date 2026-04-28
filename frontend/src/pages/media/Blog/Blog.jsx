@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Blog.css";
 
 // Banner image
-import home2 from "../../../assets/images/home2.png";
+import home2 from "../../../assets/images/blog.png";
 
 // Blog images (you will replace with your real images)
 import cbo from "../../../assets/images/blogimg1.png";
@@ -51,7 +51,7 @@ const Blog = () => {
           <span className="blog-current">Blog</span>
         </div>
 
-        <h1 className="blog-hero-title">Blog</h1>
+        {/* <h1 className="blog-hero-title">Blog</h1> */}
       </div>
 
       {/* Blog Cards */}
@@ -74,8 +74,8 @@ const Blog = () => {
 
               <p>{item.content ? (item.content.length > 120 ? item.content.substring(0, 120) + "..." : item.content) : item.desc}</p>
 
-              <Link 
-                className="read-more" 
+              <Link
+                className="read-more"
                 to={`/media/blog/${item.slug || item.id}`}
                 onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}
               >

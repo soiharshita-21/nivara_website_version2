@@ -39,7 +39,6 @@ const ScrollReveal = ({
       onViewportEnter={() => setIsInView(true)}
       viewport={{ once: true, amount: 0.1 }}
       variants={variants}
-      style={{ width: '100%', height: '100%' }}
       className={`scroll-reveal-container ${isInView ? "reveal-visible" : ""} ${className}`}
     >
       {children}

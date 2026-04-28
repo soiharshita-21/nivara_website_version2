@@ -1,5 +1,5 @@
 import React from "react";
-import home3 from "../../../assets/images/home3.jpeg";
+import home3 from "../../../assets/images/lenders.png";
 import "./OurInsurancePartners.css";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 

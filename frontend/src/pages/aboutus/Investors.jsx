@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Investors.css";
-import inv from "../../assets/images/inv.png";
+import inv from "../../assets/images/investor.png";
 import tnLogo from "../../assets/images/TN.png";
 import bpeLogo from "../../assets/images/BPE.png";
 

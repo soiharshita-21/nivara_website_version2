@@ -135,7 +135,7 @@
 }
 
 
-.nav-btn {
+.nav-btnn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -143,17 +143,18 @@
   height: 46px;
   border-radius: 50%;
   border: 2px solid #f1c6cc;
+  background: #7a1422;
   background: #fff;
   color: #d32f2f;
   font-size: 22px;
   cursor: pointer;
 }
 
-.nav-btn.left {
+.nav-btnn.left {
   left: -25px;
 }
 
-.nav-btn.right {
+.nav-btnn.right {
   right: -25px;
 }
 
@@ -179,7 +180,7 @@
   background: #d32f2f;
 }
 
-.nav-btn {
+.nav-btnn {
   opacity: 0.5;
   transform: translateY(-50%) scale(0.85);
   transition: 0.35s ease;

@@ -19,12 +19,13 @@
 /* Hero Section */
 .why-hero {
   position: relative;
-  height: 400px;
+  height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: flex-start;
+  text-align: left;
   color: #fff;
+  padding-left: 8%;
 }
 
 .why-hero-img {
@@ -56,14 +57,22 @@
 }
 
 .why-hero-content h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
+  font-size: 4rem;
+  font-weight: 800;
   margin-bottom: 20px;
+  line-height: 1.1;
+  border-left: 8px solid #d32f2f;
+  padding-left: 25px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
 }
 
 .why-hero-content p {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   opacity: 0.9;
+  max-width: 500px;
+  font-weight: 500;
+  margin-left: 33px;
 }
 
 /* Main Content */

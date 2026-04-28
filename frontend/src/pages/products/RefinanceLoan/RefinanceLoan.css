@@ -73,7 +73,7 @@
 /* Card */
 .refinance-card {
   width: 100%;
-  max-width: 900px;
+  max-width: 800px;
   background: #fff;
   border-radius: 22px;
   overflow: hidden;
@@ -261,7 +261,7 @@
 
 /* Image */
 .refinance-imagebox {
-  height: 360px;
+  height: 320px;
   position: relative;
   overflow: hidden;
 }
@@ -278,43 +278,115 @@
   height: 360px;
 }
 
-.refinance-icon {
-  width: 90px;
-  height: 90px;
-  background: #fff;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 42px;
-  color: #2e7d32;
+.refinance-iconbox {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: 0.7s ease;
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 2;
 }
 
-/* Rotate */
-.refinance-card:hover .refinance-rotate-icon {
+.refinance-rotate-icon {
+  font-size: 28px;
+  color: #2e7d32;
+  transition: transform 0.7s ease;
+}
+
+.refinance-iconbox:hover .refinance-rotate-icon {
   transform: rotate(360deg);
-  transition: 0.7s;
+}
+
+.refinance-image-points {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  z-index: 2;
+
+  width: 240px;
+  padding: 15px;
+
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.refinance-image-points .point {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 12px;
+  border-radius: 10px;
+
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+
+  transition: all 0.3s ease;
+}
+
+.refinance-image-points .point::before {
+  content: "✔";
+  width: 22px;
+  height: 22px;
+  background: #2e7d32;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+}
+
+.refinance-image-points .point:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.refinance-image-points .points-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 2px;
+}
+
+.refinance-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
 /* color overlay always visible */
 .refinance-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(46, 125, 50, 0.28);
+  /* background: rgba(46, 125, 50, 0.28); */
   /* Nivara Green tint */
   opacity: 1;
   transition: 0.5s ease;
 }
 
 /* slightly stronger on hover */
-.refinance-card:hover .refinance-overlay {
-  background: rgba(46, 125, 50, 0.42);
-}
+
 
 
 /* Content */
@@ -558,9 +630,11 @@
   .refinance-feature-strip {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .refinance-feature-box:nth-child(2) {
     border-right: none;
   }
+
   .refinance-feature-box:nth-child(1),
   .refinance-feature-box:nth-child(2) {
     border-bottom: 1px solid #e5e7eb;
@@ -571,11 +645,13 @@
   .refinance-feature-strip {
     grid-template-columns: 1fr;
   }
+
   .refinance-feature-box {
     border-right: none;
     border-bottom: 1px solid #e5e7eb;
     padding: 40px 20px;
   }
+
   .refinance-feature-box:last-child {
     border-bottom: none;
   }
@@ -797,8 +873,7 @@
 }
 
 
-@media(max-width: 768px) {
-}
+@media(max-width: 768px) {}
 
 
 @media(max-width: 900px) {

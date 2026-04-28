@@ -73,7 +73,7 @@
 
 .comploan-card {
   width: 100%;
-  max-width: 900px;
+  max-width: 800px;
   background: #fff;
   border-radius: 28px;
   overflow: hidden;
@@ -133,8 +133,8 @@
 
 
 .comploan-image {
-  height: 360px;
   position: relative;
+  height: 320px;
   overflow: hidden;
 }
 
@@ -144,45 +144,113 @@
   object-fit: cover;
 }
 
-.comploan-center-icon {
+.comploan-iconbox {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
-  background: white;
-  border-radius: 20px;
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 5;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  transition: 0.6s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 2;
 }
 
-
-.comploan-icon-rotate {
-  font-size: 38px;
+.comploan-rotate-icon {
+  font-size: 28px;
   color: #d32f2f;
-  transition: transform 0.6s ease-in-out;
+  transition: transform 0.7s ease;
 }
 
-.comploan-card:hover .comploan-icon-rotate {
+.comploan-iconbox:hover .comploan-rotate-icon {
   transform: rotate(360deg);
-  transition: 0.7s;
+}
+
+.composite-image-points {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  z-index: 2;
+
+  width: 240px;
+  padding: 15px;
+
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.composite-image-points .point {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 12px;
+  border-radius: 10px;
+
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+
+  transition: all 0.3s ease;
+}
+
+.composite-image-points .point::before {
+  content: "✔";
+  width: 22px;
+  height: 22px;
+  background: #d32f2f;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+}
+
+.composite-image-points .point:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.points-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #d32f2f;
+  margin-bottom: 2px;
 }
 
 .comploan-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(211, 47, 47, 0.28);
-  transition: 0.5s ease;
+  z-index: 1;
 }
 
+.comploan-image {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+}
 
-.comploan-card:hover .comploan-overlay {
-  background: rgba(211, 47, 47, 0.42);
+.comploan-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 

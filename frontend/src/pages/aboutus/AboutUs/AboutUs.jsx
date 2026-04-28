@@ -1,7 +1,7 @@
 import React from "react";
 import "./AboutUs.css";
-import house2 from "../../../assets/images/pol.png";
-import hhh from "../../../assets/images/3.png";
+import house2 from "../../../assets/images/aboutus1.png";
+import hhh from "../../../assets/images/aboutus2.png";
 import { FaMoneyBillWave, FaHome, FaFileAlt, FaSyncAlt, FaCogs, FaHeadset, FaGlobe } from "react-icons/fa";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 

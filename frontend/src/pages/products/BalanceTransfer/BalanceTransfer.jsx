@@ -1,7 +1,7 @@
 import React from "react";
 import { FiHome } from "react-icons/fi";// balance transfer icon
 import { FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
-import bal from "../../../assets/images/balance.jpg"; // you will replace this
+import bal from "../../../assets/images/Balance Transfer.png"; // you will replace this
 import "./BalanceTransfer.css";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
@@ -20,9 +20,16 @@ const BalanceTransfer = () => {
               <div className="balance-imagebox">
                 <img src={bal} alt="Balance Transfer" />
                 <div className="balance-image-overlay"></div>
-                <div className="balance-iconbox">
-                  <FiHome className="balance-rotate-icon" />
+
+                {/* NEW: Overlay Points */}
+                <div className="balance-image-points">
+                  <h4 className="points-title">Why Choose Us</h4>
+
+                  <div className="point">Lower Interest Rates</div>
+                  <div className="point">Top-up Facility</div>
+                  <div className="point">Easy Process</div>
                 </div>
+
               </div>
 
               <div className="balance-content">
@@ -31,16 +38,15 @@ const BalanceTransfer = () => {
                   Transfer your existing loan for better rates and terms
                 </p>
 
-                <div className="slide-in-text">
+                {/* <div className="slide-in-text">
                   <ul className="balance-features">
                     <li>Lower interest rates</li>
                     <li>Top-up facility</li>
                     <li>Easy process</li>
                   </ul>
-                </div>
+                </div> */}
 
                 <div className="balance-buttons">
-                  <button className="balance-btn-outline">Learn More</button>
                   <button
                     className="balance-loan-btn-solid"
                     onClick={() => navigate("/apply-home-loan")}
@@ -82,10 +88,10 @@ const BalanceTransfer = () => {
           { icon: <FaBriefcase />, title: "Hassle free" },
           { icon: <FaCheck />, title: "Secure Loan Process", circle: true }
         ].map((feature, index) => (
-          <ScrollReveal 
-            key={index} 
-            direction="up" 
-            delay={index * 0.1 + 0.2} 
+          <ScrollReveal
+            key={index}
+            direction="up"
+            delay={index * 0.1 + 0.2}
             distance={20}
           >
             <div className="balance-feature-box">
@@ -117,10 +123,10 @@ const BalanceTransfer = () => {
               "Customized Repayment Options",
               "Transparent client interactions"
             ].map((benefit, index) => (
-              <ScrollReveal 
-                key={index} 
-                direction="up" 
-                delay={index * 0.05} 
+              <ScrollReveal
+                key={index}
+                direction="up"
+                delay={index * 0.05}
                 distance={10}
               >
                 <div className="balance-benefit-item">
@@ -173,9 +179,9 @@ const BalanceTransfer = () => {
             { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", green: true },
             { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", green: true }
           ].map((card, index) => (
-            <ScrollReveal 
-              key={index} 
-              direction="up" 
+            <ScrollReveal
+              key={index}
+              direction="up"
               delay={index * 0.1 + 0.1}
             >
               <div className="balance-help-card">

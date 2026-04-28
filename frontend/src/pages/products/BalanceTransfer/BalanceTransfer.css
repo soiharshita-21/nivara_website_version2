@@ -72,7 +72,7 @@
 .balance-image-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(211, 47, 47, 0.28);
+  /* background: rgba(211, 47, 47, 0.28); */
   /* Nivara Red shade */
   z-index: 1;
 }
@@ -85,7 +85,7 @@
 /* Card */
 .balance-card {
   width: 100%;
-  max-width: 900px;
+  max-width: 800px;
   background: #fff;
   border-radius: 28px;
   overflow: hidden;
@@ -310,7 +310,7 @@
 /* Image */
 .balance-imagebox {
   position: relative;
-  height: 360px;
+  height: 320px;
   overflow: hidden;
 }
 
@@ -828,6 +828,71 @@
   cursor: pointer;
 }
 
+/* RIGHT SIDE FEATURE PANEL */
+.balance-image-points {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  z-index: 2;
+
+  width: 240px;
+  padding: 15px;
+
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.balance-image-points .point {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 12px;
+  border-radius: 10px;
+
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+
+  transition: all 0.3s ease;
+}
+
+.balance-image-points .point::before {
+  content: "✔";
+  width: 22px;
+  height: 22px;
+  background: #d32f2f;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+}
+
+.balance-image-points .point:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.balance-image-points .points-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #d32f2f;
+  margin-bottom: 2px;
+}
 
 
 /* Responsive */

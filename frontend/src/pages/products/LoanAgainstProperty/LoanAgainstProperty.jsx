@@ -1,5 +1,5 @@
 import React from "react";
-import lop from "../../../assets/images/LOP.jpg";
+import lop from "../../../assets/images/LOP.png";
 import { FiHome } from "react-icons/fi";
 import { FaHome, FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 
@@ -20,9 +20,16 @@ const LoanAgainstProperty = () => {
               <div className="lap-image">
                 <img src={lop} alt="Loan Against Property" />
                 <div className="lap-image-overlay"></div>
-                <div className="lap-center-icon">
-                  <FiHome className="lap-icon-only-rotate" />
+                
+                {/* NEW: Overlay Points */}
+                <div className="lap-image-points">
+                  <h4 className="points-title">Why Choose Us</h4>
+                  <div className="point">High loan amount</div>
+                  <div className="point">Flexible usage</div>
+                  <div className="point">Long tenure</div>
                 </div>
+
+
               </div>
 
               <div className="lap-content">
@@ -31,16 +38,15 @@ const LoanAgainstProperty = () => {
                   Unlock the value of your property for any purpose
                 </p>
 
-                <div className="slide-in-text">
+                {/* <div className="slide-in-text">
                   <ul className="lap-features">
                     <li>High loan amount</li>
                     <li>Flexible usage</li>
                     <li>Long tenure</li>
                   </ul>
-                </div>
+                </div> */}
 
                 <div className="lap-buttons">
-                  <button className="lap-btn-outline">Learn More</button>
                   <button
                     className="lap-loan-btn-solid"
                     onClick={() => navigate("/apply-home-loan")}
@@ -83,10 +89,10 @@ const LoanAgainstProperty = () => {
           { icon: <FaBriefcase />, title: "Hassle free" },
           { icon: <FaCheck />, title: "Secure Loan Process", circle: true }
         ].map((feature, index) => (
-          <ScrollReveal 
-            key={index} 
-            direction="up" 
-            delay={index * 0.1 + 0.2} 
+          <ScrollReveal
+            key={index}
+            direction="up"
+            delay={index * 0.1 + 0.2}
             distance={20}
           >
             <div className="lap-feature-box">
@@ -119,10 +125,10 @@ const LoanAgainstProperty = () => {
               "24x7 assistance",
               "Transparent client interactions"
             ].map((benefit, index) => (
-              <ScrollReveal 
-                key={index} 
-                direction="up" 
-                delay={index * 0.05} 
+              <ScrollReveal
+                key={index}
+                direction="up"
+                delay={index * 0.05}
                 distance={10}
               >
                 <div className="lap-benefit-item">
@@ -175,9 +181,9 @@ const LoanAgainstProperty = () => {
             { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", green: true },
             { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", green: true }
           ].map((card, index) => (
-            <ScrollReveal 
-              key={index} 
-              direction="up" 
+            <ScrollReveal
+              key={index}
+              direction="up"
               delay={index * 0.1 + 0.1}
             >
               <div className="lap-help-card">
@@ -205,4 +211,3 @@ const LoanAgainstProperty = () => {
 };
 
 export default LoanAgainstProperty;
- 

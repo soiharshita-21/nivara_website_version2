@@ -6,31 +6,65 @@
 }
  
 /* Banner */
-.gallery-banner{
-  position:relative;
-  width:100%;
-  height:500px;
-  overflow:hidden;
+.gallery-banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding-left: 8%;
 }
  
-.gallery-banner img{
+.gallery-banner img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center bottom;   /* 🔥 moves image upward */
-  filter: brightness(70%);
+  object-position: center;
+  filter: brightness(90%);
+  z-index: 1;
 }
  
-.gallery-title{
-  position:absolute;
-  bottom:40px;
-  left:60px;
-  font-size:48px;
-  font-weight:600;
-  color:#fff;
- 
-  padding:14px 30px;
-  border-radius:6px;
+.gallery-title {
+  position: relative;
+  z-index: 3;
+  font-size: 5rem;
+  font-weight: 800;
+  color: #d32f2f;
+  line-height: 1;
+  border-left: 10px solid #d32f2f;
+  padding-left: 30px;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  margin: 0;
+}
+
+/* Breadcrumb */
+.gallery-breadcrumb {
+  position: absolute;
+  top: 100px;
+  left: 8%;
+  z-index: 10;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.gallery-breadcrumb a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.gallery-separator {
+  margin: 0 5px;
+  color: #fff;
+}
+
+.gallery-current {
+  color: #fff;
 }
  
 /* Section Headers */

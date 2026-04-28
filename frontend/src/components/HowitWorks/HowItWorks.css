@@ -249,8 +249,14 @@
   overflow: hidden;
 
   background: url("../../assets/images/startyourapplication.jpg") center/cover no-repeat;
-  background-attachment: scroll; /* Changed from fixed to scroll for performance */
+  background-attachment: fixed; 
   position: relative;
+}
+
+@media (max-width: 1024px) {
+  .how-cta-banner {
+    background-attachment: scroll;
+  }
 }
 
 /* Dark overlay for readability */
@@ -266,35 +272,47 @@
   position: relative;
   z-index: 2;
   height: 100%;
+  width: 100%;
 
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  padding: 40px;
 
   color: white;
   text-align: center;
 }
 
+.how-cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  max-width: 600px;
+}
+
 /* Text */
-.how-cta-overlay p {
-  font-size: 22px;
-  font-weight: 600;
+.how-cta-content p {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Button */
-.how-cta-overlay button {
-  background: linear-gradient(135deg, #7a1422, #ff0026);
+.how-cta-content button {
+  background: #df1e3c;
   color: white;
   border: none;
-  padding: 16px 40px;
+  padding: 16px 45px;
   border-radius: 50px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 25px rgba(223, 30, 60, 0.3);
 }
+
 
 .btn-arrow {
   transition: transform 0.3s ease;

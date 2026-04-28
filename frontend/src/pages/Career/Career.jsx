@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { FaGraduationCap, FaSuitcase, FaBuilding, FaUserTie, FaEnvelope, FaMapMarkerAlt, FaUpload } from "react-icons/fa";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import "./Career.css";
-import careersHero from "../../assets/images/careers.jpg";
+import careersHero from "../../assets/images/hiring.png";
 
 const Career = () => {
   useEffect(() => {
@@ -40,7 +40,7 @@ const Career = () => {
       {/* Main Content */}
       <section className="career-main-section">
         <div className="career-modern-container">
-          
+
           {/* Left Column - Information */}
           <div className="career-info-column">
             <div className="info-block animate-fade-up">
@@ -49,18 +49,18 @@ const Career = () => {
                 <h2>Why Nivara?</h2>
               </div>
               <p>
-                Nivara, meaning “shelter”, is a Housing Finance Company offering 
+                Nivara, meaning “shelter”, is a Housing Finance Company offering
                 the opportunity to participate in organizational building in the truest sense.
               </p>
               <p>
-                We are committed to developing a unique business model and value proposition, 
-                with an emphasis on using technology to provide superior customer service. 
-                We offer a unique possibility for implementing fresh ideas, policies, and processes 
+                We are committed to developing a unique business model and value proposition,
+                with an emphasis on using technology to provide superior customer service.
+                We offer a unique possibility for implementing fresh ideas, policies, and processes
                 that are difficult to realize in established companies.
               </p>
               <p>
-                The opportunities for growth will be tremendous. The added attraction is the satisfaction 
-                of serving the housing finance needs of those near the bottom of the pyramid while contributing 
+                The opportunities for growth will be tremendous. The added attraction is the satisfaction
+                of serving the housing finance needs of those near the bottom of the pyramid while contributing
                 to our core vision.
               </p>
             </div>
@@ -71,12 +71,12 @@ const Career = () => {
                 <h2>Careers with Nivara</h2>
               </div>
               <p>
-                We welcome candidates (Experienced & Freshers) keen to ride the exciting journey of 
-                creating an organization. We are looking for those who think out-of-the-box, handle 
+                We welcome candidates (Experienced & Freshers) keen to ride the exciting journey of
+                creating an organization. We are looking for those who think out-of-the-box, handle
                 uncertainties, and possess empathy and a strong value system.
               </p>
               <p>
-                We have open positions across locations in Sales, Operations, Credit & Risk, Technical, 
+                We have open positions across locations in Sales, Operations, Credit & Risk, Technical,
                 and Legal. If you'd like to explore further, drop your CV to:
               </p>
               <a href="mailto:careers@nivarahousing.com" className="email-link">
@@ -86,7 +86,7 @@ const Career = () => {
 
             <div className="jobs-section animate-fade-up" style={{ transitionDelay: '0.2s' }}>
               <h2>Current Openings</h2>
-              
+
               <div className="job-modern-card">
                 <div className="job-card-content">
                   <div className="job-title-row">
@@ -95,7 +95,7 @@ const Career = () => {
                   </div>
                   <p className="education-req"><FaGraduationCap /> Any Educational Degree with good communication skills</p>
                   <p className="job-desc">
-                    Candidates should be earnest and driven to create an impact. Looking for someone with an open mind, 
+                    Candidates should be earnest and driven to create an impact. Looking for someone with an open mind,
                     willingness to learn and evolve.
                   </p>
                 </div>
@@ -110,7 +110,7 @@ const Career = () => {
                   </div>
                   <p className="education-req"><FaGraduationCap /> Any Educational Degree with good communication skills</p>
                   <p className="job-desc">
-                    Candidates should be earnest and driven to create an impact. Looking for someone with an open mind, 
+                    Candidates should be earnest and driven to create an impact. Looking for someone with an open mind,
                     willingness to learn and evolve.
                   </p>
                 </div>
@@ -126,7 +126,7 @@ const Career = () => {
                 <h2>Join Our Team</h2>
                 <p>Fill out the form below and we'll be in touch soon.</p>
               </div>
-              
+
               <form className="modern-contact-form">
                 <div className="form-group">
                   <label>Position Interested In</label>

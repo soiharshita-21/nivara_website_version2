@@ -1,6 +1,6 @@
 import React from "react";
 import "./Lenders.css";
-import home3 from "../../../assets/images/home3.jpeg"; 
+import home3 from "../../../assets/images/lenders.png";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 
 import img8 from "../../../assets/images/Lenders/8.jpg";

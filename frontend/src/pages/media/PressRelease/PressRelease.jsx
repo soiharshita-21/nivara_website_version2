@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./PressRelease.css";
 
 // Banner
-import home2 from "../../../assets/images/home2.png";
+import home2 from "../../../assets/images/pressrelease.png";
 
 // Card Images (you will import real images)
 // import slide1 from "../../../assets/images/slide1.jpg";
@@ -95,9 +96,16 @@ const PressRelease = () => {
     <div className="press-page">
 
       {/* Banner */}
-      <div className="press-banner animate-pop-up">
+      <div className="press-banner">
         <img src={home2} alt="Press Release" />
-        <h1 className="press-title animate-pop-up">Press Release</h1>
+
+        <div className="press-breadcrumb">
+          <Link to="/">Nivara Home</Link>
+          <span className="press-separator">&gt;</span>
+          <span className="press-current">Press Release</span>
+        </div>
+
+        {/* <h1 className="press-title">Press Release</h1> */}
       </div>
 
       {/* Cards */}
@@ -115,7 +123,6 @@ const PressRelease = () => {
               <p>{item.desc}</p>
               <button className="press-read">Read More</button>
             </div>
-
           </div>
         ))}
       </div>

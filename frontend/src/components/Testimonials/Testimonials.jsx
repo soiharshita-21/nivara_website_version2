@@ -64,8 +64,8 @@ const Testimonials = () => {
 
   return (
     <section className="testimonials-section">
-      {/* Header */}
-      <ScrollReveal direction="up">
+      <ScrollReveal direction="up" distance={50}>
+        {/* Header */}
         <div className="testimonials-header">
           <div className="section-badge-wrapper">
             <span className="section-badge-spark">✦</span>
@@ -75,13 +75,11 @@ const Testimonials = () => {
           <h2>What Our Customers Say</h2>
           <p>Real stories from real people who achieved their dreams with Nivara</p>
         </div>
-      </ScrollReveal>
 
-      {/* Slider Card */}
-      <ScrollReveal direction="up" delay={0.2}>
+        {/* Slider Card */}
         <div className="testimonial-card">
           {/* Left Arrow */}
-          <button className="nav-btn left" onClick={prev}>‹</button>
+          <button className="nav-btnn left" onClick={prev}>‹</button>
 
           {/* Content */}
           <div className="testimonial-content">
@@ -115,19 +113,19 @@ const Testimonials = () => {
             </div>
           </div>
 
-          <button className="nav-btn right" onClick={next}>›</button>
+          <button className="nav-btnn right" onClick={next}>›</button>
+        </div>
+
+        <div className="dots">
+          {testimonials.map((_, i) => (
+            <span
+              key={i}
+              className={`dot ${i === index ? "active" : ""}`}
+              onClick={() => setIndex(i)}
+            />
+          ))}
         </div>
       </ScrollReveal>
-
-      <div className="dots">
-        {testimonials.map((_, i) => (
-          <span
-            key={i}
-            className={`dot ${i === index ? "active" : ""}`}
-            onClick={() => setIndex(i)}
-          />
-        ))}
-      </div>
     </section>
   );
 };

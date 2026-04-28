@@ -1,6 +1,6 @@
 import React from "react";
 import { FaHome, FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
-import ref from "../../../assets/images/refinance.jpg";
+import ref from "../../../assets/images/refinance.png";
 import "./RefinanceLoan.css";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
@@ -19,9 +19,16 @@ const RefinanceLoan = () => {
               <div className="refinance-imagebox">
                 <img src={ref} alt="Refinance Loan" />
                 <div className="refinance-overlay"></div>
-                <div className="refinance-icon">
-                  <FaHome className="refinance-rotate-icon" />
+                
+                {/* NEW: Overlay Points */}
+                <div className="refinance-image-points">
+                  <h4 className="points-title">Why Choose Us</h4>
+                  <div className="point">Quick approval</div>
+                  <div className="point">Minimal documentation</div>
+                  <div className="point">Attractive rates</div>
                 </div>
+
+
               </div>
 
               <div className="refinance-content">
@@ -30,16 +37,15 @@ const RefinanceLoan = () => {
                   Renovate or extend your existing home
                 </p>
 
-                <div className="slide-in-text">
+                {/* <div className="slide-in-text">
                   <ul className="refinance-features">
                     <li>Quick approval</li>
                     <li>Minimal documentation</li>
                     <li>Attractive rates</li>
                   </ul>
-                </div>
+                </div> */}
 
                 <div className="refinance-buttons">
-                  <button className="refinance-btn-outline">Learn More</button>
                   <button
                     className="refinance-loan-btn-solid"
                     onClick={() => navigate("/apply-home-loan")}
@@ -83,10 +89,10 @@ const RefinanceLoan = () => {
           { icon: <FaBriefcase />, title: "Hassle free" },
           { icon: <FaCheck />, title: "Secure Loan Process", circle: true }
         ].map((feature, index) => (
-          <ScrollReveal 
-            key={index} 
-            direction="up" 
-            delay={index * 0.1 + 0.2} 
+          <ScrollReveal
+            key={index}
+            direction="up"
+            delay={index * 0.1 + 0.2}
             distance={20}
           >
             <div className="refinance-feature-box">
@@ -122,10 +128,10 @@ const RefinanceLoan = () => {
               "Lower Your Interest Rate",
               "Lower Your Monthly Payment"
             ].map((benefit, index) => (
-              <ScrollReveal 
-                key={index} 
-                direction="up" 
-                delay={index * 0.05} 
+              <ScrollReveal
+                key={index}
+                direction="up"
+                delay={index * 0.05}
                 distance={10}
               >
                 <div className="refinance-benefit-item">
@@ -178,9 +184,9 @@ const RefinanceLoan = () => {
             { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", green: true },
             { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", green: true }
           ].map((card, index) => (
-            <ScrollReveal 
-              key={index} 
-              direction="up" 
+            <ScrollReveal
+              key={index}
+              direction="up"
               delay={index * 0.1 + 0.1}
             >
               <div className="refinance-help-card">
@@ -208,4 +214,3 @@ const RefinanceLoan = () => {
 };
 
 export default RefinanceLoan;
- 

@@ -4,7 +4,7 @@ import {
   Home,
   FileText,
   Zap,
-  Headphones,
+  Headset,
 } from "lucide-react";
 import "./whychooseus.css";
 import ScrollReveal from "../ScrollReveal/ScrollReveal";
@@ -43,7 +43,7 @@ const features = [
   {
     title: "Dedicated Support",
     desc: "Personal relationship managers",
-    icon: Headphones,
+    icon: Headset,
     color: "pink",
   },
 ];

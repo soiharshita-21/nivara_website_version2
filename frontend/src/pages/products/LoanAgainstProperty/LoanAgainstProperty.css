@@ -72,7 +72,7 @@
 
 .lap-card {
   width: 100%;
-  max-width: 900px;
+  max-width: 800px;
   background: #fff;
   border-radius: 28px;
   overflow: hidden;
@@ -92,7 +92,7 @@
 
 
 .lap-image {
-  height: 360px;
+  height: 320px;
   position: relative;
 }
 
@@ -105,34 +105,105 @@
 .lap-image-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(46, 125, 50, 0.45);
+  /* background: rgba(46, 125, 50, 0.45); */
 }
 
 
-.lap-center-icon {
+.lap-iconbox {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90px;
-  height: 90px;
-  background: #ffffff;
-  border-radius: 20px;
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   z-index: 2;
 }
 
-.lap-icon-only-rotate {
-  font-size: 36px;
+.lap-rotate-icon {
+  font-size: 28px;
   color: #2e7d32;
-  transition: transform 0.6s ease;
+  transition: transform 0.7s ease;
 }
 
-
-.lap-center-icon:hover .lap-icon-only-rotate {
+.lap-iconbox:hover .lap-rotate-icon {
   transform: rotate(360deg);
+}
+
+.lap-image-points {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  z-index: 2;
+
+  width: 240px;
+  padding: 15px;
+
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lap-image-points .point {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 12px;
+  border-radius: 10px;
+
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+
+  transition: all 0.3s ease;
+}
+
+.lap-image-points .point::before {
+  content: "✔";
+  width: 22px;
+  height: 22px;
+  background: #2e7d32;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+}
+
+.lap-image-points .point:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.lap-image-points .points-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 2px;
+}
+
+.lap-image-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
 

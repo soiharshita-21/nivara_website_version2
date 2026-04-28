@@ -1,18 +1,25 @@
 import React from "react";
 import "./PublicDisclosure.css";
-import home3 from "../../../assets/images/home3.jpeg";
+import { ShieldCheck, FileText } from 'lucide-react';
+import ScrollReveal from '../../../components/ScrollReveal/ScrollReveal';
+import home3 from "../../../assets/images/public disclosure.png";
 import pb1 from "../../../assets/images/pb1.jpeg";
 import pb2 from "../../../assets/images/pb2.jpeg";
 const PublicDisclosure = () => {
   return (
     <div className="public-page">
 
-      {/* Banner */}
-      <div className="public-banner animate-pop-up">
-        <img src={home3} alt="Public Disclosure" />
-        <div className="public-overlay">
-          <h1 className="animate-pop-up">Public Disclosure</h1>
-        </div>
+      {/* Hero Section */}
+      <div className="public-hero" style={{ backgroundImage: `url(${home3})` }}>
+        <div className="hero-overlay"></div>
+        <ScrollReveal direction="down" distance={30} className="hero-content-wrapper">
+          <div className="hero-badge">
+            <ShieldCheck size={16} />
+            <span>Regulatory Disclosure</span>
+          </div>
+          <h1 className="public-title">Public Disclosure</h1>
+          <p className="hero-subtitle">Transparency and regulatory compliance in housing finance</p>
+        </ScrollReveal>
       </div>
 
       {/* Content */}

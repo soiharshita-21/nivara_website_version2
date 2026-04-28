@@ -1,5 +1,5 @@
 import React from "react";
-import con from "../../../assets/images/construction.jpg";
+import con from "../../../assets/images/Loan for construction.png";
 import { FiHome } from "react-icons/fi";
 import { FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 import "./ConstructionLoan.css";
@@ -19,9 +19,16 @@ const ConstructionLoan = () => {
               <div className="conloan-image">
                 <img src={con} alt="Construction Loan" />
                 <div className="conloan-overlay"></div>
-                <div className="conloan-center-icon">
-                  <FiHome className="conloan-icon-rotate" />
+                
+                {/* NEW: Overlay Points */}
+                <div className="conloan-image-points">
+                  <h4 className="points-title">Why Choose Us</h4>
+                  <div className="point">Stage-wise disbursement</div>
+                  <div className="point">Flexible tenure</div>
+                  <div className="point">Low processing fee</div>
                 </div>
+
+
               </div>
 
               <div className="conloan-content">
@@ -30,16 +37,15 @@ const ConstructionLoan = () => {
                   Build your home from the ground up with our construction loans
                 </p>
 
-                <div className="slide-in-text">
+                {/* <div className="slide-in-text">
                   <ul className="features">
                     <li>Stage-wise disbursement</li>
                     <li>Flexible tenure</li>
                     <li>Low processing fee</li>
                   </ul>
-                </div>
+                </div> */}
 
                 <div className="con-loan-buttons">
-                  <button className="con-loan-btn-outline">Learn More</button>
                   <button
                     className="home-loan-btn-solid"
                     onClick={() => navigate("/apply-home-loan")}
@@ -83,10 +89,10 @@ const ConstructionLoan = () => {
           { icon: <FaBriefcase />, title: "Hassle free" },
           { icon: <FaCheck />, title: "Secure Loan Process", circle: true }
         ].map((feature, index) => (
-          <ScrollReveal 
-            key={index} 
-            direction="up" 
-            delay={index * 0.1 + 0.2} 
+          <ScrollReveal
+            key={index}
+            direction="up"
+            delay={index * 0.1 + 0.2}
             distance={20}
           >
             <div className="conloan-feature-box">
@@ -145,10 +151,10 @@ const ConstructionLoan = () => {
               "Multiple Repayment Options",
               "Customized Construction Loan"
             ].map((benefit, index) => (
-              <ScrollReveal 
-                key={index} 
-                direction="up" 
-                delay={index * 0.05} 
+              <ScrollReveal
+                key={index}
+                direction="up"
+                delay={index * 0.05}
                 distance={10}
               >
                 <div className="conloan-benefit-item">
@@ -175,9 +181,9 @@ const ConstructionLoan = () => {
             { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", green: true },
             { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", green: true }
           ].map((card, index) => (
-            <ScrollReveal 
-              key={index} 
-              direction="up" 
+            <ScrollReveal
+              key={index}
+              direction="up"
               delay={index * 0.1 + 0.1}
             >
               <div className="conloan-help-card">

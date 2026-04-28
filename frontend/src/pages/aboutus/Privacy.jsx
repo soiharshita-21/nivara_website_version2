@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Privacy.css";
-import pri from "../../assets/images/pri.jpg";
+import pri from "../../assets/images/privacy.png";
 
 const PrivacyPolicy = () => {
   useEffect(() => {
