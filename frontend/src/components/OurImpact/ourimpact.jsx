@@ -46,7 +46,7 @@ const OurImpact = () => {
       <ScrollReveal direction="down">
         <div className="section-badge-wrapper">
           <span className="section-badge-spark">✦</span>
-          <h6 className="section-badge-title">Our Impact</h6>  
+          <h6 className="section-badge-title">Our Impact</h6>
           <span className="section-badge-spark">✦</span>
         </div>
       </ScrollReveal>
@@ -64,15 +64,15 @@ const OurImpact = () => {
 
       <div className="impact-cards">
         {[
-          { color: "pink", icon: <FaChartLine />, end: 12000, suffix: "+", label: "Loans Disbursed" },
+          { color: "red", icon: <FaChartLine />, end: 12000, suffix: "+", label: "Loans Disbursed" },
           { color: "red", icon: <FaBuilding />, end: 100, suffix: "+", label: "Branches" },
-          { color: "teal", icon: <FaMapMarkerAlt />, end: 5, suffix: "", label: "States Covered" },
-          { color: "yellow", icon: <FaHeart />, end: 98, suffix: "%", label: "Customer Satisfaction" }
+          { color: "red", icon: <FaMapMarkerAlt />, end: 5, suffix: "", label: "States Covered" },
+          { color: "red", icon: <FaHeart />, end: 98, suffix: "%", label: "Customer Satisfaction" }
         ].map((item, index) => (
-          <ScrollReveal 
-            key={index} 
-            direction="up" 
-            delay={0.1 + index * 0.1} 
+          <ScrollReveal
+            key={index}
+            direction="up"
+            delay={0.1 + index * 0.1}
             distance={40}
             scale={0.9}
           >
@@ -86,7 +86,7 @@ const OurImpact = () => {
           </ScrollReveal>
         ))}
       </div>
-    </section> 
+    </section>
   );
 };
 

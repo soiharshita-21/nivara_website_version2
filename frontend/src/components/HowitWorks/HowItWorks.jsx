@@ -9,25 +9,25 @@ const steps = [
     icon: <FaFileAlt />,
     title: "Apply",
     desc: "Submit your application online or visit our nearest branch",
-    color: "#8B1E2D",
+    color: "#d32f2f",
   },
   {
     icon: <FaCheckCircle />,
     title: "Approval",
     desc: "Quick verification and approval process within 48 hours",
-    color: "#F36B6B",
+    color: "#d32f2f",
   },
   {
     icon: <FaMoneyBillWave />,
     title: "Disbursement",
     desc: "Fast loan disbursement to your account",
-    color: "#5CC1B3",
+    color: "#d32f2f",
   },
   {
     icon: <FaHeadset />,
     title: "Support",
     desc: "Continuous support throughout your loan journey",
-    color: "#F4B942",
+    color: "#d32f2f",
   },
 ];
 
@@ -58,9 +58,9 @@ export default function HowItWorks() {
         <div className="how-steps-container">
           <div className="how-steps">
             {steps.map((step, index) => (
-              <ScrollReveal 
-                key={index} 
-                direction="up" 
+              <ScrollReveal
+                key={index}
+                direction="up"
                 delay={0.1 + index * 0.1}
                 distance={40}
                 scale={0.9}
@@ -109,4 +109,4 @@ export default function HowItWorks() {
       </ScrollReveal>
     </section>
   );
-}
+}

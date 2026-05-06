@@ -1,6 +1,7 @@
 .terms-page {
   width: 100%;
-  background: #fff; /* Match fair practice page background */
+  background: #fff;
+  /* Match fair practice page background */
   font-family: "Poppins", sans-serif;
   color: #1e293b;
 }
@@ -8,10 +9,11 @@
 /* HERO SECTION - Reference from Fair Practice Code */
 .terms-banner-section {
   width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/policy.png');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/terms.png');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Parallax effect like fair practice */
+  background-attachment: fixed;
+  /* Parallax effect like fair practice */
   color: white;
   padding: 220px 20px 200px;
   text-align: center;
@@ -56,7 +58,7 @@
   left: 0;
   right: 0;
   height: 100px;
-  background: linear-gradient(to top, rgba(255,255,255,0.2), transparent);
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.2), transparent);
   pointer-events: none;
   z-index: 2;
 }
@@ -98,7 +100,8 @@
 
 .terms-hero-subtitle {
   font-size: 18px;
-  color: #fecdd3; /* Light pink/red tint subtitle like fair practice */
+  color: #fecdd3;
+  /* Light pink/red tint subtitle like fair practice */
   max-width: 700px;
   margin: 0 auto;
   font-weight: 400;
@@ -245,9 +248,11 @@
     padding: 100px 20px 80px;
     border-radius: 0;
   }
+
   .terms-banner-container h1 {
     font-size: 36px;
   }
+
   .content-inner {
     padding-left: 30px;
   }

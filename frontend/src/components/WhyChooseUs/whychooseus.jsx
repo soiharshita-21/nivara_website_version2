@@ -20,31 +20,31 @@ const features = [
     title: "Competitive Rates",
     desc: "Best interest rates in the market",
     icon: Percent,
-    color: "orange",
+    color: "red",
   },
   {
     title: "Doorstep Assistance",
     desc: "We come to you for documentation",
     icon: Home,
-    color: "teal",
+    color: "red",
   },
   {
     title: "Minimal Paperwork",
     desc: "Simple and transparent process",
     icon: FileText,
-    color: "gold",
+    color: "red",
   },
   {
     title: "Quick Disbursement",
     desc: "Fast release of funds",
     icon: Zap,
-    color: "purple",
+    color: "red",
   },
   {
     title: "Dedicated Support",
     desc: "Personal relationship managers",
     icon: Headset,
-    color: "pink",
+    color: "red",
   },
 ];
 

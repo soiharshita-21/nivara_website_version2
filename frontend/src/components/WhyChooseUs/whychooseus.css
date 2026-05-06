@@ -64,7 +64,7 @@
   left: 0;
   right: 0;
   height: 6px;
-  background: linear-gradient(90deg, #8b1530, #d32f2f, #16a34a, #22c55e, #8b1530);
+  background: linear-gradient(90deg, #3cd428c7, #2fd34d, #19e363, #12cd3e, #22eb46);
   background-size: 200% 100%;
   animation: gradient-move 3s linear infinite;
 }
@@ -73,9 +73,11 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -165,12 +167,36 @@
 }
 
 /* COLORS (Exact Image 1 Shades) */
-.why-card.red { --c: 176, 33, 61; }      /* Crimson */
-.why-card.orange { --c: 215, 96, 30; }   /* Sienna */
-.why-card.teal { --c: 12, 139, 124; }    /* Dark Teal */
-.why-card.gold { --c: 199, 145, 33; }    /* Deep Gold */
-.why-card.purple { --c: 124, 76, 209; }  /* Royal Purple */
-.why-card.pink { --c: 199, 33, 106; }    /* Berry Pink */
+.why-card.red {
+  --c: 176, 33, 61;
+}
+
+/* Crimson */
+.why-card.orange {
+  --c: 215, 96, 30;
+}
+
+/* Sienna */
+.why-card.teal {
+  --c: 12, 139, 124;
+}
+
+/* Dark Teal */
+.why-card.gold {
+  --c: 199, 145, 33;
+}
+
+/* Deep Gold */
+.why-card.purple {
+  --c: 124, 76, 209;
+}
+
+/* Royal Purple */
+.why-card.pink {
+  --c: 199, 33, 106;
+}
+
+/* Berry Pink */
 
 /* TRUST SECTION */
 .trust-badges {
@@ -248,7 +274,7 @@
 }
 
 .trust-icon.rbi {
-  background: #8b1530;
+  background: #d32f2f;
 }
 
 .trust-icon.iso {

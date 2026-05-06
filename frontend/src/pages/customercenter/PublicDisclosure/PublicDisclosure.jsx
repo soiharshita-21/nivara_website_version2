@@ -3,8 +3,8 @@ import "./PublicDisclosure.css";
 import { ShieldCheck, FileText } from 'lucide-react';
 import ScrollReveal from '../../../components/ScrollReveal/ScrollReveal';
 import home3 from "../../../assets/images/public disclosure.png";
-import pb1 from "../../../assets/images/pb1.jpeg";
-import pb2 from "../../../assets/images/pb2.jpeg";
+import pb1 from "../../../assets/images/publicdisclosure1.png";
+import pb2 from "../../../assets/images/saf.png";
 const PublicDisclosure = () => {
   return (
     <div className="public-page">
