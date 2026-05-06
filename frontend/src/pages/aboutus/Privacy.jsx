@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Privacy.css";
-import pri from "../../assets/images/privacy.png";
+import privacy2 from "../../assets/images/privacy2.png";
 
 const PrivacyPolicy = () => {
   useEffect(() => {
@@ -26,30 +26,15 @@ const PrivacyPolicy = () => {
   return (
     <div className="privacy-page">
       {/* Hero Section */}
-      <section className="privacy-banner animate-pop-up">
-        <div className="privacy-band"></div>
-
-        {/* Decorative background elements */}
-        <div className="bg-decor top-left-decor"></div>
-        <div className="bg-decor bottom-right-decor"></div>
-
-        <div className="privacy-banner-container animate-pop-up">
-          <div className="privacy-left">
-            <h1 className="animate-pop-up">Privacy Policy</h1>
-            <div className="privacy-text-band">
-            </div>
-          </div>
-
-          <div className="privacy-right">
-            <div className="privacy-image-wrapper animate-slide-up">
-              <div className="arc-circle arc-outer-1"></div>
-              <div className="arc-circle arc-outer-2"></div>
-              <div className="arc-circle arc-inner"></div>
-              <div className="privacy-image-center">
-                <img src={pri} alt="Privacy Policy" />
-              </div>
-            </div>
-          </div>
+      <section className="page-banner animate-pop-up" style={{ backgroundImage: `url(${privacy2})` }}>
+        <div className="page-banner-overlay"></div>
+        <div className="page-banner-content">
+          <h1 className="page-banner-title">
+            Privacy <span className="text-red">Policy</span>
+          </h1>
+          <p className="page-banner-subtitle">
+            Your trust is our priority. We safeguard your personal information with the highest standards.
+          </p>
         </div>
       </section>
 

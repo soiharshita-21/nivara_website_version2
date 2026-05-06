@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Investors.css";
-import inv from "../../assets/images/investor.png";
+import investors2 from "../../assets/images/investors2.png";
 import tnLogo from "../../assets/images/TN.png";
 import bpeLogo from "../../assets/images/BPE.png";
 
@@ -28,25 +28,16 @@ const Investors = () => {
   return (
     <div className="investors-page">
 
-      <section className="investors-banner animate-pop-up">
-        <img src={inv} alt="Our Investors Background" className="investors-banner-bg" />
-
-        <div className="investors-banner-overlay">
-          <div className="investors-banner-content animate-slide-up">
-            <h1>YOUR BUSINESS<br />PARTNER</h1>
-            <p>
-              Our investors are strong partners who support Nivara Home Finance in
-              achieving sustainable growth. Their trust and long-term vision help us
-              expand access to affordable housing finance across communities.
-            </p>
-          </div>
+      <section className="page-banner animate-pop-up" style={{ backgroundImage: `url(${investors2})` }}>
+        <div className="page-banner-overlay"></div>
+        <div className="page-banner-content">
+          <h1 className="page-banner-title">
+            Our <span className="text-red">Investors</span>
+          </h1>
+          <p className="page-banner-subtitle">
+            Partnering with visionary leaders to build a stronger, more sustainable future in housing finance.
+          </p>
         </div>
-
-        {/* Decorative Strips */}
-        <div className="investors-strip top-strip-1"></div>
-        <div className="investors-strip top-strip-2"></div>
-        <div className="investors-strip bottom-strip-1"></div>
-        <div className="investors-strip bottom-strip-2"></div>
       </section>
 
       <section className="investors-content">

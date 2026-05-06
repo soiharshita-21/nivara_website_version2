@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Blog.css";
 
 // Banner image
-import home2 from "../../../assets/images/blog.png";
+import media2 from "../../../assets/images/media2.png"
 
 // Blog images (you will replace with your real images)
 import cbo from "../../../assets/images/blogimg1.png";
@@ -42,17 +42,17 @@ const Blog = () => {
     <div className="blog-page">
 
       {/* Hero Banner */}
-      <div className="blog-hero-banner">
-        <img src={home2} alt="Blog Banner" />
-
-        <div className="blog-breadcrumb">
-          <Link to="/">Nivara Home</Link>
-          <span className="blog-separator">&gt;</span>
-          <span className="blog-current">Blog</span>
+      <section className="page-banner" style={{ backgroundImage: `url(${media2})` }}>
+        <div className="page-banner-overlay"></div>
+        <div className="page-banner-content">
+          <h1 className="page-banner-title">
+            <span className="text-red">Blogs</span>
+          </h1>
+          <p className="page-banner-subtitle">
+            Stay updated with our latest news and insights.
+          </p>
         </div>
-
-        {/* <h1 className="blog-hero-title">Blog</h1> */}
-      </div>
+      </section>
 
       {/* Blog Cards */}
       <div className="blog-container animate-pop-up">

@@ -2,6 +2,7 @@ import React from "react";
 import "./VisionMission.css";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
+import vm2 from "../../../assets/images/vm2.png"
 
 const VisionMission = () => {
   return (
@@ -9,12 +10,15 @@ const VisionMission = () => {
 
       {/* Hero Section */}
       <ScrollReveal direction="down">
-        <section className="vm-hero">
-          <div className="vm-overlay"></div>
-          <div className="vm-hero-center">
-            <div className="vm-shape">
-              <h1>VISION & MISSION</h1>
-            </div>
+        <section className="page-banner" style={{ backgroundImage: `url(${vm2})` }}>
+          <div className="page-banner-overlay"></div>
+          <div className="page-banner-content">
+            <h1 className="page-banner-title">
+              Vision & <span className="text-red">Mission</span>
+            </h1>
+            <p className="page-banner-subtitle">
+              Revolutionizing affordable housing with transparency and trust.
+            </p>
           </div>
         </section>
       </ScrollReveal>

@@ -1,5 +1,5 @@
 import React from "react";
-import home3 from "../../../assets/images/lenders.png";
+import lenders2 from "../../../assets/images/lenders2.png";
 import "./OurInsurancePartners.css";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 
@@ -23,12 +23,17 @@ const OurInsurancePartners = () => {
 
       {/* Banner */}
       <ScrollReveal direction="down">
-        <div className="insurance-banner">
-          <img src={home3} alt="Our Insurance Partners" />
-          <div className="insurance-overlay">
-            <h1 className="banner-title">Our Insurance Partners</h1>
+        <section className="page-banner" style={{ backgroundImage: `url(${lenders2})` }}>
+          <div className="page-banner-overlay"></div>
+          <div className="page-banner-content">
+            <h1 className="page-banner-title">
+              Insurance <span className="text-red">Partners</span>
+            </h1>
+            <p className="page-banner-subtitle">
+              Comprehensive protection for your home and family.
+            </p>
           </div>
-        </div>
+        </section>
       </ScrollReveal>
 
       {/* Partners Grid */}

@@ -99,3 +99,68 @@ body::-webkit-scrollbar {
   display: inline-block;
   margin: 0;
 }
+
+/* Shared Page Banner Styles */
+.page-banner {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  min-height: 450px;
+  max-height: 700px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.page-banner-overlay {
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: 1;
+}
+
+.page-banner-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  padding: 0 20px;
+  max-width: 900px;
+}
+
+.page-banner-title {
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.page-banner-title .text-red {
+  color: #ff0000;
+}
+
+.page-banner-subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .page-banner {
+    height: 50vh;
+    min-height: 350px;
+  }
+  .page-banner-title {
+    font-size: 36px;
+  }
+  .page-banner-subtitle {
+    font-size: 16px;
+  }
+}

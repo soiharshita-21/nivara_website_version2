@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ObjectivesCoreValues.css";
-import house2 from "../../../assets/images/objectives.jpg";
+import objectandcore2 from "../../../assets/images/objectandcore2.png";
 import { 
   FaShieldAlt, 
   FaHandshake, 
@@ -74,12 +74,15 @@ const ObjectivesCoreValues = () => {
 
       {/* HERO */}
       <ScrollReveal direction="down">
-        <section className="ocv-hero-modern">
-          <div className="ocv-huge-title-container">
-            <div className="ocv-overlapping-image">
-              <img src={house2} alt="Objectives & Core Values" />
-              <h1 className="ocv-huge-title">OBJECTIVES & CORE VALUES</h1>
-            </div>
+        <section className="page-banner" style={{ backgroundImage: `url(${objectandcore2})` }}>
+          <div className="page-banner-overlay"></div>
+          <div className="page-banner-content">
+            <h1 className="page-banner-title">
+              Objectives & Core <span className="text-red">Values</span>
+            </h1>
+            <p className="page-banner-subtitle">
+              Driven by integrity to build a stable and transparent housing finance ecosystem.
+            </p>
           </div>
         </section>
       </ScrollReveal>
@@ -162,4 +165,4 @@ const ObjectivesCoreValues = () => {
   );
 };
 
-export default ObjectivesCoreValues;
+export default ObjectivesCoreValues;

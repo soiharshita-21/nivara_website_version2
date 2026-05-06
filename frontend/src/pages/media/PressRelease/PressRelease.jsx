@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./PressRelease.css";
 
 // Banner
-import home2 from "../../../assets/images/pressrelease.png";
+import media2 from "../../../assets/images/media2.png";
 
 // Card Images (you will import real images)
 // import slide1 from "../../../assets/images/slide1.jpg";
@@ -96,17 +96,17 @@ const PressRelease = () => {
     <div className="press-page">
 
       {/* Banner */}
-      <div className="press-banner">
-        <img src={home2} alt="Press Release" />
-
-        <div className="press-breadcrumb">
-          <Link to="/">Nivara Home</Link>
-          <span className="press-separator">&gt;</span>
-          <span className="press-current">Press Release</span>
+      <section className="page-banner" style={{ backgroundImage: `url(${media2})` }}>
+        <div className="page-banner-overlay"></div>
+        <div className="page-banner-content">
+          <h1 className="page-banner-title">
+            Press <span className="text-red">Release</span>
+          </h1>
+          <p className="page-banner-subtitle">
+            Official announcements and major milestones from Nivara.
+          </p>
         </div>
-
-        {/* <h1 className="press-title">Press Release</h1> */}
-      </div>
+      </section>
 
       {/* Cards */}
       <div className="press-container animate-pop-up">

@@ -1,7 +1,7 @@
 import React from "react";
 import "./AboutUs.css";
 import house2 from "../../../assets/images/aboutus1.png";
-import hhh from "../../../assets/images/aboutus2.png";
+import aboutusv2 from "../../../assets/images/aboutusv2.png";
 import { FaMoneyBillWave, FaHome, FaFileAlt, FaSyncAlt, FaCogs, FaHeadset, FaGlobe } from "react-icons/fa";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 
@@ -9,48 +9,51 @@ const AboutUs = () => {
   return (
     <div className="about-page">
       <ScrollReveal direction="down">
-        <section className="about-hero-section">
-          <div className="hero-left">
-            <h1 className="hero-title">ABOUT US</h1>
-            <div className="hero-left-text">
-              <h2 className="hero-subtitle-heading">Our Purpose</h2>
-              <blockquote className="hero-purpose-quote">
-                To make home ownership accessible, affordable, and achievable for
-                every family.
-              </blockquote>
-              <p className="hero-purpose-text">
-                We exist to empower individuals, especially from underserved and
-                informal sectors, by providing transparent, ethical, and responsible
-                housing finance solutions that improve quality of life and long-term
-                stability.
-              </p>
-            </div>
+        <section className="page-banner" style={{ backgroundImage: `url(${aboutusv2})` }}>
+          <div className="page-banner-overlay"></div>
+          <div className="page-banner-content">
+            <h1 className="page-banner-title">
+              About <span className="text-red">Us</span>
+            </h1>
+            <p className="page-banner-subtitle">
+              Empowering families through accessible and affordable housing finance.
+            </p>
           </div>
+        </section>
+      </ScrollReveal>
 
-          <div className="hero-center">
-            <img src={hhh} alt="Living Room" className="hero-main-img" />
-          </div>
+      <ScrollReveal direction="up">
+        <section className="about-section">
+          <h2>Our Purpose</h2>
+          <p>
+            <b>To make home ownership accessible, affordable, and achievable for every family.</b>
+          </p>
+          <p>
+            We exist to empower individuals, especially from underserved and
+            informal sectors, by providing transparent, ethical, and responsible
+            housing finance solutions that improve quality of life and long-term
+            stability.
+          </p>
+        </section>
+      </ScrollReveal>
 
-          <div className="hero-right">
-            <img src={house2} alt="Interior Detail" className="hero-small-img" />
-            <div className="hero-philosophy">
-              <h2 className="hero-subtitle-heading">Our Inspiration</h2>
-              <blockquote className="hero-purpose-quote">
-                The name "Nivara" is derived from the Sanskrit roots <span style={{ color: "red" }}>"नि + वृ" (Ni + Vru)</span>, meaning to cover, shelter, protect, and provide refuge.
-              </blockquote>
-              <p>
-                Shelter (निवारा) is one of the three fundamental human needs, along
-                with food (अन्न) and clothing (वस्त्र). A home is not just a structure
-                — it is a foundation for growth, stability, security, and human
-                development.
-              </p>
-              <p>
-                At Nivara, we believe that providing access to housing is not just a
-                financial service — it is a contribution to building stronger
-                families, communities, and futures.
-              </p>
-            </div>
-          </div>
+      <ScrollReveal direction="up">
+        <section className="about-section light">
+          <h2>Our Inspiration</h2>
+          <p>
+            The name "Nivara" is derived from the Sanskrit roots <b>"नि + वृ" (Ni + Vru)</b>, meaning to cover, shelter, protect, and provide refuge.
+          </p>
+          <p>
+            Shelter (निवारा) is one of the three fundamental human needs, along
+            with food (अन्न) and clothing (वस्त्र). A home is not just a structure
+            — it is a foundation for growth, stability, security, and human
+            development.
+          </p>
+          <p>
+            At Nivara, we believe that providing access to housing is not just a
+            financial service — it is a contribution to building stronger
+            families, communities, and futures.
+          </p>
         </section>
       </ScrollReveal>
 

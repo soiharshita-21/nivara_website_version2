@@ -2,24 +2,26 @@ import React from "react";
 import "./FairPracticeCode.css";
 import { ShieldCheck } from 'lucide-react';
 import ScrollReveal from '../../../components/ScrollReveal/ScrollReveal';
-import home3 from "../../../assets/images/fair practice code.png";
+import faircodepractice2 from "../../../assets/images/fairpracticecode2.png";
 
 const FairPracticeCode = () => {
   return (
     <div className="fair-page">
 
       {/* Hero Section */}
-      <div className="fair-hero" style={{ backgroundImage: `url(${home3})` }}>
-        <div className="hero-overlay"></div>
-        <ScrollReveal direction="down" distance={30} className="hero-content-wrapper">
-          <div className="hero-badge">
-            <ShieldCheck size={16} />
-            <span>NHB Compliance</span>
+      <ScrollReveal direction="down">
+        <section className="page-banner" style={{ backgroundImage: `url(${faircodepractice2})` }}>
+          <div className="page-banner-overlay"></div>
+          <div className="page-banner-content">
+            <h1 className="page-banner-title">
+              Fair Practice <span className="text-red">Code</span>
+            </h1>
+            <p className="page-banner-subtitle">
+              Ensuring ethical and transparent dealings with all our customers.
+            </p>
           </div>
-          <h1 className="fair-title">Fair Practice Code</h1>
-          <p className="hero-subtitle">Promoting good and fair practices in housing finance</p>
-        </ScrollReveal>
-      </div>
+        </section>
+      </ScrollReveal>
 
       {/* Content Section */}
       <div className="fair-content animate-pop-up">

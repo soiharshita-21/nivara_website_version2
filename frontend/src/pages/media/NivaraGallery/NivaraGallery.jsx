@@ -4,7 +4,7 @@ import "./NivaraGallery.css";
 import { FaTimes, FaArrowLeft } from "react-icons/fa";
 
 /* Banner */
-import home2 from "../../../assets/images/nivaragallery.png";
+import media2 from "../../../assets/images/media2.png";
 
 /* CSR Gallery Images */
 import csr1 from "../../../assets/images/gallery/csr_medical_1.png";
@@ -97,17 +97,17 @@ const NivaraGallery = () => {
       )}
 
       {/* Banner */}
-      <div className="gallery-banner">
-        <img src={home2} alt="Nivara Gallery" />
-
-        <div className="gallery-breadcrumb">
-          <Link to="/">Nivara Home</Link>
-          <span className="gallery-separator">&gt;</span>
-          <span className="gallery-current">Nivara Gallery</span>
+      <section className="page-banner" style={{ backgroundImage: `url(${media2})` }}>
+        <div className="page-banner-overlay"></div>
+        <div className="page-banner-content">
+          <h1 className="page-banner-title">
+            Nivara <span className="text-red">Gallery</span>
+          </h1>
+          <p className="page-banner-subtitle">
+            A glimpse into our impactful journey and community initiatives.
+          </p>
         </div>
-
-        {/* <h1 className="gallery-title">Nivara Gallery</h1> */}
-      </div>
+      </section>
 
       {selectedFolder ? (
         <div className="folder-open-view">
