@@ -38,7 +38,12 @@ const Lenders = () => {
     <div className="lenders-page">
       {/* Banner */}
       <ScrollReveal direction="down">
-        <section className="page-banner" style={{ backgroundImage: `url(${lenders2})` }}>
+        <section
+          className="page-banner"
+          style={{
+            backgroundImage: `url(${lenders2})`,
+          }}
+        >
           <div className="page-banner-overlay"></div>
           <div className="page-banner-content">
             <h1 className="page-banner-title">

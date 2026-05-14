@@ -10,30 +10,30 @@ import axios from "axios";
 const BlogDetail = () => {
     const { slug } = useParams();
     const navigate = useNavigate();
-    
+
     const [post, setPost] = React.useState(null);
     const [allPosts, setAllPosts] = React.useState([]);
     const [loading, setLoading] = React.useState(true);
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        
+
         const fetchData = async () => {
             try {
                 // Fetch the specific post
-                const response = await axios.get(`http://localhost:5000/api/blogs/${slug}`);
+                const response = await axios.get(`http://localhost:5001/api/blogs/${slug}`);
                 const found = response.data;
-                
+
                 // Fetch all posts for sidebar/related
-                const allRes = await axios.get("http://localhost:5000/api/blogs");
+                const allRes = await axios.get("http://localhost:5001/api/blogs");
                 setAllPosts(allRes.data);
 
                 if (found) {
                     setPost({
                         ...found,
                         image: found.image_url || found.image,
-                        content: typeof found.content === 'string' 
-                            ? <div dangerouslySetInnerHTML={{ __html: found.content }} /> 
+                        content: typeof found.content === 'string'
+                            ? <div dangerouslySetInnerHTML={{ __html: found.content }} />
                             : found.content,
                         author: found.author || "ADMIN",
                         comments: found.comments || "0 comments",
@@ -50,8 +50,8 @@ const BlogDetail = () => {
                     setPost({
                         ...found,
                         image: found.image,
-                        content: typeof found.content === 'string' 
-                            ? <div dangerouslySetInnerHTML={{ __html: found.content }} /> 
+                        content: typeof found.content === 'string'
+                            ? <div dangerouslySetInnerHTML={{ __html: found.content }} />
                             : found.content,
                         author: found.author || "ADMIN",
                         comments: found.comments || "0 comments",

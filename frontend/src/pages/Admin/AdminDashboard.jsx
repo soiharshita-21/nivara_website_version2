@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { 
-  LayoutDashboard, 
-  FileText, 
-  ImageIcon, 
-  Newspaper, 
-  LogOut, 
+import {
+  LayoutDashboard,
+  FileText,
+  ImageIcon,
+  Newspaper,
+  LogOut,
   ChevronRight,
   Plus,
   Trash2,
@@ -28,7 +28,7 @@ const AdminDashboard = () => {
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [editingId, setEditingId] = useState(null);
-  
+
   // New Item States
   const [newBlog, setNewBlog] = useState({ title: "", author: "", date: new Date().toISOString().split('T')[0], content: "", slug: "", image_url: "" });
   const [newPress, setNewPress] = useState({ title: "", date: new Date().toISOString().split('T')[0], image_url: "", content: "" });
@@ -59,7 +59,7 @@ const AdminDashboard = () => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const baseUrl = "http://localhost:5000/api";
+      const baseUrl = "http://localhost:5001/api";
       if (activeTab === "overview") {
         const [blogRes, pressRes, galleryRes] = await Promise.all([
           axios.get(`${baseUrl}/blogs`),
@@ -82,7 +82,7 @@ const AdminDashboard = () => {
     } catch (err) {
       console.error("Fetch error:", err);
       if (err.response?.status === 401 || err.response?.status === 403) {
-          handleLogout();
+        handleLogout();
       }
     } finally {
       setLoading(false);
@@ -106,13 +106,13 @@ const AdminDashboard = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:5000/api/upload", formData, {
-        headers: { 
-            "Content-Type": "multipart/form-data",
-            ...getAuthHeaders()
+      const res = await axios.post("http://localhost:5001/api/upload", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          ...getAuthHeaders()
         }
       });
-      
+
       const imageUrl = res.data.imageUrl;
       if (type === "blogs") setNewBlog(prev => ({ ...prev, image_url: imageUrl }));
       else if (type === "press") setNewPress(prev => ({ ...prev, image_url: imageUrl }));
@@ -146,8 +146,8 @@ const AdminDashboard = () => {
   const handleDelete = async (id, type) => {
     if (window.confirm(`Are you sure you want to delete this ${type}?`)) {
       try {
-        await axios.delete(`http://localhost:5000/api/${type === 'press' ? 'press' : type}/${id}`, {
-            headers: getAuthHeaders()
+        await axios.delete(`http://localhost:5001/api/${type === 'press' ? 'press' : type}/${id}`, {
+          headers: getAuthHeaders()
         });
         fetchData();
       } catch (err) {
@@ -161,9 +161,9 @@ const AdminDashboard = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const baseUrl = "http://localhost:5000/api";
+      const baseUrl = "http://localhost:5001/api";
       const headers = { headers: getAuthHeaders() };
-      
+
       if (activeTab === "blogs") {
         const slug = newBlog.slug || newBlog.title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
         const data = { ...newBlog, slug, tags: newBlog.tags || [] };
@@ -322,12 +322,12 @@ const AdminDashboard = () => {
               <div className="form-scroll-area">
                 {activeTab === "blogs" && (
                   <>
-                    <div className="form-group"><label>Blog Title</label><input type="text" value={newBlog.title} onChange={e => setNewBlog({...newBlog, title: e.target.value})} required /></div>
+                    <div className="form-group"><label>Blog Title</label><input type="text" value={newBlog.title} onChange={e => setNewBlog({ ...newBlog, title: e.target.value })} required /></div>
                     <div className="form-row">
-                      <div className="form-group"><label>Author</label><input type="text" value={newBlog.author} onChange={e => setNewBlog({...newBlog, author: e.target.value})} required /></div>
-                      <div className="form-group"><label>Published Date</label><input type="date" value={newBlog.date} onChange={e => setNewBlog({...newBlog, date: e.target.value})} /></div>
+                      <div className="form-group"><label>Author</label><input type="text" value={newBlog.author} onChange={e => setNewBlog({ ...newBlog, author: e.target.value })} required /></div>
+                      <div className="form-group"><label>Published Date</label><input type="date" value={newBlog.date} onChange={e => setNewBlog({ ...newBlog, date: e.target.value })} /></div>
                     </div>
-                    
+
                     <div className="form-group">
                       <label>Cover Image</label>
                       <div className="image-upload-wrapper">
@@ -344,18 +344,18 @@ const AdminDashboard = () => {
                           </label>
                         )}
                         <div className="or-divider"><span>OR URL</span></div>
-                        <input type="text" className="small-input" placeholder="https://example.com/image.jpg" value={newBlog.image_url} onChange={e => setNewBlog({...newBlog, image_url: e.target.value})} />
+                        <input type="text" className="small-input" placeholder="https://example.com/image.jpg" value={newBlog.image_url} onChange={e => setNewBlog({ ...newBlog, image_url: e.target.value })} />
                       </div>
                     </div>
 
-                    <div className="form-group"><label>Content Snapshot</label><textarea rows="3" value={newBlog.content} onChange={e => setNewBlog({...newBlog, content: e.target.value})} required placeholder="Write a short summary..."></textarea></div>
+                    <div className="form-group"><label>Content Snapshot</label><textarea rows="3" value={newBlog.content} onChange={e => setNewBlog({ ...newBlog, content: e.target.value })} required placeholder="Write a short summary..."></textarea></div>
                   </>
                 )}
                 {activeTab === "press" && (
                   <>
-                    <div className="form-group"><label>Press Release Title</label><input type="text" value={newPress.title} onChange={e => setNewPress({...newPress, title: e.target.value})} required /></div>
-                    <div className="form-group"><label>Published Date</label><input type="date" value={newPress.date} onChange={e => setNewPress({...newPress, date: e.target.value})} /></div>
-                    
+                    <div className="form-group"><label>Press Release Title</label><input type="text" value={newPress.title} onChange={e => setNewPress({ ...newPress, title: e.target.value })} required /></div>
+                    <div className="form-group"><label>Published Date</label><input type="date" value={newPress.date} onChange={e => setNewPress({ ...newPress, date: e.target.value })} /></div>
+
                     <div className="form-group">
                       <label>Thumbnail Image</label>
                       <div className="image-upload-wrapper">
@@ -370,19 +370,19 @@ const AdminDashboard = () => {
                               <input type="file" accept="image/*" onChange={(e) => handleImageUpload(e, 'press')} hidden />
                               <Upload size={18} /><span>Upload</span>
                             </label>
-                            <input type="text" className="small-input" placeholder="Paste image URL..." value={newPress.image_url} onChange={e => setNewPress({...newPress, image_url: e.target.value})} />
+                            <input type="text" className="small-input" placeholder="Paste image URL..." value={newPress.image_url} onChange={e => setNewPress({ ...newPress, image_url: e.target.value })} />
                           </div>
                         )}
                       </div>
                     </div>
 
-                    <div className="form-group"><label>Description</label><textarea rows="2" value={newPress.content} onChange={e => setNewPress({...newPress, content: e.target.value})} placeholder="Small snippet for the card..."></textarea></div>
+                    <div className="form-group"><label>Description</label><textarea rows="2" value={newPress.content} onChange={e => setNewPress({ ...newPress, content: e.target.value })} placeholder="Small snippet for the card..."></textarea></div>
                   </>
                 )}
                 {activeTab === "gallery" && (
                   <>
-                    <div className="form-group"><label>Event Name</label><input type="text" value={newGallery.title} onChange={e => setNewGallery({...newGallery, title: e.target.value})} required /></div>
-                    
+                    <div className="form-group"><label>Event Name</label><input type="text" value={newGallery.title} onChange={e => setNewGallery({ ...newGallery, title: e.target.value })} required /></div>
+
                     <div className="form-group">
                       <label>Photo</label>
                       <div className="image-upload-wrapper">
@@ -397,7 +397,7 @@ const AdminDashboard = () => {
                               <input type="file" accept="image/*" onChange={(e) => handleImageUpload(e, 'gallery')} hidden />
                               <Upload size={18} /><span>Upload Photo</span>
                             </label>
-                            <input type="text" className="small-input" placeholder="Paste image URL..." value={newGallery.image_url} onChange={e => setNewGallery({...newGallery, image_url: e.target.value})} required />
+                            <input type="text" className="small-input" placeholder="Paste image URL..." value={newGallery.image_url} onChange={e => setNewGallery({ ...newGallery, image_url: e.target.value })} required />
                           </div>
                         )}
                       </div>

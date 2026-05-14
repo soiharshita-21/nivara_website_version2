@@ -2,6 +2,7 @@ import React from "react";
 import { FaHome, FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 import com from "../../../assets/images/Composite Home Loan.png";
 import "./CompositeHomeLoan.css";
+import "../ProductHero.css";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
@@ -9,59 +10,49 @@ import RequestQuote from "../../../components/RequestQuote/RequestQuote";
 
 const CompositeHomeLoan = () => {
   const navigate = useNavigate();
-  const cards = [1]; // display only 1 card
 
   return (
-    <div className="page-center composite-page">
-      <ScrollReveal direction="down">
-        <div className="composite-grid">
-          {cards.map((item, index) => (
-            <div className="comploan-card" key={index}>
-              {/* Image */}
-              <div className="comploan-image">
-                <img src={com} alt="Composite Home Loan" />
-                <div className="comploan-overlay"></div>
-                
-                {/* NEW: Overlay Points */}
-                <div className="composite-image-points">
-                  <h4 className="points-title">Why Choose Us</h4>
-                  <div className="point">Single application</div>
-                  <div className="point">End-to-end financing</div>
-                  <div className="point">Tax benefits</div>
-                </div>
-
-
-              </div>
-
-              {/* Content */}
-              <div className="composite-content">
-                <h2>Composite Home Loan</h2>
-                <p className="composite-subtitle">
-                  Combined loan for land purchase and construction
-                </p>
-
-                {/* <div className="slide-in-text">
-                  <ul className="composite-features">
-                    <li>Single application</li>
-                    <li>End-to-end financing</li>
-                    <li>Tax benefits</li>
-                  </ul>
-                </div> */}
-
-                <div className="composite-buttons">
-                  <button
-                    className="comp-loan-btn-solid"
-                    onClick={() => navigate("/apply-home-loan")}
-                  >
-                    Apply →
-                  </button>
-                </div>
-              </div>
-              <div className="composite-loan-bottom-strip"></div>
-            </div>
-          ))}
+    <div className="product-page-wrapper">
+      <section className="product-hero">
+        <div className="product-hero-bg">
+          <img src={com} alt="Composite Home Loan" />
+          <div className="product-hero-overlay"></div>
         </div>
-      </ScrollReveal>
+        <div className="product-hero-container">
+          <div className="product-hero-content">
+            <ScrollReveal direction="left">
+              <h1 className="hero-title">
+                Composite Home <span className="text-red">Loan</span>
+              </h1>
+              <p className="hero-subtitle_service">
+                A single combined loan for land purchase and construction, tailored to build your dream house.
+              </p>
+              <div className="hero-actions">
+                <button
+                  className="hero-btn-primary"
+                  onClick={() => navigate("/apply-home-loan")}
+                >
+                  Apply Now
+                </button>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          <div className="product-hero-card">
+            <ScrollReveal direction="right">
+              <div className="hero-glass-card">
+                <h3>Why Choose Us</h3>
+                <ul>
+                  <li>Single application for land & construction</li>
+                  <li>End-to-end financing solutions</li>
+                  <li>Maximum tax benefits</li>
+                  <li>Hassle-free documentation</li>
+                </ul>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
 
       <ScrollReveal direction="up" delay={0.1}>
         <div className="composite-text-section">
@@ -142,7 +133,7 @@ const CompositeHomeLoan = () => {
         </div>
       </ScrollReveal>
 
-      <RequestQuote themeColor="#d32f2f" />
+      <RequestQuote themeColor="#E32125" />
 
       {/* Help Section */}
       <div className="com-help-section">
@@ -189,4 +180,5 @@ const CompositeHomeLoan = () => {
 };
 
 export default CompositeHomeLoan;
+
 

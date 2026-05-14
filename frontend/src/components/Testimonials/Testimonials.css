@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 20px rgba(33, 31, 31, 0.12);
 }
 
 .avatar img {
@@ -32,7 +32,7 @@
 .testimonials-header h2 {
   font-size: 46px;
   font-weight: 800;
-  color: #d32f2f;
+  color: #E32125;
 }
 
 .testimonials-header p {
@@ -47,7 +47,7 @@
   border-radius: 28px;
   padding: 60px 80px;
   position: relative;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 60px rgba(33, 31, 31, 0.1);
 }
 
 .quote-icon {
@@ -95,7 +95,7 @@
   justify-content: center;
   transition: 0.4s ease;
   cursor: pointer;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 16px rgba(33, 31, 31, 0.12);
 }
 
 .avatar img {
@@ -117,7 +117,7 @@
 
 
 .testimonial-user h4 {
-  color: #d32f2f;
+  color: #E32125;
   font-size: 20px;
   margin-bottom: 4px;
 }
@@ -145,7 +145,7 @@
   border: 2px solid #f1c6cc;
   background: #7a1422;
   background: #fff;
-  color: #d32f2f;
+  color: #E32125;
   font-size: 22px;
   cursor: pointer;
 }
@@ -177,14 +177,14 @@
 .dot.active {
   width: 34px;
   border-radius: 10px;
-  background: #d32f2f;
+  background: #E32125;
 }
 
 .nav-btnn {
   opacity: 0.5;
   transform: translateY(-50%) scale(0.85);
   transition: 0.35s ease;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 14px rgba(33, 31, 31, 0.08);
 }
 
 
@@ -205,3 +205,4 @@
   opacity: 1;
   transform: translateY(0) scale(1);
 }
+

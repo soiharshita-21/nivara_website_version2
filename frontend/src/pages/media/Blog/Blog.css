@@ -33,7 +33,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(33, 31, 31, 0.15);
   z-index: 2;
 }
 
@@ -67,9 +67,9 @@
   z-index: 3;
   font-size: 5rem;
   font-weight: 800;
-  color: #d32f2f;
+  color: #E32125;
   line-height: 1;
-  border-left: 10px solid #d32f2f;
+  border-left: 10px solid #E32125;
   padding-left: 30px;
   text-transform: uppercase;
   letter-spacing: -2px;
@@ -100,7 +100,7 @@
 
 .blog-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 40px rgba(33, 31, 31, 0.08);
 }
 
 /* Image */
@@ -174,8 +174,8 @@
 
 .read-more:hover {
   letter-spacing: 0.5px;
-  color: #111;
-  border-bottom-color: #111;
+  color: #211F1F;
+  border-bottom-color: #211F1F;
 }
 
 /* Responsive */
@@ -198,3 +198,4 @@
     padding: 20px 30px;
   }
 }
+

@@ -4,6 +4,7 @@ import { FiHome } from "react-icons/fi";
 import { FaHome, FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 
 import "./LoanAgainstProperty.css";
+import "../ProductHero.css";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
@@ -13,54 +14,47 @@ const LoanAgainstProperty = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="page-center lap-page">
-      <ScrollReveal direction="down">
-        <div className="lap-card-grid">
-          {[1].map((item, index) => (
-            <div className="lap-card" key={index}>
-              <div className="lap-image">
-                <img src={lop} alt="Loan Against Property" />
-                <div className="lap-image-overlay"></div>
-                
-                {/* NEW: Overlay Points */}
-                <div className="lap-image-points">
-                  <h4 className="points-title">Why Choose Us</h4>
-                  <div className="point">High loan amount</div>
-                  <div className="point">Flexible usage</div>
-                  <div className="point">Long tenure</div>
-                </div>
-
-
-              </div>
-
-              <div className="lap-content">
-                <h2 className="lap-title">Loan Against Property</h2>
-                <p className="lap-subtitle">
-                  Unlock the value of your property for any purpose
-                </p>
-
-                {/* <div className="slide-in-text">
-                  <ul className="lap-features">
-                    <li>High loan amount</li>
-                    <li>Flexible usage</li>
-                    <li>Long tenure</li>
-                  </ul>
-                </div> */}
-
-                <div className="lap-buttons">
-                  <button
-                    className="lap-loan-btn-solid"
-                    onClick={() => navigate("/apply-home-loan")}
-                  >
-                    Apply →
-                  </button>
-                </div>
-              </div>
-              <div className="lap-strip"></div>
-            </div>
-          ))}
+    <div className="product-page-wrapper">
+      <section className="product-hero">
+        <div className="product-hero-bg">
+          <img src={lop} alt="Loan Against Property" />
+          <div className="product-hero-overlay"></div>
         </div>
-      </ScrollReveal>
+        <div className="product-hero-container">
+          <div className="product-hero-content">
+            <ScrollReveal direction="left">
+              <h1 className="hero-title">
+                Loan Against <span className="text-red">Property</span>
+              </h1>
+              <p className="hero-subtitle_service">
+                Unlock the hidden value of your property to fund your business, education, or any immediate financial need.
+              </p>
+              <div className="hero-actions">
+                <button
+                  className="hero-btn-primary"
+                  onClick={() => navigate("/apply-home-loan")}
+                >
+                  Apply Now
+                </button>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          <div className="product-hero-card">
+            <ScrollReveal direction="right">
+              <div className="hero-glass-card">
+                <h3>Why Choose Us</h3>
+                <ul>
+                  <li>High loan amounts up to ₹1 Crore</li>
+                  <li>Flexible usage for any personal or business need</li>
+                  <li>Long tenure with affordable EMIs</li>
+                  <li>Quick and transparent processing</li>
+                </ul>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
 
       <ScrollReveal direction="up" delay={0.1}>
         <div className="loan-against-text-section">
@@ -141,7 +135,7 @@ const LoanAgainstProperty = () => {
         </div>
       </ScrollReveal>
 
-      <RequestQuote themeColor="#2e7d32" />
+      <RequestQuote themeColor="#7EB542" />
 
       {/* Help Section */}
       <div className="lap-help-section">
@@ -188,3 +182,5 @@ const LoanAgainstProperty = () => {
 };
 
 export default LoanAgainstProperty;
+
+

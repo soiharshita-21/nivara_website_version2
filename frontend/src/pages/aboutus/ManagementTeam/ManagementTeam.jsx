@@ -1,121 +1,170 @@
 import React from "react";
 import "./ManagementTeam.css";
-import shreyas from "../../../assets/images/CET/Shreyas_Ramanathan (1).jpg";
-import srinivasan from "../../../assets/images/CET/Srinivasan-CV_NEW (1).jpg";
-import suresh from "../../../assets/images/CET/Suresh (2).jpg";
-import aditya from "../../../assets/images/CET/Aditya (2).jpg";
-import sidharth from "../../../assets/images/CET/Mr Sidharth Vij.jpg";
-import nagesh from "../../../assets/images/CET/Nagesh (1).jpg";
-import venkat from "../../../assets/images/CET/Mr. Venkat Sharma Konduri.jpeg";
-import babu from "../../../assets/images/CET/Babu-Abraham (1).png";
+import rao from "../../../assets/images/Director/Rao (1).jpg";
+import shreyas from "../../../assets/images/directors/Shreyas_Ramanathan (2).jpg";
+import srinivasan from "../../../assets/images/directors/Srinivasan-CV_NEW (2).jpg";
+import suresh from "../../../assets/images/directors/Suresh G.jpg";
+import venkat from "../../../assets/images/directors/befe9b7bf680b2ac (1).jpeg";
+import nagesh from "../../../assets/images/directors/Nagesh (2).jpg";
+import sidharth from "../../../assets/images/directors/Sisharth-1 (1).jpg";
+import prakash from "../../../assets/images/directors/prakash.jpg";
+import hema from "../../../assets/images/directors/_DSC6348 copy.JPG";
+import erica from "../../../assets/images/directors/Erica Gonsalves(1).jpg";
+import aditya from "../../../assets/images/directors/Aditya (3).jpg";
+import raja from "../../../assets/images/directors/Raja Shankarasubramanian.jpg";
+import babu from "../../../assets/images/directors/Babu-Abraham (2).png";
 import raina from "../../../assets/images/CET/Raina DSilva.jpg";
-import bonojit from "../../../assets/images/CET/Mr. Bonojit Ukil.jpg";
-import thimmaiah from "../../../assets/images/CET/C-G-Thimmah.jpg";
-import raja from "../../../assets/images/CET/Mr. Raja Shankarasubramanian.webp";
+import bonojit from "../../../assets/images/directors/Ukil-pic (1).jpg";
+import thimmaiah from "../../../assets/images/directors/C-G-Thimmah (1).jpg";
+import userPlaceholder from "../../../assets/images/user2.jpg";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import { AnimatePresence, motion } from "framer-motion";
 
 const managementTeamData = [
   {
+    name: "Mr. C. V. Rao",
+    role: "Founder, Managing Director & CEO",
+    desc: "Brings over 30 years of leadership experience in banking and financial services, with deep expertise in retail lending and portfolio risk management.",
+    longDesc: "Mr. C. V. Rao is the Founder, Managing Director & Chief Executive Officer of the Company. He brings over 30 years of leadership experience in banking and financial services, with deep expertise in retail lending, portfolio risk management, and building scalable businesses across economic and credit cycles.\n\nHe holds an M.Com from Andhra University and an MBA from Osmania University, Hyderabad. Early in his career, he served as a Research Assistant in Finance and Accounting at IIM Ahmedabad, where he also published research in reputed academic journals.\n\nMr. Rao has held senior leadership roles with leading private sector banks, including ICICI Bank, IndusInd Bank, and ING Vysya Bank (now Kotak Mahindra Bank). At ICICI Bank, he was part of the core team that scaled the mortgage business into a ₹50,000+ crore portfolio, contributing to market leadership. At ING Vysya Bank, he led national portfolios in Agriculture & Rural Banking and Consumer Assets.\n\nUnder his founding leadership, the Company has built resilience, strengthened its market position, and continues to focus on sustainable, long‑term value creation.",
+    color: "red",
+    img: rao,
+  },
+  {
     name: "Mr. Shreyas Ramanathan",
     role: "Chief Business Officer",
-    desc: "Over 18 years of experience in Retail and SME lending, having worked extensively in credit underwriting and policy at ICICI Bank and OLA.",
-    longDesc: "Mr. Shreyas Ramanathan is a Chartered Accountant and holds an MBA from Asian Institute of Management, Manila. He has more than 18 years of work experience in Retail and SME lending, having worked at ICICI Bank for 12 years and later managing the leasing portfolio at OLA.",
-    color: "red",
+    desc: "Qualified Chartered Accountant and MBA with 20+ years of expertise in retail banking and financial services.",
+    longDesc: "Shreyas Ramanathan is the Chief Business Officer of our Company. He is a qualified Chartered Accountant and MBA from Asian Institute of Management, Manila with 20+ years of expertise in retail banking and financial services. As CBO of Nivara, he is instrumental in advancing the organization's mission of \"Housing for All\" by pioneering innovative lending solutions for the unserved and underserved segments of India's informal economy.\n\nWith a deep understanding of credit underwriting and portfolio management, and a proven track record of scaling businesses, Shreyas has developed sustainable lending models specifically designed for self-employed professionals and micro-entrepreneurs in EWS and LIG segment of the economy who are first time borrowers. He also oversees collections and asset quality to ensure Nivara maintains the highest standards of responsible lending while expanding access to affordable housing finance across urban and semi-urban markets.\n\nHis previous work experience includes building OLA Cabs leasing business from inception to 10,000+ vehicles with zero credit cost and make it the largest capitive leasing company in a record period of time , and managing ICICI Bank's ₹1.25 trillion secured assets portfolio as Policy Head.\n\nHis career reflects a consistent commitment to building transformative financial services businesses that serve underserved communities. Shreyas brings expertise in credit policy, risk management, and portfolio optimization. He is driven by the belief that access to home finance is a fundamental right to enable dignified living and sustainable development for underserved communities across India.",
+    color: "green",
     img: shreyas,
   },
   {
     name: "Mr. Srinivasan C V",
     role: "Chief Financial Officer",
-    desc: "Chartered Accountant with 25+ years of experience across financial services, manufacturing, and IT sectors, previously CFO at Chaitanya India.",
-    longDesc: "Mr. Srinivasan CV is a Chartered Accountant and a Cost Accountant with more than 25 years of experience. He completed the AGMP from IIM Ahmedabad. Previously, he was CFO at Chaitanya India Fin Credit Pvt. Ltd and has experience in diverse industries such as financial services, manufacturing, and IT distribution.",
-    color: "green",
+    desc: "Qualified Chartered and Cost Accountant with 25+ years of experience in Strategy, Financial planning, and Fund raising.",
+    longDesc: "Srinivasan CV is the Chief Financial Officer of our Company. He holds a bachelor’s degree in commerce from University of Madras and is a qualified Chartered and Cost Accountant. He has also successfully completed Accelerated General Management Program (AGMP) from IIM Ahmedabad. As a CFO at Nivara he has played a pivotal role in strengthening the Company’s accounting and finance functions and driving debt and equity raising initiatives. He has contributed significantly to budgeting, liquidity management, and cost optimization, ensuring financial discipline while enabling growth.\n\nHe has a career spanning 25+ years of experience in Strategy, Financial planning & analysis, Equity and Debt Fund raising, Finance & Accounts, Treasury, Taxation, Direct assignments/securitization deals, Managing Audits and Investor relations. In his previous assignment, he was a CFO at Chaitanya India Fin Credit Pvt. Ltd for close to 6 years. He brings in a wide variety of experience in traditional, multinational, VC-funded start-up companies in diverse industries such as financial services, manufacturing, IT infra-distribution, Investment company, food services and facilities management.",
+    color: "red",
     img: srinivasan,
   },
   {
     name: "Mr. Suresh G",
-    role: "Head of Collections",
-    desc: "22 years of experience in Risk and Debt management, specializing in Collections, Recovery, and Process Improvement.",
-    longDesc: "Mr. Suresh G has about 21 years of experience in Financial services and Telecom. He specializes in Collections and Recovery and has worked with Karvy Financial Services (now SBFC) as Head – Collections for AP and Telangana, as well as ICICI Bank and Bharti Airtel.",
-    color: "red",
+    role: "Head-Collections",
+    desc: "22 years of sound experience in Risk and Debt management within the Banking and Financial Services sector.",
+    longDesc: "Suresh G is the Head of Collections of our Company. His exceptional execution and leadership in this segment have been instrumental in strengthening and driving best in class asset quality for Nivara.\n\nHe is a Bachelor of Commerce with over 22 years of sound experience in Risk and Debt management within the Banking and Financial Services sector, Mr. Suresh specializes in Collections and Recovery, Process Improvement, Regulatory Compliance, Cost Control, Credit Operations & Retail Asset Management.\n\nHe has consistently demonstrated an exceptional grasp of navigating complex financial landscape and strategizing the recoveries under various buckets and keep a constant check on Asset Quality. Prior to joining us, he has extensively worked in the last two decades with Fullerton India Home Finance, ING Vysya Bank Ltd., Axis Bank, HDFC Bank Ltd.",
+    color: "green",
     img: suresh,
-  },
-  {
-    name: "Mr. Aditya PVN",
-    role: "Head of HR",
-    desc: "20+ years of experience in HR across BFSI and Telecom, with previous leadership roles at Jana Small Finance Bank and Tata Teleservices.",
-    longDesc: "Mr. Aditya PVN holds an MBA in HR with about 14 years of experience in the BFSI sector. He previously worked with Karvy Financial Services Ltd. (now SBFC) as HR-Manager for AP & Telangana, focusing on talent acquisition, performance management, and employee relations.",
-    color: "green",
-    img: aditya,
-  },
-  {
-    name: "Mr. Sidharth Vij",
-    role: "National Credit Manager",
-    desc: "Two decades of experience in Strategic Credit Solutions and Risk Management, with a proven track record in establishing mortgage businesses.",
-    longDesc: "Mr. Sidharth Vij is an MBA in Finance with over 13 years of experience in Retail Lending (HL, LAP, and Mortgage loans). He was previously Area Credit Manager at Piramal Capital and has worked with DHFL and ICICI Bank.",
-    color: "red",
-    img: sidharth,
-  },
-  {
-    name: "Mr. Nagesh H S",
-    role: "State Head – Karnataka",
-    desc: "Nearly 20 years of experience in Banking and Mortgage industries, expert in setting up retail branch networks and distribution channels.",
-    longDesc: "Mr. Nagesh H S is an MBA graduate with nearly 20 years of experience in banking and finance. A founder member of Nivara, he has also worked with Karvy Financial Services, Aviom India Housing Finance, and IDFC First Bank.",
-    color: "green",
-    img: nagesh,
   },
   {
     name: "Mr. Venkat Sharma Konduri",
     role: "State Head – AP & Telangana",
-    desc: "24 years of experience in Sales Distribution, Home Loans, and Mortgages, with expertise in building businesses from scratch.",
-    longDesc: "Mr. Venkat Sharma Konduri has 24 years of experience in Sales Distribution in Home Loans and Mortgages. He holds an MBA from IIM Amritsar and has worked at Adani Capital, Vistaar Finance, and Karvy Financial services.",
+    desc: "Nearly 24 years of rich experience in sales distribution across home loans, mortgages, and business loans.",
+    longDesc: "Venkat Sharma Konduri holds an MBA in Sales and Marketing (Digital Marketing) from IIM Amritsar and brings nearly 24 years of rich experience in sales distribution across home loans, mortgages, and business loans. Mr. Konduri is currently the State Head for Andhra Pradesh and Telangana, spearheading growth and strengthening Nivara’s presence in the region.\n\nHe is well-versed in business development, credit, collections, product-based marketing, and business strategies. Over the course of his career, he has worked extensively with Adani Capital, Vistaar Finance, and Karvy Financial Services (now SBFC), where he successfully built businesses from inception to portfolios of several thousand crores in assets under management (AUM).",
     color: "red",
     img: venkat,
   },
   {
-    name: "Mr. Babu Abraham",
-    role: "Legal Head",
-    desc: "In-house Legal Counsel with 20+ years of experience in corporate law, litigation, and regulatory compliance.",
-    longDesc: "Mr. Babu Abraham has over 20 years of experience as an In-house Legal Counsel. He holds LLB and MBA degrees and is skilled in litigation, regulatory compliance, and legal recovery. He previously worked with Mantri Developers, Tata Motor Finance, and Fullerton.",
+    name: "Mr. Nagesh H S",
+    role: "State Head – Karnataka",
+    desc: "Experienced mortgage professional with nearly 20 years in the banking and financial services industry.",
+    longDesc: "Nagesh holds an MBA and brings a strong combination of industry knowledge, leadership, and execution capability to the Company. A founder member of Nivara, Mr. Nagesh is now in his second innings with the Company, spearheading sales for Karnataka. He has been instrumental in driving growth through strong branch expansion and customer outreach, while ensuring operational excellence in the region.\n\nAn experienced mortgage professional with nearly 20 years in the banking and financial services industry. He has deep expertise in setting up retail branch networks and distribution channels, and has a proven history of building and scaling mortgage businesses.\n\nOver the course of his career, he has held senior positions at Karvy Financial Services, Aviom India Housing Finance, and IDFC First Bank.",
     color: "green",
+    img: nagesh,
+  },
+  {
+    name: "Mr. Sidharth Vij",
+    role: "National Credit Manager",
+    desc: "Qualified Chartered Accountant and MBA with over two decades of experience in strategic credit solutions and risk management.",
+    longDesc: "Sidharth Vij is a National Credit Manager of the Company. He is a qualified Chartered Accountant, a Certified Associate of the Indian Institute of Bankers (CAIIB), and has completed the Master of Business Finance (MBF) program from ICAI. In addition, he holds an MBA from IIM Raipur. At Nivara, instrumental in strengthening credit approvals with efficient turnaround times and ensuring robust risk management practices. His leadership has significantly enhanced operational efficiency and asset quality.\n\nHe is a seasoned finance professional with over two decades of experience in driving strategic credit solutions and risk management in the housing finance business. He has a proven track record of establishing mortgage businesses and has been pivotal in setting up branch networks, developing guidelines for mortgage products, and establishing credit and risk policies.\n\nOver the course of his career, he has been associated with renowned organizations such as ICICI Bank, GE Money, HDFC Bank Ltd., DBS Bank, and India Shelter Finance Corporation.",
+    color: "red",
+    img: sidharth,
+  },
+  {
+    name: "Mr. Prakash MP",
+    role: "State Head – Tamil Nadu",
+    desc: "Over 26 years of Extensive Experience in the Banking and Financial services industry.",
+    longDesc: "Prakash MP is State Head for Tamil Nadu. He holds a Master of Business Administration from Symbiosis Management and brings over 26 years of Extensive Experience in the Banking and Financial services industry, with a strong specialization in home finance and mortgage operations. At Nivara, his expertise would enable establishing and scaling retail branch networks in Tamil Nadu.\n\nHe is a seasoned mortgage professional with a proven track record of success across multiple domains, including business development, credit assessment, collections, product marketing, and strategic planning.\n\nPrior to his current role, Mr. Prakash MP has held Senior Leadership positions at reputed financial institutions such as HDFC, HSBC, ICICI, DHFL and India Shelter, His deep industry knowledge and leadership capabilities make him a key contributor to Our Organizational growth and Operational Excellence.",
+    color: "green",
+    img: prakash,
+  },
+  {
+    name: "Mr. Maanoj Patil",
+    role: "State Head – Maharashtra",
+    desc: "Experienced leader driving growth and operational excellence in the Maharashtra region.",
+    longDesc: "Mr. Maanoj Patil is the State Head for Maharashtra. He brings extensive experience in business development, credit assessment, and strategic planning within the housing finance sector. His leadership is key to expanding Nivara's footprint and maintaining high service standards in the Maharashtra market.",
+    color: "red",
+    img: userPlaceholder,
+    hidden: true,
+  },
+  {
+    name: "Ms. Erica Gonsalves",
+    role: "Head – Operations",
+    desc: "CFA professional with over 18 years of experience across the finance and banking sector.",
+    longDesc: "Erica Gonsalves is Head of Operation of our Company. She is a CFA professional with over 18 years of experience across the finance and banking sector. At Nivara, she is spearheading initiatives to streamline disbursement processes, enhance operational efficiency, and implement scalable systems that support business growth.\n\nShe has spent 11 years of her career with Home First Finance, where she played a pivotal role in optimizing workflows, improving productivity, and driving organizational growth. Prior to that, she gained valuable experience at Saraswat Bank and Mecklai Financials, building a strong foundation in financial services and operational excellence.",
+    color: "green",
+    img: erica,
+  },
+  {
+    name: "Mr. Aditya Babu PVN",
+    role: "Head-Human Resources",
+    desc: "Senior human resource professional with over 25 years of experience across Banking, NBFC, Retail Finance, and Telecom sectors.",
+    longDesc: "Aditya Babu PVN is the Head of Human Resources of our Company. He is an engineering graduate with advanced qualifications in management and human resources and has completed executive education in Talent Management from XLRI. As a Head- HR he is responsible for the enterprisewide human resources strategy, including talent management, leadership and succession planning, performance and rewards governance, statutory and regulatory compliance, and workforce productivity. He has contributed significantly to multistate business operations and expansion, strengthening leadership depth and institutionalizing standardized HR processes aligned with long term organizational objectives.\n\nAs a senior human resource professional with over 25 years of experience across the Banking, NBFC, Retail Finance, and Telecom sectors. He has extensive experience in developing scalable and governanceoriented people frameworks that support sustainable growth in regulated, multilocation institutions\n\nPrior to joining us in January 2021, Aditya held senior HR leadership roles at Jana Small Finance Bank Ltd. (Bengaluru), Reliance Jio Infocomm Ltd. (Bengaluru), Idea Cellular Ltd. (Bhubaneswar), and Tata Teleservices Ltd. (Bhopal).",
+    color: "red",
+    img: aditya,
+  },
+  {
+    name: "Mr. Raja Shankarasubramanian",
+    role: "Head – IT & Digital",
+    desc: "Techno Ops leader with 30 years of experience across Banking, NBFC, and MFI sectors.",
+    longDesc: "Raja S is the Head of IT & Digital. He holds an MBA from Ignou. At Nivara, he is spearheading the organization’s digital transformation journey, by enabling technology into the core of Nivara’s operations, smarter decision-making, seamless customer experiences, and stronger governance.\n\nHe is an impact Techno Ops leader with 30 years of experience across Banking, NBFC, and MFI sectors. He specializes in transforming IT from a support function into a core business enabler, driving operational excellence through digital initiatives and robust automation by deploying SAS Based tools for decision making and Business Excellence. The gap between high-level business requirements and technical execution makes him a vital asset for driving a digital-first strategy. Implementing automation tools for various functions to ensure efficiency, integrity and compliance.",
+    color: "green",
+    img: raja,
+  },
+  {
+    name: "Mr. Babu Abraham",
+    role: "Head- Legal",
+    desc: "Over 20 years of in-house legal counsel experience across corporate and practice.",
+    longDesc: "Babu Abraham is the Legal Head of the Company, bringing over 20 years of in-house legal counsel experience across corporate and practice. He holds an LLB and MBA. At Nivara, Mr. Abraham has been instrumental in strengthening the legal framework, streamlining documentation processes, and supporting debt recovery.\n\nHe is highly skilled in negotiations, contract review, legal and regulatory compliance, litigation, title search reports, due diligence, and legal recovery. His functional expertise spans banking law, arbitrations, debt recovery tribunals, and labor welfare.\n\nBefore joining the Company, Mr. Abraham served as Deputy General Manager – Law at Mantri Developers. He has also held senior legal roles at Tata Motor Finance, Fullerton, Toyota, and Reliance Capital, in addition to practicing as an advocate and consultant.",
+    color: "red",
     img: babu,
   },
   {
-    name: "Mrs. Raina D’ Silva",
+    name: "Ms. Raina D’ Silva",
     role: "Company Secretary",
-    desc: "CS and Law graduate with 10 years of experience in secretarial compliance and corporate governance.",
-    longDesc: "Mrs. Raina D' Silva is a CS and Law graduate with 10 years of experience. She previously worked with Fineotex Chemical Ltd and HSBC Electronic Data Processing India Pvt. Ltd and is well-versed in the Companies Act and RBI/SEBI directions.",
-    color: "red",
+    desc: "Qualified Company Secretary and Law graduate with about 10 years of experience.",
+    longDesc: "Raina D Silva is the Company Secretary of the Company. She is a qualified Company Secretary and Law graduate with about 10 years of experience in secretarial and compliance functions. At Nivara, she has been instrumental in strengthening the compliance framework, streamlining secretarial practices, and ensuring adherence to regulatory requirements. Her contributions have enhanced transparency, governance standards, and stakeholder confidence.\n\nShe is well-versed in the Companies Act, SEBI regulations, and RBI directions applicable to Housing Finance Companies. Her expertise includes drafting, corporate communication, and management, with a strong focus on ensuring governance and compliance.\n\nPrior to joining us, she was working with Fineotex Chemical Ltd, as Company Secretary and Compliance Officer and HSBC Electronic Data Processing India Pvt. Ltd, as Senior Company Secretarial Assistant.",
+    color: "green",
     img: raina,
+  },
+  {
+    name: "Ms. Hema Madhukar",
+    role: "Head – Inbound Sales & Client Relations",
+    desc: "Over three decades of experience across leading financial institutions including HSBC, ICICI Bank, and Tata Capital.",
+    longDesc: "Hema heads Inbound Sales and Marketing of the Company. She is a Bachelor of Arts and has over three decades of experience across leading financial institutions including HSBC, ICICI Bank, Tata Capital Housing Finance, and emerging fintech organizations. Her experience spans retail banking, mortgage lending, affordable housing finance, and digital lending solutions. At Nivara her focus is on strengthening customer relationships, enhancing brand visibility, and expanding Nivara’s footprint through innovative marketing strategies.\n\nOver the course of her career, she have held leadership roles across sales, business development, and strategic initiatives, managing large teams and driving business growth across multiple regions. Her professional journey combines banking domain expertise with fintech innovation, enabling her to bridge traditional financial services with evolving digital ecosystems",
+    color: "red",
+    img: hema,
   },
   {
     name: "Mr. Bonojit Ukil",
     role: "Chief Compliance Officer",
-    desc: "Four decades of experience in policy formulation and process management within the Banking and Financial Services space.",
-    longDesc: "Mr. Bonojit Ukil has four decades of experience in banking and finance. Previously, he worked at UCO Bank, Bank of Punjab, Ujjivan Small Finance Bank, and Aye Finance, specializing in policy formulation and compliance risk.",
+    desc: "Veteran in Banking and financial Services space with about four decades of experience.",
+    longDesc: "Bonojit Ukil is the Chief Compliance Officer of the Company. His qualification includes M.Sc in Chemistry and advance banking certification from CAIIB. At Nivara, he brings in effective governance within the organization by ensuring compliance with laws, regulatory requirements, policies, and procedures along with the internal control and risk management processes.\n\nHe is a veteran in Banking and financial Services space with about four decades of experience in overall policy formulation and process management with an innate ability to evaluate complex, multi-dimensional situations and compliance risk characteristics.\n\nPreviously, he has worked across the wide spectrum of reputed Banks/NBFCs like UCO Bank, Bank of Punjab, First Blue Home Finance, Ujjivan Small Finance Bank, Aye Finance and Rural Mandi Fintech Pvt. Ltd.",
     color: "green",
     img: bonojit,
   },
   {
     name: "Mr. C. G. Thimmaiah",
     role: "Head – Audit",
-    desc: "30+ years of experience in Retail Asset management, credit appraisal, and audit across multiple states in India.",
-    longDesc: "Mr. C. G. Thimmaiah has about 12 years of experience in internal audit within the BFSI sector. He previously worked at Karvy Financial Services (now SBFC), HDB Financial Services, and ICICI Bank.",
+    desc: "Results-driven professional with a diverse experience spanning over 3 decades in Retail Asset.",
+    longDesc: "C. G. Thimmaiah is Head of Internal Audit of our Company. At Nivara, he has established rigorous internal audit processes, enhanced compliance monitoring, and ensured adherence to regulatory standards.\n\nHe holds Masters in Commerce and is a results-driven professional with a diverse experience spanning over 3 decades in Retail Asset – mortgages, construction finance underwriting, extensive exposure in sales, credit appraisal, and collection within the realms of Housing Loans/LAP. He has demonstrated leadership & management as a seasoned Branch Head with over 10 years of experience, successfully steering branches in Karnataka, Andhra Pradesh, Gujarat, and Tamil Nadu. He has a proven track record as an expert in implementing effective credit processes and managing credit teams, Audit & Compliance.\n\nPreviously. he has worked with Can Fin Homes, Reliance Home Finance and IDBI Bank.",
     color: "red",
     img: thimmaiah,
-  },
-  {
-    name: "Mr. Raja Shankarasubramanian",
-    role: "Head – IT & Digital",
-    desc: "Techno Ops leader with 30 years of experience in transforming IT into a core business enabler through digital initiatives.",
-    longDesc: "Mr. Raja Shankarasubramanian is an IT professional with over 13 years of experience. He was previously Manager-IT at Karvy Financial Services and has worked with Tata Business Support Services and TVS Sundaram Iyengar & Sons.",
-    color: "green",
-    img: raja,
   },
 ];
 
 const ManagementTeam = () => {
   const [selectedMember, setSelectedMember] = React.useState(null);
+  const [isExpanded, setIsExpanded] = React.useState(false);
+
+  const toggleReadMore = () => setIsExpanded(!isExpanded);
 
   return (
     <>
@@ -123,40 +172,51 @@ const ManagementTeam = () => {
         <ScrollReveal direction="up">
           <div className="management-header">
             <span className="management-heading">Management Team</span>
-            <h2>Our Management Leadership</h2>
+            <h2>Our <span style={{ color: "#E32125" }}>Management</span> Leadership</h2>
             <p>Experienced professionals managing operations, governance, and business excellence</p>
           </div>
         </ScrollReveal>
 
         <div className="management-grid">
-          {managementTeamData.map((item, index) => (
-            <ScrollReveal 
-              key={index} 
-              direction="up" 
-              delay={0.1 + (index % 4) * 0.1} 
-              distance={40}
-              scale={0.9}
-            >
-              <div
-                className={`management-card ${item.color}`}
-                onClick={() => setSelectedMember(item)}
+          {managementTeamData
+            .filter(item => !item.hidden)
+            .map((item, index) => (
+              <ScrollReveal
+                key={index}
+                direction="up"
+                delay={0.1 + (index % 4) * 0.1}
+                distance={40}
+                scale={0.9}
               >
-                <div className="management-image">
-                  <img src={item.img} alt={item.name} />
-                </div>
+                <div
+                  className={`management-card ${item.color}`}
+                  onClick={() => {
+                    setSelectedMember(item);
+                    setIsExpanded(false);
+                  }}
+                >
+                  <div className="management-image">
+                    <img src={item.img} alt={item.name} />
+                  </div>
 
-                <div className="management-content">
-                  <span className="management-role">{item.role}</span>
-                  <h3>{item.name}</h3>
-                  <p>{item.desc}</p>
-                  <button className="view-bio-btn" onClick={() => setSelectedMember(item)}>View Details</button>
-                </div>
+                  <div className="management-content">
+                    <span className="management-role">{item.role}</span>
+                    <h3>{item.name}</h3>
+                    <p>{item.desc}</p>
+                    <button className="view-bio-btn" onClick={() => {
+                      setSelectedMember(item);
+                      setIsExpanded(false);
+                    }}>View Details</button>
+                  </div>
 
-                <div className="leadership-strip-animated"></div>
-              </div>
-            </ScrollReveal>
-          ))}
+                  <div className="leadership-strip-animated"></div>
+                </div>
+              </ScrollReveal>
+            ))}
         </div>
+        <p className="management-updated-date" style={{ textAlign: "center", marginTop: "40px", color: "#6b7280", fontSize: "14px" }}>
+          Updated 30.04.2026
+        </p>
       </section>
 
       {/* Profile Modal */}
@@ -167,7 +227,10 @@ const ManagementTeam = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="unique-management-modal-overlay"
-            onClick={() => setSelectedMember(null)}
+            onClick={() => {
+              setSelectedMember(null);
+              setIsExpanded(false);
+            }}
             style={{
               position: 'fixed',
               inset: 0,
@@ -201,7 +264,10 @@ const ManagementTeam = () => {
               }}
             >
               <button
-                onClick={() => setSelectedMember(null)}
+                onClick={() => {
+                  setSelectedMember(null);
+                  setIsExpanded(false);
+                }}
                 style={{
                   position: 'absolute',
                   top: '20px',
@@ -231,19 +297,39 @@ const ManagementTeam = () => {
                   />
                 </div>
                 <div style={{ flex: '0 0 55%', padding: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: '#fff', overflowY: 'auto' }}>
-                  <h2 style={{ fontWeight: 900, fontSize: '42px', margin: '0 0 5px 0', color: '#1a1a1a', lineHeight: '1.1' }}>
+                  <h2 style={{ fontWeight: 700, fontSize: '32px', margin: '0 0 5px 0', color: '#211F1F', lineHeight: '1.1' }}>
                     {selectedMember.name}
                   </h2>
-                  <span style={{ display: 'block', fontSize: '14px', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '1.5px', color: '#d32f2f', marginBottom: '20px' }}>
+                  <span style={{ display: 'block', fontSize: '13px', textTransform: 'uppercase', fontWeight: 600, letterSpacing: '1.2px', color: '#E32125', marginBottom: '20px' }}>
                     {selectedMember.role}
                   </span>
-                  <div style={{ width: '60px', height: '6px', backgroundColor: '#d32f2f', marginBottom: '30px', borderRadius: '3px' }}></div>
-                  <p style={{ fontSize: '18px', fontWeight: 700, color: '#1a1a1a', marginBottom: '25px', lineHeight: '1.5' }}>
+                  <div style={{ width: '60px', height: '6px', backgroundColor: '#E32125', marginBottom: '30px', borderRadius: '3px' }}></div>
+                  <p style={{ fontSize: '16px', fontWeight: 600, color: '#211F1F', marginBottom: '25px', lineHeight: '1.5' }}>
                     {selectedMember.desc}
                   </p>
-                  <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#4b5563', fontWeight: 400 }}>
-                    {selectedMember.longDesc}
-                  </p>
+                  <div>
+                    <p style={{ fontSize: '14px', lineHeight: '1.8', color: '#4b5563', fontWeight: 400, textAlign: 'justify' }}>
+                      {isExpanded ? selectedMember.longDesc : `${selectedMember.longDesc.substring(0, 200)}...`}
+                    </p>
+                    {selectedMember.longDesc.length > 200 && (
+                      <button
+                        onClick={toggleReadMore}
+                        style={{
+                          background: 'none',
+                          border: 'none',
+                          color: '#E32125',
+                          fontWeight: 700,
+                          cursor: 'pointer',
+                          padding: '0',
+                          marginTop: '10px',
+                          fontSize: '15px',
+                          textDecoration: 'underline'
+                        }}
+                      >
+                        {isExpanded ? "Read Less" : "Read More"}
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -255,3 +341,4 @@ const ManagementTeam = () => {
 };
 
 export default ManagementTeam;
+

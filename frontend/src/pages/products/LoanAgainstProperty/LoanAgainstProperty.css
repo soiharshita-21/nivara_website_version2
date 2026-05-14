@@ -76,7 +76,7 @@
   background: #fff;
   border-radius: 35px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 20px 50px rgba(33, 31, 31, 0.12);
   font-family: "Poppins";
   /* Corrected based on original and common sense */
   position: relative;
@@ -110,7 +110,7 @@
 .lap-image-overlay {
   position: absolute;
   inset: 0;
-  /* background: rgba(46, 125, 50, 0.45); */
+  /* background: rgba(126, 181, 66, 0.45); */
 }
 
 
@@ -126,13 +126,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(33, 31, 31, 0.2);
   z-index: 2;
 }
 
 .lap-rotate-icon {
   font-size: 28px;
-  color: #2e7d32;
+  color: #7EB542;
   transition: transform 0.7s ease;
 }
 
@@ -154,7 +154,7 @@
   backdrop-filter: blur(14px);
   border-radius: 18px;
 
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 40px rgba(33, 31, 31, 0.15);
 
   display: flex;
   flex-direction: column;
@@ -181,7 +181,7 @@
   content: "✔";
   width: 22px;
   height: 22px;
-  background: #2e7d32;
+  background: #7EB542;
   color: #fff;
   font-size: 11px;
   font-weight: bold;
@@ -195,13 +195,13 @@
 
 .lap-image-points .point:hover {
   transform: translateX(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(33, 31, 31, 0.1);
 }
 
 .lap-image-points .points-title {
   font-size: 15px;
   font-weight: 700;
-  color: #2e7d32;
+  color: #7EB542;
   margin-bottom: 2px;
 }
 
@@ -224,7 +224,7 @@
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 20px;
-  color: #1a1a1a;
+  color: #211F1F;
 }
 
 .loan-against-text {
@@ -254,7 +254,7 @@
 .lap-title {
   font-size: 32px;
   font-weight: 700;
-  color: #2e7d32;
+  color: #7EB542;
   margin-bottom: 12px;
 }
 
@@ -289,7 +289,7 @@
   left: 0;
   width: 22px;
   height: 22px;
-  background-color: #2e7d32;
+  background-color: #7EB542;
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -313,8 +313,8 @@
   padding: 12px 24px;
   border-radius: 12px;
   background: transparent;
-  border: 2px solid #2e7d32;
-  color: #2e7d32;
+  border: 2px solid #7EB542;
+  color: #7EB542;
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
@@ -346,7 +346,7 @@
 .lap-feature-box:hover {
   background: #fdfdfd;
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 20px rgba(33, 31, 31, 0.05);
 }
 
 .lap-feature-icon {
@@ -357,7 +357,7 @@
 .lap-feature-box h3 {
   font-size: 22px;
   font-weight: 600;
-  color: #2e7d32 !important;
+  color: #7EB542 !important;
 }
 
 .lap-benefits-section {
@@ -371,7 +371,7 @@
 .lap-benefits-title {
   font-size: 34px;
   font-weight: 700;
-  color: #2e7d32 !important;
+  color: #7EB542 !important;
   margin-bottom: 45px;
   text-align: left;
   line-height: 1.2;
@@ -389,9 +389,9 @@
   font-size: 16px;
   line-height: 1.6;
   color: #374151;
-  border-left: 5px solid #2e7d32;
+  border-left: 5px solid #7EB542;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(33, 31, 31, 0.05);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
@@ -400,7 +400,7 @@
 
 .lap-benefit-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 30px rgba(33, 31, 31, 0.1);
   background: #fcfcfc;
 }
 
@@ -414,7 +414,7 @@
 .lap-help-title {
   font-size: 42px;
   font-weight: 800;
-  color: #2e7d32 !important;
+  color: #7EB542 !important;
   margin-bottom: 12px;
   text-align: center;
 }
@@ -446,14 +446,14 @@
 }
 
 .lap-help-card:hover {
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 15px 40px rgba(33, 31, 31, 0.08);
   transform: translateY(-6px);
 }
 
 /* Icon */
 .lap-help-icon {
   font-size: 40px;
-  color: #2e7d32;
+  color: #7EB542;
   margin-bottom: 20px;
 }
 
@@ -472,14 +472,14 @@
 }
 
 .lap-help-green {
-  color: #2e7d32;
+  color: #7EB542;
   font-size: 22px;
   margin: 10px 0;
   font-weight: 700;
 }
 
 .lap-help-mail {
-  color: #2e7d32;
+  color: #7EB542;
   margin-bottom: 20px;
 }
 
@@ -487,14 +487,14 @@
 .lap-help-link {
   display: inline-block;
   margin-top: 25px;
-  color: #2e7d32 !important;
+  color: #7EB542 !important;
   font-weight: 600;
-  border-bottom: 2px solid #2e7d32 !important;
+  border-bottom: 2px solid #7EB542 !important;
   cursor: pointer;
 }
 
 .lap-btn-outline:hover {
-  background: #2e7d32;
+  background: #7EB542;
   color: #ffffff;
 }
 
@@ -503,7 +503,7 @@
   padding: 12px 24px;
   border-radius: 12px;
   border: none;
-  background: #2e7d32;
+  background: #7EB542;
   color: #ffffff;
   font-weight: 600;
   cursor: pointer;
@@ -549,7 +549,7 @@
 .lap-strip {
   height: 8px;
   width: 0%;
-  background: #2e7d32;
+  background: #7EB542;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -585,13 +585,13 @@
 .lap-feature-box:hover {
   background: #f9fafb;
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 25px rgba(33, 31, 31, 0.05);
 }
 
 .lap-feature-icon {
   font-size: 40px;
   margin-bottom: 20px;
-  color: #2e7d32;
+  color: #7EB542;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -600,7 +600,7 @@
 .lap-circle-check-icon {
   width: 50px;
   height: 50px;
-  background-color: #2e7d32;
+  background-color: #7EB542;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -613,7 +613,7 @@
 .lap-feature-box h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #000 !important;
+  color: #211F1F !important;
   margin: 0;
 }
 
@@ -661,7 +661,7 @@
   font-size: 30px;
   font-weight: 600;
   margin-bottom: 30px;
-  color: #2e7d32;
+  color: #7EB542;
   text-align: center;
 }
 
@@ -691,7 +691,7 @@
   left: 0;
   width: 22px;
   height: 22px;
-  background-color: #2e7d32;
+  background-color: #7EB542;
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -725,7 +725,7 @@
 .lap-quote-ti {
   font-size: 42px;
   font-weight: 700;
-  color: #2e7d32;
+  color: #7EB542;
   margin-bottom: 10px;
 }
 
@@ -762,13 +762,13 @@
 
 /* Focus */
 .lap-form-grid input:focus {
-  border-color: #2e7d32;
+  border-color: #7EB542;
 }
 
 /* Button */
 .lap-quote-b {
   grid-column: 2 / 3;
-  background: #2e7d32;
+  background: #7EB542;
   color: #fff;
   border: none;
   padding: 18px;
@@ -784,7 +784,7 @@
 .lap-quote-b:hover {
   background: #1b5e20;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 25px rgba(33, 31, 31, 0.15);
 }
 
 /* Responsive */
@@ -819,7 +819,7 @@
 .lap-help-title {
   font-size: 42px;
   font-weight: 700;
-  color: #2e7d32;
+  color: #7EB542;
   margin-bottom: 12px;
 }
 
@@ -848,7 +848,7 @@
 
 .help-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 15px 40px rgba(33, 31, 31, 0.08);
 }
 
 .help-icon {
@@ -878,9 +878,9 @@
 .help-link {
   display: inline-block;
   margin-top: 25px;
-  color: #d32f2f;
+  color: #E32125;
   font-weight: 600;
-  border-bottom: 2px solid #d32f2f;
+  border-bottom: 2px solid #E32125;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -934,3 +934,6 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+

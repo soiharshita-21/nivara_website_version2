@@ -83,7 +83,7 @@ app.post('/api/upload', verifyToken, upload.single('image'), (req, res) => {
     if (!req.file) {
         return res.status(400).json({ message: "No file uploaded" });
     }
-    const imageUrl = `http://localhost:5000/uploads/${req.file.filename}`;
+    const imageUrl = `http://localhost:5001/uploads/${req.file.filename}`;
     res.json({ imageUrl });
 });
 
@@ -229,7 +229,7 @@ app.get('/', (req, res) => {
 });
 
 // Start the Server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
     console.log(`🚀 Server is running on http://localhost:${PORT}`);
 });

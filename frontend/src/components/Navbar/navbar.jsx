@@ -67,7 +67,7 @@ const Navbar = () => {
     if (searchQuery.trim() === "") {
       setSearchResults([]);
     } else {
-      const filtered = allPages.filter(page => 
+      const filtered = allPages.filter(page =>
         page.name.toLowerCase().includes(searchQuery.toLowerCase())
       );
       setSearchResults(filtered);
@@ -94,15 +94,15 @@ const Navbar = () => {
         {/* Search Bar */}
         <div className="search-group" ref={searchRef}>
           <div className={`search-wrapper ${showSearch ? "active" : ""}`}>
-            <input 
-              type="text" 
-              placeholder="Search services, tools..." 
+            <input
+              type="text"
+              placeholder="Search services, tools..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               onFocus={() => setShowSearch(true)}
             />
             <Search className="search-icon" size={20} />
-            
+
             {showSearch && searchResults.length > 0 && (
               <ul className="search-results">
                 {searchResults.map((result, index) => (
@@ -154,8 +154,8 @@ const Navbar = () => {
               <ChevronDown size={16} className="chevron" />
             </div>
             <ul className="dropdown-menu">
-              <li><Link to="/services/home-loan">Home Loan for Purchase</Link></li>
-              <li><Link to="/services/construction-loan">Construction Loan</Link></li>
+              <li><Link to="/services/construction-loan">Loan For Home Under Construction</Link></li>
+              <li><Link to="/services/home-loan">Home Loan For Purchase</Link></li>
               <li><Link to="/services/composite-loan">Composite Home Loan</Link></li>
               <li><Link to="/services/lap">Loan Against Property</Link></li>
               <li><Link to="/services/balance-transfer">Balance Transfer</Link></li>
@@ -247,4 +247,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar;

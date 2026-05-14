@@ -2,6 +2,7 @@ import React from "react";
 import { FaHome, FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 import ref from "../../../assets/images/refinance.png";
 import "./RefinanceLoan.css";
+import "../ProductHero.css";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
@@ -9,57 +10,49 @@ import RequestQuote from "../../../components/RequestQuote/RequestQuote";
 
 const RefinanceLoan = () => {
   const navigate = useNavigate();
-  const cards = [1];
 
   return (
-    <div className="page-center refinance-page">
-      <ScrollReveal direction="down">
-        <div className="refinance-grid">
-          {cards.map((item, index) => (
-            <div className="refinance-card" key={index}>
-              <div className="refinance-imagebox">
-                <img src={ref} alt="Refinance Loan" />
-                <div className="refinance-overlay"></div>
-                
-                {/* NEW: Overlay Points */}
-                <div className="refinance-image-points">
-                  <h4 className="points-title">Why Choose Us</h4>
-                  <div className="point">Quick approval</div>
-                  <div className="point">Minimal documentation</div>
-                  <div className="point">Attractive rates</div>
-                </div>
-
-
-              </div>
-
-              <div className="refinance-content">
-                <h2>Refinance Loan</h2>
-                <p className="refinance-subtitle">
-                  Renovate or extend your existing home
-                </p>
-
-                {/* <div className="slide-in-text">
-                  <ul className="refinance-features">
-                    <li>Quick approval</li>
-                    <li>Minimal documentation</li>
-                    <li>Attractive rates</li>
-                  </ul>
-                </div> */}
-
-                <div className="refinance-buttons">
-                  <button
-                    className="refinance-loan-btn-solid"
-                    onClick={() => navigate("/apply-home-loan")}
-                  >
-                    Apply →
-                  </button>
-                </div>
-              </div>
-              <div className="refinance-bottom-strip"></div>
-            </div>
-          ))}
+    <div className="product-page-wrapper">
+      <section className="product-hero">
+        <div className="product-hero-bg">
+          <img src={ref} alt="Refinance Loan" />
+          <div className="product-hero-overlay"></div>
         </div>
-      </ScrollReveal>
+        <div className="product-hero-container">
+          <div className="product-hero-content">
+            <ScrollReveal direction="left">
+              <h1 className="hero-title">
+                Refinance <span className="text-red">Loan</span>
+              </h1>
+              <p className="hero-subtitle_service">
+                Lower your interest rates and monthly payments by taking out a new loan to pay off your old one.
+              </p>
+              <div className="hero-actions">
+                <button
+                  className="hero-btn-primary"
+                  onClick={() => navigate("/apply-home-loan")}
+                >
+                  Apply Now
+                </button>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          <div className="product-hero-card">
+            <ScrollReveal direction="right">
+              <div className="hero-glass-card">
+                <h3>Why Choose Us</h3>
+                <ul>
+                  <li>Significantly lower your interest rate</li>
+                  <li>Reduce your monthly EMI burden</li>
+                  <li>Top-up facility for extra funds</li>
+                  <li>Switch from floating to fixed rates easily</li>
+                </ul>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
 
       <ScrollReveal direction="up" delay={0.1}>
         <div className="refinance-text-section">
@@ -144,7 +137,7 @@ const RefinanceLoan = () => {
         </div>
       </ScrollReveal>
 
-      <RequestQuote themeColor="#2e7d32" />
+      <RequestQuote themeColor="#7EB542" />
 
       {/* Help Section */}
       <div className="refinance-help-section">
@@ -191,3 +184,5 @@ const RefinanceLoan = () => {
 };
 
 export default RefinanceLoan;
+
+

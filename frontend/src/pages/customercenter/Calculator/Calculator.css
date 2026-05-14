@@ -57,7 +57,7 @@
 
 .emi-card {
   background: #fff;
-  color: #111;
+  color: #211F1F;
   max-width: 1200px;
   margin: 60px auto;
   border-radius: 24px;
@@ -154,7 +154,7 @@ input[type="range"] {
 
 .hover-pop:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 40px rgba(33, 31, 31, 0.15);
 }
 
 /* BUTTON */

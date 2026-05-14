@@ -19,7 +19,7 @@ const TermsConditions = () => {
         <div className="terms-detail">
           <h4>1. Loan</h4>
           <p>Sanctioned Amount: As mentioned in the sanction letter.</p>
-          
+
           <h4>2. Interest</h4>
           <ul className="terms-sub-list">
             <li><strong>Type:</strong> Fixed or Floating as per the agreement.</li>
@@ -123,13 +123,13 @@ const TermsConditions = () => {
   return (
     <div className="terms-page">
       <div className="terms-banner-section">
-        <div className="terms-banner-overlay"></div>
+        <div className="terms-banner"></div>
         <ScrollReveal direction="down" distance={30} className="terms-banner-container">
           <div className="terms-hero-badge">
             <ShieldCheck size={16} />
             <span>Most Important Terms</span>
           </div>
-          <h1>Terms & Conditions</h1>
+          <h1>Terms & <span className="text-red">Conditions</span></h1>
           <p className="terms-hero-subtitle">Most Important Terms and Conditions (MITC) for Nivara Home Loans</p>
         </ScrollReveal>
       </div>
@@ -145,8 +145,8 @@ const TermsConditions = () => {
       <section className="terms-accordion-section">
         <div className="terms-accordion-container">
           {sections.map((section, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={`accordion-item ${activeAccordion === index ? "active" : ""}`}
             >
               <div className="accordion-header" onClick={() => toggleAccordion(index)}>

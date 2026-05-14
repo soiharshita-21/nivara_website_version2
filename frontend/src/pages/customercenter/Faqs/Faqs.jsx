@@ -113,14 +113,14 @@ function Faqs() {
       {/* ================= HERO ================= */}
       {/* Hero Section */}
       <div className="faq-hero" style={{ backgroundImage: `url(${faqBg})` }}>
-        <div className="hero-overlay"></div>
+        <div className="page-banner-overlay"></div>
         <ScrollReveal direction="down" distance={30} className="hero-content-wrapper">
-          <div className="hero-badge">
+          {/* <div className="hero-badge">
             <HelpCircle size={16} />
             <span>Support Center</span>
-          </div>
-          <h1 className="faq-title">FAQ's</h1>
-          <p className="hero-subtitle">Find answers to commonly asked questions about our home loan solutions</p>
+          </div> */}
+          <h1 className="page-banner-title">FAQs</h1>
+          <p className="page-banner-subtitle">Find answers to commonly asked questions about our home loan solutions</p>
         </ScrollReveal>
       </div>
 

@@ -13,8 +13,8 @@
   max-width: 420px;
   padding: 2.5rem;
   border-radius: 1.5rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 40px rgba(33, 31, 31, 0.08);
+  border: 1px solid rgba(33, 31, 31, 0.05);
 }
 
 .login-header {
@@ -26,7 +26,7 @@
   width: 70px;
   height: 70px;
   background-color: #fdecee;
-  color: #d32f2f;
+  color: #E32125;
   border-radius: 50%;
   margin: 0 auto 1.25rem;
   display: flex;
@@ -102,12 +102,12 @@
 
 .input-field input:focus {
   outline: none;
-  border-color: #d32f2f;
+  border-color: #E32125;
   box-shadow: 0 0 0 4px rgba(155, 28, 49, 0.1);
 }
 
 .input-field input:focus ~ .field-icon {
-  color: #d32f2f;
+  color: #E32125;
 }
 
 .password-toggle {
@@ -128,7 +128,7 @@
 }
 
 .login-btn {
-  background-color: #d32f2f;
+  background-color: #E32125;
   color: white;
   padding: 1rem;
   border: none;
@@ -204,3 +204,5 @@
     padding: 2rem 1.5rem;
   }
 }
+
+

@@ -7,18 +7,27 @@ import pb1 from "../../../assets/images/publicdisclosure1.png";
 import pb2 from "../../../assets/images/saf.png";
 const PublicDisclosure = () => {
   return (
-    <div className="public-page">
+    <div className="about-page">
 
       {/* Hero Section */}
       <div className="public-hero" style={{ backgroundImage: `url(${home3})` }}>
-        <div className="hero-overlay"></div>
+        <div className="page-banner-overlay"></div>
         <ScrollReveal direction="down" distance={30} className="hero-content-wrapper">
-          <div className="hero-badge">
+
+          {/* Badge on top */}
+          {/* <div className="hero-badge">
             <ShieldCheck size={16} />
             <span>Regulatory Disclosure</span>
-          </div>
-          <h1 className="public-title">Public Disclosure</h1>
-          <p className="hero-subtitle">Transparency and regulatory compliance in housing finance</p>
+          </div> */}
+
+          <h1 className="page-banner-title">
+            Public <span className="text-red">Disclosure</span>
+          </h1>
+
+          <p className="page-banner-subtitle">
+            Transparency and regulatory compliance in housing finance
+          </p>
+
         </ScrollReveal>
       </div>
 

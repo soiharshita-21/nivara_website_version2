@@ -29,7 +29,6 @@ import InterestRate from "./pages/customercenter/InterestRate/InterestRate";
 import QuickLink from "./pages/customercenter/Quicklink/Quicklink";
 import Calculator from "./pages/customercenter/Calculator/Calculator";
 import InvestorsRelation from "./pages/InvestorsRelation/InvestorsRelation";
-
 import PublicDisclosure from "./pages/customercenter/PublicDisclosure/PublicDisclosure";
 import CorporateGovernance from "./pages/customercenter/corporategovernance";
 import Download from "./pages/customercenter/Download/Download";

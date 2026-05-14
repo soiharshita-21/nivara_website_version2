@@ -1,31 +1,31 @@
 import React from "react";
 import "./Download.css";
 import download from "../../../assets/images/download.png"
- 
+
 import { FaRegFilePdf, FaDownload } from "react-icons/fa";
 import { ShieldCheck } from 'lucide-react';
 import ScrollReveal from '../../../components/ScrollReveal/ScrollReveal';
- 
+
 const Download = () => {
   return (
     <div className="download-page">
- 
+
       {/* Hero Section */}
       <div className="download-hero" style={{ backgroundImage: `url(${download})` }}>
-        <div className="hero-overlay"></div>
+        <div className="page-banner-overlay"></div>
         <ScrollReveal direction="down" distance={30} className="hero-content-wrapper">
-          <div className="hero-badge">
+          {/* <div className="hero-badge">
             <ShieldCheck size={16} />
             <span>Download Center</span>
-          </div>
-          <h1 className="download-title">Download Center</h1>
-          <p className="hero-subtitle">Access all our forms and important documents in one place</p>
+          </div> */}
+          <h1 className="page-banner-title">Download <span className="text-red">Center</span></h1>
+          <p className="page-banner-subtitle">Access all our forms and important documents in one place</p>
         </ScrollReveal>
       </div>
- 
+
       {/* Content */}
       <div className="download-content animate-pop-up">
- 
+
         {/* Section 1: General Forms */}
         <div className="download-category">
           <h2>General Forms</h2>
@@ -42,7 +42,7 @@ const Download = () => {
             </a>
           </div>
         </div>
- 
+
         {/* Section 2: MITC */}
         <div className="download-category">
           <h2>Most Important Terms & Conditions (MITC)</h2>
@@ -57,7 +57,7 @@ const Download = () => {
               <span>MITC – Non HL (English)</span>
               <FaDownload className="dl-icon" />
             </a>
- 
+
             <a href="/files/mitc-hl-ka.pdf" target="_blank" className="download-card">
               <FaRegFilePdf className="pdf-icon" />
               <span>MITC – HL (Kannada)</span>
@@ -68,7 +68,7 @@ const Download = () => {
               <span>MITC – Non HL (Kannada)</span>
               <FaDownload className="dl-icon" />
             </a>
- 
+
             <a href="/files/mitc-hl-te.pdf" target="_blank" className="download-card">
               <FaRegFilePdf className="pdf-icon" />
               <span>MITC – HL (Telugu)</span>
@@ -79,7 +79,7 @@ const Download = () => {
               <span>MITC – Non HL (Telugu)</span>
               <FaDownload className="dl-icon" />
             </a>
- 
+
             <a href="/files/mitc-hl-ta.pdf" target="_blank" className="download-card">
               <FaRegFilePdf className="pdf-icon" />
               <span>MITC – HL (Tamil)</span>
@@ -90,7 +90,7 @@ const Download = () => {
               <span>MITC – Non HL (Tamil)</span>
               <FaDownload className="dl-icon" />
             </a>
- 
+
             <a href="/files/mitc-hl-mr.pdf" target="_blank" className="download-card">
               <FaRegFilePdf className="pdf-icon" />
               <span>MITC – HL (Marathi)</span>
@@ -103,7 +103,7 @@ const Download = () => {
             </a>
           </div>
         </div>
- 
+
         {/* Section 3: Additional Resources */}
         <div className="download-category">
           <h2>Additional Resources</h2>
@@ -130,10 +130,10 @@ const Download = () => {
             </a>
           </div>
         </div>
- 
+
       </div>
     </div>
   );
 };
- 
+
 export default Download;

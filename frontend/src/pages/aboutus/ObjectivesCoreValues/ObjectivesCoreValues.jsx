@@ -32,7 +32,7 @@ const coreValues = [
     icon: <FaHandshake />,
     title: "Trust",
     desc: "Honour our commitments – be trusting, yet prudent.",
-    color: "#2E7D32"
+    color: "#7EB542"
   },
   {
     icon: <FaAward />,
@@ -113,56 +113,41 @@ const ObjectivesCoreValues = () => {
         </div>
       </section>
 
-      {/* CORE VALUES */}
+      {/* CORE VALUES GRID */}
       <section className="ocv-section light">
         <ScrollReveal direction="up">
           <h2 className="section-title">Our Core Values</h2>
         </ScrollReveal>
 
-        <ScrollReveal direction="up" delay={0.2} scale={0.8}>
-          <div className="cv-wheel-wrapper">
-            <div className="cv-wheel">
-              <div className="cv-wheel-center">
-                {activeValue ? (
-                  <div 
-                    className="cv-center-content fade-in"
-                    style={{ "--node-color": activeValue.color }}
-                  >
-                    <span className="cv-center-emoji">{activeValue.icon}</span>
-                    <h3>{activeValue.title}</h3>
-                    <p>{activeValue.desc}</p>
-                  </div>
-                ) : (
-                  <div className="cv-center-content default-content fade-in">
-                    <span className="cv-center-emoji"><FaBullseye /></span>
-                    <h3>Core Values</h3>
-                  </div>
-                )}
+        <div className="cv-modern-grid">
+          {coreValues.map((val, index) => (
+            <ScrollReveal 
+              key={index} 
+              direction="up" 
+              delay={0.1 + (index * 0.05)}
+            >
+              <div 
+                className="cv-horizontal-card"
+                style={{ 
+                  "--accent-color": index % 2 === 0 ? "#E32125" : "#7EB542" 
+                }}
+              >
+                <div className="cv-icon-container">
+                  {val.icon}
+                </div>
+                <div className="cv-content-container">
+                  <h3>{val.title}</h3>
+                  <p>{val.desc}</p>
+                </div>
               </div>
-
-              {coreValues.map((val, index) => {
-                const angle = (index * (360 / coreValues.length)) - 90;
-                return (
-                  <div
-                    key={index}
-                    className="cv-wheel-node"
-                    style={{
-                      "--angle": `${angle}deg`,
-                      "--node-color": val.color
-                    }}
-                    onMouseEnter={() => setActiveValue(val)}
-                    onMouseLeave={() => setActiveValue(null)}
-                  >
-                    <span className="cv-node-emoji">{val.icon}</span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </ScrollReveal>
+            </ScrollReveal>
+          ))}
+        </div>
       </section>
     </div>
   );
 };
 
 export default ObjectivesCoreValues;
+
+

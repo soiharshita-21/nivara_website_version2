@@ -25,7 +25,7 @@
   background: #ffffff;
   padding: 50px 60px;
   border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(33, 31, 31, 0.08);
 }
 
 .row {
@@ -55,7 +55,7 @@ input {
 input:focus {
   border-color: maroon;
   background: #fff;
-  box-shadow: 0 0 0 3px rgba(128, 0, 0, 0.08);
+  box-shadow: 0 0 0 3px rgba(128, 33, 31, 31.08);
 }
 .submit-btn {
   margin-top: 30px;

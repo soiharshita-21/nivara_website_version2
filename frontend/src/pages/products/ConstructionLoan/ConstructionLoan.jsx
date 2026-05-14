@@ -3,6 +3,7 @@ import con from "../../../assets/images/Loan for construction.png";
 import { FiHome } from "react-icons/fi";
 import { FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 import "./ConstructionLoan.css";
+import "../ProductHero.css";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
@@ -12,54 +13,47 @@ const ConstructionLoan = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="page-center construction-page">
-      <ScrollReveal direction="down">
-        <div className="conloan-card-grid">
-          {[1].map((item, index) => (
-            <div className="conloan-card" key={index}>
-              <div className="conloan-image">
-                <img src={con} alt="Construction Loan" />
-                <div className="conloan-overlay"></div>
-                
-                {/* NEW: Overlay Points */}
-                <div className="conloan-image-points">
-                  <h4 className="points-title">Why Choose Us</h4>
-                  <div className="point">Stage-wise disbursement</div>
-                  <div className="point">Flexible tenure</div>
-                  <div className="point">Low processing fee</div>
-                </div>
-
-
-              </div>
-
-              <div className="conloan-content">
-                <h2>Construction Loan</h2>
-                <p className="subtitle">
-                  Build your home from the ground up with our construction loans
-                </p>
-
-                {/* <div className="slide-in-text">
-                  <ul className="features">
-                    <li>Stage-wise disbursement</li>
-                    <li>Flexible tenure</li>
-                    <li>Low processing fee</li>
-                  </ul>
-                </div> */}
-
-                <div className="conloan-buttons">
-                  <button
-                    className="conloan-loan-btn-solid"
-                    onClick={() => navigate("/apply-home-loan")}
-                  >
-                    Apply →
-                  </button>
-                </div>
-              </div>
-              <div className="con-loan-bottom-strip"></div>
-            </div>
-          ))}
+    <div className="product-page-wrapper">
+      <section className="product-hero">
+        <div className="product-hero-bg">
+          <img src={con} alt="Construction Loan" />
+          <div className="product-hero-overlay"></div>
         </div>
-      </ScrollReveal>
+        <div className="product-hero-container">
+          <div className="product-hero-content">
+            <ScrollReveal direction="left">
+              <h1 className="hero-title">
+                Construction <span className="text-red">Loan</span>
+              </h1>
+              <p className="hero-subtitle_service">
+                Build your home from the ground up with our stage-wise disbursement and flexible tenure options.
+              </p>
+              <div className="hero-actions">
+                <button
+                  className="hero-btn-primary"
+                  onClick={() => navigate("/apply-home-loan")}
+                >
+                  Apply Now
+                </button>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          <div className="product-hero-card">
+            <ScrollReveal direction="right">
+              <div className="hero-glass-card">
+                <h3>Why Choose Us</h3>
+                <ul>
+                  <li>Stage-wise disbursement</li>
+                  <li>Flexible tenure up to 30 years</li>
+                  <li>Low processing fees</li>
+                  <li>Expert guidance throughout construction</li>
+                </ul>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
 
       <ScrollReveal direction="up" delay={0.1}>
         <div className="construction-text-section">
@@ -106,7 +100,7 @@ const ConstructionLoan = () => {
         ))}
       </div>
 
-      <RequestQuote themeColor="#2e7d32" />
+      <RequestQuote themeColor="#7EB542" />
 
       {/* Features & Benefits Section */}
       <ScrollReveal direction="up">
@@ -188,5 +182,7 @@ const ConstructionLoan = () => {
 };
 
 export default ConstructionLoan;
+
+
 
 

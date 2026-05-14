@@ -14,7 +14,7 @@
 .impact-title {
   font-size: 44px;
   font-weight: 700;
-  color: #d32f2f;
+  color: #E32125;
   margin-bottom: 16px;
 }
 
@@ -39,7 +39,7 @@
   background: white;
   border-radius: 20px;
   padding: 40px 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 30px rgba(33, 31, 31, 0.06);
   transition: transform 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -117,14 +117,14 @@
 
 .impact-card.yellow .impact-icon {
   color: #f4b400;
-  background: rgba(244, 180, 0, 0.12);
+  background: rgba(244, 1833, 31, 31.12);
 
   box-shadow:
-    0 2px 6px rgba(244, 180, 0, 0.15);
+    0 2px 6px rgba(244, 1833, 31, 31.15);
 }
 
 .impact-card.yellow .impact-icon::after {
-  background: rgba(244, 180, 0, 0.2);
+  background: rgba(244, 1833, 31, 31.2);
 }
 
 
@@ -158,7 +158,7 @@
 
 .pink .impact-icon {
   background: rgba(109, 31, 42, 0.15);
-  color: #d32f2f;
+  color: #E32125;
 }
 
 .red .impact-icon {
@@ -204,3 +204,4 @@
   opacity: 1;
   transform: translateY(0) scale(1);
 }
+

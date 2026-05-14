@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* #E32125 #7EB542 #211F1F */
 
 #root {
   width: 100%;
@@ -42,7 +42,7 @@ body::-webkit-scrollbar {
   left: 0;
   height: 5px;
   width: 0%;
-  background: var(--line-bg, linear-gradient(90deg, #d32f2f, #2e7d32, #d32f2f));
+  background: var(--line-bg, linear-gradient(90deg, #E32125, #7EB542, #E32125));
   background-size: 200% 100%;
   transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1);
   z-index: 10;
@@ -83,7 +83,7 @@ body::-webkit-scrollbar {
 }
 
 .section-badge-spark {
-  color: #d32f2f;
+  color: #E32125;
   font-size: 18px;
 }
 
@@ -91,7 +91,7 @@ body::-webkit-scrollbar {
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 1.2px;
-  color: #d32f2f;
+  color: #E32125;
   background: #fdebed;
   border: 1px solid #f3c7cd;
   padding: 5px 30px;
@@ -118,11 +118,12 @@ body::-webkit-scrollbar {
 
 .page-banner-overlay {
   position: absolute;
-  top: 0; 
-  left: 0; 
-  width: 100%; 
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  background: rgba(33, 31, 31, 0.6);
+  /* Dark overlay */
   z-index: 1;
 }
 
@@ -139,10 +140,16 @@ body::-webkit-scrollbar {
   font-weight: 700;
   margin-bottom: 15px;
   color: #fff;
+  background: rgba(33, 31, 31, 0.45);
+  backdrop-filter: blur(8px);
+  padding: 8px 24px;
+  border-radius: 12px;
+  display: inline-block;
+  text-transform: uppercase;
 }
 
 .page-banner-title .text-red {
-  color: #ff0000;
+  color: #E32125;
 }
 
 .page-banner-subtitle {
@@ -157,10 +164,12 @@ body::-webkit-scrollbar {
     height: 50vh;
     min-height: 350px;
   }
+
   .page-banner-title {
     font-size: 36px;
   }
+
   .page-banner-subtitle {
     font-size: 16px;
   }
-}
+}

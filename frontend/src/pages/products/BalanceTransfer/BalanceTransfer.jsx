@@ -3,6 +3,7 @@ import { FiHome } from "react-icons/fi";// balance transfer icon
 import { FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 import bal from "../../../assets/images/Balance Transfer.png"; // you will replace this
 import "./BalanceTransfer.css";
+import "../ProductHero.css";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
@@ -10,57 +11,49 @@ import RequestQuote from "../../../components/RequestQuote/RequestQuote";
 
 const BalanceTransfer = () => {
   const navigate = useNavigate();
-  const cards = [1];
 
   return (
-    <section className="balance-section">
-      <ScrollReveal direction="down">
-        <div className="balance-grid">
-          {cards.map((item, index) => (
-            <div className="balance-card" key={index}>
-              <div className="balance-imagebox">
-                <img src={bal} alt="Balance Transfer" />
-                <div className="balance-image-overlay"></div>
-
-                {/* NEW: Overlay Points */}
-                <div className="balance-image-points">
-                  <h4 className="points-title">Why Choose Us</h4>
-
-                  <div className="point">Lower Interest Rates</div>
-                  <div className="point">Top-up Facility</div>
-                  <div className="point">Easy Process</div>
-                </div>
-
-              </div>
-
-              <div className="balance-content">
-                <h2 className="balance-title">Balance Transfer</h2>
-                <p className="balance-subtitle">
-                  Transfer your existing loan for better rates and terms
-                </p>
-
-                {/* <div className="slide-in-text">
-                  <ul className="balance-features">
-                    <li>Lower interest rates</li>
-                    <li>Top-up facility</li>
-                    <li>Easy process</li>
-                  </ul>
-                </div> */}
-
-                <div className="balance-buttons">
-                  <button
-                    className="balance-loan-btn-solid"
-                    onClick={() => navigate("/apply-home-loan")}
-                  >
-                    Apply →
-                  </button>
-                </div>
-              </div>
-              <div className="balance-bottom-strip"></div>
-            </div>
-          ))}
+    <div className="product-page-wrapper">
+      <section className="product-hero">
+        <div className="product-hero-bg">
+          <img src={bal} alt="Balance Transfer" />
+          <div className="product-hero-overlay"></div>
         </div>
-      </ScrollReveal>
+        <div className="product-hero-container">
+          <div className="product-hero-content">
+            <ScrollReveal direction="left">
+              <h1 className="hero-title">
+                Balance <span className="text-red">Transfer</span>
+              </h1>
+              <p className="hero-subtitle_service">
+                Transfer your existing loan to Nivara for better interest rates, top-up facilities, and a smoother repayment journey.
+              </p>
+              <div className="hero-actions">
+                <button
+                  className="hero-btn-primary"
+                  onClick={() => navigate("/apply-home-loan")}
+                >
+                  Apply Now
+                </button>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          <div className="product-hero-card">
+            <ScrollReveal direction="right">
+              <div className="hero-glass-card">
+                <h3>Why Choose Us</h3>
+                <ul>
+                  <li>Significantly lower interest rates</li>
+                  <li>Attractive top-up loan facility</li>
+                  <li>Zero hidden charges</li>
+                  <li>Doorstep service for transfer</li>
+                </ul>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
 
       <ScrollReveal direction="up" delay={0.1}>
         <div className="balance-text-section">
@@ -139,7 +132,7 @@ const BalanceTransfer = () => {
         </div>
       </ScrollReveal>
 
-      <RequestQuote themeColor="#d32f2f" />
+      <RequestQuote themeColor="#E32125" />
 
       {/* Help Section */}
       <div className="balance-help-section">
@@ -181,8 +174,9 @@ const BalanceTransfer = () => {
 
       {/* FAQ Section */}
       <ServiceFaqs />
-    </section>
+    </div>
   );
 };
 
 export default BalanceTransfer;
+

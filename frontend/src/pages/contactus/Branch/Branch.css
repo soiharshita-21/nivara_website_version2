@@ -21,7 +21,7 @@
 
 .banner-con h1 {
   font-size: 44px;
-  color: #d32f2f;
+  color: #E32125;
   letter-spacing: 3px;
   margin-bottom: 25px;
 }
@@ -80,7 +80,7 @@
 }
 
 .branch-locator h2 {
-  color: #d32f2f;
+  color: #E32125;
   font-size: 25px;
   font-weight: 800;
   display: flex;
@@ -90,7 +90,7 @@
 }
 
 .new-branches-title {
-  color: #d32f2f;
+  color: #E32125;
   font-size: 25px;
   font-weight: 800;
   display: flex;
@@ -101,7 +101,7 @@
 }
 
 .pin-icon {
-  color: #d32f2f;
+  color: #E32125;
   font-size: 28px;
 }
 
@@ -118,7 +118,7 @@
   border: 1px solid #ddd;
   font-size: 18px;
   outline: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 10px rgba(33, 31, 31, 0.06);
   transition: 0.3s ease;
 }
 
@@ -136,8 +136,8 @@
 }
 
 .branch-locator input:focus {
-  border-color: #d32f2f;
-  box-shadow: 0 6px 15px rgba(211, 47, 47, 0.15);
+  border-color: #E32125;
+  box-shadow: 0 6px 15px rgba(227, 33, 37, 0.15);
 }
 
 .search-results-dropdown {
@@ -147,7 +147,7 @@
   right: 0;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(33, 31, 31, 0.15);
   margin-top: 8px;
   max-height: 400px;
   overflow-y: auto;
@@ -200,7 +200,7 @@
   font-size: 18px;
   font-weight: 600;
   color: #B91C1C;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 18px rgba(33, 31, 31, 0.08);
   cursor: pointer;
   transition: 0.3s;
 }
@@ -211,7 +211,7 @@
 
 .down-icon {
   font-size: 22px;
-  color: #d32f2f;
+  color: #E32125;
 }
 
 .down-icon.rotate {
@@ -227,7 +227,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 18px rgba(33, 31, 31, 0.06);
 }
 
 .map-container {
@@ -257,7 +257,7 @@
 }
 
 .location-item:hover {
-  background: #d32f2f;
+  background: #E32125;
   color: #fff;
 }
 
@@ -288,7 +288,7 @@
 .branch-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(33, 31, 31, 0.7);
   backdrop-filter: blur(8px);
   display: flex !important;
   align-items: center !important;
@@ -311,7 +311,7 @@
   flex-direction: column !important;
   position: relative !important;
 
-  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 25px 60px -12px rgba(33, 31, 31, 0.4) !important;
   height: auto !important;
   max-height: 85vh;
 
@@ -367,19 +367,19 @@
 
 .modal-icon {
   font-size: 26px !important;
-  color: #d32f2f !important;
+  color: #E32125 !important;
 }
 
 .modal-header h3 {
   font-size: 26px !important;
-  color: #d32f2f !important;
+  color: #E32125 !important;
   margin: 0 !important;
   font-weight: 800 !important;
 }
 
 .modal-state-label {
   font-size: 13px !important;
-  color: #d32f2f !important;
+  color: #E32125 !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
   letter-spacing: 2px !important;
@@ -429,7 +429,7 @@
 
 .btn-get-directions-final {
   width: 100% !important;
-  background: linear-gradient(135deg, #d32f2f, #b71c1c) !important;
+  background: linear-gradient(135deg, #E32125, #b71c1c) !important;
   color: #fff !important;
   border: none !important;
   padding: 16px !important;
@@ -437,7 +437,7 @@
   font-weight: 700 !important;
   font-size: 16px !important;
   cursor: pointer !important;
-  box-shadow: 0 8px 20px rgba(211, 47, 47, 0.25) !important;
+  box-shadow: 0 8px 20px rgba(227, 33, 37, 0.25) !important;
   transition: all 0.3s ease !important;
   display: block !important;
   text-align: center;
@@ -446,7 +446,7 @@
 .btn-get-directions-final:hover {
   background: linear-gradient(135deg, #b71c1c, #9c1717) !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 12px 24px rgba(211, 47, 47, 0.35) !important;
+  box-shadow: 0 12px 24px rgba(227, 33, 37, 0.35) !important;
 }
 
 /* --- NEWLY OPENED BRANCH CARD STYLES --- */
@@ -454,7 +454,7 @@
   background: #fff;
   border-radius: 20px;
   padding: 25px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(33, 31, 31, 0.05);
   transition: 0.3s ease;
   border: 1px solid #f0f0f0;
   display: flex;
@@ -464,11 +464,11 @@
 
 .branch-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 40px rgba(33, 31, 31, 0.1);
 }
 
 .branch-card h3 {
-  color: #d32f2f;
+  color: #E32125;
   font-size: 20px;
   margin-bottom: 5px;
 }
@@ -485,7 +485,7 @@
   background: #f8f9fa;
   border: 1px solid #eee;
   border-radius: 10px;
-  color: #d32f2f;
+  color: #E32125;
   font-weight: 700;
   font-size: 14px;
   cursor: pointer;
@@ -493,7 +493,8 @@
 }
 
 .branch-card-directions:hover {
-  background: #d32f2f;
+  background: #E32125;
   color: #fff;
-  border-color: #d32f2f;
+  border-color: #E32125;
 }
+

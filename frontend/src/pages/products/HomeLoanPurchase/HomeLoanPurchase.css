@@ -74,7 +74,7 @@
   background: #fff;
   border-radius: 35px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 20px 50px rgba(33, 31, 31, 0.12);
   font-family: "Poppins";
   position: relative;
   margin-top: 30px;
@@ -109,13 +109,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(33, 31, 31, 0.2);
   z-index: 2;
 }
 
 .homeloan-rotate-icon {
   font-size: 28px;
-  color: #d32f2f;
+  color: #E32125;
   transition: transform 0.7s ease;
 }
 
@@ -137,7 +137,7 @@
   backdrop-filter: blur(14px);
   border-radius: 18px;
 
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 40px rgba(33, 31, 31, 0.15);
 
   display: flex;
   flex-direction: column;
@@ -164,7 +164,7 @@
   content: "✔";
   width: 22px;
   height: 22px;
-  background: #d32f2f;
+  background: #E32125;
   color: #fff;
   font-size: 11px;
   font-weight: bold;
@@ -178,13 +178,13 @@
 
 .homeloan-image-points .point:hover {
   transform: translateX(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(33, 31, 31, 0.1);
 }
 
 .homeloan-image-points .points-title {
   font-size: 18px;
   font-weight: 700;
-  color: #d32f2f;
+  color: #E32125;
   margin-bottom: 5px;
 }
 
@@ -201,7 +201,7 @@
 }
 
 .loan-content h2 {
-  color: #d32f2f;
+  color: #E32125;
   font-size: 32px;
   font-weight: 800;
   margin-bottom: 12px;
@@ -240,7 +240,7 @@
   left: 0;
   width: 22px;
   height: 22px;
-  background-color: #d32f2f;
+  background-color: #E32125;
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -261,7 +261,7 @@
 .home-page .ho-loan-btn-solid {
   width: 200px;
   padding: 12px 24px;
-  background: #d32f2f;
+  background: #E32125;
   color: #fff;
   border: none;
   border-radius: 12px;
@@ -276,7 +276,7 @@
 
 .home-page .ho-loan-btn-solid:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(211, 47, 47, 0.2);
+  box-shadow: 0 10px 25px rgba(227, 33, 37, 0.2);
 }
 
 @keyframes slideIn {
@@ -313,7 +313,7 @@
 .home-page .home-loan-bottom-strip {
   height: 6px;
   width: 0%;
-  background: #d32f2f;
+  background: #E32125;
 }
 
 .home-page .loan-card.visible .home-loan-bottom-strip {
@@ -330,7 +330,7 @@
 
 .home-loan-title {
   margin-bottom: 30px;
-  color: #d32f2f
+  color: #E32125
 }
 
 .home-loan-text {
@@ -347,7 +347,7 @@
 .help-title {
   font-size: 42px;
   font-weight: 700;
-  color: #d32f2f;
+  color: #E32125;
   margin-bottom: 12px;
 }
 
@@ -374,7 +374,7 @@
 .homeloan-help-title {
   font-size: 42px;
   font-weight: 800;
-  color: #d32f2f !important;
+  color: #E32125 !important;
   margin-bottom: 12px;
   text-align: center;
 }
@@ -406,14 +406,14 @@
 }
 
 .homeloan-help-card:hover {
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 15px 40px rgba(33, 31, 31, 0.08);
   transform: translateY(-6px);
 }
 
 /* Icon */
 .homeloan-help-icon {
   font-size: 40px;
-  color: #d32f2f;
+  color: #E32125;
   margin-bottom: 20px;
 }
 
@@ -432,14 +432,14 @@
 }
 
 .homeloan-help-green {
-  color: #d32f2f;
+  color: #E32125;
   font-size: 22px;
   margin: 10px 0;
   font-weight: 700;
 }
 
 .homeloan-help-mail {
-  color: #d32f2f;
+  color: #E32125;
   margin-bottom: 20px;
 }
 
@@ -447,9 +447,9 @@
 .homeloan-help-link {
   display: inline-block;
   margin-top: 25px;
-  color: #d32f2f !important;
+  color: #E32125 !important;
   font-weight: 600;
-  border-bottom: 2px solid #d32f2f !important;
+  border-bottom: 2px solid #E32125 !important;
   cursor: pointer;
 }
 
@@ -479,13 +479,13 @@
 .homeloan-feature-box:hover {
   background: #f9fafb;
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 25px rgba(33, 31, 31, 0.05);
 }
 
 .homeloan-feature-icon {
   font-size: 40px;
   margin-bottom: 20px;
-  color: #d32f2f;
+  color: #E32125;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -494,7 +494,7 @@
 .homeloan-circle-check-icon {
   width: 50px;
   height: 50px;
-  background-color: #d32f2f;
+  background-color: #E32125;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -507,7 +507,7 @@
 .homeloan-feature-box h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #000 !important;
+  color: #211F1F !important;
   margin: 0;
 }
 
@@ -554,7 +554,7 @@
 .homeloan-benefits-title {
   font-size: 34px;
   font-weight: 700;
-  color: #d32f2f !important;
+  color: #E32125 !important;
   margin-bottom: 45px;
   text-align: left;
   line-height: 1.2;
@@ -572,9 +572,9 @@
   font-size: 16px;
   line-height: 1.6;
   color: #374151;
-  border-left: 5px solid #d32f2f;
+  border-left: 5px solid #E32125;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(33, 31, 31, 0.05);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
@@ -583,7 +583,7 @@
 
 .homeloan-benefit-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 30px rgba(33, 31, 31, 0.1);
   background: #fcfcfc;
 }
 
@@ -625,7 +625,7 @@
 .quote-title {
   font-size: 52px;
   font-weight: 800;
-  color: #d32f2f;
+  color: #E32125;
   margin-bottom: 10px;
 }
 
@@ -660,14 +660,14 @@
 }
 
 .quote-form-grid input:focus {
-  border-color: #d32f2f;
+  border-color: #E32125;
 }
 
 /* Button */
 .quote-btn {
   grid-column: 2 / 3;
   /* right column */
-  background: #d32f2f;
+  background: #E32125;
   color: #fff;
   border: none;
   padding: 20px;
@@ -760,3 +760,4 @@
     grid-template-columns: 1fr;
   }
 }
+

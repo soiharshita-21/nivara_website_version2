@@ -23,26 +23,37 @@
 }
 
 .board-tag {
-  display: inline-block;
-  padding: 8px 18px;
-  border-radius: 20px;
-  font-size: 23px;
-  font-weight: 600;
-  background: #fdebed;
-  color: #6b1f2b;
-  margin-bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-bottom: 18px;
+  padding: 7px 12px;
+  border: 1px solid #fee2e2;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #E32125;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .board-header h2 {
-  font-size: 44px;
-  font-weight: 700;
-  color: #d32f2f;
+  font-size: 42px;
+  line-height: 1.1;
+  font-weight: 800;
+  color: #211f1f;
   margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  font-family: "Inter", sans-serif;
 }
 
 .board-header p {
   font-size: 16px;
-  color: #667085;
+  color: #475569;
+  line-height: 1.65;
+  margin: 0 auto;
 }
 
 
@@ -59,7 +70,7 @@
   background: #fff;
   border-radius: 35px;
   overflow: hidden;
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 15px 45px rgba(33, 31, 31, 0.08);
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   cursor: pointer;
@@ -70,7 +81,7 @@
 
 .board-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 30px 65px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 30px 65px rgba(33, 31, 31, 0.18);
 }
 
 
@@ -99,8 +110,8 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.05),
-      rgba(0, 0, 0, 0.35));
+      rgba(33, 31, 31, 0.05),
+      rgba(33, 31, 31, 0.35));
 }
 
 
@@ -116,8 +127,8 @@
   background: #fff;
   z-index: 20;
   white-space: nowrap;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 10px 25px rgba(33, 31, 31, 0.12);
+  border: 1px solid rgba(33, 31, 31, 0.05);
 }
 
 
@@ -131,7 +142,7 @@
 }
 
 .board-content h3 {
-  font-size: 26px;
+  font-size: 23px;
   font-weight: 800;
   color: #101828;
   margin-top: 15px;
@@ -147,19 +158,19 @@
 
 /* Theme Colors (Red & Green) */
 .board-card.red .role-tag {
-  color: #d32f2f;
+  color: #E32125;
 }
 
 .board-card.green .role-tag {
-  color: #2e7d32;
+  color: #7EB542;
 }
 
 .board-card.red h3 {
-  color: #d32f2f;
+  color: #E32125;
 }
 
 .board-card.green h3 {
-  color: #2e7d32;
+  color: #7EB542;
 }
 
 /* View Bio Button */
@@ -175,13 +186,13 @@
   cursor: pointer;
   transition: all 0.3s ease;
   align-self: flex-start;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 2px rgba(33, 31, 31, 0.05);
 }
 
 .view-bio-btn:hover {
   background-color: #f9fafb;
   border-color: #9ca3af;
-  color: #111827;
+  color: #211F1F;
 }
 
 .leadership-strip-animated {
@@ -190,7 +201,7 @@
   left: 0;
   right: 0;
   height: 6px;
-  background: linear-gradient(90deg, #d32f2f 50%, #2e7d32 50%);
+  background: linear-gradient(90deg, #E32125 50%, #7EB542 50%);
   background-size: 200% auto;
   animation: bgMove 5s ease-in-out infinite alternate;
   z-index: 100;
@@ -227,3 +238,6 @@
     height: 260px;
   }
 }
+
+
+

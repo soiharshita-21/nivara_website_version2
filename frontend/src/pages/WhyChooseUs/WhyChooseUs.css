@@ -44,8 +44,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%);
+  background: rgba(33, 31, 31, 0.6);
+  background: linear-gradient(to bottom, rgba(33, 31, 31, 0.7) 0%, rgba(33, 31, 31, 0.4) 100%);
   z-index: 2;
 }
 
@@ -61,7 +61,7 @@
   font-weight: 800;
   margin-bottom: 20px;
   line-height: 1.1;
-  border-left: 8px solid #d32f2f;
+  border-left: 8px solid #E32125;
   padding-left: 25px;
   text-transform: uppercase;
   letter-spacing: -1px;
@@ -94,7 +94,7 @@
 
 .why-intro h2 {
   font-size: 2.5rem;
-  color: #d32f2f;
+  color: #E32125;
   margin-bottom: 20px;
   font-weight: 700;
 }
@@ -120,7 +120,7 @@
   background: white;
   padding: 40px 30px;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(33, 31, 31, 0.05);
   transition: all 0.3s ease;
   border: 1px solid #f0f0f0;
   width: 100%;
@@ -131,7 +131,7 @@
 
 .benefit-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(211, 47, 47, 0.1);
+  box-shadow: 0 15px 40px rgba(227, 33, 37, 0.1);
   border-color: #ffeaea;
 }
 
@@ -147,7 +147,7 @@
 }
 
 .benefit-icon {
-  color: #d32f2f;
+  color: #E32125;
   width: 30px;
   height: 30px;
 }
@@ -167,12 +167,12 @@
 
 /* Footer CTA */
 .why-footer-cta {
-  background: linear-gradient(135deg, #e0d7d7 0%, #7675759d 100%);
+  background: linear-gradient(135deg, #e0d7d7 0%, #e100009d 100%);
   border-radius: 30px;
   padding: 60px 40px;
   text-align: center;
   color: black;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 40px rgba(33, 31, 31, 0.2);
 }
 
 .why-footer-cta h3 {
@@ -205,7 +205,7 @@
 .step-num {
   width: 40px;
   height: 40px;
-  background-color: #d32f2f;
+  background-color: #E32125;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -221,7 +221,7 @@
 }
 
 .apply-btn-large {
-  background-color: #d32f2f;
+  background-color: #E32125;
   color: white;
   border: none;
   padding: 18px 50px;
@@ -230,13 +230,13 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 20px rgba(211, 47, 47, 0.3);
+  box-shadow: 0 10px 20px rgba(227, 33, 37, 0.3);
 }
 
 .apply-btn-large:hover {
   background-color: #b71c1c;
   transform: scale(1.05);
-  box-shadow: 0 15px 25px rgba(211, 47, 47, 0.4);
+  box-shadow: 0 15px 25px rgba(227, 33, 37, 0.4);
 }
 
 @media (max-width: 768px) {
@@ -252,3 +252,4 @@
     gap: 30px;
   }
 }
+

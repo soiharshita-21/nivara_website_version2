@@ -3,11 +3,12 @@
   justify-content: space-between;
   align-items: center;
   padding: 8px 20px;
-  background: #d32f2f;
+  background: #E32125;
   color: #fff;
   font-size: 13px;
   position: relative;
-  z-index: 10001; /* Above navbar box-shadow but below menu overlay */
+  z-index: 10001;
+  /* Above navbar box-shadow but below menu overlay */
   font-family: 'Poppins', sans-serif;
   width: 100%;
   box-sizing: border-box;
@@ -57,9 +58,10 @@
     .topbar-link span {
       display: none;
     }
-    
+
     .topbar-link {
-      font-size: 16px; /* Larger icons for touch if text is hidden */
+      font-size: 16px;
+      /* Larger icons for touch if text is hidden */
       padding: 4px;
     }
 
@@ -69,4 +71,3 @@
     }
   }
 }
-

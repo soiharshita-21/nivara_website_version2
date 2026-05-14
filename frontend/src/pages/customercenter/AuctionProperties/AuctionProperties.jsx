@@ -30,16 +30,12 @@ const AuctionProperties = () => {
 
   return (
     <div className="auction-page">
-      <div className="auction-hero" style={{ backgroundImage: `url(${auctionBg})` }}>
-        <div className="hero-overlay"></div>
-        <ScrollReveal direction="down" distance={30} className="hero-content-wrapper">
-          <div className="hero-badge">
-            <ShieldCheck size={16} />
-            <span>SARFAESI ACT Compliance</span>
-          </div>
-          <h1 className="auction-title">Properties for Auction</h1>
-          <p className="hero-subtitle">Realization of dues through public e-auction</p>
-        </ScrollReveal>
+      <div className="page-banner" style={{ backgroundImage: `url(${auctionBg})` }}>
+        <div className="page-banner-overlay"></div>
+        <div className="page-banner-content">
+          <h1 className="page-banner-title">Properties for <span className="text-red"> Auction</span></h1>
+          <p className="page-banner-subtitle">Realization of dues through public e-auction</p>
+        </div>
       </div>
 
       <div className="auction-container">

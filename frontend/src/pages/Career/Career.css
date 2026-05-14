@@ -20,7 +20,7 @@
 /* Hero Section */
 .career-hero {
   position: relative;
-  background: #1a1a1a;
+  background: #211F1F;
   color: white;
   height: 650px;
   display: flex;
@@ -47,7 +47,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at top right, rgba(211, 47, 47, 0.4) 0%, transparent 60%);
+  background: radial-gradient(circle at top right, rgba(227, 33, 37, 0.4) 0%, transparent 60%);
   z-index: 2;
 }
 
@@ -68,7 +68,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(33, 31, 31, 0.5);
   z-index: 2;
 }
 
@@ -113,9 +113,9 @@
   background: white;
   padding: 30px;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px rgba(33, 31, 31, 0.04);
   margin-bottom: 30px;
-  border-left: 5px solid #d32f2f;
+  border-left: 5px solid #E32125;
 }
 
 .block-header {
@@ -126,7 +126,7 @@
 }
 
 .icon-red {
-  color: #d32f2f;
+  color: #E32125;
   font-size: 24px;
 }
 
@@ -148,7 +148,7 @@
   align-items: center;
   gap: 10px;
   background-color: #ffeaea;
-  color: #d32f2f;
+  color: #E32125;
   padding: 10px 20px;
   border-radius: 30px;
   text-decoration: none;
@@ -157,7 +157,7 @@
 }
 
 .email-link:hover {
-  background-color: #d32f2f;
+  background-color: #E32125;
   color: white;
   transform: translateY(-2px);
 }
@@ -178,7 +178,7 @@
   border-radius: 12px;
   padding: 25px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(33, 31, 31, 0.05);
   border: 1px solid #f0f0f0;
   transition: all 0.3s ease;
   display: flex;
@@ -188,7 +188,7 @@
 
 .job-modern-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(211, 47, 47, 0.1);
+  box-shadow: 0 10px 30px rgba(227, 33, 37, 0.1);
   border-color: #ffd2d2;
 }
 
@@ -205,12 +205,12 @@
   align-items: center;
   gap: 10px;
   margin: 0;
-  color: #1a1a1a;
+  color: #211F1F;
   font-size: 1.4rem;
 }
 
 .job-icon {
-  color: #d32f2f;
+  color: #E32125;
 }
 
 .experience-badge {
@@ -244,8 +244,8 @@
   align-items: center;
   gap: 8px;
   background: transparent;
-  color: #d32f2f;
-  border: 2px solid #d32f2f;
+  color: #E32125;
+  border: 2px solid #E32125;
   padding: 8px 20px;
   border-radius: 30px;
   font-weight: 600;
@@ -254,7 +254,7 @@
 }
 
 .apply-btn-outline:hover {
-  background: #d32f2f;
+  background: #E32125;
   color: white;
 }
 
@@ -262,14 +262,14 @@
 .form-modern-wrapper {
   background: white;
   border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 40px rgba(33, 31, 31, 0.08);
   overflow: hidden;
   position: sticky;
   top: 100px;
 }
 
 .form-modern-header {
-  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+  background: linear-gradient(135deg, #E32125 0%, #b71c1c 100%);
   color: white;
   padding: 35px 30px;
   text-align: center;
@@ -318,7 +318,7 @@
 }
 
 .input-icon-inline {
-  color: #d32f2f;
+  color: #E32125;
 }
 
 .modern-contact-form input[type="text"],
@@ -339,9 +339,9 @@
 .modern-contact-form input:focus,
 .modern-contact-form select:focus,
 .modern-contact-form textarea:focus {
-  border-color: #d32f2f;
+  border-color: #E32125;
   background-color: white;
-  box-shadow: 0 0 0 4px rgba(211, 47, 47, 0.1);
+  box-shadow: 0 0 0 4px rgba(227, 33, 37, 0.1);
 }
 
 .form-upload-group {
@@ -358,7 +358,7 @@
 
 .upload-dropzone {
   position: relative;
-  border: 2px dashed #d32f2f;
+  border: 2px dashed #E32125;
   border-radius: 12px;
   padding: 40px 20px;
   text-align: center;
@@ -379,7 +379,7 @@
 
 .upload-icon {
   font-size: 2.5rem;
-  color: #d32f2f;
+  color: #E32125;
   margin-bottom: 5px;
 }
 
@@ -408,7 +408,7 @@
 }
 
 .submit-btn-modern {
-  background: #d32f2f;
+  background: #E32125;
   color: white;
   border: none;
   padding: 16px;
@@ -418,13 +418,13 @@
   cursor: pointer;
   transition: all 0.3s;
   margin-top: 10px;
-  box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+  box-shadow: 0 4px 15px rgba(227, 33, 37, 0.3);
 }
 
 .submit-btn-modern:hover {
   background: #b71c1c;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
+  box-shadow: 0 6px 20px rgba(227, 33, 37, 0.4);
 }
 
 /* Responsiveness */
@@ -452,3 +452,4 @@
     padding: 20px;
   }
 }
+

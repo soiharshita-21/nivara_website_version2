@@ -1,259 +1,552 @@
-.terms-page {
-  width: 100%;
-  background: #fff;
-  /* Match fair practice page background */
-  font-family: "Poppins", sans-serif;
-  color: #1e293b;
+:root {
+  --theme: #8b1d2c;
 }
 
-/* HERO SECTION - Reference from Fair Practice Code */
-.terms-banner-section {
+/* =========================
+   PAGE
+========================= */
+.terms-page {
   width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/terms.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  /* Parallax effect like fair practice */
-  color: white;
-  padding: 220px 20px 200px;
-  text-align: center;
+  background: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+/* =========================
+   HERO SECTION
+   Styled like About Us
+========================= */
+.terms-banner-section {
   position: relative;
-  margin-bottom: 60px;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+  width: 100%;
+  min-height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 100px 5%;
+
+  background:
+    linear-gradient(rgba(33, 31, 31, 0.58),
+      rgba(33, 31, 31, 0.58)),
+    url('../../assets/images/terms.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  overflow: hidden;
 }
 
-.terms-banner-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 1;
-}
-
-/* Subtle inner gradients like fair practice */
+/* Soft glow */
 .terms-banner-section::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+
+  width: 700px;
+  height: 700px;
+
+  top: -200px;
+  right: -180px;
+
+  background:
+    radial-gradient(circle,
+      rgba(255, 255, 255, 0.12) 0%,
+      transparent 70%);
+
+  z-index: 1;
   pointer-events: none;
-  z-index: 2;
 }
 
+/* Bottom fade */
 .terms-banner-section::after {
   content: "";
   position: absolute;
-  bottom: 0;
+
   left: 0;
   right: 0;
-  height: 100px;
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.2), transparent);
-  pointer-events: none;
+  bottom: 0;
+
+  height: 140px;
+
+  background:
+    linear-gradient(to top,
+      #ffffff,
+      transparent);
+
   z-index: 2;
+  pointer-events: none;
 }
 
+/* =========================
+   HERO CONTAINER
+========================= */
 .terms-banner-container {
   position: relative;
-  z-index: 3;
+  z-index: 5;
+
   max-width: 1200px;
   width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  animation: heroFade 1s ease forwards;
 }
 
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   BADGE
+========================= */
 .terms-hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+
+  padding: 10px 22px;
+  margin-bottom: 28px;
+
+  border-radius: 999px;
+
   background: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
-  padding: 10px 24px;
-  border-radius: 100px;
-  font-size: 15px;
-  font-weight: 700;
-  margin-bottom: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  backdrop-filter: blur(10px);
+
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 600;
   letter-spacing: 0.5px;
-  text-transform: capitalize;
+
+  box-shadow:
+    0 8px 25px rgba(33, 31, 31, 0.18);
 }
 
+/* =========================
+   HERO TITLE
+   Same style as About Us
+========================= */
 .terms-banner-container h1 {
-  font-size: 56px;
-  font-weight: 800;
-  margin: 0 0 20px;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: #d32f2f;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  font-size: clamp(40px, 5vw, 90px);
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+
+  color: #fff !important;
+
+  text-transform: uppercase;
+
+  background: rgba(33, 31, 31, 0.55);
+
+  backdrop-filter: blur(6px);
+
+  padding: 12px 24px;
+
+  border-radius: 12px;
+
+  margin-bottom: 24px;
+
+  display: inline-block;
+
+  box-shadow:
+    0 12px 35px rgba(33, 31, 31, 0.25);
 }
 
+/* =========================
+   SUBTITLE
+========================= */
 .terms-hero-subtitle {
-  font-size: 18px;
-  color: #fecdd3;
-  /* Light pink/red tint subtitle like fair practice */
-  max-width: 700px;
+  max-width: 780px;
+
   margin: 0 auto;
+
+  font-size: 18px;
+  line-height: 1.8;
+
+  color: #f5f5f5;
+
   font-weight: 400;
 }
 
-/* Intro Section after Banner */
+/* =========================
+   INTRO SECTION
+========================= */
 .terms-intro-section {
-  padding: 60px 20px;
-  background: white;
+  padding: 90px 20px 50px;
+  background: #ffffff;
 }
 
 .terms-container {
-  max-width: 1100px;
+  max-width: 1150px;
   margin: 0 auto;
 }
 
+/* Intro Card */
 .mitc-intro {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #475569;
+  font-size: 17px;
+  line-height: 1.9;
+
+  color: #4b5563;
+
   text-align: justify;
+
+  background: #fff;
+
+  border-radius: 26px;
+
+  padding: 40px;
+
+  border: 1px solid #ececec;
+
+  box-shadow:
+    0 10px 35px rgba(33, 31, 31, 0.04);
 }
 
-/* Accordion Section */
+/* =========================
+   ACCORDION SECTION
+========================= */
 .terms-accordion-section {
-  padding: 80px 20px;
-  background: #f8fafc;
+  padding: 80px 20px 120px;
+
+  background: #ffffff;
+
   display: flex;
   justify-content: center;
 }
 
+/* Accordion Wrapper */
 .terms-accordion-container {
-  max-width: 900px;
+  max-width: 950px;
   width: 100%;
+
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
+/* =========================
+   ACCORDION CARD
+========================= */
 .accordion-item {
   background: #fff;
-  border-radius: 16px;
-  border: 1px solid #e2e8f0;
+
+  border-radius: 26px;
+
+  border: 1px solid #ececec;
+
   overflow: hidden;
-  transition: all 0.3s ease;
+
+  transition: all 0.35s ease;
+
+  box-shadow:
+    0 10px 30px rgba(33, 31, 31, 0.04);
 }
 
+/* Hover */
+.accordion-item:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(227, 33, 37, 0.18);
+
+  box-shadow:
+    0 18px 40px rgba(33, 31, 31, 0.08);
+}
+
+/* Active */
 .accordion-item.active {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border-color: #d32f2f;
+  border-color: rgba(227, 33, 37, 0.15);
+
+  box-shadow:
+    0 20px 50px rgba(122, 20, 34, 0.08);
 }
 
+/* =========================
+   ACCORDION HEADER
+========================= */
 .accordion-header {
-  padding: 24px 30px;
+  padding: 28px 30px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
+
   cursor: pointer;
-  transition: background 0.3s;
+
+  transition: all 0.3s ease;
 }
 
+/* Hover */
 .accordion-header:hover {
-  background: #f1f5f9;
+  background: #fff8f8;
 }
 
+/* Left Side */
 .header-left {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
+/* Icon Box */
 .icon-box {
-  width: 50px;
-  height: 50px;
-  background: #f0f7f0;
-  color: #d32f2f;
-  border-radius: 12px;
+  width: 58px;
+  height: 58px;
+
+  border-radius: 16px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background:
+    linear-gradient(135deg,
+      rgba(227, 33, 37, 0.08),
+      rgba(122, 20, 34, 0.12));
+
+  color: #E32125;
+
+  flex-shrink: 0;
+
+  transition: all 0.35s ease;
 }
 
+/* Active Icon */
+.accordion-item.active .icon-box {
+  background:
+    linear-gradient(135deg,
+      #7a1422,
+      #E32125);
+
+  color: #fff;
+
+  transform: rotate(6deg);
+}
+
+/* Heading */
 .accordion-header h3 {
-  font-size: 20px;
-  font-weight: 700;
-  color: #1e293b;
   margin: 0;
+
+  font-size: 21px;
+  font-weight: 700;
+
+  line-height: 1.5;
+
+  color: #211F1F;
 }
 
+/* =========================
+   CONTENT
+========================= */
 .accordion-content {
   max-height: 0;
+
   overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  transition:
+    max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Active */
 .accordion-item.active .accordion-content {
-  max-height: 1200px;
+  max-height: 1500px;
 }
 
+/* Inner */
 .content-inner {
-  padding: 0 30px 30px 100px;
-  border-top: 1px solid #f1f5f9;
+  padding: 0 35px 35px 108px;
+
+  border-top: 1px solid #f3f4f6;
+
   padding-top: 30px;
 }
 
+/* =========================
+   DETAILS
+========================= */
 .terms-detail h4 {
   font-size: 18px;
-  color: #d32f2f;
-  margin-bottom: 10px;
   font-weight: 700;
+
+  color: #E32125;
+
+  margin-bottom: 14px;
 }
 
+/* Paragraph */
 .terms-detail p {
   font-size: 15px;
-  color: #475569;
-  line-height: 1.7;
-  margin-bottom: 15px;
+  line-height: 1.9;
+
+  color: #4b5563;
+
+  margin-bottom: 18px;
+
+  text-align: justify;
 }
 
+/* =========================
+   LIST
+========================= */
 .terms-sub-list {
   list-style: none;
+
   padding: 0;
-  margin-bottom: 20px;
+  margin: 0 0 20px;
 }
 
+/* List Item */
 .terms-sub-list li {
-  font-size: 15px;
-  color: #475569;
-  margin-bottom: 8px;
   position: relative;
-  padding-left: 20px;
+
+  padding-left: 24px;
+
+  margin-bottom: 12px;
+
+  font-size: 15px;
+  line-height: 1.8;
+
+  color: #4b5563;
 }
 
+/* Bullet */
 .terms-sub-list li::before {
-  content: "•";
+  content: "";
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #E32125;
+
   position: absolute;
+
   left: 0;
-  color: #d32f2f;
-  font-weight: bold;
+  top: 10px;
 }
 
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 768px) {
   .terms-banner-section {
-    padding: 100px 20px 80px;
-    border-radius: 0;
+    min-height: 80vh;
+
+    padding: 110px 20px 90px;
+
+    background-attachment: scroll;
   }
 
   .terms-banner-container h1 {
-    font-size: 36px;
+    font-size: 52px;
+
+    padding: 10px 20px;
+
+    border-radius: 10px;
+
+    letter-spacing: -1px;
+  }
+
+  .terms-hero-subtitle {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .mitc-intro {
+    padding: 28px;
+    font-size: 15px;
+  }
+
+  .accordion-header {
+    padding: 22px;
+  }
+
+  .accordion-header h3 {
+    font-size: 18px;
   }
 
   .content-inner {
-    padding-left: 30px;
+    padding:
+      0 22px 22px 22px;
+
+    padding-top: 24px;
+  }
+
+  .icon-box {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 14px;
   }
 }
+
+@media (max-width: 480px) {
+  .terms-hero-badge {
+    font-size: 12px;
+
+    padding: 8px 18px;
+  }
+
+  .terms-banner-container h1 {
+    font-size: 38px;
+
+    padding: 10px 18px;
+  }
+
+  .terms-hero-subtitle {
+    font-size: 15px;
+  }
+
+  .accordion-header {
+    padding: 20px;
+  }
+
+  .header-left {
+    gap: 14px;
+  }
+
+  .accordion-header h3 {
+    font-size: 16px;
+  }
+
+  .content-inner {
+    padding:
+      0 20px 20px 20px;
+
+    padding-top: 22px;
+  }
+
+  .terms-detail h4 {
+    font-size: 17px;
+  }
+
+  .terms-detail p,
+  .terms-sub-list li {
+    font-size: 14px;
+  }
+}
+
+

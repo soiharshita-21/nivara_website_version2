@@ -100,7 +100,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(33, 31, 31, 0.45);
 }
 
 
@@ -119,7 +119,7 @@
 }
 
 .banner-content h1 span {
-  color: #d32f2f;
+  color: #E32125;
 }
 
 .banner-content p {
@@ -135,7 +135,7 @@
 }
 
 .primary-btn {
-  background-color: #d32f2f;
+  background-color: #E32125;
   color: #fff;
   padding: 12px 22px;
   border-radius: 6px;
@@ -304,3 +304,4 @@
 .carousel-item.active .flip-inner {
   animation-delay: 0.8s;
 }
+

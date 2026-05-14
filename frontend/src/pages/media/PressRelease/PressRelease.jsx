@@ -60,7 +60,7 @@ const PressRelease = () => {
   React.useEffect(() => {
     const fetchPress = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/press");
+        const response = await axios.get("http://localhost:5001/api/press");
         const formattedData = response.data.map(n => ({
           img: n.image_url || n.image,
           title: n.title,

@@ -2,96 +2,35 @@
   width: 100%;
   background: #ffffff;
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
-/* Banner */
-.investors-banner {
+/* Page Banner (Custom style for this page) */
+.investors-page .page-banner {
   position: relative;
   width: 100%;
-  min-height: 600px;
+  height: 80vh;
+  min-height: 650px;
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
-  overflow: hidden;
-  background: #fff;
-  line-height: 0;
+  justify-content: center;
 }
 
-/* Background Image */
-.investors-banner-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-  display: block;
-  transform: scale(1.05);
-  animation: bannerImageSlideUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-}
-
-@keyframes bannerImageSlideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px) scale(1.05);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1.05);
-  }
-}
-
-/* Overlay */
-.investors-banner-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 55%;
-  height: 100%;
-  background-color: #d32f2f;
-  clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
-  z-index: 2;
-  display: flex;
-  align-items: center;
-}
-
-/* Content */
-.investors-banner-content {
-  width: 75%;
-  padding-left: 10%;
-  color: #fff;
-}
-
-.investors-banner-content h1 {
-  font-size: 42px;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.investors-banner-content p {
-  font-size: 15px;
-  line-height: 1.6;
-  margin-bottom: 30px;
-  color: #fce8eb;
-  max-width: 95%;
-}
-
-/* Decorative Strips */
+/* Decorative Strips in Banner */
 .investors-strip {
   position: absolute;
   height: 45px;
   z-index: 3;
-  transform: translateZ(0);
 }
 
 .top-strip-1 {
   top: 0;
   left: 0;
   width: 70%;
-  background-color: #b7afaf;
+  background-color: #7EB542;
+  /* More vibrant green */
   clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
 }
 
@@ -99,223 +38,178 @@
   top: 44px;
   left: 0;
   width: 58%;
-  background: linear-gradient(135deg, #7a1422, #ff0026);
+  background: linear-gradient(135deg, #E32125, #ff4d4d);
   clip-path: polygon(0 0, 100% 0, 93% 100%, 0% 100%);
 }
 
 .bottom-strip-1 {
-  bottom: -2px;
+  bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #b9b7b8;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  background-color: #7EB542;
+  /* More vibrant green */
 }
 
 .bottom-strip-2 {
   bottom: 43px;
   left: 0;
   width: 80%;
-  background: linear-gradient(135deg, #7a1422, #ff0026);
+  background: linear-gradient(135deg, #E32125, #ff4d4d);
   clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
 }
 
-.investors-banner::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  /* background: #942a3b; */
-  z-index: 4;
+/* Grid Container */
+.investors-grid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 20px;
 }
 
-/* Content Area */
-.investors-content {
-  max-width: 1200px;
-  margin: auto;
-  padding: 80px 20px;
+.investors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+/* Modern Investor Card */
+.investor-modern-card {
+  background: #ffffff;
+  border-radius: 30px;
+  padding: 50px;
   display: flex;
   flex-direction: column;
-  gap: 80px;
-}
-
-/* Horizontal Cards */
-.investor-card-horizontal {
-  background: #ffffff;
-  border-radius: 24px;
-  display: flex;
-  gap: 40px;
-  padding: 50px;
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.05);
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 15px 45px rgba(33, 31, 31, 0.05);
+  border: 1px solid rgba(33, 31, 31, 0.03);
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  border: 1px solid #f0f0f0;
   position: relative;
   overflow: hidden;
 }
 
-.investor-card-horizontal:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
-  border-color: #e5e7eb;
+.investor-modern-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(33, 31, 31, 0.1);
 }
 
-.investor-card-horizontal::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 6px;
-  height: 100%;
-  background: #d32f2f;
-  border-radius: 24px 0 0 24px;
+/* Theme Accents */
+.investor-modern-card.red {
+  border-top: 6px solid #E32125;
 }
 
-/* Logo Container */
-.investor-logo-container {
-  flex: 0 0 280px;
+.investor-modern-card.green {
+  border-top: 6px solid #7EB542;
+}
+
+/* Logo Box */
+.investor-logo-box {
+  width: 100%;
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #f9fafb;
   border-radius: 20px;
+  margin-bottom: 35px;
   padding: 30px;
-  min-height: 200px;
   transition: background 0.3s ease;
 }
 
-.investor-card-horizontal:hover .investor-logo-container {
-  background: #f3f4f6;
+.investor-modern-card:hover .investor-logo-box {
+  background: #fff;
 }
 
 .investor-logo {
-  max-width: 100%;
-  max-height: 120px;
+  max-width: 80%;
+  max-height: 100px;
   object-fit: contain;
-  filter: grayscale(1);
-  opacity: 0.8;
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease;
 }
 
-.investor-card-horizontal:hover .investor-logo {
-  filter: grayscale(0);
-  opacity: 1;
-  transform: scale(1.05);
+.investor-modern-card:hover .investor-logo {
+  transform: scale(1.1);
 }
 
-/* Details */
-.investor-details {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+/* Info */
+.investor-info h2 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #211F1F;
+  margin-bottom: 15px;
 }
 
-.investor-header {
-  margin-bottom: 20px;
+.investor-divider {
+  width: 50px;
+  height: 4px;
+  background: #E32125;
+  margin: 0 auto 25px;
+  border-radius: 2px;
 }
 
-.investor-header h2 {
-  font-size: 30px;
-  font-weight: 700;
-  color: #111827;
-  letter-spacing: -0.5px;
+.investor-modern-card.green .investor-divider {
+  background: #7EB542;
 }
 
-.investor-details p {
-  font-size: 16px;
+.investor-info p {
+  font-size: 15px;
   line-height: 1.7;
   color: #4b5563;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+.extra-text {
+  font-size: 14px !important;
+  opacity: 0.8;
+  font-style: italic;
 }
 
 /* Button */
-.investor-link-btn {
-  align-self: flex-start;
-  padding: 12px 32px;
-  background: #d32f2f;
+.investor-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 35px;
+  background: #E32125;
   color: #fff;
   border-radius: 12px;
   font-weight: 600;
   text-decoration: none;
-  font-size: 15px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(211, 47, 47, 0.2);
+  box-shadow: 0 4px 15px rgba(227, 33, 37, 0.2);
 }
 
-.investor-link-btn:hover {
-  background: #b71c1c;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(211, 47, 47, 0.3);
+.investor-modern-card.green .investor-btn {
+  background: #7EB542;
+  box-shadow: 0 4px 15px rgba(126, 181, 66, 0.2);
+}
+
+.investor-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(227, 33, 37, 0.3);
   color: #fff;
 }
 
-/* Animations */
-.animate-scale-up {
-  opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 1s ease-out, transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+.investor-modern-card.green .investor-btn:hover {
+  box-shadow: 0 8px 25px rgba(126, 181, 66, 0.3);
 }
 
-.animate-scale-up.visible {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.animate-slide-up {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1s ease-out, transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.animate-slide-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Responsive Customizations */
+/* Responsive */
 @media (max-width: 992px) {
-  .investor-card-horizontal {
-    flex-direction: column;
-    padding: 40px;
-    gap: 30px;
-  }
-
-  .investor-logo-container {
-    flex: none;
-    width: 100%;
-    min-height: 180px;
+  .investors-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 768px) {
-  .investors-banner-overlay {
-    width: 100%;
-    clip-path: none;
-    background-color: rgba(107, 31, 43, 0.95);
-    padding: 40px 0;
+  .investor-modern-card {
+    padding: 35px 25px;
   }
 
-  .investors-banner-content {
-    width: 100%;
-    padding: 0 25px;
-    text-align: center;
-  }
-
-  .investors-banner-content h1 {
-    font-size: 36px;
-  }
-
-  .investors-content {
-    padding: 60px 20px;
-    gap: 50px;
-  }
-
-  .investor-card-horizontal {
-    padding: 30px 25px;
-  }
-
-  .investor-header h2 {
-    font-size: 26px;
+  .investor-info h2 {
+    font-size: 24px;
   }
 }
+
+
+

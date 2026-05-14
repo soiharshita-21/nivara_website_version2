@@ -183,7 +183,7 @@
 .socials a:hover {
   background: linear-gradient(135deg, #007bb5, #004b7a);
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 25px rgba(33, 31, 31, 0.3);
 }
 
 

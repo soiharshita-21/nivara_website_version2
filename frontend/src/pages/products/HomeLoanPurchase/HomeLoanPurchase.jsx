@@ -2,6 +2,7 @@ import React from "react";
 import pur from "../../../assets/images/Home Loan.png";
 import { FaHome, FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 import "./HomeLoanPurchase.css";
+import "../ProductHero.css";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
@@ -11,54 +12,47 @@ const HomeLoanPurchase = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="page-center home-page">
-      <ScrollReveal direction="down">
-        <div className="loan-card-grid">
-          {[1].map((item, index) => (
-            <div className="loan-card" key={index}>
-              <div className="homeloan-image">
-                <img src={pur} alt="Home Purchase Loan" />
-                <div className="homeloan-overlay"></div>
-                
-                {/* NEW: Overlay Points */}
-                <div className="homeloan-image-points">
-                  <h4 className="points-title">Why Choose Us</h4>
-                  <div className="point">Up to 90% financing</div>
-                  <div className="point">Tenure up to 30 years</div>
-                  <div className="point">Competitive rates</div>
-                </div>
-
-
-              </div>
-
-              <div className="loan-content">
-                <h2>Home Purchase Loan</h2>
-                <p className="subtitle">
-                  Finance your dream home with flexible repayment options
-                </p>
-
-                {/* <div className="slide-in-text">
-                  <ul className="homefeatures">
-                    <li>Up to 90% financing</li>
-                    <li>Tenure up to 30 years</li>
-                    <li>Competitive rates</li>
-                  </ul>
-                </div> */}
-
-                <div className="ho-loan-buttons">
-                  <button
-                    className="ho-loan-btn-solid"
-                    onClick={() => navigate("/apply-home-loan")}
-                  >
-                    Apply →
-                  </button>
-                </div>
-              </div>
-              <div className="home-loan-bottom-strip"></div>
-            </div>
-          ))}
+    <div className="product-page-wrapper">
+      <section className="product-hero">
+        <div className="product-hero-bg">
+          <img src={pur} alt="Home Purchase Loan" />
+          <div className="product-hero-overlay"></div>
         </div>
-      </ScrollReveal>
+        <div className="product-hero-container">
+          <div className="product-hero-content">
+            <ScrollReveal direction="left">
+              <h1 className="hero-title">
+                Home Purchase <span className="text-red">Loan</span>
+              </h1>
+              <p className="hero-subtitle_service">
+                Finance your dream home with flexible repayment options, speedy approvals, and competitive rates.
+              </p>
+              <div className="hero-actions">
+                <button
+                  className="hero-btn-primary"
+                  onClick={() => navigate("/apply-home-loan")}
+                >
+                  Apply Now
+                </button>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          <div className="product-hero-card">
+            <ScrollReveal direction="right">
+              <div className="hero-glass-card">
+                <h3>Why Choose Us</h3>
+                <ul>
+                  <li>Up to 90% financing</li>
+                  <li>Tenure up to 30 years</li>
+                  <li>Competitive rates</li>
+                  <li>Easy process with or without income proof</li>
+                </ul>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
 
       <ScrollReveal direction="up" delay={0.1}>
         <div className="home-loan-text-section">
@@ -184,7 +178,7 @@ const HomeLoanPurchase = () => {
         </div>
       </div>
 
-      <RequestQuote themeColor="#d32f2f" />
+      <RequestQuote themeColor="#E32125" />
 
       {/* FAQ Section */}
       <ServiceFaqs />
@@ -193,3 +187,4 @@ const HomeLoanPurchase = () => {
 };
 
 export default HomeLoanPurchase;
+

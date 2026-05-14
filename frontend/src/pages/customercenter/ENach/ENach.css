@@ -33,7 +33,7 @@ background: linear-gradient(135deg, #9b2c3a, #f7d6da);
 
 .enach-tagline{
   font-size:20px;
-  color:#000;
+  color:#211F1F;
   font-weight:500;
 }
 
@@ -111,7 +111,7 @@ background: linear-gradient(135deg, #9b2c3a, #f7d6da);
 }
 
 .btn-dark{
-  background:#000;
+  background:#211F1F;
   color:#fff;
   border:none;
   padding:14px 26px;
@@ -209,7 +209,7 @@ background: linear-gradient(135deg, #9b2c3a, #f7d6da);
 
 .login-btn{
   margin-top:10px;
-  background:#000;
+  background:#211F1F;
   color:#fff;
   border:none;
   padding:15px;
@@ -285,7 +285,7 @@ background: linear-gradient(135deg, #9b2c3a, #f7d6da);
 }
 
 .next-btn{
-  background:#000;
+  background:#211F1F;
   color:#fff;
   padding:12px 28px;
   border-radius:10px;
@@ -316,3 +316,4 @@ background: linear-gradient(135deg, #9b2c3a, #f7d6da);
     padding:40px 20px;
   }
 }
+

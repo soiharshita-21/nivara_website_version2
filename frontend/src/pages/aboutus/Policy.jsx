@@ -24,7 +24,7 @@ const PolicyPage = () => {
         <div className="page-banner-overlay"></div>
         <div className="page-banner-content">
           <h1 className="page-banner-title">
-            Public <span className="text-red">Disclosure</span>
+            Policy
           </h1>
           <p className="page-banner-subtitle">
             Transparency and regulatory compliance in housing finance.

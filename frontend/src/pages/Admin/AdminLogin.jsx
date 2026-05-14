@@ -19,7 +19,7 @@ const AdminLogin = () => {
 
     try {
       // POST to our real Backend API
-      const response = await axios.post("http://localhost:5000/api/login", {
+      const response = await axios.post("http://localhost:5001/api/login", {
         username,
         password
       });
@@ -32,7 +32,7 @@ const AdminLogin = () => {
         // Set BOTH flags required for the dashboard
         sessionStorage.setItem("isAdminLoggedIn", "true");
         sessionStorage.setItem("adminToken", token);
-        
+
         // Navigate to dashboard
         navigate("/admin/dashboard", { replace: true });
       }, 500);

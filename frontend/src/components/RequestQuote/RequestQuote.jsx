@@ -2,7 +2,7 @@ import React from "react";
 import "./RequestQuote.css";
 import ScrollReveal from "../ScrollReveal/ScrollReveal";
 
-const RequestQuote = ({ themeColor = "#2e7d32", title = "Request Quote Now" }) => {
+const RequestQuote = ({ themeColor = "#7EB542", title = "Request Quote Now" }) => {
   return (
     <section className="rq-section" style={{ "--rq-theme": themeColor }}>
       <ScrollReveal direction="up" distance={30}>
@@ -59,3 +59,5 @@ const RequestQuote = ({ themeColor = "#2e7d32", title = "Request Quote Now" }) =
 };
 
 export default RequestQuote;
+
+

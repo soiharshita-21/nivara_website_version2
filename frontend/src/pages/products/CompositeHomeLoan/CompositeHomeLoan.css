@@ -77,7 +77,7 @@
   background: #fff;
   border-radius: 35px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 20px 50px rgba(33, 31, 31, 0.12);
   font-family: "Poppins";
   position: relative;
   margin-top: 30px;
@@ -98,7 +98,7 @@
 .com-benefits-title {
   font-size: 34px;
   font-weight: 700;
-  color: #d32f2f !important;
+  color: #E32125 !important;
   margin-bottom: 45px;
   text-align: left;
   line-height: 1.2;
@@ -116,9 +116,9 @@
   font-size: 16px;
   line-height: 1.6;
   color: #374151;
-  border-left: 5px solid #d32f2f;
+  border-left: 5px solid #E32125;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(33, 31, 31, 0.05);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
@@ -127,7 +127,7 @@
 
 .com-benefit-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 30px rgba(33, 31, 31, 0.1);
   background: #fcfcfc;
 }
 
@@ -161,13 +161,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(33, 31, 31, 0.2);
   z-index: 2;
 }
 
 .comploan-rotate-icon {
   font-size: 28px;
-  color: #d32f2f;
+  color: #E32125;
   transition: transform 0.7s ease;
 }
 
@@ -189,7 +189,7 @@
   backdrop-filter: blur(14px);
   border-radius: 18px;
 
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 40px rgba(33, 31, 31, 0.15);
 
   display: flex;
   flex-direction: column;
@@ -216,7 +216,7 @@
   content: "✔";
   width: 22px;
   height: 22px;
-  background: #d32f2f;
+  background: #E32125;
   color: #fff;
   font-size: 11px;
   font-weight: bold;
@@ -230,13 +230,13 @@
 
 .composite-image-points .point:hover {
   transform: translateX(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(33, 31, 31, 0.1);
 }
 
 .points-title {
   font-size: 18px;
   font-weight: 700;
-  color: #d32f2f;
+  color: #E32125;
   margin-bottom: 5px;
 }
 
@@ -271,7 +271,7 @@
 .composite-content h2 {
   font-size: 32px;
   font-weight: 800;
-  color: #d32f2f;
+  color: #E32125;
   margin-bottom: 12px;
 }
 
@@ -306,7 +306,7 @@
   left: 0;
   width: 22px;
   height: 22px;
-  background-color: #d32f2f;
+  background-color: #E32125;
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -328,9 +328,9 @@
 .composite-page .composite-btn-outline {
   width: 200px;
   padding: 12px 24px;
-  border: 2px solid #d32f2f;
+  border: 2px solid #E32125;
   background: transparent;
-  color: #d32f2f;
+  color: #E32125;
   border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
@@ -338,14 +338,14 @@
 }
 
 .composite-page .composite-btn-outline:hover {
-  background: #d32f2f;
+  background: #E32125;
   color: #fff;
 }
 
 .composite-page .comp-loan-btn-solid {
   width: 200px;
   padding: 12px 24px;
-  background: #d32f2f;
+  background: #E32125;
   color: #fff;
   border: none;
   border-radius: 12px;
@@ -396,7 +396,7 @@
 .composite-page .home-loan-bottom-strip {
   height: 6px;
   width: 0%;
-  background: #d32f2f;
+  background: #E32125;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -417,7 +417,7 @@
 .composite-main-title {
   font-size: 42px;
   font-weight: 800;
-  color: #d32f2f;
+  color: #E32125;
   margin-bottom: 16px;
 }
 
@@ -425,7 +425,7 @@
 .composite-sub-heading {
   font-size: 26px;
   font-weight: 700;
-  color: #d32f2f;
+  color: #E32125;
   margin-bottom: 14px;
 }
 
@@ -433,7 +433,7 @@
 .composite-highlight {
   font-size: 20px;
   font-weight: 600;
-  color: #d32f2f;
+  color: #E32125;
   margin-bottom: 28px;
 }
 
@@ -480,13 +480,13 @@
 .com-feature-box:hover {
   background: #f9fafb;
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 25px rgba(33, 31, 31, 0.05);
 }
 
 .com-feature-icon {
   font-size: 40px;
   margin-bottom: 20px;
-  color: #d32f2f;
+  color: #E32125;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -495,7 +495,7 @@
 .com-circle-check-icon {
   width: 50px;
   height: 50px;
-  background-color: #d32f2f;
+  background-color: #E32125;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -508,7 +508,7 @@
 .com-feature-box h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #000 !important;
+  color: #211F1F !important;
   margin: 0;
 }
 
@@ -568,14 +568,14 @@
 .com-quote-ti {
   font-size: 42px;
   font-weight: 700;
-  color: #d32f2f;
+  color: #E32125;
   margin-bottom: 10px;
 }
 
 /* Subtitle */
 .com-quote-subti {
   font-size: 18px;
-  color: #d32f2f;
+  color: #E32125;
 
   margin-bottom: 50px;
 }
@@ -606,13 +606,13 @@
 
 /* Focus */
 .com-form-grid input:focus {
-  border-color: #d32f2f;
+  border-color: #E32125;
 }
 
 /* Button */
 .com-quote-button {
   grid-column: 2 / 3;
-  background: #d32f2f;
+  background: #E32125;
   color: #fff;
   border: none;
   padding: 18px;
@@ -628,7 +628,7 @@
 .com-quote-button:hover {
   background: #c62828;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 25px rgba(33, 31, 31, 0.15);
 }
 
 /* Help Section */
@@ -641,7 +641,7 @@
 .com-help-title {
   font-size: 42px;
   font-weight: 800;
-  color: #d32f2f !important;
+  color: #E32125 !important;
   margin-bottom: 12px;
   text-align: center;
 }
@@ -673,14 +673,14 @@
 }
 
 .com-help-card:hover {
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 15px 40px rgba(33, 31, 31, 0.08);
   transform: translateY(-6px);
 }
 
 /* Icon */
 .com-help-icon {
   font-size: 40px;
-  color: #d32f2f;
+  color: #E32125;
   margin-bottom: 20px;
 }
 
@@ -699,14 +699,14 @@
 }
 
 .com-help-green {
-  color: #d32f2f;
+  color: #E32125;
   font-size: 22px;
   margin: 10px 0;
   font-weight: 700;
 }
 
 .com-help-mail {
-  color: #d32f2f;
+  color: #E32125;
   margin-bottom: 20px;
 }
 
@@ -714,9 +714,9 @@
 .com-help-link {
   display: inline-block;
   margin-top: 25px;
-  color: #d32f2f !important;
+  color: #E32125 !important;
   font-weight: 600;
-  border-bottom: 2px solid #d32f2f !important;
+  border-bottom: 2px solid #E32125 !important;
   cursor: pointer;
 }
 
@@ -744,3 +744,4 @@
     font-size: 16px;
   }
 }
+

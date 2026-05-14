@@ -8,7 +8,7 @@
 /* Banner Layout */
 .policy-banner {
   position: relative;
-  background-color: #d32f2f; /* Red background */
+  background-color: #E32125; /* Red background */
   background-image: radial-gradient(rgba(255,255,255,0.2) 2px, transparent 2px);
   background-size: 30px 30px;
   padding: 80px 5%;
@@ -76,7 +76,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 2px solid #d32f2f;
+  border: 2px solid #E32125;
   background-color: #fff;
   margin-right: -15px;
   background-size: cover;
@@ -207,3 +207,4 @@
     font-size: 34px;
   }
 }
+

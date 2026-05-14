@@ -9,25 +9,25 @@ const steps = [
     icon: <FaFileAlt />,
     title: "Apply",
     desc: "Submit your application online or visit our nearest branch",
-    color: "#d32f2f",
+    color: "#E32125",
   },
   {
     icon: <FaCheckCircle />,
     title: "Approval",
     desc: "Quick verification and approval process within 48 hours",
-    color: "#d32f2f",
+    color: "#E32125",
   },
   {
     icon: <FaMoneyBillWave />,
     title: "Disbursement",
     desc: "Fast loan disbursement to your account",
-    color: "#d32f2f",
+    color: "#E32125",
   },
   {
     icon: <FaHeadset />,
     title: "Support",
     desc: "Continuous support throughout your loan journey",
-    color: "#d32f2f",
+    color: "#E32125",
   },
 ];
 
@@ -110,3 +110,4 @@ export default function HowItWorks() {
     </section>
   );
 }
+
