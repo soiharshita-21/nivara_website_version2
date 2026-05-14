@@ -116,7 +116,7 @@ const Branch = () => {
           </p>
         </div>
         <div className="banner-map animate-pop-up">
-          <BranchMap />
+          <BranchMap branchesData={branchesData} />
         </div>
       </div>
 

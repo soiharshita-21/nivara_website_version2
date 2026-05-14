@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import {
   ComposableMap,
   Geographies,
@@ -23,9 +23,12 @@ const markers = [
   { name: "Maharashtra", coordinates: [75.7139, 19.7515] },
 ];
 
-const BranchMap = () => {
+const BranchMap = ({ branchesData = {} }) => {
+  const [tooltip, setTooltip] = useState({ content: "", x: 0, y: 0, show: false });
+  const mapRef = useRef(null);
+
   return (
-    <div style={{ width: "100%", height: "500px" }}>
+    <div ref={mapRef} style={{ width: "100%", height: "500px", position: "relative" }}>
       <ComposableMap
         projection="geoMercator"
         projectionConfig={{
@@ -35,39 +38,66 @@ const BranchMap = () => {
         style={{ width: "100%", height: "100%" }}
       >
         <Geographies geography={indiaStates}>
-  {({ geographies }) =>
-    geographies.map((geo) => {
-      const stateName = geo.properties.ST_NM;
+          {({ geographies }) =>
+            geographies.map((geo) => {
+              const stateName = geo.properties.ST_NM;
+              const stateKey = stateName.toUpperCase();
+              const branchCount = branchesData[stateKey] ? branchesData[stateKey].length : 0;
+              const hasBranches = branchCount > 0;
+              
+              const highlight = highlightStates
+                .map((s) => s.toLowerCase())
+                .includes(stateName.toLowerCase());
 
-      const highlight = highlightStates
-        .map((s) => s.toLowerCase())
-        .includes(stateName.toLowerCase());
-
-      return (
-        <Geography
-          key={geo.rsmKey}
-          geography={geo}
-          style={{
-            default: {
-              fill: highlight ? "#B91C1C" : "#D1D5DB",
-              stroke: "#FFFFFF",
-              strokeWidth: 0.5,
-              outline: "none",
-            },
-            hover: {
-              fill: highlight ? "#FF4D4D" : "#D1D5DB",
-              outline: "none",
-            },
-            pressed: {
-              fill: "#B91C1C",
-              outline: "none",
-            },
-          }}
-        />
-      );
-    })
-  }
-</Geographies>
+              return (
+                <Geography
+                  key={geo.rsmKey}
+                  geography={geo}
+                  onMouseEnter={(e) => {
+                    if (hasBranches && mapRef.current) {
+                      const rect = mapRef.current.getBoundingClientRect();
+                      setTooltip({
+                        content: `${stateName}: ${branchCount} Branches`,
+                        x: e.clientX - rect.left,
+                        y: e.clientY - rect.top,
+                        show: true,
+                      });
+                    }
+                  }}
+                  onMouseMove={(e) => {
+                    if (hasBranches && mapRef.current) {
+                      const rect = mapRef.current.getBoundingClientRect();
+                      setTooltip((prev) => ({
+                        ...prev,
+                        x: e.clientX - rect.left,
+                        y: e.clientY - rect.top,
+                      }));
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    setTooltip({ content: "", x: 0, y: 0, show: false });
+                  }}
+                  style={{
+                    default: {
+                      fill: highlight ? "#B91C1C" : "#D1D5DB",
+                      stroke: "#FFFFFF",
+                      strokeWidth: 0.5,
+                      outline: "none",
+                    },
+                    hover: {
+                      fill: highlight ? "#FF4D4D" : "#D1D5DB",
+                      outline: "none",
+                    },
+                    pressed: {
+                      fill: "#B91C1C",
+                      outline: "none",
+                    },
+                  }}
+                />
+              );
+            })
+          }
+        </Geographies>
         {markers.map(({ coordinates, name }) => (
           <Marker key={name} coordinates={coordinates}>
             <circle
@@ -79,6 +109,27 @@ const BranchMap = () => {
           </Marker>
         ))}
       </ComposableMap>
+
+      {tooltip.show && (
+        <div
+          style={{
+            position: "absolute",
+            top: tooltip.y + 10,
+            left: tooltip.x + 10,
+            backgroundColor: "rgba(0, 0, 0, 0.8)",
+            color: "white",
+            padding: "8px 12px",
+            borderRadius: "4px",
+            fontSize: "14px",
+            pointerEvents: "none",
+            zIndex: 1000,
+            boxShadow: "0 2px 4px rgba(0,0,0,0.3)",
+            whiteSpace: "nowrap"
+          }}
+        >
+          {tooltip.content}
+        </div>
+      )}
     </div>
   );
 };
