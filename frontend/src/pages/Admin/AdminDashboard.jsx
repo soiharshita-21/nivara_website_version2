@@ -15,8 +15,12 @@ import {
   Save,
   Loader2,
   Upload,
-  Image as UIImage
+  Image as UIImage,
+  Layers,
+  Code
 } from "lucide-react";
+import ReactQuill from "react-quill-new";
+import "react-quill-new/dist/quill.snow.css";
 import "./AdminDashboard.css";
 
 const AdminDashboard = () => {
@@ -25,6 +29,7 @@ const AdminDashboard = () => {
   const [blogs, setBlogs] = useState([]);
   const [press, setPress] = useState([]);
   const [gallery, setGallery] = useState([]);
+  const [pages, setPages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [editingId, setEditingId] = useState(null);
@@ -33,9 +38,25 @@ const AdminDashboard = () => {
   const [newBlog, setNewBlog] = useState({ title: "", author: "", date: new Date().toISOString().split('T')[0], content: "", slug: "", image_url: "" });
   const [newPress, setNewPress] = useState({ title: "", date: new Date().toISOString().split('T')[0], image_url: "", content: "" });
   const [newGallery, setNewGallery] = useState({ title: "", image_url: "" });
+  const [newPage, setNewPage] = useState({ title: "", slug: "", content: "", menu_location: "none", banner_image: "" });
+  const [isHtmlMode, setIsHtmlMode] = useState(false);
+
+  const quillModules = {
+    toolbar: [
+      [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+      ['bold', 'italic', 'underline', 'strike'],
+      [{ 'color': [] }, { 'background': [] }],
+      [{ 'align': [] }],
+      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+      ['link', 'image', 'video'],
+      ['blockquote', 'code-block'],
+      ['clean']
+    ],
+  };
 
   const menuItems = [
     { id: "overview", label: "Overview", icon: LayoutDashboard },
+    { id: "pages", label: "Page Builder", icon: Layers },
     { id: "blogs", label: "Manage Blogs", icon: FileText },
     { id: "press", label: "Press Releases", icon: Newspaper },
     { id: "gallery", label: "Gallery", icon: ImageIcon },
@@ -61,14 +82,16 @@ const AdminDashboard = () => {
     try {
       const baseUrl = "http://localhost:5001/api";
       if (activeTab === "overview") {
-        const [blogRes, pressRes, galleryRes] = await Promise.all([
+        const [blogRes, pressRes, galleryRes, pagesRes] = await Promise.all([
           axios.get(`${baseUrl}/blogs`),
           axios.get(`${baseUrl}/press`),
-          axios.get(`${baseUrl}/gallery`)
+          axios.get(`${baseUrl}/gallery`),
+          axios.get(`${baseUrl}/pages`)
         ]);
         setBlogs(blogRes.data);
         setPress(pressRes.data);
         setGallery(galleryRes.data);
+        setPages(pagesRes.data);
       } else if (activeTab === "blogs") {
         const res = await axios.get(`${baseUrl}/blogs`);
         setBlogs(res.data);
@@ -78,6 +101,9 @@ const AdminDashboard = () => {
       } else if (activeTab === "gallery") {
         const res = await axios.get(`${baseUrl}/gallery`);
         setGallery(res.data);
+      } else if (activeTab === "pages") {
+        const res = await axios.get(`${baseUrl}/pages`);
+        setPages(res.data);
       }
     } catch (err) {
       console.error("Fetch error:", err);
@@ -94,6 +120,8 @@ const AdminDashboard = () => {
     setNewBlog({ title: "", author: "", date: new Date().toISOString().split('T')[0], content: "", slug: "", image_url: "" });
     setNewPress({ title: "", date: new Date().toISOString().split('T')[0], image_url: "", content: "" });
     setNewGallery({ title: "", image_url: "" });
+    setNewPage({ title: "", slug: "", content: "", menu_location: "none", banner_image: "" });
+    setIsHtmlMode(false);
     setShowModal(false);
   };
 
@@ -117,6 +145,7 @@ const AdminDashboard = () => {
       if (type === "blogs") setNewBlog(prev => ({ ...prev, image_url: imageUrl }));
       else if (type === "press") setNewPress(prev => ({ ...prev, image_url: imageUrl }));
       else if (type === "gallery") setNewGallery(prev => ({ ...prev, image_url: imageUrl }));
+      else if (type === "pages") setNewPage(prev => ({ ...prev, banner_image: imageUrl }));
     } catch (err) {
       alert("Image upload failed: " + (err.response?.data?.message || err.message));
       if (err.response?.status === 401 || err.response?.status === 403) handleLogout();
@@ -129,6 +158,7 @@ const AdminDashboard = () => {
     if (type === "blogs") setNewBlog({ ...newBlog, image_url: "" });
     else if (type === "press") setNewPress({ ...newPress, image_url: "" });
     else if (type === "gallery") setNewGallery({ ...newGallery, image_url: "" });
+    else if (type === "pages") setNewPage({ ...newPage, banner_image: "" });
   };
 
   const handleEdit = (item, type) => {
@@ -139,6 +169,8 @@ const AdminDashboard = () => {
       setNewPress({ ...item, date: item.date ? new Date(item.date).toISOString().split('T')[0] : "" });
     } else if (type === "gallery") {
       setNewGallery({ ...item });
+    } else if (type === "pages") {
+      setNewPage({ ...item });
     }
     setShowModal(true);
   };
@@ -183,6 +215,14 @@ const AdminDashboard = () => {
           await axios.put(`${baseUrl}/gallery/${editingId}`, newGallery, headers);
         } else {
           await axios.post(`${baseUrl}/gallery`, newGallery, headers);
+        }
+      } else if (activeTab === "pages") {
+        const slug = newPage.slug || newPage.title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
+        const data = { ...newPage, slug };
+        if (editingId) {
+          await axios.put(`${baseUrl}/pages/${editingId}`, data, headers);
+        } else {
+          await axios.post(`${baseUrl}/pages`, data, headers);
         }
       }
       resetForm();
@@ -236,6 +276,25 @@ const AdminDashboard = () => {
             <div className="loader-container"><Loader2 className="spin" size={40} /></div>
           ) : (
             <div className="data-table-container">
+              {activeTab === "pages" && (
+                <table className="data-table">
+                  <thead><tr><th>Title</th><th>Slug</th><th>Menu Location</th><th>Actions</th></tr></thead>
+                  <tbody>
+                    {pages.map(p => (
+                      <tr key={p.id}>
+                        <td>{p.title}</td>
+                        <td>/{p.slug}</td>
+                        <td>{p.menu_location}</td>
+                        <td className="actions">
+                          <button className="edit-btn" onClick={() => handleEdit(p, 'pages')}><Edit size={16} /></button>
+                          <button className="delete-btn" onClick={() => handleDelete(p.id, 'pages')}><Trash2 size={16} /></button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
+
               {activeTab === "blogs" && (
                 <table className="data-table">
                   <thead><tr><th>Title</th><th>Date</th><th>Author</th><th>Actions</th></tr></thead>
@@ -296,13 +355,40 @@ const AdminDashboard = () => {
               {activeTab === "overview" && (
                 <div className="overview-stats">
                   <div className="stat-card">
-                    <FileText size={24} /><h3>Blogs: {blogs.length}</h3>
+                    <div className="stat-icon blog-icon">
+                      <FileText size={28} />
+                    </div>
+                    <div className="stat-info">
+                      <h3>Total Blogs</h3>
+                      <p>{blogs.length}</p>
+                    </div>
                   </div>
                   <div className="stat-card">
-                    <Newspaper size={24} /><h3>Press: {press.length}</h3>
+                    <div className="stat-icon press-icon">
+                      <Newspaper size={28} />
+                    </div>
+                    <div className="stat-info">
+                      <h3>Press Releases</h3>
+                      <p>{press.length}</p>
+                    </div>
                   </div>
                   <div className="stat-card">
-                    <ImageIcon size={24} /><h3>Gallery: {gallery.length}</h3>
+                    <div className="stat-icon gallery-icon">
+                      <ImageIcon size={28} />
+                    </div>
+                    <div className="stat-info">
+                      <h3>Gallery Items</h3>
+                      <p>{gallery.length}</p>
+                    </div>
+                  </div>
+                  <div className="stat-card">
+                    <div className="stat-icon pages-icon">
+                      <Layers size={28} />
+                    </div>
+                    <div className="stat-info">
+                      <h3>Pages</h3>
+                      <p>{pages.length}</p>
+                    </div>
                   </div>
                 </div>
               )}
@@ -320,6 +406,68 @@ const AdminDashboard = () => {
             </div>
             <form onSubmit={handleSubmit} className="modal-form">
               <div className="form-scroll-area">
+                {activeTab === "pages" && (
+                  <>
+                    <div className="form-group"><label>Page Title</label><input type="text" value={newPage.title} onChange={e => setNewPage({ ...newPage, title: e.target.value })} required /></div>
+                    <div className="form-row">
+                      <div className="form-group"><label>URL Slug</label><input type="text" value={newPage.slug} onChange={e => setNewPage({ ...newPage, slug: e.target.value })} placeholder="Leave blank to auto-generate" /></div>
+                      <div className="form-group"><label>Menu Location</label>
+                        <select value={newPage.menu_location} onChange={e => setNewPage({ ...newPage, menu_location: e.target.value })}>
+                          <option value="none">None</option>
+                          <option value="aboutus">About Us</option>
+                          <option value="services">Services</option>
+                          <option value="customercenter">Customer Center</option>
+                          <option value="media">Media</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="form-group">
+                      <label>Banner Image</label>
+                      <div className="image-upload-wrapper">
+                        {newPage.banner_image ? (
+                          <div className="image-preview-container">
+                            <img src={newPage.banner_image} alt="Preview" className="image-preview" />
+                            <div className="image-path-overlay">{newPage.banner_image}</div>
+                            <button type="button" className="remove-image-btn" onClick={() => removeImage('pages')}><X size={16} /></button>
+                          </div>
+                        ) : (
+                          <div className="compact-upload-row">
+                            <label className="upload-dropzone">
+                              <input type="file" accept="image/*" onChange={(e) => handleImageUpload(e, 'pages')} hidden />
+                              <Upload size={18} /><span>Upload Banner</span>
+                            </label>
+                            <input type="text" className="small-input" placeholder="Paste image URL..." value={newPage.banner_image || ""} onChange={e => setNewPage({ ...newPage, banner_image: e.target.value })} />
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                    <div className="form-group" style={{ height: '380px', marginBottom: '50px' }}>
+                      <label style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#E32125', fontWeight: '700' }}>
+                        <Code size={18} /> Page Content (HTML & CSS Editor)
+                      </label>
+                      <p style={{ margin: '0 0 8px 0', fontSize: '0.8rem', color: '#64748b' }}>Write standard &lt;style&gt; tags and &lt;div&gt; structures here.</p>
+                      <textarea 
+                        value={newPage.content} 
+                        onChange={e => setNewPage({ ...newPage, content: e.target.value })} 
+                        style={{ 
+                          width: '100%', 
+                          height: '300px', 
+                          fontFamily: 'Consolas, Monaco, "Courier New", monospace', 
+                          padding: '15px', 
+                          backgroundColor: '#0f172a', 
+                          color: '#38bdf8', 
+                          borderRadius: '8px', 
+                          border: '2px solid #1e293b',
+                          lineHeight: '1.6', 
+                          fontSize: '14px',
+                          outline: 'none',
+                          resize: 'vertical'
+                        }} 
+                        placeholder="<style> .my-style { ... } </style> &#10;<div class='container'> ... </div>"
+                      />
+                    </div>
+                  </>
+                )}
                 {activeTab === "blogs" && (
                   <>
                     <div className="form-group"><label>Blog Title</label><input type="text" value={newBlog.title} onChange={e => setNewBlog({ ...newBlog, title: e.target.value })} required /></div>
@@ -334,6 +482,7 @@ const AdminDashboard = () => {
                         {newBlog.image_url ? (
                           <div className="image-preview-container">
                             <img src={newBlog.image_url} alt="Preview" className="image-preview" />
+                            <div className="image-path-overlay">{newBlog.image_url}</div>
                             <button type="button" className="remove-image-btn" onClick={() => removeImage('blogs')}><X size={16} /></button>
                           </div>
                         ) : (
@@ -362,6 +511,7 @@ const AdminDashboard = () => {
                         {newPress.image_url ? (
                           <div className="image-preview-container">
                             <img src={newPress.image_url} alt="Preview" className="image-preview" />
+                            <div className="image-path-overlay">{newPress.image_url}</div>
                             <button type="button" className="remove-image-btn" onClick={() => removeImage('press')}><X size={16} /></button>
                           </div>
                         ) : (
@@ -389,6 +539,7 @@ const AdminDashboard = () => {
                         {newGallery.image_url ? (
                           <div className="image-preview-container">
                             <img src={newGallery.image_url} alt="Preview" className="image-preview" />
+                            <div className="image-path-overlay">{newGallery.image_url}</div>
                             <button type="button" className="remove-image-btn" onClick={() => removeImage('gallery')}><X size={16} /></button>
                           </div>
                         ) : (

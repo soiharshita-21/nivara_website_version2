@@ -196,12 +196,55 @@ app.delete('/api/gallery/:id', verifyToken, (req, res) => {
     });
 });
 
+// --- PAGES ROUTES ---
+app.get('/api/pages', (req, res) => {
+    db.query("SELECT * FROM pages ORDER BY created_at DESC", (err, results) => {
+        if (err) return res.status(500).json(err);
+        res.json(results);
+    });
+});
+
+app.get('/api/pages/:slug', (req, res) => {
+    const { slug } = req.params;
+    db.query("SELECT * FROM pages WHERE slug = ?", [slug], (err, results) => {
+        if (err) return res.status(500).json(err);
+        if (results.length === 0) return res.status(404).json({ message: "Page not found" });
+        res.json(results[0]);
+    });
+});
+
+app.post('/api/pages', verifyToken, (req, res) => {
+    const { title, slug, content, menu_location, banner_image } = req.body;
+    const query = "INSERT INTO pages (title, slug, content, menu_location, banner_image) VALUES (?, ?, ?, ?, ?)";
+    db.query(query, [title, slug, content, menu_location || 'none', banner_image || null], (err, result) => {
+        if (err) return res.status(500).json(err);
+        res.json({ message: "Page added successfully!", id: result.insertId });
+    });
+});
+
+app.put('/api/pages/:id', verifyToken, (req, res) => {
+    const { title, slug, content, menu_location, banner_image } = req.body;
+    const query = "UPDATE pages SET title = ?, slug = ?, content = ?, menu_location = ?, banner_image = ? WHERE id = ?";
+    db.query(query, [title, slug, content, menu_location || 'none', banner_image || null, req.params.id], (err, result) => {
+        if (err) return res.status(500).json(err);
+        res.json({ message: "Page updated successfully!" });
+    });
+});
+
+app.delete('/api/pages/:id', verifyToken, (req, res) => {
+    db.query("DELETE FROM pages WHERE id = ?", [req.params.id], (err, result) => {
+        if (err) return res.status(500).json(err);
+        res.json({ message: "Page deleted successfully!" });
+    });
+});
+
 // --- DASHBOARD STATS ROUTE ---
 app.get('/api/dashboard-stats', (req, res) => {
     const queries = {
         blogs: "SELECT COUNT(*) as count FROM blogs",
         press: "SELECT COUNT(*) as count FROM press_releases",
-        gallery: "SELECT COUNT(*) as count FROM gallery"
+        gallery: "SELECT COUNT(*) as count FROM gallery",
+        pages: "SELECT COUNT(*) as count FROM pages"
     };
 
     const results = {};

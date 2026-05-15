@@ -41,6 +41,7 @@ const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [showSearch, setShowSearch] = useState(false);
+  const [dynamicPages, setDynamicPages] = useState([]);
   const searchRef = useRef(null);
   const location = useLocation();
 
@@ -61,6 +62,15 @@ const Navbar = () => {
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:5001/api/pages")
+      .then(res => res.json())
+      .then(data => {
+        if(Array.isArray(data)) setDynamicPages(data);
+      })
+      .catch(err => console.error("Error fetching dynamic pages:", err));
   }, []);
 
   useEffect(() => {
@@ -144,6 +154,9 @@ const Navbar = () => {
               <li><Link to="/aboutus/management">Management Team</Link></li>
               <li><Link to="/aboutus/privacy">Privacy</Link></li>
               <li><Link to="/aboutus/policy">Policy</Link></li>
+              {dynamicPages.filter(p => p.menu_location === "aboutus").map(p => (
+                <li key={p.id}><Link to={`/p/${p.slug}`}>{p.title}</Link></li>
+              ))}
             </ul>
           </li>
 
@@ -161,6 +174,9 @@ const Navbar = () => {
               <li><Link to="/services/balance-transfer">Balance Transfer</Link></li>
               <li><Link to="/services/refinance-loan">Refinance Loan</Link></li>
               <li><Link to="/services/improvementandextension">Improvement & Extension Loan</Link></li>
+              {dynamicPages.filter(p => p.menu_location === "services").map(p => (
+                <li key={p.id}><Link to={`/p/${p.slug}`}>{p.title}</Link></li>
+              ))}
             </ul>
           </li>
 
@@ -191,6 +207,9 @@ const Navbar = () => {
               <li><Link to="/media/blog/blog">Blog</Link></li>
               <li><Link to="/media/pressrelease/pressrelease">Press Release</Link></li>
               <li><Link to="/media/nivara-gallery/nivara-gallery">Nivara Gallery</Link></li>
+              {dynamicPages.filter(p => p.menu_location === "media").map(p => (
+                <li key={p.id}><Link to={`/p/${p.slug}`}>{p.title}</Link></li>
+              ))}
             </ul>
           </li>
 
@@ -217,6 +236,9 @@ const Navbar = () => {
               <li><Link to="/customercenter/download">Download</Link></li>
               <li><Link to="/customercenter/calculator">Calculator</Link></li>
               <li><Link to="/customercenter/faqs">FAQs</Link></li>
+              {dynamicPages.filter(p => p.menu_location === "customercenter").map(p => (
+                <li key={p.id}><Link to={`/p/${p.slug}`}>{p.title}</Link></li>
+              ))}
             </ul>
           </li>
 

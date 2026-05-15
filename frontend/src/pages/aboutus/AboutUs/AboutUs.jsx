@@ -4,12 +4,12 @@ import house2 from "../../../assets/images/aboutus1.png";
 import abv2 from "../../../assets/images/abv2.png";
 import { FaMoneyBillWave, FaHome, FaFileAlt, FaSyncAlt, FaCogs, FaHeadset, FaGlobe } from "react-icons/fa";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
-
+ 
 const AboutUs = () => {
   return (
     <div className="about-page">
       <ScrollReveal direction="down">
-        <section className="page-banner" style={{ backgroundImage: `url(${abv2})` }}>
+        <section className="page-banner about-banner" style={{ backgroundImage: `url(${abv2})` }}>
           <div className="page-banner-overlay"></div>
           <div className="page-banner-content">
             <h1 className="page-banner-title">
@@ -21,7 +21,7 @@ const AboutUs = () => {
           </div>
         </section>
       </ScrollReveal>
-
+ 
       <ScrollReveal direction="up">
         <section className="about-section">
           <h2>Our Purpose</h2>
@@ -36,7 +36,7 @@ const AboutUs = () => {
           </p>
         </section>
       </ScrollReveal>
-
+ 
       <ScrollReveal direction="up">
         <section className="about-section light">
           <h2>Our Inspiration</h2>
@@ -56,13 +56,13 @@ const AboutUs = () => {
           </p>
         </section>
       </ScrollReveal>
-
+ 
       {/* Features & Benefits */}
       <section className="features-section">
         <ScrollReveal direction="up" delay={0.1}>
           <h2>Features & Benefits</h2>
         </ScrollReveal>
-
+ 
         <div className="features-grid">
           {[
             { icon: <FaMoneyBillWave />, title: "No Hidden Charges", desc: "Transparent pricing with no surprises." },
@@ -83,7 +83,7 @@ const AboutUs = () => {
           ))}
         </div>
       </section>
-
+ 
       <ScrollReveal direction="up">
         <section className="about-section">
           <h2>Our Genesis</h2>
@@ -98,7 +98,7 @@ const AboutUs = () => {
           </p>
         </section>
       </ScrollReveal>
-
+ 
       <ScrollReveal direction="up">
         <section className="about-section light">
           <h2>Our Journey</h2>
@@ -111,5 +111,5 @@ const AboutUs = () => {
     </div>
   );
 };
-
+ 
 export default AboutUs;

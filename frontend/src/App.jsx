@@ -52,6 +52,7 @@ import KycAmlMeasures from "./pages/KycAmlMeasures/KycAmlMeasures";
 import RecoveryAgents from "./pages/customercenter/RecoveryAgents/RecoveryAgents";
 import TermsConditions from "./pages/TermsConditions/TermsConditions";
 import CsrInitiatives from "./pages/CsrInitiatives/CsrInitiatives";
+import DynamicPage from "./pages/DynamicPage/DynamicPage";
 
 
 const ScrollToTop = () => {
@@ -154,6 +155,7 @@ function AppContent() {
           <Route path="/customercenter/recovery-agents" element={<RecoveryAgents />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/csr-initiatives" element={<CsrInitiatives />} />
+          <Route path="/p/:slug" element={<DynamicPage />} />
         </Routes>
         {!isAdminPath && <Footer />}
       </div>

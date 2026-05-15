@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "./PressRelease.css";
 
 // Banner
@@ -50,8 +51,6 @@ export const pressData = [
     desc: "Founded in 2015, Nivara Home Finance is focused on providing affordable housing finance...",
   },
 ];
-
-import axios from "axios";
 
 const PressRelease = () => {
   const [allNews, setAllNews] = React.useState([]);
@@ -114,7 +113,7 @@ const PressRelease = () => {
           <div className="press-card animate-pop-up" key={index}>
 
             <div className="press-img">
-              <img src={item.img} alt={item.title} />
+              <img src={item.img || pressrelease1} alt={item.title || "Press Release"} />
             </div>
 
             <div className="press-content animate-pop-up">
