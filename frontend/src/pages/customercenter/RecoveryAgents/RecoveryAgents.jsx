@@ -41,7 +41,7 @@ const RecoveryAgents = () => {
             <h3>List of Empanelled Recovery Agents</h3>
             <p>Click below to view or download the complete list of empanelled recovery agents.</p>
             <a
-              href="https://www.nivarahousing.com/wp-content/uploads/2026/04/List-of-recovery-agents-empanelled-by-Nivara-1.pdf"
+              href="/files/recovery-agents.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="download-btn"
