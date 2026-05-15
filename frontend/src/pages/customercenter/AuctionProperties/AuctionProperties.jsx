@@ -9,22 +9,22 @@ const AuctionProperties = () => {
     {
       title: "SALE CUM AUCTION NOTICE",
       borrower: "BALASAHEB SUDAM TUPE",
-      url: "https://www.nivarahousing.com/wp-content/uploads/2026/02/SALE_NOTICE_BALASAHEB_SUDAM_TUPE.pdf"
+      url: "/files/sale-notice-tupe.pdf"
     },
     {
       title: "SALE CUM AUCTION NOTICE",
       borrower: "MD MANJUNATH",
-      url: "https://www.nivarahousing.com/wp-content/uploads/2026/02/MD_Manjunath_Sale_Notice.pdf"
+      url: "/files/sale-notice-manjunath.pdf"
     },
     {
       title: "SALE CUM AUCTION NOTICE",
       borrower: "DNYANESHWAR BALAJI MOTE",
-      url: "https://www.nivarahousing.com/wp-content/uploads/2026/02/DNYANESHWAR_BALAJI_MOTE_SALE_NOTICE.pdf"
+      url: "/files/sale-notice-mote.pdf"
     },
     {
       title: "SALE CUM AUCTION NOTICE",
       borrower: "AMARNATH",
-      url: "https://www.nivarahousing.com/wp-content/uploads/2026/02/Sale_Notice_Amarnath.pdf"
+      url: "/files/sale-notice-amarnath.pdf"
     }
   ];
 
