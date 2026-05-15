@@ -7,12 +7,13 @@ const corporategovernance = () => {
       <h1 className="interest-title animate-pop-up">Corporate Governance</h1>
 
       <a
-        href="/files/disclosure-interest-rate.pdf"   // your pdf path
-        download
+        href="/files/corporate-governance.pdf"   // your pdf path
+        target="_blank"
+        rel="noopener noreferrer"
         className="download-btn"
       >
         <FaFilePdf className="pdf-icon" />
-        <span>Download : Disclosure on Corporate Governance</span>
+        <span>Disclosure on Corporate Governance</span>
       </a>
     </div>
   );
