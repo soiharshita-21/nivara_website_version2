@@ -3,18 +3,20 @@ import "./Policy.css";
 import policy2 from "../../assets/images/policy2.png";
 
 const policies = [
-  { name: "POSH Policy", link: "/policies/posh.pdf" },
-  { name: "Whistle Blower Policy", link: "/policies/whistle-blower.pdf" },
-  { name: "KYC & AML Policy", link: "/policies/kyc-aml.pdf" },
-  { name: "Nomination & Remuneration Policy", link: "/policies/nomination-remuneration.pdf" },
-  { name: "Conversion Policy", link: "/policies/conversion.pdf" },
-  { name: "Code of Conduct for Independent Directors", link: "/policies/code-independent-directors.pdf" },
-  { name: "Technical Valuation Policy", link: "/policies/technical-valuation.pdf" },
-  { name: "Related Party Transaction Policy", link: "/policies/related-party.pdf" },
-  { name: "Equal Opportunity Policy", link: "/policies/equal-opportunity.pdf" },
-  { name: "Corporate Social Responsibility", link: "/policies/csr.pdf" },
-  { name: "Social Media Policy", link: "/policies/social-media.pdf" },
-  { name: "Anti Bribery and Anti Corruption Policy", link: "/policies/anti-bribery.pdf" },
+  { name: "POSH Policy", link: "/files/policy-posh.pdf" },
+  { name: "Whistle Blower Policy", link: "/files/policy-whistle-blower.pdf" },
+  { name: "KYC & AML Policy", link: "/files/policy-kyc-aml.pdf" },
+  { name: "Nomination & Remuneration Policy", link: "/files/policy-nomination-remuneration.pdf" },
+  { name: "Conversion Policy", link: "/files/policy-conversion.pdf" },
+  { name: "Code of Conduct for Independent Directors", link: "/files/policy-code-independent-directors.pdf" },
+  { name: "Technical Valuation Policy", link: "/files/policy-technical-valuation.pdf" },
+  { name: "Related Party Transaction Policy", link: "/files/policy-related-party.pdf" },
+  { name: "Equal Opportunity Policy", link: "/files/policy-equal-opportunity.pdf" },
+  { name: "Corporate Social Responsibility", link: "/files/policy-csr.pdf" },
+  { name: "Social Media Policy", link: "/files/policy-social-media.pdf" },
+  { name: "Anti Bribery and Anti Corruption Policy", link: "/files/policy-anti-bribery.pdf" },
+  { name: "Trade Relief Policy", link: "/files/policy-trade-relief.pdf" },
+  { name: "Internal Guidelines on Corporate Governance", link: "/files/policy-corporate-governance.pdf" },
 ];
 
 const PolicyPage = () => {
