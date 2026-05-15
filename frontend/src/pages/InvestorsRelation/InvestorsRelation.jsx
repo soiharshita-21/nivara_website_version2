@@ -8,14 +8,13 @@ const annualReturns = [
 ];
 
 const notices = [
-  "Notice of AGM 26.06.2024",
-  "Notice of EGM 11.09.2024",
-  "Notice of EGM 09.01.2025",
-  "Notice of EGM 07.02.2025",
-  "Notice of EGM 13.03.2025",
-  "Notice of AGM 19.05.2025",
-  "Notice of EGM 23.07.2025",
-  "Notice of EGM 12.12.2025",
+  { name: "Notice of AGM 26.06.2024", path: "/files/Notice-of-AGM_26.06.2024.pdf" },
+  { name: "Notice of EGM 11.09.2024", path: "/files/Notice-of-EGM_11.09.2024.pdf" },
+  { name: "Notice of EGM 09.01.2025", path: "/files/Notice-of-EGM_09.01.2025.pdf" },
+  { name: "Notice of 28th EGM 13.03.2025", path: "/files/Notice-of-28th-EGM_13.03.2025.pdf" },
+  { name: "Notice of 29th EGM 23.07.2025", path: "/files/Signed_Notice_of_29th_EGM-1.pdf" },
+  { name: "Notice of 30th EGM 12.12.2025", path: "/files/Notice_of_30th_EGM_to_circulate.pdf" },
+  { name: "Notice of 31st EGM 23.03.2026", path: "/files/Notice_of_31st_EGM_Signed.pdf" },
 ];
 
 const transcripts = [
@@ -87,9 +86,15 @@ const InvestorsRelation = () => {
               </div>
               <div className="investor-links-list">
                 {notices.map((item, i) => (
-                  <a key={i} className="investor-list-item" href="#">
+                  <a 
+                    key={i} 
+                    className="investor-list-item" 
+                    href={item.path} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
                     <div className="item-content">
-                      <span className="doc-name">{item}</span>
+                      <span className="doc-name">{item.name}</span>
                     </div>
                     <FaChevronRight className="arrow-icon" />
                   </a>
