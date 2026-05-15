@@ -39,67 +39,6 @@ const Download = () => {
           </div>
         </div>
 
-        {/* Section 2: MITC */}
-        <div className="download-category">
-          <h2>Most Important Terms & Conditions (MITC)</h2>
-          <div className="download-grid">
-            <a href="/files/mitc-english.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
-              <FaRegFilePdf className="pdf-icon" />
-              <span>MITC – HL (English)</span>
-              <FaDownload className="dl-icon" />
-            </a>
-            <a href="/files/mitc-english.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
-              <FaRegFilePdf className="pdf-icon" />
-              <span>MITC – Non HL (English)</span>
-              <FaDownload className="dl-icon" />
-            </a>
-
-            <a href="/files/mitc-kannada.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
-              <FaRegFilePdf className="pdf-icon" />
-              <span>MITC – HL (Kannada)</span>
-              <FaDownload className="dl-icon" />
-            </a>
-            <a href="/files/mitc-kannada.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
-              <FaRegFilePdf className="pdf-icon" />
-              <span>MITC – Non HL (Kannada)</span>
-              <FaDownload className="dl-icon" />
-            </a>
-
-            <a href="/files/mitc-telugu.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
-              <FaRegFilePdf className="pdf-icon" />
-              <span>MITC – HL (Telugu)</span>
-              <FaDownload className="dl-icon" />
-            </a>
-            <a href="/files/mitc-telugu.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
-              <FaRegFilePdf className="pdf-icon" />
-              <span>MITC – Non HL (Telugu)</span>
-              <FaDownload className="dl-icon" />
-            </a>
-
-            <a href="/files/mitc-tamil.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
-              <FaRegFilePdf className="pdf-icon" />
-              <span>MITC – HL (Tamil)</span>
-              <FaDownload className="dl-icon" />
-            </a>
-            <a href="/files/mitc-tamil.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
-              <FaRegFilePdf className="pdf-icon" />
-              <span>MITC – Non HL (Tamil)</span>
-              <FaDownload className="dl-icon" />
-            </a>
-
-            <a href="/files/mitc-marathi.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
-              <FaRegFilePdf className="pdf-icon" />
-              <span>MITC – HL (Marathi)</span>
-              <FaDownload className="dl-icon" />
-            </a>
-            <a href="/files/mitc-marathi.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
-              <FaRegFilePdf className="pdf-icon" />
-              <span>MITC – Non HL (Marathi)</span>
-              <FaDownload className="dl-icon" />
-            </a>
-          </div>
-        </div>
-
         {/* Section 3: Additional Resources */}
         <div className="download-category">
           <h2>Additional Resources</h2>
