@@ -14,10 +14,6 @@ const Download = () => {
       <div className="download-hero" style={{ backgroundImage: `url(${download})` }}>
         <div className="page-banner-overlay"></div>
         <ScrollReveal direction="down" distance={30} className="hero-content-wrapper">
-          {/* <div className="hero-badge">
-            <ShieldCheck size={16} />
-            <span>Download Center</span>
-          </div> */}
           <h1 className="page-banner-title">Download <span className="text-red">Center</span></h1>
           <p className="page-banner-subtitle">Access all our forms and important documents in one place</p>
         </ScrollReveal>
@@ -30,12 +26,12 @@ const Download = () => {
         <div className="download-category">
           <h2>General Forms</h2>
           <div className="download-grid">
-            <a href="/files/application-form.pdf" target="_blank" className="download-card">
+            <a href="/files/application-form.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
               <FaRegFilePdf className="pdf-icon" />
               <span>Application Form</span>
               <FaDownload className="dl-icon" />
             </a>
-            <a href="/files/ecs-mandate-form.pdf" target="_blank" className="download-card">
+            <a href="/files/ecs-mandate-form.jpg" target="_blank" rel="noopener noreferrer" className="download-card">
               <FaRegFilePdf className="pdf-icon" />
               <span>ECS Mandate Form</span>
               <FaDownload className="dl-icon" />
@@ -47,56 +43,56 @@ const Download = () => {
         <div className="download-category">
           <h2>Most Important Terms & Conditions (MITC)</h2>
           <div className="download-grid">
-            <a href="/files/mitc-hl-en.pdf" target="_blank" className="download-card">
+            <a href="/files/mitc-english.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
               <FaRegFilePdf className="pdf-icon" />
               <span>MITC – HL (English)</span>
               <FaDownload className="dl-icon" />
             </a>
-            <a href="/files/mitc-nonhl-en.pdf" target="_blank" className="download-card">
+            <a href="/files/mitc-english.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
               <FaRegFilePdf className="pdf-icon" />
               <span>MITC – Non HL (English)</span>
               <FaDownload className="dl-icon" />
             </a>
 
-            <a href="/files/mitc-hl-ka.pdf" target="_blank" className="download-card">
+            <a href="/files/mitc-kannada.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
               <FaRegFilePdf className="pdf-icon" />
               <span>MITC – HL (Kannada)</span>
               <FaDownload className="dl-icon" />
             </a>
-            <a href="/files/mitc-nonhl-ka.pdf" target="_blank" className="download-card">
+            <a href="/files/mitc-kannada.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
               <FaRegFilePdf className="pdf-icon" />
               <span>MITC – Non HL (Kannada)</span>
               <FaDownload className="dl-icon" />
             </a>
 
-            <a href="/files/mitc-hl-te.pdf" target="_blank" className="download-card">
+            <a href="/files/mitc-telugu.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
               <FaRegFilePdf className="pdf-icon" />
               <span>MITC – HL (Telugu)</span>
               <FaDownload className="dl-icon" />
             </a>
-            <a href="/files/mitc-nonhl-te.pdf" target="_blank" className="download-card">
+            <a href="/files/mitc-telugu.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
               <FaRegFilePdf className="pdf-icon" />
               <span>MITC – Non HL (Telugu)</span>
               <FaDownload className="dl-icon" />
             </a>
 
-            <a href="/files/mitc-hl-ta.pdf" target="_blank" className="download-card">
+            <a href="/files/mitc-tamil.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
               <FaRegFilePdf className="pdf-icon" />
               <span>MITC – HL (Tamil)</span>
               <FaDownload className="dl-icon" />
             </a>
-            <a href="/files/mitc-nonhl-ta.pdf" target="_blank" className="download-card">
+            <a href="/files/mitc-tamil.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
               <FaRegFilePdf className="pdf-icon" />
               <span>MITC – Non HL (Tamil)</span>
               <FaDownload className="dl-icon" />
             </a>
 
-            <a href="/files/mitc-hl-mr.pdf" target="_blank" className="download-card">
+            <a href="/files/mitc-marathi.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
               <FaRegFilePdf className="pdf-icon" />
               <span>MITC – HL (Marathi)</span>
               <FaDownload className="dl-icon" />
             </a>
-            <a href="/files/mitc-nonhl-mr.pdf" target="_blank" className="download-card">
+            <a href="/files/mitc-marathi.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
               <FaRegFilePdf className="pdf-icon" />
               <span>MITC – Non HL (Marathi)</span>
               <FaDownload className="dl-icon" />
@@ -108,22 +104,22 @@ const Download = () => {
         <div className="download-category">
           <h2>Additional Resources</h2>
           <div className="download-grid">
-            <a href="/files/consumer-education.pdf" target="_blank" className="download-card">
+            <a href="/files/consumer-education.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
               <FaRegFilePdf className="pdf-icon" />
               <span>Consumer Education Literature</span>
               <FaDownload className="dl-icon" />
             </a>
-            <a href="/files/enach-bankcode.pdf" target="_blank" className="download-card">
+            <a href="/files/enach-bankcode.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
               <FaRegFilePdf className="pdf-icon" />
               <span>E-NACH – Net Banking & Debit Card Bank Code</span>
               <FaDownload className="dl-icon" />
             </a>
-            <a href="/files/release-of-property.pdf" target="_blank" className="download-card">
+            <a href="/files/release-of-property.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
               <FaRegFilePdf className="pdf-icon" />
               <span>Release of Property</span>
               <FaDownload className="dl-icon" />
             </a>
-            <a href="/files/risk-based-pricing-grid.pdf" target="_blank" className="download-card">
+            <a href="/files/risk-based-pricing-grid.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
               <FaRegFilePdf className="pdf-icon" />
               <span>Risk Based Pricing Grid</span>
               <FaDownload className="dl-icon" />
