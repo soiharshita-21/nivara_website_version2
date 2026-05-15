@@ -1,10 +1,18 @@
 import React from "react";
 import "./FairPracticeCode.css";
-import { ShieldCheck } from 'lucide-react';
+import { ShieldCheck, FileText, Download } from 'lucide-react';
 import ScrollReveal from '../../../components/ScrollReveal/ScrollReveal';
 import faircodepractice2 from "../../../assets/images/fairpracticecode2.png";
 
 const FairPracticeCode = () => {
+  const documents = [
+    { name: "Fair Practice Code English", path: "/files/fpc-english.pdf" },
+    { name: "Fair Practice Code Kannada", path: "/files/fpc-kannada.pdf" },
+    { name: "Fair Practice Code Telugu", path: "/files/fpc-telugu.pdf" },
+    { name: "Fair Practice Code Marathi", path: "/files/fpc-marathi.pdf" },
+    { name: "Fair Practice Code Tamil", path: "/files/fpc-tamil.pdf" },
+  ];
+
   return (
     <div className="fair-page">
 
@@ -42,11 +50,20 @@ const FairPracticeCode = () => {
         <h3 className="animate-pop-up">Fair Practice Code Documents</h3>
 
         <div className="fair-links">
-          <a href="/files/fpc-english.pdf" target="_blank" rel="noreferrer">Fair Practice Code English</a>
-          <a href="/files/fpc-kannada.pdf" target="_blank" rel="noreferrer">Fair Practice Code Kannada</a>
-          <a href="/files/fpc-telugu.pdf" target="_blank" rel="noreferrer">Fair Practice Code Telugu</a>
-          <a href="/files/fpc-marathi.pdf" target="_blank" rel="noreferrer">Fair Practice Code Marathi</a>
-          <a href="/files/fpc-tamil.pdf" target="_blank" rel="noreferrer">Fair Practice Code Tamil</a>
+          {documents.map((doc, index) => (
+            <a 
+              key={index} 
+              href={doc.path} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="fair-doc-row"
+            >
+              <div className="doc-info">
+                <FileText className="doc-icon" size={20} />
+                <span className="doc-link">{doc.name}</span>
+              </div>
+            </a>
+          ))}
         </div>
 
       </div>

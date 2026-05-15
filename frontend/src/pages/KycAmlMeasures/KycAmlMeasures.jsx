@@ -92,7 +92,7 @@ const KycAmlMeasures = () => {
           <div className="kyc-footer-note animate-on-scroll">
             <p>
               Interested in reading our full Fair Practice Code?
-              <a href="https://nivarahousing.com/download/Fair%20Practice%20Code.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/files/Fair-Practice-Code.pdf" target="_blank" rel="noopener noreferrer">
                 Download PDF here
               </a>
             </p>
