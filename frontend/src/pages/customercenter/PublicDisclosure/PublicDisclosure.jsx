@@ -81,13 +81,9 @@ const PublicDisclosure = () => {
                     key={index} 
                     href={doc.path} 
                     target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="public-doc-row"
+                    rel="noopener noreferrer"
                   >
-                    <div className="doc-info">
-                      <FileText className="doc-icon" size={18} />
-                      <span className="doc-link">{doc.name}</span>
-                    </div>
+                    {doc.name}
                   </a>
                 ))}
               </div>
@@ -107,13 +103,9 @@ const PublicDisclosure = () => {
                     key={index} 
                     href={doc.path} 
                     target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="public-doc-row"
+                    rel="noopener noreferrer"
                   >
-                    <div className="doc-info">
-                      <FileText className="doc-icon" size={18} />
-                      <span className="doc-link">{doc.name}</span>
-                    </div>
+                    {doc.name}
                   </a>
                 ))}
               </div>
