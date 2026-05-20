@@ -72,13 +72,13 @@ const VisionMission = () => {
         <div className="vm-impact-row">
           <ScrollReveal direction="up" delay={0.3}>
             <div className="impact-item" style={{ "--item-color": "#E32125" }}>
-              <Building2 size={32} />
+              <Building2 size={50} />
               <span>Building Stability</span>
             </div>
           </ScrollReveal>
           <ScrollReveal direction="up" delay={0.4}>
             <div className="impact-item" style={{ "--item-color": "#7EB542" }}>
-              <TrendingUp size={32} />
+              <TrendingUp size={50} />
               <span>Driving Growth</span>
             </div>
           </ScrollReveal>
@@ -89,5 +89,6 @@ const VisionMission = () => {
 };
 
 export default VisionMission;
-
+
+
 

@@ -83,10 +83,7 @@
   color: #E32125;
   font-size: 25px;
   font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
+  text-align: center;
 }
 
 .new-branches-title {
@@ -103,6 +100,10 @@
 .pin-icon {
   color: #E32125;
   font-size: 28px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 12px;
+  margin-top: -4px;
 }
 
 .search-container {

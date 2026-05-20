@@ -146,26 +146,49 @@
 }
 
 @media (max-width: 900px) {
+  .policy-banner {
+    min-height: auto;
+    padding: 60px 20px;
+  }
   .policy-banner-container {
     flex-direction: column;
     text-align: center;
+    gap: 20px;
   }
   .policy-left {
     width: 100%;
     align-items: center;
   }
+  .policy-left h1 {
+    font-size: 36px;
+  }
   .policy-left p {
-    margin: 0 auto 40px;
+    margin: 0 auto 20px;
+    max-width: 100%;
   }
   .policy-badge, .policy-yellow-btn {
     align-self: center;
   }
   .policy-right {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 20px;
   }
   .policy-image-wrapper {
-    height: 400px;
+    height: 300px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .policy-banner {
+    padding: 40px 15px;
+  }
+  .policy-left h1 {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .policy-image-wrapper {
+    height: 240px;
   }
 }
 

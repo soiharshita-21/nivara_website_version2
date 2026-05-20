@@ -127,22 +127,22 @@
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  padding: 24px;
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 10px 40px rgba(33, 31, 31, 0.25);
+  padding: 32px 30px;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 15px 45px rgba(33, 31, 31, 0.28);
   color: #0f0e0e;
-  width: 340px;
-  margin-right: -100px;
+  width: 390px;
+  margin-right: -20px;
 }
 
 .hero-glass-card h3 {
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 700;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
   color: #211F1F;
   position: relative;
-  padding-bottom: 8px;
+  padding-bottom: 10px;
 }
 
 .hero-glass-card h3::after {
@@ -150,7 +150,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 32px;
+  width: 38px;
   height: 3px;
   background: #E32125;
 }
@@ -162,12 +162,12 @@
 }
 
 .hero-glass-card li {
-  font-size: 14px;
-  margin-bottom: 12px;
+  font-size: 15.5px;
+  margin-bottom: 14px;
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  line-height: 1.5;
+  gap: 12px;
+  line-height: 1.6;
 }
 
 .hero-glass-card li::before {
@@ -175,12 +175,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   background: #E32125;
   color: #fff;
   border-radius: 50%;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 900;
   flex-shrink: 0;
   margin-top: 2px;
@@ -190,48 +190,111 @@
 @media (max-width: 1024px) {
   .product-hero {
     height: auto;
-    min-height: 100vh;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    background: #211F1F;
+  }
+
+  .product-hero-bg {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    z-index: 1;
+  }
+
+  .product-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(33, 31, 31, 0.2) 0%, rgba(33, 31, 31, 0.8) 100%);
+    z-index: 2;
   }
 
   .product-hero-container {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: auto;
+    padding: 40px 24px 60px;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 30px;
     align-items: center;
     text-align: center;
-    padding: 120px 30px 60px;
-    gap: 40px;
   }
 
   .product-hero-content {
     text-align: center;
+    max-width: 100%;
+  }
+
+  .hero-title {
+    background: none;
+    backdrop-filter: none;
+    padding: 0;
+    font-size: clamp(28px, 5vw, 42px);
+    margin-bottom: 12px;
   }
 
   .hero-subtitle_service {
-    margin: 0 auto 30px;
+    margin: 0 auto 20px;
+    font-size: 15px;
+    max-width: 600px;
   }
 
   .hero-actions {
     justify-content: center;
   }
 
-  .hero-glass-card {
+  .product-hero-card {
     width: 100%;
-    max-width: 400px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-glass-card {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 450px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-glass-card h3 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .hero-glass-card h3::after {
+    background: #E32125;
+  }
+
+  .hero-glass-card li {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: left;
+    justify-content: flex-start;
   }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
-  .product-hero {
-    min-height: 100vh;
+  .product-hero-bg {
+    height: 250px;
   }
 
   .product-hero-container {
-    padding: 100px 20px 50px;
+    padding: 30px 16px 50px;
+    gap: 24px;
   }
 
   .hero-title {
-    font-size: clamp(28px, 9vw, 42px);
+    font-size: clamp(24px, 8vw, 36px);
   }
 
   .hero-subtitle_service {
@@ -240,6 +303,7 @@
 
   .hero-btn-primary {
     width: 100%;
+    padding: 12px 24px;
   }
 
   .hero-actions {
@@ -248,6 +312,83 @@
 
   .hero-glass-card {
     padding: 20px;
+  }
+}
+
+/* Shared Media Queries for Services Submodules Responsiveness */
+@media (max-width: 900px) {
+  /* Benefits Grid Vertical Stack fallback for all services pages */
+  .homeloan-benefits-list,
+  .conloan-benefits-list,
+  .com-benefits-list,
+  .balance-benefits-list,
+  .lap-benefits-list,
+  .improv-benefits-list,
+  .refinance-benefits-list {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .homeloan-benefits-title,
+  .conloan-benefits-title,
+  .com-benefits-title,
+  .balance-benefits-title,
+  .lap-benefits-title,
+  .improv-benefits-title,
+  .refinance-benefits-title {
+    font-size: 26px !important;
+    margin-bottom: 30px !important;
+    text-align: center !important;
+  }
+
+  /* Help Grid Vertical Stack fallback for all services pages */
+  .homeloan-help-grid,
+  .conloan-help-grid,
+  .com-help-grid,
+  .balance-help-grid,
+  .lap-help-grid,
+  .improv-help-grid,
+  .refinance-help-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  
+  .homeloan-help-card,
+  .conloan-help-card,
+  .com-help-card,
+  .balance-help-card,
+  .lap-help-card,
+  .improv-help-card,
+  .refinance-help-card {
+    padding: 40px 20px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Feature Strip 2 columns fallback for all services pages */
+  .homeloan-feature-strip,
+  .conloan-feature-strip,
+  .com-feature-strip,
+  .balance-feature-strip,
+  .lap-feature-strip,
+  .improv-feature-strip,
+  .refinance-feature-strip {
+    grid-template-columns: repeat(2, 1fr) !important;
+    margin-top: 50px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Feature Strip 1 column fallback for all services pages */
+  .homeloan-feature-strip,
+  .conloan-feature-strip,
+  .com-feature-strip,
+  .balance-feature-strip,
+  .lap-feature-strip,
+  .improv-feature-strip,
+  .refinance-feature-strip {
+    grid-template-columns: 1fr !important;
+    margin-top: 40px !important;
   }
 }
 

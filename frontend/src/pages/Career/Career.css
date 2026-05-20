@@ -438,9 +438,33 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .career-hero {
+    height: 400px;
+  }
+
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    padding: 0 16px;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .career-hero {
+    height: 300px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
   }
 
   .form-row-multi {
@@ -450,6 +474,24 @@
 
   .info-block {
     padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .career-hero {
+    height: 250px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.88rem;
+  }
+
+  .career-main-section {
+    padding: 40px 14px;
   }
 }
 

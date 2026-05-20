@@ -135,7 +135,7 @@ const LoanAgainstProperty = () => {
         </div>
       </ScrollReveal>
 
-      <RequestQuote themeColor="#7EB542" />
+      <RequestQuote themeColor="#E32125" />
 
       {/* Help Section */}
       <div className="lap-help-section">

@@ -8,6 +8,7 @@ import {
   FaMapMarkerAlt,
   FaPhoneAlt,
   FaEnvelope,
+  FaYoutube,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/Nivara_logo.png";
@@ -45,10 +46,11 @@ const Footer = () => {
             </p>
 
             <div className="socials">
-              <a href="#"><FaFacebookF /></a>
-              <a href="#"><FaTwitter /></a>
-              <a href="#"><FaLinkedinIn /></a>
-              <a href="#"><FaInstagram /></a>
+              <a href="https://www.facebook.com/nivarahomefinance"><FaFacebookF /></a>
+              <a href="https://twitter.com/nivarahomeloan"><FaTwitter /></a>
+              <a href="https://www.linkedin.com/company/nivara-home-finance-ltd/"><FaLinkedinIn /></a>
+              <a href="https://www.instagram.com/nivarahomefinance/"><FaInstagram /></a>
+               <a href="https://www.linkedin.com/company/nivara-home-finance-ltd/"><FaYoutube /></a>
             </div>
           </div>
 
@@ -74,7 +76,7 @@ const Footer = () => {
               <li><Link to="/career/career" onClick={handleLinkClick}>Career</Link></li>
               <li><Link to="/contactus/offices/offices" onClick={handleLinkClick}>Contact Us</Link></li>
               <li><Link to="/why-choose-us" onClick={handleLinkClick}>Why Choose Us</Link></li>
-              <li><Link to="/terms-conditions" onClick={handleLinkClick}>Terms & Conditions</Link></li>
+              
             </ul>
           </div>
 
@@ -89,6 +91,7 @@ const Footer = () => {
               <li><Link to="/customercenter/download" onClick={handleLinkClick}>Download Forms</Link></li>
               <li><Link to="/kyc-aml-measures" onClick={handleLinkClick}>KYC & AML Measures</Link></li>
               <li><Link to="/customercenter/recovery-agents" onClick={handleLinkClick}>Recovery Agents</Link></li>
+              <li><Link to="/customercenter/mitc" onClick={handleLinkClick}>MITC</Link></li>
             </ul>
           </div>
 

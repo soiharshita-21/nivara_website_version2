@@ -125,9 +125,10 @@ const ObjectivesCoreValues = () => {
               key={index} 
               direction="up" 
               delay={0.1 + (index * 0.05)}
+              className={index === coreValues.length - 1 ? "full-width-reveal" : ""}
             >
               <div 
-                className="cv-horizontal-card"
+                className={`cv-horizontal-card ${index === coreValues.length - 1 ? "last-card" : ""}`}
                 style={{ 
                   "--accent-color": index % 2 === 0 ? "#E32125" : "#7EB542" 
                 }}

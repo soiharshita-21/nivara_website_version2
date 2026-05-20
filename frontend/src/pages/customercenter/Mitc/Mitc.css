@@ -15,30 +15,23 @@
 
 /* =========================
    HERO SECTION
-   Styled like About Us
 ========================= */
 .terms-banner-section {
   position: relative;
-
   width: 100%;
-  min-height: 100vh;
-
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 100px 5%;
-
   background:
-    linear-gradient(rgba(33, 31, 31, 0.58),
-      rgba(33, 31, 31, 0.58)),
-    url('../../assets/images/terms.png');
-
+    linear-gradient(rgba(33, 31, 31, 0.65),
+      rgba(33, 31, 31, 0.65)),
+    url('../../../assets/images/terms.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
   overflow: hidden;
 }
 
@@ -46,18 +39,14 @@
 .terms-banner-section::before {
   content: "";
   position: absolute;
-
   width: 700px;
   height: 700px;
-
   top: -200px;
   right: -180px;
-
   background:
     radial-gradient(circle,
       rgba(255, 255, 255, 0.12) 0%,
       transparent 70%);
-
   z-index: 1;
   pointer-events: none;
 }
@@ -66,18 +55,14 @@
 .terms-banner-section::after {
   content: "";
   position: absolute;
-
   left: 0;
   right: 0;
   bottom: 0;
-
   height: 140px;
-
   background:
     linear-gradient(to top,
       #ffffff,
       transparent);
-
   z-index: 2;
   pointer-events: none;
 }
@@ -88,16 +73,12 @@
 .terms-banner-container {
   position: relative;
   z-index: 5;
-
   max-width: 1200px;
   width: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-
   text-align: center;
-
   animation: heroFade 1s ease forwards;
 }
 
@@ -106,7 +87,6 @@
     opacity: 0;
     transform: translateY(25px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -120,56 +100,36 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-
   padding: 10px 22px;
   margin-bottom: 28px;
-
   border-radius: 999px;
-
   background: rgba(255, 255, 255, 0.12);
-
   border: 1px solid rgba(255, 255, 255, 0.22);
-
   backdrop-filter: blur(10px);
-
   color: #fff;
-
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.5px;
-
   box-shadow:
     0 8px 25px rgba(33, 31, 31, 0.18);
 }
 
 /* =========================
    HERO TITLE
-   Same style as About Us
 ========================= */
 .terms-banner-container h1 {
   font-size: clamp(40px, 5vw, 90px);
   font-weight: 600;
-
   line-height: 1;
-
   letter-spacing: -2px;
-
   color: #fff !important;
-
   text-transform: uppercase;
-
   background: rgba(33, 31, 31, 0.55);
-
   backdrop-filter: blur(6px);
-
-  padding: 12px 24px;
-
+  padding: 12px 36px;
   border-radius: 12px;
-
   margin-bottom: 24px;
-
   display: inline-block;
-
   box-shadow:
     0 12px 35px rgba(33, 31, 31, 0.25);
 }
@@ -179,14 +139,10 @@
 ========================= */
 .terms-hero-subtitle {
   max-width: 780px;
-
   margin: 0 auto;
-
   font-size: 18px;
   line-height: 1.8;
-
   color: #f5f5f5;
-
   font-weight: 400;
 }
 
@@ -194,7 +150,7 @@
    INTRO SECTION
 ========================= */
 .terms-intro-section {
-  padding: 90px 20px 50px;
+  padding: 90px 20px 40px;
   background: #ffffff;
 }
 
@@ -207,19 +163,12 @@
 .mitc-intro {
   font-size: 17px;
   line-height: 1.9;
-
   color: #4b5563;
-
   text-align: justify;
-
   background: #fff;
-
   border-radius: 26px;
-
   padding: 40px;
-
   border: 1px solid #ececec;
-
   box-shadow:
     0 10px 35px rgba(33, 31, 31, 0.04);
 }
@@ -228,10 +177,8 @@
    ACCORDION SECTION
 ========================= */
 .terms-accordion-section {
-  padding: 80px 20px 120px;
-
+  padding: 40px 20px 80px;
   background: #ffffff;
-
   display: flex;
   justify-content: center;
 }
@@ -240,7 +187,6 @@
 .terms-accordion-container {
   max-width: 950px;
   width: 100%;
-
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -251,15 +197,10 @@
 ========================= */
 .accordion-item {
   background: #fff;
-
   border-radius: 26px;
-
   border: 1px solid #ececec;
-
   overflow: hidden;
-
   transition: all 0.35s ease;
-
   box-shadow:
     0 10px 30px rgba(33, 31, 31, 0.04);
 }
@@ -267,9 +208,7 @@
 /* Hover */
 .accordion-item:hover {
   transform: translateY(-4px);
-
   border-color: rgba(227, 33, 37, 0.18);
-
   box-shadow:
     0 18px 40px rgba(33, 31, 31, 0.08);
 }
@@ -277,7 +216,6 @@
 /* Active */
 .accordion-item.active {
   border-color: rgba(227, 33, 37, 0.15);
-
   box-shadow:
     0 20px 50px rgba(122, 20, 34, 0.08);
 }
@@ -287,14 +225,11 @@
 ========================= */
 .accordion-header {
   padding: 28px 30px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-
   cursor: pointer;
-
   transition: all 0.3s ease;
 }
 
@@ -314,22 +249,16 @@
 .icon-box {
   width: 58px;
   height: 58px;
-
   border-radius: 16px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background:
     linear-gradient(135deg,
       rgba(227, 33, 37, 0.08),
       rgba(122, 20, 34, 0.12));
-
   color: #E32125;
-
   flex-shrink: 0;
-
   transition: all 0.35s ease;
 }
 
@@ -339,21 +268,16 @@
     linear-gradient(135deg,
       #7a1422,
       #E32125);
-
   color: #fff;
-
   transform: rotate(6deg);
 }
 
 /* Heading */
 .accordion-header h3 {
   margin: 0;
-
   font-size: 21px;
   font-weight: 700;
-
   line-height: 1.5;
-
   color: #211F1F;
 }
 
@@ -362,9 +286,7 @@
 ========================= */
 .accordion-content {
   max-height: 0;
-
   overflow: hidden;
-
   transition:
     max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -377,9 +299,7 @@
 /* Inner */
 .content-inner {
   padding: 0 35px 35px 108px;
-
   border-top: 1px solid #f3f4f6;
-
   padding-top: 30px;
 }
 
@@ -389,9 +309,7 @@
 .terms-detail h4 {
   font-size: 18px;
   font-weight: 700;
-
   color: #E32125;
-
   margin-bottom: 14px;
 }
 
@@ -399,11 +317,8 @@
 .terms-detail p {
   font-size: 15px;
   line-height: 1.9;
-
   color: #4b5563;
-
   margin-bottom: 18px;
-
   text-align: justify;
 }
 
@@ -412,7 +327,6 @@
 ========================= */
 .terms-sub-list {
   list-style: none;
-
   padding: 0;
   margin: 0 0 20px;
 }
@@ -420,32 +334,56 @@
 /* List Item */
 .terms-sub-list li {
   position: relative;
-
   padding-left: 24px;
-
   margin-bottom: 12px;
-
   font-size: 15px;
   line-height: 1.8;
-
   color: #4b5563;
 }
 
 /* Bullet */
 .terms-sub-list li::before {
   content: "";
-
   width: 8px;
   height: 8px;
-
   border-radius: 50%;
-
   background: #E32125;
-
   position: absolute;
-
   left: 0;
   top: 10px;
+}
+
+/* =========================
+   MITC DROPDOWN CONTENT
+========================= */
+.mitc-dropdown-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.mitc-dropdown-item {
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.mitc-dropdown-link {
+  text-decoration: underline;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.mitc-dropdown-link:hover {
+  opacity: 0.8;
+}
+
+.mitc-link-green {
+  color: #769b3f !important;
+}
+
+.mitc-link-red {
+  color: #df1e3c !important;
 }
 
 /* =========================
@@ -453,20 +391,15 @@
 ========================= */
 @media (max-width: 768px) {
   .terms-banner-section {
-    min-height: 80vh;
-
+    min-height: 60vh;
     padding: 110px 20px 90px;
-
     background-attachment: scroll;
   }
 
   .terms-banner-container h1 {
     font-size: 52px;
-
     padding: 10px 20px;
-
     border-radius: 10px;
-
     letter-spacing: -1px;
   }
 
@@ -489,16 +422,13 @@
   }
 
   .content-inner {
-    padding:
-      0 22px 22px 22px;
-
+    padding: 0 22px 22px 22px;
     padding-top: 24px;
   }
 
   .icon-box {
     width: 50px;
     height: 50px;
-
     border-radius: 14px;
   }
 }
@@ -506,13 +436,11 @@
 @media (max-width: 480px) {
   .terms-hero-badge {
     font-size: 12px;
-
     padding: 8px 18px;
   }
 
   .terms-banner-container h1 {
     font-size: 38px;
-
     padding: 10px 18px;
   }
 
@@ -533,9 +461,7 @@
   }
 
   .content-inner {
-    padding:
-      0 20px 20px 20px;
-
+    padding: 0 20px 20px 20px;
     padding-top: 22px;
   }
 
@@ -548,5 +474,3 @@
     font-size: 14px;
   }
 }
-
-

@@ -119,22 +119,22 @@
 
 .lenders-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
   gap: 30px;
   justify-items: center;
 }
 
 .lender-card {
   width: 100%;
-  max-width: 250px;
-  height: 140px;
+  max-width: 310px;
+  height: 180px;
   background: #ffffff;
-  border-radius: 18px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  box-shadow: 0 5px 20px rgba(33, 31, 31, 0.04);
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(33, 31, 31, 0.04);
   transition: all 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border: 1px solid rgba(33, 31, 31, 0.03);
   cursor: pointer;
@@ -161,9 +161,17 @@
 }
 
 /* Responsive */
+@media (max-width: 480px) {
+  .page-banner {
+    min-height: auto !important;
+    height: 35vh !important;
+  }
+}
+
 @media (max-width: 768px) {
   .page-banner {
-    min-height: 92vh;
+    min-height: auto;
+    height: 40vh;
     background-position: center;
   }
 
@@ -186,12 +194,12 @@
   }
 
   .lenders-grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     gap: 18px;
   }
 
   .lender-card {
-    height: 110px;
-    border-radius: 14px;
+    height: 135px;
+    border-radius: 16px;
   }
 }

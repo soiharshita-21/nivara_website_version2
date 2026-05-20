@@ -1,319 +1,525 @@
-.enach-container{
-  width:100%;
-  min-height:100vh;
-  display:flex;
-  background:#fff;
-  margin-top: 30px;
+/* ==========================================================================
+   ENACH GLOBAL CONTAINER & PAGE STRUCTURE
+   ========================================================================== */
+.enach-container {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  background: #ffffff;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   LEFT PANEL (PREMIUM BRANDING PANEL)
+   ========================================================================== */
+.enach-left {
+  flex: 0.95;
+  background: #fafbfd;
+  /* Clean light slate background matching the right panel */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 60px 40px;
+  box-shadow: none;
+  /* Removed split border shadow to unify backgrounds */
+}
+
+/* Original card overlay, made highly polished and premium */
+.enach-overlay {
+  text-align: center;
+  background: linear-gradient(135deg, #8b1d2c, #e32125);
+  /* Rich brand-red gradient card */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 45px rgba(227, 33, 37, 0.2);
+  /* Soft crimson glow shadow */
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.enach-overlay:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 28px 55px rgba(227, 33, 37, 0.3);
+}
+
+/* Original Logo */
+.logo {
+  max-width: 170px;
+  margin-bottom: 25px;
+  display: inline-block;
+}
+
+/* Tagline */
+.enach-tagline {
+  font-size: 19px;
+  color: #ffffff;
+  /* Contrast white for perfect readability */
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==========================================================================
+   RIGHT PANEL (PORTAL INTERFACE)
+   ========================================================================== */
+.enach-right {
+  flex: 1.05;
+  padding: 60px 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fafbfd;
+  box-sizing: border-box;
+}
+
+/* Main title - Premium text accent line instead of standard underline */
+.enach-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1e293b;
+  text-decoration: none !important;
   margin-bottom: 30px;
-  padding-left: 40px;
+  position: relative;
+  display: inline-block;
+  letter-spacing: -0.01em;
 }
 
-/* LEFT SIDE */
-.enach-left{
-  flex:1;
-background: linear-gradient(135deg, #9b2c3a, #f7d6da);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
+.enach-title::after {
+  content: "";
+  display: block;
+  width: 55px;
+  height: 3.5px;
+  background: #e32125;
+  border-radius: 10px;
+  margin: 8px auto 0;
 }
 
-.enach-overlay{
-  text-align:center;
-  background:rgba(255,255,255,0.25);
-  padding:50px 60px;
-  border-radius:20px;
-  backdrop-filter: blur(6px);
+/* Subtitle headings */
+.enach-subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #475569;
+  margin: 25px 0 16px;
+  text-align: center;
+  letter-spacing: 0.2px;
 }
 
-.enach-logo{
-  max-width:300px;
-  margin-bottom:20px;
-}
-
-.enach-tagline{
-  font-size:20px;
-  color:#211F1F;
-  font-weight:500;
-}
-
-/* RIGHT SIDE */
-.enach-right{
-  flex:1;
-  padding:60px 80px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:24px;
-}
-
-.enach-title{
-  font-size:28px;
-  font-weight:600;
-  text-decoration:underline;
-  margin-bottom:20px;
-}
-
-.enach-actions{
-  display:flex;
-  gap:20px;
-}
-
-.btn-primary{
-  background:maroon;
-  color:#fff;
-  border:none;
-  padding:14px 28px;
-  border-radius:10px;
-  font-size:16px;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.btn-primary:hover{
-  background:red;
-}
-
-.or-line{
-  width:100%;
-  max-width:420px;
-  display:flex;
-  align-items:center;
-  text-align:center;
-  margin:15px 0;
+/* OR Line Separator */
+.or-line {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
 }
 
 .or-line::before,
-.or-line::after{
-  content:"";
-  flex:1;
-  height:1px;
-  background:#ddd;
+.or-line::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
 }
 
-.or-line span{
-  padding:0 12px;
-  font-weight:500;
-  color:#888;
+.or-line span {
+  padding: 0 14px;
+  font-weight: 600;
+  font-size: 12px;
+  color: #94a3b8;
+  letter-spacing: 1px;
 }
 
-.enach-subtitle{
-  font-size:20px;
-  font-weight:500;
-  margin-top:10px;
+/* ==========================================================================
+   BUTTON GROUPS & STYLING (IMPECCABLE TRANSITIONS)
+   ========================================================================== */
+.enach-actions,
+.enach-video-buttons,
+.enach-doc-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  max-width: 440px;
+  box-sizing: border-box;
 }
 
-/* video buttons */
-.enach-video-buttons{
-  display:flex;
-  gap:20px;
+/* 1. Primary Action Buttons (Cancel / Register) */
+.btn-primary {
+  background: #e32125;
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(227, 33, 37, 0.15);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.btn-dark{
-  background:#211F1F;
-  color:#fff;
-  border:none;
-  padding:14px 26px;
-  border-radius:10px;
-  font-size:15px;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  cursor:pointer;
-  transition:.3s;
+.btn-primary:hover {
+  background: #c21518;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(227, 33, 37, 0.25);
 }
 
-.btn-dark:hover{
-  background:#222;
+.btn-primary:active {
+  transform: translateY(0);
 }
 
-/* doc buttons */
-.enach-doc-buttons{
-  display:flex;
-  gap:20px;
+/* 2. Dark Buttons (Video Guidance) */
+.btn-dark {
+  background: #1e293b;
+  color: #ffffff;
+  border: none;
+  padding: 13px 24px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(30, 41, 59, 0.1);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.btn-outline{
-  background:#fff;
-  color:#333;
-  border:1.5px solid #ddd;
-  padding:14px 26px;
-  border-radius:10px;
-  font-size:15px;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  cursor:pointer;
-  transition:.3s;
+.btn-dark:hover {
+  background: #0f172a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(30, 41, 59, 0.2);
 }
 
-.btn-outline:hover{
-  background:#f5f5f5;
-}
-/* ===== LOGIN UI ===== */
-
-.nach-login{
-  width:100%;
-  max-width:420px;
-  display:flex;
-  flex-direction:column;
-  gap:20px;
-}
-
-.login-title{
-  font-size:26px;
-  font-weight:600;
-}
-
-.login-subtitle{
-  color:#777;
-  margin-bottom:10px;
+/* 3. Outline Buttons (FAQ / Userguide) */
+.btn-outline {
+  background: #ffffff;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  padding: 13px 24px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.login-group{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
+.btn-outline svg {
+  color: #ef4444;
+  /* Custom PDF red icon color */
+  font-size: 15px;
 }
 
-.login-group label{
-  font-weight:500;
+.btn-outline:hover {
+  background: #fff5f5;
+  color: #e32125;
+  border-color: rgba(227, 33, 37, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(227, 33, 37, 0.06);
 }
 
-.login-group input{
-  padding:14px 16px;
-  border-radius:8px;
-  border:1px solid #ddd;
-  font-size:15px;
-  outline:none;
-  background:#f9fbff;
+/* ==========================================================================
+   SECURE LOGIN PANEL
+   ========================================================================== */
+.nach-login {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  animation: fadeUp 0.4s ease forwards;
 }
 
-.password-box{
-  position:relative;
-  display:flex;
-  align-items:center;
+.login-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+  text-align: center;
 }
 
-.password-box input{
-  width:100%;
+.login-subtitle {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
-.eye-icon{
-  position:absolute;
-  right:15px;
-  color:#999;
-  cursor:pointer;
+.login-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
 }
 
-.login-btn{
-  margin-top:10px;
-  background:#211F1F;
-  color:#fff;
-  border:none;
-  padding:15px;
-  border-radius:10px;
-  font-size:16px;
-  cursor:pointer;
-  transition:.3s;
+.login-group label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #475569;
 }
 
-.login-btn:hover{
-  background:#222;
+.login-group input {
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14.5px;
+  outline: none;
+  background: #f8fafc;
+  font-family: inherit;
+  transition: all 0.3s ease;
 }
 
-.back-btn{
-  background:transparent;
-  border:none;
-  color:#1e7fff;
-  font-size:14px;
-  cursor:pointer;
-  margin-top:10px;
-  text-align:left;
-}
-.nach-register{
-  width:100%;
+.login-group input:focus {
+  background: #ffffff;
+  border-color: #e32125;
+  box-shadow: 0 0 0 4px rgba(227, 33, 37, 0.08);
 }
 
-.register-title{
-  font-size:26px;
-  font-weight:600;
+.password-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
-.register-subtitle{
-  color:#7a7a7a;
-  margin-bottom:20px;
+.password-box input {
+  width: 100%;
+  padding-right: 46px;
 }
 
-.register-grid{
-  display:grid;
+.eye-icon {
+  position: absolute;
+  right: 16px;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.eye-icon:hover {
+  color: #e32125;
+}
+
+.login-btn {
+  margin-top: 10px;
+  background: #e32125;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(227, 33, 37, 0.15);
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #c21518;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(227, 33, 37, 0.25);
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  text-align: center;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.back-btn:hover {
+  color: #e32125;
+}
+
+/* ==========================================================================
+   SECURE REGISTRATION GRID
+   ========================================================================== */
+.nach-register {
+  width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
+  animation: fadeUp 0.4s ease forwards;
+}
+
+.register-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.register-subtitle {
+  color: #64748b;
+  font-size: 14.5px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.register-grid {
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap:20px 30px;
+  gap: 20px 24px;
+  width: 100%;
 }
 
-.reg-group{
-  display:flex;
-  flex-direction:column;
+.reg-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.reg-group label{
-  font-size:14px;
-  font-weight:500;
-  margin-bottom:6px;
+.reg-group label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #475569;
 }
 
 .reg-group input,
-.reg-group select{
-  padding:12px 14px;
-  border:1px solid #dcdfe6;
-  border-radius:8px;
-  outline:none;
-  font-size:14px;
+.reg-group select {
+  padding: 13px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  font-family: inherit;
+  background: #f8fafc;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
 .reg-group input:focus,
-.reg-group select:focus{
-  border-color:#8b1d2c;
+.reg-group select:focus {
+  background: #ffffff;
+  border-color: #e32125;
+  box-shadow: 0 0 0 4px rgba(227, 33, 37, 0.08);
 }
 
-.register-actions{
-  margin-top:40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.register-actions {
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 24px;
 }
 
-.next-btn{
-  background:#211F1F;
-  color:#fff;
-  padding:12px 28px;
-  border-radius:10px;
-  border:none;
-  cursor:pointer;
-  font-weight:500;
+.next-btn {
+  background: #e32125;
+  color: #ffffff;
+  padding: 13px 32px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14.5px;
+  box-shadow: 0 4px 12px rgba(227, 33, 37, 0.15);
+  transition: all 0.3s ease;
 }
 
-.back-btn{
-  background:none;
-  border:none;
-  color:#9aa0aa;
-  font-size:15px;
-  cursor:pointer;
+.next-btn:hover {
+  background: #c21518;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(227, 33, 37, 0.25);
 }
 
-/* responsive */
-@media(max-width:900px){
-  .enach-container{
-    flex-direction:column;
+/* ==========================================================================
+   ANIMATIONS & KEYFRAMES
+   ========================================================================== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
   }
 
-  .enach-left{
-    min-height:300px;
-  }
-
-  .enach-right{
-    padding:40px 20px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .enach-container {
+    flex-direction: column;
+  }
+
+  .enach-left {
+    flex: none;
+    width: 100%;
+    min-height: auto;
+    padding: 40px 20px;
+    box-sizing: border-box;
+  }
+
+  .enach-overlay {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 40px 30px;
+  }
+
+  .enach-right {
+    flex: none;
+    width: 100%;
+    padding: 50px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .register-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .enach-actions,
+  .enach-video-buttons,
+  .enach-doc-buttons {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .enach-right {
+    padding: 40px 20px;
+  }
+
+  .enach-overlay {
+    padding: 30px 20px;
+  }
+
+  .enach-tagline {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .enach-title {
+    font-size: 26px;
+  }
+}

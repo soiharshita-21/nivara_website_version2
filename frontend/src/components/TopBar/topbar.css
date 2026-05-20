@@ -42,32 +42,40 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .topbar {
-    padding: 6px 15px;
+    padding: 8px 15px;
     font-size: 11px;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px 16px;
   }
 
   .topbar-left {
-    gap: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    padding: 8px 10px;
+    font-size: 10px;
+    justify-content: center;
+    gap: 6px 12px;
   }
 
-  /* Hide text on very small screens to save space */
-  @media (max-width: 480px) {
-    .topbar-link span {
-      display: none;
-    }
+  .topbar-left {
+    display: contents; /* Break layout grouping to let all items wrap together inside topbar container */
+  }
 
-    .topbar-link {
-      font-size: 16px;
-      /* Larger icons for touch if text is hidden */
-      padding: 4px;
-    }
+  .topbar-link {
+    font-size: 10px;
+    gap: 4px;
+    padding: 2px 4px;
+  }
 
-    /* Keep "Find a Branch" but maybe as a standalone icon link */
-    .topbar {
-      justify-content: space-around;
-    }
+  .topbar-link span {
+    display: inline !important; /* Ensure phone number and email text are fully visible */
   }
 }

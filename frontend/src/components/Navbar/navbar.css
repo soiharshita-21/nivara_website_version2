@@ -261,6 +261,7 @@
     margin-left: 20px;
     margin-right: 20px;
     flex: 1;
+    z-index: 999; /* Ensure search bar stays behind mobile drawer (10000) and backdrop filter (9998) */
   }
 
   .search-wrapper {
@@ -284,6 +285,7 @@
     background: white;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-start; /* Override desktop flex-end alignment to flow downward from top */
     padding: 80px 20px 40px;
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: -10px 0 30px rgba(0, 0, 4, 0.1);
@@ -299,6 +301,7 @@
   .nav-item {
     width: 100%;
     border-bottom: 1px solid #f0f0f0;
+    display: block; /* Override desktop flex layout to stack dropdowns vertically downwards */
   }
  
   .nav-link,

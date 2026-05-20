@@ -135,7 +135,7 @@ const ImprovementandExtension = () => {
         </div>
       </ScrollReveal>
 
-      <RequestQuote themeColor="#E32125" />
+      <RequestQuote themeColor="#7EB542" />
 
       {/* Help Section */}
       <div className="improv-help-section">

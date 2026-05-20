@@ -11,6 +11,7 @@ const allPages = [
   { name: "Investors", path: "/aboutus/investors" },
   { name: "Board of Directors", path: "/aboutus/board" },
   { name: "Management Team", path: "/aboutus/management" },
+  { name: "CSR Initiatives", path: "/aboutus/csr-initiatives" },
   { name: "Home Loan for Purchase", path: "/services/home-loan" },
   { name: "Construction Loan", path: "/services/construction-loan" },
   { name: "Composite Home Loan", path: "/services/composite-loan" },
@@ -31,6 +32,7 @@ const allPages = [
   { name: "FAQs", path: "/customercenter/faqs" },
   { name: "Auction Properties", path: "/customercenter/auction-properties" },
   { name: "Recovery Agents", path: "/customercenter/recovery-agents" },
+  { name: "MITC", path: "/customercenter/mitc" },
   { name: "Branch Locations", path: "/contactus/branch/branch" },
   { name: "Office Locations", path: "/contactus/offices/offices" },
 ];
@@ -152,6 +154,7 @@ const Navbar = () => {
               <li><Link to="/aboutus/investors">Investors</Link></li>
               <li><Link to="/aboutus/board">Board of Directors</Link></li>
               <li><Link to="/aboutus/management">Management Team</Link></li>
+              <li><Link to="/aboutus/csr-initiatives">CSR Initiatives</Link></li>
               <li><Link to="/aboutus/privacy">Privacy</Link></li>
               <li><Link to="/aboutus/policy">Policy</Link></li>
               {dynamicPages.filter(p => p.menu_location === "aboutus").map(p => (
@@ -167,7 +170,7 @@ const Navbar = () => {
               <ChevronDown size={16} className="chevron" />
             </div>
             <ul className="dropdown-menu">
-              <li><Link to="/services/construction-loan">Loan For Home Under Construction</Link></li>
+              <li><Link to="/services/construction-loan">Home Loan For Construction</Link></li>
               <li><Link to="/services/home-loan">Home Loan For Purchase</Link></li>
               <li><Link to="/services/composite-loan">Composite Home Loan</Link></li>
               <li><Link to="/services/lap">Loan Against Property</Link></li>
@@ -236,6 +239,7 @@ const Navbar = () => {
               <li><Link to="/customercenter/download">Download</Link></li>
               <li><Link to="/customercenter/calculator">Calculator</Link></li>
               <li><Link to="/customercenter/faqs">FAQs</Link></li>
+              <li><Link to="/customercenter/mitc">MITC</Link></li>
               {dynamicPages.filter(p => p.menu_location === "customercenter").map(p => (
                 <li key={p.id}><Link to={`/p/${p.slug}`}>{p.title}</Link></li>
               ))}

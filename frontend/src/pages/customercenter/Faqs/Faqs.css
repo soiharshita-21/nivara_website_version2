@@ -9,6 +9,21 @@
   text-transform: none;
 }
 
+@media (max-width: 768px) {
+  .page-banner-title {
+    font-size: 34px;
+    letter-spacing: -0.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-banner-title {
+    font-size: 26px;
+    padding: 6px 14px;
+    letter-spacing: 0;
+  }
+}
+
 /* =========================
    PAGE
 ========================= */

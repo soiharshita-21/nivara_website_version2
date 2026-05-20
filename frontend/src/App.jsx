@@ -29,6 +29,7 @@ import InterestRate from "./pages/customercenter/InterestRate/InterestRate";
 import QuickLink from "./pages/customercenter/Quicklink/Quicklink";
 import Calculator from "./pages/customercenter/Calculator/Calculator";
 import InvestorsRelation from "./pages/InvestorsRelation/InvestorsRelation";
+import TranscriptViewer from "./pages/InvestorsRelation/TranscriptViewer";
 import PublicDisclosure from "./pages/customercenter/PublicDisclosure/PublicDisclosure";
 import CorporateGovernance from "./pages/customercenter/corporategovernance";
 import Download from "./pages/customercenter/Download/Download";
@@ -50,8 +51,8 @@ import AdminDashboard from "./pages/Admin/AdminDashboard";
 import WhyChooseUs from "./pages/WhyChooseUs/WhyChooseUs";
 import KycAmlMeasures from "./pages/KycAmlMeasures/KycAmlMeasures";
 import RecoveryAgents from "./pages/customercenter/RecoveryAgents/RecoveryAgents";
-import TermsConditions from "./pages/TermsConditions/TermsConditions";
-import CsrInitiatives from "./pages/CsrInitiatives/CsrInitiatives";
+import Mitc from "./pages/customercenter/Mitc/Mitc";
+import CsrInitiatives from "./pages/aboutus/CsrInitiatives/CsrInitiatives";
 import DynamicPage from "./pages/DynamicPage/DynamicPage";
 
 
@@ -112,6 +113,7 @@ function AppContent() {
             element={<ImprovementAndExtension />}
           />
           <Route path="investorsrelation" element={<InvestorsRelation />} />
+          <Route path="/investorsrelation/transcript" element={<TranscriptViewer />} />
           <Route path="/customercenter/e-nach" element={<ENach />} />
           <Route
             path="/customercenter/interest-rate"
@@ -153,8 +155,9 @@ function AppContent() {
           <Route path="/why-choose-us" element={<WhyChooseUs />} />
           <Route path="/kyc-aml-measures" element={<KycAmlMeasures />} />
           <Route path="/customercenter/recovery-agents" element={<RecoveryAgents />} />
-          <Route path="/terms-conditions" element={<TermsConditions />} />
-          <Route path="/csr-initiatives" element={<CsrInitiatives />} />
+          <Route path="/customercenter/mitc" element={<Mitc />} />
+          <Route path="/terms-conditions" element={<Mitc />} />
+          <Route path="/aboutus/csr-initiatives" element={<CsrInitiatives />} />
           <Route path="/p/:slug" element={<DynamicPage />} />
         </Routes>
         {!isAdminPath && <Footer />}

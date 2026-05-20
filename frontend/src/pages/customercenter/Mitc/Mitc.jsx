@@ -1,11 +1,14 @@
-import React, { useState } from "react";
-import "./TermsConditions.css";
-import { ShieldCheck } from "lucide-react";
-import ScrollReveal from "../../components/ScrollReveal/ScrollReveal";
-import { ChevronDown, ChevronUp, FileText, Percent, Calendar, Shield, ClipboardCheck, RefreshCw, AlertCircle, Headset, MessageSquare } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import "./Mitc.css";
+import { ShieldCheck, ChevronDown, ChevronUp, FileText, Percent, Calendar, Shield, ClipboardCheck, RefreshCw, AlertCircle, Headset, MessageSquare } from "lucide-react";
+import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 
-const TermsConditions = () => {
+const Mitc = () => {
   const [activeAccordion, setActiveAccordion] = useState(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const toggleAccordion = (index) => {
     setActiveAccordion(activeAccordion === index ? null : index);
@@ -105,7 +108,7 @@ const TermsConditions = () => {
       icon: <Headset size={24} />,
       content: (
         <div className="terms-detail">
-          <p>Customers can visit branches between 10 a.m. and 5 p.m. (Mon-Fri) or 10 a.m. and 1 p.m. (Saturdays). Reach us at <strong>+91-80-2655 2822</strong> or <strong>contact@nivarahousing.com</strong>.</p>
+          <p>Customers can visit branches between 10 a.m. and 5 p.m. (Mon-Fri) or 10 a.m. and 1 p.m. (Saturdays). Reach us at <strong>1800-309-1516</strong> or <strong>info@nivarahousing.com</strong>.</p>
         </div>
       )
     },
@@ -115,6 +118,41 @@ const TermsConditions = () => {
       content: (
         <div className="terms-detail">
           <p>Complaints can be posted in the branch register or emailed. Escalations can be made to the Managing Director or the Complaint Redressal Cell of the National Housing Bank (NHB).</p>
+        </div>
+      )
+    },
+    {
+      title: "MITC",
+      icon: <ShieldCheck size={24} />,
+      content: (
+        <div className="terms-detail">
+          <ul className="mitc-dropdown-list">
+            <li className="mitc-dropdown-item">
+              <a href="/files/MITC-English copy.pdf" target="_blank" rel="noopener noreferrer" className="mitc-dropdown-link mitc-link-green">
+                MITC_English
+              </a>
+            </li>
+            <li className="mitc-dropdown-item">
+              <a href="/files/MITC-Kannada-updated-1.pdf" target="_blank" rel="noopener noreferrer" className="mitc-dropdown-link mitc-link-green">
+                MITC_Kannada
+              </a>
+            </li>
+            <li className="mitc-dropdown-item">
+              <a href="/files/MITC-Telugu-updated-1.pdf" target="_blank" rel="noopener noreferrer" className="mitc-dropdown-link mitc-link-green">
+                MITC_Telugu
+              </a>
+            </li>
+            <li className="mitc-dropdown-item">
+              <a href="/files/MITC-Tamil-updated-1.pdf" target="_blank" rel="noopener noreferrer" className="mitc-dropdown-link mitc-link-green">
+                MITC_Tamil
+              </a>
+            </li>
+            <li className="mitc-dropdown-item">
+              <a href="/files/MITC_Marathi-updated.pdf" target="_blank" rel="noopener noreferrer" className="mitc-dropdown-link mitc-link-green">
+                MITC_Marathi
+              </a>
+            </li>
+          </ul>
         </div>
       )
     }
@@ -127,9 +165,9 @@ const TermsConditions = () => {
         <ScrollReveal direction="down" distance={30} className="terms-banner-container">
           <div className="terms-hero-badge">
             <ShieldCheck size={16} />
-            <span>Most Important Terms</span>
+            <span>Most Important Terms & Conditions</span>
           </div>
-          <h1>Terms & <span className="text-red">Conditions</span></h1>
+          <h1>MITC</h1>
           <p className="terms-hero-subtitle">Most Important Terms and Conditions (MITC) for Nivara Home Loans</p>
         </ScrollReveal>
       </div>
@@ -169,4 +207,4 @@ const TermsConditions = () => {
   );
 };
 
-export default TermsConditions;
+export default Mitc;

@@ -44,7 +44,7 @@ const BranchMap = ({ branchesData = {} }) => {
               const stateKey = stateName.toUpperCase();
               const branchCount = branchesData[stateKey] ? branchesData[stateKey].length : 0;
               const hasBranches = branchCount > 0;
-              
+
               const highlight = highlightStates
                 .map((s) => s.toLowerCase())
                 .includes(stateName.toLowerCase());
@@ -98,6 +98,7 @@ const BranchMap = ({ branchesData = {} }) => {
             })
           }
         </Geographies>
+
         {markers.map(({ coordinates, name }) => (
           <Marker key={name} coordinates={coordinates}>
             <circle
@@ -110,26 +111,37 @@ const BranchMap = ({ branchesData = {} }) => {
         ))}
       </ComposableMap>
 
-      {tooltip.show && (
-        <div
-          style={{
-            position: "absolute",
-            top: tooltip.y + 10,
-            left: tooltip.x + 10,
-            backgroundColor: "rgba(0, 0, 0, 0.8)",
-            color: "white",
-            padding: "8px 12px",
-            borderRadius: "4px",
-            fontSize: "14px",
-            pointerEvents: "none",
-            zIndex: 1000,
-            boxShadow: "0 2px 4px rgba(0,0,0,0.3)",
-            whiteSpace: "nowrap"
-          }}
-        >
-          {tooltip.content}
-        </div>
-      )}
+      {tooltip.show && (() => {
+        const containerWidth = mapRef.current ? mapRef.current.offsetWidth : 500;
+        const TOOLTIP_WIDTH = 280;
+        const isRightHalf = tooltip.x > containerWidth / 2;
+        const leftPos = isRightHalf
+          ? tooltip.x - TOOLTIP_WIDTH - 10
+          : tooltip.x + 10;
+
+        return (
+          <div
+            style={{
+              position: "absolute",
+              top: tooltip.y + 10,
+              left: Math.max(0, Math.min(leftPos, containerWidth - TOOLTIP_WIDTH)),
+              backgroundColor: "rgba(0, 0, 0, 0.9)",
+              color: "#ffffff",
+              padding: "8px 14px",
+              borderRadius: "6px",
+              fontSize: "14px",
+              fontWeight: "600",
+              pointerEvents: "none",
+              zIndex: 1000,
+              boxShadow: "0 4px 12px rgba(0,0,0,0.5)",
+              whiteSpace: "nowrap",
+              letterSpacing: "0.3px",
+            }}
+          >
+            {tooltip.content}
+          </div>
+        );
+      })()}
     </div>
   );
 };

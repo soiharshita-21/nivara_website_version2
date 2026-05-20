@@ -59,13 +59,13 @@
   border: 1px solid #e2e8f0;
   border-radius: 24px;
   padding: 32px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .investor-section.minimal:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .section-header {
@@ -89,9 +89,23 @@
   font-size: 20px;
 }
 
-.icon-wrapper.red { background: #fff5f5; color: #E32125; border: 1px solid #fee2e2; }
-.icon-wrapper.green { background: #f7fee7; color: #7EB542; border: 1px solid #ecfccb; }
-.icon-wrapper.dark { background: #f8fafc; color: #211F1F; border: 1px solid #f1f5f9; }
+.icon-wrapper.red {
+  background: #fff5f5;
+  color: #E32125;
+  border: 1px solid #fee2e2;
+}
+
+.icon-wrapper.green {
+  background: #f7fee7;
+  color: #7EB542;
+  border: 1px solid #ecfccb;
+}
+
+.icon-wrapper.dark {
+  background: #f8fafc;
+  color: #211F1F;
+  border: 1px solid #f1f5f9;
+}
 
 .header-text h2 {
   font-size: 1.4rem;
@@ -130,7 +144,7 @@
 .investor-list-item:hover {
   background: #ffffff;
   border-color: #e2e8f0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transform: translateX(4px);
 }
 
@@ -184,15 +198,15 @@
   .investor-header-simple {
     padding: 100px 20px 40px;
   }
-  
+
   .investor-header-simple h1 {
     font-size: 2.5rem;
   }
-  
+
   .investor-content-wrapper.minimal {
     padding: 0 20px;
   }
-  
+
   .investor-sections-grid {
     grid-template-columns: 1fr;
     gap: 50px;
@@ -202,4 +216,3 @@
 .text-red {
   color: #E32125;
 }
-

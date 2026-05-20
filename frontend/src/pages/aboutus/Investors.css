@@ -18,6 +18,20 @@
   justify-content: center;
 }
 
+@media (max-width: 768px) {
+  .investors-page .page-banner {
+    height: 40vh;
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .investors-page .page-banner {
+    height: 35vh;
+    min-height: 240px;
+  }
+}
+
 /* Decorative Strips in Banner */
 .investors-strip {
   position: absolute;

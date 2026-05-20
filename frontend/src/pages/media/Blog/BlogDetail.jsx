@@ -7,6 +7,23 @@ import home2 from "../../../assets/images/home2.png";
 
 import axios from "axios";
 
+const parseTags = (tags) => {
+    if (!tags) return ["Blog", "Nivara"];
+    if (Array.isArray(tags)) return tags;
+    if (typeof tags === 'string') {
+        try {
+            const parsed = JSON.parse(tags);
+            if (Array.isArray(parsed)) return parsed;
+            if (typeof parsed === 'string') {
+                return parsed.split(',').map(t => t.trim()).filter(Boolean);
+            }
+        } catch (e) {
+            return tags.split(',').map(t => t.trim()).filter(Boolean);
+        }
+    }
+    return ["Blog", "Nivara"];
+};
+
 const BlogDetail = () => {
     const { slug } = useParams();
     const navigate = useNavigate();
@@ -37,7 +54,7 @@ const BlogDetail = () => {
                             : found.content,
                         author: found.author || "ADMIN",
                         comments: found.comments || "0 comments",
-                        tags: typeof found.tags === 'string' ? JSON.parse(found.tags) : (found.tags || ["Blog", "Nivara"])
+                        tags: parseTags(found.tags)
                     });
                 }
             } catch (error) {
@@ -55,7 +72,7 @@ const BlogDetail = () => {
                             : found.content,
                         author: found.author || "ADMIN",
                         comments: found.comments || "0 comments",
-                        tags: found.tags || ["Blog", "Nivara"]
+                        tags: parseTags(found.tags)
                     });
                 }
             } finally {
@@ -128,9 +145,12 @@ const BlogDetail = () => {
                         <div className="post-tags-container">
                             <h4 className="tags-label">Tags:</h4>
                             <div className="post-tags">
-                                {post.tags.map((tag, idx) => (
-                                    <span key={idx}>{tag}</span>
-                                ))}
+                                {post.tags.map((tag, idx) => {
+                                    const cleanTag = typeof tag === 'string'
+                                        ? tag.replace(/^[\[\]"']+|[\[\]"']+$/g, '').trim()
+                                        : tag;
+                                    return <span key={idx}>{cleanTag}</span>;
+                                })}
                             </div>
                         </div>
 

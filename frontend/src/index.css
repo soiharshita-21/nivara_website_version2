@@ -161,15 +161,31 @@ body::-webkit-scrollbar {
 
 @media (max-width: 768px) {
   .page-banner {
-    height: 50vh;
-    min-height: 350px;
+    height: 30vh;
+    min-height: 220px;
   }
 
   .page-banner-title {
-    font-size: 36px;
+    font-size: 30px;
   }
 
   .page-banner-subtitle {
-    font-size: 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-banner {
+    height: 25vh;
+    min-height: 180px;
+  }
+
+  .page-banner-title {
+    font-size: 24px;
+    padding: 6px 16px;
+  }
+
+  .page-banner-subtitle {
+    font-size: 12px;
   }
 }

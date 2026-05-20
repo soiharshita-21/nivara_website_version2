@@ -116,13 +116,13 @@
 .refinance-feature-icon {
   font-size: 40px;
   margin-bottom: 18px;
-  color: #7EB542;
+  color: #E32125;
 }
 
 .refinance-feature-box h3 {
   font-size: 22px;
   font-weight: 600;
-  color: #7EB542 !important;
+  color: #E32125 !important;
 }
 
 
@@ -137,7 +137,7 @@
 .refinance-benefits-title {
   font-size: 34px;
   font-weight: 700;
-  color: #7EB542 !important;
+  color: #E32125 !important;
   margin-bottom: 45px;
   text-align: left;
   line-height: 1.2;
@@ -149,13 +149,27 @@
   gap: 24px;
 }
 
+@media (min-width: 901px) {
+  .refinance-benefits-list > *:nth-child(odd):last-child {
+    grid-column: span 2;
+    justify-self: center;
+    width: calc(50% - 12px);
+  }
+}
+
+@media (max-width: 900px) {
+  .refinance-benefits-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 .refinance-benefit-item {
   background: #ffffff;
   padding: 24px 30px;
   font-size: 16px;
   line-height: 1.6;
   color: #374151;
-  border-left: 5px solid #7EB542;
+  border-left: 5px solid #E32125;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(33, 31, 31, 0.05);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -180,7 +194,7 @@
 .refinance-help-title {
   font-size: 42px;
   font-weight: 800;
-  color: #7EB542 !important;
+  color: #E32125 !important;
   margin-bottom: 12px;
   text-align: center;
 }
@@ -219,7 +233,7 @@
 /* Icon */
 .refinance-help-icon {
   font-size: 40px;
-  color: #7EB542;
+  color: #E32125;
   margin-bottom: 20px;
 }
 
@@ -238,7 +252,7 @@
 }
 
 .refinance-help-green {
-  color: #7EB542;
+  color: #E32125;
   font-size: 22px;
   margin: 10px 0;
   font-weight: 700;
@@ -253,9 +267,9 @@
 .refinance-help-link {
   display: inline-block;
   margin-top: 25px;
-  color: #7EB542 !important;
+  color: #E32125 !important;
   font-weight: 600;
-  border-bottom: 2px solid #7EB542 !important;
+  border-bottom: 2px solid #E32125 !important;
   cursor: pointer;
 }
 
@@ -303,7 +317,7 @@
 
 .refinance-rotate-icon {
   font-size: 28px;
-  color: #7EB542;
+  color: #E32125;
   transition: transform 0.7s ease;
 }
 
@@ -352,7 +366,7 @@
   content: "✔";
   width: 22px;
   height: 22px;
-  background: #7EB542;
+  background: #E32125;
   color: #fff;
   font-size: 11px;
   font-weight: bold;
@@ -372,7 +386,7 @@
 .refinance-image-points .points-title {
   font-size: 18px;
   font-weight: 700;
-  color: #7EB542;
+  color: #E32125;
   margin-bottom: 5px;
 }
 
@@ -404,7 +418,7 @@
 .refinance-content h2 {
   font-size: 32px;
   font-weight: 800;
-  color: #7EB542;
+  color: #E32125;
   margin-bottom: 12px;
 }
 
@@ -438,7 +452,7 @@
   left: 0;
   width: 22px;
   height: 22px;
-  background-color: #7EB542;
+  background-color: #E32125;
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -460,9 +474,9 @@
 .refinance-btn-outline {
   width: 200px;
   padding: 12px 24px;
-  border: 2px solid #7EB542;
+  border: 2px solid #E32125;
   background: transparent;
-  color: #7EB542;
+  color: #E32125;
   border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
@@ -470,14 +484,14 @@
 }
 
 .refinance-btn-outline:hover {
-  background: #7EB542;
+  background: #E32125;
   color: #fff;
 }
 
 .refinance-loan-btn-solid {
   width: 200px;
   padding: 12px 24px;
-  background: #7EB542;
+  background: #E32125;
   color: #fff;
   border: none;
   border-radius: 12px;
@@ -524,7 +538,7 @@
 .refinance-bottom-strip {
   height: 6px;
   width: 0%;
-  background: #7EB542;
+  background: #E32125;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -544,7 +558,7 @@
 .refinance-main-title {
   font-size: 42px;
   font-weight: 800;
-  color: #7EB542;
+  color: #E32125;
   margin-bottom: 16px;
 }
 
@@ -552,7 +566,7 @@
 .refinance-sub-heading {
   font-size: 26px;
   font-weight: 700;
-  color: #7EB542;
+  color: #E32125;
   margin-bottom: 14px;
 }
 
@@ -607,7 +621,7 @@
 .refinance-feature-icon {
   font-size: 40px;
   margin-bottom: 20px;
-  color: #7EB542;
+  color: #E32125;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -616,7 +630,7 @@
 .refinance-circle-check-icon {
   width: 50px;
   height: 50px;
-  background-color: #7EB542;
+  background-color: #E32125;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -676,7 +690,7 @@
   font-size: 38px;
   font-weight: 700;
   margin-bottom: 35px;
-  color: #7EB542;
+  color: #E32125;
   position: relative;
 }
 
@@ -722,7 +736,7 @@
 .refinance-quote-ti {
   font-size: 42px;
   font-weight: 700;
-  color: #7EB542;
+  color: #E32125;
   margin-bottom: 10px;
 }
 
@@ -762,14 +776,14 @@
 
 
 .refinance-form-grid input:focus {
-  border-color: #7EB542;
+  border-color: #E32125;
 }
 
 
 
 .refinance-quote-button {
   grid-column: 2 / 3;
-  background: #7EB542;
+  background: #E32125;
   color: #fff;
   border: none;
   padding: 18px;
@@ -803,7 +817,7 @@
 .refinance-support-header h2 {
   font-size: 42px;
   font-weight: 800;
-  color: #7EB542;
+  color: #E32125;
   margin-bottom: 12px;
 }
 
@@ -840,7 +854,7 @@
 
 .refinance-support-icon {
   font-size: 40px;
-  color: #66b500;
+  color: #E32125;
   margin-bottom: 20px;
 }
 
@@ -848,7 +862,7 @@
 .refinance-support-card h3 {
   font-size: 18px;
   font-weight: 700;
-  color: #7EB542;
+  color: #E32125;
   margin-bottom: 16px;
 }
 
@@ -866,7 +880,7 @@
 }
 
 .refinance-support-mail {
-  color: #7EB542;
+  color: #E32125;
   margin-bottom: 20px;
 }
 
@@ -874,9 +888,9 @@
 .refinance-support-link {
   display: inline-block;
   margin-top: 25px;
-  color: #7EB542;
+  color: #E32125;
   font-weight: 600;
-  border-bottom: 2px solid #7EB542;
+  border-bottom: 2px solid #E32125;
   cursor: pointer;
 }
 

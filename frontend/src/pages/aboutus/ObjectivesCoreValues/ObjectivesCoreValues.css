@@ -177,3 +177,32 @@
   height: 60vh;
 }
 
+@media (max-width: 768px) {
+  .ocv-page .page-banner {
+    height: 40vh;
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ocv-page .page-banner {
+    height: 35vh;
+    min-height: 240px;
+  }
+}
+
+/* Centering rules for last odd elements in 2-column grids */
+@media (min-width: 993px) {
+  .objectives-cards .full-width-reveal,
+  .cv-modern-grid .full-width-reveal {
+    grid-column: span 2;
+  }
+
+  .objectives-cards .last-card,
+  .cv-modern-grid .last-card {
+    max-width: 535px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+

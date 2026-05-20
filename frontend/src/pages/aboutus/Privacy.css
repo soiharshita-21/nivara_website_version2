@@ -259,9 +259,15 @@
 }
 
 @media (max-width: 900px) {
+  .privacy-banner {
+    min-height: auto;
+    padding: 60px 20px;
+  }
+
   .privacy-banner-container {
     flex-direction: column;
     text-align: center;
+    gap: 20px;
   }
 
   .privacy-left {
@@ -269,22 +275,87 @@
     align-items: center;
   }
 
+  .privacy-left h1 {
+    font-size: 38px;
+    margin-top: 40px; /* Reduce large top margin on mobile viewports */
+  }
+
   .privacy-text-band {
     height: auto;
-    padding: 20px 0;
+    padding: 15px 0;
+    margin-top: 20px;
   }
 
   .privacy-text-band p {
     margin: 0 auto;
+    max-width: 100%;
   }
 
   .privacy-right {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 30px;
+  }
+
+  .privacy-image-wrapper {
+    width: 320px;
+    height: 320px;
+  }
+
+  .arc-inner {
+    width: 220px;
+    height: 220px;
+  }
+
+  .arc-outer-1, .arc-outer-2 {
+    width: 270px;
+    height: 270px;
+  }
+
+  .privacy-image-center {
+    width: 180px;
+    height: 180px;
+    border-width: 6px;
   }
 
   .privacy-features {
     align-items: center;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-banner {
+    padding: 40px 15px;
+  }
+
+  .privacy-left h1 {
+    font-size: 28px;
+    margin-top: 20px;
+  }
+
+  .privacy-text-band p {
+    font-size: 14px;
+  }
+
+  .privacy-image-wrapper {
+    width: 260px;
+    height: 260px;
+  }
+
+  .arc-inner {
+    width: 180px;
+    height: 180px;
+  }
+
+  .arc-outer-1, .arc-outer-2 {
+    width: 220px;
+    height: 220px;
+  }
+
+  .privacy-image-center {
+    width: 140px;
+    height: 140px;
+    border-width: 4px;
   }
 }
 

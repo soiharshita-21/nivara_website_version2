@@ -175,5 +175,11 @@
   .rq-section {
     padding: 60px 15px;
   }
+  .rq-submit-btn {
+    padding: 16px 30px;
+    font-size: 16px;
+    width: 100%;
+    justify-content: center;
+  }
 }
 
