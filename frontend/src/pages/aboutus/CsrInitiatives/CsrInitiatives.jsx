@@ -2,43 +2,66 @@ import React, { useState } from "react";
 import "./CsrInitiatives.css";
 import { FaDownload } from "react-icons/fa";
 
-// CSR Illustration
-import csr from "../../../assets/images/CSR/csr.png";
+// Images from CSR2 folder
+import csrOverview from "../../../assets/images/CSR2/Corporate-Social-Responsibility.webp";
 
-// Healthcare images – mobile health camps & eye camps
-import hc_wide1  from "../../../assets/images/CSR/WhatsApp-Image-2026-01-24-at-11.16.06-AM (1).webp";   // wide camp scene
-import hc_wide2  from "../../../assets/images/CSR/WhatsApp-Image-2026-01-24-at-1.05.01-PM (1).jpeg";    // camp staff standing
-import hc_sm1   from "../../../assets/images/CSR/WhatsApp-Image-2026-01-24-at-11.16.07-AM (1).webp";   // equipment table
-import hc_sm2   from "../../../assets/images/CSR/WhatsApp-Image-2026-01-24-at-11.16.07-AM-1 (1).webp"; // doctor + patient
-import hc_sm3   from "../../../assets/images/CSR/WhatsApp-Image-2026-01-24-at-11.16.07-AM-2 (1).webp"; // glasses distribution
-import hc_sm4   from "../../../assets/images/CSR/WhatsApp-Image-2026-01-24-at-11.16.08-AM-2 (1).webp"; // eye machine AR-9
-import hc_sm5   from "../../../assets/images/CSR/WhatsApp-Image-2026-01-24-at-11.16.09-AM (1).webp";   // medicines table
-import hc_sm6   from "../../../assets/images/CSR/WhatsApp-Image-2026-01-24-at-11.16.09-AM-1 (1).webp"; // school eye camp 1
-import hc_sm7   from "../../../assets/images/CSR/WhatsApp-Image-2026-01-24-at-11.16.09-AM-2 (1).webp"; // school eye camp 2
-import hc_sm8   from "../../../assets/images/CSR/CSR-Medical-Camp.webp";                                // doctor checking child eyes
-import hc_sm9   from "../../../assets/images/CSR/WhatsApp-Image-2026-01-24-at-1.05.00-PM (1).jpeg";   // inauguration bouquet
-import hc_sm10  from "../../../assets/images/CSR/WhatsApp-Image-2026-01-24-at-11.16.06-AM-2 (1).webp";// blood screening outdoor
-import hc_sm11  from "../../../assets/images/CSR/WhatsApp-Image-2026-01-24-at-11.16.06-AM-3 (1).webp";// people queueing
+// Healthcare images
+import hcMain from "../../../assets/images/CSR2/Picture1.png";
+import hc1 from "../../../assets/images/CSR2/WhatsApp-Image-2026-01-24-at-11.16.08-AM-2 (1).webp";
+import hc2 from "../../../assets/images/CSR2/WhatsApp-Image-2026-02-23-at-5.57.12-PM-1.webp";
+import hc3 from "../../../assets/images/CSR2/WhatsApp-Image-2026-02-23-at-2.51.03-PM-1.webp";
+import hc4 from "../../../assets/images/CSR2/WhatsApp-Image-2026-02-23-at-2.51.01-PM-1.webp";
+import hc5 from "../../../assets/images/CSR2/WhatsApp-Image-2026-02-23-at-2.51.01-PM.webp";
+import hc6 from "../../../assets/images/CSR2/WhatsApp-Image-2026-02-06-at-4.21.35-PM.webp";
+import hc7 from "../../../assets/images/CSR2/CSR-Medical-Camp.webp";
 
 // Education images
-import edu1 from "../../../assets/images/CSR/WhatsApp-Image-2026-02-06-at-4.21.35-PM.webp";
-import edu2 from "../../../assets/images/CSR/WhatsApp-Image-2026-01-24-at-1.05.01-PM-1 (1).jpeg";
-import edu3 from "../../../assets/images/CSR/WhatsApp-Image-2026-01-24-at-1.05.01-PM-2 (1).jpeg";
+import eduMain from "../../../assets/images/CSR2/Picture5.png";
+import edu1 from "../../../assets/images/CSR2/Picture6.png";
+import edu2 from "../../../assets/images/CSR2/Picture7.png";
 
 // Community images
-import comm1 from "../../../assets/images/CSR/gall.png";
-import comm2 from "../../../assets/images/CSR/WhatsApp-Image-2026-02-23-at-2.51.01-PM.webp";
-import comm3 from "../../../assets/images/CSR/WhatsApp-Image-2026-02-23-at-2.51.01-PM-1.webp";
-import comm4 from "../../../assets/images/CSR/WhatsApp-Image-2026-02-23-at-5.57.12-PM-1.webp";
+import commMain from "../../../assets/images/CSR2/Picture4.png";
+import comm1 from "../../../assets/images/CSR2/Picture3.png";
+import comm2 from "../../../assets/images/CSR2/Picture2.png";
 
 const TABS = ["Overview", "Healthcare", "Education", "Community", "CSR Approved Projects"];
 
 const CsrInitiatives = () => {
   const [activeTab, setActiveTab] = useState("Overview");
+  const [popupData, setPopupData] = useState({ isOpen: false, images: [], index: 0 });
+
+  const openPopup = (images) => {
+    setPopupData({ isOpen: true, images, index: 0 });
+  };
+
+  const closePopup = () => {
+    setPopupData({ isOpen: false, images: [], index: 0 });
+  };
+
+  const nextImage = () => {
+    setPopupData(prev => ({
+      ...prev,
+      index: (prev.index + 1) % prev.images.length
+    }));
+  };
+
+  const prevImage = () => {
+    setPopupData(prev => ({
+      ...prev,
+      index: (prev.index - 1 + prev.images.length) % prev.images.length
+    }));
+  };
+
+  const selectImage = (idx) => {
+    setPopupData(prev => ({
+      ...prev,
+      index: idx
+    }));
+  };
 
   return (
     <div className="csr-page">
-
       {/* ── HEADER ── */}
       <div className="csr-header">
         <h1>Corporate Social Responsibility (CSR) – FY 2025–26</h1>
@@ -66,13 +89,9 @@ const CsrInitiatives = () => {
       {/* ══════════════════ OVERVIEW TAB ══════════════════ */}
       {activeTab === "Overview" && (
         <div className="csr-tab-content">
-
-          {/* CSR Illustration */}
-          <div className="csr-illustration-wrap">
-            <img src={csr} alt="Corporate Social Responsibility" className="csr-illustration" />
+          <div className="csr-main-img-wrap">
+            <img src={csrOverview} alt="CSR Overview" className="csr-main-img" />
           </div>
-
-          {/* Commitment section */}
           <div className="csr-commitment">
             <h2>Commitment to Inclusive Growth</h2>
             <p>
@@ -81,87 +100,62 @@ const CsrInitiatives = () => {
               economically disadvantaged groups.
             </p>
           </div>
-
-
         </div>
       )}
 
       {/* ══════════════════ HEALTHCARE TAB ══════════════════ */}
       {activeTab === "Healthcare" && (
-        <div className="csr-tab-content">
-          <div className="csr-commitment">
-            <h2>Healthcare &amp; Wellness</h2>
-            <p>
-              Conducted mobile health camps across multiple locations, benefiting over 750+ individuals
-              through health screenings. Identified critical needs such as vision care and blood
-              pressure management. Organised in-house eye camps at government schools for early
-              detection and improved eye health among children.
-            </p>
+        <div className="csr-tab-content text-center">
+          <div className="csr-main-img-wrap">
+            <img src={hcMain} alt="Healthcare" className="csr-main-img" />
           </div>
-          <div className="csr-collage">
-            {/* Row 1 */}
-            <div className="collage-row row-3">
-              <img src={hc_sm11} alt="Health camp queue" />
-              <img src={hc_wide2} alt="Camp staff inauguration" />
-              <img src={hc_sm8}  alt="Doctor checking child eyes" />
-            </div>
-            {/* Row 2 */}
-            <div className="collage-row row-3">
-              <img src={hc_sm10} alt="Outdoor blood screening" />
-              <img src={hc_wide1} alt="Health camp wide view" />
-              <img src={hc_sm6}  alt="School eye camp" />
-            </div>
-            {/* Row 3 */}
-            <div className="collage-row row-3-mid">
-              <img src={hc_sm9}  alt="Camp inauguration bouquet" />
-              <img src={hc_sm4}  alt="Eye machine AR-9 check" />
-              <img src={hc_sm7}  alt="School eye camp 2" />
-            </div>
- 
+          <div className="csr-commitment">
+            <ul className="csr-bullet-list">
+              <li>Conducted mobile health camps across multiple locations, benefiting over 750+ individuals through health screenings.</li>
+              <li>Identified critical needs such as vision care and blood pressure management, supporting beneficiaries with further care.</li>
+              <li>Organized in-house eye camps at government schools to promote early detection and improved eye health among children.</li>
+            </ul>
+            <button className="csr-btn" onClick={() => openPopup([hc1, hc2, hc3, hc4, hc5, hc6, hc7])}>
+              View Images
+            </button>
           </div>
         </div>
       )}
 
       {/* ══════════════════ EDUCATION TAB ══════════════════ */}
       {activeTab === "Education" && (
-        <div className="csr-tab-content">
-          <div className="csr-commitment">
-            <h2>Educational Support</h2>
-            <p>
-              Supported Akshaya Trust School with classroom furniture for underprivileged children.
-              Partnered with CLIP People Foundation to provide benches for students from economically
-              weaker sections. Worked with Sai Krushna Charitable Trust to install digital notice
-              boards for schools and skill development centers.
-            </p>
+        <div className="csr-tab-content text-center">
+          <div className="csr-main-img-wrap">
+            <img src={eduMain} alt="Education" className="csr-main-img" />
           </div>
-          <div className="csr-photo-grid">
-            {[edu1, edu2, edu3].map((src, i) => (
-              <div key={i} className="csr-photo-card">
-                <img src={src} alt={`Education activity ${i + 1}`} loading="lazy" />
-              </div>
-            ))}
+          <div className="csr-commitment">
+            <ul className="csr-bullet-list">
+              <li>Supported Akshaya Trust School with classroom furniture for underprivileged children</li>
+              <li>Partnered with CLIP People Foundation to provide benches for students from economically weaker sections</li>
+              <li>Worked with Sai Krushna Charitable Trust to install digital notice boards for schools and skill development centers</li>
+            </ul>
+            <button className="csr-btn" onClick={() => openPopup([edu1, edu2])}>
+              View Images
+            </button>
           </div>
         </div>
       )}
 
       {/* ══════════════════ COMMUNITY TAB ══════════════════ */}
       {activeTab === "Community" && (
-        <div className="csr-tab-content">
-          <div className="csr-commitment">
-            <h2>Community Welfare</h2>
-            <p>
-              Partnered with AiR Humanitarian Homes, Bengaluru, contributing essential supplies
-              supporting destitute individuals. Supported Akshaya Trust Old Age Homes with
-              infrastructure improvements. Contributed to Sivananda Saraswathi Sevashram for
-              facility upgrades benefiting orphans, women, and elderly residents.
-            </p>
+        <div className="csr-tab-content text-center">
+          <div className="csr-main-img-wrap">
+            <img src={commMain} alt="Community" className="csr-main-img" />
           </div>
-          <div className="csr-photo-grid">
-            {[comm1, comm2, comm3, comm4].map((src, i) => (
-              <div key={i} className="csr-photo-card">
-                <img src={src} alt={`Community activity ${i + 1}`} loading="lazy" />
-              </div>
-            ))}
+          <div className="csr-commitment">
+            <ul className="csr-bullet-list">
+              <li>Partnered with AiR Humanitarian Homes, Bengaluru, contributing for essential supplies supporting destitute individuals.</li>
+              <li>Supported Akshaya Trust Old Age Homes with infrastructure improvements to enhance the living conditions of senior citizens</li>
+              <li>Contributed to Sivananda Saraswathi Sevashram for facility upgrades benefiting orphans, women, and elderly residents.</li>
+            </ul>
+            <button className="csr-btn" onClick={() => openPopup([comm1, comm2])}>
+              View Images
+            </button>
           </div>
         </div>
       )}
@@ -184,11 +178,34 @@ const CsrInitiatives = () => {
               <FaDownload />
               <span>CSR Approved Projects 2025-26</span>
             </a>
-           
           </div>
         </div>
       )}
 
+      {/* ══════════════════ POPUP MODAL (LIGHTBOX) ══════════════════ */}
+      {popupData.isOpen && (
+        <div className="csr-popup active" onClick={closePopup}>
+          <div className="csr-popup-box" onClick={(e) => e.stopPropagation()}>
+            <span className="csr-close" onClick={closePopup}>✕</span>
+            <img src={popupData.images[popupData.index]} alt="CSR Popup View" id="csrMainImg" />
+            <div className="csr-nav">
+              <button onClick={prevImage}>⬅ Prev</button>
+              <button onClick={nextImage}>Next ➡</button>
+            </div>
+            <div className="csr-thumbs" id="csrThumbs">
+              {popupData.images.map((img, i) => (
+                <img
+                  key={i}
+                  src={img}
+                  alt={`Thumbnail ${i + 1}`}
+                  className={i === popupData.index ? "active" : ""}
+                  onClick={() => selectImage(i)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
