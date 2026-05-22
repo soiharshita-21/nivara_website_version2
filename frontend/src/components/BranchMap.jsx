@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import {
   ComposableMap,
   Geographies,
@@ -16,24 +16,46 @@ const highlightStates = [
 ];
 
 const markers = [
-  { name: "Karnataka", coordinates: [75.7139, 15.3173] },
-  { name: "Tamil Nadu", coordinates: [78.6569, 11.1271] },
-  { name: "Telangana", coordinates: [79.0193, 18.1124] },
-  { name: "Andhra Pradesh", coordinates: [79.2, 15.5] },
-  { name: "Maharashtra", coordinates: [75.7139, 19.7515] },
+  {
+    name: "Maharashtra",
+    abbreviation: "MH",
+    coordinates: [75.7139, 19.7515],
+    labelOffset: { x: 40, y: -12 },
+  },
+  {
+    name: "Karnataka",
+    abbreviation: "KA",
+    coordinates: [75.7139, 15.3173],
+    labelOffset: { x: 40, y: 8 },
+  },
+  {
+    name: "Telangana",
+    abbreviation: "TS",
+    coordinates: [79.0193, 18.1124],
+    labelOffset: { x: -40, y: -12 },
+  },
+  {
+    name: "Andhra Pradesh",
+    abbreviation: "AP",
+    coordinates: [79.2, 15.5],
+    labelOffset: { x: -40, y: 8 },
+  },
+  {
+    name: "Tamil Nadu",
+    abbreviation: "TN",
+    coordinates: [78.6569, 11.1271],
+    labelOffset: { x: 40, y: 0 },
+  },
 ];
 
 const BranchMap = ({ branchesData = {} }) => {
-  const [tooltip, setTooltip] = useState({ content: "", x: 0, y: 0, show: false });
-  const mapRef = useRef(null);
-
   return (
-    <div ref={mapRef} style={{ width: "100%", height: "500px", position: "relative" }}>
+    <div style={{ width: "100%", height: "700px", position: "relative" }}>
       <ComposableMap
         projection="geoMercator"
         projectionConfig={{
-          scale: 950,
-          center: [82, 22],
+          scale: 1050,
+          center: [84, 22],
         }}
         style={{ width: "100%", height: "100%" }}
       >
@@ -41,42 +63,12 @@ const BranchMap = ({ branchesData = {} }) => {
           {({ geographies }) =>
             geographies.map((geo) => {
               const stateName = geo.properties.ST_NM;
-              const stateKey = stateName.toUpperCase();
-              const branchCount = branchesData[stateKey] ? branchesData[stateKey].length : 0;
-              const hasBranches = branchCount > 0;
-
-              const highlight = highlightStates
-                .map((s) => s.toLowerCase())
-                .includes(stateName.toLowerCase());
+              const highlight = highlightStates.includes(stateName.toLowerCase());
 
               return (
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
-                  onMouseEnter={(e) => {
-                    if (hasBranches && mapRef.current) {
-                      const rect = mapRef.current.getBoundingClientRect();
-                      setTooltip({
-                        content: `${stateName}: ${branchCount} Branches`,
-                        x: e.clientX - rect.left,
-                        y: e.clientY - rect.top,
-                        show: true,
-                      });
-                    }
-                  }}
-                  onMouseMove={(e) => {
-                    if (hasBranches && mapRef.current) {
-                      const rect = mapRef.current.getBoundingClientRect();
-                      setTooltip((prev) => ({
-                        ...prev,
-                        x: e.clientX - rect.left,
-                        y: e.clientY - rect.top,
-                      }));
-                    }
-                  }}
-                  onMouseLeave={() => {
-                    setTooltip({ content: "", x: 0, y: 0, show: false });
-                  }}
                   style={{
                     default: {
                       fill: highlight ? "#B91C1C" : "#D1D5DB",
@@ -99,49 +91,47 @@ const BranchMap = ({ branchesData = {} }) => {
           }
         </Geographies>
 
-        {markers.map(({ coordinates, name }) => (
-          <Marker key={name} coordinates={coordinates}>
-            <circle
-              r={6}
-              fill="#FF4D4D"
-              stroke="#FFFFFF"
-              strokeWidth={2}
-            />
-          </Marker>
-        ))}
+        {markers.map(({ coordinates, name, abbreviation }) => {
+          const stateKey = name.toUpperCase();
+          const branchCount = branchesData[stateKey] ? branchesData[stateKey].length : 0;
+          if (branchCount === 0) return null;
+
+          return (
+            <Marker key={abbreviation} coordinates={coordinates}>
+              <g>
+                <text
+                  x={0}
+                  y={-14}
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  fill="#111827"
+                  fontSize="12"
+                  fontWeight={700}
+                  fontFamily="sans-serif"
+                  pointerEvents="none"
+                  letterSpacing="0.1px"
+                >
+                  {abbreviation}
+                </text>
+                <circle r={6} fill="#FFFFFF" stroke="#000000" strokeWidth={2} />
+                <text
+                  x={0}
+                  y={16}
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  fill="#111827"
+                  fontSize="12"
+                  fontWeight={700}
+                  fontFamily="sans-serif"
+                  pointerEvents="none"
+                >
+                  {branchCount}
+                </text>
+              </g>
+            </Marker>
+          );
+        })}
       </ComposableMap>
-
-      {tooltip.show && (() => {
-        const containerWidth = mapRef.current ? mapRef.current.offsetWidth : 500;
-        const TOOLTIP_WIDTH = 280;
-        const isRightHalf = tooltip.x > containerWidth / 2;
-        const leftPos = isRightHalf
-          ? tooltip.x - TOOLTIP_WIDTH - 10
-          : tooltip.x + 10;
-
-        return (
-          <div
-            style={{
-              position: "absolute",
-              top: tooltip.y + 10,
-              left: Math.max(0, Math.min(leftPos, containerWidth - TOOLTIP_WIDTH)),
-              backgroundColor: "rgba(0, 0, 0, 0.9)",
-              color: "#ffffff",
-              padding: "8px 14px",
-              borderRadius: "6px",
-              fontSize: "14px",
-              fontWeight: "600",
-              pointerEvents: "none",
-              zIndex: 1000,
-              boxShadow: "0 4px 12px rgba(0,0,0,0.5)",
-              whiteSpace: "nowrap",
-              letterSpacing: "0.3px",
-            }}
-          >
-            {tooltip.content}
-          </div>
-        );
-      })()}
     </div>
   );
 };

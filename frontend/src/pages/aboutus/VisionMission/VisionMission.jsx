@@ -77,7 +77,7 @@ const VisionMission = () => {
             </div>
           </ScrollReveal>
           <ScrollReveal direction="up" delay={0.4}>
-            <div className="impact-item" style={{ "--item-color": "#7EB542" }}>
+            <div className="impact-item" style={{ "--item-color": "#E32125" }}>
               <TrendingUp size={50} />
               <span>Driving Growth</span>
             </div>

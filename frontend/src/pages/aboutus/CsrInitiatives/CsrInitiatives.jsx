@@ -3,7 +3,7 @@ import "./CsrInitiatives.css";
 import { FaDownload } from "react-icons/fa";
 
 // Images from CSR2 folder
-import csrOverview from "../../../assets/images/CSR2/Corporate-Social-Responsibility.webp";
+import csrhero from "../../../assets/images/csrhero.png";
 
 // Healthcare images
 import hcMain from "../../../assets/images/CSR2/Picture1.png";
@@ -90,7 +90,7 @@ const CsrInitiatives = () => {
       {activeTab === "Overview" && (
         <div className="csr-tab-content">
           <div className="csr-main-img-wrap">
-            <img src={csrOverview} alt="CSR Overview" className="csr-main-img" />
+            <img src={csrhero} alt="CSR Overview" className="csr-main-img" />
           </div>
           <div className="csr-commitment">
             <h2>Commitment to Inclusive Growth</h2>

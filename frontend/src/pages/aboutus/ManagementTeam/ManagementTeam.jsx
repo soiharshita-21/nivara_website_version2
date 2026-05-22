@@ -188,7 +188,7 @@ const ManagementTeam = () => {
         <ScrollReveal direction="up">
           <div className="management-header">
             <span className="management-heading">Management Team</span>
-            <h2>Our <span style={{ color: "#E32125" }}>Management</span> Leadership</h2>
+            <h2>Our   Management   Leadership</h2>
             <p>Experienced professionals managing operations, governance, and business excellence</p>
           </div>
         </ScrollReveal>

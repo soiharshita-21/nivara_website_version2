@@ -140,6 +140,8 @@ const HomeLoanPurchase = () => {
         </div>
       </ScrollReveal>
 
+      <RequestQuote themeColor="#E32125" />
+
       {/* Help Section */}
       <div className="homeloan-help-section">
         <ScrollReveal direction="up">
@@ -177,8 +179,6 @@ const HomeLoanPurchase = () => {
           ))}
         </div>
       </div>
-
-      <RequestQuote themeColor="#E32125" />
 
       {/* FAQ Section */}
       <ServiceFaqs />

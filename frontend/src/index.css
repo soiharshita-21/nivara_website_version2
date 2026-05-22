@@ -148,8 +148,9 @@ body::-webkit-scrollbar {
   text-transform: uppercase;
 }
 
-.page-banner-title .text-red {
-  color: #E32125;
+.page-banner-title .text-red,
+.hero-title .text-red {
+  color: #fff !important;
 }
 
 .page-banner-subtitle {

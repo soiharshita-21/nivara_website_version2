@@ -64,7 +64,12 @@
   left: 0;
   right: 0;
   height: 6px;
-  background: linear-gradient(90deg, #3cd428c7, #2fd34d, #19e363, #12cd3e, #22eb46);
+  background: linear-gradient(90deg,
+  #c91b1f,
+  #d61f23,
+  #E32125,
+  #ef3a3e,
+  #f55256);
   background-size: 200% 100%;
   animation: gradient-move 3s linear infinite;
 }

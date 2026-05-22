@@ -133,7 +133,7 @@ const CompositeHomeLoan = () => {
         </div>
       </ScrollReveal>
 
-      <RequestQuote themeColor="#7EB542" />
+      <RequestQuote themeColor="#E32125" />
 
       {/* Help Section */}
       <div className="com-help-section">

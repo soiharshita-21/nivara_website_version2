@@ -233,14 +233,19 @@
 
 .map-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   width: 100%;
+  padding-right: 10%;
+  margin-top: 18px;
+
 }
 
 .map-frame {
-  width: 50%;
-  height: 450px;
+  width: 34%;
+  max-width: 620px;
+  height: 410px;
   border: 0;
+  margin-right: 12px;
 }
 
 .location-item {

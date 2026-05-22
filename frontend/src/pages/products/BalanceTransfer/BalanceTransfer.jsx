@@ -132,7 +132,7 @@ const BalanceTransfer = () => {
         </div>
       </ScrollReveal>
 
-      <RequestQuote themeColor="#7EB542" />
+      <RequestQuote themeColor="#E32125" />
 
       {/* Help Section */}
       <div className="balance-help-section">

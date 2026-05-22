@@ -150,17 +150,17 @@
 }
 
 .management-card.green h3 {
-  color: #7EB542;
+  color: #E32125;
 }
 
 .management-card.red .management-role {
   color: #E32125;
-  background: #fdebed;
+  
 }
 
 .management-card.green .management-role {
-  color: #7EB542;
-  background: #f0f7f0;
+  color: #E32125;
+  
 }
 
 
@@ -192,7 +192,7 @@
   left: 0;
   right: 0;
   height: 6px;
-  background: linear-gradient(90deg, #E32125 50%, #7EB542 50%);
+  background: linear-gradient(90deg, #E32125 );
   background-size: 200% auto;
   animation: bgMove 5s ease-in-out infinite alternate;
   z-index: 100;

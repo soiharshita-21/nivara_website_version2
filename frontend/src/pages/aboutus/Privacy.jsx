@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Privacy.css";
-import privacy2 from "../../assets/images/privacy2.png";
+import pri from "../../assets/images/privacy.png";
 
 const PrivacyPolicy = () => {
   useEffect(() => {
@@ -26,7 +26,7 @@ const PrivacyPolicy = () => {
   return (
     <div className="privacy-page">
       {/* Hero Section */}
-      <section className="page-banner animate-pop-up" style={{ backgroundImage: `url(${privacy2})` }}>
+      <section className="page-banner animate-pop-up" style={{ backgroundImage: `url(${pri})` }}>
         <div className="page-banner-overlay"></div>
         <div className="page-banner-content">
           <h1 className="page-banner-title">

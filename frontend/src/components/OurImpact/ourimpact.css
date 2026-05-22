@@ -30,12 +30,19 @@
 
 .impact-cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 1fr;
   gap: 30px;
   background: whitesmoke;
 }
 
 .impact-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 280px;
+  height: 100%;
   background: white;
   border-radius: 20px;
   padding: 40px 40px;

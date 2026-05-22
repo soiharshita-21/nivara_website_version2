@@ -100,8 +100,6 @@ const ConstructionLoan = () => {
         ))}
       </div>
 
-      <RequestQuote themeColor="#7EB542" />
-
       {/* Features & Benefits Section */}
       <ScrollReveal direction="up">
         <div className="conloan-benefits-section">
@@ -136,6 +134,8 @@ const ConstructionLoan = () => {
           </div>
         </div>
       </ScrollReveal>
+
+      <RequestQuote themeColor="#E32125" />
 
       {/* Help Section */}
       <div className="conloan-help-section">

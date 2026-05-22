@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./ourimpact.css";
-import { FaChartLine, FaBuilding, FaMapMarkerAlt, FaHeart } from "react-icons/fa";
+import { FaChartLine, FaBuilding, FaMapMarkerAlt, FaHeart, FaBook, FaUsers } from "react-icons/fa";
 import ScrollReveal from "../ScrollReveal/ScrollReveal";
 
 const AnimatedNumber = ({ end, duration = 2000, suffix = "" }) => {
@@ -65,9 +65,11 @@ const OurImpact = () => {
       <div className="impact-cards">
         {[
           { color: "red", icon: <FaChartLine />, end: 12000, suffix: "+", label: "Loans Disbursed" },
-          { color: "red", icon: <FaBuilding />, end: 100, suffix: "+", label: "Branches" },
           { color: "red", icon: <FaMapMarkerAlt />, end: 5, suffix: "", label: "States Covered" },
-          { color: "red", icon: <FaHeart />, end: 98, suffix: "%", label: "Customer Satisfaction" }
+          { color: "red", icon: <FaBuilding />, end: 100, suffix: "+", label: "Branches" },
+          { color: "red", icon: <FaUsers />, end: 1300, suffix: "+", label: "Employee Strength" },
+          { color: "red", icon: <FaHeart />, end: 98, suffix: "%", label: "Customer Satisfaction" },
+          { color: "red", icon: <FaBook />,  end: 0, label: "Loan Books" },
         ].map((item, index) => (
           <ScrollReveal
             key={index}

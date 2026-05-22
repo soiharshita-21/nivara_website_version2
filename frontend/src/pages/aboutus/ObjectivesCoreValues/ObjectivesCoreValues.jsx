@@ -130,7 +130,7 @@ const ObjectivesCoreValues = () => {
               <div 
                 className={`cv-horizontal-card ${index === coreValues.length - 1 ? "last-card" : ""}`}
                 style={{ 
-                  "--accent-color": index % 2 === 0 ? "#E32125" : "#7EB542" 
+                  "--accent-color": index % 2 === 0 ? "#E32125" : "#E32125" 
                 }}
               >
                 <div className="cv-icon-container">

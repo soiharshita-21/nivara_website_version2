@@ -52,7 +52,7 @@
 }
 
 :root {
-  --theme: #7EB542;
+  --theme: #E32125;
   --light: #f0f7f0;
 }
 
@@ -123,7 +123,7 @@
 
 .conloan-rotate-icon {
   font-size: 28px;
-  color: #7EB542;
+  color: #E32125;
   transition: transform 0.7s ease;
 }
 
@@ -172,7 +172,7 @@
   content: "✔";
   width: 22px;
   height: 22px;
-  background: #7EB542;
+  background: #E32125;
   color: #fff;
   font-size: 11px;
   font-weight: bold;
@@ -192,7 +192,7 @@
 .conloan-image-points .points-title {
   font-size: 15px;
   font-weight: 700;
-  color: #7EB542;
+  color: #E32125;
   margin-bottom: 2px;
 }
 
@@ -210,7 +210,7 @@
 }
 
 .conloan-content h2 {
-  color: #7EB542;
+  color: #E32125;
   font-size: 32px;
   font-weight: 800;
   margin-bottom: 12px;
@@ -250,7 +250,7 @@
   left: 0;
   width: 22px;
   height: 22px;
-  background-color: #7EB542;
+  background-color: #E32125;
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -272,9 +272,9 @@
 .conloan-btn-outline {
   width: 200px;
   padding: 12px 24px;
-  border: 2px solid #7EB542;
+  border: 2px solid #E32125;
   background: transparent;
-  color: #7EB542;
+  color: #E32125;
   border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
@@ -282,14 +282,14 @@
 }
 
 .conloan-btn-outline:hover {
-  background: #7EB542;
+  background: #E32125;
   color: #fff;
 }
 
 .conloan-loan-btn-solid {
   width: 200px;
   padding: 12px 24px;
-  background: #7EB542;
+  background: #E32125;
   color: #fff;
   border: none;
   border-radius: 12px;
@@ -343,7 +343,7 @@
 .construction-page .con-loan-bottom-strip {
   height: 6px;
   width: 0%;
-  background: #7EB542;
+  background: #E32125;
 }
 
 .construction-page .conloan-card.visible .con-loan-bottom-strip {
@@ -360,14 +360,14 @@
 .construction-main-title {
   font-size: 42px;
   font-weight: 800;
-  color: #7EB542 !important;
+  color: #E32125 !important;
   margin-bottom: 16px;
 }
 
 .construction-sub-heading {
   font-size: 26px;
   font-weight: 700;
-  color: #7EB542 !important;
+  color: #E32125 !important;
   margin-bottom: 14px;
 }
 
@@ -381,14 +381,14 @@
 .construction-title {
   font-size: 42px;
   font-weight: 700;
-  color: #7EB542 !important;
+  color: #E32125 !important;
   margin-bottom: 10px;
 }
 
 .construction-subtitle {
   font-size: 20px;
   font-weight: 500;
-  color: #7EB542;
+  color: #E32125;
   margin-bottom: 25px;
 }
 
@@ -411,7 +411,7 @@
 .conloan-benefits-title {
   font-size: 34px;
   font-weight: 700;
-  color: #7EB542 !important;
+  color: #E32125 !important;
   margin-bottom: 45px;
   text-align: left;
   line-height: 1.2;
@@ -429,7 +429,7 @@
   font-size: 16px;
   line-height: 1.6;
   color: #374151;
-  border-left: 5px solid #7EB542;
+  border-left: 5px solid #E32125;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(33, 31, 31, 0.05);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -476,7 +476,7 @@
 .conloan-feature-icon {
   font-size: 40px;
   margin-bottom: 20px;
-  color: #7EB542;
+  color: #E32125;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -485,7 +485,7 @@
 .conloan-circle-check-icon {
   width: 50px;
   height: 50px;
-  background-color: #7EB542;
+  background-color: #E32125;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -552,7 +552,7 @@
 .conloan-help-title {
   font-size: 42px;
   font-weight: 800;
-  color: #7EB542 !important;
+  color: #E32125 !important;
   margin-bottom: 12px;
   text-align: center;
 }
@@ -591,7 +591,7 @@
 /* Icon */
 .conloan-help-icon {
   font-size: 40px;
-  color: #7EB542;
+  color: #E32125;
   margin-bottom: 20px;
 }
 
@@ -610,14 +610,14 @@
 }
 
 .conloan-help-green {
-  color: #7EB542;
+  color: #E32125;
   font-size: 22px;
   margin: 10px 0;
   font-weight: 700;
 }
 
 .conloan-help-mail {
-  color: #7EB542;
+  color: #E32125;
   margin-bottom: 20px;
 }
 
@@ -625,9 +625,9 @@
 .conloan-help-link {
   display: inline-block;
   margin-top: 25px;
-  color: #7EB542 !important;
+  color: #E32125 !important;
   font-weight: 600;
-  border-bottom: 2px solid #7EB542 !important;
+  border-bottom: 2px solid #E32125 !important;
   cursor: pointer;
 }
 
@@ -676,7 +676,7 @@
 .quote-ti {
   font-size: 42px;
   font-weight: 700;
-  color: #7EB542 !important;
+  color: #E32125 !important;
   margin-bottom: 10px;
 }
 
@@ -713,13 +713,13 @@
 
 /* Focus */
 .form-grid input:focus {
-  border-color: #7EB542;
+  border-color: #E32125;
 }
 
 /* Button */
 .quote-b {
   grid-column: 2 / 3;
-  background: #7EB542;
+  background: #E32125;
   color: #fff;
   border: none;
   padding: 18px;
@@ -776,7 +776,7 @@
 
 
 .construction-page {
-  --theme: #7EB542;
+  --theme: #E32125;
   --light: #f0f7f0;
 }
 

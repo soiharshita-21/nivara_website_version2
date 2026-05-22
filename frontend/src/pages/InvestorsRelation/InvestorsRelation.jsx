@@ -47,7 +47,7 @@ const InvestorsRelation = () => {
       <header className="investor-header-simple">
         <ScrollReveal direction="down">
           <div className="header-badge">Compliance & Transparency</div>
-          <h1>Investor <span className="text-red">Relations</span></h1>
+          <h1>Investor Relations</h1>
           <p>Access all regulatory filings, meeting notices, and event transcripts in one place.</p>
         </ScrollReveal>
       </header>

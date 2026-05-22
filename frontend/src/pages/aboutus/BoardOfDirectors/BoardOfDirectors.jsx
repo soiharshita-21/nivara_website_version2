@@ -72,7 +72,7 @@ const BoardOfDirectors = () => {
         <ScrollReveal direction="up">
           <div className="board-header">
             <span className="board-tag">Board of Directors</span>
-            <h2>Our <span style={{ color: "#E32125" }}>Visionary</span> Leadership</h2>
+            <h2>Our Visionary Leadership</h2>
             <p>Guiding our mission to provide affordable housing finance to every Indian family</p>
           </div>
         </ScrollReveal>

@@ -1,13 +1,12 @@
 import React, { useMemo, useState } from "react";
 import "./Offices.css";
-import map from "../../../assets/images/map.png";
+import officeBanner from "../../../assets/images/office.png";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import {
   MapPin,
   Phone,
   Mail,
   Building2,
-  ExternalLink,
   Clock,
   Navigation,
 } from "lucide-react";
@@ -74,67 +73,14 @@ const Office = () => {
 
   return (
     <section className="office-page">
+      <section
+        className="page-banner office-banner"
+        style={{ backgroundImage: `url(${officeBanner})` }}
+      >
+        <div className="page-banner-overlay" />
+      </section>
+
       <div className="office-split-container">
-        <div className="office-map-pane">
-          <div className="map-wrapper">
-            <img
-              src={map}
-              alt="Bangalore office coverage map"
-              className="base-map"
-            />
-
-            <div className="map-overlay-layer" />
-
-            <div className="map-controls">
-              <a
-                href={selectedOffice.mapUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <ExternalLink size={16} />
-                <span>Open map</span>
-              </a>
-            </div>
-
-            {offices.map((office, index) => (
-              <button
-                type="button"
-                key={office.id}
-                className={`map-marker ${activeOffice === office.id ? "active" : ""
-                  }`}
-                style={{
-                  // FIRST PIN → JP NAGAR (TOP BUILDING)
-                  top:
-                    index === 0
-                      ? "58%"
-                      : "26%",
-
-                  left:
-                    index === 0
-                      ? "29%"
-                      : "67%",
-                }}
-                onMouseEnter={() => setActiveOffice(office.id)}
-                onMouseLeave={() => setActiveOffice("")}
-                onFocus={() => setActiveOffice(office.id)}
-                onBlur={() => setActiveOffice("")}
-                aria-label={`Show ${office.city}`}
-              >
-                <span className="marker-ping" />
-
-                <span className="marker-core">
-                  <MapPin size={16} color="white" />
-                </span>
-
-                <span className="marker-tooltip">
-                  <strong>{office.city}</strong>
-                  <span>{office.type}</span>
-                </span>
-              </button>
-            ))}
-          </div>
-        </div>
-
         <aside className="office-info-pane">
           <ScrollReveal direction="down">
             <div className="office-pane-header">
@@ -144,7 +90,7 @@ const Office = () => {
               </div>
 
               <h1 className="pane-title">
-                Locate <span style={{ color: "#E32125" }}>Us</span>
+                Locate Us
               </h1>
 
               <p className="pane-subtitle">

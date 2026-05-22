@@ -98,7 +98,7 @@
 .com-benefits-title {
   font-size: 34px;
   font-weight: 700;
-  color: #7EB542 !important;
+  color: #E32125 !important;
   margin-bottom: 45px;
   text-align: left;
   line-height: 1.2;
@@ -116,7 +116,7 @@
   font-size: 16px;
   line-height: 1.6;
   color: #374151;
-  border-left: 5px solid #7EB542;
+  border-left: 5px solid #E32125;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(33, 31, 31, 0.05);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -167,7 +167,7 @@
 
 .comploan-rotate-icon {
   font-size: 28px;
-  color: #7EB542;
+  color: #E32125;
   transition: transform 0.7s ease;
 }
 
@@ -216,7 +216,7 @@
   content: "✔";
   width: 22px;
   height: 22px;
-  background: #7EB542;
+  background: #E32125;
   color: #fff;
   font-size: 11px;
   font-weight: bold;
@@ -236,7 +236,7 @@
 .points-title {
   font-size: 18px;
   font-weight: 700;
-  color: #7EB542;
+  color: #E32125;
   margin-bottom: 5px;
 }
 
@@ -271,7 +271,7 @@
 .composite-content h2 {
   font-size: 32px;
   font-weight: 800;
-  color: #7EB542;
+  color: #E32125;
   margin-bottom: 12px;
 }
 
@@ -306,7 +306,7 @@
   left: 0;
   width: 22px;
   height: 22px;
-  background-color: #7EB542;
+  background-color: #E32125;
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -328,9 +328,9 @@
 .composite-page .composite-btn-outline {
   width: 200px;
   padding: 12px 24px;
-  border: 2px solid #7EB542;
+  border: 2px solid #E32125;
   background: transparent;
-  color: #7EB542;
+  color: #E32125;
   border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
@@ -338,14 +338,14 @@
 }
 
 .composite-page .composite-btn-outline:hover {
-  background: #7EB542;
+  background: #E32125;
   color: #fff;
 }
 
 .composite-page .comp-loan-btn-solid {
   width: 200px;
   padding: 12px 24px;
-  background: #7EB542;
+  background: #E32125;
   color: #fff;
   border: none;
   border-radius: 12px;
@@ -359,7 +359,7 @@
 }
 
 .composite-page .comp-loan-btn-solid:hover {
-  background: #7EB542;
+  background: #E32125;
 }
 
 @keyframes slideIn {
@@ -396,7 +396,7 @@
 .composite-page .home-loan-bottom-strip {
   height: 6px;
   width: 0%;
-  background: #7EB542;
+  background: #E32125;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -417,7 +417,7 @@
 .composite-main-title {
   font-size: 42px;
   font-weight: 800;
-  color: #7EB542;
+  color: #E32125;
   margin-bottom: 16px;
 }
 
@@ -425,7 +425,7 @@
 .composite-sub-heading {
   font-size: 26px;
   font-weight: 700;
-  color: #7EB542;
+  color: #E32125;
   margin-bottom: 14px;
 }
 
@@ -433,7 +433,7 @@
 .composite-highlight {
   font-size: 20px;
   font-weight: 600;
-  color: #7EB542;
+  color: #E32125;
   margin-bottom: 28px;
 }
 
@@ -486,7 +486,7 @@
 .com-feature-icon {
   font-size: 40px;
   margin-bottom: 20px;
-  color: #7EB542;
+  color: #E32125;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -495,7 +495,7 @@
 .com-circle-check-icon {
   width: 50px;
   height: 50px;
-  background-color: #7EB542;
+  background-color: #E32125;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -568,14 +568,14 @@
 .com-quote-ti {
   font-size: 42px;
   font-weight: 700;
-  color: #7EB542;
+  color: #E32125;
   margin-bottom: 10px;
 }
 
 /* Subtitle */
 .com-quote-subti {
   font-size: 18px;
-  color: #7EB542;
+  color: #E32125;
 
   margin-bottom: 50px;
 }
@@ -606,13 +606,13 @@
 
 /* Focus */
 .com-form-grid input:focus {
-  border-color: #7EB542;
+  border-color: #E32125;
 }
 
 /* Button */
 .com-quote-button {
   grid-column: 2 / 3;
-  background: #7EB542;
+  background: #E32125;
   color: #fff;
   border: none;
   padding: 18px;
@@ -626,7 +626,7 @@
 
 /* Button hover */
 .com-quote-button:hover {
-  background: #7EB542;
+  background: #E32125;
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(33, 31, 31, 0.15);
 }
@@ -641,7 +641,7 @@
 .com-help-title {
   font-size: 42px;
   font-weight: 800;
-  color: #7EB542 !important;
+  color: #E32125 !important;
   margin-bottom: 12px;
   text-align: center;
 }
@@ -680,7 +680,7 @@
 /* Icon */
 .com-help-icon {
   font-size: 40px;
-  color: #7EB542;
+  color: #E32125;
   margin-bottom: 20px;
 }
 
@@ -699,14 +699,14 @@
 }
 
 .com-help-green {
-  color: #7EB542;
+  color: #E32125;
   font-size: 22px;
   margin: 10px 0;
   font-weight: 700;
 }
 
 .com-help-mail {
-  color: #7EB542;
+  color: #E32125;
   margin-bottom: 20px;
 }
 
@@ -714,9 +714,9 @@
 .com-help-link {
   display: inline-block;
   margin-top: 25px;
-  color: #7EB542 !important;
+  color: #E32125 !important;
   font-weight: 600;
-  border-bottom: 2px solid #7EB542 !important;
+  border-bottom: 2px solid #E32125 !important;
   cursor: pointer;
 }
 
