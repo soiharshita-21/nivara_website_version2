@@ -183,7 +183,7 @@
 
 .homeloan-image-points .points-title {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   color: #E32125;
   margin-bottom: 5px;
 }
@@ -203,7 +203,7 @@
 .loan-content h2 {
   color: #E32125;
   font-size: 32px;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 12px;
   text-align: left;
 }
@@ -247,7 +247,7 @@
   justify-content: center;
   align-items: center;
   font-size: 14px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .home-page .ho-loan-buttons {
@@ -346,7 +346,7 @@
 
 .help-title {
   font-size: 42px;
-  font-weight: 700;
+  font-weight: 600;
   color: #E32125;
   margin-bottom: 12px;
 }
@@ -373,7 +373,7 @@
 
 .homeloan-help-title {
   font-size: 42px;
-  font-weight: 800;
+  font-weight: 700;
   color: #E32125 !important;
   margin-bottom: 12px;
   text-align: center;
@@ -420,7 +420,7 @@
 /* Text */
 .homeloan-help-card h3 {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   color: #0a2540;
   margin-bottom: 16px;
 }
@@ -435,7 +435,7 @@
   color: #E32125;
   font-size: 22px;
   margin: 10px 0;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .homeloan-help-mail {
@@ -553,7 +553,7 @@
 
 .homeloan-benefits-title {
   font-size: 34px;
-  font-weight: 700;
+  font-weight: 600;
   color: #E32125 !important;
   margin-bottom: 45px;
   text-align: left;
@@ -610,7 +610,7 @@
   left: 0;
   top: 2px;
   color: #6bb300;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 /* Section */
@@ -638,7 +638,7 @@
 
 .quote-title {
   font-size: 52px;
-  font-weight: 800;
+  font-weight: 700;
   color: #E32125;
   margin-bottom: 10px;
 }
@@ -686,7 +686,7 @@
   border: none;
   padding: 20px;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;

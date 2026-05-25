@@ -70,7 +70,7 @@
 .vm-label {
   display: block;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #E32125;
@@ -79,7 +79,7 @@
 
 .vm-modern-card h2 {
   font-size: 38px;
-  font-weight: 800;
+  font-weight: 700;
   color: #211F1F;
   margin-bottom: 20px;
 }
@@ -105,7 +105,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 110px;
-  font-weight: 900;
+  font-weight: 600;
   color: rgba(33, 31, 31, 0.03);
   pointer-events: none;
   z-index: 1;
@@ -120,7 +120,7 @@
 
 .vm-main-mission {
   font-size: 26px !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   color: #211F1F !important;
   margin-top: 0 !important;
 }

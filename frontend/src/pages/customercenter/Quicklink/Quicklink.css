@@ -6,7 +6,6 @@
 .quicklink-page{
   width: 100%;
   background: #fff;
-  margin-top: 30px;
 }
 
 /* HERO SECTION */
@@ -85,7 +84,7 @@
 
 .quicklink-title {
   font-size: 52px;
-  font-weight: 800;
+  font-weight: 700;
   max-width: 900px;
   margin: 0 auto 20px;
   line-height: 1.2;
@@ -137,7 +136,7 @@
 
 /* Highlight line */
 .quicklink-highlight{
-  font-weight: 700;
+  font-weight: 600;
   color: var(--theme);
 }
 

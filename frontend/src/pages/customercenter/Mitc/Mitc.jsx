@@ -167,7 +167,7 @@ const Mitc = () => {
             <ShieldCheck size={16} />
             <span>Most Important Terms & Conditions</span>
           </div>
-          <h1>MITC</h1>
+          <h1 className="page-banner-title">MITC</h1>
           <p className="terms-hero-subtitle">Most Important Terms and Conditions (MITC) for Nivara Home Loans</p>
         </ScrollReveal>
       </div>

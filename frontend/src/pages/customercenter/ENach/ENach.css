@@ -84,7 +84,7 @@
 /* Main title - Premium text accent line instead of standard underline */
 .enach-title {
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 600;
   color: #1e293b;
   text-decoration: none !important;
   margin-bottom: 30px;
@@ -248,7 +248,7 @@
 
 .login-title {
   font-size: 26px;
-  font-weight: 700;
+  font-weight: 600;
   color: #1e293b;
   margin-bottom: 8px;
   text-align: center;
@@ -368,7 +368,7 @@
 
 .register-title {
   font-size: 26px;
-  font-weight: 700;
+  font-weight: 600;
   color: #1e293b;
   margin-bottom: 8px;
   text-align: center;

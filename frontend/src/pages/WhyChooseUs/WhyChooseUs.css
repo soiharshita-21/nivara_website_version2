@@ -58,7 +58,7 @@
 
 .why-hero-content h1 {
   font-size: 4rem;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 20px;
   line-height: 1.1;
   border-left: 8px solid #E32125;
@@ -96,7 +96,7 @@
   font-size: 2.5rem;
   color: #E32125;
   margin-bottom: 20px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .why-intro p {
@@ -154,7 +154,7 @@
 
 .benefit-card h3 {
   font-size: 1.3rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 15px;
   color: #222;
 }
@@ -178,7 +178,7 @@
 .why-footer-cta h3 {
   font-size: 2rem;
   margin-bottom: 15px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .why-footer-cta p {
@@ -211,7 +211,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.2rem;
 }
 

@@ -99,9 +99,9 @@ export default function HowItWorks() {
         <div className="how-cta-banner">
           <div className="how-cta-overlay">
             <div className="how-cta-content">
-              <p>Ready to get started?</p>
+              <p>Start Building Your Future</p>
               <button onClick={() => navigate("/apply-home-loan")}>
-                Start Your Application <FaArrowRight className="btn-arrow" />
+                Initiate Your Application <FaArrowRight className="btn-arrow" />
               </button>
             </div>
           </div>

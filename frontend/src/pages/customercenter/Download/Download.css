@@ -93,7 +93,7 @@
 /* Main Heading */
 .download-title {
   font-size: clamp(42px, 7vw, 72px);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.08;
   letter-spacing: -0.04em;
   margin: 0 0 24px;
@@ -132,7 +132,7 @@
 
 .download-category h2 {
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 600;
   color: #211F1F;
   margin-bottom: 30px;
   position: relative;
@@ -200,12 +200,11 @@
   width: 62px;
   height: 62px;
   flex-shrink: 0;
-  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg,
-      #fdecec,
+      #ffffff,
       #fff5f5);
   color: #E32125;
   font-size: 26px;

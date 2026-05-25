@@ -1,5 +1,5 @@
 import React from "react";
-import { FaHome, FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
+import { FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 import ref from "../../../assets/images/refinance.png";
 import "./RefinanceLoan.css";
 import "../ProductHero.css";
@@ -13,7 +13,7 @@ const RefinanceLoan = () => {
 
   return (
     <div className="product-page-wrapper">
-      <section className="product-hero">
+      <section className="product-hero full-whitespace-hero">
         <div className="product-hero-bg">
           <img src={ref} alt="Refinance Loan" />
           <div className="product-hero-overlay"></div>

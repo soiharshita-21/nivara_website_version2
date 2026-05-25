@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
-import { FaLock, FaFileAlt, FaBullhorn, FaMicrophone, FaChevronRight } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { FaFileAlt, FaBullhorn, FaMicrophone, FaChevronRight } from "react-icons/fa";
 import "./InvestorsRelation.css";
 import ScrollReveal from "../../components/ScrollReveal/ScrollReveal";
+import InvestorPasswordModal from "./InvestorPasswordModal";
+import { createInvestorTranscriptAccess } from "./investorAccess";
 
 const annualReturns = [
   { year: "2019–20", path: "/files/Annual-Return-2019-20.pdf" },
@@ -37,9 +39,40 @@ const transcripts = [
 ];
 
 const InvestorsRelation = () => {
+  const [pendingDocument, setPendingDocument] = useState(null);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const openDocument = (document) => {
+    let href = document.href;
+
+    if (document.type === "transcript") {
+      const token = createInvestorTranscriptAccess(document.file);
+      const url = new URL(document.href, window.location.origin);
+      url.searchParams.set("access", token);
+      href = `${url.pathname}${url.search}${url.hash}`;
+    }
+
+    window.open(href, "_blank", "noopener,noreferrer");
+  };
+
+  const handleProtectedDocumentClick = (event, document) => {
+    event.preventDefault();
+    setPendingDocument(document);
+  };
+
+  const handlePasswordConfirm = () => {
+    if (pendingDocument) {
+      openDocument(pendingDocument);
+    }
+
+    setPendingDocument(null);
+  };
+
+  const getTranscriptHref = (item) =>
+    `/investorsrelation/transcript?title=${encodeURIComponent(item.title || item.name)}&file=${encodeURIComponent(item.path)}&disclaimer=${!!item.disclaimer}`;
 
   return (
     <div className="investor-page-container minimal">
@@ -74,6 +107,12 @@ const InvestorsRelation = () => {
                     href={item.path}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(event) =>
+                      handleProtectedDocumentClick(event, {
+                        href: item.path,
+                        name: `FY ${item.year} Annual Return`,
+                      })
+                    }
                   >
                     <div className="item-content">
                       <span className="year-label">FY {item.year}</span>
@@ -106,6 +145,12 @@ const InvestorsRelation = () => {
                     href={item.path} 
                     target="_blank" 
                     rel="noopener noreferrer"
+                    onClick={(event) =>
+                      handleProtectedDocumentClick(event, {
+                        href: item.path,
+                        name: item.name,
+                      })
+                    }
                   >
                     <div className="item-content">
                       <span className="doc-name">{item.name}</span>
@@ -134,9 +179,17 @@ const InvestorsRelation = () => {
                   <a 
                     key={i} 
                     className="investor-list-item" 
-                    href={`/investorsrelation/transcript?title=${encodeURIComponent(item.title || item.name)}&file=${encodeURIComponent(item.path)}&disclaimer=${!!item.disclaimer}`}
+                    href={getTranscriptHref(item)}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(event) =>
+                      handleProtectedDocumentClick(event, {
+                        href: getTranscriptHref(item),
+                        file: item.path,
+                        name: item.name,
+                        type: "transcript",
+                      })
+                    }
                   >
                     <div className="item-content">
                       <span className="doc-name">{item.name}</span>
@@ -149,6 +202,14 @@ const InvestorsRelation = () => {
           </div>
         </div>
       </div>
+      {pendingDocument && (
+        <InvestorPasswordModal
+          open
+          documentName={pendingDocument.name}
+          onConfirm={handlePasswordConfirm}
+          onCancel={() => setPendingDocument(null)}
+        />
+      )}
     </div>
   );
 };

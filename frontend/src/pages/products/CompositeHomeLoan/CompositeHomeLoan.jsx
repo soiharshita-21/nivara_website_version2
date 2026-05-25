@@ -13,7 +13,7 @@ const CompositeHomeLoan = () => {
 
   return (
     <div className="product-page-wrapper">
-      <section className="product-hero">
+      <section className="product-hero full-whitespace-hero">
         <div className="product-hero-bg">
           <img src={com} alt="Composite Home Loan" />
           <div className="product-hero-overlay"></div>

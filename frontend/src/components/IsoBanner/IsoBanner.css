@@ -73,7 +73,7 @@
 
 .iso-title {
   font-size: 26px;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 15px;
   line-height: 1.3;
 }
@@ -86,7 +86,7 @@
 }
 
 .iso-text strong {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 @media (max-width: 600px) {

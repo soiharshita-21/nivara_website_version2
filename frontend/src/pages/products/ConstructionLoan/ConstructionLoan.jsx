@@ -1,6 +1,5 @@
 import React from "react";
 import con from "../../../assets/images/Loan for construction.png";
-import { FiHome } from "react-icons/fi";
 import { FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 import "./ConstructionLoan.css";
 import "../ProductHero.css";
@@ -14,7 +13,7 @@ const ConstructionLoan = () => {
 
   return (
     <div className="product-page-wrapper">
-      <section className="product-hero">
+      <section className="product-hero full-whitespace-hero">
         <div className="product-hero-bg">
           <img src={con} alt="Construction Loan" />
           <div className="product-hero-overlay"></div>

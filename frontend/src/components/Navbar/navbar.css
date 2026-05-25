@@ -17,7 +17,7 @@
   width: 100%;
   max-width: 100%;
   margin: 0;
-  padding: 10px 40px;
+  padding: 20px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -26,16 +26,19 @@
   overflow: visible;
 }
  
-.logo-link {
+.nav_logo-link {
   display: flex;
   align-items: center;
   flex-shrink: 0;
   text-decoration: none;
 }
  
-.logo {
+.nav_logo {
   transition: transform 0.3s ease;
-  margin-top: 12px;
+  display: block;
+  height: auto;
+  margin: 0;
+  width: 150px;
 }
  
 .logo:hover {
@@ -487,7 +490,7 @@
 }
  
 .hanging-rating-banner strong {
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.3px;
   font-size: 15px;
 }

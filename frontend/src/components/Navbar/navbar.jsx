@@ -99,8 +99,8 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${isOpen ? "menu-open" : ""}`}>
       <div className="navbar-container">
-        <Link to="/" className="logo-link">
-          <img src={logo} alt="Nivara Logo" className="logo" width={150} />
+        <Link to="/" className="nav_logo-link">
+          <img src={logo} alt="Nivara Logo" className="nav_logo"  />
         </Link>
 
         {/* Search Bar */}

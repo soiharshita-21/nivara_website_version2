@@ -1,12 +1,19 @@
-import React, { useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import "./TranscriptViewer.css";
+import InvestorPasswordModal from "./InvestorPasswordModal";
+import { hasInvestorTranscriptAccess } from "./investorAccess";
 
 const TranscriptViewer = () => {
+  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const title = searchParams.get("title");
   const file = searchParams.get("file");
   const hasDisclaimer = searchParams.get("disclaimer") === "true";
+  const accessToken = searchParams.get("access");
+  const [isAuthorized, setIsAuthorized] = useState(() =>
+    hasInvestorTranscriptAccess(accessToken, file)
+  );
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,6 +24,19 @@ const TranscriptViewer = () => {
       <div className="viewer-error-container">
         <h2>Document Not Found</h2>
         <p>The requested transcript could not be loaded.</p>
+      </div>
+    );
+  }
+
+  if (!isAuthorized) {
+    return (
+      <div className="transcript-viewer-container">
+        <InvestorPasswordModal
+          open
+          documentName={title || "this transcript"}
+          onConfirm={() => setIsAuthorized(true)}
+          onCancel={() => navigate("/investorsrelation")}
+        />
       </div>
     );
   }

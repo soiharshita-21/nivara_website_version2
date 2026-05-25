@@ -328,6 +328,15 @@
   text-align: justify;
 }
 
+.about-justified-section {
+  text-align: center;
+}
+
+.about-justified-section p {
+  text-align: justify;
+  text-align-last: left;
+}
+
 .about-section.light {
   background: #ffffff;
   /* Changed from #f9f6f7 to white */
@@ -367,18 +376,19 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 80px 20px;
+  padding: 64px 20px 80px;
   max-width: 1000px;
   width: 100%;
 }
 
 .about-banner .page-banner-title {
-  margin: 20px auto 0;
+  margin: 8px auto 0;
   display: table;
   /* Fits text width exactly */
   padding: 6px 18px;
   /* Tighter padding */
   width: auto;
+  font-size: clamp(40px, 4.2vw, 50px);
 }
 
 .about-banner .page-banner-subtitle {

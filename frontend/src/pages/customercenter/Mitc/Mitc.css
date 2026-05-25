@@ -24,10 +24,7 @@
   align-items: center;
   justify-content: center;
   padding: 100px 5%;
-  background:
-    linear-gradient(rgba(33, 31, 31, 0.65),
-      rgba(33, 31, 31, 0.65)),
-    url('../../../assets/images/terms.png');
+ background: linear-gradient(rgba(33, 31, 31, 0.2), rgba(33, 31, 31, 0.2)), url(/src/assets/images/terms.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -117,7 +114,7 @@
 /* =========================
    HERO TITLE
 ========================= */
-.terms-banner-container h1 {
+/* .terms-banner-container h1 {
   font-size: clamp(40px, 5vw, 90px);
   font-weight: 600;
   line-height: 1;
@@ -132,7 +129,7 @@
   display: inline-block;
   box-shadow:
     0 12px 35px rgba(33, 31, 31, 0.25);
-}
+} */
 
 /* =========================
    SUBTITLE
@@ -276,7 +273,7 @@
 .accordion-header h3 {
   margin: 0;
   font-size: 21px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.5;
   color: #211F1F;
 }
@@ -308,7 +305,7 @@
 ========================= */
 .terms-detail h4 {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   color: #E32125;
   margin-bottom: 14px;
 }

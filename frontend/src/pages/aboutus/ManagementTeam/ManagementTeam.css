@@ -33,7 +33,7 @@
   background: #fef2f2;
   color: #E32125;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -41,7 +41,7 @@
 .management-header h2 {
   font-size: 42px;
   line-height: 1.1;
-  font-weight: 800;
+  font-weight: 700;
   color: #211f1f;
   margin-bottom: 12px;
   letter-spacing: -0.02em;
@@ -124,7 +124,7 @@
   padding: 8px 20px;
   border-radius: 50px;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 12px;
   background: #f3f4f6;
   color: #374151;
@@ -133,7 +133,7 @@
 
 .management-content h3 {
   font-size: 23px;
-  font-weight: 800;
+  font-weight: 700;
   color: #211F1F;
   margin-bottom: 12px;
 }

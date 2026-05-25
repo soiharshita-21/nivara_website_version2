@@ -1,5 +1,4 @@
 import React from "react";
-import { FiHome } from "react-icons/fi";// balance transfer icon
 import { FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 import bal from "../../../assets/images/Balance Transfer.png"; // you will replace this
 import "./BalanceTransfer.css";
@@ -14,7 +13,7 @@ const BalanceTransfer = () => {
 
   return (
     <div className="product-page-wrapper">
-      <section className="product-hero">
+      <section className="product-hero full-whitespace-hero">
         <div className="product-hero-bg">
           <img src={bal} alt="Balance Transfer" />
           <div className="product-hero-overlay"></div>

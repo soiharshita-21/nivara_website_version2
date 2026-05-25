@@ -97,7 +97,7 @@
 
 .com-benefits-title {
   font-size: 34px;
-  font-weight: 700;
+  font-weight: 600;
   color: #E32125 !important;
   margin-bottom: 45px;
   text-align: left;
@@ -235,7 +235,7 @@
 
 .points-title {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   color: #E32125;
   margin-bottom: 5px;
 }
@@ -270,7 +270,7 @@
 
 .composite-content h2 {
   font-size: 32px;
-  font-weight: 800;
+  font-weight: 700;
   color: #E32125;
   margin-bottom: 12px;
 }
@@ -313,7 +313,7 @@
   justify-content: center;
   align-items: center;
   font-size: 14px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 
@@ -416,7 +416,7 @@
 
 .composite-main-title {
   font-size: 42px;
-  font-weight: 800;
+  font-weight: 700;
   color: #E32125;
   margin-bottom: 16px;
 }
@@ -424,7 +424,7 @@
 
 .composite-sub-heading {
   font-size: 26px;
-  font-weight: 700;
+  font-weight: 600;
   color: #E32125;
   margin-bottom: 14px;
 }
@@ -567,7 +567,7 @@
 /* Title */
 .com-quote-ti {
   font-size: 42px;
-  font-weight: 700;
+  font-weight: 600;
   color: #E32125;
   margin-bottom: 10px;
 }
@@ -640,7 +640,7 @@
 
 .com-help-title {
   font-size: 42px;
-  font-weight: 800;
+  font-weight: 700;
   color: #E32125 !important;
   margin-bottom: 12px;
   text-align: center;
@@ -687,7 +687,7 @@
 /* Text */
 .com-help-card h3 {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   color: #0a2540;
   margin-bottom: 16px;
 }
@@ -702,7 +702,7 @@
   color: #E32125;
   font-size: 22px;
   margin: 10px 0;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .com-help-mail {

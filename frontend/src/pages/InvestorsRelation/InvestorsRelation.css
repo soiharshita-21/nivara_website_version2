@@ -15,9 +15,9 @@
 .header-badge {
   display: inline-block;
   padding: 6px 16px;
-  background: rgba(227, 33, 37, 0.1);
+  background: #e3212517;
   color: #E32125;
-  border-radius: 100px;
+  border-radius: 8px;
   font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -27,7 +27,7 @@
 
 .investor-header-simple h1 {
   font-size: 3.5rem;
-  font-weight: 800;
+  font-weight: 700;
   color: #211F1F;
   margin-bottom: 20px;
   letter-spacing: -1.5px;
@@ -109,7 +109,7 @@
 
 .header-text h2 {
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #211F1F;
   margin: 0 0 4px 0;
 }
@@ -157,7 +157,7 @@
 
 .year-label {
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #E32125;
   text-transform: uppercase;
   letter-spacing: 0.5px;

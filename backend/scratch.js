@@ -20,7 +20,7 @@ const html = `<style>
   .form-title {
     color: #E32125;
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 20px;
     text-align: center;
   }

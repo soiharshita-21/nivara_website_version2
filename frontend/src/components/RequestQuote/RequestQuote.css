@@ -36,7 +36,7 @@
 
 .rq-title {
   font-size: 52px;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--rq-theme);
   margin-bottom: 20px;
   letter-spacing: -1px;
@@ -72,7 +72,7 @@
 
 .rq-input-group label {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   color: #334155;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -108,7 +108,7 @@
   border: none;
   padding: 20px 60px;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   border-radius: 14px;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);

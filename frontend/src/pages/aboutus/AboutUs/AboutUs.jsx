@@ -1,6 +1,5 @@
 import React from "react";
 import "./AboutUs.css";
-import house2 from "../../../assets/images/aboutus1.png";
 import abus2 from "../../../assets/images/abus2.png";
 import { FaMoneyBillWave, FaHome, FaFileAlt, FaSyncAlt, FaCogs, FaHeadset, FaGlobe } from "react-icons/fa";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
@@ -23,7 +22,7 @@ const AboutUs = () => {
       </ScrollReveal>
  
       <ScrollReveal direction="up">
-        <section className="about-section">
+        <section className="about-section about-justified-section">
           <h2>Our Purpose</h2>
           <p>
             <b>To make home ownership accessible, affordable, and achievable for every family.</b>
@@ -38,10 +37,10 @@ const AboutUs = () => {
       </ScrollReveal>
  
       <ScrollReveal direction="up">
-        <section className="about-section light">
+        <section className="about-section light about-justified-section">
           <h2>Our Inspiration</h2>
           <p>
-            The name "Nivara" is derived from the Sanskrit roots <b>"नि + वृ" (Ni + Vru)</b>, meaning to cover, shelter, protect, and provide refuge.
+            The name "Nivara" is derived from the Sanskrit roots <b style={{color:"#E32125"}}>"नि + वृ" (Ni + Vru)</b>, meaning to cover, shelter, protect, and provide refuge.
           </p>
           <p>
             Shelter (निवारा) is one of the three fundamental human needs, along

@@ -200,7 +200,7 @@
 
 .lap-image-points .points-title {
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 600;
   color: #E32125;
   margin-bottom: 2px;
 }
@@ -253,7 +253,7 @@
 
 .lap-title {
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 600;
   color: #E32125;
   margin-bottom: 12px;
 }
@@ -296,7 +296,7 @@
   justify-content: center;
   align-items: center;
   font-size: 14px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 
@@ -370,7 +370,7 @@
 
 .lap-benefits-title {
   font-size: 34px;
-  font-weight: 700;
+  font-weight: 600;
   color: #E32125 !important;
   margin-bottom: 45px;
   text-align: left;
@@ -413,7 +413,7 @@
 
 .lap-help-title {
   font-size: 42px;
-  font-weight: 800;
+  font-weight: 700;
   color: #E32125 !important;
   margin-bottom: 12px;
   text-align: center;
@@ -460,7 +460,7 @@
 /* Text */
 .lap-help-card h3 {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   color: #0a2540;
   margin-bottom: 16px;
 }
@@ -475,7 +475,7 @@
   color: #E32125;
   font-size: 22px;
   margin: 10px 0;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .lap-help-mail {
@@ -698,7 +698,7 @@
   justify-content: center;
   align-items: center;
   font-size: 14px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .lap-quote-sec {
@@ -724,7 +724,7 @@
 /* Title */
 .lap-quote-ti {
   font-size: 42px;
-  font-weight: 700;
+  font-weight: 600;
   color: #E32125;
   margin-bottom: 10px;
 }
@@ -818,7 +818,7 @@
 
 .lap-help-title {
   font-size: 42px;
-  font-weight: 700;
+  font-weight: 600;
   color: #E32125;
   margin-bottom: 12px;
 }
@@ -858,7 +858,7 @@
 
 .help-card h3 {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   color: #1f2937;
   margin-bottom: 16px;
   letter-spacing: 1px;
