@@ -4,7 +4,7 @@
   background: #fff;
   font-family: 'Poppins', sans-serif;
 }
-
+ 
 .branch-banner {
   width: 100%;
   min-height: 420px;
@@ -16,11 +16,11 @@
   background:
     linear-gradient(135deg, #ffffff 0%, #f8fafc 58%, #fff3f3 100%);
 }
-
+ 
 .banner-con {
   max-width: 560px;
 }
-
+ 
 .banner-con h1 {
   font-size: clamp(34px, 4vw, 52px);
   color: #E32125;
@@ -28,14 +28,14 @@
   line-height: 1.05;
   margin-bottom: 22px;
 }
-
+ 
 .banner-con p {
   font-size: 18px;
   line-height: 1.7;
   color: #2B2B2B;
   margin-bottom: 35px;
 }
-
+ 
 .banner-map {
   display: flex;
   justify-content: flex-end;
@@ -54,41 +54,41 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
+ 
 @media (max-width: 600px) {
   .new-branches-grid {
     grid-template-columns: 1fr;
   }
 }
-
+ 
 .banner-map img {
   width: 500px;
   max-width: 100%;
 }
-
+ 
 @media(max-width:1180px) {
   .branch-banner {
     grid-template-columns: 1fr;
     text-align: center;
     padding: 60px 30px;
   }
-
+ 
   .banner-con {
     justify-self: center;
   }
-
+ 
   .banner-map {
     justify-content: center;
   }
 }
-
+ 
 @media(max-width:900px) {
   .banner-map img {
     margin-top: 40px;
     width: 380px;
   }
 }
-
+ 
 .branch-locator {
   position: relative;
   text-align: center;
@@ -97,14 +97,14 @@
   margin-left: auto;
   margin-right: auto;
 }
-
+ 
 .branch-locator h2 {
   color: #E32125;
   font-size: 25px;
   font-weight: 700;
   text-align: center;
 }
-
+ 
 .new-branches-title {
   color: #E32125;
   font-size: 25px;
@@ -115,7 +115,7 @@
   gap: 12px;
   padding: 50px;
 }
-
+ 
 .pin-icon {
   color: #E32125;
   font-size: 28px;
@@ -124,13 +124,13 @@
   margin-right: 12px;
   margin-top: -4px;
 }
-
+ 
 .search-container {
   position: relative;
   width: 90%;
   margin: 25px auto;
 }
-
+ 
 .branch-locator input {
   width: 100%;
   padding: 18px 50px 18px 22px;
@@ -141,7 +141,7 @@
   box-shadow: 0 4px 10px rgba(33, 31, 31, 0.06);
   transition: 0.3s ease;
 }
-
+ 
 .search-clear-btn {
   position: absolute;
   right: 15px;
@@ -154,12 +154,12 @@
   cursor: pointer;
   z-index: 10;
 }
-
+ 
 .branch-locator input:focus {
   border-color: #E32125;
   box-shadow: 0 6px 15px rgba(227, 33, 37, 0.15);
 }
-
+ 
 .search-results-dropdown {
   position: absolute;
   top: 100%;
@@ -175,7 +175,7 @@
   border: 1px solid #f0f0f0;
   text-align: left;
 }
-
+ 
 .search-result-item {
   padding: 12px 20px;
   cursor: pointer;
@@ -185,23 +185,23 @@
   border-bottom: 1px solid #f5f5f5;
   transition: 0.2s;
 }
-
+ 
 .search-result-item:hover {
   background: #fff5f5;
 }
-
+ 
 .res-city {
   font-weight: 600;
   color: #333;
 }
-
+ 
 .res-state {
   font-size: 12px;
   text-transform: uppercase;
   color: #888;
   letter-spacing: 1px;
 }
-
+ 
 .state-list {
   width: 80%;
   margin: 60px auto;
@@ -209,7 +209,7 @@
   flex-direction: column;
   gap: 25px;
 }
-
+ 
 .state-card {
   background: #fff;
   border-radius: 16px;
@@ -224,21 +224,21 @@
   cursor: pointer;
   transition: 0.3s;
 }
-
+ 
 .state-card:hover {
   transform: translateY(-3px);
 }
-
+ 
 .down-icon {
   font-size: 22px;
   color: #E32125;
 }
-
+ 
 .down-icon.rotate {
   transform: rotate(180deg);
   transition: 0.3s ease;
 }
-
+ 
 .location-grid {
   background: #fff;
   border-radius: 16px;
@@ -249,16 +249,16 @@
   gap: 15px;
   box-shadow: 0 6px 18px rgba(33, 31, 31, 0.06);
 }
-
+ 
 .map-container {
   display: flex;
   justify-content: flex-end;
   width: 100%;
   padding-right: 10%;
   margin-top: 18px;
-
+ 
 }
-
+ 
 .map-frame {
   width: 34%;
   max-width: 620px;
@@ -266,7 +266,7 @@
   border: 0;
   margin-right: 12px;
 }
-
+ 
 .location-item {
   background: #fbf6f6;
   padding: 12px 14px;
@@ -280,35 +280,35 @@
   align-items: center;
   gap: 6px;
 }
-
+ 
 .location-item:hover {
   background: #E32125;
   color: #fff;
 }
-
+ 
 @media(max-width:1100px) {
   .location-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
+ 
 @media(max-width:768px) {
   .location-grid {
     grid-template-columns: repeat(2, 1fr);
     padding: 18px;
   }
-
+ 
   .state-list {
     width: 95%;
   }
 }
-
+ 
 @media (max-width: 768px) {
   .map-frame {
     width: 90%;
   }
 }
-
+ 
 /* --- CLEAN PREMIUM MODAL --- */
 .branch-modal-overlay {
   position: fixed;
@@ -321,32 +321,32 @@
   z-index: 99999;
   padding: 20px;
 }
-
+ 
 .branch-modal-card {
   background: #ffffff !important;
   width: 100% !important;
   max-width: 550px !important;
   /* 🔥 increase from 400px → 550px */
-
+ 
   border-radius: 32px !important;
   padding: 30px !important;
   /* 🔥 good inner spacing */
-
+ 
   display: flex !important;
   flex-direction: column !important;
   position: relative !important;
-
+ 
   box-shadow: 0 25px 60px -12px rgba(33, 31, 31, 0.4) !important;
   height: auto !important;
   max-height: 85vh;
-
+ 
   overflow-y: auto;
 }
-
+ 
 .branch-modal-card::-webkit-scrollbar {
   display: none;
 }
-
+ 
 .close-btn {
   position: absolute !important;
   top: 20px !important;
@@ -364,12 +364,12 @@
   font-size: 18px !important;
   transition: 0.2s !important;
 }
-
+ 
 .close-btn:hover {
   background: #eee !important;
   color: #333 !important;
 }
-
+ 
 .modal-header {
   display: flex !important;
   flex-direction: column !important;
@@ -378,7 +378,7 @@
   margin-bottom: 25px !important;
   width: 100% !important;
 }
-
+ 
 .modal-icon-container {
   width: 56px !important;
   height: 56px !important;
@@ -389,19 +389,19 @@
   justify-content: center !important;
   margin-bottom: 12px !important;
 }
-
+ 
 .modal-icon {
   font-size: 26px !important;
   color: #E32125 !important;
 }
-
+ 
 .modal-header h3 {
   font-size: 26px !important;
   color: #E32125 !important;
   margin: 0 !important;
   font-weight: 700 !important;
 }
-
+ 
 .modal-state-label {
   font-size: 13px !important;
   color: #E32125 !important;
@@ -410,48 +410,48 @@
   letter-spacing: 2px !important;
   margin-top: 4px !important;
 }
-
+ 
 .modal-body {
   width: 100% !important;
   margin-bottom: 5px !important;
   display: flex !important;
   flex-direction: column !important;
 }
-
+ 
 .info-item {
   padding: 12px 0 !important;
   display: flex !important;
   flex-direction: column !important;
   gap: 4px !important;
 }
-
+ 
 .info-label {
   font-size: 11px !important;
   color: #999 !important;
   font-weight: 600 !important;
   text-transform: uppercase !important;
 }
-
+ 
 .info-item p {
   font-size: 16px !important;
   color: #333 !important;
   margin: 0 !important;
   font-weight: 600 !important;
 }
-
+ 
 .info-divider {
   height: 1px !important;
   background: #eee !important;
   width: 100% !important;
 }
-
+ 
 .modal-actions-container {
   position: sticky;
   bottom: 0;
   background: #fff;
   padding-top: 10px;
 }
-
+ 
 .btn-get-directions-final {
   width: 100% !important;
   background: linear-gradient(135deg, #E32125, #b71c1c) !important;
@@ -467,13 +467,13 @@
   display: block !important;
   text-align: center;
 }
-
+ 
 .btn-get-directions-final:hover {
   background: linear-gradient(135deg, #b71c1c, #9c1717) !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 12px 24px rgba(227, 33, 37, 0.35) !important;
 }
-
+ 
 /* --- NEWLY OPENED BRANCH CARD STYLES --- */
 .branch-card {
   background: #fff;
@@ -486,24 +486,24 @@
   flex-direction: column;
   gap: 10px;
 }
-
+ 
 .branch-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(33, 31, 31, 0.1);
 }
-
+ 
 .branch-card h3 {
   color: #E32125;
   font-size: 20px;
   margin-bottom: 5px;
 }
-
+ 
 .branch-card p {
   font-size: 14px;
   color: #555;
   margin: 0;
 }
-
+ 
 .branch-card-directions {
   margin-top: 15px;
   padding: 12px;
@@ -516,13 +516,13 @@
   cursor: pointer;
   transition: 0.2s;
 }
-
+ 
 .branch-card-directions:hover {
   background: #E32125;
   color: #fff;
   border-color: #E32125;
 }
-
+ 
 /* Redesigned map and new branch feature sections */
 .branch-map-section {
   width: min(1180px, calc(100% - 48px));
@@ -538,14 +538,14 @@
   border-radius: 28px;
   box-shadow: 0 24px 60px rgba(33, 31, 31, 0.1);
 }
-
+ 
 .branch-map-copy {
   padding: 22px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
+ 
 .branch-section-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -559,7 +559,7 @@
   margin-bottom: 12px;
   text-transform: uppercase;
 }
-
+ 
 .branch-map-copy h2,
 .new-branches-header h2 {
   color: #211F1F;
@@ -568,7 +568,7 @@
   line-height: 1.08;
   margin: 0 0 16px;
 }
-
+ 
 .branch-map-copy>p,
 .new-branches-header>p {
   color: #596272;
@@ -576,13 +576,13 @@
   line-height: 1.7;
   margin: 0;
 }
-
+ 
 .branch-map-info-grid {
   display: grid;
   gap: 12px;
   margin: 26px 0;
 }
-
+ 
 .branch-map-info-item {
   display: grid;
   grid-template-columns: 44px 1fr;
@@ -594,7 +594,7 @@
   border-radius: 16px;
   box-shadow: 0 8px 22px rgba(33, 31, 31, 0.05);
 }
-
+ 
 .branch-map-info-item>span {
   display: inline-flex;
   align-items: center;
@@ -605,7 +605,7 @@
   background: #E32125;
   border-radius: 14px;
 }
-
+ 
 .branch-map-info-item strong {
   display: block;
   color: #211F1F;
@@ -613,20 +613,20 @@
   font-weight: 600;
   margin-bottom: 2px;
 }
-
+ 
 .branch-map-info-item p {
   color: #6b7280;
   font-size: 14px;
   line-height: 1.35;
   margin: 0;
 }
-
+ 
 .branch-map-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
-
+ 
 .branch-map-primary-btn,
 .branch-map-secondary-btn,
 .branch-card-directions {
@@ -642,7 +642,7 @@
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
-
+ 
 .branch-map-primary-btn,
 .branch-card-directions {
   border: none;
@@ -650,24 +650,24 @@
   color: #ffffff;
   box-shadow: 0 12px 28px rgba(227, 33, 37, 0.22);
 }
-
+ 
 .branch-map-primary-btn {
   padding: 0 20px;
 }
-
+ 
 .branch-map-secondary-btn {
   padding: 0 18px;
   color: #E32125;
   background: #ffffff;
   border: 1px solid #f0d4d4;
 }
-
+ 
 .branch-map-primary-btn:hover,
 .branch-map-secondary-btn:hover,
 .branch-card-directions:hover {
   transform: translateY(-2px);
 }
-
+ 
 .branch-map-embed-card {
   min-height: 460px;
   overflow: hidden;
@@ -676,7 +676,7 @@
   border-radius: 24px;
   box-shadow: 0 20px 48px rgba(33, 31, 31, 0.12);
 }
-
+ 
 .branch-map-topbar {
   min-height: 74px;
   padding: 16px 18px;
@@ -687,7 +687,7 @@
   background: #ffffff;
   border-bottom: 1px solid #edf0f4;
 }
-
+ 
 .branch-map-topbar span {
   display: block;
   color: #E32125;
@@ -696,7 +696,7 @@
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-
+ 
 .branch-map-topbar strong {
   display: block;
   color: #211F1F;
@@ -704,7 +704,7 @@
   font-weight: 600;
   margin-top: 3px;
 }
-
+ 
 .branch-map-topbar button {
   width: 42px;
   height: 42px;
@@ -717,7 +717,7 @@
   border-radius: 13px;
   cursor: pointer;
 }
-
+ 
 .branch-map-embed-card .map-frame {
   display: block;
   width: 100%;
@@ -725,29 +725,29 @@
   height: 430px;
   margin: 0;
 }
-
+ 
 .new-branches-section {
   width: min(1240px, calc(100% - 48px));
   margin: 78px auto 86px;
 }
-
+ 
 .new-branches-header {
   max-width: 760px;
   margin: 0 auto 34px;
   text-align: center;
 }
-
+ 
 .new-branches-header .branch-section-eyebrow {
   margin-left: auto;
   margin-right: auto;
 }
-
+ 
 .branch-openings-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 22px;
 }
-
+ 
 .branch-openings-grid .branch-card {
   position: relative;
   min-height: 100%;
@@ -759,7 +759,7 @@
   box-shadow: 0 18px 40px rgba(33, 31, 31, 0.08);
   overflow: hidden;
 }
-
+ 
 .branch-openings-grid .branch-card::before {
   content: "";
   position: absolute;
@@ -769,14 +769,14 @@
   height: 5px;
   background: linear-gradient(90deg, #E32125, #ff7477);
 }
-
+ 
 .branch-card-head {
   display: flex;
   align-items: center;
   gap: 13px;
   margin-bottom: 22px;
 }
-
+ 
 .branch-card-icon {
   display: inline-flex;
   align-items: center;
@@ -789,14 +789,14 @@
   box-shadow: 0 12px 26px rgba(227, 33, 37, 0.2);
   flex-shrink: 0;
 }
-
+ 
 .branch-card-head h3 {
   color: #211F1F;
   font-size: 20px;
   line-height: 1.2;
   margin: 0 0 4px;
 }
-
+ 
 .branch-card-head p {
   color: #E32125;
   font-size: 13px;
@@ -805,7 +805,7 @@
   margin: 0;
   text-transform: uppercase;
 }
-
+ 
 .branch-card-detail {
   display: grid;
   grid-template-columns: 22px 1fr;
@@ -813,19 +813,19 @@
   align-items: start;
   margin-bottom: 14px;
 }
-
+ 
 .branch-card-detail svg {
   color: #E32125;
   margin-top: 3px;
 }
-
+ 
 .branch-card-detail p {
   color: #555d69;
   font-size: 14px;
   line-height: 1.55;
   margin: 0;
 }
-
+ 
 .branch-card-detail strong {
   display: block;
   color: #211F1F;
@@ -835,63 +835,62 @@
   margin-bottom: 2px;
   text-transform: uppercase;
 }
-
+ 
 .branch-openings-grid .branch-card-directions {
   width: 100%;
   margin-top: auto;
   padding: 0 16px;
 }
-
+ 
 .branch-page>.new-branches-title,
 .branch-page>.new-branches-grid {
   display: none;
 }
-
+ 
 @media (max-width: 1180px) {
   .branch-map-section {
     grid-template-columns: 1fr;
   }
-
+ 
   .branch-openings-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-
+ 
 @media (max-width: 700px) {
   .branch-map-section,
   .new-branches-section {
     width: calc(100% - 28px);
   }
-
+ 
   .branch-map-section {
     padding: 16px;
     border-radius: 20px;
   }
-
+ 
   .branch-map-copy {
     padding: 10px;
   }
-
+ 
   .branch-map-actions {
     flex-direction: column;
   }
-
+ 
   .branch-map-primary-btn,
   .branch-map-secondary-btn {
     width: 100%;
   }
-
+ 
   .branch-map-embed-card {
     min-height: auto;
     border-radius: 18px;
   }
-
+ 
   .branch-map-embed-card .map-frame {
     height: 340px;
   }
-
+ 
   .branch-openings-grid {
     grid-template-columns: 1fr;
   }
 }
-

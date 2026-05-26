@@ -4,20 +4,13 @@ import {
   FaCalendarAlt,
   FaChevronDown,
   FaDirections,
-  FaExternalLinkAlt,
-  FaMapMarkedAlt,
   FaMapMarkerAlt,
   FaPhoneAlt,
 } from "react-icons/fa";
-
+ 
 import "./Branch.css";
 import BranchMap from "../../../components/BranchMap";
-
-const branchLinks = {
-  Vellore: "https://maps.app.goo.gl/gynfzXcRgF24sVWx9",
-  Salem: "https://maps.app.goo.gl/qGc5sHLycSo7KJzH9",
-};
-
+ 
 const branchesData = {
   KARNATAKA: [
     "Nagarbhavi", "Bagalur", "TC Palya", "Mysore", "Ramnagara", "Gottigere",
@@ -26,11 +19,11 @@ const branchesData = {
     "Kolar", "Hassan", "Sira", "Chikkabalapur", "Tiptur", "Thalaghattapura",
     "Srirangapatna", "Davanagere", "Malur", "Chitradurga", "Maddur", "Hubli",
     "Gadag", "Haveri", "Ballari", "Hospet", "Belagavi", "Gangavathi(Kalburgi)",
-    "Gangavathi", "Gokak", "Sindhanur", "Chikkodi", "Raichur", "Vijayapura", "Ranebennur",
+    "Gangavathi", "Gokak", "Sindhanur", "Chikkodi", "Raichur", "Vijayapura", "Ranebennur","JPNagar","Puttenahalli"
   ],
   "TAMIL NADU": [
-    "Hosur", "Salem", "Krishnagiri", "Dharmapuri", "Tirupattur", "Tiruvanmalai",
-    "Vellore", "Namakkal", "Erode", "Pollachi", "Tirupur", "Coimbatore",
+    "Hosur", "Salem", "Krishnagiri", "Dharmapuri", "Tirupattur", "Tiruvannamalai",
+    "Vellore", "Namakkal", "Erode", "Pollachi", "Tiruppur", "Coimbatore",
     "Pochampalli", "Arakkonam",
   ],
   TELANGANA: [
@@ -39,20 +32,14 @@ const branchesData = {
   ],
   "ANDHRA PRADESH": [
     "Guntur", "Eluru", "Ongole", "Narasaraopeta", "Bhimavaram", "Hindupur",
-    "Chirala", "Kanuru", "Anantapur", "Adoni", "Tadepalligudam", "Tirupathi",
+    "Chirala", "Kanuru", "Anantapur", "Adoni", "Tadepalligudam", "Tirupati",
     "Puttur", "Penukonda", "Nuziveedu", "Machilipatnam", "Kandukur",
   ],
   MAHARASHTRA: [
     "Nasik", "Chinchwad", "Ahmednagar", "Aurangabad", "Jalgaon", "Dhule",
   ],
 };
-
-const mapEmbedUrl =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.2415755045326!2d77.57655268885497!3d12.892181900000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1508883a7c43%3A0xd91f65ff71753711!2sNivara%20Home%20Finance%20LTD.!5e0!3m2!1sen!2sin!4v1773817509951!5m2!1sen!2sin";
-
-const mapDirectionsUrl =
-  "https://www.google.com/maps/search/?api=1&query=Nivara+Home+Finance+LTD+Bengaluru";
-
+ 
 const newBranches = [
   {
     city: "Kolhapur",
@@ -87,29 +74,29 @@ const newBranches = [
     contact: "+91 9865310336",
   },
 ];
-
+ 
 const Branch = () => {
   const [search, setSearch] = useState("");
   const [openState, setOpenState] = useState(null);
   const [showResults, setShowResults] = useState(false);
   const [selectedBranch, setSelectedBranch] = useState(null);
-
+ 
   const toggleState = (state) => {
     setOpenState(openState === state ? null : state);
   };
-
+ 
   const handleSearchChange = (e) => {
     const value = e.target.value;
     setSearch(value);
     setShowResults(value.trim().length > 0);
   };
-
+ 
   const selectBranch = (state, city) => {
     setOpenState(state);
     setSearch(city);
     setShowResults(false);
     setSelectedBranch({ state, city });
-
+ 
     setTimeout(() => {
       const element = document.getElementById(
         `state-${state.replace(/\s+/g, "-")}`
@@ -119,17 +106,17 @@ const Branch = () => {
       }
     }, 100);
   };
-
+ 
   const clearSearch = () => {
     setSearch("");
     setShowResults(false);
     setOpenState(null);
   };
-
+ 
   const closeBranchModal = () => {
     setSelectedBranch(null);
   };
-
+ 
   const getAllResults = () => {
     const results = [];
     Object.keys(branchesData).forEach((state) => {
@@ -141,10 +128,10 @@ const Branch = () => {
     });
     return results;
   };
-
+ 
   const getFilteredData = () => {
     if (!search.trim()) return branchesData;
-
+ 
     const filtered = {};
     Object.keys(branchesData).forEach((state) => {
       const matchedCities = branchesData[state].filter((city) =>
@@ -156,23 +143,27 @@ const Branch = () => {
     });
     return filtered;
   };
-
+ 
   const openBranchMap = (city) => {
-    const customMap = branchLinks[city];
-
-    if (customMap) {
-      window.open(customMap, "_blank");
-    } else {
-      window.open(
-        `https://www.google.com/maps/search/?api=1&query=Nivara+Home+Finance+${city}`,
-        "_blank"
-      );
+    let searchQuery = `Nivara Home Finance ${city}`;
+ 
+    if (city === "JPNagar") {
+      searchQuery = "Nivara Home Finance JP Nagar Bengaluru";
+    } else if (city === "Puttenahalli") {
+      searchQuery = "Nivara Home Finance Puttenahalli Bengaluru";
+    } else if (city === "Kanuru") {
+      searchQuery = "Nivara Home Finance Kanuru Vijayawada";
     }
+ 
+    window.open(
+      `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(searchQuery)}`,
+      "_blank"
+    );
   };
-
+ 
   return (
     <div className="branch-page">
-
+ 
       {/* Banner */}
       <div className="branch-banner animate-pop-up">
         <div className="banner-con animate-pop-up">
@@ -183,18 +174,17 @@ const Branch = () => {
             across India to make home loans accessible for everyone.
           </p>
         </div>
-
+ 
         <div className="banner-map animate-pop-up">
           <BranchMap branchesData={branchesData} />
         </div>
       </div>
-
       {/* Locator */}
       <div className="branch-locator">
         <h2 className="animate-pop-up">
           <FaMapMarkerAlt className="pin-icon" /> NIVARA BRANCH LOCATOR
         </h2>
-
+ 
         <div className="search-container">
           <input
             type="text"
@@ -203,13 +193,13 @@ const Branch = () => {
             onChange={handleSearchChange}
             onFocus={() => search.trim() && setShowResults(true)}
           />
-
+ 
           {search && (
             <button className="search-clear-btn" onClick={clearSearch}>
               &times;
             </button>
           )}
-
+ 
           {showResults && (
             <div className="search-results-dropdown">
               {getAllResults().length > 0 ? (
@@ -230,7 +220,7 @@ const Branch = () => {
           )}
         </div>
       </div>
-
+ 
       {/* State List */}
       <div className="state-list">
         {Object.keys(getFilteredData()).map((state) => (
@@ -244,14 +234,14 @@ const Branch = () => {
               onClick={() => toggleState(state)}
             >
               <span>{state}</span>
-
+ 
               <FaChevronDown
                 className={`down-icon ${
                   openState === state ? "rotate" : ""
                 }`}
               />
             </div>
-
+ 
             {(openState === state || search) && (
               <div className="location-grid">
                 {getFilteredData()[state].map((city) => (
@@ -275,7 +265,66 @@ const Branch = () => {
           </div>
         ))}
       </div>
-
+ 
+      {/* Newly Opened Branches */}
+      <section className="new-branches-section" aria-label="Newly Opened Branches">
+        <div className="new-branches-header">
+          <span className="branch-section-eyebrow">JUST OPENED</span>
+          <h2>Newly Opened Branches</h2>
+          <p>
+            We are constantly expanding our footprint to bring home finance closer to you.
+            Discover our latest locations across different states.
+          </p>
+        </div>
+ 
+        <div className="branch-openings-grid">
+          {newBranches.map((branch, index) => (
+            <div className="branch-card" key={index}>
+              <div className="branch-card-head">
+                <div className="branch-card-icon">
+                  <FaBuilding />
+                </div>
+                <div>
+                  <h3>{branch.city}</h3>
+                  <p>{branch.state}</p>
+                </div>
+              </div>
+ 
+              <div className="branch-card-detail">
+                <FaCalendarAlt />
+                <div>
+                  <strong>Opened</strong>
+                  <p>{branch.opened}</p>
+                </div>
+              </div>
+ 
+              <div className="branch-card-detail">
+                <FaMapMarkerAlt />
+                <div>
+                  <strong>Address</strong>
+                  <p>{branch.address}</p>
+                </div>
+              </div>
+ 
+              <div className="branch-card-detail">
+                <FaPhoneAlt />
+                <div>
+                  <strong>Contact</strong>
+                  <p>{branch.contact}</p>
+                </div>
+              </div>
+ 
+              <button
+                className="branch-card-directions"
+                onClick={() => openBranchMap(branch.city)}
+              >
+                <FaDirections /> Get Directions
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+ 
       {/* Modal */}
       {selectedBranch && (
         <div
@@ -292,42 +341,42 @@ const Branch = () => {
             >
               &times;
             </button>
-
+ 
             <div className="modal-header">
               <div className="modal-icon-container">
                 <FaMapMarkerAlt className="modal-icon" />
               </div>
-
+ 
               <h3>{selectedBranch.city} Branch</h3>
-
+ 
               <p className="modal-state-label">
                 {selectedBranch.state}
               </p>
             </div>
-
+ 
             <div className="modal-body">
               <div className="info-item">
                 <span className="info-label">🏢 COMPANY</span>
                 <p>Nivara Home Finance LTD.</p>
               </div>
-
+ 
               <div className="info-divider"></div>
-
+ 
               <div className="info-item">
                 <span className="info-label">📍 ADDRESS</span>
                 <p>
                   {selectedBranch.city}, {selectedBranch.state}, India
                 </p>
               </div>
-
+ 
               <div className="info-divider"></div>
-
+ 
               <div className="info-item">
                 <span className="info-label">📞 CONTACT SUPPORT</span>
                 <p>1800-309-1516</p>
               </div>
             </div>
-
+ 
             <div className="modal-actions-container">
               <button
                 className="btn-get-directions-final"
@@ -342,5 +391,5 @@ const Branch = () => {
     </div>
   );
 };
-
+ 
 export default Branch;
