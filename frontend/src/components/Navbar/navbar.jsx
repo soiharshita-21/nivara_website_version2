@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Search, ArrowRight } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight, Search, ArrowRight } from "lucide-react";
 import "./navbar.css";
 import logo from "../../assets/images/logo.png";
 
@@ -40,6 +40,8 @@ const allPages = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activeNestedDropdown, setActiveNestedDropdown] = useState(null);
+  const [activeSubNestedDropdown, setActiveSubNestedDropdown] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [showSearch, setShowSearch] = useState(false);
@@ -51,6 +53,8 @@ const Navbar = () => {
   useEffect(() => {
     setIsOpen(false);
     setActiveDropdown(null);
+    setActiveNestedDropdown(null);
+    setActiveSubNestedDropdown(null);
     setShowSearch(false);
     setSearchQuery("");
   }, [location]);
@@ -89,10 +93,29 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const toggleDropdown = (index) => {
+    setActiveNestedDropdown(null); // Reset nested dropdown when main changes
+    setActiveSubNestedDropdown(null);
     if (activeDropdown === index) {
       setActiveDropdown(null);
     } else {
       setActiveDropdown(index);
+    }
+  };
+
+  const toggleNestedDropdown = (index) => {
+    setActiveSubNestedDropdown(null);
+    if (activeNestedDropdown === index) {
+      setActiveNestedDropdown(null);
+    } else {
+      setActiveNestedDropdown(index);
+    }
+  };
+
+  const toggleSubNestedDropdown = (index) => {
+    if (activeSubNestedDropdown === index) {
+      setActiveSubNestedDropdown(null);
+    } else {
+      setActiveSubNestedDropdown(index);
     }
   };
 
@@ -148,68 +171,188 @@ const Navbar = () => {
               <ChevronDown size={16} className="chevron" />
             </div>
             <ul className="dropdown-menu">
-              <li><Link to="/aboutus">About Us</Link></li>
-              <li><Link to="/aboutus/vision-mission">Vision & Mission</Link></li>
-              <li><Link to="/aboutus/core-values">Objectives & Core Values</Link></li>
-              <li><Link to="/aboutus/investors">Investors</Link></li>
-              <li><Link to="/aboutus/board">Board of Directors</Link></li>
-              <li><Link to="/aboutus/management">Management Team</Link></li>
-              <li><Link to="/aboutus/csr-initiatives">CSR Initiatives</Link></li>
-              <li><Link to="/aboutus/privacy">Privacy</Link></li>
-              <li><Link to="/aboutus/policy">Policy</Link></li>
-              {dynamicPages.filter(p => p.menu_location === "aboutus").map(p => (
-                <li key={p.id}><Link to={`/p/${p.slug}`}>{p.title}</Link></li>
-              ))}
+              {/* About Nivara */}
+              <li className={`nested-dropdown ${activeNestedDropdown === "about-nivara" ? "open" : ""}`}>
+                <div className="nested-trigger" onClick={() => toggleNestedDropdown("about-nivara")}>
+                  <span>About Nivara</span>
+                  <ChevronRight size={14} className="nested-chevron" />
+                </div>
+                <ul className="nested-menu">
+                  <li><Link to="/aboutus">Company Overview</Link></li>
+                  <li><Link to="/aboutus/vision-mission">Vision & Mission</Link></li>
+                  <li><Link to="/aboutus/core-values">Objectives & Core Values</Link></li>
+                </ul>
+              </li>
+
+              {/* Leadership */}
+              <li className={`nested-dropdown ${activeNestedDropdown === "leadership" ? "open" : ""}`}>
+                <div className="nested-trigger" onClick={() => toggleNestedDropdown("leadership")}>
+                  <span>Leadership</span>
+                  <ChevronRight size={14} className="nested-chevron" />
+                </div>
+                <ul className="nested-menu">
+                  <li><Link to="/aboutus/board">Board of Directors</Link></li>
+                  <li><Link to="/aboutus/management">Management Team</Link></li>
+                  <li><Link to="/aboutus/investors">Investors</Link></li>
+                </ul>
+              </li>
+
+              {/* Governance & Ethics */}
+              <li className={`nested-dropdown ${activeNestedDropdown === "governance" ? "open" : ""}`}>
+                <div className="nested-trigger" onClick={() => toggleNestedDropdown("governance")}>
+                  <span>Governance & Ethics</span>
+                  <ChevronRight size={14} className="nested-chevron" />
+                </div>
+                <ul className="nested-menu">
+                  <li className={`sub-nested-dropdown ${activeSubNestedDropdown === "corporate-governance" ? "open" : ""}`}>
+                    <div className="sub-nested-trigger" onClick={(e) => {
+                      e.stopPropagation();
+                      toggleSubNestedDropdown("corporate-governance");
+                    }}>
+                      <span>Corporate Governance</span>
+                      <ChevronRight size={12} className="sub-nested-chevron" />
+                    </div>
+                    <ul className="sub-nested-menu">
+                      <li><Link to="/aboutus/policy">Policy</Link></li>
+                      <li><Link to="/customercenter/publicdisclosure">Public Disclosure</Link></li>
+                    </ul>
+                  </li>
+                  <li><Link to="/aboutus/privacy">Privacy Policy</Link></li>
+                </ul>
+              </li>
+
+              {/* Social Responsibility */}
+              <li className={`nested-dropdown ${activeNestedDropdown === "social" ? "open" : ""}`}>
+                <div className="nested-trigger" onClick={() => toggleNestedDropdown("social")}>
+                  <span>Social Responsibility</span>
+                  <ChevronRight size={14} className="nested-chevron" />
+                </div>
+                <ul className="nested-menu">
+                  <li><Link to="/aboutus/csr-initiatives">CSR Initiatives</Link></li>
+                </ul>
+              </li>
             </ul>
           </li>
 
-          {/* SERVICES */}
+          {/* LOAN PRODUCTS */}
           <li className={`nav-item dropdown ${activeDropdown === 1 ? "open" : ""}`}>
             <div className="dropdown-trigger" onClick={() => toggleDropdown(1)}>
-              <span>Services</span>
+              <span>Loan Products</span>
               <ChevronDown size={16} className="chevron" />
             </div>
             <ul className="dropdown-menu">
-              <li><Link to="/services/construction-loan">Home Loan For Construction</Link></li>
-              <li><Link to="/services/home-loan">Home Loan For Purchase</Link></li>
+              <li><Link to="/services/construction-loan">Home Loan for Construction</Link></li>
+              <li><Link to="/services/home-loan">Home Loan for Purchase</Link></li>
               <li><Link to="/services/composite-loan">Composite Home Loan</Link></li>
-              <li><Link to="/services/lap">Loan Against Property</Link></li>
-              <li><Link to="/services/balance-transfer">Balance Transfer</Link></li>
-              <li><Link to="/services/refinance-loan">Refinance Loan</Link></li>
               <li><Link to="/services/improvementandextension">Improvement & Extension Loan</Link></li>
+              <li><Link to="/services/lap">Loan Against Property</Link></li>
+              <li><Link to="/services/refinance-loan">Refinance Loan</Link></li>
+              <li><Link to="/services/balance-transfer">Balance Transfer</Link></li>
               {dynamicPages.filter(p => p.menu_location === "services").map(p => (
                 <li key={p.id}><Link to={`/p/${p.slug}`}>{p.title}</Link></li>
               ))}
             </ul>
           </li>
 
-          {/* OUR PARTNERS */}
+          {/* CUSTOMER SERVICES */}
           <li className={`nav-item dropdown ${activeDropdown === 2 ? "open" : ""}`}>
             <div className="dropdown-trigger" onClick={() => toggleDropdown(2)}>
-              <span>Our Partners</span>
+              <span>Customer Services</span>
+              <ChevronDown size={16} className="chevron" />
+            </div>
+            <ul className="dropdown-menu">
+              {/* Account & Payments */}
+              <li className={`nested-dropdown ${activeNestedDropdown === "payments" ? "open" : ""}`}>
+                <div className="nested-trigger" onClick={() => toggleNestedDropdown("payments")}>
+                  <span>Account & Payments</span>
+                  <ChevronRight size={14} className="nested-chevron" />
+                </div>
+                <ul className="nested-menu">
+                  <li><Link to="/customercenter/e-nach">E-NACH Mandate</Link></li>
+                  <li><Link to="/customercenter/interest-rate">Interest Rates</Link></li>
+                  <li><Link to="/customercenter/calculator">EMI Calculator</Link></li>
+                  <li><Link to="/customercenter/mitc">MITC</Link></li>
+                  <li><Link to="/customercenter/fair-practice-code">Fair Practice Code</Link></li>
+                </ul>
+              </li>
+
+              {/* Support & Assistance */}
+              <li className={`nested-dropdown ${activeNestedDropdown === "support" ? "open" : ""}`}>
+                <div className="nested-trigger" onClick={() => toggleNestedDropdown("support")}>
+                  <span>Support & Assistance</span>
+                  <ChevronRight size={14} className="nested-chevron" />
+                </div>
+                <ul className="nested-menu">
+                  <li><Link to="/customercenter/faqs">FAQs</Link></li>
+                  <li><Link to="/customercenter/download">Downloads</Link></li>
+                  <li><Link to="/customercenter/quick-link">Quick Links</Link></li>
+                </ul>
+              </li>
+
+              {/* Property & Recovery */}
+              <li className={`nested-dropdown ${activeNestedDropdown === "property" ? "open" : ""}`}>
+                <div className="nested-trigger" onClick={() => toggleNestedDropdown("property")}>
+                  <span>Property & Recovery</span>
+                  <ChevronRight size={14} className="nested-chevron" />
+                </div>
+                <ul className="nested-menu">
+                  <li><Link to="/customercenter/auction-properties">Auction Properties</Link></li>
+                  <li><Link to="/customercenter/recovery-agents">Recovery Agents</Link></li>
+                  {dynamicPages.filter(p => p.menu_location === "customercenter").map(p => (
+                    <li key={p.id}><Link to={`/p/${p.slug}`}>{p.title}</Link></li>
+                  ))}
+                </ul>
+              </li>
+
+              {/* General Meeting */}
+              <li className={`nested-dropdown ${activeNestedDropdown === "general-meeting" ? "open" : ""}`}>
+                <div className="nested-trigger" onClick={() => toggleNestedDropdown("general-meeting")}>
+                  <span>General Meeting</span>
+                  <ChevronRight size={14} className="nested-chevron" />
+                </div>
+                <ul className="nested-menu">
+                  <li><Link to="/investorsrelation/notices">Notices</Link></li>
+                  <li><Link to="/investorsrelation/transcripts">Transcripts</Link></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          {/* PARTNERS */}
+          <li className={`nav-item dropdown ${activeDropdown === 3 ? "open" : ""}`}>
+            <div className="dropdown-trigger" onClick={() => toggleDropdown(3)}>
+              <span>Partners</span>
               <ChevronDown size={16} className="chevron" />
             </div>
             <ul className="dropdown-menu">
               <li><Link to="/ourpartners/lenders/lenders">Lenders</Link></li>
-              <li><Link to="/ourpartners/ourinsurancepartners/ourinsurancepartners">Our Insurance Partners</Link></li>
+              <li><Link to="/ourpartners/ourinsurancepartners/ourinsurancepartners">Insurance Partners</Link></li>
             </ul>
           </li>
 
           {/* INVESTOR RELATIONS */}
-          <li className="nav-item">
-            <Link to="/investorsrelation" className="nav-link"><span>Investor Relations</span></Link>
+          <li className={`nav-item dropdown ${activeDropdown === 4 ? "open" : ""}`}>
+            <div className="dropdown-trigger" onClick={() => toggleDropdown(4)}>
+              <span>Investor Relations</span>
+              <ChevronDown size={16} className="chevron" />
+            </div>
+            <ul className="dropdown-menu">
+              <li><Link to="/investorsrelation/annual-returns">Annual Returns</Link></li>
+              <li><Link to="/investorsrelation/notices">Notices</Link></li>
+              <li><Link to="/investorsrelation/transcripts">Transcripts</Link></li>
+            </ul>
           </li>
 
           {/* MEDIA */}
-          <li className={`nav-item dropdown ${activeDropdown === 3 ? "open" : ""}`}>
-            <div className="dropdown-trigger" onClick={() => toggleDropdown(3)}>
+          <li className={`nav-item dropdown ${activeDropdown === 5 ? "open" : ""}`}>
+            <div className="dropdown-trigger" onClick={() => toggleDropdown(5)}>
               <span>Media</span>
               <ChevronDown size={16} className="chevron" />
             </div>
             <ul className="dropdown-menu">
               <li><Link to="/media/blog/blog">Blog</Link></li>
-              <li><Link to="/media/pressrelease/pressrelease">Press Release</Link></li>
-              <li><Link to="/media/nivara-gallery/nivara-gallery">Nivara Gallery</Link></li>
+              <li><Link to="/media/pressrelease/pressrelease">Press Releases</Link></li>
+              <li><Link to="/media/nivara-gallery/nivara-gallery">Gallery</Link></li>
               {dynamicPages.filter(p => p.menu_location === "media").map(p => (
                 <li key={p.id}><Link to={`/p/${p.slug}`}>{p.title}</Link></li>
               ))}
@@ -221,40 +364,15 @@ const Navbar = () => {
             <Link to="/career/career" className="nav-link"><span>Careers</span></Link>
           </li>
 
-          {/* CUSTOMER CENTRE */}
-          <li className={`nav-item dropdown ${activeDropdown === 4 ? "open" : ""}`}>
-            <div className="dropdown-trigger" onClick={() => toggleDropdown(4)}>
-              <span>Customer Centre</span>
-              <ChevronDown size={16} className="chevron" />
-            </div>
-            <ul className="dropdown-menu">
-              <li><Link to="/customercenter/e-nach">E-Nach Mandate</Link></li>
-              <li><Link to="/customercenter/interest-rate">Interest Rate</Link></li>
-              <li><Link to="/customercenter/quick-link">Quick Link</Link></li>
-              <li><Link to="/customercenter/fair-practice-code">Fair Practice Code</Link></li>
-              <li><Link to="/customercenter/publicdisclosure">Public Disclosure</Link></li>
-              <li><Link to="/customercenter/corporategovernance">Corporate Governance</Link></li>
-              <li><Link to="/customercenter/auction-properties">Auction Properties</Link></li>
-              <li><Link to="/customercenter/recovery-agents">Recovery Agents</Link></li>
-              <li><Link to="/customercenter/download">Download</Link></li>
-              <li><Link to="/customercenter/calculator">Calculator</Link></li>
-              <li><Link to="/customercenter/faqs">FAQs</Link></li>
-              <li><Link to="/customercenter/mitc">MITC</Link></li>
-              {dynamicPages.filter(p => p.menu_location === "customercenter").map(p => (
-                <li key={p.id}><Link to={`/p/${p.slug}`}>{p.title}</Link></li>
-              ))}
-            </ul>
-          </li>
-
           {/* CONTACT US */}
-          <li className={`nav-item dropdown ${activeDropdown === 5 ? "open" : ""}`}>
-            <div className="dropdown-trigger" onClick={() => toggleDropdown(5)}>
+          <li className={`nav-item dropdown ${activeDropdown === 6 ? "open" : ""}`}>
+            <div className="dropdown-trigger" onClick={() => toggleDropdown(6)}>
               <span>Contact Us</span>
               <ChevronDown size={16} className="chevron" />
             </div>
             <ul className="dropdown-menu">
               <li><Link to="/contactus/branch/branch">Branch</Link></li>
-              <li><Link to="/contactus/offices/offices">Offices</Link></li>
+              <li><Link to="/contactus/offices/offices">Office</Link></li>
             </ul>
           </li>
         </ul>

@@ -38,12 +38,22 @@ const transcripts = [
   { name: "Transcript of EGM 23.03.2026", path: "/files/Transcript-EGM-23.03.2026.pdf", title: "Transcript of EGM 23rd March 2026" },
 ];
 
-const InvestorsRelation = () => {
+const InvestorsRelation = ({ section }) => {
   const [pendingDocument, setPendingDocument] = useState(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (window.location.hash) {
+      const targetId = window.location.hash.slice(1);
+      const element = document.getElementById(targetId);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 150);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [window.location.hash]);
 
   const openDocument = (document) => {
     let href = document.href;
@@ -74,132 +84,169 @@ const InvestorsRelation = () => {
   const getTranscriptHref = (item) =>
     `/investorsrelation/transcript?title=${encodeURIComponent(item.title || item.name)}&file=${encodeURIComponent(item.path)}&disclaimer=${!!item.disclaimer}`;
 
+  const getHeaderContent = () => {
+    switch (section) {
+      case "annual-returns":
+        return {
+          title: "Annual Returns",
+          badge: "Financial Transparency",
+          desc: "Access our annual audits and financial returns."
+        };
+      case "notices":
+        return {
+          title: "Notices",
+          badge: "Meeting Compliance",
+          desc: "Access notices for all Annual General Meetings (AGM) and Extraordinary General Meetings (EGM)."
+        };
+      case "transcripts":
+        return {
+          title: "Transcripts",
+          badge: "Corporate Records",
+          desc: "Access transcripts for our annual and extraordinary general assemblies."
+        };
+      default:
+        return {
+          title: "Investor Relations",
+          badge: "Compliance & Transparency",
+          desc: "Access all regulatory filings, meeting notices, and event transcripts in one place."
+        };
+    }
+  };
+
+  const header = getHeaderContent();
+
   return (
     <div className="investor-page-container minimal">
       {/* Title Section - No Image */}
       <header className="investor-header-simple">
         <ScrollReveal direction="down">
-          <div className="header-badge">Compliance & Transparency</div>
-          <h1>Investor Relations</h1>
-          <p>Access all regulatory filings, meeting notices, and event transcripts in one place.</p>
+          <div className="header-badge">{header.badge}</div>
+          <h1>{header.title}</h1>
+          <p>{header.desc}</p>
         </ScrollReveal>
       </header>
 
       <div className="investor-content-wrapper minimal">
-        <div className="investor-sections-grid">
+        <div className={`investor-sections-grid ${section ? "single-column" : ""}`}>
           {/* Annual Returns Section */}
-          <div className="investor-section minimal">
-            <ScrollReveal direction="up">
-              <div className="section-header">
-                <div className="icon-wrapper red">
-                  <FaFileAlt />
+          {(!section || section === "annual-returns") && (
+            <div id="annual-returns" className="investor-section minimal">
+              <ScrollReveal direction="up">
+                <div className="section-header">
+                  <div className="icon-wrapper red">
+                    <FaFileAlt />
+                  </div>
+                  <div className="header-text">
+                    <h2>Annual Returns</h2>
+                    <span className="count">{annualReturns.length} Documents</span>
+                  </div>
                 </div>
-                <div className="header-text">
-                  <h2>Annual Returns</h2>
-                  <span className="count">{annualReturns.length} Documents</span>
+                <div className="investor-links-list">
+                  {annualReturns.map((item, i) => (
+                    <a 
+                      key={i} 
+                      className="investor-list-item" 
+                      href={item.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(event) =>
+                        handleProtectedDocumentClick(event, {
+                          href: item.path,
+                          name: `FY ${item.year} Annual Return`,
+                        })
+                      }
+                    >
+                      <div className="item-content">
+                        <span className="year-label">FY {item.year}</span>
+                        <span className="doc-name">Annual Return</span>
+                      </div>
+                      <FaChevronRight className="arrow-icon" />
+                    </a>
+                  ))}
                 </div>
-              </div>
-              <div className="investor-links-list">
-                {annualReturns.map((item, i) => (
-                  <a 
-                    key={i} 
-                    className="investor-list-item" 
-                    href={item.path}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(event) =>
-                      handleProtectedDocumentClick(event, {
-                        href: item.path,
-                        name: `FY ${item.year} Annual Return`,
-                      })
-                    }
-                  >
-                    <div className="item-content">
-                      <span className="year-label">FY {item.year}</span>
-                      <span className="doc-name">Annual Return</span>
-                    </div>
-                    <FaChevronRight className="arrow-icon" />
-                  </a>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
+              </ScrollReveal>
+            </div>
+          )}
 
           {/* Notices Section */}
-          <div className="investor-section minimal">
-            <ScrollReveal direction="up" delay={0.1}>
-              <div className="section-header">
-                <div className="icon-wrapper green">
-                  <FaBullhorn />
+          {(!section || section === "notices") && (
+            <div id="notices" className="investor-section minimal">
+              <ScrollReveal direction="up" delay={0.1}>
+                <div className="section-header">
+                  <div className="icon-wrapper green">
+                    <FaBullhorn />
+                  </div>
+                  <div className="header-text">
+                    <h2>Notices</h2>
+                    <span className="count">{notices.length} Documents</span>
+                  </div>
                 </div>
-                <div className="header-text">
-                  <h2>Notices</h2>
-                  <span className="count">{notices.length} Documents</span>
+                <div className="investor-links-list">
+                  {notices.map((item, i) => (
+                    <a 
+                      key={i} 
+                      className="investor-list-item" 
+                      href={item.path} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      onClick={(event) =>
+                        handleProtectedDocumentClick(event, {
+                          href: item.path,
+                          name: item.name,
+                        })
+                      }
+                    >
+                      <div className="item-content">
+                        <span className="doc-name">{item.name}</span>
+                      </div>
+                      <FaChevronRight className="arrow-icon" />
+                    </a>
+                  ))}
                 </div>
-              </div>
-              <div className="investor-links-list">
-                {notices.map((item, i) => (
-                  <a 
-                    key={i} 
-                    className="investor-list-item" 
-                    href={item.path} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    onClick={(event) =>
-                      handleProtectedDocumentClick(event, {
-                        href: item.path,
-                        name: item.name,
-                      })
-                    }
-                  >
-                    <div className="item-content">
-                      <span className="doc-name">{item.name}</span>
-                    </div>
-                    <FaChevronRight className="arrow-icon" />
-                  </a>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
+              </ScrollReveal>
+            </div>
+          )}
 
           {/* Transcripts Section */}
-          <div className="investor-section minimal">
-            <ScrollReveal direction="up" delay={0.2}>
-              <div className="section-header">
-                <div className="icon-wrapper dark">
-                  <FaMicrophone />
+          {(!section || section === "transcripts") && (
+            <div id="transcripts" className="investor-section minimal">
+              <ScrollReveal direction="up" delay={0.2}>
+                <div className="section-header">
+                  <div className="icon-wrapper dark">
+                    <FaMicrophone />
+                  </div>
+                  <div className="header-text">
+                    <h2>Transcripts</h2>
+                    <span className="count">{transcripts.length} Documents</span>
+                  </div>
                 </div>
-                <div className="header-text">
-                  <h2>Transcripts</h2>
-                  <span className="count">{transcripts.length} Documents</span>
+                <div className="investor-links-list">
+                  {transcripts.map((item, i) => (
+                    <a 
+                      key={i} 
+                      className="investor-list-item" 
+                      href={getTranscriptHref(item)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(event) =>
+                        handleProtectedDocumentClick(event, {
+                          href: getTranscriptHref(item),
+                          file: item.path,
+                          name: item.name,
+                          type: "transcript",
+                        })
+                      }
+                    >
+                      <div className="item-content">
+                        <span className="doc-name">{item.name}</span>
+                      </div>
+                      <FaChevronRight className="arrow-icon" />
+                    </a>
+                  ))}
                 </div>
-              </div>
-              <div className="investor-links-list">
-                {transcripts.map((item, i) => (
-                  <a 
-                    key={i} 
-                    className="investor-list-item" 
-                    href={getTranscriptHref(item)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(event) =>
-                      handleProtectedDocumentClick(event, {
-                        href: getTranscriptHref(item),
-                        file: item.path,
-                        name: item.name,
-                        type: "transcript",
-                      })
-                    }
-                  >
-                    <div className="item-content">
-                      <span className="doc-name">{item.name}</span>
-                    </div>
-                    <FaChevronRight className="arrow-icon" />
-                  </a>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
+              </ScrollReveal>
+            </div>
+          )}
         </div>
       </div>
       {pendingDocument && (

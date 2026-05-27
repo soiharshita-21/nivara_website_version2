@@ -1,10 +1,99 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { FaGraduationCap, FaSuitcase, FaBuilding, FaUserTie, FaEnvelope, FaMapMarkerAlt, FaUpload } from "react-icons/fa";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import "./Career.css";
 import careersHero from "../../assets/images/hiring.png";
 
 const Career = () => {
+  const [formData, setFormData] = useState({
+    position: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    location: "",
+    message: ""
+  });
+  const [file, setFile] = useState(null);
+  const [submitting, setSubmitting] = useState(false);
+  const [alert, setAlert] = useState({ type: "", message: "" });
+  const fileInputRef = useRef(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleFile = (selectedFile) => {
+    if (!selectedFile) return;
+
+    // Validate type
+    const allowedExtensions = ['pdf', 'docx', 'doc'];
+    const fileExt = selectedFile.name.split('.').pop().toLowerCase();
+    if (!allowedExtensions.includes(fileExt)) {
+      setAlert({ type: "error", message: "Only PDF, DOCX, and DOC formats are supported." });
+      setFile(null);
+      return;
+    }
+
+    // Validate size (5MB)
+    if (selectedFile.size > 5 * 1024 * 1024) {
+      setAlert({ type: "error", message: "File size exceeds the 5MB limit." });
+      setFile(null);
+      return;
+    }
+
+    setFile(selectedFile);
+    setAlert({ type: "", message: "" });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!file) {
+      setAlert({ type: "error", message: "Please upload your resume." });
+      return;
+    }
+
+    setSubmitting(true);
+    setAlert({ type: "info", message: "Submitting application..." });
+
+    const submissionData = new FormData();
+    Object.keys(formData).forEach(key => {
+      submissionData.append(key, formData[key]);
+    });
+    submissionData.append("resume", file);
+
+    try {
+      const response = await fetch("http://localhost:5001/api/careers/apply", {
+        method: "POST",
+        body: submissionData
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setAlert({ type: "success", message: data.message });
+        setFormData({
+          position: "",
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          location: "",
+          message: ""
+        });
+        setFile(null);
+        if (fileInputRef.current) fileInputRef.current.value = "";
+      } else {
+        setAlert({ type: "error", message: data.message || "Failed to submit application." });
+      }
+    } catch (err) {
+      setAlert({ type: "error", message: "Server connection error. Please make sure the backend is running." });
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -127,10 +216,26 @@ const Career = () => {
                 <p>Fill out the form below and we'll be in touch soon.</p>
               </div>
 
-              <form className="modern-contact-form">
+              {alert.message && (
+                <div className={`alert-banner ${alert.type}`} style={{
+                  padding: '12px 16px',
+                  borderRadius: '8px',
+                  marginBottom: '20px',
+                  fontSize: '14px',
+                  fontWeight: 500,
+                  textAlign: 'center',
+                  background: alert.type === 'success' ? '#e6f4ea' : alert.type === 'error' ? '#fce8e6' : '#e8f0fe',
+                  color: alert.type === 'success' ? '#137333' : alert.type === 'error' ? '#c5221f' : '#1a73e8',
+                  border: `1px solid ${alert.type === 'success' ? '#c3e6cb' : alert.type === 'error' ? '#fad2cf' : '#d2e3fc'}`
+                }}>
+                  {alert.message}
+                </div>
+              )}
+
+              <form className="modern-contact-form" onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label>Position Interested In</label>
-                  <select defaultValue="">
+                  <select name="position" value={formData.position} onChange={handleChange} required>
                     <option value="" disabled>Select an open position</option>
                     <option>Sales Executive</option>
                     <option>Sales Officer</option>
@@ -141,46 +246,88 @@ const Career = () => {
                 <div className="form-row-multi">
                   <div className="form-group">
                     <label>First Name</label>
-                    <input type="text" placeholder="John" />
+                    <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="John" required />
                   </div>
                   <div className="form-group">
                     <label>Last Name</label>
-                    <input type="text" placeholder="Doe" />
+                    <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Doe" required />
                   </div>
                 </div>
 
                 <div className="form-row-multi">
                   <div className="form-group">
                     <label>Email Address</label>
-                    <input type="email" placeholder="john@example.com" />
+                    <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="john@example.com" required />
                   </div>
                   <div className="form-group">
                     <label>Phone Number</label>
-                    <input type="text" placeholder="+91 XXXXX XXXXX" />
+                    <input type="text" name="phone" value={formData.phone} onChange={handleChange} placeholder="+91 XXXXX XXXXX" required />
                   </div>
                 </div>
 
                 <div className="form-group">
                   <label>Current Location <FaMapMarkerAlt className="input-icon-inline" /></label>
-                  <input type="text" placeholder="e.g. Bangalore, KA" />
+                  <input type="text" name="location" value={formData.location} onChange={handleChange} placeholder="e.g. Bangalore, KA" required />
                 </div>
 
                 <div className="form-group">
                   <label>Cover Letter / Message (Optional)</label>
-                  <textarea rows="4" placeholder="Tell us why you are a good fit..."></textarea>
+                  <textarea name="message" value={formData.message} onChange={handleChange} rows="4" placeholder="Tell us why you are a good fit..."></textarea>
                 </div>
 
                 <div className="form-upload-group">
                   <span className="upload-label">Resume / CV</span>
-                  <div className="upload-dropzone">
+                  <div 
+                    className={`upload-dropzone ${file ? 'has-file' : ''}`}
+                    onClick={() => fileInputRef.current && fileInputRef.current.click()}
+                    onDragOver={(e) => e.preventDefault()}
+                    onDrop={(e) => { e.preventDefault(); handleFile(e.dataTransfer.files[0]); }}
+                    style={{ cursor: 'pointer' }}
+                  >
                     <FaUpload className="upload-icon" />
-                    <p>Drag and drop or click to upload</p>
-                    <span>Supported formats: PDF, DOCX (Max: 5MB)</span>
-                    <input type="file" className="file-input-hidden" />
+                    {file ? (
+                      <div>
+                        <p style={{ fontWeight: 600, color: '#333', margin: '5px 0' }}>Selected: {file.name}</p>
+                        <span style={{ fontSize: '12px', color: '#64748b' }}>(${(file.size / (1024 * 1024)).toFixed(2)} MB)</span>
+                        <button 
+                          type="button" 
+                          className="remove-file-btn" 
+                          onClick={(e) => { e.stopPropagation(); setFile(null); if (fileInputRef.current) fileInputRef.current.value = ""; }}
+                          style={{
+                            display: 'block',
+                            margin: '10px auto 0',
+                            padding: '6px 16px',
+                            background: '#ff4d4f',
+                            color: 'white',
+                            border: 'none',
+                            borderRadius: '4px',
+                            fontSize: '12px',
+                            fontWeight: '600',
+                            cursor: 'pointer'
+                          }}
+                        >
+                          Remove File
+                        </button>
+                      </div>
+                    ) : (
+                      <>
+                        <p>Drag and drop or click to upload</p>
+                        <span>Supported formats: PDF, DOCX (Max: 5MB)</span>
+                      </>
+                    )}
+                    <input 
+                      type="file" 
+                      className="file-input-hidden" 
+                      ref={fileInputRef}
+                      onChange={(e) => handleFile(e.target.files[0])}
+                      style={{ display: 'none' }}
+                    />
                   </div>
                 </div>
 
-                <button type="submit" className="submit-btn-modern">Submit Application</button>
+                <button type="submit" className="submit-btn-modern" disabled={submitting}>
+                  {submitting ? "Submitting..." : "Submit Application"}
+                </button>
               </form>
             </div>
           </div>

@@ -26,6 +26,8 @@ const LoanApplyForm = () => {
     loanFor: "Home Loan for Purchase",
     loanAmount: ""
   });
+  const [submitting, setSubmitting] = useState(false);
+  const [alertState, setAlertState] = useState({ type: "", message: "" });
 
   useEffect(() => {
     if (location.state?.service && servicesList.includes(location.state.service)) {
@@ -47,16 +49,66 @@ const LoanApplyForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submitting Loan Application:", formData);
-    alert(`Thank you for applying for a ${formData.loanFor}! We will contact you shortly.`);
+    setSubmitting(true);
+    setAlertState({ type: "info", message: "Submitting application..." });
+
+    try {
+      const response = await fetch("http://localhost:5001/api/loans/apply", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setAlertState({ type: "success", message: data.message });
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          contactNumber: "",
+          state: "",
+          district: "",
+          city: "",
+          fullAddress: "",
+          loanFor: "Home Loan for Purchase",
+          loanAmount: ""
+        });
+      } else {
+        setAlertState({ type: "error", message: data.message || "Failed to submit application." });
+      }
+    } catch (err) {
+      setAlertState({ type: "error", message: "Server connection error. Please make sure the backend is running." });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
     <div className="loan-form-page">
       <form className="loan-form" onSubmit={handleSubmit}>
         <h2 className="form-title animate-pop-up">Personal Information</h2>
+
+        {alertState.message && (
+          <div className={`alert-banner ${alertState.type}`} style={{
+            padding: '12px 16px',
+            borderRadius: '8px',
+            marginBottom: '20px',
+            fontSize: '14px',
+            fontWeight: 500,
+            textAlign: 'center',
+            background: alertState.type === 'success' ? '#e6f4ea' : alertState.type === 'error' ? '#fce8e6' : '#e8f0fe',
+            color: alertState.type === 'success' ? '#137333' : alertState.type === 'error' ? '#c5221f' : '#1a73e8',
+            border: `1px solid ${alertState.type === 'success' ? '#c3e6cb' : alertState.type === 'error' ? '#fad2cf' : '#d2e3fc'}`
+          }}>
+            {alertState.message}
+          </div>
+        )}
         
         <div className="row animate-pop-up">
           <div>
@@ -189,7 +241,9 @@ const LoanApplyForm = () => {
           </div>
         </div>
 
-        <button type="submit" className="submit-btn">Submit</button>
+        <button type="submit" className="submit-btn" disabled={submitting}>
+          {submitting ? "Submitting..." : "Submit"}
+        </button>
       </form>
     </div>
   );

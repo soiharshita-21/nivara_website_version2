@@ -5,7 +5,11 @@ const multer = require('multer');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer');
+const rateLimit = require('express-rate-limit');
+const fs = require('fs');
 require('dotenv').config();
+
 
 const app = express();
 app.use(cors());
@@ -263,6 +267,330 @@ app.get('/api/dashboard-stats', (req, res) => {
                 res.json(results);
             }
         });
+    });
+});
+
+// --- OWASP SECURITY: Rate Limiter for Careers Form ---
+const careerApplyLimiter = rateLimit({
+    windowMs: 60 * 60 * 1000, // 1 hour
+    max: 100, // Temporarily increased to 100 to allow seamless testing
+    message: { message: "Too many applications submitted from this IP. Please try again after an hour." },
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+
+// --- OWASP SECURITY: Input HTML Escaping to prevent XSS/HTML Injection in Emails ---
+const escapeHtml = (text) => {
+    if (!text) return '';
+    return String(text)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+};
+
+// --- OWASP SECURITY: Secure Multer Config for Resumes (strict type and size validation) ---
+const resumeStorage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'uploads/');
+    },
+    filename: (req, file, cb) => {
+        // Sanitize filename to prevent directory traversal or script injection
+        const cleanName = file.originalname.replace(/[^a-zA-Z0-9.\-_]/g, '_');
+        cb(null, 'resume-' + Date.now() + '-' + cleanName);
+    }
+});
+
+const resumeUpload = multer({
+    storage: resumeStorage,
+    limits: { fileSize: 5 * 1024 * 1024 }, // Enforce strict 5MB size limit
+    fileFilter: (req, file, cb) => {
+        const allowedExtensions = ['.pdf', '.docx', '.doc'];
+        const allowedMimeTypes = [
+            'application/pdf',
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            'application/msword'
+        ];
+        
+        const ext = path.extname(file.originalname).toLowerCase();
+        const isAllowedExt = allowedExtensions.includes(ext);
+        const isAllowedMime = allowedMimeTypes.includes(file.mimetype);
+
+        if (isAllowedExt && isAllowedMime) {
+            cb(null, true);
+        } else {
+            cb(new Error('Invalid file format. Only PDF, DOCX, and DOC files are allowed.'));
+        }
+    }
+});
+
+// --- Nodemailer Transporter Configuration ---
+const getMailTransporter = () => {
+    // If SMTP credentials are not configured, fallback to Ethereal/test setup
+    const host = process.env.SMTP_HOST || 'smtp.gmail.com';
+    const port = parseInt(process.env.SMTP_PORT || '587');
+    const user = process.env.SMTP_USER || '';
+    const pass = process.env.SMTP_PASS || '';
+
+    return nodemailer.createTransport({
+        host: host,
+        port: port,
+        secure: port === 465,
+        auth: { user: user, pass: pass }
+    });
+};
+
+// --- SECURE CAREERS APPLICATION ENDPOINT ---
+app.post('/api/careers/apply', careerApplyLimiter, (req, res) => {
+    // Handle Multer upload safely to catch type/size errors
+    resumeUpload.single('resume')(req, res, (err) => {
+        if (err) {
+            // Handle file size or file filter rejection errors
+            return res.status(400).json({ message: err.message });
+        }
+
+        const { position, firstName, lastName, email, phone, location, message } = req.body;
+
+        // OWASP: Enforce server-side presence validation
+        if (!position || !firstName || !lastName || !email || !phone || !location) {
+            // Clean up uploaded file if present
+            if (req.file && fs.existsSync(req.file.path)) {
+                fs.unlinkSync(req.file.path);
+            }
+            return res.status(400).json({ message: "All required fields must be filled out." });
+        }
+
+        // OWASP: Basic server-side email format validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            if (req.file && fs.existsSync(req.file.path)) {
+                fs.unlinkSync(req.file.path);
+            }
+            return res.status(400).json({ message: "Invalid email format." });
+        }
+
+        // OWASP: Strict validation ensuring resume file is present
+        if (!req.file) {
+            return res.status(400).json({ message: "Resume upload is required." });
+        }
+
+        // OWASP: HTML sanitize input values to prevent HTML Injection / XSS inside the email
+        const safePosition = escapeHtml(position);
+        const safeFirstName = escapeHtml(firstName);
+        const safeLastName = escapeHtml(lastName);
+        const safeEmail = escapeHtml(email);
+        const safePhone = escapeHtml(phone);
+        const safeLocation = escapeHtml(location);
+        const safeMessage = escapeHtml(message || 'No cover letter / message provided.');
+
+        // Compose highly-aesthetic email content
+        const mailOptions = {
+            from: process.env.SMTP_USER || '"Nivara Careers" <careers-noreply@nivarahousing.com>',
+            to: 'konduruharshita21@gmail.com',
+            subject: `New Job Application: ${safePosition} - ${safeFirstName} ${safeLastName}`,
+            html: `
+                <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 600px; margin: auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                    <div style="text-align: center; border-bottom: 2px solid #E32125; padding-bottom: 10px; margin-bottom: 20px;">
+                        <h2 style="color: #E32125; margin: 0;">Nivara Housing Finance</h2>
+                        <p style="margin: 5px 0 0; color: #666; font-size: 14px;">Careers Application Submission</p>
+                    </div>
+                    
+                    <h3 style="color: #333;">Applicant Details</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                        <tr>
+                            <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; width: 35%;">Position:</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">${safePosition}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;">Full Name:</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeFirstName} ${safeLastName}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;">Email:</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;"><a href="mailto:${safeEmail}">${safeEmail}</a></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;">Phone:</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">${safePhone}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;">Location:</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeLocation}</td>
+                        </tr>
+                    </table>
+
+                    <h3 style="color: #333; margin-top: 20px;">Cover Letter / Message</h3>
+                    <div style="background: #f9f9f9; border-left: 4px solid #E32125; padding: 15px; border-radius: 4px; color: #555; white-space: pre-wrap; font-style: italic;">
+                        ${safeMessage}
+                    </div>
+
+                    <div style="margin-top: 25px; font-size: 12px; color: #999; text-align: center; border-top: 1px solid #eee; padding-top: 15px;">
+                        This email was generated automatically by the Nivara Careers portal. The applicant's resume is attached below.
+                    </div>
+                </div>
+            `,
+            attachments: [
+                {
+                    filename: req.file.originalname,
+                    path: req.file.path
+                }
+            ]
+        };
+
+        const transporter = getMailTransporter();
+
+        // Send email dispatch
+        transporter.sendMail(mailOptions, (error, info) => {
+            // OWASP: Always delete the uploaded file from the local server immediately after sending 
+            // to ensure no residual files sit on the server's disk, minimizing risk.
+            if (req.file && fs.existsSync(req.file.path)) {
+                fs.unlinkSync(req.file.path);
+            }
+
+            if (error) {
+                console.error("❌ Email transmission failed:", error.message);
+                
+                // Fallback for development: if user/pass is empty, log that it succeeded mock-wise
+                if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+                    console.log("ℹ️ [DEV FALLBACK] SMTP Credentials not configured. Logged mock application success.");
+                    return res.status(200).json({ 
+                        message: "Application submitted successfully! (Dev mode: logged to console without real email dispatch)." 
+                    });
+                }
+
+                return res.status(500).json({ message: "Failed to transmit application. Please try again later." });
+            }
+
+            console.log("✅ Application email sent successfully:", info.messageId);
+            res.status(200).json({ message: "Application submitted successfully! Our HR team will review your CV." });
+        });
+    });
+});
+
+// --- OWASP SECURITY: Rate Limiter for Loan Form ---
+const loanApplyLimiter = rateLimit({
+    windowMs: 60 * 60 * 1000, // 1 hour
+    max: 100, // Limit each IP to 100 requests per hour (allows testing)
+    message: { message: "Too many loan applications submitted from this IP. Please try again after an hour." },
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+
+// --- SECURE LOAN APPLICATION ENDPOINT ---
+app.post('/api/loans/apply', loanApplyLimiter, (req, res) => {
+    const { firstName, lastName, email, contactNumber, state, district, city, fullAddress, loanFor, loanAmount } = req.body;
+
+    // OWASP: Server-side presence validation
+    if (!firstName || !lastName || !email || !contactNumber || !state || !district || !city || !fullAddress || !loanFor || !loanAmount) {
+        return res.status(400).json({ message: "All form fields are required." });
+    }
+
+    // OWASP: Server-side email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        return res.status(400).json({ message: "Invalid email format." });
+    }
+
+    // OWASP: HTML sanitize input values to prevent HTML Injection / XSS inside the email
+    const safeFirstName = escapeHtml(firstName);
+    const safeLastName = escapeHtml(lastName);
+    const safeEmail = escapeHtml(email);
+    const safeContact = escapeHtml(contactNumber);
+    const safeState = escapeHtml(state);
+    const safeDistrict = escapeHtml(district);
+    const safeCity = escapeHtml(city);
+    const safeAddress = escapeHtml(fullAddress);
+    const safeLoanFor = escapeHtml(loanFor);
+    const safeAmount = escapeHtml(loanAmount);
+
+    // Compose highly-aesthetic email content presenting all loan parameters
+    const mailOptions = {
+        from: process.env.SMTP_USER || '"Nivara Home Loans" <loans-noreply@nivarahousing.com>',
+        to: 'konduruharshita21@gmail.com',
+        subject: `New Loan Application: ${safeLoanFor} - ${safeFirstName} ${safeLastName}`,
+        html: `
+            <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 600px; margin: auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <div style="text-align: center; border-bottom: 2px solid #E32125; padding-bottom: 10px; margin-bottom: 20px;">
+                    <h2 style="color: #E32125; margin: 0;">Nivara Housing Finance</h2>
+                    <p style="margin: 5px 0 0; color: #666; font-size: 14px;">Home Loan Application Submission</p>
+                </div>
+                
+                <h3 style="color: #333;">Loan details</h3>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; width: 35%; background: #fdfdfd;">Loan for:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeLoanFor}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">Requested Amount:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold; color: #E32125;">INR ${parseFloat(safeAmount).toLocaleString('en-IN')}</td>
+                    </tr>
+                </table>
+
+                <h3 style="color: #333; margin-top: 25px;">Applicant Personal Details</h3>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; width: 35%; background: #fdfdfd;">Full Name:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeFirstName} ${safeLastName}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">Email:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;"><a href="mailto:${safeEmail}">${safeEmail}</a></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">Phone Number:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeContact}</td>
+                    </tr>
+                </table>
+
+                <h3 style="color: #333; margin-top: 25px;">Location & Address</h3>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; width: 35%; background: #fdfdfd;">City:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeCity}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">District:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeDistrict}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">State:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeState}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">Full Address:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee; white-space: pre-wrap;">${safeAddress}</td>
+                    </tr>
+                </table>
+
+                <div style="margin-top: 25px; font-size: 12px; color: #999; text-align: center; border-top: 1px solid #eee; padding-top: 15px;">
+                    This email was generated automatically by the Nivara Home Loan portal.
+                </div>
+            </div>
+        `
+    };
+
+    const transporter = getMailTransporter();
+
+    // Send email dispatch
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.error("❌ Email transmission failed:", error.message);
+            
+            // Fallback for development: if user/pass is empty, log that it succeeded mock-wise
+            if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+                console.log("ℹ️ [DEV FALLBACK] SMTP Credentials not configured. Logged mock loan application success.");
+                return res.status(200).json({ 
+                    message: "Application submitted successfully! (Dev mode: logged to console without real email dispatch)." 
+                });
+            }
+
+            return res.status(500).json({ message: "Failed to transmit application. Please try again later." });
+        }
+
+        console.log("✅ Loan application email sent successfully:", info.messageId);
+        res.status(200).json({ message: "Application submitted successfully! Our loans team will contact you shortly." });
     });
 });
 

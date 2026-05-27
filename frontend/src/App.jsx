@@ -112,7 +112,10 @@ function AppContent() {
             path="/services/improvementandextension"
             element={<ImprovementAndExtension />}
           />
-          <Route path="investorsrelation" element={<InvestorsRelation />} />
+          <Route path="/investorsrelation" element={<InvestorsRelation />} />
+          <Route path="/investorsrelation/annual-returns" element={<InvestorsRelation section="annual-returns" />} />
+          <Route path="/investorsrelation/notices" element={<InvestorsRelation section="notices" />} />
+          <Route path="/investorsrelation/transcripts" element={<InvestorsRelation section="transcripts" />} />
           <Route path="/investorsrelation/transcript" element={<TranscriptViewer />} />
           <Route path="/customercenter/e-nach" element={<ENach />} />
           <Route

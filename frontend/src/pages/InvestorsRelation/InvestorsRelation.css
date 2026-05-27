@@ -216,3 +216,10 @@
 .text-red {
   color: #E32125;
 }
+
+/* Center single card layout for focused subpages */
+.investor-sections-grid.single-column {
+  grid-template-columns: 1fr;
+  max-width: 500px;
+  margin: 0 auto;
+}
