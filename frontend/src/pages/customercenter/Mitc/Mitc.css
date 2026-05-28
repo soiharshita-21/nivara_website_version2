@@ -24,12 +24,14 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   overflow: hidden;
   color: white;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
   box-shadow: 0 10px 30px rgba(33, 31, 31, 0.15);
+  /* Premium load entrance transition */
+  animation: bannerEntrance 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .page-banner-overlay {
@@ -76,12 +78,14 @@
   align-items: center;
   justify-content: center;
   padding: 100px 5%;
- background: linear-gradient(rgba(33, 31, 31, 0.2), rgba(33, 31, 31, 0.2)), url(/src/assets/images/terms.png);
+  background: linear-gradient(rgba(33, 31, 31, 0.2), rgba(33, 31, 31, 0.2)), url(/src/assets/images/terms.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   overflow: hidden;
+  /* Premium load entrance transition */
+  animation: bannerEntrance 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Soft glow */

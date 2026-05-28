@@ -110,7 +110,7 @@
   max-width: 1400px;
   margin: auto;
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr 1.2fr;
+  grid-template-columns: 1.6fr 1fr 1fr 1.4fr;
   gap: 55px;
   z-index: 2;
 }

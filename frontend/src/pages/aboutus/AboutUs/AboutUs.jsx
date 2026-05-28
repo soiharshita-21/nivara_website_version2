@@ -11,12 +11,12 @@ const AboutUs = () => {
         <section className="page-banner about-banner" style={{ backgroundImage: `url(${abus2})` }}>
           <div className="page-banner-overlay"></div>
           <div className="page-banner-content">
-            <h1 className="page-banner-title">
+            {/* <h1 className="page-banner-title">
               About <span className="text-red">Us</span>
-            </h1>
-            <p className="page-banner-subtitle">
+            </h1> */}
+            {/* <p className="page-banner-subtitle">
               Empowering families through accessible and affordable housing finance.
-            </p>
+            </p> */}
           </div>
         </section>
       </ScrollReveal>

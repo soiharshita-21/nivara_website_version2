@@ -12,8 +12,38 @@ require('dotenv').config();
 
 
 const app = express();
-app.use(cors());
+
+// Disable X-Powered-By header (OWASP A05:2021 - Security Misconfiguration)
+app.disable('x-powered-by');
+
+// Strict CORS validation (OWASP A05:2021 - Security Misconfiguration)
+const allowedOrigins = [
+    process.env.FRONTEND_URL || 'http://localhost:5173',
+    'http://localhost:3000',
+    'http://127.0.0.1:5173',
+    'http://127.0.0.1:3000'
+];
+app.use(cors({
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    credentials: true
+}));
+
 app.use(express.json({ limit: '10mb' }));
+
+// OWASP Security HTTP Headers Middleware (OWASP A05:2021 - Security Misconfiguration)
+app.use((req, res, next) => {
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('X-Frame-Options', 'DENY');
+    res.setHeader('X-XSS-Protection', '1; mode=block');
+    res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+    next();
+});
 
 const JWT_SECRET = process.env.JWT_SECRET || 'SUPER_SECRET_NIVARA_KEY';
 
@@ -30,6 +60,94 @@ const upload = multer({ storage: storage });
 
 // Set up a folder for uploaded images
 app.use('/uploads', express.static('uploads'));
+
+// General API Rate Limiter (exemption for static uploads, placed below uploads)
+const globalLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 200, // Limit each IP to 200 requests per 15 minutes
+    message: { message: "Too many requests from this IP. Please try again after 15 minutes." },
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+app.use(globalLimiter);
+
+// Auth Login Rate Limiter (OWASP A07:2021 - Identification & Authentication Failures)
+const loginLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 10, // Limit each IP to 10 login requests per 15 minutes
+    message: { message: "Too many login attempts. Please try again after 15 minutes." },
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+
+// --- OWASP INPUT VALIDATION HELPERS ---
+const validateId = (req, res, next) => {
+    const id = parseInt(req.params.id, 10);
+    if (isNaN(id) || id <= 0) {
+        return res.status(400).json({ message: "Invalid ID parameter. Must be a positive integer." });
+    }
+    req.validatedId = id;
+    next();
+};
+
+const validateBlog = (req, res, next) => {
+    const { title, slug, author, date, content } = req.body;
+    if (!title || typeof title !== 'string' || title.trim().length === 0) {
+        return res.status(400).json({ message: "Title is required and must be a valid string." });
+    }
+    if (!slug || typeof slug !== 'string' || slug.trim().length === 0) {
+        return res.status(400).json({ message: "Slug is required and must be a valid string." });
+    }
+    if (!author || typeof author !== 'string' || author.trim().length === 0) {
+        return res.status(400).json({ message: "Author is required." });
+    }
+    if (!date) {
+        return res.status(400).json({ message: "Date is required." });
+    }
+    if (!content || typeof content !== 'string' || content.trim().length === 0) {
+        return res.status(400).json({ message: "Content is required." });
+    }
+    next();
+};
+
+const validatePressRelease = (req, res, next) => {
+    const { title, date, content } = req.body;
+    if (!title || typeof title !== 'string' || title.trim().length === 0) {
+        return res.status(400).json({ message: "Title is required and must be a valid string." });
+    }
+    if (!date) {
+        return res.status(400).json({ message: "Date is required." });
+    }
+    if (!content || typeof content !== 'string' || content.trim().length === 0) {
+        return res.status(400).json({ message: "Content is required." });
+    }
+    next();
+};
+
+const validateGalleryItem = (req, res, next) => {
+    const { title, image_url } = req.body;
+    if (!title || typeof title !== 'string' || title.trim().length === 0) {
+        return res.status(400).json({ message: "Category (title) is required." });
+    }
+    if (!image_url || typeof image_url !== 'string' || image_url.trim().length === 0) {
+        return res.status(400).json({ message: "Image URL is required." });
+    }
+    next();
+};
+
+const validatePage = (req, res, next) => {
+    const { title, slug, content } = req.body;
+    if (!title || typeof title !== 'string' || title.trim().length === 0) {
+        return res.status(400).json({ message: "Title is required." });
+    }
+    if (!slug || typeof slug !== 'string' || slug.trim().length === 0) {
+        return res.status(400).json({ message: "Slug is required." });
+    }
+    if (!content || typeof content !== 'string' || content.trim().length === 0) {
+        return res.status(400).json({ message: "Content is required." });
+    }
+    next();
+};
 
 // Database Connection
 const db = mysql.createConnection({
@@ -66,7 +184,7 @@ const verifyToken = (req, res, next) => {
 };
 
 // --- AUTH ROUTE ---
-app.post('/api/login', (req, res) => {
+app.post('/api/login', loginLimiter, (req, res) => {
     const { username, password } = req.body;
     db.query("SELECT * FROM admins WHERE username = ?", [username], async (err, results) => {
         if (err) return res.status(500).json({ message: "Server error" });
@@ -108,7 +226,7 @@ app.get('/api/blogs/:slug', (req, res) => {
     });
 });
 
-app.post('/api/blogs', verifyToken, (req, res) => {
+app.post('/api/blogs', verifyToken, validateBlog, (req, res) => {
     const { title, slug, author, date, content, tags, image_url } = req.body;
     const query = "INSERT INTO blogs (title, slug, author, date, content, tags, image_url) VALUES (?, ?, ?, ?, ?, ?, ?)";
     db.query(query, [title, slug, author, date, content, JSON.stringify(tags || []), image_url], (err, result) => {
@@ -117,17 +235,17 @@ app.post('/api/blogs', verifyToken, (req, res) => {
     });
 });
 
-app.put('/api/blogs/:id', verifyToken, (req, res) => {
+app.put('/api/blogs/:id', verifyToken, validateId, validateBlog, (req, res) => {
     const { title, slug, author, date, content, tags, image_url } = req.body;
     const query = "UPDATE blogs SET title = ?, slug = ?, author = ?, date = ?, content = ?, tags = ?, image_url = ? WHERE id = ?";
-    db.query(query, [title, slug, author, date, content, JSON.stringify(tags || []), image_url, req.params.id], (err, result) => {
+    db.query(query, [title, slug, author, date, content, JSON.stringify(tags || []), image_url, req.validatedId], (err, result) => {
         if (err) return res.status(500).json(err);
         res.json({ message: "Blog updated successfully!" });
     });
 });
 
-app.delete('/api/blogs/:id', verifyToken, (req, res) => {
-    db.query("DELETE FROM blogs WHERE id = ?", [req.params.id], (err, result) => {
+app.delete('/api/blogs/:id', verifyToken, validateId, (req, res) => {
+    db.query("DELETE FROM blogs WHERE id = ?", [req.validatedId], (err, result) => {
         if (err) return res.status(500).json(err);
         res.json({ message: "Blog deleted successfully!" });
     });
@@ -141,7 +259,7 @@ app.get('/api/press', (req, res) => {
     });
 });
 
-app.post('/api/press', verifyToken, (req, res) => {
+app.post('/api/press', verifyToken, validatePressRelease, (req, res) => {
     const { title, date, image_url, content } = req.body;
     const query = "INSERT INTO press_releases (title, date, image_url, content) VALUES (?, ?, ?, ?)";
     db.query(query, [title, date, image_url, content], (err, result) => {
@@ -150,17 +268,17 @@ app.post('/api/press', verifyToken, (req, res) => {
     });
 });
 
-app.put('/api/press/:id', verifyToken, (req, res) => {
+app.put('/api/press/:id', verifyToken, validateId, validatePressRelease, (req, res) => {
     const { title, date, image_url, content } = req.body;
     const query = "UPDATE press_releases SET title = ?, date = ?, image_url = ?, content = ? WHERE id = ?";
-    db.query(query, [title, date, image_url, content, req.params.id], (err, result) => {
+    db.query(query, [title, date, image_url, content, req.validatedId], (err, result) => {
         if (err) return res.status(500).json(err);
         res.json({ message: "Press release updated successfully!" });
     });
 });
 
-app.delete('/api/press/:id', verifyToken, (req, res) => {
-    db.query("DELETE FROM press_releases WHERE id = ?", [req.params.id], (err, result) => {
+app.delete('/api/press/:id', verifyToken, validateId, (req, res) => {
+    db.query("DELETE FROM press_releases WHERE id = ?", [req.validatedId], (err, result) => {
         if (err) return res.status(500).json(err);
         res.json({ message: "Press release deleted successfully!" });
     });
@@ -175,7 +293,7 @@ app.get('/api/gallery', (req, res) => {
     });
 });
 
-app.post('/api/gallery', verifyToken, (req, res) => {
+app.post('/api/gallery', verifyToken, validateGalleryItem, (req, res) => {
     const { title, image_url, alt_text } = req.body;
     const query = "INSERT INTO gallery (category, image_url, alt_text) VALUES (?, ?, ?)";
     db.query(query, [title, image_url, alt_text || ""], (err, result) => {
@@ -184,17 +302,17 @@ app.post('/api/gallery', verifyToken, (req, res) => {
     });
 });
 
-app.put('/api/gallery/:id', verifyToken, (req, res) => {
+app.put('/api/gallery/:id', verifyToken, validateId, validateGalleryItem, (req, res) => {
     const { title, image_url } = req.body;
     const query = "UPDATE gallery SET category = ?, image_url = ? WHERE id = ?";
-    db.query(query, [title, image_url, req.params.id], (err, result) => {
+    db.query(query, [title, image_url, req.validatedId], (err, result) => {
         if (err) return res.status(500).json(err);
         res.json({ message: "Gallery item updated successfully!" });
     });
 });
 
-app.delete('/api/gallery/:id', verifyToken, (req, res) => {
-    db.query("DELETE FROM gallery WHERE id = ?", [req.params.id], (err, result) => {
+app.delete('/api/gallery/:id', verifyToken, validateId, (req, res) => {
+    db.query("DELETE FROM gallery WHERE id = ?", [req.validatedId], (err, result) => {
         if (err) return res.status(500).json(err);
         res.json({ message: "Gallery item deleted successfully!" });
     });
@@ -217,7 +335,7 @@ app.get('/api/pages/:slug', (req, res) => {
     });
 });
 
-app.post('/api/pages', verifyToken, (req, res) => {
+app.post('/api/pages', verifyToken, validatePage, (req, res) => {
     const { title, slug, content, menu_location, banner_image } = req.body;
     const query = "INSERT INTO pages (title, slug, content, menu_location, banner_image) VALUES (?, ?, ?, ?, ?)";
     db.query(query, [title, slug, content, menu_location || 'none', banner_image || null], (err, result) => {
@@ -226,17 +344,17 @@ app.post('/api/pages', verifyToken, (req, res) => {
     });
 });
 
-app.put('/api/pages/:id', verifyToken, (req, res) => {
+app.put('/api/pages/:id', verifyToken, validateId, validatePage, (req, res) => {
     const { title, slug, content, menu_location, banner_image } = req.body;
     const query = "UPDATE pages SET title = ?, slug = ?, content = ?, menu_location = ?, banner_image = ? WHERE id = ?";
-    db.query(query, [title, slug, content, menu_location || 'none', banner_image || null, req.params.id], (err, result) => {
+    db.query(query, [title, slug, content, menu_location || 'none', banner_image || null, req.validatedId], (err, result) => {
         if (err) return res.status(500).json(err);
         res.json({ message: "Page updated successfully!" });
     });
 });
 
-app.delete('/api/pages/:id', verifyToken, (req, res) => {
-    db.query("DELETE FROM pages WHERE id = ?", [req.params.id], (err, result) => {
+app.delete('/api/pages/:id', verifyToken, validateId, (req, res) => {
+    db.query("DELETE FROM pages WHERE id = ?", [req.validatedId], (err, result) => {
         if (err) return res.status(500).json(err);
         res.json({ message: "Page deleted successfully!" });
     });
@@ -600,7 +718,11 @@ app.get('/', (req, res) => {
 });
 
 // Start the Server
-const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => {
-    console.log(`🚀 Server is running on http://localhost:${PORT}`);
-});
+if (require.main === module) {
+    const PORT = process.env.PORT || 5001;
+    app.listen(PORT, () => {
+        console.log(`🚀 Server is running on http://localhost:${PORT}`);
+    });
+}
+
+module.exports = app;

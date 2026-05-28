@@ -12,7 +12,7 @@
 .quicklink-hero {
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   color: white;
   padding: 160px 20px 140px;
   text-align: center;
@@ -22,6 +22,8 @@
   border-bottom-right-radius: 40px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(33, 31, 31, 0.15);
+  /* Premium load entrance transition */
+  animation: bannerEntrance 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .hero-overlay {

@@ -114,6 +114,20 @@ body::-webkit-scrollbar {
   align-items: center;
   justify-content: center;
   text-align: center;
+  overflow: hidden;
+  /* Premium load entrance transition */
+  animation: bannerEntrance 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes bannerEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .page-banner-overlay,
