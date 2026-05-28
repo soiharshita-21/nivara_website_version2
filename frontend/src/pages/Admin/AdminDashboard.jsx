@@ -17,7 +17,9 @@ import {
   Upload,
   Image as UIImage,
   Layers,
-  Code
+  Code,
+  Folder,
+  FolderOpen
 } from "lucide-react";
 import ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.snow.css";
@@ -34,10 +36,15 @@ const AdminDashboard = () => {
   const [showModal, setShowModal] = useState(false);
   const [editingId, setEditingId] = useState(null);
 
+  // Gallery Folders States
+  const [activeFolder, setActiveFolder] = useState(null);
+  const [editingFolder, setEditingFolder] = useState(null);
+  const [uploadingMultiple, setUploadingMultiple] = useState(false);
+
   // New Item States
   const [newBlog, setNewBlog] = useState({ title: "", author: "", date: new Date().toISOString().split('T')[0], content: "", slug: "", image_url: "" });
   const [newPress, setNewPress] = useState({ title: "", date: new Date().toISOString().split('T')[0], image_url: "", content: "" });
-  const [newGallery, setNewGallery] = useState({ title: "", image_url: "" });
+  const [newGallery, setNewGallery] = useState({ title: "", folder_date: "", image_url: "", image_urls: [] });
   const [newPage, setNewPage] = useState({ title: "", slug: "", content: "", menu_location: "none", banner_image: "" });
   const [isHtmlMode, setIsHtmlMode] = useState(false);
 
@@ -117,9 +124,10 @@ const AdminDashboard = () => {
 
   const resetForm = () => {
     setEditingId(null);
+    setEditingFolder(null);
     setNewBlog({ title: "", author: "", date: new Date().toISOString().split('T')[0], content: "", slug: "", image_url: "" });
     setNewPress({ title: "", date: new Date().toISOString().split('T')[0], image_url: "", content: "" });
-    setNewGallery({ title: "", image_url: "" });
+    setNewGallery({ title: "", folder_date: "", image_url: "", image_urls: [] });
     setNewPage({ title: "", slug: "", content: "", menu_location: "none", banner_image: "" });
     setIsHtmlMode(false);
     setShowModal(false);
@@ -154,11 +162,63 @@ const AdminDashboard = () => {
     }
   };
 
+  const handleMultipleImageUpload = async (e) => {
+    const files = Array.from(e.target.files);
+    if (files.length === 0) return;
+
+    const formData = new FormData();
+    files.forEach(file => {
+      formData.append("images", file);
+    });
+
+    try {
+      setUploadingMultiple(true);
+      const res = await axios.post("http://localhost:5001/api/upload-multiple", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          ...getAuthHeaders()
+        }
+      });
+
+      const urls = res.data.imageUrls;
+      if (editingFolder) {
+        setEditingFolder(prev => ({
+          ...prev,
+          image_urls: [...(prev.image_urls || []), ...urls]
+        }));
+      } else {
+        setNewGallery(prev => ({
+          ...prev,
+          image_urls: [...(prev.image_urls || []), ...urls]
+        }));
+      }
+    } catch (err) {
+      alert("Multiple images upload failed: " + (err.response?.data?.message || err.message));
+      if (err.response?.status === 401 || err.response?.status === 403) handleLogout();
+    } finally {
+      setUploadingMultiple(false);
+    }
+  };
+
   const removeImage = (type) => {
     if (type === "blogs") setNewBlog({ ...newBlog, image_url: "" });
     else if (type === "press") setNewPress({ ...newPress, image_url: "" });
     else if (type === "gallery") setNewGallery({ ...newGallery, image_url: "" });
     else if (type === "pages") setNewPage({ ...newPage, banner_image: "" });
+  };
+
+  const removeMultipleImage = (indexToRemove) => {
+    if (editingFolder) {
+      setEditingFolder(prev => ({
+        ...prev,
+        image_urls: prev.image_urls.filter((_, index) => index !== indexToRemove)
+      }));
+    } else {
+      setNewGallery(prev => ({
+        ...prev,
+        image_urls: prev.image_urls.filter((_, index) => index !== indexToRemove)
+      }));
+    }
   };
 
   const handleEdit = (item, type) => {
@@ -175,6 +235,16 @@ const AdminDashboard = () => {
     setShowModal(true);
   };
 
+  const handleEditFolder = (folder) => {
+    setEditingFolder({
+      old_title: folder.title,
+      title: folder.title,
+      folder_date: folder.subtitle,
+      image_urls: []
+    });
+    setShowModal(true);
+  };
+
   const handleDelete = async (id, type) => {
     if (window.confirm(`Are you sure you want to delete this ${type}?`)) {
       try {
@@ -185,6 +255,26 @@ const AdminDashboard = () => {
       } catch (err) {
         alert("Error deleting item: " + (err.response?.data?.message || err.message));
         if (err.response?.status === 401 || err.response?.status === 403) handleLogout();
+      }
+    }
+  };
+
+  const handleDeleteFolder = async (category) => {
+    if (window.confirm(`Are you sure you want to delete the folder "${category}" and all its photos?`)) {
+      try {
+        setLoading(true);
+        await axios.delete(`http://localhost:5001/api/gallery/folder/${encodeURIComponent(category)}`, {
+          headers: getAuthHeaders()
+        });
+        if (activeFolder === category) {
+          setActiveFolder(null);
+        }
+        fetchData();
+      } catch (err) {
+        alert("Error deleting folder: " + (err.response?.data?.message || err.message));
+        if (err.response?.status === 401 || err.response?.status === 403) handleLogout();
+      } finally {
+        setLoading(false);
       }
     }
   };
@@ -211,10 +301,26 @@ const AdminDashboard = () => {
           await axios.post(`${baseUrl}/press`, newPress, headers);
         }
       } else if (activeTab === "gallery") {
-        if (editingId) {
-          await axios.put(`${baseUrl}/gallery/${editingId}`, newGallery, headers);
+        if (editingFolder) {
+          await axios.put(`${baseUrl}/gallery/folder`, {
+            old_title: editingFolder.old_title,
+            new_title: editingFolder.title,
+            new_folder_date: editingFolder.folder_date
+          }, headers);
+
+          if (editingFolder.image_urls && editingFolder.image_urls.length > 0) {
+            await axios.post(`${baseUrl}/gallery`, {
+              title: editingFolder.title,
+              folder_date: editingFolder.folder_date,
+              image_urls: editingFolder.image_urls
+            }, headers);
+          }
         } else {
-          await axios.post(`${baseUrl}/gallery`, newGallery, headers);
+          await axios.post(`${baseUrl}/gallery`, {
+            title: newGallery.title,
+            folder_date: newGallery.folder_date,
+            image_urls: newGallery.image_urls
+          }, headers);
         }
       } else if (activeTab === "pages") {
         const slug = newPage.slug || newPage.title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
@@ -334,23 +440,122 @@ const AdminDashboard = () => {
                 </table>
               )}
 
-              {activeTab === "gallery" && (
-                <table className="data-table">
-                  <thead><tr><th>Image</th><th>Title</th><th>Actions</th></tr></thead>
-                  <tbody>
-                    {gallery.map(g => (
-                      <tr key={g.id}>
-                        <td><img src={g.image_url} alt="" style={{ width: 50, height: 50, objectFit: 'cover', borderRadius: 4 }} /></td>
-                        <td>{g.title}</td>
-                        <td className="actions">
-                          <button className="edit-btn" onClick={() => handleEdit(g, 'gallery')}><Edit size={16} /></button>
-                          <button className="delete-btn" onClick={() => handleDelete(g.id, 'gallery')}><Trash2 size={16} /></button>
-                        </td>
+              {activeTab === "gallery" && (() => {
+                // Group gallery items by category (Folder Name)
+                const groupedGallery = {};
+                gallery.forEach(g => {
+                  const catName = g.category || "General";
+                  if (!groupedGallery[catName]) {
+                    groupedGallery[catName] = {
+                      title: catName,
+                      subtitle: g.folder_date || "Gallery Updates",
+                      images: [],
+                      latestImage: null,
+                      latestImageId: null
+                    };
+                  }
+                  groupedGallery[catName].images.push(g);
+                  if (!groupedGallery[catName].latestImage || g.id > groupedGallery[catName].latestImageId) {
+                    groupedGallery[catName].latestImage = g.image_url;
+                    groupedGallery[catName].latestImageId = g.id;
+                  }
+                });
+                const adminFolders = Object.values(groupedGallery);
+
+                if (activeFolder) {
+                  const currentFolder = groupedGallery[activeFolder];
+                  if (!currentFolder) {
+                    setActiveFolder(null);
+                    return null;
+                  }
+
+                  return (
+                    <div className="folder-detail-container">
+                      <div className="folder-detail-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', paddingBottom: '15px', borderBottom: '1px solid #e2e8f0' }}>
+                        <div>
+                          <button className="back-btn" onClick={() => setActiveFolder(null)} style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '6px', border: '1px solid #cbd5e1', backgroundColor: '#f8fafc', cursor: 'pointer', fontWeight: '600', marginBottom: '8px' }}>
+                            <X size={16} /> Back to Folders
+                          </button>
+                          <h2 style={{ margin: '0 0 4px 0', color: '#1e293b' }}>{currentFolder.title}</h2>
+                          <p style={{ margin: 0, color: '#64748b', fontSize: '0.9rem' }}>Date: {currentFolder.subtitle} &bull; {currentFolder.images.length} Photos</p>
+                        </div>
+                        <div style={{ display: 'flex', gap: '10px' }}>
+                          <button className="edit-btn" onClick={() => handleEditFolder(currentFolder)} style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 16px', borderRadius: '6px', border: 'none', backgroundColor: '#e2e8f0', color: '#1e293b', cursor: 'pointer', fontWeight: '600' }}>
+                            <Edit size={16} /> Edit Details
+                          </button>
+                          <button className="delete-btn" onClick={() => handleDeleteFolder(currentFolder.title)} style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 16px', borderRadius: '6px', border: 'none', backgroundColor: '#fee2e2', color: '#ef4444', cursor: 'pointer', fontWeight: '600' }}>
+                            <Trash2 size={16} /> Delete Folder
+                          </button>
+                        </div>
+                      </div>
+
+                      <div className="folder-images-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '20px', padding: '10px 0' }}>
+                        {currentFolder.images.map(img => (
+                          <div key={img.id} className="image-card-wrapper" style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 2px 8px rgba(0,0,0,0.06)', border: '1px solid #f1f5f9', group: 'true' }}>
+                            <img src={img.image_url} alt="" style={{ width: '100%', height: '150px', objectFit: 'cover' }} />
+                            <div className="image-overlay" style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(15, 23, 42, 0.65)', display: 'flex', justifyContent: 'center', alignItems: 'center', opacity: 0, transition: 'opacity 0.2s' }}>
+                              <button className="delete-btn" onClick={() => handleDelete(img.id, 'gallery')} style={{ padding: '8px', borderRadius: '50%', backgroundColor: '#ef4444', color: '#white', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
+                                <Trash2 size={18} />
+                              </button>
+                            </div>
+                            {/* Inject inline style for hover effect */}
+                            <style>{`
+                              .image-card-wrapper:hover .image-overlay {
+                                opacity: 1 !important;
+                              }
+                            `}</style>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                }
+
+                return (
+                  <table className="data-table">
+                    <thead>
+                      <tr>
+                        <th>Cover Image</th>
+                        <th>Folder Name</th>
+                        <th>Folder Date</th>
+                        <th>Photos Count</th>
+                        <th>Actions</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              )}
+                    </thead>
+                    <tbody>
+                      {adminFolders.map(folder => (
+                        <tr key={folder.title}>
+                          <td>
+                            {folder.latestImage ? (
+                              <img src={folder.latestImage} alt="" style={{ width: 60, height: 60, objectFit: 'cover', borderRadius: 6, border: '1px solid #e2e8f0' }} />
+                            ) : (
+                              <div className="no-img-placeholder" style={{ width: 60, height: 60, borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f1f5f9', color: '#94a3b8', fontSize: '0.8rem' }}>No Img</div>
+                            )}
+                          </td>
+                          <td style={{ fontWeight: '600', color: '#1e293b' }}>
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                              <Folder size={18} style={{ color: '#E32125' }} />
+                              {folder.title}
+                            </span>
+                          </td>
+                          <td>{folder.subtitle}</td>
+                          <td style={{ fontWeight: '500' }}>{folder.images.length} Photos</td>
+                          <td className="actions">
+                            <button className="edit-btn" onClick={() => setActiveFolder(folder.title)} title="Open Folder" style={{ padding: '6px 12px', fontSize: '0.85rem', marginRight: '6px' }}>Open</button>
+                            <button className="edit-btn" onClick={() => handleEditFolder(folder)} title="Rename / Edit details"><Edit size={16} /></button>
+                            <button className="delete-btn" onClick={() => handleDeleteFolder(folder.title)} title="Delete Folder"><Trash2 size={16} /></button>
+                          </td>
+                        </tr>
+                      ))}
+                      {adminFolders.length === 0 && (
+                        <tr>
+                          <td colSpan="5" style={{ textAlign: 'center', padding: '30px', color: '#64748b' }}>No gallery folders found. Click "Add New" to create one!</td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                );
+              })()}
 
               {activeTab === "overview" && (
                 <div className="overview-stats">
@@ -531,33 +736,143 @@ const AdminDashboard = () => {
                 )}
                 {activeTab === "gallery" && (
                   <>
-                    <div className="form-group"><label>Event Name</label><input type="text" value={newGallery.title} onChange={e => setNewGallery({ ...newGallery, title: e.target.value })} required /></div>
-
-                    <div className="form-group">
-                      <label>Photo</label>
-                      <div className="image-upload-wrapper">
-                        {newGallery.image_url ? (
-                          <div className="image-preview-container">
-                            <img src={newGallery.image_url} alt="Preview" className="image-preview" />
-                            <div className="image-path-overlay">{newGallery.image_url}</div>
-                            <button type="button" className="remove-image-btn" onClick={() => removeImage('gallery')}><X size={16} /></button>
-                          </div>
-                        ) : (
-                          <div className="compact-upload-row">
-                            <label className="upload-dropzone">
-                              <input type="file" accept="image/*" onChange={(e) => handleImageUpload(e, 'gallery')} hidden />
-                              <Upload size={18} /><span>Upload Photo</span>
+                    {editingFolder ? (
+                      <>
+                        <div className="form-group">
+                          <label>Event Name (Folder Name)</label>
+                          <input 
+                            type="text" 
+                            value={editingFolder.title} 
+                            onChange={e => setEditingFolder({ ...editingFolder, title: e.target.value })} 
+                            required 
+                          />
+                        </div>
+                        <div className="form-group">
+                          <label>Folder Date / Month-Year (e.g. January 2026)</label>
+                          <input 
+                            type="text" 
+                            value={editingFolder.folder_date} 
+                            onChange={e => setEditingFolder({ ...editingFolder, folder_date: e.target.value })} 
+                            required 
+                          />
+                        </div>
+                        
+                        <div className="form-group">
+                          <label>Add New Photos to Folder (Dump Multiple Images)</label>
+                          <div className="image-upload-wrapper" style={{ border: '2px dashed #cbd5e1', padding: '20px', borderRadius: '8px', textAlign: 'center', backgroundColor: '#f8fafc' }}>
+                            <label className="upload-dropzone" style={{ cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', color: '#64748b' }}>
+                              <input 
+                                type="file" 
+                                accept="image/*" 
+                                onChange={handleMultipleImageUpload} 
+                                multiple 
+                                hidden 
+                              />
+                              <Upload size={28} style={{ color: '#E32125' }} />
+                              <span style={{ fontWeight: '600' }}>Click to select and upload new images to this folder</span>
+                              <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Supports PNG, JPG, JPEG, WEBP</span>
                             </label>
-                            <input type="text" className="small-input" placeholder="Paste image URL..." value={newGallery.image_url} onChange={e => setNewGallery({ ...newGallery, image_url: e.target.value })} required />
                           </div>
-                        )}
-                      </div>
-                    </div>
+                          {uploadingMultiple && (
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '10px', color: '#E32125', fontWeight: '600' }}>
+                              <Loader2 className="spin" size={16} /> Uploading images... please wait
+                            </div>
+                          )}
+                          
+                          {editingFolder.image_urls && editingFolder.image_urls.length > 0 && (
+                            <div style={{ marginTop: '20px' }}>
+                              <label style={{ display: 'block', fontWeight: '600', marginBottom: '8px', fontSize: '0.9rem' }}>New Photos to Add ({editingFolder.image_urls.length})</label>
+                              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(80px, 1fr))', gap: '10px' }}>
+                                {editingFolder.image_urls.map((url, idx) => (
+                                  <div key={idx} style={{ position: 'relative', borderRadius: '6px', overflow: 'hidden', border: '1px solid #cbd5e1', height: '80px' }}>
+                                    <img src={url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                    <button 
+                                      type="button" 
+                                      onClick={() => removeMultipleImage(idx)} 
+                                      style={{ position: 'absolute', top: '2px', right: '2px', padding: '2px', borderRadius: '50%', backgroundColor: 'rgba(239, 68, 68, 0.9)', color: 'white', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                                    >
+                                      <X size={10} />
+                                    </button>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="form-group">
+                          <label>Event Name (Folder Name)</label>
+                          <input 
+                            type="text" 
+                            value={newGallery.title} 
+                            onChange={e => setNewGallery({ ...newGallery, title: e.target.value })} 
+                            required 
+                            placeholder="e.g. General Medical Camp" 
+                          />
+                        </div>
+                        <div className="form-group">
+                          <label>Folder Date / Month-Year (e.g. January 2026)</label>
+                          <input 
+                            type="text" 
+                            value={newGallery.folder_date} 
+                            onChange={e => setNewGallery({ ...newGallery, folder_date: e.target.value })} 
+                            required 
+                            placeholder="e.g. January 2026" 
+                          />
+                        </div>
+                        <div className="form-group">
+                          <label>Upload Gallery Photos (Dump Multiple Images)</label>
+                          <div className="image-upload-wrapper" style={{ border: '2px dashed #cbd5e1', padding: '20px', borderRadius: '8px', textAlign: 'center', backgroundColor: '#f8fafc' }}>
+                            <label className="upload-dropzone" style={{ cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', color: '#64748b' }}>
+                              <input 
+                                type="file" 
+                                accept="image/*" 
+                                onChange={handleMultipleImageUpload} 
+                                multiple 
+                                hidden 
+                              />
+                              <Upload size={28} style={{ color: '#E32125' }} />
+                              <span style={{ fontWeight: '600' }}>Click to select and upload multiple images</span>
+                              <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Supports PNG, JPG, JPEG, WEBP</span>
+                            </label>
+                          </div>
+                          {uploadingMultiple && (
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '10px', color: '#E32125', fontWeight: '600' }}>
+                              <Loader2 className="spin" size={16} /> Uploading images... please wait
+                            </div>
+                          )}
+                          
+                          {newGallery.image_urls && newGallery.image_urls.length > 0 && (
+                            <div style={{ marginTop: '20px' }}>
+                              <label style={{ display: 'block', fontWeight: '600', marginBottom: '8px', fontSize: '0.9rem' }}>Uploaded Photos ({newGallery.image_urls.length})</label>
+                              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(80px, 1fr))', gap: '10px' }}>
+                                {newGallery.image_urls.map((url, idx) => (
+                                  <div key={idx} style={{ position: 'relative', borderRadius: '6px', overflow: 'hidden', border: '1px solid #cbd5e1', height: '80px' }}>
+                                    <img src={url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                    <button 
+                                      type="button" 
+                                      onClick={() => removeMultipleImage(idx)} 
+                                      style={{ position: 'absolute', top: '2px', right: '2px', padding: '2px', borderRadius: '50%', backgroundColor: 'rgba(239, 68, 68, 0.9)', color: 'white', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                                    >
+                                      <X size={10} />
+                                    </button>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </>
+                    )}
                   </>
                 )}
               </div>
               <div className="modal-footer">
-                <button type="submit" className="save-btn">{editingId ? "Update" : "Add Now"}</button>
+                <button type="submit" className="save-btn" disabled={activeTab === "gallery" && !editingFolder && (!newGallery.title || !newGallery.image_urls || newGallery.image_urls.length === 0)}>
+                  {editingFolder ? "Update Folder" : (editingId ? "Update" : "Add Now")}
+                </button>
               </div>
             </form>
           </div>

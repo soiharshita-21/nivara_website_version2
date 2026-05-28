@@ -166,6 +166,14 @@ db.connect(err => {
     }
 });
 
+// Catch and handle database connection errors (OWASP & Resilience best practice)
+db.on('error', err => {
+    console.error("❌ Database connection error:", err.message);
+    if (err.code === 'PROTOCOL_CONNECTION_LOST' || err.code === 'ECONNRESET') {
+        console.log("👉 Database connection was lost. Consider restarting the server if the DB doesn't auto-reconnect.");
+    }
+});
+
 // --- MIDDLEWARE: Verify Token ---
 const verifyToken = (req, res, next) => {
     const token = req.headers['authorization']?.split(' ')[1];
@@ -207,6 +215,14 @@ app.post('/api/upload', verifyToken, upload.single('image'), (req, res) => {
     }
     const imageUrl = `http://localhost:5001/uploads/${req.file.filename}`;
     res.json({ imageUrl });
+});
+
+app.post('/api/upload-multiple', verifyToken, upload.array('images', 50), (req, res) => {
+    if (!req.files || req.files.length === 0) {
+        return res.status(400).json({ message: "No files uploaded" });
+    }
+    const imageUrls = req.files.map(file => `http://localhost:5001/uploads/${file.filename}`);
+    res.json({ imageUrls });
 });
 
 // --- BLOG ROUTES ---
@@ -293,12 +309,50 @@ app.get('/api/gallery', (req, res) => {
     });
 });
 
-app.post('/api/gallery', verifyToken, validateGalleryItem, (req, res) => {
-    const { title, image_url, alt_text } = req.body;
-    const query = "INSERT INTO gallery (category, image_url, alt_text) VALUES (?, ?, ?)";
-    db.query(query, [title, image_url, alt_text || ""], (err, result) => {
+app.post('/api/gallery', verifyToken, (req, res) => {
+    const { title, image_url, image_urls, folder_date, alt_text } = req.body;
+
+    if (!title || typeof title !== 'string' || title.trim().length === 0) {
+        return res.status(400).json({ message: "Event Name (title) is required." });
+    }
+
+    const category = title;
+    const dateVal = folder_date || "";
+
+    if (Array.isArray(image_urls) && image_urls.length > 0) {
+        const values = image_urls.map(url => [category, dateVal, url, alt_text || ""]);
+        const query = "INSERT INTO gallery (category, folder_date, image_url, alt_text) VALUES ?";
+        db.query(query, [values], (err, result) => {
+            if (err) return res.status(500).json(err);
+            res.json({ message: "Gallery folder items added successfully!", affectedRows: result.affectedRows });
+        });
+    } else {
+        const url = image_url || "";
+        if (!url) {
+            return res.status(400).json({ message: "At least one Image URL or file upload is required." });
+        }
+        const query = "INSERT INTO gallery (category, folder_date, image_url, alt_text) VALUES (?, ?, ?, ?)";
+        db.query(query, [category, dateVal, url, alt_text || ""], (err, result) => {
+            if (err) return res.status(500).json(err);
+            res.json({ message: "Gallery item added successfully!", id: result.insertId });
+        });
+    }
+});
+
+// Update an entire folder's name and/or date
+app.put('/api/gallery/folder', verifyToken, (req, res) => {
+    const { old_title, new_title, new_folder_date } = req.body;
+    if (!old_title) {
+        return res.status(400).json({ message: "Original folder name (old_title) is required." });
+    }
+    if (!new_title || typeof new_title !== 'string' || new_title.trim().length === 0) {
+        return res.status(400).json({ message: "New folder name (new_title) is required." });
+    }
+
+    const query = "UPDATE gallery SET category = ?, folder_date = ? WHERE category = ?";
+    db.query(query, [new_title, new_folder_date || "", old_title], (err, result) => {
         if (err) return res.status(500).json(err);
-        res.json({ message: "Gallery item added successfully!", id: result.insertId });
+        res.json({ message: "Gallery folder updated successfully!", affectedRows: result.affectedRows });
     });
 });
 
@@ -308,6 +362,18 @@ app.put('/api/gallery/:id', verifyToken, validateId, validateGalleryItem, (req, 
     db.query(query, [title, image_url, req.validatedId], (err, result) => {
         if (err) return res.status(500).json(err);
         res.json({ message: "Gallery item updated successfully!" });
+    });
+});
+
+app.delete('/api/gallery/folder/:category', verifyToken, (req, res) => {
+    const { category } = req.params;
+    if (!category) {
+        return res.status(400).json({ message: "Folder name (category) is required." });
+    }
+    const query = "DELETE FROM gallery WHERE category = ?";
+    db.query(query, [category], (err, result) => {
+        if (err) return res.status(500).json(err);
+        res.json({ message: "Gallery folder deleted successfully!", affectedRows: result.affectedRows });
     });
 });
 
@@ -403,7 +469,7 @@ const escapeHtml = (text) => {
     return String(text)
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
+        .replace(/>/g, "&gt;") 
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
 };
@@ -709,6 +775,113 @@ app.post('/api/loans/apply', loanApplyLimiter, (req, res) => {
 
         console.log("✅ Loan application email sent successfully:", info.messageId);
         res.status(200).json({ message: "Application submitted successfully! Our loans team will contact you shortly." });
+    });
+});
+
+// --- OWASP SECURITY: Rate Limiter for Quote Form ---
+const quoteApplyLimiter = rateLimit({
+    windowMs: 60 * 60 * 1000, // 1 hour
+    max: 100, // Limit each IP to 100 requests per hour (allows testing)
+    message: { message: "Too many quote requests submitted from this IP. Please try again after an hour." },
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+
+// --- SECURE QUOTE REQUEST ENDPOINT ---
+app.post('/api/quotes/apply', quoteApplyLimiter, (req, res) => {
+    const { fullName, email, contactNumber, state, city, preferredDate, loanAmount } = req.body;
+
+    // OWASP: Server-side presence validation
+    if (!fullName || !email || !contactNumber || !state || !city || !preferredDate || !loanAmount) {
+        return res.status(400).json({ message: "All form fields are required." });
+    }
+
+    // OWASP: Server-side email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        return res.status(400).json({ message: "Invalid email format." });
+    }
+
+    // OWASP: HTML sanitize input values to prevent HTML Injection / XSS inside the email
+    const safeFullName = escapeHtml(fullName);
+    const safeEmail = escapeHtml(email);
+    const safeContact = escapeHtml(contactNumber);
+    const safeState = escapeHtml(state);
+    const safeCity = escapeHtml(city);
+    const safePreferredDate = escapeHtml(preferredDate);
+    const safeAmount = escapeHtml(loanAmount);
+
+    // Compose highly-aesthetic email content presenting all quote parameters
+    const mailOptions = {
+        from: process.env.SMTP_USER || '"Nivara Quote Requests" <quotes-noreply@nivarahousing.com>',
+        to: 'konduruharshita21@gmail.com',
+        subject: `New Quote Request: ${safeFullName} - INR ${parseFloat(safeAmount).toLocaleString('en-IN')}`,
+        html: `
+            <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 600px; margin: auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <div style="text-align: center; border-bottom: 2px solid #E32125; padding-bottom: 10px; margin-bottom: 20px;">
+                    <h2 style="color: #E32125; margin: 0;">Nivara Housing Finance</h2>
+                    <p style="margin: 5px 0 0; color: #666; font-size: 14px;">Quote Request Submission</p>
+                </div>
+                
+                <h3 style="color: #333;">Request Details</h3>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; width: 40%; background: #fdfdfd;">Full Name:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeFullName}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">Email Address:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;"><a href="mailto:${safeEmail}">${safeEmail}</a></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">Contact Number:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeContact}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">State:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeState}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">City:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeCity}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">Preferred Date:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safePreferredDate}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">Loan Amount Required:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold; color: #E32125;">INR ${parseFloat(safeAmount).toLocaleString('en-IN')}</td>
+                    </tr>
+                </table>
+
+                <div style="margin-top: 25px; font-size: 12px; color: #999; text-align: center; border-top: 1px solid #eee; padding-top: 15px;">
+                    This email was generated automatically by the Nivara Quote Request portal.
+                </div>
+            </div>
+        `
+    };
+
+    const transporter = getMailTransporter();
+
+    // Send email dispatch
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.error("❌ Email transmission failed:", error.message);
+            
+            // Fallback for development: if user/pass is empty, log that it succeeded mock-wise
+            if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+                console.log("ℹ️ [DEV FALLBACK] SMTP Credentials not configured. Logged mock quote request success.");
+                return res.status(200).json({ 
+                    message: "Quote request submitted successfully! (Dev mode: logged to console without real email dispatch)." 
+                });
+            }
+
+            return res.status(500).json({ message: "Failed to transmit quote request. Please try again later." });
+        }
+
+        console.log("✅ Quote request email sent successfully:", info.messageId);
+        res.status(200).json({ message: "Quote request submitted successfully! Our experts will get back to you shortly." });
     });
 });
 

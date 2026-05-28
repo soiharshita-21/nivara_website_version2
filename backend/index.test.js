@@ -58,4 +58,44 @@ describe('Backend OWASP Security and Route Verification Tests', () => {
         expect(res.statusCode).toEqual(404); // Successfully returns 404 since database returns no records
         expect(res.body.message).toContain('Page not found');
     });
+
+    test('POST /api/quotes/apply should fail with 400 when fields are missing', async () => {
+        const res = await request(app)
+            .post('/api/quotes/apply')
+            .send({ fullName: 'Harshita' });
+        expect(res.statusCode).toEqual(400);
+        expect(res.body.message).toContain('All form fields are required.');
+    });
+
+    test('POST /api/quotes/apply should fail with 400 for invalid email', async () => {
+        const res = await request(app)
+            .post('/api/quotes/apply')
+            .send({
+                fullName: 'Harshita',
+                email: 'invalid-email',
+                contactNumber: '9912705222',
+                state: 'Andhra Pradesh',
+                city: 'Rayachoti',
+                preferredDate: '2026-06-23',
+                loanAmount: '600000'
+            });
+        expect(res.statusCode).toEqual(400);
+        expect(res.body.message).toContain('Invalid email format.');
+    });
+
+    test('POST /api/quotes/apply should succeed under fallback mode when valid data is supplied', async () => {
+        const res = await request(app)
+            .post('/api/quotes/apply')
+            .send({
+                fullName: 'Harshita',
+                email: 'harshita@gmail.com',
+                contactNumber: '9912705222',
+                state: 'Andhra Pradesh',
+                city: 'Rayachoti',
+                preferredDate: '2026-06-23',
+                loanAmount: '600000'
+            });
+        expect(res.statusCode).toEqual(200);
+        expect(res.body.message).toContain('Quote request submitted successfully!');
+    });
 });
