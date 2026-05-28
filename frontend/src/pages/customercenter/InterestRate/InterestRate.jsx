@@ -8,7 +8,7 @@ const InterestRate = () => {
       <h1 className="interest-title animate-pop-up">Interest Rate</h1>
 
       <a
-        href="/files/interest-rate-disclosure.pdf"   // your pdf path
+        href="/files/interest-rate-disclosure.pdf"
         target="_blank"
         rel="noopener noreferrer"
         className="download-btn"

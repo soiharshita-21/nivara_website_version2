@@ -70,6 +70,7 @@ const ENach = () => {
                 <FaFilePdf /> mandate Userguide
               </button>
             </div>
+
           </>
         )}
 

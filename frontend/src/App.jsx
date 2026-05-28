@@ -24,15 +24,19 @@ import BalanceTransfer from "./pages/products/BalanceTransfer/BalanceTransfer";
 import RefinanceLoan from "./pages/products/RefinanceLoan/RefinanceLoan";
 import ImprovementAndExtension from "./pages/products/ImprovementandExtension/ImprovementandExtension";
 import ENach from "./pages/customercenter/Enach/Enach";
+import EcsMandate from "./pages/customercenter/EcsMandate/EcsMandate";
+import ENachBankCode from "./pages/customercenter/ENachBankCode/ENachBankCode";
+import ConsumerEducation from "./pages/customercenter/ConsumerEducation/ConsumerEducation";
+import ReleaseOfProperty from "./pages/customercenter/ReleaseOfProperty/ReleaseOfProperty";
+import RiskBasedPricing from "./pages/customercenter/RiskBasedPricing/RiskBasedPricing";
+import AppForm from "./pages/customercenter/AppForm/AppForm";
 
 import InterestRate from "./pages/customercenter/InterestRate/InterestRate";
-import QuickLink from "./pages/customercenter/Quicklink/Quicklink";
 import Calculator from "./pages/customercenter/Calculator/Calculator";
 import InvestorsRelation from "./pages/InvestorsRelation/InvestorsRelation";
 import TranscriptViewer from "./pages/InvestorsRelation/TranscriptViewer";
 import PublicDisclosure from "./pages/customercenter/PublicDisclosure/PublicDisclosure";
 import CorporateGovernance from "./pages/customercenter/corporategovernance";
-import Download from "./pages/customercenter/Download/Download";
 import Faqs from "./pages/customercenter/Faqs/Faqs";
 import AuctionProperties from "./pages/customercenter/AuctionProperties/AuctionProperties";
 import Lenders from "./pages/OurPartners/Lenders/Lenders";
@@ -118,11 +122,16 @@ function AppContent() {
           <Route path="/investorsrelation/transcripts" element={<InvestorsRelation section="transcripts" />} />
           <Route path="/investorsrelation/transcript" element={<TranscriptViewer />} />
           <Route path="/customercenter/e-nach" element={<ENach />} />
+          <Route path="/customercenter/ecs-mandate" element={<EcsMandate />} />
+          <Route path="/customercenter/enach-bankcode" element={<ENachBankCode />} />
+          <Route path="/customercenter/consumer-education" element={<ConsumerEducation />} />
+          <Route path="/customercenter/release-of-property" element={<ReleaseOfProperty />} />
+          <Route path="/customercenter/risk-based-pricing" element={<RiskBasedPricing />} />
+          <Route path="/customercenter/app-form" element={<AppForm />} />
           <Route
             path="/customercenter/interest-rate"
             element={<InterestRate />}
           />
-          <Route path="/customercenter/quick-link" element={<QuickLink />} />
           <Route
             path="/customercenter/fair-practice-code"
             element={<FairPracticeCode />}
@@ -135,7 +144,6 @@ function AppContent() {
             path="/customercenter/corporategovernance"
             element={<CorporateGovernance />}
           />
-          <Route path="/customercenter/download" element={<Download />} />
           <Route path="/customercenter/calculator" element={<Calculator />} />
           <Route path="/customercenter/faqs" element={<Faqs />} />
           <Route path="/customercenter/auction-properties" element={<AuctionProperties />} />

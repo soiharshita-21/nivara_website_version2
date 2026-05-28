@@ -100,6 +100,7 @@ const AuctionProperties = () => {
               </ScrollReveal>
             ))}
           </div>
+
         </div>
       </div>
     </div>

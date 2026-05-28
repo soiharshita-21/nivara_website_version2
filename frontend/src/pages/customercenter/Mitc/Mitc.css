@@ -13,6 +13,58 @@
   overflow-x: hidden;
 }
 
+.page-banner {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 100px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+  color: white;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 10px 30px rgba(33, 31, 31, 0.15);
+}
+
+.page-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(33, 31, 31, 0.24);
+  z-index: 1;
+}
+
+.page-banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1080px;
+  width: 100%;
+  text-align: center;
+}
+
+.page-banner-title {
+  margin: 0;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  text-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+}
+
+.page-banner-subtitle {
+  margin: 24px auto 0;
+  max-width: 760px;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.8;
+  color: #f5f5f5;
+  font-weight: 400;
+}
+
 /* =========================
    HERO SECTION
 ========================= */
@@ -387,13 +439,19 @@
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
+  .page-banner,
   .terms-banner-section {
     min-height: 60vh;
     padding: 110px 20px 90px;
     background-attachment: scroll;
   }
 
-  .terms-banner-container h1 {
+  .page-banner-content {
+    padding: 0 10px;
+  }
+
+  .terms-banner-container h1,
+  .page-banner-title {
     font-size: 52px;
     padding: 10px 20px;
     border-radius: 10px;

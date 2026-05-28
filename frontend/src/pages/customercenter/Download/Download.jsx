@@ -21,51 +21,31 @@ const Download = () => {
 
       {/* Content */}
       <div className="download-content animate-pop-up">
-
-        {/* Section 1: General Forms */}
         <div className="download-category">
-          <h2>General Forms</h2>
+          <h2>Download Center</h2>
+          <p>
+            Forms are now available from the relevant Customer Services modules. Use the menu to open the page matching the document you need.
+          </p>
+          <ul className="download-guidance-list">
+            <li>E-NACH Mandate: E-NACH and ECS forms</li>
+            <li>Interest Rates: Interest rate disclosures and risk based pricing</li>
+            <li>EMI Calculator: EMI planning and payment information</li>
+            <li>MITC: Most Important Terms and Conditions</li>
+            <li>Fair Practice Code: Fair practice documents and consumer education literature</li>
+            <li>Property & Recovery: Release of Property</li>
+          </ul>
+        </div>
+
+        <div className="download-category">
+          <h2>General Form</h2>
           <div className="download-grid">
             <a href="/files/application-form.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
               <FaRegFilePdf className="pdf-icon" />
               <span>Application Form</span>
               <FaDownload className="dl-icon" />
             </a>
-            <a href="/files/ecs-mandate-form.jpg" target="_blank" rel="noopener noreferrer" className="download-card">
-              <FaRegFilePdf className="pdf-icon" />
-              <span>ECS Mandate Form</span>
-              <FaDownload className="dl-icon" />
-            </a>
           </div>
         </div>
-
-        {/* Section 3: Additional Resources */}
-        <div className="download-category">
-          <h2>Additional Resources</h2>
-          <div className="download-grid">
-            <a href="/files/consumer-education.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
-              <FaRegFilePdf className="pdf-icon" />
-              <span>Consumer Education Literature</span>
-              <FaDownload className="dl-icon" />
-            </a>
-            <a href="/files/enach-bankcode.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
-              <FaRegFilePdf className="pdf-icon" />
-              <span>E-NACH – Net Banking & Debit Card Bank Code</span>
-              <FaDownload className="dl-icon" />
-            </a>
-            <a href="/files/release-of-property.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
-              <FaRegFilePdf className="pdf-icon" />
-              <span>Release of Property</span>
-              <FaDownload className="dl-icon" />
-            </a>
-            <a href="/files/risk-based-pricing-grid.pdf" target="_blank" rel="noopener noreferrer" className="download-card">
-              <FaRegFilePdf className="pdf-icon" />
-              <span>Risk Based Pricing Grid</span>
-              <FaDownload className="dl-icon" />
-            </a>
-          </div>
-        </div>
-
       </div>
     </div>
   );

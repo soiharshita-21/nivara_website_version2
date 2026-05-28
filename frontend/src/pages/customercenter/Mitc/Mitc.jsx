@@ -160,17 +160,16 @@ const Mitc = () => {
 
   return (
     <div className="terms-page">
-      <div className="terms-banner-section">
-        <div className="terms-banner"></div>
-        <ScrollReveal direction="down" distance={30} className="terms-banner-container">
-          <div className="terms-hero-badge">
-            <ShieldCheck size={16} />
-            <span>Most Important Terms & Conditions</span>
+      <section className="page-banner" style={{ backgroundImage: "url(/src/assets/images/terms.png)" }}>
+        <div className="page-banner-overlay"></div>
+        <ScrollReveal direction="down">
+          <div className="page-banner-content">
+
+            <h1 className="page-banner-title">MITC</h1>
+            <p className="page-banner-subtitle">Most Important Terms and Conditions (MITC) for Nivara Home Loans</p>
           </div>
-          <h1 className="page-banner-title">MITC</h1>
-          <p className="terms-hero-subtitle">Most Important Terms and Conditions (MITC) for Nivara Home Loans</p>
         </ScrollReveal>
-      </div>
+      </section>
 
       <section className="terms-intro-section">
         <div className="terms-container">

@@ -83,15 +83,16 @@ const Footer = () => {
           <div className="footer-col">
             <h4>Customer Centre</h4>
             <ul>
+              <li><Link to="/customercenter/e-nach" onClick={handleLinkClick}>E-NACH Mandate</Link></li>
+              <li><Link to="/customercenter/ecs-mandate" onClick={handleLinkClick}>ECS Mandate</Link></li>
+              <li><Link to="/customercenter/enach-bankcode" onClick={handleLinkClick}>E-NACH Net Banking & Debit Card</Link></li>
+              <li><Link to="/customercenter/app-form" onClick={handleLinkClick}>App Form</Link></li>
               <li><Link to="/customercenter/interest-rate" onClick={handleLinkClick}>Interest Rate</Link></li>
               <li><Link to="/customercenter/calculator" onClick={handleLinkClick}>EMI Calculator</Link></li>
               <li><Link to="/customercenter/faqs" onClick={handleLinkClick}>FAQs</Link></li>
               <li><Link to="/customercenter/fair-practice-code" onClick={handleLinkClick}>Fair Practice Code</Link></li>
               <li><Link to="/customercenter/publicdisclosure" onClick={handleLinkClick}>Public Disclosure</Link></li>
-              <li><Link to="/customercenter/download" onClick={handleLinkClick}>Download Forms</Link></li>
-              <li><Link to="/kyc-aml-measures" onClick={handleLinkClick}>KYC & AML Measures</Link></li>
               <li><Link to="/customercenter/recovery-agents" onClick={handleLinkClick}>Recovery Agents</Link></li>
-              <li><Link to="/customercenter/mitc" onClick={handleLinkClick}>MITC</Link></li>
             </ul>
           </div>
 

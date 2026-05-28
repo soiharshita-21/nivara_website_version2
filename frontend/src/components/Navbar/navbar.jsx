@@ -261,20 +261,17 @@ const Navbar = () => {
               <ChevronDown size={16} className="chevron" />
             </div>
             <ul className="dropdown-menu">
-              {/* Account & Payments */}
-              <li className={`nested-dropdown ${activeNestedDropdown === "payments" ? "open" : ""}`}>
-                <div className="nested-trigger" onClick={() => toggleNestedDropdown("payments")}>
-                  <span>Account & Payments</span>
-                  <ChevronRight size={14} className="nested-chevron" />
-                </div>
-                <ul className="nested-menu">
-                  <li><Link to="/customercenter/e-nach">E-NACH Mandate</Link></li>
-                  <li><Link to="/customercenter/interest-rate">Interest Rates</Link></li>
-                  <li><Link to="/customercenter/calculator">EMI Calculator</Link></li>
-                  <li><Link to="/customercenter/mitc">MITC</Link></li>
-                  <li><Link to="/customercenter/fair-practice-code">Fair Practice Code</Link></li>
-                </ul>
-              </li>
+              <li><Link to="/customercenter/e-nach">E-NACH Mandate</Link></li>
+              <li><Link to="/customercenter/ecs-mandate">ECS Mandate</Link></li>
+              <li><Link to="/customercenter/enach-bankcode">E-NACH Net Banking & Debit Card</Link></li>
+              <li><Link to="/customercenter/consumer-education">Consumer Education Literature</Link></li>
+              <li><Link to="/customercenter/release-of-property">Release of Property</Link></li>
+              <li><Link to="/customercenter/risk-based-pricing">Risk Based Pricing</Link></li>
+              <li><Link to="/customercenter/app-form">App Form</Link></li>
+              <li><Link to="/customercenter/interest-rate">Interest Rates</Link></li>
+              <li><Link to="/customercenter/calculator">EMI Calculator</Link></li>
+              <li><Link to="/customercenter/mitc">MITC</Link></li>
+              <li><Link to="/customercenter/fair-practice-code">Fair Practice Code</Link></li>
 
               {/* Support & Assistance */}
               <li className={`nested-dropdown ${activeNestedDropdown === "support" ? "open" : ""}`}>
@@ -284,8 +281,6 @@ const Navbar = () => {
                 </div>
                 <ul className="nested-menu">
                   <li><Link to="/customercenter/faqs">FAQs</Link></li>
-                  <li><Link to="/customercenter/download">Downloads</Link></li>
-                  <li><Link to="/customercenter/quick-link">Quick Links</Link></li>
                 </ul>
               </li>
 
@@ -338,8 +333,7 @@ const Navbar = () => {
             </div>
             <ul className="dropdown-menu">
               <li><Link to="/investorsrelation/annual-returns">Annual Returns</Link></li>
-              <li><Link to="/investorsrelation/notices">Notices</Link></li>
-              <li><Link to="/investorsrelation/transcripts">Transcripts</Link></li>
+              
             </ul>
           </li>
 

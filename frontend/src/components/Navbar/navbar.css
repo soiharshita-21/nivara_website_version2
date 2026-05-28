@@ -205,19 +205,13 @@
 /* Dropdown Menu (Desktop) */
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 10px);
   left: 0;
-  transform: translateY(10px);
+  transform: translateY(0);
   background: #fff;
   min-width: 250px;
-  padding: 10px 0;
-  list-style: none;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(33, 31, 31, 0.15);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 10000;
+  max-width: 340px;
+
   border: 1px solid rgba(33, 31, 31, 0.08);
   display: none;
   /* Desktop default */
@@ -614,6 +608,7 @@
     transform: translateX(10px);
     background: #fff;
     min-width: 250px;
+    max-width: 320px;
     padding: 10px 0;
     list-style: none;
     border-radius: 12px;
@@ -631,6 +626,12 @@
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
+  }
+
+  .nested-dropdown:last-child > .nested-menu {
+    left: auto;
+    right: 100%;
+    transform: translateX(-10px);
   }
 
   .nested-dropdown:hover > .nested-trigger .nested-chevron {
@@ -662,6 +663,7 @@
     transform: translateX(10px);
     background: #fff;
     min-width: 250px;
+    max-width: 320px;
     padding: 10px 0;
     list-style: none;
     border-radius: 12px;
@@ -672,6 +674,12 @@
     z-index: 10010;
     border: 1px solid rgba(33, 31, 31, 0.08);
     display: none;
+  }
+
+  .sub-nested-dropdown:last-child > .sub-nested-menu {
+    left: auto;
+    right: 100%;
+    transform: translateX(-10px);
   }
 
   .sub-nested-dropdown:hover > .sub-nested-menu {
