@@ -23,7 +23,7 @@ import LoanAgainstProperty from "./pages/products/LoanAgainstProperty/LoanAgains
 import BalanceTransfer from "./pages/products/BalanceTransfer/BalanceTransfer";
 import RefinanceLoan from "./pages/products/RefinanceLoan/RefinanceLoan";
 import ImprovementAndExtension from "./pages/products/ImprovementandExtension/ImprovementandExtension";
-import ENach from "./pages/customercenter/Enach/Enach";
+// import ENach from "./pages/customercenter/Enach/Enach"; // commented per request — E-NACH now opens external site
 import EcsMandate from "./pages/customercenter/EcsMandate/EcsMandate";
 import ENachBankCode from "./pages/customercenter/ENachBankCode/ENachBankCode";
 import ConsumerEducation from "./pages/customercenter/ConsumerEducation/ConsumerEducation";
@@ -121,7 +121,7 @@ function AppContent() {
           <Route path="/investorsrelation/notices" element={<InvestorsRelation section="notices" />} />
           <Route path="/investorsrelation/transcripts" element={<InvestorsRelation section="transcripts" />} />
           <Route path="/investorsrelation/transcript" element={<TranscriptViewer />} />
-          <Route path="/customercenter/e-nach" element={<ENach />} />
+          {/* <Route path="/customercenter/e-nach" element={<ENach />} /> */} // commented per request — navigation now leads to external NACH site
           <Route path="/customercenter/ecs-mandate" element={<EcsMandate />} />
           <Route path="/customercenter/enach-bankcode" element={<ENachBankCode />} />
           <Route path="/customercenter/consumer-education" element={<ConsumerEducation />} />

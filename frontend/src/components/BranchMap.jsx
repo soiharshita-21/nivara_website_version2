@@ -7,7 +7,7 @@ import {
 } from "react-simple-maps";
 import indiaStates from "../maps/india_states.json";
 import "./BranchMap.css";
-
+ 
 const highlightStates = [
   "karnataka",
   "tamil nadu",
@@ -15,7 +15,7 @@ const highlightStates = [
   "andhra pradesh",
   "maharashtra",
 ];
-
+ 
 const markers = [
   {
     name: "Maharashtra",
@@ -48,7 +48,7 @@ const markers = [
     labelOffset: { x: 48, y: 34 },
   },
 ];
-
+ 
 const BranchMap = ({ branchesData = {} }) => {
   const stateStats = markers
     .map((marker) => {
@@ -59,9 +59,9 @@ const BranchMap = ({ branchesData = {} }) => {
       };
     })
     .filter((state) => state.count > 0);
-
+ 
   const totalBranches = stateStats.reduce((sum, state) => sum + state.count, 0);
-
+ 
   return (
     <section className="branch-map-card" aria-label="State wise branch presence">
       <div className="branch-map-header">
@@ -74,7 +74,7 @@ const BranchMap = ({ branchesData = {} }) => {
           <span>Total branches</span>
         </div>
       </div>
-
+ 
       <div className="branch-map-content">
         <div className="branch-map-visual">
           <ComposableMap
@@ -85,12 +85,12 @@ const BranchMap = ({ branchesData = {} }) => {
             }}
             style={{ width: "100%", height: "100%" }}
           >
-            <Geographies geography={indiaStates}>
+            <Geographies geography={indiaStates?.features || []}>
               {({ geographies }) =>
                 geographies.map((geo) => {
                   const stateName = geo.properties.ST_NM;
                   const highlight = highlightStates.includes(stateName.toLowerCase());
-
+ 
                   return (
                     <Geography
                       key={geo.rsmKey}
@@ -116,7 +116,7 @@ const BranchMap = ({ branchesData = {} }) => {
                 })
               }
             </Geographies>
-
+ 
             {stateStats.map(({ coordinates, abbreviation, count, labelOffset }) => (
               <Marker key={abbreviation} coordinates={coordinates}>
                 <g className="branch-map-marker">
@@ -174,7 +174,7 @@ const BranchMap = ({ branchesData = {} }) => {
             ))}
           </ComposableMap>
         </div>
-
+ 
         <div className="branch-state-counts">
           {stateStats.map(({ name, abbreviation, count }) => (
             <div className="branch-state-count" key={name}>
@@ -188,5 +188,5 @@ const BranchMap = ({ branchesData = {} }) => {
     </section>
   );
 };
-
+ 
 export default BranchMap;

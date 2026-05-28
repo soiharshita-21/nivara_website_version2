@@ -1,3 +1,13 @@
+import React, { useEffect } from "react";
+
+/*
+  NOTE: The original ENach page implementation is intentionally preserved below
+  inside a block comment so it can be restored later if needed. Per request,
+  this file is kept but the interactive local ENach UI is disabled and users
+  are redirected to the external NACH login page when this component mounts.
+
+  ORIGINAL FILE START
+
 import React, { useState } from "react";
 import "./ENach.css";
 import { FaFilePdf, FaEye } from "react-icons/fa";
@@ -191,6 +201,20 @@ const ENach = () => {
       </div>
     </div>
   );
+};
+
+export default ENach;
+
+  ORIGINAL FILE END
+*/
+
+const ENach = () => {
+  useEffect(() => {
+    // Redirect to external NACH login
+    window.location.href = "https://nach.nivarahousing.com/auth/nach-mandate-login";
+  }, []);
+
+  return null; // nothing rendered locally
 };
 
 export default ENach;

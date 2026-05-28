@@ -26,7 +26,7 @@ const allPages = [
   { name: "Press Release", path: "/media/pressrelease/pressrelease" },
   { name: "Gallery", path: "/media/nivara-gallery/nivara-gallery" },
   { name: "Careers", path: "/career/career" },
-  { name: "E-Nach Mandate", path: "/customercenter/e-nach" },
+  { name: "E-Nach Mandate", path: "https://nach.nivarahousing.com/auth/nach-mandate-login" },
   { name: "Interest Rate", path: "/customercenter/interest-rate" },
   { name: "Calculator", path: "/customercenter/calculator" },
   { name: "FAQs", path: "/customercenter/faqs" },
@@ -142,10 +142,17 @@ const Navbar = () => {
               <ul className="search-results">
                 {searchResults.map((result, index) => (
                   <li key={index}>
-                    <Link to={result.path}>
-                      <span>{result.name}</span>
-                      <ArrowRight size={14} />
-                    </Link>
+                    {result.path && result.path.startsWith("http") ? (
+                      <a href={result.path} target="_blank" rel="noopener noreferrer">
+                        <span>{result.name}</span>
+                        <ArrowRight size={14} />
+                      </a>
+                    ) : (
+                      <Link to={result.path}>
+                        <span>{result.name}</span>
+                        <ArrowRight size={14} />
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -261,7 +268,7 @@ const Navbar = () => {
               <ChevronDown size={16} className="chevron" />
             </div>
             <ul className="dropdown-menu">
-              <li><Link to="/customercenter/e-nach">E-NACH Mandate</Link></li>
+              <li><a href="https://nach.nivarahousing.com/auth/nach-mandate-login" target="_blank" rel="noopener noreferrer">E-NACH Mandate</a></li>
               <li><Link to="/customercenter/ecs-mandate">ECS Mandate</Link></li>
               <li><Link to="/customercenter/enach-bankcode">E-NACH Net Banking & Debit Card</Link></li>
               <li><Link to="/customercenter/consumer-education">Consumer Education Literature</Link></li>
