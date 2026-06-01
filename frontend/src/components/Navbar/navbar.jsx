@@ -225,6 +225,7 @@ const Navbar = () => {
                     </ul>
                   </li>
                   <li><Link to="/aboutus/privacy">Privacy Policy</Link></li>
+                    <li><Link to="/aboutus/kyc-aml-measures">KYC & AML Measures</Link></li>
                 </ul>
               </li>
 
@@ -306,17 +307,7 @@ const Navbar = () => {
                 </ul>
               </li>
 
-              {/* General Meeting */}
-              <li className={`nested-dropdown ${activeNestedDropdown === "general-meeting" ? "open" : ""}`}>
-                <div className="nested-trigger" onClick={() => toggleNestedDropdown("general-meeting")}>
-                  <span>General Meeting</span>
-                  <ChevronRight size={14} className="nested-chevron" />
-                </div>
-                <ul className="nested-menu">
-                  <li><Link to="/investorsrelation/notices">Notices</Link></li>
-                  <li><Link to="/investorsrelation/transcripts">Transcripts</Link></li>
-                </ul>
-              </li>
+             
             </ul>
           </li>
 
@@ -340,7 +331,17 @@ const Navbar = () => {
             </div>
             <ul className="dropdown-menu">
               <li><Link to="/investorsrelation/annual-returns">Annual Returns</Link></li>
-              
+               {/* General Meeting */}
+              <li className={`nested-dropdown ${activeNestedDropdown === "general-meeting" ? "open" : ""}`}>
+                <div className="nested-trigger" onClick={() => toggleNestedDropdown("general-meeting")}>
+                  <span>General Meeting</span>
+                  <ChevronRight size={14} className="nested-chevron" />
+                </div>
+                <ul className="nested-menu">
+                  <li><Link to="/investorsrelation/notices">Notices</Link></li>
+                  <li><Link to="/investorsrelation/transcripts">Transcripts</Link></li>
+                </ul>
+              </li>
             </ul>
           </li>
 

@@ -65,24 +65,23 @@
   position: relative;
   z-index: 10002;
 }
-
+ 
 .search-wrapper {
   position: relative;
   background: #f1f5f9;
   border-radius: 12px;
-  width: 200px;
+  width: 250px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid transparent;
 }
-
+ 
 .search-wrapper.active,
 .search-wrapper:focus-within {
-  width: 300px;
   background: white;
   border-color: #e3212533;
   box-shadow: 0 4px 20px rgba(227, 33, 37, 0.08);
 }
-
+ 
 .search-wrapper input {
   width: 100%;
   padding: 10px 40px 10px 16px;
@@ -92,7 +91,7 @@
   font-family: inherit;
   font-size: 14px;
 }
-
+ 
 .search-icon {
   position: absolute;
   right: 12px;
@@ -101,7 +100,7 @@
   color: #64748b;
   pointer-events: none;
 }
-
+ 
 .search-results {
   position: absolute;
   top: calc(100% + 8px);
@@ -116,7 +115,7 @@
   overflow: hidden;
   border: 1px solid #f1f5f9;
 }
-
+ 
 .search-results li a {
   display: flex;
   justify-content: space-between;
@@ -127,16 +126,16 @@
   font-size: 14px;
   transition: all 0.2s;
 }
-
+ 
 .search-results li a:hover {
   background: #fdf2f2;
   color: #7a1422;
 }
-
+ 
 /* Desktop Menu */
 .navbar-menu {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -157,7 +156,7 @@
  
 .nav-link,
 .dropdown-trigger {
-  padding: 8px 12px !important;
+  padding: 8px 10px !important;
   border-radius: 8px;
   text-decoration: none;
   color: #2f3b52 !important;
@@ -177,7 +176,7 @@
   position: relative;
   z-index: 1;
 }
-
+ 
 .nav-link:hover,
 .dropdown-trigger:hover,
 .nav-item.dropdown:hover>.dropdown-trigger {
@@ -195,7 +194,7 @@
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0.8;
 }
-
+ 
 .nav-item.dropdown:hover .chevron {
   transform: rotate(180deg);
   color: #e32125;
@@ -211,7 +210,7 @@
   background: #fff;
   min-width: 250px;
   max-width: 340px;
-
+ 
   border: 1px solid rgba(33, 31, 31, 0.08);
   display: none;
   /* Desktop default */
@@ -251,15 +250,15 @@
     flex: 1;
     z-index: 999; /* Ensure search bar stays behind mobile drawer (10000) and backdrop filter (9998) */
   }
-
+ 
   .search-wrapper {
     width: 100%;
   }
-
+ 
   .search-wrapper.active {
     width: 100%;
   }
-
+ 
   .menu-toggle {
     display: block;
   }
@@ -392,7 +391,7 @@
 .hanging-banner-wrapper {
   position: absolute;
   top: 100%;
-  right: 40px;
+  right: 220px; /* Moved left to avoid overlap with 'Contact Us' dropdown */
   z-index: 1;
   /* Stays above page content (due to navbar z-index) but below dropdowns */
   transform-origin: top center;
@@ -506,19 +505,19 @@
     right: 25px;
   }
 }
-
+ 
 /* --- Dropdown Hierarchy & Grouping Styles --- */
 .nested-dropdown {
   position: relative;
   list-style: none;
 }
-
+ 
 /* --- Level 3 Sub-Nested Dropdown Styles --- */
 .sub-nested-dropdown {
   position: relative;
   list-style: none;
 }
-
+ 
 .sub-nested-trigger {
   display: flex !important;
   align-items: center;
@@ -532,25 +531,25 @@
   width: 100%;
   box-sizing: border-box;
 }
-
+ 
 .sub-nested-trigger:hover,
 .sub-nested-dropdown:hover > .sub-nested-trigger {
   background-color: #fdf2f2 !important;
   color: #e32125 !important;
 }
-
+ 
 .sub-nested-chevron {
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0.6;
   color: #2f3b52;
 }
-
+ 
 .sub-nested-trigger:hover .sub-nested-chevron,
 .sub-nested-dropdown:hover > .sub-nested-trigger .sub-nested-chevron {
   color: #e32125;
   opacity: 1;
 }
-
+ 
 .nested-trigger {
   display: flex !important;
   align-items: center;
@@ -564,25 +563,25 @@
   width: 100%;
   box-sizing: border-box;
 }
-
+ 
 .nested-trigger:hover,
 .nested-dropdown:hover > .nested-trigger {
   background-color: #fdf2f2 !important;
   color: #e32125 !important;
 }
-
+ 
 .nested-chevron {
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0.6;
   color: #2f3b52;
 }
-
+ 
 .nested-trigger:hover .nested-chevron,
 .nested-dropdown:hover > .nested-trigger .nested-chevron {
   color: #e32125;
   opacity: 1;
 }
-
+ 
 /* Indented sub-items (e.g. Policy, Public Disclosure under Governance) */
 .dropdown-menu li a.dropdown-subitem {
   padding-left: 36px !important;
@@ -590,7 +589,7 @@
   color: #64748b !important; /* Slightly lighter gray for subitems */
   position: relative;
 }
-
+ 
 .dropdown-menu li a.dropdown-subitem::before {
   content: "—";
   position: absolute;
@@ -598,7 +597,7 @@
   opacity: 0.4;
   color: #64748b;
 }
-
+ 
 /* --- Desktop Flyout Logic (min-width: 1281px) --- */
 @media (min-width: 1281px) {
   .dropdown-menu {
@@ -606,7 +605,7 @@
     box-shadow: 0 10px 30px rgba(33, 31, 31, 0.15);
     padding: 10px 0;
   }
-
+ 
   .nested-menu {
     position: absolute;
     top: 0;
@@ -626,14 +625,14 @@
     border: 1px solid rgba(33, 31, 31, 0.08);
     display: none;
   }
-
+ 
   .nested-dropdown:hover > .nested-menu {
     display: block;
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
   }
-
+ 
   .nested-dropdown:last-child > .nested-menu {
     left: auto;
     right: 100%;
@@ -641,11 +640,11 @@
     top: auto;
     bottom: 0;
   }
-
+ 
   .nested-dropdown:hover > .nested-trigger .nested-chevron {
     transform: translateX(3px);
   }
-
+ 
   .nested-menu li a {
     display: block;
     padding: 10px 20px;
@@ -656,13 +655,13 @@
     white-space: nowrap;
     text-align: left;
   }
-
+ 
   .nested-menu li a:hover {
     background-color: #fdf2f2;
     color: #e32125;
     padding-left: 25px;
   }
-
+ 
   /* --- Sub-nested Desktop Flyout --- */
   .sub-nested-menu {
     position: absolute;
@@ -683,24 +682,24 @@
     border: 1px solid rgba(33, 31, 31, 0.08);
     display: none;
   }
-
+ 
   .sub-nested-dropdown:last-child > .sub-nested-menu {
     left: auto;
     right: 100%;
     transform: translateX(-10px);
   }
-
+ 
   .sub-nested-dropdown:hover > .sub-nested-menu {
     display: block;
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
   }
-
+ 
   .sub-nested-dropdown:hover > .sub-nested-trigger .sub-nested-chevron {
     transform: translateX(3px);
   }
-
+ 
   .sub-nested-menu li a {
     display: block;
     padding: 10px 20px;
@@ -711,19 +710,19 @@
     white-space: nowrap;
     text-align: left;
   }
-
+ 
   .sub-nested-menu li a:hover {
     background-color: #fdf2f2;
     color: #e32125;
     padding-left: 25px;
   }
-
+ 
   .navbar-menu > .nav-item.dropdown:last-child > .dropdown-menu {
     left: auto;
     right: 0;
     min-width: 160px;
   }
-
+ 
   /* Hover Bridges to prevent menus from closing when crossing gaps */
   .dropdown-menu::before {
     content: '';
@@ -735,7 +734,7 @@
     background: transparent;
     z-index: 9999;
   }
-
+ 
   .nested-menu::before {
     content: '';
     position: absolute;
@@ -746,13 +745,13 @@
     background: transparent;
     z-index: 9999;
   }
-
+ 
   .nested-dropdown:last-child > .nested-menu::before {
     left: auto;
     right: -20px;
     width: 20px;
   }
-
+ 
   .sub-nested-menu::before {
     content: '';
     position: absolute;
@@ -763,14 +762,14 @@
     background: transparent;
     z-index: 9999;
   }
-
+ 
   .sub-nested-dropdown:last-child > .sub-nested-menu::before {
     left: auto;
     right: -20px;
     width: 20px;
   }
 }
-
+ 
 /* --- Mobile Stacked Accordion Logic (max-width: 1280px) --- */
 @media (max-width: 1280px) {
   .nested-menu {
@@ -785,7 +784,7 @@
     opacity: 1 !important;
     visibility: visible !important;
   }
-
+ 
   /* When parent has .open class, expand the nested-menu */
   .nested-dropdown.open > .nested-menu {
     max-height: 1500px;
@@ -793,15 +792,15 @@
     border-top: 1px solid #f1f5f9;
     border-bottom: 1px solid #f1f5f9;
   }
-
+ 
   .nested-dropdown.open > .nested-trigger .nested-chevron {
     transform: rotate(90deg);
   }
-
+ 
   .nested-menu li {
     width: 100%;
   }
-
+ 
   .nested-menu li a {
     display: block;
     padding: 12px 30px !important;
@@ -813,11 +812,11 @@
     background-color: #fafafa !important;
     text-align: left;
   }
-
+ 
   .nested-menu li:last-child a {
     border-bottom: none;
   }
-
+ 
   /* --- Sub-nested Mobile Accordion --- */
   .sub-nested-menu {
     max-height: 0;
@@ -831,7 +830,7 @@
     opacity: 1 !important;
     visibility: visible !important;
   }
-
+ 
   /* When parent has .open class, expand the sub-nested-menu */
   .sub-nested-dropdown.open > .sub-nested-menu {
     max-height: 500px;
@@ -839,15 +838,15 @@
     border-top: 1px solid #f1f5f9;
     border-bottom: 1px solid #f1f5f9;
   }
-
+ 
   .sub-nested-dropdown.open > .sub-nested-trigger .sub-nested-chevron {
     transform: rotate(90deg);
   }
-
+ 
   .sub-nested-menu li {
     width: 100%;
   }
-
+ 
   .sub-nested-menu li a {
     display: block;
     padding: 12px 30px !important;
@@ -860,41 +859,38 @@
     text-align: left;
     position: relative;
   }
-
+ 
   .sub-nested-menu li:last-child a {
     border-bottom: none;
   }
 }
-
+ 
 /* --- Medium Desktop Spacing Optimization (Prevents Layout Wrapping) --- */
-@media (min-width: 1281px) and (max-width: 1440px) {
+@media (min-width: 1281px) and (max-width: 1600px) {
   .navbar-container {
     padding: 14px 24px;
     gap: 12px;
   }
-  
+ 
   .nav_logo {
     width: 130px;
   }
-  
+ 
   .search-wrapper {
-    width: 150px;
+    width: 180px;
   }
-  
+ 
   .search-wrapper.active,
   .search-wrapper:focus-within {
-    width: 220px;
   }
-  
+ 
   .navbar-menu {
     gap: 8px;
   }
-  
+ 
   .nav-link,
   .dropdown-trigger {
     font-size: 13px !important;
     padding: 6px 8px !important;
   }
 }
-
-

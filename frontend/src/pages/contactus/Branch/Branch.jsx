@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import {
   FaBuilding,
   FaCalendarAlt,
@@ -11,7 +12,7 @@ import {
 import "./Branch.css";
 import BranchMap from "../../../components/BranchMap";
  
-const branchesData = {
+const defaultBranchesByState = {
   KARNATAKA: [
     "Nagarbhavi", "Bagalur", "TC Palya", "Mysore", "Ramnagara", "Gottigere",
     "Anekal", "Nelamangala", "Doddabalapur", "Tumkur", "Mandya", "Kanakpura",
@@ -19,7 +20,7 @@ const branchesData = {
     "Kolar", "Hassan", "Sira", "Chikkabalapur", "Tiptur", "Thalaghattapura",
     "Srirangapatna", "Davanagere", "Malur", "Chitradurga", "Maddur", "Hubli",
     "Gadag", "Haveri", "Ballari", "Hospet", "Belagavi", "Gangavathi(Kalburgi)",
-    "Gangavathi", "Gokak", "Sindhanur", "Chikkodi", "Raichur", "Vijayapura", "Ranebennur","JPNagar","Puttenahalli"
+    "Gangavathi", "Gokak", "Sindhanur", "Chikkodi", "Raichur", "Vijayapura", "Ranebennur", "JPNagar", "Puttenahalli"
   ],
   "TAMIL NADU": [
     "Hosur", "Salem", "Krishnagiri", "Dharmapuri", "Tirupattur", "Tiruvannamalai",
@@ -40,38 +41,47 @@ const branchesData = {
   ],
 };
  
-const newBranches = [
+const defaultBranchesData = Object.keys(defaultBranchesByState).reduce((acc, state) => {
+  acc[state] = defaultBranchesByState[state].map((city) => ({ state, city }));
+  return acc;
+}, {});
+ 
+const defaultNewBranches = [
   {
     city: "Kolhapur",
     state: "Maharashtra",
-    opened: "17th March 2026",
+    opened: "2026-03-17",
     address:
       "No. 115-B, First Floor, Parag Complex, 596/1, E Ward, Shahupuri, 1st Lane, Kolhapur - 416001.",
     contact: "+91 9373059622",
+    is_new: true,
   },
   {
     city: "Kurnool",
     state: "Andhra Pradesh",
-    opened: "25th March 2026",
+    opened: "2026-03-25",
     address:
       "Shop No. 420, 421 & 422, 4th Floor, Ucon Legend Complex, Kurnool District, Andhra Pradesh - 518004.",
     contact: "+91 9494438553",
+    is_new: true,
   },
   {
     city: "Bangarpet",
     state: "Karnataka",
-    opened: "30th March 2026",
+    opened: "2026-03-30",
     address:
       "1st Floor, #3191, opp Indian Bank, Seshachalam Mudaliar Road, Bangarpet - 563114.",
     contact: "+91 9742366443",
+    is_new: true,
   },
   {
     city: "Viluppuram",
     state: "Tamil Nadu",
-    opened: "7th April 2026",
+    opened: "2026-04-07",
     address:
       "3rd Floor, TNHB Shop Site No.11 (VPM-030A), Keelperumbakkam Phase-II, Ward-B, Block-26, Viluppuram, Tamil Nadu - 605602.",
     contact: "+91 9865310336",
+    is_new: true,
   },
 ];
  
@@ -80,6 +90,42 @@ const Branch = () => {
   const [openState, setOpenState] = useState(null);
   const [showResults, setShowResults] = useState(false);
   const [selectedBranch, setSelectedBranch] = useState(null);
+  const [branchesData, setBranchesData] = useState(defaultBranchesData);
+  const [newBranches, setNewBranches] = useState(defaultNewBranches);
+  const [loading, setLoading] = useState(true);
+ 
+  const buildBranchesData = (branchesArray) => {
+    const grouped = {};
+    branchesArray.forEach((branch) => {
+      const stateKey = (branch.state || "").trim().toUpperCase();
+      if (!grouped[stateKey]) grouped[stateKey] = [];
+      grouped[stateKey].push(branch);
+    });
+    return grouped;
+  };
+ 
+  const fetchBranches = async () => {
+    try {
+      const res = await axios.get("http://localhost:5001/api/branches");
+      const branches = Array.isArray(res.data) ? res.data : [];
+      if (branches.length > 0) {
+        setBranchesData(buildBranchesData(branches));
+        setNewBranches(
+          branches
+            .filter((branch) => branch.is_new === 1 || branch.is_new === true)
+            .sort((a, b) => new Date(b.opened) - new Date(a.opened))
+        );
+      }
+    } catch (err) {
+      console.error("Branch fetch failed:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+ 
+  useEffect(() => {
+    fetchBranches();
+  }, []);
  
   const toggleState = (state) => {
     setOpenState(openState === state ? null : state);
@@ -91,11 +137,11 @@ const Branch = () => {
     setShowResults(value.trim().length > 0);
   };
  
-  const selectBranch = (state, city) => {
+  const selectBranch = (state, branch) => {
     setOpenState(state);
-    setSearch(city);
+    setSearch(branch.city);
     setShowResults(false);
-    setSelectedBranch({ state, city });
+    setSelectedBranch(branch);
  
     setTimeout(() => {
       const element = document.getElementById(
@@ -120,9 +166,9 @@ const Branch = () => {
   const getAllResults = () => {
     const results = [];
     Object.keys(branchesData).forEach((state) => {
-      branchesData[state].forEach((city) => {
-        if (city.toLowerCase().includes(search.toLowerCase())) {
-          results.push({ state, city });
+      branchesData[state].forEach((branch) => {
+        if (branch.city.toLowerCase().includes(search.toLowerCase())) {
+          results.push({ state, branch });
         }
       });
     });
@@ -134,8 +180,8 @@ const Branch = () => {
  
     const filtered = {};
     Object.keys(branchesData).forEach((state) => {
-      const matchedCities = branchesData[state].filter((city) =>
-        city.toLowerCase().includes(search.toLowerCase())
+      const matchedCities = branchesData[state].filter((branch) =>
+        branch.city.toLowerCase().includes(search.toLowerCase())
       );
       if (matchedCities.length > 0) {
         filtered[state] = matchedCities;
@@ -207,9 +253,9 @@ const Branch = () => {
                   <div
                     key={i}
                     className="search-result-item"
-                    onClick={() => selectBranch(res.state, res.city)}
+                    onClick={() => selectBranch(res.state, res.branch)}
                   >
-                    <span className="res-city">{res.city}</span>
+                    <span className="res-city">{res.branch.city}</span>
                     <span className="res-state">{res.state}</span>
                   </div>
                 ))
@@ -244,17 +290,17 @@ const Branch = () => {
  
             {(openState === state || search) && (
               <div className="location-grid">
-                {getFilteredData()[state].map((city) => (
+                {getFilteredData()[state].map((branch) => (
                   <div
-                    key={city}
+                    key={branch.city}
                     className={`location-item ${
                       search &&
-                      city.toLowerCase().includes(search.toLowerCase())
+                      branch.city.toLowerCase().includes(search.toLowerCase())
                         ? "highlight-branch"
                         : ""
                     }`}
                     onClick={() =>
-                      setSelectedBranch({ state, city })
+                      setSelectedBranch(branch)
                     }
                   >
                     📍 {city}

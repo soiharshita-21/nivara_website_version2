@@ -164,7 +164,7 @@ function AppContent() {
           <Route path="/admin" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/why-choose-us" element={<WhyChooseUs />} />
-          <Route path="/kyc-aml-measures" element={<KycAmlMeasures />} />
+          <Route path="/aboutus/kyc-aml-measures" element={<KycAmlMeasures />} />
           <Route path="/customercenter/recovery-agents" element={<RecoveryAgents />} />
           <Route path="/customercenter/mitc" element={<Mitc />} />
           <Route path="/terms-conditions" element={<Mitc />} />

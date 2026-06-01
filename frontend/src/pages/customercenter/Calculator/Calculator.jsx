@@ -172,7 +172,7 @@ const Calculator = () => {
             </div>
           </div>
 
-          <button className="apply-loan-btn">Apply for This Loan</button>
+          {/* <button className="apply-loan-btn">Apply for This Loan</button> */}
 
         </div>
 
