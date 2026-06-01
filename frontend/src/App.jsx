@@ -56,6 +56,7 @@ import WhyChooseUs from "./pages/WhyChooseUs/WhyChooseUs";
 import KycAmlMeasures from "./pages/KycAmlMeasures/KycAmlMeasures";
 import RecoveryAgents from "./pages/customercenter/RecoveryAgents/RecoveryAgents";
 import Mitc from "./pages/customercenter/Mitc/Mitc";
+import GrievanceRedressal from "./pages/customercenter/GrievanceRedressal/GrievanceRedressal";
 import CsrInitiatives from "./pages/aboutus/CsrInitiatives/CsrInitiatives";
 import DynamicPage from "./pages/DynamicPage/DynamicPage";
 
@@ -167,6 +168,7 @@ function AppContent() {
           <Route path="/aboutus/kyc-aml-measures" element={<KycAmlMeasures />} />
           <Route path="/customercenter/recovery-agents" element={<RecoveryAgents />} />
           <Route path="/customercenter/mitc" element={<Mitc />} />
+          <Route path="/customercenter/grievance-redressal" element={<GrievanceRedressal />} />
           <Route path="/terms-conditions" element={<Mitc />} />
           <Route path="/aboutus/csr-initiatives" element={<CsrInitiatives />} />
           <Route path="/p/:slug" element={<DynamicPage />} />

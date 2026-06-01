@@ -225,7 +225,6 @@ const Navbar = () => {
                     </ul>
                   </li>
                   <li><Link to="/aboutus/privacy">Privacy Policy</Link></li>
-                    <li><Link to="/aboutus/kyc-aml-measures">KYC & AML Measures</Link></li>
                 </ul>
               </li>
 

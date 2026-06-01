@@ -1,0 +1,297 @@
+/* ==========================================================================
+   GRIEVANCE REDRESSAL STYLE SHEET (DIRECT ACCORDION STYLE REPLACEMENT)
+   ========================================================================== */
+
+.grievance-page {
+  width: 100%;
+  background: #fcfcfc;
+  font-family: 'Poppins', sans-serif;
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+/* =========================
+   PAGE BANNER
+========================= */
+.grievance-page .page-banner {
+  position: relative;
+  width: 100%;
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 80px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  color: white;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 10px 30px rgba(33, 31, 31, 0.08);
+}
+
+.grievance-page .page-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(33, 31, 31, 0.32);
+  z-index: 1;
+}
+
+.grievance-page .page-banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1080px;
+  width: 100%;
+  text-align: center;
+}
+
+.grievance-page .page-banner-title {
+  margin: 0;
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.grievance-page .page-banner-subtitle {
+  margin: 18px auto 0;
+  max-width: 760px;
+  font-size: clamp(14px, 1.8vw, 17px);
+  line-height: 1.6;
+  color: #f1f5f9;
+  font-weight: 400;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   CONTENT SECTION
+========================= */
+.grievance-content-section {
+  padding: 80px 20px 90px;
+  background: #fafbfc;
+  display: flex;
+  justify-content: center;
+}
+
+.grievance-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 50px 60px;
+  border: 1px solid #ececec;
+  box-shadow: 0 12px 40px rgba(33, 31, 31, 0.03);
+  max-width: 950px;
+  width: 100%;
+}
+
+.grievance-card h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #8b1d2c;
+  margin: 0 0 24px 0;
+  border-left: 5px solid #E32125;
+  padding-left: 16px;
+  line-height: 1.2;
+}
+
+.intro-text,
+.escalation-heading,
+.nhb-intro {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #334155;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+/* =========================
+   LIST STYLING
+========================= */
+.grievance-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 35px 0;
+}
+
+.grievance-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 18px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #475569;
+  text-align: justify;
+}
+
+.grievance-list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #E32125;
+}
+
+.grievance-list li strong {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* =========================
+   ESC BOX STYLING
+========================= */
+.md-escalation-box {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 30px 40px;
+  margin: 30px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+}
+
+.md-escalation-box h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #E32125;
+}
+
+.md-escalation-box strong {
+  display: block;
+  font-size: 15px;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.md-escalation-box .address-detail {
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: #475569;
+  margin: 0 0 16px 0;
+}
+
+.md-escalation-box .email-detail {
+  margin: 0;
+  padding-top: 14px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 14.5px;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* =========================
+   SECONDARY LIST & DIVIDER
+========================= */
+.secondary-list {
+  margin-bottom: 0;
+}
+
+.secondary-list li {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.secondary-list li::before {
+  background-color: #64748b; /* Gray bullet for secondary list */
+}
+
+.or-divider {
+  padding-left: 0 !important;
+  font-size: 14px !important;
+  color: #64748b !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px;
+  margin: 8px 0 !important;
+}
+
+.or-divider::before {
+  display: none !important;
+}
+
+.grievance-divider {
+  height: 1px;
+  background-color: #e2e8f0;
+  margin: 35px 0;
+  width: 100%;
+}
+
+/* =========================
+   LINKS & ACCENTS
+========================= */
+.red-link {
+  color: #E32125;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.red-link:hover {
+  color: #b91c1c;
+}
+
+.inline-link {
+  word-break: break-all;
+  display: inline-block;
+  margin-left: 4px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 768px) {
+  .grievance-page .page-banner {
+    min-height: 35vh;
+    padding: 100px 20px 60px;
+  }
+
+  .grievance-content-section {
+    padding: 40px 15px 50px;
+  }
+
+  .grievance-card {
+    padding: 30px 24px;
+    border-radius: 16px;
+  }
+
+  .grievance-card h2 {
+    font-size: 22px;
+    margin-bottom: 18px;
+    padding-left: 12px;
+  }
+
+  .intro-text,
+  .escalation-heading,
+  .nhb-intro {
+    font-size: 14.5px;
+    margin-bottom: 18px;
+  }
+
+  .grievance-list li {
+    font-size: 13.5px;
+    padding-left: 20px;
+    margin-bottom: 14px;
+  }
+
+  .grievance-list li::before {
+    top: 8px;
+    width: 6px;
+    height: 6px;
+  }
+
+  .md-escalation-box {
+    padding: 20px;
+    margin: 20px 0;
+  }
+
+  .md-escalation-box h3 {
+    font-size: 16px;
+  }
+
+  .md-escalation-box .address-detail,
+  .md-escalation-box .email-detail {
+    font-size: 13px;
+  }
+}

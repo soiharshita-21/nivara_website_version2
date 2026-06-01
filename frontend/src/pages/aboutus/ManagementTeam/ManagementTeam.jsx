@@ -169,21 +169,6 @@ const managementTeamData = [
   },
 ];
 
-// Splits bio into short 2-sentence paragraph chunks for easy reading
-const formatBio = (text) => {
-  const chunks = [];
-  const rawParas = text.split('\n\n');
-  rawParas.forEach((para) => {
-    // Split on sentence-ending punctuation followed by a space or end
-    const sentences = para.match(/[^.!?]+[.!?]+[\s]*/g) || [para];
-    // Group into pairs of 2 sentences
-    for (let i = 0; i < sentences.length; i += 2) {
-      const chunk = sentences.slice(i, i + 2).join('').trim();
-      if (chunk) chunks.push(chunk);
-    }
-  });
-  return chunks;
-};
 
 const ManagementTeam = () => {
   const [selectedMember, setSelectedMember] = React.useState(null);
@@ -333,18 +318,9 @@ const ManagementTeam = () => {
                     {selectedMember.desc}
                   </p>
                   <div>
-                    {isExpanded
-                      ? formatBio(selectedMember.longDesc).map((chunk, i) => (
-                          <p key={i} style={{ fontSize: '14px', lineHeight: '1.8', color: '#4b5563', fontWeight: 400, textAlign: 'justify', marginBottom: '12px' }}>
-                            {chunk}
-                          </p>
-                        ))
-                      : (
-                          <p style={{ fontSize: '14px', lineHeight: '1.8', color: '#4b5563', fontWeight: 400, textAlign: 'justify' }}>
-                            {selectedMember.longDesc.substring(0, 200)}...
-                          </p>
-                        )
-                    }
+                    <p style={{ fontSize: '14px', lineHeight: '1.8', color: '#4b5563', fontWeight: 400, textAlign: 'justify', whiteSpace: 'pre-line' }}>
+                      {isExpanded ? selectedMember.longDesc : `${selectedMember.longDesc.substring(0, 200)}...`}
+                    </p>
                     {selectedMember.longDesc.length > 200 && (
                       <button
                         onClick={toggleReadMore}
@@ -355,7 +331,7 @@ const ManagementTeam = () => {
                           fontWeight: 700,
                           cursor: 'pointer',
                           padding: '0',
-                          marginTop: '4px',
+                          marginTop: '10px',
                           fontSize: '15px',
                           textDecoration: 'underline'
                         }}

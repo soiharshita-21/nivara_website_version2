@@ -303,7 +303,7 @@ const Branch = () => {
                       setSelectedBranch(branch)
                     }
                   >
-                    📍 {city}
+                    📍 {branch.city}
                   </div>
                 ))}
               </div>
