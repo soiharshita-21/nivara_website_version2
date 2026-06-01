@@ -1,46 +1,65 @@
 import React from "react";
 import "./BoardOfDirectors.css";
 import rao from "../../../assets/images/Director/Rao (1).jpg";
-import rohokale from "../../../assets/images/Director/Rohokale (1).jpg";
+import sunilb from "../../../assets/images/Director/sunilb.jpeg";
 import koticha from "../../../assets/images/Director/Koticha.jpg";
 import debanshi from "../../../assets/images/Director/Debanshi-Photo.png";
 import jayaraman from "../../../assets/images/Director/Nivara.jpg";
 import krishna from "../../../assets/images/Director/Nivara-2.jpg";
+import shreyas from "../../../assets/images/directors/Shreyas_Ramanathan (2).jpg";
+import userPlaceholder from "../../../assets/images/user2.jpg";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import { AnimatePresence, motion } from "framer-motion";
 
 const boardMembers = [
   {
+    name: "Mr. Sunil Rohokale",
+    role: "Founder and Chairman",
+    desc: "Over 29 years of experience in banking and financial services, encompassing lending, asset, and wealth management.",
+    longDesc: "Mr. Sunil Rohokale has over 29 years of experience in banking and financial services, encompassing lending, asset, and wealth management. He is responsible for setting the vision for ASK Asset & Wealth Management Group and spearheads the strategy of the Group. He has strong credentials in building new businesses and leading high-performance teams.\n\nUnder his leadership, ASK Investment Managers became the largest discretionary PMS house in India, while the Private Wealth and Property Fund businesses have grown into formidable verticals. He was instrumental in driving ASK’s foray into Alternates, with the successful launch of Hedge Fund and Private Credit businesses.\n\nEarlier in his career, he was credited with setting up ICICI Bank’s Mortgage Financing Business and served as the Managing Director and CEO of ICICI Home Finance Co. Ltd., a wholly owned subsidiary of ICICI Bank.\n\nIn addition to his corporate leadership, Sunil plays an active role in shaping industry standards and policy. He currently serves as a Board Director at the Association of Portfolio Managers of India (APMI), has chaired SEBI’s ‘Ease of Doing Business’ (EODB) committee for portfolio managers, and is a member of the Confederation of Indian Industry’s (CII) National Committee on Real Estate.\n\nHe holds a degree in Mechanical Engineering from the Government College of Engineering, Pune, and a master’s degree in management from Symbiosis Institute of Management.",
+    color: "red",
+    img: sunilb,
+  },
+  {
     name: "Mr. C. V. Rao",
     role: "Founder, Managing Director & CEO",
     desc: "Brings over 30 years of leadership experience in banking and financial services, with deep expertise in retail lending and portfolio risk management.",
     longDesc: "Mr. C. V. Rao is the Founder, Managing Director & Chief Executive Officer of the Company. He brings over 30 years of leadership experience in banking and financial services, with deep expertise in retail lending, portfolio risk management, and building scalable businesses across economic and credit cycles.\n\nHe holds an M.Com from Andhra University and an MBA from Osmania University, Hyderabad. Early in his career, he served as a Research Assistant in Finance and Accounting at IIM Ahmedabad, where he also published research in reputed academic journals.\n\nMr. Rao has held senior leadership roles with leading private sector banks, including ICICI Bank, IndusInd Bank, and ING Vysya Bank (now Kotak Mahindra Bank). At ICICI Bank, he was part of the core team that scaled the mortgage business into a ₹50,000+ crore portfolio, contributing to market leadership. At ING Vysya Bank, he led national portfolios in Agriculture & Rural Banking and Consumer Assets.\n\nUnder his founding leadership, the Company has built resilience, strengthened its market position, and continues to focus on sustainable, long‑term value creation.",
-    color: "red",
+    color: "green",
     img: rao,
   },
   {
-    name: "Mr. Sunil Rohokale",
-    role: "Co-founder & Director",
-    desc: "Over 29 years of experience in banking and financial services, encompassing lending, asset, and wealth management.",
-    longDesc: "Mr. Sunil Rohokale has over 29 years of experience in banking and financial services, encompassing lending, asset, and wealth management. He is responsible for setting the vision for ASK Asset & Wealth Management Group and spearheads the strategy of the Group. He has strong credentials in building new businesses and leading high-performance teams.\n\nUnder his leadership, ASK Investment Managers became the largest discretionary PMS house in India, while the Private Wealth and Property Fund businesses have grown into formidable verticals. He was instrumental in driving ASK’s foray into Alternates, with the successful launch of Hedge Fund and Private Credit businesses.\n\nEarlier in his career, he was credited with setting up ICICI Bank’s Mortgage Financing Business and served as the Managing Director and CEO of ICICI Home Finance Co. Ltd., a wholly owned subsidiary of ICICI Bank.\n\nIn addition to his corporate leadership, Sunil plays an active role in shaping industry standards and policy. He currently serves as a Board Director at the Association of Portfolio Managers of India (APMI), has chaired SEBI’s ‘Ease of Doing Business’ (EODB) committee for portfolio managers, and is a member of the Confederation of Indian Industry’s (CII) National Committee on Real Estate.\n\nHe holds a degree in Mechanical Engineering from the Government College of Engineering, Pune, and a master’s degree in management from Symbiosis Institute of Management.",
-    color: "green",
-    img: rohokale,
-  },
-  {
     name: "Mr. Monik Koticha",
-    role: "Co-founder & Director",
+    role: "Founder and Director",
     desc: "Non-Executive Director and Promoter with over two decades of experience in secondary markets and growth assets.",
     longDesc: "Mr. Monik Koticha is a Non-Executive Director of our Company and is also one of the Promoters. As a part of the promoter family of ASK Group – a renowned financial services group and a leading industry player in asset & wealth management, he has contributed significantly to the Company’s growth by providing strategic guidance and trusted leadership.\n\nHe also serves as CIO & Managing director at Fortress Holdings Pvt Ltd (Family Office of the Koticha family). An avid investor with over two decades of experience. Mr. Koticha focuses on bottom-up investments in the secondary markets and other growth assets. He also serves on the boards of some of the companies where he has invested to help in a strategic manner to build scale.\n\nBeyond his business interests, Mr. Koticha leads the family and corporate philanthropic initiatives and is actively engaged in causes related to education, housing, and nation building.",
     color: "red",
     img: koticha,
   },
   {
+    name: "Mr. Shreyas Ramanathan",
+    role: "Executive Director & Chief Business Officer",
+    desc: "Qualified Chartered Accountant and MBA with over 20+ years of experience across retail banking and financial services.",
+    longDesc: "Shreyas Ramanathan serves as Executive Director on the Board of Nivara and Chief Business Officer of the Company. A qualified Chartered Accountant, he holds an MBA from the Asian Institute of Management, Manila, and brings over 20+ years of experience across retail banking and financial services. In his current role, he is instrumental in advancing Nivara's mission of \"Housing for All\" by pioneering lending solutions tailored to the unserved and underserved segments of India's informal economy.\n\nDrawing on deep expertise in credit underwriting and portfolio management, and a proven track record of scaling businesses, Shreyas has developed sustainable lending models for self-employed professionals and micro-entrepreneurs in the EWS and LIG segments, many of whom are first-time borrowers. He also oversees collections and asset quality, ensuring Nivara upholds the highest standards of responsible lending while expanding access to affordable housing finance across urban and semi-urban markets.\n\nEarlier in his career, Shreyas built Ola Cabs leasing business from inception to over 10,000 vehicles with zero credit cost, establishing it as the country's largest captive leasing company in a record timeframe. Prior to that, he spent 12 years at ICICI Bank, where his final role was Policy Head for a ₹1.25 trillion secured assets portfolio. During his tenure at the bank, he held diverse roles across sales, credit, and risk in multiple geographies, spanning the retail, mid-corporate, and agri-business verticals.\n\nHis career reflects a consistent commitment to building transformative financial services businesses that serve underserved communities. Shreyas brings deep expertise in credit policy, risk management, and portfolio optimization, guided by the conviction that access to home finance is a fundamental enabler of dignified living and sustainable development for communities across India.",
+    color: "green",
+    img: shreyas,
+  },
+  {
     name: "Ms. Debanshi Basu",
     role: "Nominee Director",
     desc: "Partner at Baring Private Equity India with over 21 years of experience spanning private equity, investment banking, and audit.",
     longDesc: "Ms. Debanshi Basu serves as a Nominee Director representing Baring Private Equity India and is also a partner in the firm, leading investments and portfolio management in sectors including financial services, fintech, and agri-in-puts. She joined Baring in 2009 after being part of the founding investment banking team at Goldman Sachs India, where she worked on cross-sector M&A and capital market transactions. Earlier in her career, she was with Ernst & Young, overseeing statutory audits and internal control reviews.\n\nWith over 21 years of experience spanning private equity, investment banking, and audit, Ms. Basu has played a pivotal role in the investment and governance of companies such as SK Finance, Acko, Manappuram Finance, and Muthoot Fincorp. She also serves on the boards of SK Finance and Nehat Technologies, among others.\n\nMs. Basu is a qualified Chartered Accountant and holds a Bachelor’s degree in Commerce from Osmania University.",
-    color: "green",
+    color: "red",
     img: debanshi,
+  },
+  {
+    name: "Mr. Maninder",
+    role: "Nominee Director",
+    desc: "Nominee Director representing investment partners on the Board of Directors.",
+    longDesc: "Profile will be shared shortly.",
+    color: "green",
+    img: userPlaceholder,
+    hidden: true,
   },
   {
     name: "Mr. Muthuswamy Venkata Jayaraman",
@@ -78,7 +97,9 @@ const BoardOfDirectors = () => {
         </ScrollReveal>
 
         <div className="board-grid">
-          {boardMembers.map((item, index) => (
+          {boardMembers
+            .filter((item) => !item.hidden)
+            .map((item, index) => (
             <ScrollReveal
               key={index}
               direction="up"
