@@ -33,6 +33,8 @@ const AdminDashboard = () => {
   const [press, setPress] = useState([]);
   const [gallery, setGallery] = useState([]);
   const [pages, setPages] = useState([]);
+  const [branches, setBranches] = useState([]);
+  const [selectedStateFilter, setSelectedStateFilter] = useState("All");
 
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -48,6 +50,7 @@ const AdminDashboard = () => {
   const [newPress, setNewPress] = useState({ title: "", date: new Date().toISOString().split('T')[0], image_url: "", content: "" });
   const [newGallery, setNewGallery] = useState({ title: "", folder_date: "", image_url: "", image_urls: [] });
   const [newPage, setNewPage] = useState({ title: "", slug: "", content: "", menu_location: "none", banner_image: "" });
+  const [newBranch, setNewBranch] = useState({ city: "", state: "Karnataka", opened: new Date().toISOString().split('T')[0], address: "", contact: "1800-309-1516", is_new: false });
 
   const [isHtmlMode, setIsHtmlMode] = useState(false);
 
@@ -70,7 +73,7 @@ const AdminDashboard = () => {
     { id: "blogs", label: "Manage Blogs", icon: FileText },
     { id: "press", label: "Press Releases", icon: Newspaper },
     { id: "gallery", label: "Gallery", icon: ImageIcon },
-
+    { id: "branches", label: "Manage Branches", icon: MapPin }
   ];
 
   // Helper to get auth headers
@@ -93,16 +96,18 @@ const AdminDashboard = () => {
     try {
       const baseUrl = "http://localhost:5001/api";
       if (activeTab === "overview") {
-        const [blogRes, pressRes, galleryRes, pagesRes] = await Promise.all([
+        const [blogRes, pressRes, galleryRes, pagesRes, branchRes] = await Promise.all([
           axios.get(`${baseUrl}/blogs`),
           axios.get(`${baseUrl}/press`),
           axios.get(`${baseUrl}/gallery`),
-          axios.get(`${baseUrl}/pages`)
+          axios.get(`${baseUrl}/pages`),
+          axios.get(`${baseUrl}/branches`)
         ]);
         setBlogs(blogRes.data);
         setPress(pressRes.data);
         setGallery(galleryRes.data);
         setPages(pagesRes.data);
+        setBranches(branchRes.data);
       } else if (activeTab === "blogs") {
         const res = await axios.get(`${baseUrl}/blogs`);
         setBlogs(res.data);
@@ -115,7 +120,9 @@ const AdminDashboard = () => {
       } else if (activeTab === "pages") {
         const res = await axios.get(`${baseUrl}/pages`);
         setPages(res.data);
-
+      } else if (activeTab === "branches") {
+        const res = await axios.get(`${baseUrl}/branches`);
+        setBranches(res.data);
       }
     } catch (err) {
       console.error("Fetch error:", err);
@@ -127,6 +134,11 @@ const AdminDashboard = () => {
     }
   };
 
+  const getFilteredBranches = () => {
+    if (selectedStateFilter === "All") return branches;
+    return branches.filter(b => b.state && b.state.toLowerCase() === selectedStateFilter.toLowerCase());
+  };
+
   const resetForm = () => {
     setEditingId(null);
     setEditingFolder(null);
@@ -134,6 +146,7 @@ const AdminDashboard = () => {
     setNewPress({ title: "", date: new Date().toISOString().split('T')[0], image_url: "", content: "" });
     setNewGallery({ title: "", folder_date: "", image_url: "", image_urls: [] });
     setNewPage({ title: "", slug: "", content: "", menu_location: "none", banner_image: "" });
+    setNewBranch({ city: "", state: "Karnataka", opened: new Date().toISOString().split('T')[0], address: "", contact: "1800-309-1516", is_new: false });
 
     setIsHtmlMode(false);
     setShowModal(false);
@@ -237,7 +250,15 @@ const AdminDashboard = () => {
       setNewGallery({ ...item });
     } else if (type === "pages") {
       setNewPage({ ...item });
-
+    } else if (type === "branches") {
+      setNewBranch({
+        city: item.city,
+        state: item.state,
+        opened: item.opened ? new Date(item.opened).toISOString().split('T')[0] : "",
+        address: item.address,
+        contact: item.contact,
+        is_new: !!item.is_new
+      });
     }
     setShowModal(true);
   };
@@ -338,6 +359,12 @@ const AdminDashboard = () => {
         } else {
           await axios.post(`${baseUrl}/pages`, data, headers);
         }
+      } else if (activeTab === "branches") {
+        if (editingId) {
+          await axios.put(`${baseUrl}/branches/${editingId}`, newBranch, headers);
+        } else {
+          await axios.post(`${baseUrl}/branches`, newBranch, headers);
+        }
       }
       resetForm();
       fetchData();
@@ -407,6 +434,75 @@ const AdminDashboard = () => {
                     ))}
                   </tbody>
                 </table>
+              )}
+
+              {activeTab === "branches" && (
+                <>
+                  <div className="filter-bar" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', padding: '15px 20px', backgroundColor: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', gap: '15px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <span style={{ fontWeight: '600', color: '#64748b', fontSize: '0.9rem' }}>Filter by State:</span>
+                      <select 
+                        value={selectedStateFilter} 
+                        onChange={(e) => setSelectedStateFilter(e.target.value)}
+                        style={{
+                          padding: '8px 16px',
+                          borderRadius: '8px',
+                          border: '1px solid #cbd5e1',
+                          outline: 'none',
+                          fontWeight: '600',
+                          color: '#1e293b',
+                          backgroundColor: '#fff',
+                          cursor: 'pointer'
+                        }}
+                      >
+                        <option value="All">All States</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                      </select>
+                    </div>
+                    <div style={{ color: '#64748b', fontSize: '0.9rem', fontWeight: '500' }}>
+                      Showing <strong>{getFilteredBranches().length}</strong> of <strong>{branches.length}</strong> branches
+                    </div>
+                  </div>
+
+                  <table className="data-table">
+                    <thead><tr><th>City</th><th>State</th><th>Opened Date</th><th>Contact</th><th>Newly Opened?</th><th>Actions</th></tr></thead>
+                    <tbody>
+                      {getFilteredBranches().map(b => (
+                        <tr key={b.id}>
+                          <td style={{ fontWeight: '600' }}>{b.city}</td>
+                          <td>{b.state}</td>
+                          <td>{b.opened ? new Date(b.opened).toLocaleDateString() : ""}</td>
+                          <td>{b.contact}</td>
+                          <td>
+                            <span className={`status-pill ${b.is_new ? 'status-active' : 'status-draft'}`} style={{
+                              padding: '4px 8px',
+                              borderRadius: '12px',
+                              fontSize: '0.75rem',
+                              fontWeight: '600',
+                              backgroundColor: b.is_new ? '#ecfdf5' : '#f3f4f6',
+                              color: b.is_new ? '#059669' : '#6b7280'
+                            }}>
+                              {b.is_new ? "Yes" : "No"}
+                            </span>
+                          </td>
+                          <td className="actions">
+                            <button className="edit-btn" onClick={() => handleEdit(b, 'branches')}><Edit size={16} /></button>
+                            <button className="delete-btn" onClick={() => handleDelete(b.id, 'branches')}><Trash2 size={16} /></button>
+                          </td>
+                        </tr>
+                      ))}
+                      {getFilteredBranches().length === 0 && (
+                        <tr>
+                          <td colSpan="6" style={{ textAlign: 'center', padding: '30px', color: '#64748b' }}>No branches found matching the filter.</td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                </>
               )}
 
               {activeTab === "blogs" && (
@@ -605,6 +701,15 @@ const AdminDashboard = () => {
                       <p>{pages.length}</p>
                     </div>
                   </div>
+                  <div className="stat-card">
+                    <div className="stat-icon branches-icon" style={{ backgroundColor: '#fef2f2', color: '#ef4444' }}>
+                      <MapPin size={28} />
+                    </div>
+                    <div className="stat-info">
+                      <h3>Total Branches</h3>
+                      <p>{branches.length}</p>
+                    </div>
+                  </div>
 
                 </div>
               )}
@@ -743,6 +848,51 @@ const AdminDashboard = () => {
                     </div>
 
                     <div className="form-group"><label>Description</label><textarea rows="2" value={newPress.content} onChange={e => setNewPress({ ...newPress, content: e.target.value })} placeholder="Small snippet for the card..."></textarea></div>
+                  </>
+                )}
+
+                {activeTab === "branches" && (
+                  <>
+                    <div className="form-row">
+                      <div className="form-group">
+                        <label>City / Branch Name</label>
+                        <input type="text" value={newBranch.city} onChange={e => setNewBranch({ ...newBranch, city: e.target.value })} required placeholder="e.g. JP Nagar" />
+                      </div>
+                      <div className="form-group">
+                        <label>State</label>
+                        <select value={newBranch.state} onChange={e => setNewBranch({ ...newBranch, state: e.target.value })} required style={{ padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1', outline: 'none' }}>
+                          <option value="Karnataka">Karnataka</option>
+                          <option value="Tamil Nadu">Tamil Nadu</option>
+                          <option value="Telangana">Telangana</option>
+                          <option value="Andhra Pradesh">Andhra Pradesh</option>
+                          <option value="Maharashtra">Maharashtra</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="form-row">
+                      <div className="form-group">
+                        <label>Date Opened</label>
+                        <input type="date" value={newBranch.opened} onChange={e => setNewBranch({ ...newBranch, opened: e.target.value })} required />
+                      </div>
+                      <div className="form-group">
+                        <label>Contact Number</label>
+                        <input type="text" value={newBranch.contact} onChange={e => setNewBranch({ ...newBranch, contact: e.target.value })} required placeholder="e.g. 1800-309-1516" />
+                      </div>
+                    </div>
+                    <div className="form-group">
+                      <label>Address</label>
+                      <textarea rows="3" value={newBranch.address} onChange={e => setNewBranch({ ...newBranch, address: e.target.value })} required placeholder="Full street address..." />
+                    </div>
+                    <div className="form-group" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px', marginTop: '10px' }}>
+                      <input 
+                        type="checkbox" 
+                        id="is_new" 
+                        checked={newBranch.is_new} 
+                        onChange={e => setNewBranch({ ...newBranch, is_new: e.target.checked })} 
+                        style={{ width: '20px', height: '20px', cursor: 'pointer' }}
+                      />
+                      <label htmlFor="is_new" style={{ cursor: 'pointer', userSelect: 'none', fontWeight: '600' }}>Mark as Newly Opened (Show in "Newly Opened Branches" section)</label>
+                    </div>
                   </>
                 )}
 

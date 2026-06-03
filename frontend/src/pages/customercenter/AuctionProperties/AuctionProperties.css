@@ -210,12 +210,16 @@
 }
 
 .documents-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
 }
 
 .doc-reveal-wrapper {
+  flex: 1;
+  min-width: 260px;
+  max-width: 280px;
   height: 100%;
 }
 

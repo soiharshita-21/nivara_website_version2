@@ -16,11 +16,11 @@ const AuctionProperties = () => {
       borrower: "MD MANJUNATH",
       url: "/files/sale-notice-manjunath.pdf"
     },
-    {
-      title: "SALE CUM AUCTION NOTICE",
-      borrower: "DNYANESHWAR BALAJI MOTE",
-      url: "/files/sale-notice-mote.pdf"
-    },
+    // {
+    //   title: "SALE CUM AUCTION NOTICE",
+    //   borrower: "DNYANESHWAR BALAJI MOTE",
+    //   url: "/files/sale-notice-mote.pdf"
+    // },
     {
       title: "SALE CUM AUCTION NOTICE",
       borrower: "AMARNATH",

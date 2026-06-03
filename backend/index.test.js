@@ -4,6 +4,7 @@ const request = require('supertest');
 jest.mock('mysql2', () => ({
     createConnection: jest.fn(() => ({
         connect: jest.fn((cb) => cb(null)),
+        on: jest.fn(),
         query: jest.fn((queryStr, params, cb) => {
             // Support call signature with or without params array
             const callback = typeof params === 'function' ? params : cb;

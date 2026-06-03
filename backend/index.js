@@ -141,6 +141,26 @@ const validatePage = (req, res, next) => {
     next();
 };
 
+const validateBranch = (req, res, next) => {
+    const { city, state, opened, address, contact } = req.body;
+    if (!city || typeof city !== 'string' || city.trim().length === 0) {
+        return res.status(400).json({ message: "City is required." });
+    }
+    if (!state || typeof state !== 'string' || state.trim().length === 0) {
+        return res.status(400).json({ message: "State is required." });
+    }
+    if (!opened) {
+        return res.status(400).json({ message: "Opened date is required." });
+    }
+    if (!address || typeof address !== 'string' || address.trim().length === 0) {
+        return res.status(400).json({ message: "Address is required." });
+    }
+    if (!contact || typeof contact !== 'string' || contact.trim().length === 0) {
+        return res.status(400).json({ message: "Contact is required." });
+    }
+    next();
+};
+
 
 // Database Connection
 const db = mysql.createConnection({
@@ -421,13 +441,48 @@ app.delete('/api/pages/:id', verifyToken, validateId, (req, res) => {
 });
 
 
+// --- BRANCHES ROUTES ---
+app.get('/api/branches', (req, res) => {
+    db.query("SELECT * FROM branches ORDER BY city ASC", (err, results) => {
+        if (err) return res.status(500).json(err);
+        res.json(results);
+    });
+});
+
+app.post('/api/branches', verifyToken, validateBranch, (req, res) => {
+    const { city, state, opened, address, contact, is_new } = req.body;
+    const query = "INSERT INTO branches (city, state, opened, address, contact, is_new) VALUES (?, ?, ?, ?, ?, ?)";
+    db.query(query, [city, state, opened, address, contact, is_new ? 1 : 0], (err, result) => {
+        if (err) return res.status(500).json(err);
+        res.json({ message: "Branch added successfully!", id: result.insertId });
+    });
+});
+
+app.put('/api/branches/:id', verifyToken, validateId, validateBranch, (req, res) => {
+    const { city, state, opened, address, contact, is_new } = req.body;
+    const query = "UPDATE branches SET city = ?, state = ?, opened = ?, address = ?, contact = ?, is_new = ? WHERE id = ?";
+    db.query(query, [city, state, opened, address, contact, is_new ? 1 : 0, req.validatedId], (err, result) => {
+        if (err) return res.status(500).json(err);
+        res.json({ message: "Branch updated successfully!" });
+    });
+});
+
+app.delete('/api/branches/:id', verifyToken, validateId, (req, res) => {
+    db.query("DELETE FROM branches WHERE id = ?", [req.validatedId], (err, result) => {
+        if (err) return res.status(500).json(err);
+        res.json({ message: "Branch deleted successfully!" });
+    });
+});
+
+
 // --- DASHBOARD STATS ROUTE ---
 app.get('/api/dashboard-stats', (req, res) => {
     const queries = {
         blogs: "SELECT COUNT(*) as count FROM blogs",
         press: "SELECT COUNT(*) as count FROM press_releases",
         gallery: "SELECT COUNT(*) as count FROM gallery",
-        pages: "SELECT COUNT(*) as count FROM pages"
+        pages: "SELECT COUNT(*) as count FROM pages",
+        branches: "SELECT COUNT(*) as count FROM branches"
     };
 
     const results = {};

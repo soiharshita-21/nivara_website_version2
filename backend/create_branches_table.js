@@ -1,17 +1,13 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import {
-  FaBuilding,
-  FaCalendarAlt,
-  FaChevronDown,
-  FaDirections,
-  FaMapMarkerAlt,
-  FaPhoneAlt,
-} from "react-icons/fa";
- 
-import "./Branch.css";
-import BranchMap from "../../../components/BranchMap";
- 
+const mysql = require('mysql2');
+require('dotenv').config();
+
+const db = mysql.createConnection({
+    host: process.env.DB_HOST || '127.0.0.1',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASS || '',
+    database: process.env.DB_NAME || 'nivara_db'
+});
+
 const defaultBranchesByState = {
   KARNATAKA: [
     {
@@ -649,432 +645,93 @@ const defaultBranchesByState = {
   ]
 };
 
-const defaultBranchesData = Object.keys(defaultBranchesByState).reduce((acc, state) => {
-  acc[state] = defaultBranchesByState[state].map((branch) => ({ ...branch, state }));
-  return acc;
-}, {});
-
 const defaultNewBranches = [
-  {
-    city: "Padappai",
-    state: "Tamil Nadu",
-    opened: "2026-05-20",
-    address: "Door No.2/403, Second Floor, Bazaar Street, Padappai Town, Poonamallee Taluk, Kanchipuram District, Tamilnadu, Padappai-601301",
-    contact: "1800-309-1516",
-    is_new: true
-  },
-  {
-    city: "Chengalpattu",
-    state: "Tamil Nadu",
-    opened: "2026-05-19",
-    address: "Door No.2/B, First floor, Rajeswari Vethachalam Street, Opposite to Govt Arts College, GST Main road, Chengalpattu town, Tamil Nadu - 603001",
-    contact: "1800-309-1516",
-    is_new: true
-  },
-  {
-    city: "Viluppuram",
-    state: "Tamil Nadu",
-    opened: "2026-04-07",
-    address: "3rd Floor, TNHB Shop Site No.11 (VPM-030A), Keelperumbakkam Phase-II, Ward-B, Block-26, Viluppuram, Tamil Nadu - 605602.",
-    contact: "+91 9865310336",
-    is_new: true
-  },
-  {
-    city: "Bangarpet",
-    state: "Karnataka",
-    opened: "2026-03-30",
-    address: "1st Floor, #3191, opp Indian Bank, Seshachalam Mudaliar Road, Bangarpet - 563114.",
-    contact: "+91 9742366443",
-    is_new: true
-  },
-  {
-    city: "Kurnool",
-    state: "Andhra Pradesh",
-    opened: "2026-03-25",
-    address: "Shop No. 420, 421 & 422, 4th Floor, Ucon Legend Complex, Kurnool District, Andhra Pradesh - 518004.",
-    contact: "+91 9494438553",
-    is_new: true
-  },
-  {
-    city: "Kolhapur",
-    state: "Maharashtra",
-    opened: "2026-03-17",
-    address: "No. 115-B, First Floor, Parag Complex, 596/1, E Ward, Shahupuri, 1st Lane, Kolhapur - 416001.",
-    contact: "+91 9373059622",
-    is_new: true
-  }
+  { city: "Padappai", state: "Tamil Nadu" },
+  { city: "Chengalpattu", state: "Tamil Nadu" },
+  { city: "Viluppuram", state: "Tamil Nadu" },
+  { city: "Bangarpet", state: "Karnataka" },
+  { city: "Kurnool", state: "Andhra Pradesh" },
+  { city: "Kolhapur", state: "Maharashtra" }
 ];
- 
-const Branch = () => {
-  const [search, setSearch] = useState("");
-  const [openState, setOpenState] = useState(null);
-  const [showResults, setShowResults] = useState(false);
-  const [selectedBranch, setSelectedBranch] = useState(null);
-  const [branchesData, setBranchesData] = useState(defaultBranchesData);
-  const [newBranches, setNewBranches] = useState(defaultNewBranches);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchBranches = async () => {
-      try {
-        const response = await axios.get("http://localhost:5001/api/branches");
-        if (response.data && Array.isArray(response.data) && response.data.length > 0) {
-          const grouped = {};
-          const newB = [];
-          
-          response.data.forEach(branch => {
-            const stateKey = branch.state.toUpperCase();
-            if (!grouped[stateKey]) {
-              grouped[stateKey] = [];
-            }
-            
-            const formattedBranch = {
-              id: branch.id,
-              city: branch.city,
-              state: branch.state,
-              opened: branch.opened ? branch.opened.split('T')[0] : "",
-              address: branch.address,
-              contact: branch.contact,
-              is_new: !!branch.is_new
-            };
-            
-            grouped[stateKey].push(formattedBranch);
-            
-            if (branch.is_new) {
-              newB.push(formattedBranch);
-            }
-          });
-          
-          setBranchesData(grouped);
-          setNewBranches(newB);
-        }
-      } catch (err) {
-        console.error("Failed to load branches from backend, using fallback data:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
+db.connect(err => {
+    if (err) throw err;
+    console.log("CONNECTED TO DATABASE.");
     
-    fetchBranches();
-  }, []);
- 
-  const toggleState = (state) => {
-    setOpenState(openState === state ? null : state);
-  };
- 
-  const handleSearchChange = (e) => {
-    const value = e.target.value;
-    setSearch(value);
-    setShowResults(value.trim().length > 0);
-  };
- 
-  const selectBranch = (state, branch) => {
-    setOpenState(state);
-    setSearch(branch.city);
-    setShowResults(false);
-    setSelectedBranch(branch);
- 
-    setTimeout(() => {
-      const element = document.getElementById(
-        `state-${state.replace(/\s+/g, "-")}`
-      );
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-    }, 100);
-  };
- 
-  const clearSearch = () => {
-    setSearch("");
-    setShowResults(false);
-    setOpenState(null);
-  };
- 
-  const closeBranchModal = () => {
-    setSelectedBranch(null);
-  };
- 
-  const getAllResults = () => {
-    const results = [];
-    Object.keys(branchesData).forEach((state) => {
-      branchesData[state].forEach((branch) => {
-        if (branch.city.toLowerCase().includes(search.toLowerCase())) {
-          results.push({ state, branch });
+    const createTableSql = `
+        CREATE TABLE IF NOT EXISTS branches (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            city VARCHAR(255) NOT NULL,
+            state VARCHAR(255) NOT NULL,
+            opened DATE NOT NULL,
+            address TEXT NOT NULL,
+            contact VARCHAR(255) NOT NULL,
+            is_new TINYINT(1) DEFAULT 0,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    `;
+    
+    db.query(createTableSql, async (err, result) => {
+        if (err) {
+            console.error("Error creating branches table:", err);
+            process.exit(1);
         }
-      });
+        console.log("Table 'branches' created or already exists.");
+        
+        // Check if there are already branches in the database
+        db.query("SELECT COUNT(*) as count FROM branches", async (err, countRes) => {
+            if (err) {
+                console.error("Error checking branch count:", err);
+                process.exit(1);
+            }
+            
+            if (countRes[0].count > 0) {
+                console.log("Branches table already contains data. Skipping seeding.");
+                process.exit(0);
+            }
+            
+            console.log("Seeding branches data...");
+            
+            // Build the insert values
+            const values = [];
+            Object.keys(defaultBranchesByState).forEach(stateKey => {
+                // Formatting state for representation (e.g. "TAMIL NADU" -> "Tamil Nadu")
+                // but let's see how state names are spelled in defaultNewBranches:
+                // "Tamil Nadu", "Karnataka", "Andhra Pradesh", "Maharashtra", "Telangana"
+                let mappedStateName = stateKey;
+                if (stateKey === "KARNATAKA") mappedStateName = "Karnataka";
+                else if (stateKey === "TAMIL NADU") mappedStateName = "Tamil Nadu";
+                else if (stateKey === "TELANGANA") mappedStateName = "Telangana";
+                else if (stateKey === "ANDHRA PRADESH") mappedStateName = "Andhra Pradesh";
+                else if (stateKey === "MAHARASHTRA") mappedStateName = "Maharashtra";
+                
+                defaultBranchesByState[stateKey].forEach(branch => {
+                    // Check if is_new
+                    const isNew = defaultNewBranches.some(
+                        nb => nb.city.toLowerCase().trim() === branch.city.toLowerCase().trim() &&
+                              nb.state.toLowerCase().trim() === mappedStateName.toLowerCase().trim()
+                    );
+                    
+                    values.push([
+                        branch.city,
+                        mappedStateName,
+                        branch.opened,
+                        branch.address,
+                        branch.contact,
+                        isNew ? 1 : 0
+                    ]);
+                });
+            });
+            
+            const insertSql = "INSERT INTO branches (city, state, opened, address, contact, is_new) VALUES ?";
+            db.query(insertSql, [values], (err, insertRes) => {
+                if (err) {
+                    console.error("Error seeding branches:", err);
+                    process.exit(1);
+                }
+                console.log(`Successfully seeded ${insertRes.affectedRows} branches.`);
+                process.exit(0);
+            });
+        });
     });
-    return results;
-  };
- 
-  const getFilteredData = () => {
-    if (!search.trim()) return branchesData;
- 
-    const filtered = {};
-    Object.keys(branchesData).forEach((state) => {
-      const matchedCities = branchesData[state].filter((branch) =>
-        branch.city.toLowerCase().includes(search.toLowerCase())
-      );
-      if (matchedCities.length > 0) {
-        filtered[state] = matchedCities;
-      }
-    });
-    return filtered;
-  };
- 
-  const openBranchMap = (city) => {
-    let searchQuery = `Nivara Home Finance ${city}`;
-
-    if (city === "JP Nagar" || city === "JPNagar") {
-      searchQuery = "Nivara Home Finance JP Nagar Bengaluru";
-    } else if (city === "Puttenahalli") {
-      searchQuery = "Nivara Home Finance Puttenahalli Bengaluru";
-    } else if (city === "Kanuru") {
-      searchQuery = "Nivara Home Finance Kanuru Vijayawada";
-    }
-
-    window.open(
-      `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(searchQuery)}`,
-      "_blank"
-    );
-  };
- 
-  return (
-    <div className="branch-page">
- 
-      {/* Banner */}
-      <div className="branch-banner animate-pop-up">
-        <div className="banner-con animate-pop-up">
-          <h1>NIVARA LOCATIONS</h1>
-          <p>
-            Our headquarters and branches span across multiple states to serve
-            customers efficiently. Nivara Housing Finance continues to expand
-            across India to make home loans accessible for everyone.
-          </p>
-        </div>
- 
-        <div className="banner-map animate-pop-up">
-          <BranchMap branchesData={branchesData} />
-        </div>
-      </div>
-      {/* Locator */}
-      <div className="branch-locator">
-        <h2 className="animate-pop-up">
-          <FaMapMarkerAlt className="pin-icon" /> NIVARA BRANCH LOCATOR
-        </h2>
- 
-        <div className="search-container">
-          <input
-            type="text"
-            placeholder="Search branch name..."
-            value={search}
-            onChange={handleSearchChange}
-            onFocus={() => search.trim() && setShowResults(true)}
-          />
- 
-          {search && (
-            <button className="search-clear-btn" onClick={clearSearch}>
-              &times;
-            </button>
-          )}
- 
-          {showResults && (
-            <div className="search-results-dropdown">
-              {getAllResults().length > 0 ? (
-                getAllResults().map((res, i) => (
-                  <div
-                    key={i}
-                    className="search-result-item"
-                    onClick={() => selectBranch(res.state, res.branch)}
-                  >
-                    <span className="res-city">{res.branch.city}</span>
-                    <span className="res-state">{res.state}</span>
-                  </div>
-                ))
-              ) : (
-                <div className="no-res">No branches found</div>
-              )}
-            </div>
-          )}
-        </div>
-      </div>
- 
-      {/* State List */}
-      <div className="state-list">
-        {Object.keys(getFilteredData()).sort((a, b) => {
-          const order = ["KARNATAKA", "TAMIL NADU", "TELANGANA", "ANDHRA PRADESH", "MAHARASHTRA"];
-          const indexA = order.indexOf(a);
-          const indexB = order.indexOf(b);
-          if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-          if (indexA !== -1) return -1;
-          if (indexB !== -1) return 1;
-          return a.localeCompare(b);
-        }).map((state) => (
-          <div
-            className="state-wrapper"
-            key={state}
-            id={`state-${state.replace(/\s+/g, "-")}`}
-          >
-            <div
-              className="state-card"
-              onClick={() => toggleState(state)}
-            >
-              <span>{state}</span>
- 
-              <FaChevronDown
-                className={`down-icon ${
-                  openState === state ? "rotate" : ""
-                }`}
-              />
-            </div>
- 
-            {(openState === state || search) && (
-              <div className="location-grid">
-                {getFilteredData()[state].map((branch) => (
-                  <div
-                    key={branch.city}
-                    className={`location-item ${
-                      search &&
-                      branch.city.toLowerCase().includes(search.toLowerCase())
-                        ? "highlight-branch"
-                        : ""
-                    }`}
-                    onClick={() =>
-                      setSelectedBranch(branch)
-                    }
-                  >
-                    📍 {branch.city}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
- 
-      {/* Newly Opened Branches */}
-      <section className="new-branches-section" aria-label="Newly Opened Branches">
-        <div className="new-branches-header">
-          <span className="branch-section-eyebrow">JUST OPENED</span>
-          <h2>Newly Opened Branches</h2>
-          <p>
-            We are constantly expanding our footprint to bring home finance closer to you.
-            Discover our latest locations across different states.
-          </p>
-        </div>
- 
-        <div className="branch-openings-grid">
-          {newBranches.map((branch, index) => (
-            <div className="branch-card" key={index}>
-              <div className="branch-card-head">
-                <div className="branch-card-icon">
-                  <FaBuilding />
-                </div>
-                <div>
-                  <h3>{branch.city}</h3>
-                  <p>{branch.state}</p>
-                </div>
-              </div>
- 
-              <div className="branch-card-detail">
-                <FaCalendarAlt />
-                <div>
-                  <strong>Opened</strong>
-                  <p>{branch.opened}</p>
-                </div>
-              </div>
- 
-              <div className="branch-card-detail">
-                <FaMapMarkerAlt />
-                <div>
-                  <strong>Address</strong>
-                  <p>{branch.address}</p>
-                </div>
-              </div>
- 
-              <div className="branch-card-detail">
-                <FaPhoneAlt />
-                <div>
-                  <strong>Contact</strong>
-                  <p>{branch.contact}</p>
-                </div>
-              </div>
- 
-              <button
-                className="branch-card-directions"
-                onClick={() => openBranchMap(branch.city)}
-              >
-                <FaDirections /> Get Directions
-              </button>
-            </div>
-          ))}
-        </div>
-      </section>
- 
-      {/* Modal */}
-      {selectedBranch && (
-        <div
-          className="branch-modal-overlay"
-          onClick={closeBranchModal}
-        >
-          <div
-            className="branch-modal-card"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="close-btn"
-              onClick={closeBranchModal}
-            >
-              &times;
-            </button>
- 
-            <div className="modal-header">
-              <div className="modal-icon-container">
-                <FaMapMarkerAlt className="modal-icon" />
-              </div>
- 
-              <h3>{selectedBranch.city} Branch</h3>
- 
-              <p className="modal-state-label">
-                {selectedBranch.state}
-              </p>
-            </div>
- 
-            <div className="modal-body">
-              <div className="info-item">
-                <span className="info-label">🏢 COMPANY</span>
-                <p>Nivara Home Finance LTD.</p>
-              </div>
- 
-              <div className="info-divider"></div>
- 
-              <div className="info-item">
-                <span className="info-label">📍 ADDRESS</span>
-                <p>
-                  {selectedBranch.address || `${selectedBranch.city}, ${selectedBranch.state}, India`}
-                </p>
-              </div>
- 
-              <div className="info-divider"></div>
- 
-              <div className="info-item">
-                <span className="info-label">📞 CONTACT SUPPORT</span>
-                <p>{selectedBranch.contact || "1800-309-1516"}</p>
-              </div>
-            </div>
- 
-            <div className="modal-actions-container">
-              <button
-                className="btn-get-directions-final"
-                onClick={() => openBranchMap(selectedBranch.city)}
-              >
-                Get Directions
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-};
- 
-export default Branch;
+});
