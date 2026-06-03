@@ -61,7 +61,7 @@ const coreValues = [
   {
     icon: <FaLeaf />,
     title: "Dignity & Respect",
-    desc: "Treat others better than you expect to be treated.",
+    desc: "Treat others better than you expect to be treated. Respect the knowledge, skills, ideas and capabilities of each employee.",
     color: "#00897B"
   }
 ];

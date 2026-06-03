@@ -8,6 +8,78 @@ import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
 import RequestQuote from "../../../components/RequestQuote/RequestQuote";
 
+const constructionLoanFaqs = [
+  {
+    q: "What is a construction home loan?",
+    a: "A home construction loan is an Nivara Home finance product, designed to help you construct your own home.If you have a plot of land and want to build a house to your own specifications, this product is ideal for you."
+  },
+  {
+    q: "How do I get a Nivara home construction loan?",
+    a: "Our application process is very easy. Fill out the form, and one of our relationship managers will get in touch with you to get all your details."
+  },
+  {
+    q: "What documents are needed to apply for a home construction loan?",
+    a: "- Age proof - Birth certificate, PAN card\n- Income proof - Salary slips, bank statements\n- A legal approval for construction from the Municipal Corporation\n- Approved sanction plan from the authority\n- Residence Proof: PAN Card, Passport, Any other Certificate from Statutory Authority\n- processing fee cheque"
+  },
+  {
+    q: "Can I get a home loan for house construction?",
+    a: "People can avail home loans to get their house constructed – either by themselves, or by employing a contractor to construct the house – on a plot that they own. Such loans are commonly termed construction loans."
+  },
+  {
+    q: "How to get money for house construction?",
+    a: "Apply for a home construction loan according to your eligibility. The lender will determine your loan eligibility based on your income and repayment capacity."
+  },
+  {
+    q: "How will my EMI for a home construction loan be calculated?",
+    a: "Your EMI is calculated based on the rate of interest charged to you at the time of application. We have two types of rates: fixed and floating, and this factors into the EMI amount you have to pay each month. To get an idea of what your EMI may look like, use our EMI calculator."
+  }
+];
+
+import FeaturesBenefits from "../../../components/FeaturesBenefits/FeaturesBenefits";
+
+const constructionLoanBenefits = [
+  {
+    title: "Available for with & without income proof customers",
+    description: "Loan is available for customers with minimum wage too and with other non-income proof documentation."
+  },
+  {
+    title: "No hidden charges",
+    description: "Our process is completely transparent and without any hidden charges."
+  },
+  {
+    title: "Doorstep service",
+    description: "Our Loan expert will provide you services right at your doorstep."
+  },
+  {
+    title: "Easily available in rural India",
+    description: "We have a wide network and are available in rural, semi-urban, and urban areas across locations."
+  },
+  {
+    title: "Easy documentation",
+    description: "Apply with minimal documents, save time and effort."
+  },
+  {
+    title: "End to End Process",
+    description: "Home loan Approval in Simple steps."
+  },
+  {
+    title: "Quick and Smooth Construction Loan Disbursal",
+    description: "Get quick construction loan approval and disbursal with Nivara Home Finance. Say goodbye to delays and obstacles with our doorstep services."
+  },
+  {
+    title: "24x7 assistance",
+    description: "Connect with us on Chat, Social Media anytime, anywhere."
+  },
+  {
+    title: "Multiple Repayment Options",
+    description: "Pay your EMIs or pre-payments using multiple repayment options."
+  },
+  {
+    title: "Customized Construction Loan",
+    description: "Tailor your offer to match your budget, eligibility, and construction needs. Build your dream house with a generous loan and flexible 20 + year tenure."
+  }
+];
+
 const ConstructionLoan = () => {
   const navigate = useNavigate();
 
@@ -100,39 +172,11 @@ const ConstructionLoan = () => {
       </div>
 
       {/* Features & Benefits Section */}
-      <ScrollReveal direction="up">
-        <div className="conloan-benefits-section">
-          <h2 className="conloan-benefits-title">
-            Benefits of a Home Construction Loan for Your Dream Home
-          </h2>
+      <FeaturesBenefits 
+        title=" Features and Benefits of a Home Construction Loan for Your Dream Home" 
+        items={constructionLoanBenefits} 
+      />
 
-          <div className="conloan-benefits-list">
-            {[
-              "Available for with & without income proof customers",
-              "No hidden charges",
-              "Doorstep service",
-              "Easily available in rural India",
-              "Easy documentation",
-              "End to End Process",
-              "Quick and Smooth Construction Loan Disbursal",
-              "24x7 assistance",
-              "Multiple Repayment Options",
-              "Customized Construction Loan"
-            ].map((benefit, index) => (
-              <ScrollReveal
-                key={index}
-                direction="up"
-                delay={index * 0.05}
-                distance={10}
-              >
-                <div className="conloan-benefit-item">
-                  {benefit}
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </ScrollReveal>
 
       <RequestQuote themeColor="#E32125" />
 
@@ -147,16 +191,20 @@ const ConstructionLoan = () => {
 
         <div className="conloan-help-grid">
           {[
-            { icon: <FaCalendarAlt />, title: "APPLY FOR LOAN", text: "Looking to buy a home loan? then apply for loan now.", link: "Get Appointment" },
-            { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", green: true },
-            { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", green: true }
+            { icon: <FaCalendarAlt />, title: "APPLY FOR LOAN", text: "Looking to buy a home loan? then apply for loan now.", link: "Get Appointment", path: "/get-appointment" },
+            { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", path: "/contact-inquiry", green: true },
+            { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", path: "/meet-advisor", green: true }
           ].map((card, index) => (
             <ScrollReveal
               key={index}
               direction="up"
               delay={index * 0.1 + 0.1}
             >
-              <div className="conloan-help-card">
+              <div 
+                className="conloan-help-card" 
+                onClick={() => navigate(card.path)}
+                style={{ cursor: "pointer" }}
+              >
                 <div className="conloan-help-icon">{card.icon}</div>
                 <h3>{card.title}</h3>
                 {card.green ? (
@@ -175,7 +223,7 @@ const ConstructionLoan = () => {
       </div>
 
       {/* FAQ Section */}
-      <ServiceFaqs />
+      <ServiceFaqs faqs={constructionLoanFaqs} />
     </div>
   );
 };

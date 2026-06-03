@@ -8,6 +8,62 @@ import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
 import RequestQuote from "../../../components/RequestQuote/RequestQuote";
 
+const refinanceLoanFaqs = [
+  {
+    q: "What is refinancing a home loan?",
+    a: "Refinancing your home loan is nothing but a home loan balance transfer. It simply means the option to switch to another lender who can give a lower home loan interest rate."
+  },
+  {
+    q: "When can I refinance my house?",
+    a: "You can refinance your house when you believe it makes financial sense, typically when you can secure lower interest rates, better loan terms, or achieve other financial goals through the process."
+  },
+  {
+    q: "How many times can you refinance a Home loan?",
+    a: "There is no strict limit on how many times you can refinance a mortgage loan, but it's essential to consider the associated costs and benefits for each refinancing."
+  },
+  {
+    q: "What do the best home loan and refinancing deals offer?",
+    a: "● Lower Interest Rates\n● Reduced Monthly Payments\n● Shorter Loan Terms\n● Switching Loan Types"
+  },
+  {
+    q: "What is the correlation between home loan interest rates and refinancing?",
+    a: "The decision to refinance a home loan is heavily influenced by interest rates. When interest rates fall by even a modest amount, it can result in significant savings over the life of the loan.\nKeep an eye on the economy and interest rate forecasts. If rates are predicted to climb, you might wish to refinance sooner rather than later to secure favorable home loan refinancing rates."
+  },
+  {
+    q: "Is it beneficial to refinance a home loan?",
+    a: "Yes, refinancing a home loan can be highly beneficial. It offers the opportunity to secure lower interest rates, adjust loan terms, consolidate debts, access home equity, and enhance your overall financial situation."
+  }
+];
+
+import FeaturesBenefits from "../../../components/FeaturesBenefits/FeaturesBenefits";
+
+const refinanceLoanBenefits = [
+  {
+    title: "Loan Tenure Change",
+    description: "One of the reasons why someone may look to refinance a home loan is to reduce the loan tenure. The basic advantage of reducing the loan tenure is that there are savings on interest costs."
+  },
+  {
+    title: "Switching Lenders",
+    description: "If you’re dissatisfied with your current lender’s customer service or terms, refinancing gives you the opportunity to switch to a more favorable lender. Not only does this move ensure better service but also helps maximize your savings."
+  },
+  {
+    title: "Top-up Facility",
+    description: "It enables you to access additional funds based on the equity you’ve built in your property. By refinancing with a top-up loan, you can address financial needs like home improvements, education expenses, or debt consolidation without the hassle of applying for a separate loan."
+  },
+  {
+    title: "Easily available in rural India",
+    description: "We have a wide network and are available in rural, semi-urban, and urban areas across locations."
+  },
+  {
+    title: "Easy documentation",
+    description: "Apply with minimal documents, save time and effort."
+  },
+  {
+    title: "Pay Off Your Home Loan Sooner",
+    description: "Refinancing your home can also shorten the length of your loan, allowing you to pay down your debt and build up equity faster. There are many reasons you might want to pay off your home sooner. Perhaps you want to purchase a rental property or reduce your overall debt."
+  }
+];
+
 const RefinanceLoan = () => {
   const navigate = useNavigate();
 
@@ -100,42 +156,11 @@ const RefinanceLoan = () => {
       </div>
 
       {/* Features & Benefits Section */}
-      <ScrollReveal direction="up">
-        <div className="refinance-benefits-section">
-          <h2 className="refinance-benefits-title">
-            Key Features of Refinance Loan
-          </h2>
+      <FeaturesBenefits 
+        title=" Features and Benefits of Refinance Loan" 
+        items={refinanceLoanBenefits} 
+      />
 
-          <div className="refinance-benefits-list">
-            {[
-              "Easy Loan Approvals",
-              "Lowest Possible Prices",
-              "Hassle free",
-              "Secure Loan Process",
-              "Loan Tenure Change",
-              "Switching Lenders",
-              "Top-up Facility",
-              "Easily available in rural India",
-              "Easy documentation",
-              "Pay Off Your Home Loan Sooner",
-              "Switch from a Floating Interest Rate to a Fixed Interest Rate",
-              "Lower Your Interest Rate",
-              "Lower Your Monthly Payment"
-            ].map((benefit, index) => (
-              <ScrollReveal
-                key={index}
-                direction="up"
-                delay={index * 0.05}
-                distance={10}
-              >
-                <div className="refinance-benefit-item">
-                  {benefit}
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </ScrollReveal>
 
       <RequestQuote themeColor="#E32125" />
 
@@ -150,16 +175,20 @@ const RefinanceLoan = () => {
 
         <div className="refinance-help-grid">
           {[
-            { icon: <FaCalendarAlt />, title: "APPLY FOR LOAN", text: "Looking to buy a home loan? then apply for loan now.", link: "Get Appointment" },
-            { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", green: true },
-            { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", green: true }
+            { icon: <FaCalendarAlt />, title: "APPLY FOR LOAN", text: "Looking to buy a home loan? then apply for loan now.", link: "Get Appointment", path: "/get-appointment" },
+            { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", path: "/contact-inquiry", green: true },
+            { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", path: "/meet-advisor", green: true }
           ].map((card, index) => (
             <ScrollReveal
               key={index}
               direction="up"
               delay={index * 0.1 + 0.1}
             >
-              <div className="refinance-help-card">
+              <div 
+                className="refinance-help-card" 
+                onClick={() => navigate(card.path)}
+                style={{ cursor: "pointer" }}
+              >
                 <div className="refinance-help-icon">{card.icon}</div>
                 <h3>{card.title}</h3>
                 {card.green ? (
@@ -178,7 +207,7 @@ const RefinanceLoan = () => {
       </div>
 
       {/* FAQ Section */}
-      <ServiceFaqs />
+      <ServiceFaqs faqs={refinanceLoanFaqs} />
     </div>
   );
 };

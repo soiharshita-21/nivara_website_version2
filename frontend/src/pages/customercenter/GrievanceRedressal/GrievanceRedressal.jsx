@@ -78,7 +78,7 @@ const GrievanceRedressal = () => {
                   <strong>OR</strong>
                 </li>
                 <li>
-                  <strong>Offline mode</strong> by post, in prescribed format available at link <a href="http://www.nhb.org.in/Grievance-Redressal-System/Lodging-Complaint-Against-HFCs-NHB%E2%80%93Physical-Mode.pdf" target="_blank" rel="noopener noreferrer" className="red-link inline-link">Download Physical Form PDF</a>, to Complaint Redressal Cell, Department of Regulation &amp; Supervision, National Housing Bank, 4th Floor, Core 5A, India Habitat Centre, Lodhi Road, New Delhi – 110 003.
+                  <strong>Offline mode</strong> by post, in prescribed format available at link "http://www.nhb.org.in/Grievance-Redressal-System/Lodging-Complaint-Against-HFCs-NHB%E2%80%93Physical-Mode.pdf" , to Complaint Redressal Cell, Department of Regulation &amp; Supervision, National Housing Bank, 4th Floor, Core 5A, India Habitat Centre, Lodhi Road, New Delhi – 110 003.
                 </li>
               </ul>
             </div>

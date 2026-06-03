@@ -38,12 +38,14 @@ const serviceFaqData = [
   }
 ];
 
-const ServiceFaqs = () => {
+const ServiceFaqs = ({ faqs }) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
+
+  const currentFaqData = faqs || serviceFaqData;
 
   return (
     <div className="service-faq-wrapper">
@@ -57,7 +59,7 @@ const ServiceFaqs = () => {
       </ScrollReveal>
 
       <div className="service-faq-container">
-        {serviceFaqData.map((item, index) => (
+        {currentFaqData.map((item, index) => (
           <ScrollReveal 
             key={index} 
             direction="up" 
@@ -76,7 +78,7 @@ const ServiceFaqs = () => {
               </div>
               <div className="service-faq-answer">
                 <div className="answer-content">
-                  <p>{item.a}</p>
+                  <p style={{ whiteSpace: "pre-line" }}>{item.a}</p>
                 </div>
               </div>
             </div>

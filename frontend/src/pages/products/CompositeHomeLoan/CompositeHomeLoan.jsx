@@ -8,6 +8,70 @@ import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
 import RequestQuote from "../../../components/RequestQuote/RequestQuote";
 
+const compositeHomeLoanFaqs = [
+  {
+    q: "What is a composite loan?",
+    a: "Composite loan is a loan extended by banks and financial institutions for the purpose of purchasing a plot or land and constructing a house on it within a given timeline. It’s a combination of a plot loan and a construction loan. In this type of loan, the cost of both land or plot and construction of the house is covered."
+  },
+  {
+    q: "What is a composite home loan scheme in Nivara Home Finance?",
+    a: "A composite home loan scheme is a similar housing loan that includes all components of home development, such as land purchase and construction costs. This loan is different from regular home loans because it lets you buy land and build a house within a certain amount of time."
+  },
+  {
+    q: "Can we claim a composite loan?",
+    a: "By completing your house construction within three years, you become eligible for tax benefits on your composite loan."
+  },
+  {
+    q: "What are the benefits of a composite loan?",
+    a: "The composite loan tax benefits include combining land and construction costs and tax incentives."
+  }
+];
+
+import FeaturesBenefits from "../../../components/FeaturesBenefits/FeaturesBenefits";
+
+const compositeHomeLoanBenefits = [
+  {
+    title: "Different from land loans",
+    description: "A composite home loan differs from a land loan in that it covers both building and land expenditures. If you plan to start construction immediately, you should opt for a composite loan, but if you plan to construct later, a land loan might be a better option."
+  },
+  {
+    title: "No hidden charges",
+    description: "Our process is completely transparent and without any hidden charges."
+  },
+  {
+    title: "Doorstep service",
+    description: "Our Loan expert will provide you services right at your doorstep."
+  },
+  {
+    title: "Easily available in rural India",
+    description: "We have a wide network and are available in rural, semi-urban, and urban areas across locations."
+  },
+  {
+    title: "Easy documentation",
+    description: "Apply with minimal documents, save time and effort."
+  },
+  {
+    title: "Loan Amount Of Composite Home Loan",
+    description: "The composite loan limit is based on your loan repayment capacity."
+  },
+  {
+    title: "Repayment Charges",
+    description: "It’s possible that you’ll have to pay prepayment fees if you go with a fixed interest rate, but you may not have to do so if you go with a fluctuating interest rate on your composite loan. Prepayment fees may differ from one lender to the next."
+  },
+  {
+    title: "Transparent client interactions",
+    description: "We maintain high levels of transparency in our relations with customers."
+  },
+  {
+    title: "Immediate construction requirement",
+    description: "To avail of a composite home loan, immediate construction is a mandatory requirement. Lenders usually want borrowers to start building within one to two years of getting a loan. If they don’t, they may have to pay higher interest rates or pay off the loan and close it."
+  },
+  {
+    title: "24x7 assistance",
+    description: "Connect with us on Chat, Social Media anytime, anywhere."
+  }
+];
+
 const CompositeHomeLoan = () => {
   const navigate = useNavigate();
 
@@ -99,39 +163,11 @@ const CompositeHomeLoan = () => {
       </div>
 
       {/* Features & Benefits Section */}
-      <ScrollReveal direction="up">
-        <div className="com-benefits-section">
-          <h2 className="com-benefits-title">
-            Key Features of Composite Home Loan
-          </h2>
+      <FeaturesBenefits 
+        title=" Features and Benefits of Composite Home Loan" 
+        items={compositeHomeLoanBenefits} 
+      />
 
-          <div className="com-benefits-list">
-            {[
-              "Different from land loans",
-              "No hidden charges",
-              "Doorstep service",
-              "Easily available in rural India",
-              "Easy documentation",
-              "Loan Amount Of Composite Home Loan (Varies based on eligibility)",
-              "Repayment Charges (Transparently disclosed)",
-              "Transparent client interactions",
-              "Immediate construction requirement",
-              "24x7 assistance"
-            ].map((benefit, index) => (
-              <ScrollReveal
-                key={index}
-                direction="up"
-                delay={index * 0.05}
-                distance={10}
-              >
-                <div className="com-benefit-item">
-                  {benefit}
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </ScrollReveal>
 
       <RequestQuote themeColor="#E32125" />
 
@@ -146,16 +182,20 @@ const CompositeHomeLoan = () => {
 
         <div className="com-help-grid">
           {[
-            { icon: <FaCalendarAlt />, title: "APPLY FOR LOAN", text: "Looking to buy a home loan? then apply for loan now.", link: "Get Appointment" },
-            { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", green: true },
-            { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", green: true }
+            { icon: <FaCalendarAlt />, title: "APPLY FOR LOAN", text: "Looking to buy a home loan? then apply for loan now.", link: "Get Appointment", path: "/get-appointment" },
+            { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", path: "/contact-inquiry", green: true },
+            { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", path: "/meet-advisor", green: true }
           ].map((card, index) => (
             <ScrollReveal
               key={index}
               direction="up"
               delay={index * 0.1 + 0.1}
             >
-              <div className="com-help-card">
+              <div 
+                className="com-help-card" 
+                onClick={() => navigate(card.path)}
+                style={{ cursor: "pointer" }}
+              >
                 <div className="com-help-icon">{card.icon}</div>
                 <h3>{card.title}</h3>
                 {card.green ? (
@@ -174,7 +214,7 @@ const CompositeHomeLoan = () => {
       </div>
 
       {/* FAQ Section */}
-      <ServiceFaqs />
+      <ServiceFaqs faqs={compositeHomeLoanFaqs} />
     </div>
   );
 };

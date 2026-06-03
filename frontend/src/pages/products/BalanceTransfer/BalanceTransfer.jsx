@@ -8,6 +8,66 @@ import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
 import RequestQuote from "../../../components/RequestQuote/RequestQuote";
 
+const balanceTransferFaqs = [
+  {
+    q: "What is a balance transfer loan ?",
+    a: "A loan balance transfer refers to the process of transferring your outstanding loans to a new lender."
+  },
+  {
+    q: "Why should I think about refinancing my home loan balance? ",
+    a: "Paying your home loan can sometimes get challenging with the high-interest rates. Refinancing can offer you a way out. If you find a lender offering lower interest rates or better loan terms than your current lender, you can think about refinancing your home loan balance. Refinancing can help you reduce your monthly EMI (Equated Monthly Installment) payments, save on interest costs, and in some cases, shorten the loan term."
+  },
+  {
+    q: "Is there a charge to transfer the rest of my home loan?",
+    a: "Yes, we charge a processing fee for the home loan balance transfer facility to TCHFL (Tata Capital Home Finance Limited). The fee can differ based on the home loan amount and other factors. You can find the exact charge in the MITC (Most Important Terms and Conditions) document that will be shared with you when you apply for refinancing to Nivara Hol."
+  },
+  {
+    q: "What are the documents required for a balance transfer loan ? ",
+    a: "Age Proof , Address Proof , KYC Documents ,Home Loan Approval Letter , Interest certificates from the initial lender and With or Without income proof Documents ."
+  }
+];
+
+import FeaturesBenefits from "../../../components/FeaturesBenefits/FeaturesBenefits";
+
+const balanceTransferBenefits = [
+  {
+    title: "Available for with & without income proof customers",
+    description: "Loan is available for customers with minimum wage too and with other non-income proof documentation."
+  },
+  {
+    title: "No hidden charges",
+    description: "Our process is completely transparent and without any hidden charges."
+  },
+  {
+    title: "Doorstep service",
+    description: "Our Loan expert will provide you services right at your doorstep."
+  },
+  {
+    title: "Easily available in rural India",
+    description: "We have a wide network and are available in rural, semi-urban, and urban areas across locations."
+  },
+  {
+    title: "Easy documentation",
+    description: "Apply with minimal documents, save time and effort."
+  },
+  {
+    title: "End to End Process",
+    description: "Home loan Approval in Simple steps."
+  },
+  {
+    title: "24x7 assistance",
+    description: "Connect with us on Chat, Social Media anytime, anywhere."
+  },
+  {
+    title: "Customized Repayment Options",
+    description: "Tailor-made home loans to suit your requirements."
+  },
+  {
+    title: "Transparent client interactions",
+    description: "We maintain high levels of transparency in our relations with customers."
+  }
+];
+
 const BalanceTransfer = () => {
   const navigate = useNavigate();
 
@@ -98,38 +158,11 @@ const BalanceTransfer = () => {
       </div>
 
       {/* Features & Benefits Section */}
-      <ScrollReveal direction="up">
-        <div className="balance-benefits-section">
-          <h2 className="balance-benefits-title">
-            Key Features of Home Loan Balance Transfer
-          </h2>
+      <FeaturesBenefits 
+        title=" Features  and Benefits of Home Loan Balance Transfer" 
+        items={balanceTransferBenefits} 
+      />
 
-          <div className="balance-benefits-list">
-            {[
-              "Available for with & without income proof customers",
-              "No hidden charges",
-              "Doorstep service",
-              "Easily available in rural India",
-              "Easy documentation",
-              "End to End Process",
-              "24x7 assistance",
-              "Customized Repayment Options",
-              "Transparent client interactions"
-            ].map((benefit, index) => (
-              <ScrollReveal
-                key={index}
-                direction="up"
-                delay={index * 0.05}
-                distance={10}
-              >
-                <div className="balance-benefit-item">
-                  {benefit}
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </ScrollReveal>
 
       <RequestQuote themeColor="#E32125" />
 
@@ -144,16 +177,20 @@ const BalanceTransfer = () => {
 
         <div className="balance-help-grid">
           {[
-            { icon: <FaCalendarAlt />, title: "APPLY FOR LOAN", text: "Looking to buy a home loan? then apply for loan now.", link: "Get Appointment" },
-            { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", green: true },
-            { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", green: true }
+            { icon: <FaCalendarAlt />, title: "APPLY FOR LOAN", text: "Looking to buy a home loan? then apply for loan now.", link: "Get Appointment", path: "/get-appointment" },
+            { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", path: "/contact-inquiry", green: true },
+            { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", path: "/meet-advisor", green: true }
           ].map((card, index) => (
             <ScrollReveal
               key={index}
               direction="up"
               delay={index * 0.1 + 0.1}
             >
-              <div className="balance-help-card">
+              <div 
+                className="balance-help-card" 
+                onClick={() => navigate(card.path)}
+                style={{ cursor: "pointer" }}
+              >
                 <div className="balance-help-icon">{card.icon}</div>
                 <h3>{card.title}</h3>
                 {card.green ? (
@@ -172,7 +209,7 @@ const BalanceTransfer = () => {
       </div>
 
       {/* FAQ Section */}
-      <ServiceFaqs />
+      <ServiceFaqs faqs={balanceTransferFaqs} />
     </div>
   );
 };

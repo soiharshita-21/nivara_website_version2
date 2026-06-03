@@ -8,6 +8,70 @@ import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
 import RequestQuote from "../../../components/RequestQuote/RequestQuote";
 
+const improvementandExtensionFaqs = [
+  {
+    q: "What is the Home Loan Extension / Home Loan Improvement ?",
+    a: "It is a loan to extend or add living space to your home such as additional rooms and floors etc."
+  },
+  {
+    q: "Who can Avail of an Extension Home loan ?",
+    a: "Any person who wishes to add space to their existing Apartment/Floor/Row house can avail a Home Extension Loan from Nivara Home Finance. Existing home loan customers can also avail a Home Extension Loan."
+  },
+  {
+    q: "Can a Home Renovation loan fund the purchase of the furniture ?",
+    a: "No. A home improvement loan can only be used to fund the structural renovation of your home. You cannot use it to purchase movable objects such as furniture or electronic gadgets."
+  },
+  {
+    q: "What comes under home renovation?",
+    a: "You can use your house renovation loan for a variety of improvements to your home, like renovations, repairs, flooring, extensions, and painting. In other words, you can utilize your loan funds for anything you want on your home’s development."
+  },
+  {
+    q: "What are the documents required for a home loan extension from Nivara Home Finance ?",
+    a: "PAN Card is mandatory, Passport, Voter ID, Aadhar Card, Driving License, Construction estimate, Property documents."
+  }
+];
+
+import FeaturesBenefits from "../../../components/FeaturesBenefits/FeaturesBenefits";
+
+const improvementandExtensionBenefits = [
+  {
+    title: "Available for with & without income proof customers",
+    description: "Loan is available for customers with minimum wage too and with other non-income proof documentation."
+  },
+  {
+    title: "No hidden charges",
+    description: "Our process is completely transparent and without any hidden charges."
+  },
+  {
+    title: "Doorstep service",
+    description: "Our Loan expert will provide you services right at your doorstep."
+  },
+  {
+    title: "Easily available in rural India",
+    description: "We have a wide network and are available in rural, semi-urban, and urban areas across locations."
+  },
+  {
+    title: "Easy documentation",
+    description: "Apply with minimal documents, save time and effort."
+  },
+  {
+    title: "End to End Process",
+    description: "Home loan Approval in Simple steps."
+  },
+  {
+    title: "24x7 assistance",
+    description: "Connect with us on Chat, Social Media anytime, anywhere."
+  },
+  {
+    title: "Customized Repayment Options",
+    description: "Tailor-made home loans to suit your requirements."
+  },
+  {
+    title: "Transparent client interactions",
+    description: "We maintain high levels of transparency in our relations with customers."
+  }
+];
+
 const ImprovementandExtension = () => {
   const navigate = useNavigate();
 
@@ -103,37 +167,11 @@ const ImprovementandExtension = () => {
       </div>
 
       {/* Features & Benefits Section */}
-      <ScrollReveal direction="up">
-        <div className="improv-benefits-section">
-          <h2 className="improv-benefits-title">
-            Key Features of Improvement and Extension Loan
-          </h2>
+      <FeaturesBenefits 
+        title=" Features and Benefits of Improvement and Extension Loan" 
+        items={improvementandExtensionBenefits} 
+      />
 
-          <div className="improv-benefits-list">
-            {[
-              "Available for with & without income proof customers",
-              "No hidden charges",
-              "Doorstep service",
-              "Easily available in rural India",
-              "Easy documentation",
-              "End to End Process",
-              "24x7 assistance",
-              "Customized Repayment Options"
-            ].map((benefit, index) => (
-              <ScrollReveal
-                key={index}
-                direction="up"
-                delay={index * 0.05}
-                distance={10}
-              >
-                <div className="improv-benefit-item">
-                  {benefit}
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </ScrollReveal>
 
       <RequestQuote themeColor="#E32125" />
 
@@ -148,16 +186,20 @@ const ImprovementandExtension = () => {
 
         <div className="improv-help-grid">
           {[
-            { icon: <FaCalendarAlt />, title: "APPLY FOR LOAN", text: "Looking to buy a home loan? then apply for loan now.", link: "Get Appointment" },
-            { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", green: true },
-            { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", green: true }
+            { icon: <FaCalendarAlt />, title: "APPLY FOR LOAN", text: "Looking to buy a home loan? then apply for loan now.", link: "Get Appointment", path: "/get-appointment" },
+            { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", path: "/contact-inquiry", green: true },
+            { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", path: "/meet-advisor", green: true }
           ].map((card, index) => (
             <ScrollReveal
               key={index}
               direction="up"
               delay={index * 0.1 + 0.1}
             >
-              <div className="improv-help-card">
+              <div 
+                className="improv-help-card" 
+                onClick={() => navigate(card.path)}
+                style={{ cursor: "pointer" }}
+              >
                 <div className="improv-help-icon">{card.icon}</div>
                 <h3>{card.title}</h3>
                 {card.green ? (
@@ -176,7 +218,7 @@ const ImprovementandExtension = () => {
       </div>
 
       {/* FAQ Section */}
-      <ServiceFaqs />
+      <ServiceFaqs faqs={improvementandExtensionFaqs} />
     </div>
   );
 };

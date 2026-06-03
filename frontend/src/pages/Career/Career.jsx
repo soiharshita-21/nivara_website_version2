@@ -17,6 +17,7 @@ const Career = () => {
   const [file, setFile] = useState(null);
   const [submitting, setSubmitting] = useState(false);
   const [alert, setAlert] = useState({ type: "", message: "" });
+  const [showModal, setShowModal] = useState(false);
   const fileInputRef = useRef(null);
 
   const handleChange = (e) => {
@@ -114,6 +115,24 @@ const Career = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setShowModal(false);
+      }
+    };
+    if (showModal) {
+      window.addEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "unset";
+    };
+  }, [showModal]);
+
   return (
     <div className="career-modern-page">
       {/* Hero Section */}
@@ -188,7 +207,7 @@ const Career = () => {
                     willingness to learn and evolve.
                   </p>
                 </div>
-                <button className="apply-btn-outline">Apply Now <MdOutlineArrowForwardIos /></button>
+                <button className="apply-btn-outline" onClick={() => setShowModal(true)}>Apply Now <MdOutlineArrowForwardIos /></button>
               </div>
 
               <div className="job-modern-card">
@@ -203,7 +222,7 @@ const Career = () => {
                     willingness to learn and evolve.
                   </p>
                 </div>
-                <button className="apply-btn-outline">Apply Now <MdOutlineArrowForwardIos /></button>
+                <button className="apply-btn-outline" onClick={() => setShowModal(true)}>Apply Now <MdOutlineArrowForwardIos /></button>
               </div>
             </div>
           </div>
@@ -334,6 +353,42 @@ const Career = () => {
 
         </div>
       </section>
+
+      {/* Modal Popup */}
+      {showModal && (
+        <div className="career-modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="career-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="career-modal-close" onClick={() => setShowModal(false)} aria-label="Close modal">&times;</button>
+            <div className="career-modal-header">
+              <FaGraduationCap className="modal-header-icon" />
+              <h2>Application Details</h2>
+            </div>
+            <div className="career-modal-body">
+              <div className="requirement-tag animate-fade-in-quick">
+                <FaGraduationCap className="icon-red" />
+                <span>Any Educational Degree with good communication skills</span>
+              </div>
+              
+              <p className="modal-paragraph">
+                Candidates should be earnest and driven to create an impact with the work that they do. Looking for someone with an open mind, willingness to learn and evolve.
+              </p>
+              
+              <p className="modal-paragraph">
+                We welcome candidates (Experinced & Fresher) who are keen to ride the exciting (and expectedly rough) journey of creating an organization. We are looking for those with a predilection to thinking out-of-the-box, can handle the uncertainties, have respect & empathy for all individuals and a strong value system.
+              </p>
+              
+              <div className="open-positions-highlight">
+                <p>
+                  We have open positions across locations in the functions of <strong>Sales, Operations, Credit & Risk, Technical and Legal</strong>. If you would like to explore further, please drop in your CV to:
+                </p>
+                <a href="mailto:careers@nivarahousing.com" className="modal-email-btn">
+                  <FaEnvelope /> careers@nivarahousing.com
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

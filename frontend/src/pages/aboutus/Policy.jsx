@@ -22,13 +22,13 @@ const policies = [
 const PolicyPage = () => {
   return (
     <section className="policy-section animate-pop-up">
-      <section className="page-banner animate-pop-up" style={{ backgroundImage: `url(${policy2})` }}>
+      <section className="page-banner policy-page-banner animate-pop-up" style={{ backgroundImage: `url(${policy2})` }}>
         <div className="page-banner-overlay"></div>
-        <div className="page-banner-content">
-          <h1 className="page-banner-title">
+        <div className="page-banner-content policy-page-banner-content">
+          <h1 className="page-banner-title policy-page-banner-title">
             Policy
           </h1>
-          <p className="page-banner-subtitle">
+          <p className="page-banner-subtitle policy-page-banner-subtitle">
             Transparency and regulatory compliance in housing finance.
           </p>
         </div>

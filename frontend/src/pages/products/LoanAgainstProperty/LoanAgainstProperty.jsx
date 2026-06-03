@@ -10,6 +10,78 @@ import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
 import RequestQuote from "../../../components/RequestQuote/RequestQuote";
 
+const loanAgainstPropertyFaqs = [
+  {
+    q: "What is a Loan Against Property ?",
+    a: "A loan against property (LAP) is a secured loan that banks, housing finance companies and NBFCs provide against residential or commercial property. These loans are typically has lower interest rates as compared to a personal loan or business loan and are disbursed at a reasonable time. Anyone with a pre-owned property can avail such loans, whether they are salaried or self-employed in a business or professional setup. The quantum of loan sanctioned is also higher than what may be offered in other available options."
+  },
+  {
+    q: "Is loan against property a good idea?",
+    a: "LAP avails the best offer as compared to PL. It gives greater flexibility, lower interest rates, higher loan amounts, and longer repayment tenure. LAP is also best suited for those running their own businesses or self-employed professionals."
+  },
+  {
+    q: "Can I convert a loan against property to a home loan?",
+    a: "Yes, it is possible to convert a LAP (Loan Against Property) loan to a home loan. However, the process and eligibility criteria for such a conversion may vary depending on the lending institution and the terms of the original loan."
+  },
+  {
+    q: "How Does Loan Against Property Work?",
+    a: "Loan Against Property is a secured loan where borrowers pledge their property as collateral to avail funds. The loan amount is determined based on the property's value and the borrower's repayment capacity."
+  },
+  {
+    q: "Who Can Avail Loan Against Property From Nivara Home Finance?",
+    a: "Any Resident Indian Individual, partnership firms or companies can apply for a LAP with Nivara Home Finance."
+  },
+  {
+    q: "What Are The Documents Required To Apply For Loan Against Property With Nivara Home Finance ?",
+    a: "Along with application form, following documents are required to be submitted:\n- Proof of residence\n- Proof of identity Certified/\n- latest financial documents\n- Copies of all property documents (Need to check)"
+  }
+];
+
+import FeaturesBenefits from "../../../components/FeaturesBenefits/FeaturesBenefits";
+
+const loanAgainstPropertyBenefits = [
+  {
+    title: "Competitive interest rates",
+    description: "Loan Against Property typically usually has lower interest rates compared to other unsecured loans."
+  },
+  {
+    title: "Higher loan amount",
+    description: "Depending on the value of the property, the borrower can avail a higher loan amount."
+  },
+  {
+    title: "Customized Repayment Options",
+    description: "The repayment tenure for Loan Against Property can be up to 20 years, which gives the borrower ample time to repay the loan."
+  },
+  {
+    title: "No hidden charges",
+    description: "Our process is completely transparent and without any hidden charges."
+  },
+  {
+    title: "Doorstep service",
+    description: "Our Loan expert will provide you services right at your doorstep."
+  },
+  {
+    title: "Easily available in rural India",
+    description: "We have a wide network and are available in rural, semi-urban, and urban areas across locations."
+  },
+  {
+    title: "Easy documentation",
+    description: "Apply with minimal documents, save time and effort."
+  },
+  {
+    title: "End to End Process",
+    description: "Home loan Approval in Simple steps."
+  },
+  {
+    title: "24x7 assistance",
+    description: "Connect with us on Chat, Social Media anytime, anywhere."
+  },
+  {
+    title: "Transparent client interactions",
+    description: "We maintain high levels of transparency in our relations with customers."
+  }
+];
+
 const LoanAgainstProperty = () => {
   const navigate = useNavigate();
 
@@ -101,39 +173,11 @@ const LoanAgainstProperty = () => {
       </div>
 
       {/* Features & Benefits Section */}
-      <ScrollReveal direction="up">
-        <div className="lap-benefits-section">
-          <h2 className="lap-benefits-title">
-            Key Features of Nivara Loan Against Property
-          </h2>
+      <FeaturesBenefits 
+        title=" Features and Benefits of Nivara Loan Against Property" 
+        items={loanAgainstPropertyBenefits} 
+      />
 
-          <div className="lap-benefits-list">
-            {[
-              "Competitive interest rates",
-              "Higher loan amount",
-              "Customized Repayment Options",
-              "No hidden charges",
-              "Doorstep service",
-              "Easily available in rural India",
-              "Easy documentation",
-              "End to End Process",
-              "24x7 assistance",
-              "Transparent client interactions"
-            ].map((benefit, index) => (
-              <ScrollReveal
-                key={index}
-                direction="up"
-                delay={index * 0.05}
-                distance={10}
-              >
-                <div className="lap-benefit-item">
-                  {benefit}
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </ScrollReveal>
 
       <RequestQuote themeColor="#E32125" />
 
@@ -148,16 +192,20 @@ const LoanAgainstProperty = () => {
 
         <div className="lap-help-grid">
           {[
-            { icon: <FaCalendarAlt />, title: "APPLY FOR LOAN", text: "Looking to buy a home loan? then apply for loan now.", link: "Get Appointment" },
-            { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", green: true },
-            { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", green: true }
+            { icon: <FaCalendarAlt />, title: "APPLY FOR LOAN", text: "Looking to buy a home loan? then apply for loan now.", link: "Get Appointment", path: "/get-appointment" },
+            { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", path: "/contact-inquiry", green: true },
+            { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", path: "/meet-advisor", green: true }
           ].map((card, index) => (
             <ScrollReveal
               key={index}
               direction="up"
               delay={index * 0.1 + 0.1}
             >
-              <div className="lap-help-card">
+              <div 
+                className="lap-help-card" 
+                onClick={() => navigate(card.path)}
+                style={{ cursor: "pointer" }}
+              >
                 <div className="lap-help-icon">{card.icon}</div>
                 <h3>{card.title}</h3>
                 {card.green ? (
@@ -176,7 +224,7 @@ const LoanAgainstProperty = () => {
       </div>
 
       {/* FAQ Section */}
-      <ServiceFaqs />
+      <ServiceFaqs faqs={loanAgainstPropertyFaqs} />
     </div>
   );
 };

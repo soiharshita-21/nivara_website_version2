@@ -26,13 +26,13 @@ const PrivacyPolicy = () => {
   return (
     <div className="privacy-page">
       {/* Hero Section */}
-      <section className="page-banner animate-pop-up" style={{ backgroundImage: `url(${pri})` }}>
+      <section className="page-banner privacy-page-banner animate-pop-up" style={{ backgroundImage: `url(${pri})` }}>
         <div className="page-banner-overlay"></div>
-        <div className="page-banner-content">
-          <h1 className="page-banner-title">
+        <div className="page-banner-content privacy-page-banner-content">
+          <h1 className="page-banner-title privacy-page-banner-title">
             Privacy <span className="text-red">Policy</span>
           </h1>
-          <p className="page-banner-subtitle">
+          <p className="page-banner-subtitle privacy-page-banner-subtitle">
             Your trust is our priority. We safeguard your personal information with the highest standards.
           </p>
         </div>

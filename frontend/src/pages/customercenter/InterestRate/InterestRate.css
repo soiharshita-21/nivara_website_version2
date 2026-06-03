@@ -11,6 +11,7 @@
   justify-content: center;
   align-items: center;
   gap: 40px;
+  padding: 40px 20px 80px 20px; /* Padding for generous spacing from top nav and bottom footer */
 }
 
 /* Heading */
@@ -51,12 +52,170 @@
 }
 
 /* Hover effect */
-/* .download-btn:hover{
-  background: var(--maroon);
-  border-color: var(--maroon);
-  color: #fff;
-} */
+.download-btn:hover {
+  background: #fdebed; /* Cohesive brand red light tint */
+  border-color: #E32125; /* Brand red border */
+  color: #E32125; /* Brand red text */
+}
 
-/* .download-btn:hover .pdf-icon {
-  color: #fff;
-} */
+.download-btn:hover .pdf-icon {
+  color: #E32125; /* Brand red icon */
+}
+
+/* ROI Card Container */
+.roi-cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Single Card */
+.roi-card {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.roi-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(227, 33, 37, 0.08), 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Card Header */
+.roi-card-header {
+  background: #E32125; /* Brand red color */
+  color: #ffffff;
+  padding: 20px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: left;
+  min-height: 105px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Card Body */
+.roi-card-body {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: #ffffff;
+}
+
+/* Rows inside Card Body */
+.roi-row {
+  display: flex;
+  border-bottom: 1px solid #f0f0f0;
+  align-items: stretch;
+}
+
+.roi-label, .roi-value {
+  padding: 16px 24px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.roi-label {
+  flex: 2;
+  font-weight: 500;
+  color: #4a4a4a;
+  border-right: 1px solid #f0f0f0;
+  text-align: left;
+  background-color: #fafafa;
+}
+
+.roi-value {
+  flex: 1;
+  font-weight: 600;
+  color: #211F1F;
+  text-align: left;
+  background-color: #ffffff;
+  padding-left: 28px;
+}
+
+/* Note at bottom */
+.roi-note {
+  padding: 18px 24px;
+  font-size: 13.5px;
+  color: #666666;
+  line-height: 1.5;
+  background-color: #fafafa;
+  border-top: none;
+  font-style: italic;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.roi-date {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 400;
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.2px;
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .roi-cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  .roi-card {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  .roi-card-header {
+    padding: 16px 20px;
+    font-size: 16px;
+    min-height: 90px;
+  }
+
+  .roi-label, .roi-value, .roi-note {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+  
+  .roi-value {
+    padding-left: 20px;
+  }
+}

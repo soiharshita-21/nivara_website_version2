@@ -8,6 +8,74 @@ import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import ServiceFaqs from "../../../components/ServiceFaqs/ServiceFaqs";
 import RequestQuote from "../../../components/RequestQuote/RequestQuote";
 
+const homeLoanPurchaseFaqs = [
+  {
+    q: "What is the need of a Home Loan?",
+    a: "Customers can avail Home Loan for a variety of purposes that includes but not limited to,\nFor the purpose of purchasing the Home/Flat.\nFor the purpose of Renovation.\nFor the purpose of Construction of Home.\nFor the purpose of Balance transfer of running Home Loan to NHFL."
+  },
+  {
+    q: "Is a personal loan better than a home loan Purchase?",
+    a: "For buying a house, a home loan is more suitable due to higher amounts. Personal loans are ideal for non-specific personal needs."
+  },
+  {
+    q: "Can I buy a house with two loans?",
+    a: "No, availing two home loans for the same property is considered fraudulent and prevented by authorities."
+  },
+  {
+    q: "Can we buy property on loan?",
+    a: "Loan for land purchase is offered by banks when you need financing to buy a plot or a piece of land. This loan is generally provided for residential purposes and in urban areas. However, some banks do let you use the loan amount to purchase land in a rural area."
+  },
+  {
+    q: "Can I switch from a fixed rate to a floating rate during my home loan tenure?",
+    a: "Yes, you can switch from a fixed to floating rate of interest on your home loan during the repayment tenure. However, you will be charged a conversion fee by the lender in such cases."
+  },
+  {
+    q: "What is the meaning of home loan purchase?",
+    a: "A home loan is a secured loan that is obtained to purchase a property by offering it as collateral."
+  }
+];
+
+import FeaturesBenefits from "../../../components/FeaturesBenefits/FeaturesBenefits";
+
+const homeLoanPurchaseBenefits = [
+  {
+    title: "Available for with & without income proof customers",
+    description: "Loan is available for customers with minimum wage too and with other non-income proof documentation."
+  },
+  {
+    title: "No hidden charges",
+    description: "Our process is completely transparent and without any hidden charges."
+  },
+  {
+    title: "Doorstep service",
+    description: "Our Loan expert will provide you services right at your doorstep."
+  },
+  {
+    title: "Easily available in rural India",
+    description: "We have a wide network and are available in rural, semi-urban, and urban areas across locations."
+  },
+  {
+    title: "Easy documentation",
+    description: "Apply with minimal documents, save time and effort."
+  },
+  {
+    title: "End to End Process",
+    description: "Home loan Approval in Simple steps."
+  },
+  {
+    title: "24x7 assistance",
+    description: "Connect with us on Chat, Social Media anytime, anywhere."
+  },
+  {
+    title: "Customized Repayment Options",
+    description: "Tailor-made home loans to suit your requirements."
+  },
+  {
+    title: "Transparent client interactions",
+    description: "We maintain high levels of transparency in our relations with customers."
+  }
+];
+
 const HomeLoanPurchase = () => {
   const navigate = useNavigate();
 
@@ -107,38 +175,11 @@ const HomeLoanPurchase = () => {
       </div>
 
       {/* Features & Benefits Section */}
-      <ScrollReveal direction="up">
-        <div className="homeloan-benefits-section">
-          <h2 className="homeloan-benefits-title">
-            Features and Benefits of Nivara Home Loan Purchase
-          </h2>
+      <FeaturesBenefits 
+        title="Features and Benefits of Nivara Home Loan Purchase" 
+        items={homeLoanPurchaseBenefits} 
+      />
 
-          <div className="homeloan-benefits-list">
-            {[
-              "Available for with & without income proof customers",
-              "No hidden charges",
-              "Doorstep service",
-              "Easily available in rural India",
-              "Easy documentation",
-              "End to End Process",
-              "24x7 assistance",
-              "Customized Repayment Options",
-              "Transparent client interactions"
-            ].map((benefit, index) => (
-              <ScrollReveal
-                key={index}
-                direction="up"
-                delay={index * 0.05}
-                distance={10}
-              >
-                <div className="homeloan-benefit-item">
-                  {benefit}
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </ScrollReveal>
 
       <RequestQuote themeColor="#E32125" />
 
@@ -153,16 +194,20 @@ const HomeLoanPurchase = () => {
 
         <div className="homeloan-help-grid">
           {[
-            { icon: <FaCalendarAlt />, title: "APPLY FOR LOAN", text: "Looking to buy a home loan? then apply for loan now.", link: "Get Appointment" },
-            { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", green: true },
-            { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", green: true }
+            { icon: <FaCalendarAlt />, title: "APPLY FOR LOAN", text: "Looking to buy a home loan? then apply for loan now.", link: "Get Appointment", path: "/get-appointment" },
+            { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", path: "/contact-inquiry", green: true },
+            { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", path: "/meet-advisor", green: true }
           ].map((card, index) => (
             <ScrollReveal
               key={index}
               direction="up"
               delay={index * 0.1 + 0.1}
             >
-              <div className="homeloan-help-card">
+              <div 
+                className="homeloan-help-card" 
+                onClick={() => navigate(card.path)}
+                style={{ cursor: "pointer" }}
+              >
                 <div className="homeloan-help-icon">{card.icon}</div>
                 <h3>{card.title}</h3>
                 {card.green ? (
@@ -181,7 +226,7 @@ const HomeLoanPurchase = () => {
       </div>
 
       {/* FAQ Section */}
-      <ServiceFaqs />
+      <ServiceFaqs faqs={homeLoanPurchaseFaqs} />
     </div>
   );
 };

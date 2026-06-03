@@ -35,9 +35,7 @@ const VisionMission = () => {
                 <h2>Our Vision</h2>
                 <div className="vm-divider"></div>
                 <p>
-                  To revolutionize the affordable housing finance landscape in India, 
-                  earning our place as the most respected and trusted institution 
-                  committed to social and financial inclusion.
+                The vision of the organization is to revolutionize the way affordable housing finance is done and to be counted amongst the most respected housing finance companies in India.
                 </p>
                 <div className="vm-bg-text">VISION</div>
               </div>
@@ -58,9 +56,7 @@ const VisionMission = () => {
                   <p className="vm-main-mission">"Housing for All"</p>
                 </div>
                 <p className="vm-mission-text">
-                  Providing seamless access to home loans for the unserved and 
-                  underserved segments, empowering micro-entrepreneurs and families 
-                  in the lower and middle-income categories.
+                 The mission of the organization is “Housing for All”. The aim is to provide easy access to home loans to the un-served and under-served segments in the lower and middle income categories, including those employed or self-employed in micro and small enterprises.
                 </p>
                 <div className="vm-bg-text">MISSION</div>
               </div>

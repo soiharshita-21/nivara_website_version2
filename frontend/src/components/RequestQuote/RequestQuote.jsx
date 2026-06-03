@@ -29,8 +29,7 @@ const RequestQuote = ({ themeColor = "#7EB542", title = "Request Quote Now" }) =
     setAlertState({ type: "info", message: "Submitting request..." });
 
     try {
-      const host = window.location.hostname || "localhost";
-      const response = await fetch(`http://${host}:5001/api/quotes/apply`, {
+      const response = await fetch("http://localhost:5001/api/quotes/apply", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -55,7 +54,11 @@ const RequestQuote = ({ themeColor = "#7EB542", title = "Request Quote Now" }) =
         setAlertState({ type: "error", message: data.message || "Failed to submit request." });
       }
     } catch (err) {
-      setAlertState({ type: "error", message: "Server connection error. Please make sure the backend is running." });
+      console.error("Quote submission error:", err);
+      setAlertState({
+        type: "error",
+        message: "Server connection error. Please make sure the backend is running."
+      });
     } finally {
       setSubmitting(false);
     }

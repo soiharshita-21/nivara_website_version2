@@ -1,0 +1,125 @@
+.appointment-form-page {
+  min-height: 100vh;
+  background: #f2fbfb;
+  padding: 60px 40px;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.appointment-form {
+  max-width: 800px;
+  width: 100%;
+  background: #ffffff;
+  padding: 50px 60px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(33, 31, 31, 0.08);
+}
+
+.appointment-form .form-title {
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+}
+
+
+.appointment-form .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+.appointment-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.appointment-form input,
+.appointment-form select,
+.appointment-form textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 15px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  background: #fafafa;
+  font-family: inherit;
+}
+
+.appointment-form textarea {
+  resize: vertical;
+}
+
+.appointment-form input:focus,
+.appointment-form select:focus,
+.appointment-form textarea:focus {
+  border-color: #E32125;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(227, 33, 37, 0.08);
+}
+
+.appointment-form .full-width-field {
+  margin-bottom: 22px;
+}
+
+.appointment-form .submit-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px 0;
+  background: #E32125;
+  color: white;
+  border: none;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.appointment-form .submit-btn:hover {
+  background: #b8171b;
+}
+
+.appointment-form .submit-btn:disabled {
+  background: #eaa4a6;
+  cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@media (max-width: 768px) {
+  .appointment-form-page {
+    padding: 40px 20px;
+  }
+
+  .appointment-form {
+    padding: 30px 20px;
+  }
+
+  .appointment-form .row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+}

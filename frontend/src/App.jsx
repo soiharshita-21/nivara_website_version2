@@ -59,6 +59,9 @@ import Mitc from "./pages/customercenter/Mitc/Mitc";
 import GrievanceRedressal from "./pages/customercenter/GrievanceRedressal/GrievanceRedressal";
 import CsrInitiatives from "./pages/aboutus/CsrInitiatives/CsrInitiatives";
 import DynamicPage from "./pages/DynamicPage/DynamicPage";
+import GetAppointment from "./pages/GetAppointment/GetAppointment";
+import ContactInquiry from "./pages/ContactInquiry/ContactInquiry";
+import MeetAdvisor from "./pages/MeetAdvisor/MeetAdvisor";
 
 
 const ScrollToTop = () => {
@@ -157,6 +160,8 @@ function AppContent() {
           <Route path="/media/blog/blog" element={<Blog />} />
           <Route path="/media/blog/:slug" element={<BlogDetail />} />
           <Route path="/media/pressrelease/pressrelease" element={<PressRelease />} />
+          <Route path="/press_-release_coverage" element={<PressRelease />} />
+          <Route path="/press-release" element={<PressRelease />} />
           <Route path="/media/nivara-gallery/nivara-gallery" element={<NivaraGallery />} />
           <Route path="/career/career" element={<Career />} />
           <Route path="/contactus/branch/branch" element={<Branch />} />
@@ -172,6 +177,10 @@ function AppContent() {
           <Route path="/terms-conditions" element={<Mitc />} />
           <Route path="/aboutus/csr-initiatives" element={<CsrInitiatives />} />
           <Route path="/p/:slug" element={<DynamicPage />} />
+          <Route path="/get-appointment" element={<GetAppointment />} />
+          <Route path="/contact-inquiry" element={<ContactInquiry />} />
+          <Route path="/contact-us" element={<ContactInquiry />} />
+          <Route path="/meet-advisor" element={<MeetAdvisor />} />
         </Routes>
         {!isAdminPath && <Footer />}
       </div>

@@ -42,7 +42,7 @@ const Footer = () => {
 
             <p className="brand-desc">
               Empowering dreams of homeownership with affordable and accessible
-              financing solutions.
+              financing solutions. 
             </p>
 
             <div className="socials">
@@ -74,7 +74,7 @@ const Footer = () => {
               <li><Link to="/aboutus/board" onClick={handleLinkClick}>Board of Directors</Link></li>
               <li><Link to="/aboutus/management" onClick={handleLinkClick}>Management Team</Link></li>
               <li><Link to="/career/career" onClick={handleLinkClick}>Career</Link></li>
-              <li><Link to="/contactus/offices/offices" onClick={handleLinkClick}>Contact Us</Link></li>
+         
               <li><Link to="/why-choose-us" onClick={handleLinkClick}>Why Choose Us</Link></li>
               <li><Link to="/customercenter/grievance-redressal" onClick={handleLinkClick}>Grievance Redressal</Link></li>
               {/* <li><Link to="/kyc-aml-measures" onClick={handleLinkClick}>KYC & AML Measures</Link></li> */}

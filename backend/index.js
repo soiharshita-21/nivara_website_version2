@@ -16,25 +16,17 @@ const app = express();
 // Disable X-Powered-By header (OWASP A05:2021 - Security Misconfiguration)
 app.disable('x-powered-by');
 
-// Strict CORS validation (OWASP A05:2021 - Security Misconfiguration)
-const allowedOrigins = [
-    process.env.FRONTEND_URL || 'http://localhost:5173',
-    'http://localhost:3000',
-    'http://127.0.0.1:5173',
-    'http://127.0.0.1:3000'
-];
 app.use(cors({
-    origin: (origin, callback) => {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
+    origin: true,
     credentials: true
 }));
 
 app.use(express.json({ limit: '10mb' }));
+
+app.use((req, res, next) => {
+    console.log(`📡 [${new Date().toISOString()}] Incoming Request: ${req.method} ${req.url}`);
+    next();
+});
 
 // OWASP Security HTTP Headers Middleware (OWASP A05:2021 - Security Misconfiguration)
 app.use((req, res, next) => {
@@ -850,6 +842,304 @@ app.post('/api/loans/apply', loanApplyLimiter, (req, res) => {
     });
 });
 
+// --- OWASP SECURITY: Rate Limiters for New Forms ---
+const appointmentApplyLimiter = rateLimit({
+    windowMs: 60 * 60 * 1000, // 1 hour
+    max: 100,
+    message: { message: "Too many appointment requests from this IP. Please try again after an hour." },
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+
+const contactApplyLimiter = rateLimit({
+    windowMs: 60 * 60 * 1000, // 1 hour
+    max: 100,
+    message: { message: "Too many contact inquiries from this IP. Please try again after an hour." },
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+
+const advisorApplyLimiter = rateLimit({
+    windowMs: 60 * 60 * 1000, // 1 hour
+    max: 100,
+    message: { message: "Too many advisor consultation requests from this IP. Please try again after an hour." },
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+
+// --- SECURE APPOINTMENT SCHEDULER ENDPOINT ---
+app.post('/api/appointments/apply', appointmentApplyLimiter, (req, res) => {
+    const { firstName, lastName, email, contactNumber, state, district, city, fullAddress, loanFor, loanAmount } = req.body;
+
+    // OWASP: Server-side validation
+    if (!firstName || !lastName || !email || !contactNumber || !state || !district || !city || !fullAddress || !loanFor || !loanAmount) {
+        return res.status(400).json({ message: "All form fields are required." });
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        return res.status(400).json({ message: "Invalid email format." });
+    }
+
+    // OWASP: HTML sanitize input values to prevent HTML Injection / XSS
+    const safeFirstName = escapeHtml(firstName);
+    const safeLastName = escapeHtml(lastName);
+    const safeEmail = escapeHtml(email);
+    const safeContact = escapeHtml(contactNumber);
+    const safeState = escapeHtml(state);
+    const safeDistrict = escapeHtml(district);
+    const safeCity = escapeHtml(city);
+    const safeAddress = escapeHtml(fullAddress);
+    const safeLoanFor = escapeHtml(loanFor);
+    const safeAmount = escapeHtml(loanAmount);
+
+    const mailOptions = {
+        from: process.env.SMTP_USER || '"Nivara Home Loans" <loans-noreply@nivarahousing.com>',
+        to: 'konduruharshita21@gmail.com',
+        subject: `New Appointment Request: ${safeLoanFor} - ${safeFirstName} ${safeLastName}`,
+        html: `
+            <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 600px; margin: auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <div style="text-align: center; border-bottom: 2px solid #E32125; padding-bottom: 10px; margin-bottom: 20px;">
+                    <h2 style="color: #E32125; margin: 0;">Nivara Housing Finance</h2>
+                    <p style="margin: 5px 0 0; color: #666; font-size: 14px;">Appointment Request Submission</p>
+                </div>
+                
+                <h3 style="color: #333;">Loan Details</h3>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; width: 35%; background: #fdfdfd;">Loan for:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeLoanFor}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">Requested Amount:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold; color: #E32125;">INR ${parseFloat(safeAmount).toLocaleString('en-IN')}</td>
+                    </tr>
+                </table>
+
+                <h3 style="color: #333; margin-top: 25px;">Applicant Contact Details</h3>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; width: 35%; background: #fdfdfd;">Full Name:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeFirstName} ${safeLastName}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">Email:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;"><a href="mailto:${safeEmail}">${safeEmail}</a></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">Phone Number:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeContact}</td>
+                    </tr>
+                </table>
+
+                <h3 style="color: #333; margin-top: 25px;">Location & Address</h3>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; width: 35%; background: #fdfdfd;">City:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeCity}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">District:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeDistrict}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">State:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeState}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">Full Address:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee; white-space: pre-wrap;">${safeAddress}</td>
+                    </tr>
+                </table>
+
+                <div style="margin-top: 25px; font-size: 12px; color: #999; text-align: center; border-top: 1px solid #eee; padding-top: 15px;">
+                    This email was generated automatically by the Nivara Home Loan portal.
+                </div>
+            </div>
+        `
+    };
+
+    const transporter = getMailTransporter();
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.error("❌ Appointment Email transmission failed:", error.message);
+            if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+                console.log("ℹ️ [DEV FALLBACK] SMTP Credentials not configured. Logged mock appointment request success.");
+                return res.status(200).json({ 
+                    message: "Appointment request submitted successfully! (Dev mode: logged to console without real email dispatch)." 
+                });
+            }
+            return res.status(500).json({ message: "Failed to submit appointment request. Please try again later." });
+        }
+
+        console.log("✅ Appointment request email sent successfully:", info.messageId);
+        res.status(200).json({ message: "Appointment request submitted successfully! Our team will contact you shortly." });
+    });
+});
+
+// --- SECURE GENERAL CONTACT INQUIRY ENDPOINT ---
+app.post('/api/contacts/apply', contactApplyLimiter, (req, res) => {
+    const { name, email, phone, location, message } = req.body;
+
+    // OWASP: Server-side validation
+    if (!name || !email || !phone || !location || !message) {
+        return res.status(400).json({ message: "All form fields are required." });
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        return res.status(400).json({ message: "Invalid email format." });
+    }
+
+    // OWASP: HTML sanitize input values to prevent HTML Injection / XSS
+    const safeName = escapeHtml(name);
+    const safeEmail = escapeHtml(email);
+    const safePhone = escapeHtml(phone);
+    const safeLocation = escapeHtml(location);
+    const safeMessage = escapeHtml(message);
+
+    const mailOptions = {
+        from: process.env.SMTP_USER || '"Nivara Home Loans" <loans-noreply@nivarahousing.com>',
+        to: 'konduruharshita21@gmail.com',
+        subject: `New General Contact Inquiry from ${safeName}`,
+        html: `
+            <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 600px; margin: auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <div style="text-align: center; border-bottom: 2px solid #E32125; padding-bottom: 10px; margin-bottom: 20px;">
+                    <h2 style="color: #E32125; margin: 0;">Nivara Housing Finance</h2>
+                    <p style="margin: 5px 0 0; color: #666; font-size: 14px;">Contact Inquiry Submitted</p>
+                </div>
+                
+                <h3 style="color: #333;">Inquirer Profile</h3>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; width: 35%; background: #fdfdfd;">Full Name:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeName}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">Email:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;"><a href="mailto:${safeEmail}">${safeEmail}</a></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">Phone Number:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safePhone}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">Location:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeLocation}</td>
+                    </tr>
+                </table>
+
+                <h3 style="color: #333; margin-top: 25px;">Message / Inquiry Details</h3>
+                <div style="padding: 12px; background: #fdfdfd; border: 1px solid #eee; border-radius: 6px; white-space: pre-wrap;">${safeMessage}</div>
+
+                <div style="margin-top: 25px; font-size: 12px; color: #999; text-align: center; border-top: 1px solid #eee; padding-top: 15px;">
+                    This email was generated automatically by the Nivara Home Loan portal.
+                </div>
+            </div>
+        `
+    };
+
+    const transporter = getMailTransporter();
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.error("❌ Contact Email transmission failed:", error.message);
+            if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+                console.log("ℹ️ [DEV FALLBACK] SMTP Credentials not configured. Logged mock contact inquiry success.");
+                return res.status(200).json({ 
+                    message: "Inquiry sent successfully! (Dev mode: logged to console without real email dispatch)." 
+                });
+            }
+            return res.status(500).json({ message: "Failed to send contact inquiry. Please try again later." });
+        }
+
+        console.log("✅ Contact inquiry email sent successfully:", info.messageId);
+        res.status(200).json({ message: "Your inquiry has been sent successfully! We will get back to you shortly." });
+    });
+});
+
+// --- SECURE ADVISOR CONSULTATION ENDPOINT ---
+app.post('/api/advisors/apply', advisorApplyLimiter, (req, res) => {
+    const { name, email, phone, location, message } = req.body;
+
+    // OWASP: Server-side validation
+    if (!name || !email || !phone || !location || !message) {
+        return res.status(400).json({ message: "All form fields are required." });
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        return res.status(400).json({ message: "Invalid email format." });
+    }
+
+    // OWASP: HTML sanitize input values to prevent HTML Injection / XSS
+    const safeName = escapeHtml(name);
+    const safeEmail = escapeHtml(email);
+    const safePhone = escapeHtml(phone);
+    const safeLocation = escapeHtml(location);
+    const safeMessage = escapeHtml(message);
+
+    const mailOptions = {
+        from: process.env.SMTP_USER || '"Nivara Home Loans" <loans-noreply@nivarahousing.com>',
+        to: 'konduruharshita21@gmail.com',
+        subject: `New Advisor Request from ${safeName}`,
+        html: `
+            <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 600px; margin: auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <div style="text-align: center; border-bottom: 2px solid #E32125; padding-bottom: 10px; margin-bottom: 20px;">
+                    <h2 style="color: #E32125; margin: 0;">Nivara Housing Finance</h2>
+                    <p style="margin: 5px 0 0; color: #666; font-size: 14px;">Advisor Consultation Request</p>
+                </div>
+                
+                <h3 style="color: #333;">Request Profile</h3>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; width: 35%; background: #fdfdfd;">Full Name:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeName}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">Email:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;"><a href="mailto:${safeEmail}">${safeEmail}</a></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">Phone Number:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safePhone}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">Location:</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeLocation}</td>
+                    </tr>
+                </table>
+
+                <h3 style="color: #333; margin-top: 25px;">Loan Queries & Message</h3>
+                <div style="padding: 12px; background: #fdfdfd; border: 1px solid #eee; border-radius: 6px; white-space: pre-wrap;">${safeMessage}</div>
+
+                <div style="margin-top: 25px; font-size: 12px; color: #999; text-align: center; border-top: 1px solid #eee; padding-top: 15px;">
+                    This email was generated automatically by the Nivara Home Loan portal.
+                </div>
+            </div>
+        `
+    };
+
+    const transporter = getMailTransporter();
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.error("❌ Advisor Email transmission failed:", error.message);
+            if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+                console.log("ℹ️ [DEV FALLBACK] SMTP Credentials not configured. Logged mock advisor request success.");
+                return res.status(200).json({ 
+                    message: "Advisor consultation request submitted successfully! (Dev mode: logged to console without real email dispatch)." 
+                });
+            }
+            return res.status(500).json({ message: "Failed to submit request. Please try again later." });
+        }
+
+        console.log("✅ Advisor request email sent successfully:", info.messageId);
+        res.status(200).json({ message: "Advisor request submitted successfully! A loan expert will contact you shortly." });
+    });
+});
+
 // --- OWASP SECURITY: Rate Limiter for Quote Form ---
 const quoteApplyLimiter = rateLimit({
     windowMs: 60 * 60 * 1000, // 1 hour
@@ -954,6 +1244,16 @@ app.post('/api/quotes/apply', quoteApplyLimiter, (req, res) => {
 
         console.log("✅ Quote request email sent successfully:", info.messageId);
         res.status(200).json({ message: "Quote request submitted successfully! Our experts will get back to you shortly." });
+    });
+});
+
+// --- GLOBAL UNHANDLED ERROR-HANDLING MIDDLEWARE ---
+app.use((err, req, res, next) => {
+    console.error("🔥 UNHANDLED ERROR IN BACKEND:", err);
+    res.status(500).json({ 
+        message: "Internal server error occurred.", 
+        details: err.message,
+        stack: err.stack 
     });
 });
 
