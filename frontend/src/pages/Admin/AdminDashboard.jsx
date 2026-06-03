@@ -33,7 +33,7 @@ const AdminDashboard = () => {
   const [press, setPress] = useState([]);
   const [gallery, setGallery] = useState([]);
   const [pages, setPages] = useState([]);
-  const [branches, setBranches] = useState([]);
+
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [editingId, setEditingId] = useState(null);
@@ -48,7 +48,7 @@ const AdminDashboard = () => {
   const [newPress, setNewPress] = useState({ title: "", date: new Date().toISOString().split('T')[0], image_url: "", content: "" });
   const [newGallery, setNewGallery] = useState({ title: "", folder_date: "", image_url: "", image_urls: [] });
   const [newPage, setNewPage] = useState({ title: "", slug: "", content: "", menu_location: "none", banner_image: "" });
-  const [newBranch, setNewBranch] = useState({ state: "", city: "", opened: new Date().toISOString().split('T')[0], address: "", contact: "", is_new: true });
+
   const [isHtmlMode, setIsHtmlMode] = useState(false);
 
   const quillModules = {
@@ -70,7 +70,7 @@ const AdminDashboard = () => {
     { id: "blogs", label: "Manage Blogs", icon: FileText },
     { id: "press", label: "Press Releases", icon: Newspaper },
     { id: "gallery", label: "Gallery", icon: ImageIcon },
-    { id: "branches", label: "Branch Locations", icon: MapPin },
+
   ];
 
   // Helper to get auth headers
@@ -93,18 +93,16 @@ const AdminDashboard = () => {
     try {
       const baseUrl = "http://localhost:5001/api";
       if (activeTab === "overview") {
-        const [blogRes, pressRes, galleryRes, pagesRes, branchesRes] = await Promise.all([
+        const [blogRes, pressRes, galleryRes, pagesRes] = await Promise.all([
           axios.get(`${baseUrl}/blogs`),
           axios.get(`${baseUrl}/press`),
           axios.get(`${baseUrl}/gallery`),
-          axios.get(`${baseUrl}/pages`),
-          axios.get(`${baseUrl}/branches`)
+          axios.get(`${baseUrl}/pages`)
         ]);
         setBlogs(blogRes.data);
         setPress(pressRes.data);
         setGallery(galleryRes.data);
         setPages(pagesRes.data);
-        setBranches(branchesRes.data);
       } else if (activeTab === "blogs") {
         const res = await axios.get(`${baseUrl}/blogs`);
         setBlogs(res.data);
@@ -117,9 +115,7 @@ const AdminDashboard = () => {
       } else if (activeTab === "pages") {
         const res = await axios.get(`${baseUrl}/pages`);
         setPages(res.data);
-      } else if (activeTab === "branches") {
-        const res = await axios.get(`${baseUrl}/branches`);
-        setBranches(res.data);
+
       }
     } catch (err) {
       console.error("Fetch error:", err);
@@ -138,7 +134,7 @@ const AdminDashboard = () => {
     setNewPress({ title: "", date: new Date().toISOString().split('T')[0], image_url: "", content: "" });
     setNewGallery({ title: "", folder_date: "", image_url: "", image_urls: [] });
     setNewPage({ title: "", slug: "", content: "", menu_location: "none", banner_image: "" });
-    setNewBranch({ state: "", city: "", opened: new Date().toISOString().split('T')[0], address: "", contact: "", is_new: true });
+
     setIsHtmlMode(false);
     setShowModal(false);
   };
@@ -241,15 +237,7 @@ const AdminDashboard = () => {
       setNewGallery({ ...item });
     } else if (type === "pages") {
       setNewPage({ ...item });
-    } else if (type === "branches") {
-      setNewBranch({
-        state: item.state || "",
-        city: item.city || "",
-        opened: item.opened ? new Date(item.opened).toISOString().split('T')[0] : new Date().toISOString().split('T')[0],
-        address: item.address || "",
-        contact: item.contact || "",
-        is_new: item.is_new === 1 || item.is_new === true,
-      });
+
     }
     setShowModal(true);
   };
@@ -341,13 +329,7 @@ const AdminDashboard = () => {
             image_urls: newGallery.image_urls
           }, headers);
         }
-      } else if (activeTab === "branches") {
-        const data = { ...newBranch };
-        if (editingId) {
-          await axios.put(`${baseUrl}/branches/${editingId}`, data, headers);
-        } else {
-          await axios.post(`${baseUrl}/branches`, data, headers);
-        }
+
       } else if (activeTab === "pages") {
         const slug = newPage.slug || newPage.title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
         const data = { ...newPage, slug };
@@ -466,26 +448,7 @@ const AdminDashboard = () => {
                 </table>
               )}
 
-              {activeTab === "branches" && (
-                <table className="data-table">
-                  <thead><tr><th>State</th><th>City</th><th>Opened</th><th>Contact</th><th>New</th><th>Actions</th></tr></thead>
-                  <tbody>
-                    {branches.map(branch => (
-                      <tr key={branch.id}>
-                        <td>{branch.state}</td>
-                        <td>{branch.city}</td>
-                        <td>{branch.opened ? new Date(branch.opened).toLocaleDateString() : ""}</td>
-                        <td>{branch.contact}</td>
-                        <td>{branch.is_new ? "Yes" : "No"}</td>
-                        <td className="actions">
-                          <button className="edit-btn" onClick={() => handleEdit(branch, 'branches')}><Edit size={16} /></button>
-                          <button className="delete-btn" onClick={() => handleDelete(branch.id, 'branches')}><Trash2 size={16} /></button>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              )}
+
 
               {activeTab === "gallery" && (() => {
                 // Group gallery items by category (Folder Name)
@@ -642,15 +605,7 @@ const AdminDashboard = () => {
                       <p>{pages.length}</p>
                     </div>
                   </div>
-                  <div className="stat-card">
-                    <div className="stat-icon branch-icon">
-                      <MapPin size={28} />
-                    </div>
-                    <div className="stat-info">
-                      <h3>Branches</h3>
-                      <p>{branches.length}</p>
-                    </div>
-                  </div>
+
                 </div>
               )}
             </div>
@@ -790,25 +745,7 @@ const AdminDashboard = () => {
                     <div className="form-group"><label>Description</label><textarea rows="2" value={newPress.content} onChange={e => setNewPress({ ...newPress, content: e.target.value })} placeholder="Small snippet for the card..."></textarea></div>
                   </>
                 )}
-                {activeTab === "branches" && (
-                  <>
-                    <div className="form-row">
-                      <div className="form-group"><label>State</label><input type="text" value={newBranch.state} onChange={e => setNewBranch({ ...newBranch, state: e.target.value })} required /></div>
-                      <div className="form-group"><label>City</label><input type="text" value={newBranch.city} onChange={e => setNewBranch({ ...newBranch, city: e.target.value })} required /></div>
-                    </div>
-                    <div className="form-row">
-                      <div className="form-group"><label>Opened Date</label><input type="date" value={newBranch.opened} onChange={e => setNewBranch({ ...newBranch, opened: e.target.value })} required /></div>
-                      <div className="form-group"><label>Contact Number</label><input type="text" value={newBranch.contact} onChange={e => setNewBranch({ ...newBranch, contact: e.target.value })} required /></div>
-                    </div>
-                    <div className="form-group"><label>Address</label><textarea rows="3" value={newBranch.address} onChange={e => setNewBranch({ ...newBranch, address: e.target.value })} required /></div>
-                    <div className="form-group checkbox-group">
-                      <label>
-                        <input type="checkbox" checked={newBranch.is_new} onChange={e => setNewBranch({ ...newBranch, is_new: e.target.checked })} />
-                        Mark as newly opened branch
-                      </label>
-                    </div>
-                  </>
-                )}
+
                 {activeTab === "gallery" && (
                   <>
                     {editingFolder ? (

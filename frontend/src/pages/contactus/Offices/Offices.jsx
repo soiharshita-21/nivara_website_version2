@@ -19,8 +19,8 @@ const offices = [
     type: "Registered & Corporate Office",
     address:
       "No. 22,23,24,25/101/3, 3rd Floor, BNR Complex, Sri Rama Layout, JP Nagar, 7th Phase, Opp. RBI Layout, Bangalore, Karnataka - 560078",
-    phone: "+91 80 2659 0000",
-    email: "contact@nivarahousing.com",
+    // phone: "+91 80 2659 0000",
+    // email: "contact@nivarahousing.com",
     hours: "Mon-Sat, 9:30 AM - 6:00 PM",
     details: [
       "No. 22, 23, 24, 25/101/3, 2nd Floor, BNR Complex, Sri Rama Layout, 7th Phase, Opp. RBI Layout, Bangalore - 560078",
@@ -36,10 +36,13 @@ const offices = [
     type: "Branch Office",
     address:
       "New No. 390, Puttenahalli Main Road, JP Nagar, 7th Phase, Bangalore - 560078",
-    phone: "+91 80 2659 1111",
-    email: "puttenahalli@nivarahousing.com",
+    // phone: "+91 80 2659 1111",
+    // email: "puttenahalli@nivarahousing.com",
     hours: "Mon-Sat, 9:30 AM - 6:00 PM",
-    details: ["2nd & 3rd Floor, Old No. 2/45/396"],
+    details: [
+      " 2nd Floor, Old No. 2/45/396, New No. 390, Puttenahalli Main Road, JP Nagar, 7th Phase, Bangalore - 560078",
+      " 3rd Floor, Old No. 2/45/396, New No. 390, Puttenahalli Main Road, JP Nagar, 7th Phase, Bangalore - 560078",
+    ],
     mapUrl:
       "https://www.google.com/maps/search/?api=1&query=Puttenahalli%20Main%20Road%20JP%20Nagar%207th%20Phase%20Bangalore",
   },
@@ -129,7 +132,7 @@ const Office = () => {
                     </div>
                   </div>
 
-                  <div className="contact-grid">
+                  {/* <div className="contact-grid">
                     <div className="mini-contact">
                       <Phone size={17} />
                       <span>{office.phone}</span>
@@ -139,7 +142,7 @@ const Office = () => {
                       <Mail size={17} />
                       <span>{office.email}</span>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="card-footer">

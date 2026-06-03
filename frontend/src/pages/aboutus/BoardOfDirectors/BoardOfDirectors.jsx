@@ -133,9 +133,9 @@ const BoardOfDirectors = () => {
             </ScrollReveal>
           ))}
         </div>
-        <p className="board-updated-date" style={{ textAlign: "center", marginTop: "40px", color: "#6b7280", fontSize: "14px" }}>
+        {/* <p className="board-updated-date" style={{ textAlign: "center", marginTop: "40px", color: "#6b7280", fontSize: "14px" }}>
           Updated 30.04.2026
-        </p>
+        </p> */}
       </section>
 
       {/* Profile Modal */}

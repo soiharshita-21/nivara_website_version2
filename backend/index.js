@@ -141,25 +141,6 @@ const validatePage = (req, res, next) => {
     next();
 };
 
-const validateBranch = (req, res, next) => {
-    const { state, city, opened, address, contact } = req.body;
-    if (!state || typeof state !== 'string' || state.trim().length === 0) {
-        return res.status(400).json({ message: "State is required." });
-    }
-    if (!city || typeof city !== 'string' || city.trim().length === 0) {
-        return res.status(400).json({ message: "City is required." });
-    }
-    if (!opened || typeof opened !== 'string' || opened.trim().length === 0) {
-        return res.status(400).json({ message: "Opened date is required." });
-    }
-    if (!address || typeof address !== 'string' || address.trim().length === 0) {
-        return res.status(400).json({ message: "Branch address is required." });
-    }
-    if (!contact || typeof contact !== 'string' || contact.trim().length === 0) {
-        return res.status(400).json({ message: "Contact number is required." });
-    }
-    next();
-};
 
 // Database Connection
 const db = mysql.createConnection({
@@ -175,25 +156,7 @@ db.connect(err => {
         console.log("👉 Tip: Make sure your MySQL service (like XAMPP or WAMP) is running.");
     } else {
         console.log(`✅ Successfully connected to MySQL Database (${process.env.DB_NAME || 'nivara_db'})`);
-        const branchTableSql = `
-            CREATE TABLE IF NOT EXISTS branches (
-                id INT AUTO_INCREMENT PRIMARY KEY,
-                state VARCHAR(255) NOT NULL,
-                city VARCHAR(255) NOT NULL,
-                opened DATE NOT NULL,
-                address TEXT NOT NULL,
-                contact VARCHAR(255) NOT NULL,
-                is_new TINYINT(1) DEFAULT 1,
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )
-        `;
-        db.query(branchTableSql, (err) => {
-            if (err) {
-                console.error("❌ Failed to create branches table:", err.message);
-            } else {
-                console.log("✅ Branches table is ready.");
-            }
-        });
+
     }
 });
 
@@ -457,38 +420,6 @@ app.delete('/api/pages/:id', verifyToken, validateId, (req, res) => {
     });
 });
 
-// --- BRANCH ROUTES ---
-app.get('/api/branches', (req, res) => {
-    db.query("SELECT * FROM branches ORDER BY state ASC, city ASC", (err, results) => {
-        if (err) return res.status(500).json(err);
-        res.json(results);
-    });
-});
-
-app.post('/api/branches', verifyToken, validateBranch, (req, res) => {
-    const { state, city, opened, address, contact, is_new } = req.body;
-    const query = "INSERT INTO branches (state, city, opened, address, contact, is_new) VALUES (?, ?, ?, ?, ?, ?)";
-    db.query(query, [state.trim(), city.trim(), opened, address.trim(), contact.trim(), is_new ? 1 : 0], (err, result) => {
-        if (err) return res.status(500).json(err);
-        res.json({ message: "Branch added successfully!", id: result.insertId });
-    });
-});
-
-app.put('/api/branches/:id', verifyToken, validateId, validateBranch, (req, res) => {
-    const { state, city, opened, address, contact, is_new } = req.body;
-    const query = "UPDATE branches SET state = ?, city = ?, opened = ?, address = ?, contact = ?, is_new = ? WHERE id = ?";
-    db.query(query, [state.trim(), city.trim(), opened, address.trim(), contact.trim(), is_new ? 1 : 0, req.validatedId], (err, result) => {
-        if (err) return res.status(500).json(err);
-        res.json({ message: "Branch updated successfully!" });
-    });
-});
-
-app.delete('/api/branches/:id', verifyToken, validateId, (req, res) => {
-    db.query("DELETE FROM branches WHERE id = ?", [req.validatedId], (err, result) => {
-        if (err) return res.status(500).json(err);
-        res.json({ message: "Branch deleted successfully!" });
-    });
-});
 
 // --- DASHBOARD STATS ROUTE ---
 app.get('/api/dashboard-stats', (req, res) => {

@@ -18,16 +18,16 @@ const highlightStates = [
  
 const markers = [
   {
-    name: "Maharashtra",
-    abbreviation: "MH",
-    coordinates: [75.7139, 19.7515],
-    labelOffset: { x: -52, y: -34 },
-  },
-  {
     name: "Karnataka",
     abbreviation: "KA",
     coordinates: [75.7139, 15.3173],
     labelOffset: { x: -56, y: 34 },
+  },
+  {
+    name: "Tamil Nadu",
+    abbreviation: "TN",
+    coordinates: [78.6569, 11.1271],
+    labelOffset: { x: 48, y: 34 },
   },
   {
     name: "Telangana",
@@ -42,10 +42,10 @@ const markers = [
     labelOffset: { x: 58, y: 16 },
   },
   {
-    name: "Tamil Nadu",
-    abbreviation: "TN",
-    coordinates: [78.6569, 11.1271],
-    labelOffset: { x: 48, y: 34 },
+    name: "Maharashtra",
+    abbreviation: "MH",
+    coordinates: [75.7139, 19.7515],
+    labelOffset: { x: -52, y: -34 },
   },
 ];
  

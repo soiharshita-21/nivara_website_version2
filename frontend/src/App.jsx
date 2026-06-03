@@ -62,6 +62,7 @@ import DynamicPage from "./pages/DynamicPage/DynamicPage";
 import GetAppointment from "./pages/GetAppointment/GetAppointment";
 import ContactInquiry from "./pages/ContactInquiry/ContactInquiry";
 import MeetAdvisor from "./pages/MeetAdvisor/MeetAdvisor";
+import NotFound from "./pages/NotFound/NotFound";
 
 
 const ScrollToTop = () => {
@@ -77,15 +78,17 @@ const ScrollToTop = () => {
 function AppContent() {
   const location = useLocation();
   const isAdminPath = location.pathname.startsWith('/admin');
+  const isRestrictedPath = location.pathname === '/investorsrelation/restricted';
+  const hideHeaderFooter = isAdminPath || isRestrictedPath;
 
   return (
     <>
       <ScrollToTop />
-      {!isAdminPath && <TopBar />}
-      {!isAdminPath && <Navbar />}
+      {!hideHeaderFooter && <TopBar />}
+      {!hideHeaderFooter && <Navbar />}
 
-      <div className={isAdminPath ? "" : "page-content"}>
-        {!isAdminPath && <IsoBanner />}
+      <div className={hideHeaderFooter ? "" : "page-content"}>
+        {!hideHeaderFooter && <IsoBanner />}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<AboutUs />} />
@@ -181,8 +184,10 @@ function AppContent() {
           <Route path="/contact-inquiry" element={<ContactInquiry />} />
           <Route path="/contact-us" element={<ContactInquiry />} />
           <Route path="/meet-advisor" element={<MeetAdvisor />} />
+          <Route path="/investorsrelation/restricted" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
-        {!isAdminPath && <Footer />}
+        {!hideHeaderFooter && <Footer />}
       </div>
     </>
   );

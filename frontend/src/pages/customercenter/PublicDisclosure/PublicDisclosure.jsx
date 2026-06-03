@@ -59,17 +59,19 @@ const PublicDisclosure = () => {
       </div>
 
       {/* Content */}
-      <div className="public-content animate-pop-up">
+      <div className="public-content">
 
-        <p className="public-note">
-          All documents are available for viewing and download. Click on any document card to open.
-        </p>
+        <ScrollReveal direction="up" distance={30}>
+          <p className="public-note">
+            All documents are available for viewing and download. Click on any document card to open.
+          </p>
+        </ScrollReveal>
 
         {/* Grid Container */}
         <div className="public-grid">
 
           {/* Public Disclosure Section */}
-          <div className="public-card animate-pop-up">
+          <ScrollReveal className="public-card" direction="up" distance={30} delay={0.1}>
             <div className="public-card-image">
               <img src={pb1} alt="Public Disclosure" />
             </div>
@@ -88,10 +90,10 @@ const PublicDisclosure = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Sarfaesi Section */}
-          <div className="public-card animate-pop-up">
+          <ScrollReveal className="public-card" direction="up" distance={30} delay={0.2}>
             <div className="public-card-image">
               <img src={pb2} alt="Sarfaesi Attachments" />
             </div>
@@ -110,7 +112,7 @@ const PublicDisclosure = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
         </div>
 

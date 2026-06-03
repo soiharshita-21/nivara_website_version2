@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { FaFileAlt, FaBullhorn, FaMicrophone, FaChevronRight } from "react-icons/fa";
 import "./InvestorsRelation.css";
 import ScrollReveal from "../../components/ScrollReveal/ScrollReveal";
-import InvestorPasswordModal from "./InvestorPasswordModal";
-import { createInvestorTranscriptAccess } from "./investorAccess";
 
 const annualReturns = [
   { year: "2019–20", path: "/files/Annual-Return-2019-20.pdf" },
@@ -24,23 +22,19 @@ const notices = [
   { name: "Notice of 31st EGM 23.03.2026", path: "/files/Notice_of_31st_EGM_Signed.pdf" },
 ];
 
-const disclaimerText = "Disclaimer: The content of this email is confidential and intended for the recipient specified in message only. It is strictly forbidden to share any part of this message with any third party, without a written consent of the sender. If you received this message by mistake, please reply to this message and follow with its deletion, so that we can ensure such a mistake does not occur in the future.";
-
 const transcripts = [
-  { name: "Transcript of AGM 26.06.2024", path: "/files/Transcript_10th-AGM_26.06.2024.pdf", title: "Transcript of EGM 26th June 2024", disclaimer: disclaimerText },
-  { name: "Transcript of EGM 11.09.2024", path: "/files/Transcript_25th-EGM_11.09.2024-1.pdf", title: "Transcript of EGM 11th September 2024", disclaimer: disclaimerText },
-  { name: "Transcript of EGM 09.01.2025", path: "/files/Transcript_26th-EGM_09.01.2025.pdf", title: "Transcript of EGM 9th January 2025" },
-  { name: "Transcript of EGM 07.02.2025", path: "/files/Transcript_27th-EGM_07.02.2025.pdf", title: "Transcript of EGM 7th Feb 2025", disclaimer: disclaimerText },
-  { name: "Transcript of EGM 13.03.2025", path: "/files/Transcript-of-EGM-13.03.2025.pdf", title: "Transcript of EGM 13th March 2025", disclaimer: disclaimerText },
-  { name: "Transcript of AGM 19.05.2025", path: "/files/Transcript-AGM-19.05.2025-.pdf", title: "Transcript of EGM 19th May 2025", disclaimer: disclaimerText },
-  { name: "Transcript of EGM 23.07.2025", path: "/files/Transcript-EGM-23.07.2025-.pdf", title: "Transcript of EGM 23th July 2025", disclaimer: disclaimerText },
-  { name: "Transcript of EGM 12.12.2025", path: "/files/Transcript_EGM_12.12.2025.pdf", title: "Transcript of EGM 12th December 2025" },
-  { name: "Transcript of EGM 23.03.2026", path: "/files/Transcript-EGM-23.03.2026.pdf", title: "Transcript of EGM 23rd March 2026" },
+  { name: "Transcript of AGM 26.06.2024", path: "/files/Transcript_10th-AGM_26.06.2024.pdf" },
+  { name: "Transcript of EGM 11.09.2024", path: "/files/Transcript_25th-EGM_11.09.2024-1.pdf" },
+  { name: "Transcript of EGM 09.01.2025", path: "/files/Transcript_26th-EGM_09.01.2025.pdf" },
+  { name: "Transcript of EGM 07.02.2025", path: "/files/Transcript_27th-EGM_07.02.2025.pdf" },
+  { name: "Transcript of EGM 13.03.2025", path: "/files/Transcript-of-EGM-13.03.2025.pdf" },
+  { name: "Transcript of AGM 19.05.2025", path: "/files/Transcript-AGM-19.05.2025-.pdf" },
+  { name: "Transcript of EGM 23.07.2025", path: "/files/Transcript-EGM-23.07.2025-.pdf" },
+  { name: "Transcript of EGM 12.12.2025", path: "/files/Transcript_EGM_12.12.2025.pdf" },
+  { name: "Transcript of EGM 23.03.2026", path: "/files/Transcript-EGM-23.03.2026.pdf" },
 ];
 
 const InvestorsRelation = ({ section }) => {
-  const [pendingDocument, setPendingDocument] = useState(null);
-
   useEffect(() => {
     if (window.location.hash) {
       const targetId = window.location.hash.slice(1);
@@ -54,35 +48,6 @@ const InvestorsRelation = ({ section }) => {
       window.scrollTo(0, 0);
     }
   }, [window.location.hash]);
-
-  const openDocument = (document) => {
-    let href = document.href;
-
-    if (document.type === "transcript") {
-      const token = createInvestorTranscriptAccess(document.file);
-      const url = new URL(document.href, window.location.origin);
-      url.searchParams.set("access", token);
-      href = `${url.pathname}${url.search}${url.hash}`;
-    }
-
-    window.open(href, "_blank", "noopener,noreferrer");
-  };
-
-  const handleProtectedDocumentClick = (event, document) => {
-    event.preventDefault();
-    setPendingDocument(document);
-  };
-
-  const handlePasswordConfirm = () => {
-    if (pendingDocument) {
-      openDocument(pendingDocument);
-    }
-
-    setPendingDocument(null);
-  };
-
-  const getTranscriptHref = (item) =>
-    `/investorsrelation/transcript?title=${encodeURIComponent(item.title || item.name)}&file=${encodeURIComponent(item.path)}&disclaimer=${!!item.disclaimer}`;
 
   const getHeaderContent = () => {
     switch (section) {
@@ -146,15 +111,9 @@ const InvestorsRelation = ({ section }) => {
                     <a 
                       key={i} 
                       className="investor-list-item" 
-                      href={item.path}
+                      href="/investorsrelation/restricted"
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={(event) =>
-                        handleProtectedDocumentClick(event, {
-                          href: item.path,
-                          name: `FY ${item.year} Annual Return`,
-                        })
-                      }
                     >
                       <div className="item-content">
                         <span className="year-label">FY {item.year}</span>
@@ -186,15 +145,9 @@ const InvestorsRelation = ({ section }) => {
                     <a 
                       key={i} 
                       className="investor-list-item" 
-                      href={item.path} 
+                      href="/investorsrelation/restricted" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      onClick={(event) =>
-                        handleProtectedDocumentClick(event, {
-                          href: item.path,
-                          name: item.name,
-                        })
-                      }
                     >
                       <div className="item-content">
                         <span className="doc-name">{item.name}</span>
@@ -225,17 +178,9 @@ const InvestorsRelation = ({ section }) => {
                     <a 
                       key={i} 
                       className="investor-list-item" 
-                      href={getTranscriptHref(item)}
+                      href="/investorsrelation/restricted"
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={(event) =>
-                        handleProtectedDocumentClick(event, {
-                          href: getTranscriptHref(item),
-                          file: item.path,
-                          name: item.name,
-                          type: "transcript",
-                        })
-                      }
                     >
                       <div className="item-content">
                         <span className="doc-name">{item.name}</span>
@@ -249,14 +194,6 @@ const InvestorsRelation = ({ section }) => {
           )}
         </div>
       </div>
-      {pendingDocument && (
-        <InvestorPasswordModal
-          open
-          documentName={pendingDocument.name}
-          onConfirm={handlePasswordConfirm}
-          onCancel={() => setPendingDocument(null)}
-        />
-      )}
     </div>
   );
 };
