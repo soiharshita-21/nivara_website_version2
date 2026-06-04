@@ -40,6 +40,8 @@ const PublicDisclosure = () => {
     { name: "Updated list of properties under SARFAESI Act as on 31st January 2026", path: "/files/sarfaesi-jan-2026.pdf" },
     { name: "Updated list of properties under SARFAESI Act as on 28th February 2026", path: "/files/sarfaesi-feb-2026.pdf" },
     { name: "Updated list of properties under SARFAESI Act as on 31st March 2026", path: "/files/sarfaesi-mar-2026.pdf" },
+    { name: "Updated list of properties under SARFAESI Act as on 30th April 2026",path: "/files/sarfaesi-apr-2026.pdf" },
+    { name: "Updated list of properties under SARFAESI Act as on 31st May 2026",path: "/files/sarfaesi-may-2026.pdf"},
   ];
 
   return (

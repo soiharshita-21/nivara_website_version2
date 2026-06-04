@@ -62,6 +62,7 @@ import DynamicPage from "./pages/DynamicPage/DynamicPage";
 import GetAppointment from "./pages/GetAppointment/GetAppointment";
 import ContactInquiry from "./pages/ContactInquiry/ContactInquiry";
 import MeetAdvisor from "./pages/MeetAdvisor/MeetAdvisor";
+import AccessDenied from "./pages/AccessDenied/AccessDenied";
 import NotFound from "./pages/NotFound/NotFound";
 
 
@@ -184,7 +185,7 @@ function AppContent() {
           <Route path="/contact-inquiry" element={<ContactInquiry />} />
           <Route path="/contact-us" element={<ContactInquiry />} />
           <Route path="/meet-advisor" element={<MeetAdvisor />} />
-          <Route path="/investorsrelation/restricted" element={<NotFound />} />
+          <Route path="/investorsrelation/restricted" element={<AccessDenied />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         {!hideHeaderFooter && <Footer />}
