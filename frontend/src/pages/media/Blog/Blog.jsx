@@ -14,6 +14,19 @@ import cbo2 from "../../../assets/images/cbo2.jpg";
 
 import axios from "axios";
 
+const formatDate = (dateStr) => {
+  if (!dateStr) return "";
+  const d = new Date(dateStr);
+  if (!isNaN(d.getTime())) {
+    const day = d.getDate();
+    const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    const month = months[d.getMonth()];
+    const year = d.getFullYear();
+    return `${day} ${month} ${year}`;
+  }
+  return dateStr.toUpperCase();
+};
+
 const Blog = () => {
   const [allBlogs, setAllBlogs] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
@@ -38,6 +51,28 @@ const Blog = () => {
     fetchBlogs();
   }, []);
 
+  React.useEffect(() => {
+    if (loading) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll(".blog-card.animate-pop-up");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, [allBlogs, loading]);
+
   return (
     <div className="blog-page">
 
@@ -55,9 +90,13 @@ const Blog = () => {
       </section>
 
       {/* Blog Cards */}
-      <div className="blog-container animate-pop-up">
+      <div className="blog-container">
         {allBlogs.map((item, index) => (
-          <div className="blog-card animate-pop-up" key={index}>
+          <div 
+            className="blog-card animate-pop-up" 
+            key={index}
+            style={{ transitionDelay: `${(index % 3) * 150}ms` }}
+          >
 
             <div className="blog-img">
               <img src={item.image_url || item.image} alt={item.title} />
@@ -67,8 +106,8 @@ const Blog = () => {
               <h3>{item.title}</h3>
 
               <div className="blog-meta">
-                <span>{item.date}</span>
-                <span>|</span>
+                <span>{formatDate(item.date)}</span>
+                <span className="meta-separator">|</span>
                 <span className="author-name">BY {item.author || "ADMIN"}</span>
               </div>
 

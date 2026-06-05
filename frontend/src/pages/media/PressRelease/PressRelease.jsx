@@ -135,6 +135,29 @@ const PressRelease = () => {
   }, []);
 
 
+  React.useEffect(() => {
+    if (loading) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll(".press-card.animate-pop-up");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, [allNews, loading]);
+
+
   return (
     <div className="press-page">
 
@@ -152,9 +175,13 @@ const PressRelease = () => {
       </section>
 
       {/* Cards */}
-      <div className="press-container animate-pop-up">
+      <div className="press-container">
         {allNews.map((item, index) => (
-          <div className="press-card animate-pop-up" key={index}>
+          <div 
+            className="press-card animate-pop-up" 
+            key={index}
+            style={{ transitionDelay: `${(index % 3) * 150}ms` }}
+          >
 
             <div className="press-img">
               <img src={item.img || pressrelease1} alt={item.title || "Press Release"} />
@@ -162,7 +189,7 @@ const PressRelease = () => {
 
             <div className="press-content animate-pop-up">
               <h3 className="animate-pop-up">{item.title}</h3>
-              <span className="press-meta">{item.meta}</span>
+              <span className="press-meta">{item.meta ? item.meta.toUpperCase() : ""}</span>
               <p>{item.desc}</p>
               {item.link ? (
                 <a 
@@ -170,7 +197,6 @@ const PressRelease = () => {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="press-read"
-                  style={{ textDecoration: 'none', display: 'inline-block' }}
                 >
                   Read More
                 </a>

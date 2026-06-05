@@ -5,13 +5,16 @@
   width: 100%;
   padding: 0;
   min-height: 70px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: #ffffff;
   z-index: 9999;
   font-family: 'Poppins', sans-serif;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-  transition: all 0.3s ease;
+  /* Limit transitions to background and box-shadow to avoid layout transition glitches on scroll */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  /* Force GPU acceleration and hint compositor layer behavior to prevent repaint tiling glitches and lag during scrolls */
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  backface-visibility: hidden;
   overflow: visible;
   border-bottom: 1px solid rgba(240, 240, 240, 0.8);
 }
@@ -856,10 +859,6 @@
  
   .search-wrapper {
     width: 180px;
-  }
- 
-  .search-wrapper.active,
-  .search-wrapper:focus-within {
   }
  
   .navbar-menu {

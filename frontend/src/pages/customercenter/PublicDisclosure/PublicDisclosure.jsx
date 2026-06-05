@@ -58,7 +58,7 @@ const PublicDisclosure = () => {
             Transparency and regulatory compliance in housing finance
           </p>
         </ScrollReveal>
-      </div>
+      </div> 
 
       {/* Content */}
       <div className="public-content">
