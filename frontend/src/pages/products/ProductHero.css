@@ -97,7 +97,7 @@
 }
 
 .hero-subtitle_service {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.65;
   margin-bottom: 24px;
   color: #4A4A4A;
@@ -114,11 +114,11 @@
 
 .hero-btn-primary {
   padding: 14px 34px;
-  background: #E32125;
+  background: #B3191F;
   color: #fff;
   border: none;
   border-radius: 8px;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -156,7 +156,7 @@
 }
 
 .hero-glass-card h3 {
-  font-size: 17px; /* Sized down slightly for a tighter card design */
+  font-size: 19px; /* Sized down slightly for a tighter card design */
   font-weight: 600;
   margin-top: 0; /* Clear default margin for perfect spacing */
   margin-bottom: 16px;
@@ -172,7 +172,7 @@
   left: 0;
   width: 32px;
   height: 2px;
-  background: #E32125;
+  background: #B3191F;
 }
 
 .hero-glass-card ul {
@@ -202,10 +202,10 @@
   justify-content: center;
   width: 18px;
   height: 18px;
-  background: #E32125;
+  background: #B3191F;
   color: #fff;
   border-radius: 50%;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 600;
   flex-shrink: 0;
   margin-top: 1px;
@@ -298,7 +298,7 @@
 
   .hero-subtitle_service {
     margin: 0 auto 20px;
-    font-size: 14px; /* Reduced from 15px */
+    font-size: 16px; /* Reduced from 15px */
     max-width: 600px;
     color: rgba(255, 255, 255, 0.95);
   }
@@ -326,17 +326,17 @@
 
   .hero-glass-card h3 {
     color: #ffffff;
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 15px;
   }
 
   .hero-glass-card h3::after {
-    background: #E32125;
+    background: #B3191F;
   }
 
   .hero-glass-card li {
     color: rgba(255, 255, 255, 0.9);
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 10px;
     text-align: left;
     justify-content: flex-start;
@@ -359,7 +359,7 @@
   }
 
   .hero-subtitle_service {
-    font-size: 13px; /* Reduced from 14px */
+    font-size: 15px; /* Reduced from 14px */
   }
 
   .hero-btn-primary {
@@ -397,7 +397,7 @@
   .lap-benefits-title,
   .improv-benefits-title,
   .refinance-benefits-title {
-    font-size: 26px !important;
+    font-size: 28px !important;
     margin-bottom: 30px !important;
     text-align: center !important;
   }

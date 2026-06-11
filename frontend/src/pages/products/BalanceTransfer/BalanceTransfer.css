@@ -129,13 +129,13 @@
 }
 
 .balance-feature-icon {
-  font-size: 40px;
+  font-size: 42px;
   margin-bottom: 20px;
-  color: #E32125;
+  color: #B3191F;
 }
 
 .balance-feature-box h3 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
   color: #211F1F !important;
   margin: 0;
@@ -183,9 +183,9 @@
 }
 
 .balance-benefits-title {
-  font-size: 34px;
+  font-size: 36px;
   font-weight: 600;
-  color: #E32125 !important;
+  color: #B3191F !important;
   margin-bottom: 45px;
   text-align: left;
   line-height: 1.2;
@@ -214,10 +214,10 @@
 .balance-benefit-item {
   background: #ffffff;
   padding: 24px 30px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
-  color: #374151;
-  border-left: 5px solid #E32125;
+  color: #211F1F;
+  border-left: 5px solid #B3191F;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(33, 31, 31, 0.05);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -240,15 +240,15 @@
 }
 
 .balance-help-title {
-  font-size: 42px;
+  font-size: 44px;
   font-weight: 700;
-  color: #E32125 !important;
+  color: #B3191F !important;
   margin-bottom: 12px;
   text-align: center;
 }
 
 .balance-help-subtitle {
-  font-size: 18px;
+  font-size: 20px;
   color: #6b7a90;
   text-align: center;
   margin-bottom: 60px;
@@ -256,10 +256,10 @@
 
 /* Grid */
 .balance-help-grid {
-  max-width: 1200px;
+  max-width: 800px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
 }
 
@@ -280,34 +280,34 @@
 
 /* Icon */
 .balance-help-icon {
-  font-size: 40px;
-  color: #E32125;
+  font-size: 42px;
+  color: #B3191F;
   margin-bottom: 20px;
 }
 
 /* Text */
 .balance-help-card h3 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   color: #0a2540;
   margin-bottom: 16px;
 }
 
 .balance-help-card p {
-  font-size: 16px;
+  font-size: 18px;
   color: #6b7a90;
   line-height: 1.6;
 }
 
 .balance-help-green {
-  color: #E32125;
-  font-size: 22px;
+  color: #B3191F;
+  font-size: 24px;
   margin: 10px 0;
   font-weight: 600;
 }
 
 .balance-help-mail {
-  color: #E32125;
+  color: #B3191F;
   margin-bottom: 20px;
 }
 
@@ -315,9 +315,9 @@
 .balance-help-link {
   display: inline-block;
   margin-top: 25px;
-  color: #E32125 !important;
+  color: #B3191F !important;
   font-weight: 600;
-  border-bottom: 2px solid #E32125 !important;
+  border-bottom: 2px solid #B3191F !important;
   cursor: pointer;
 }
 
@@ -357,8 +357,8 @@
 
 /* Icon */
 .balance-rotate-icon {
-  font-size: 28px;
-  color: #E32125;
+  font-size: 30px;
+  color: #B3191F;
   transition: transform 0.7s ease;
 }
 
@@ -373,16 +373,16 @@
 }
 
 .balance-title {
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 600;
-  color: #E32125;
+  color: #B3191F;
   /* same Red heading */
   margin-bottom: 12px;
 }
 
 .balance-subtitle {
-  font-size: 18px;
-  color: #555;
+  font-size: 20px;
+  color: #211F1F;
   margin-bottom: 25px;
   text-align: left;
 }
@@ -398,7 +398,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 12px;
-  font-size: 16px;
+  font-size: 18px;
   color: #444;
   position: relative;
   padding-left: 35px;
@@ -410,13 +410,13 @@
   left: 0;
   width: 22px;
   height: 22px;
-  background: #E32125;
+  background: #B3191F;
   color: #fff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -432,9 +432,9 @@
 .balance-btn-outline {
   width: 200px;
   padding: 12px 24px;
-  border: 2px solid #E32125;
+  border: 2px solid #B3191F;
   background: transparent;
-  color: #E32125;
+  color: #B3191F;
   border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
@@ -442,14 +442,14 @@
 }
 
 .balance-btn-outline:hover {
-  background: #E32125;
+  background: #B3191F;
   color: #fff;
 }
 
 .balance-loan-btn-solid {
   width: 200px;
   padding: 12px 24px;
-  background: #E32125;
+  background: #B3191F;
   color: #fff;
   border: none;
   border-radius: 12px;
@@ -463,7 +463,7 @@
 }
 
 .balance-btn-solid:hover {
-  background: #E32125;
+  background: #B3191F;
 }
 
 /* Bottom strip */
@@ -501,7 +501,7 @@
 .balance-bottom-strip {
   height: 6px;
   width: 0%;
-  background: #E32125;
+  background: #B3191F;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -519,30 +519,30 @@
 }
 
 .balance-main-title {
-  font-size: 36px;
+  font-size: 38px;
   font-weight: 600;
-  color: #E32125;
+  color: #B3191F;
   margin-bottom: 8px;
 }
 
 .balance-tagline {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
   color: #444;
   margin-bottom: 28px;
 }
 
 .balance-subheading {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 600;
   color: #211F1F;
   margin-bottom: 14px;
 }
 
 .balance-description {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.8;
-  color: #555;
+  color: #211F1F;
 }
 
 .balance-features-strip {
@@ -566,9 +566,9 @@
 
 /* Icon */
 .balance-feature-icon {
-  font-size: 40px;
+  font-size: 42px;
   margin-bottom: 20px;
-  color: #E32125;
+  color: #B3191F;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -577,21 +577,21 @@
 .balance-circle-check-icon {
   width: 50px;
   height: 50px;
-  background-color: #E32125;
+  background-color: #B3191F;
   color: white;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
+  font-size: 26px;
   margin: 0 auto 20px;
 }
 
 /* Text */
 .balance-feature-box h3 {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 600;
-  color: #E32125;
+  color: #B3191F;
 }
 
 /* Responsive */
@@ -631,9 +631,9 @@
 }
 
 .balance-keyfeatures-title {
-  font-size: 34px;
+  font-size: 36px;
   font-weight: 600;
-  color: #E32125;
+  color: #B3191F;
   margin-bottom: 30px;
   text-align: left;
 }
@@ -647,7 +647,7 @@
 
 /* Point text */
 .balance-keyfeatures-points p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.9;
   color: #444;
   margin-bottom: 14px;
@@ -695,15 +695,15 @@
 
 /* Title */
 .balance-quote-ti {
-  font-size: 42px;
+  font-size: 44px;
   font-weight: 600;
-  color: #E32125;
+  color: #B3191F;
   margin-bottom: 10px;
 }
 
 /* Subtitle */
 .balance-quote-subti {
-  font-size: 18px;
+  font-size: 20px;
   color: #6b7c93;
   margin-bottom: 50px;
 }
@@ -724,7 +724,7 @@
 .balance-form-grid input {
   width: 100%;
   padding: 18px 20px;
-  font-size: 16px;
+  font-size: 18px;
   border-radius: 6px;
   border: 2px solid #e3eaf0;
   outline: none;
@@ -734,17 +734,17 @@
 
 /* Focus */
 .balance-form-grid input:focus {
-  border-color: #E32125;
+  border-color: #B3191F;
 }
 
 /* Button */
 .balance-quote-button {
   grid-column: 2 / 3;
-  background: #E32125;
+  background: #B3191F;
   color: #fff;
   border: none;
   padding: 18px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: 1px;
   border-radius: 6px;
@@ -754,7 +754,7 @@
 
 /* Button hover */
 .balance-quote-button:hover {
-  background: #E32125;
+  background: #B3191F;
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(33, 31, 31, 0.15);
 }
@@ -771,14 +771,14 @@
 }
 
 .balance-support-header h2 {
-  font-size: 42px;
+  font-size: 44px;
   font-weight: 700;
-  color: #E32125;
+  color: #B3191F;
   margin-bottom: 12px;
 }
 
 .balance-support-header p {
-  font-size: 18px;
+  font-size: 20px;
   color: #6b7a90;
 }
 
@@ -808,34 +808,34 @@
 
 
 .balance-support-icon {
-  font-size: 40px;
+  font-size: 42px;
   color: #66b500;
   margin-bottom: 20px;
 }
 
 
 .balance-support-card h3 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
-  color: #E32125;
+  color: #B3191F;
   margin-bottom: 16px;
 }
 
 .balance-support-card p {
-  font-size: 16px;
+  font-size: 18px;
   color: #6b7a90;
   line-height: 1.6;
 }
 
 .balance-support-phone {
   color: black;
-  font-size: 22px;
+  font-size: 24px;
   margin: 10px 0;
   font-weight: 600;
 }
 
 .balance-support-mail {
-  color: #E32125;
+  color: #B3191F;
   margin-bottom: 20px;
 }
 
@@ -843,9 +843,9 @@
 .balance-support-link {
   display: inline-block;
   margin-top: 25px;
-  color: #E32125;
+  color: #B3191F;
   font-weight: 600;
-  border-bottom: 2px solid #E32125;
+  border-bottom: 2px solid #B3191F;
   cursor: pointer;
 }
 
@@ -880,7 +880,7 @@
   border-radius: 10px;
 
   background: #fff;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: #222;
 
@@ -891,9 +891,9 @@
   content: "✔";
   width: 22px;
   height: 22px;
-  background: #E32125;
+  background: #B3191F;
   color: #fff;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: bold;
 
   display: flex;
@@ -909,9 +909,9 @@
 }
 
 .balance-image-points .points-title {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 600;
-  color: #E32125;
+  color: #B3191F;
   margin-bottom: 2px;
 }
 

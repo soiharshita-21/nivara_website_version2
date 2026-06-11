@@ -40,7 +40,7 @@ const AboutUs = () => {
         <section className="about-section light about-justified-section">
           <h2>Our Inspiration</h2>
           <p>
-            The name "Nivara" is derived from the Sanskrit roots <b style={{color:"#E32125"}}>"नि + वृ" (Ni + Vru)</b>, meaning to cover, shelter, protect, and provide refuge.
+            The name "Nivara" is derived from the Sanskrit roots <b style={{color:"#B3191F"}}>"नि + वृ" (Ni + Vru)</b>, meaning to cover, shelter, protect, and provide refuge.
           </p>
           <p>
             Shelter (निवारा) is one of the three fundamental human needs, along

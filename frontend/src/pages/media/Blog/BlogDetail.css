@@ -73,7 +73,7 @@
 }
 
 .blog-detail-hero-content h1 {
-    font-size: 48px;
+    font-size: 50px;
     color: #fff;
     max-width: 800px;
     line-height: 1.2;
@@ -129,7 +129,7 @@
     display: flex;
     align-items: center;
     gap: 30px;
-    color: #64748b;
+    color: #211F1F;
     font-size: 0.9rem;
     margin-bottom: 40px;
     padding-bottom: 25px;
@@ -210,7 +210,7 @@
 
 .post-tags span {
     background: #f1f5f9;
-    color: #475569;
+    color: #211F1F;
     padding: 10px 22px;
     border-radius: 50px;
     font-size: 0.85rem;
@@ -414,7 +414,7 @@
 }
 
 .comment-notes {
-    color: #64748b;
+    color: #211F1F;
     margin-bottom: 40px;
 }
 
@@ -483,7 +483,7 @@
     }
     
     .blog-detail-hero-content h1 {
-        font-size: 32px;
+        font-size: 34px;
     }
     
     .blog-main-content {

@@ -5,9 +5,10 @@ import sunilb from "../../../assets/images/Director/sunilb.jpeg";
 import koticha from "../../../assets/images/Director/Koticha.jpg";
 import debanshi from "../../../assets/images/Director/Debanshi-Photo.png";
 import jayaraman from "../../../assets/images/Director/Nivara.jpg";
-import krishna from "../../../assets/images/Director/Nivara-2.jpg";
-import shreyas from "../../../assets/images/directors/Shreyas_Ramanathan (2).jpg";
+import krishna from "../../../assets/images/Director/Mr. Krishna Gopalaraman.jpg";
+import shreyas from "../../../assets/images/Director/Shreyas.jpg";
 import userPlaceholder from "../../../assets/images/user2.jpg";
+import maninder from "../../../assets/images/Directors/Maninder Singh Juneja.png";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -53,13 +54,12 @@ const boardMembers = [
     img: debanshi,
   },
   {
-    name: "Mr. Maninder",
+    name: "Mr. Maninder Singh Juneja",
     role: "Nominee Director",
-    desc: "Nominee Director representing investment partners on the Board of Directors.",
-    longDesc: "Profile will be shared shortly.",
+    desc: "Over three decades of professional experience in managing businesses in the financial services sector.",
+    longDesc: "Mr. Maninder Singh Juneja serves as Nominee Director on the Board of Nivara on behalf of Greentribe Consumer Care LLP (True North) and is a Partner at the firm. He brings over three decades of overall professional experience in managing businesses in the financial service sector.\n\nAt True North since 2016, Maninder works closely with portfolio companies and their leadership teams to drive strategic growth, operational excellence, and long-term value creation. His approach combines strong execution discipline with a sharp focus on customer-centric digital transformation.\n\nPrior to joining True North, he has set up and exponentially grown businesses in retail assets, deposit franchise, and third-party fees in his role of Retail Business Head at ICICI Bank. He has gained deep insights into digital transformation with customer-centricity at the core. He has overseen the evolution of retail financial services in India as a board member of CIBIL, NPCI, IARC, ICICI Home Finance Company Limited, and ICICI Merchant Services Limited.\n\nHe holds a bachelor’s degree in civil engineering from MS University and a Post Graduate Diploma in Management from IIM Lucknow.",
     color: "green",
-    img: userPlaceholder,
-    hidden: true,
+    img: maninder,
   },
   {
     name: "Mr. Muthuswamy Venkata Jayaraman",
@@ -91,7 +91,7 @@ const BoardOfDirectors = () => {
         <ScrollReveal direction="up">
           <div className="board-header">
             <span className="board-tag">Board of Directors</span>
-            <h2>Our Visionary Leadership</h2>
+            {/* <h2>Our Visionary Leadership</h2> */}
             <p>Guiding our mission to provide affordable housing finance to every Indian family</p>
           </div>
         </ScrollReveal>
@@ -133,7 +133,7 @@ const BoardOfDirectors = () => {
             </ScrollReveal>
           ))}
         </div>
-        {/* <p className="board-updated-date" style={{ textAlign: "center", marginTop: "40px", color: "#6b7280", fontSize: "14px" }}>
+        {/* <p className="board-updated-date" style={{ textAlign: "center", marginTop: "40px", color: "#211F1F", fontSize: "16px" }}>
           Updated 30.04.2026
         </p> */}
       </section>
@@ -198,9 +198,9 @@ const BoardOfDirectors = () => {
                   border: 'none',
                   background: '#f3f4f6',
                   cursor: 'pointer',
-                  fontSize: '24px',
+                  fontSize: "26px",
                   display: 'flex',
-                  alignItems: 'center',
+                  alignItems: 'center',              
                   justifyContent: 'center'
                 }}
               >
@@ -216,18 +216,18 @@ const BoardOfDirectors = () => {
                   />
                 </div>
                 <div style={{ flex: '0 0 55%', padding: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: '#fff', overflowY: 'auto' }}>
-                  <h2 style={{ fontWeight: 700, fontSize: '32px', margin: '0 0 5px 0', color: '#211F1F', lineHeight: '1.1' }}>
+                  <h2 style={{ fontWeight: 700, fontSize: "34px", margin: '0 0 5px 0', color: '#211F1F', lineHeight: '1.1' }}>
                     {selectedMember.name}
                   </h2>
-                  <span style={{ display: 'block', fontSize: '13px', textTransform: 'uppercase', fontWeight: 600, letterSpacing: '1.2px', color: '#E32125', marginBottom: '20px' }}>
+                  <span style={{ display: 'block', fontSize: "15px", textTransform: 'uppercase', fontWeight: 600, letterSpacing: '1.2px', color: '#B3191F', marginBottom: '20px' }}>
                     {selectedMember.role}
                   </span>
-                  <div style={{ width: '60px', height: '6px', backgroundColor: '#E32125', marginBottom: '30px', borderRadius: '3px' }}></div>
-                  <p style={{ fontSize: '16px', fontWeight: 600, color: '#211F1F', marginBottom: '25px', lineHeight: '1.5' }}>
+                  <div style={{ width: '60px', height: '6px', backgroundColor: '#B3191F', marginBottom: '30px', borderRadius: '3px' }}></div>
+                  <p style={{ fontSize: "18px", fontWeight: 600, color: '#211F1F', marginBottom: '25px', lineHeight: '1.5' }}>
                     {selectedMember.desc}
                   </p>
                   <div>
-                    <p style={{ fontSize: '14px', lineHeight: '1.8', color: '#4b5563', fontWeight: 400, textAlign: 'justify', whiteSpace: 'pre-line' }}>
+                    <p style={{ fontSize: "16px", lineHeight: '1.8', color: "#211F1F", fontWeight: 400, textAlign: 'justify', whiteSpace: 'pre-line' }}>
                       {isExpanded ? selectedMember.longDesc : `${selectedMember.longDesc.substring(0, 200)}...`}
                     </p>
                     {selectedMember.longDesc.length > 200 && (
@@ -236,12 +236,12 @@ const BoardOfDirectors = () => {
                         style={{
                           background: 'none',
                           border: 'none',
-                          color: '#E32125',
+                          color: '#B3191F',
                           fontWeight: 700,
                           cursor: 'pointer',
                           padding: '0',
                           marginTop: '10px',
-                          fontSize: '15px',
+                          fontSize: "17px",
                           textDecoration: 'underline'
                         }}
                       >

@@ -1,27 +1,28 @@
 import React from "react";
 import "./ManagementTeam.css";
 import rao from "../../../assets/images/Director/Rao (1).jpg";
-import shreyas from "../../../assets/images/directors/Shreyas_Ramanathan (2).jpg";
-import srinivasan from "../../../assets/images/directors/Srinivasan-CV_NEW (2).jpg";
-import suresh from "../../../assets/images/directors/Suresh G.jpg";
-import venkat from "../../../assets/images/directors/befe9b7bf680b2ac (1).jpeg";
-import nagesh from "../../../assets/images/directors/Nagesh (2).jpg";
-import sidharth from "../../../assets/images/directors/Sisharth-1 (1).jpg";
-import prakash from "../../../assets/images/directors/prakash.jpg";
-import hema from "../../../assets/images/directors/_DSC6348 copy.JPG";
-import erica from "../../../assets/images/directors/Erica Gonsalves(1).jpg";
-import aditya from "../../../assets/images/directors/Aditya (3).jpg";
-import raja from "../../../assets/images/directors/Raja Shankarasubramanian.jpg";
-import babu from "../../../assets/images/directors/Babu-Abraham (2).png";
-import raina from "../../../assets/images/CET/Raina DSilva.jpg";
-import bonojit from "../../../assets/images/directors/Ukil-pic (1).jpg";
-import thimmaiah from "../../../assets/images/directors/C-G-Thimmah (1).jpg";
+import shreyas from "../../../assets/images/Director/Shreyas.jpg";
+import srinivasan from "../../../assets/images/Directors/Srinivasan-CV_NEW (2).jpg";
+import suresh from "../../../assets/images/Directors/Suresh G.jpg";
+import venkat from "../../../assets/images/Directors/befe9b7bf680b2ac (1).jpeg";
+import nagesh from "../../../assets/images/Directors/Nagesh (2).jpg";
+import sidharth from "../../../assets/images/Directors/Sisharth-1 (1).jpg";
+import prakash from "../../../assets/images/Directors/prakash.jpg";
+import hema from "../../../assets/images/Directors/_DSC6348 copy.JPG";
+import erica from "../../../assets/images/Directors/Erica Gonsalves(1).jpg";
+import aditya from "../../../assets/images/Directors/Aditya (3).jpg";
+import raja from "../../../assets/images/Directors/Raja Shankarasubramanian (2).png";
+import babu from "../../../assets/images/Directors/Babu-Abraham (2).png";
+import raina from "../../../assets/images/Directors/Raina D'silva.png";
+import bonojit from "../../../assets/images/Directors/Ukil-pic (1).jpg";
+import thimmaiah from "../../../assets/images/Directors/C-G-Thimmah (1).jpg";
 import userPlaceholder from "../../../assets/images/user2.jpg";
+import manoj from "../../../assets/images/Directors/Manoj Patil.jpg";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import { AnimatePresence, motion } from "framer-motion";
 
 const managementTeamData = [
-  {
+  { 
     name: "Mr. C. V. Rao",
     role: "Founder, Managing Director & CEO",
     desc: "Brings over 30 years of leadership experience in banking and financial services, with deep expertise in retail lending and portfolio risk management.",
@@ -71,7 +72,7 @@ const managementTeamData = [
   },
   {
     name: "Mr. Radhakrishna",
-    role: "State Head",
+    role: "State Head", 
     desc: "Experienced banking and financial services professional.",
     longDesc: "Profile will be shared shortly.",
     color: "red",
@@ -103,13 +104,12 @@ const managementTeamData = [
     img: prakash,
   },
   {
-    name: "Mr. Maanoj Patil",
-    role: "State Head – Maharashtra",
-    desc: "Experienced leader driving growth and operational excellence in the Maharashtra region.",
-    longDesc: "Mr. Maanoj Patil is the State Head for Maharashtra. He brings extensive experience in business development, credit assessment, and strategic planning within the housing finance sector. His leadership is key to expanding Nivara's footprint and maintaining high service standards in the Maharashtra market.",
+    name: "Mr. Manoj Patil",
+    role: "State Business Head – Maharashtra",
+    desc: "Over 25 years of extensive experience in banking and financial services, with strong domain expertise in mortgages, secured lending, and business development.",
+    longDesc: "Manoj Patil serves as the State Business Head (Maharashtra) at Nivara Home Finance Ltd. He brings over 25 years of extensive experience in banking and financial services, with strong domain expertise in mortgages, secured lending, retail banking, insurance, and business development.\n\nOver the course of his career, Manoj has demonstrated a consistent ability to build and scale high-performing teams, drive market expansion, and deliver sustainable, profitable growth. In his current role, he leads large, multi-location teams across Maharashtra, focusing on expanding the branch network, strengthening distribution capabilities, and enhancing overall business performance while maintaining strong portfolio quality and risk discipline.\n\nPrior to joining Nivara Home Finance Ltd., he held key leadership positions with reputed organizations including Credit Saison, Hiranandani Financial Services, HDB Financial Services, HDFC Bank, and SBI Life Insurance. Across these roles, he has successfully driven business growth across mortgage loans, loan against property (LAP), affordable housing finance, and insurance cross-selling, while implementing robust operational and strategic frameworks.",
     color: "green",
-    img: userPlaceholder,
-    hidden: true,
+    img: manoj,
   },
   {
     name: "Mr. Raja Shankarasubramanian",
@@ -182,7 +182,7 @@ const ManagementTeam = () => {
         <ScrollReveal direction="up">
           <div className="management-header">
             <span className="management-heading">Management Team</span>
-            <h2>Our   Management   Leadership</h2>
+            {/* <h2>Our   Management   Leadership</h2> */}
             <p>Experienced professionals managing operations, governance, and business excellence</p>
           </div>
         </ScrollReveal>
@@ -224,7 +224,7 @@ const ManagementTeam = () => {
               </ScrollReveal>
             ))}
         </div>
-        {/* <p className="management-updated-date" style={{ textAlign: "center", marginTop: "40px", color: "#6b7280", fontSize: "14px" }}>
+        {/* <p className="management-updated-date" style={{ textAlign: "center", marginTop: "40px", color: "#211F1F", fontSize: "16px" }}>
           Updated 30.04.2026
         </p> */}
       </section>
@@ -289,7 +289,7 @@ const ManagementTeam = () => {
                   border: 'none',
                   background: '#f3f4f6',
                   cursor: 'pointer',
-                  fontSize: '24px',
+                  fontSize: "26px",
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center'
@@ -307,18 +307,18 @@ const ManagementTeam = () => {
                   />
                 </div>
                 <div style={{ flex: '0 0 55%', padding: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: '#fff', overflowY: 'auto' }}>
-                  <h2 style={{ fontWeight: 700, fontSize: '32px', margin: '0 0 5px 0', color: '#211F1F', lineHeight: '1.1' }}>
+                  <h2 style={{ fontWeight: 700, fontSize: "34px", margin: '0 0 5px 0', color: '#211F1F', lineHeight: '1.1' }}>
                     {selectedMember.name}
                   </h2>
-                  <span style={{ display: 'block', fontSize: '13px', textTransform: 'uppercase', fontWeight: 600, letterSpacing: '1.2px', color: '#E32125', marginBottom: '20px' }}>
+                  <span style={{ display: 'block', fontSize: "15px", textTransform: 'uppercase', fontWeight: 600, letterSpacing: '1.2px', color: '#B3191F', marginBottom: '20px' }}>
                     {selectedMember.role}
                   </span>
-                  <div style={{ width: '60px', height: '6px', backgroundColor: '#E32125', marginBottom: '30px', borderRadius: '3px' }}></div>
-                  <p style={{ fontSize: '16px', fontWeight: 600, color: '#211F1F', marginBottom: '25px', lineHeight: '1.5' }}>
-                    {selectedMember.desc}
+                  <div style={{ width: '60px', height: '6px', backgroundColor: '#B3191F', marginBottom: '30px', borderRadius: '3px' }}></div>
+                  <p style={{ fontSize: "18px", fontWeight: 600, color: '#211F1F', marginBottom: '25px', lineHeight: '1.5' }}>
+                    {selectedMember.desc}        
                   </p>
                   <div>
-                    <p style={{ fontSize: '14px', lineHeight: '1.8', color: '#4b5563', fontWeight: 400, textAlign: 'justify', whiteSpace: 'pre-line' }}>
+                    <p style={{ fontSize: "16px", lineHeight: '1.8', color: "#211F1F", fontWeight: 400, textAlign: 'justify', whiteSpace: 'pre-line' }}>
                       {isExpanded ? selectedMember.longDesc : `${selectedMember.longDesc.substring(0, 200)}...`}
                     </p>
                     {selectedMember.longDesc.length > 200 && (
@@ -327,12 +327,12 @@ const ManagementTeam = () => {
                         style={{
                           background: 'none',
                           border: 'none',
-                          color: '#E32125',
+                          color: '#B3191F',
                           fontWeight: 700,
                           cursor: 'pointer',
                           padding: '0',
                           marginTop: '10px',
-                          fontSize: '15px',
+                          fontSize: "17px",
                           textDecoration: 'underline'
                         }}
                       >

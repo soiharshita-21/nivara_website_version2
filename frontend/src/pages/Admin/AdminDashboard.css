@@ -32,7 +32,7 @@
 .sidebar-header h2 {
   font-size: 1.75rem;
   font-weight: 700;
-  color: #E32125;
+  color: #B3191F;
   margin: 0;
   letter-spacing: -0.5px;
   text-shadow: 0 2px 10px rgba(227, 33, 37, 0.15);
@@ -54,7 +54,7 @@
   border-radius: 1rem;
   border: none;
   background: transparent;
-  color: #64748b;
+  color: #211F1F;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -64,13 +64,13 @@
 }
 
 .dash-nav-item:hover:not(.active) {
-  color: #E32125;
+  color: #B3191F;
   background-color: #fef2f2;
   transform: translateX(4px);
 }
 
 .dash-nav-item.active {
-  background: linear-gradient(135deg, #E32125 0%, #b91825 100%);
+  background: linear-gradient(135deg, #B3191F 0%, #b91825 100%);
   color: #ffffff;
   box-shadow: 0 10px 20px -5px rgba(227, 33, 37, 0.3);
   transform: translateY(-2px);
@@ -96,14 +96,14 @@
   border-radius: 1rem;
   border: 1px solid #fee2e2;
   background-color: white;
-  color: #E32125;
+  color: #B3191F;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .logout-btn:hover {
-  background-color: #E32125;
+  background-color: #B3191F;
   color: white;
   box-shadow: 0 4px 12px rgba(227, 33, 37, 0.2);
 }
@@ -152,7 +152,7 @@
   left: 0;
   width: 60px;
   height: 4px;
-  background-color: #E32125;
+  background-color: #B3191F;
   border-radius: 2px;
 }
 
@@ -160,7 +160,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #E32125 0%, #b91825 100%);
+  background: linear-gradient(135deg, #B3191F 0%, #b91825 100%);
   color: white;
   padding: 0.875rem 1.75rem;
   border-radius: 1rem;
@@ -238,22 +238,22 @@
 
 .blog-icon {
   background: linear-gradient(135deg, #ffffff 0%, #fee2e2 100%);
-  color: #E32125;
+  color: #B3191F;
 }
 
 .press-icon {
   background: linear-gradient(135deg, #ffffff 0%, #fee2e2 100%);
-  color: #E32125;
+  color: #B3191F;
 }
 
 .gallery-icon {
   background: linear-gradient(135deg, #ffffff 0%, #fee2e2 100%);
-  color: #E32125;
+  color: #B3191F;
 }
 
 .pages-icon {
   background: linear-gradient(135deg, #ffffff 0%, #fee2e2 100%);
-  color: #E32125;
+  color: #B3191F;
 }
 
 .stat-info {
@@ -262,7 +262,7 @@
 
 .stat-info h3 {
   font-size: 0.85rem;
-  color: #64748b;
+  color: #211F1F;
   margin: 0 0 0.25rem 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -297,7 +297,7 @@
   background: #fef2f2;
   padding: 1.25rem 2rem;
   font-weight: 600;
-  color: #E32125;
+  color: #B3191F;
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -344,11 +344,11 @@
 
 .edit-btn {
   background-color: #f1f5f9;
-  color: #475569;
+  color: #211F1F;
 }
 
 .edit-btn:hover {
-  background-color: #E32125;
+  background-color: #B3191F;
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(227, 33, 37, 0.2);
@@ -356,11 +356,11 @@
 
 .delete-btn {
   background-color: #fee2e2;
-  color: #E32125;
+  color: #B3191F;
 }
 
 .delete-btn:hover {
-  background-color: #E32125;
+  background-color: #B3191F;
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(227, 33, 37, 0.2);
@@ -437,7 +437,7 @@
 .close-btn {
   background: white;
   border: 1px solid #e2e8f0;
-  color: #64748b;
+  color: #211F1F;
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -450,7 +450,7 @@
 
 .close-btn:hover {
   background: #fee2e2;
-  color: #E32125;
+  color: #B3191F;
   border-color: #fee2e2;
   transform: rotate(90deg);
 }
@@ -509,7 +509,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #E32125;
+  border-color: #B3191F;
   box-shadow: 0 0 0 4px rgba(227, 33, 37, 0.1);
 }
 
@@ -528,7 +528,7 @@
 }
 
 .image-upload-wrapper:hover {
-  border-color: #E32125;
+  border-color: #B3191F;
   background: #fef2f2;
 }
 
@@ -542,7 +542,7 @@
   border: 1px solid #e2e8f0;
   border-radius: 0.75rem;
   cursor: pointer;
-  color: #E32125;
+  color: #B3191F;
   font-weight: 600;
   transition: all 0.2s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -550,7 +550,7 @@
 
 .upload-dropzone:hover {
   color: white;
-  border-color: #E32125;
+  border-color: #B3191F;
 }
 
 .image-preview-container {
@@ -605,7 +605,7 @@
   top: 0.75rem;
   right: 0.75rem;
   background: #ffffff;
-  color: #E32125;
+  color: #B3191F;
   border: none;
   border-radius: 50%;
   width: 32px;
@@ -621,7 +621,7 @@
 
 .remove-image-btn:hover {
   transform: scale(1.15) rotate(90deg);
-  background: #E32125;
+  background: #B3191F;
   color: white;
 }
 
@@ -633,7 +633,7 @@
   padding: 0.875rem 2rem;
   border-radius: 0.75rem;
   border: none;
-  background: linear-gradient(135deg, #E32125 0%, #b91825 100%);
+  background: linear-gradient(135deg, #B3191F 0%, #b91825 100%);
   color: white;
   font-weight: 600;
   font-size: 1rem;
@@ -686,7 +686,7 @@
   padding: 4rem;
   display: flex;
   justify-content: center;
-  color: #E32125;
+  color: #B3191F;
 }
 
 @media (max-width: 1024px) {

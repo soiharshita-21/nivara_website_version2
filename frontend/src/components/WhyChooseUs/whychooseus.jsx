@@ -102,7 +102,7 @@ const WhyChooseUs = () => {
               <div className="trust-item">
                 <div className="trust-icon rbi">✓</div>
                 <div className="trust-text">
-                  <span>RBI Registered</span>
+                  <span className="highlight-text rbi-color">RBI Registered</span>
                   <h4>Housing Finance Company</h4>
                 </div>
               </div>
@@ -112,7 +112,7 @@ const WhyChooseUs = () => {
               <div className="trust-item">
                 <div className="trust-icon iso">✳</div>
                 <div className="trust-text">
-                  <span>ISO 27001:2022 Certified</span>
+                  <span className="highlight-text iso-color">ISO 27001:2022 Certified</span>
                   <h4>Quality Assured</h4>
                 </div>
               </div>

@@ -1,17 +1,21 @@
 const request = require('supertest');
 
-// Mock MySQL connection to avoid database dependency in testing
-jest.mock('mysql2', () => ({
-    createConnection: jest.fn(() => ({
-        connect: jest.fn((cb) => cb(null)),
+// Mock MySQL connection/pool to avoid database dependency in testing
+jest.mock('mysql2', () => {
+    const mockDb = {
+        connect: jest.fn((cb) => cb && cb(null)),
         on: jest.fn(),
         query: jest.fn((queryStr, params, cb) => {
             // Support call signature with or without params array
             const callback = typeof params === 'function' ? params : cb;
             callback(null, []); // Mock success query results
         })
-    }))
-}));
+    };
+    return {
+        createConnection: jest.fn(() => mockDb),
+        createPool: jest.fn(() => mockDb)
+    };
+});
 
 const app = require('./index');
 

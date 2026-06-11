@@ -43,14 +43,14 @@
 
 .emi-title {
   text-align: center;
-  font-size: 48px;
+  font-size: 50px;
   margin-bottom: 10px;
   color: #7a1422;
 }
 
 .emi-subtitle {
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   opacity: 0.9;
   color: #7a1422;
 }
@@ -75,7 +75,7 @@
 .label-row {
   display: flex;
   justify-content: space-between;
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
@@ -87,8 +87,8 @@ input[type="range"] {
 .range-labels {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
-  color: #666;
+  font-size: 16px;
+  color: #211F1F;
 }
 
 /* RIGHT */
@@ -107,7 +107,7 @@ input[type="range"] {
 }
 
 .emi-main h2 {
-  font-size: 48px;
+  font-size: 50px;
   margin-top: 10px;
 }
 
@@ -165,7 +165,7 @@ input[type="range"] {
   border: none;
   padding: 16px;
   border-radius: 12px;
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
 }
 
@@ -182,11 +182,11 @@ input[type="range"]::-webkit-slider-thumb {
   }
 
   .emi-main h2 {
-    font-size: 40px;
+    font-size: 42px;
   }
 
   .emi-title {
-    font-size: 40px;
+    font-size: 42px;
   }
 }
 
@@ -203,19 +203,19 @@ input[type="range"]::-webkit-slider-thumb {
   }
 
   .emi-title {
-    font-size: 32px;
+    font-size: 34px;
   }
 
   .emi-subtitle {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .label-row {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .range-labels {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .emi-main {
@@ -224,7 +224,7 @@ input[type="range"]::-webkit-slider-thumb {
   }
 
   .emi-main h2 {
-    font-size: 32px;
+    font-size: 34px;
   }
 
   .emi-small {
@@ -236,7 +236,7 @@ input[type="range"]::-webkit-slider-thumb {
   }
 
   .apply-loan-btn {
-    font-size: 16px;
+    font-size: 18px;
     padding: 14px;
   }
 }
@@ -244,11 +244,11 @@ input[type="range"]::-webkit-slider-thumb {
 /* Small Mobile */
 @media (max-width: 480px) {
   .emi-title {
-    font-size: 26px;
+    font-size: 28px;
   }
 
   .emi-main h2 {
-    font-size: 26px;
+    font-size: 28px;
   }
 
   .emi-small-grid {

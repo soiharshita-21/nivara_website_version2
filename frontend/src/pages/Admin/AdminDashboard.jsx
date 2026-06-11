@@ -440,7 +440,7 @@ const AdminDashboard = () => {
                 <>
                   <div className="filter-bar" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', padding: '15px 20px', backgroundColor: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', gap: '15px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                      <span style={{ fontWeight: '600', color: '#64748b', fontSize: '0.9rem' }}>Filter by State:</span>
+                      <span style={{ fontWeight: '600', color: "#211F1F", fontSize: '0.9rem' }}>Filter by State:</span>
                       <select 
                         value={selectedStateFilter} 
                         onChange={(e) => setSelectedStateFilter(e.target.value)}
@@ -463,7 +463,7 @@ const AdminDashboard = () => {
                         <option value="Maharashtra">Maharashtra</option>
                       </select>
                     </div>
-                    <div style={{ color: '#64748b', fontSize: '0.9rem', fontWeight: '500' }}>
+                    <div style={{ color: "#211F1F", fontSize: '0.9rem', fontWeight: '500' }}>
                       Showing <strong>{getFilteredBranches().length}</strong> of <strong>{branches.length}</strong> branches
                     </div>
                   </div>
@@ -497,7 +497,7 @@ const AdminDashboard = () => {
                       ))}
                       {getFilteredBranches().length === 0 && (
                         <tr>
-                          <td colSpan="6" style={{ textAlign: 'center', padding: '30px', color: '#64748b' }}>No branches found matching the filter.</td>
+                          <td colSpan="6" style={{ textAlign: 'center', padding: '30px', color: "#211F1F" }}>No branches found matching the filter.</td>
                         </tr>
                       )}
                     </tbody>
@@ -583,7 +583,7 @@ const AdminDashboard = () => {
                             <X size={16} /> Back to Folders
                           </button>
                           <h2 style={{ margin: '0 0 4px 0', color: '#1e293b' }}>{currentFolder.title}</h2>
-                          <p style={{ margin: 0, color: '#64748b', fontSize: '0.9rem' }}>Date: {currentFolder.subtitle} &bull; {currentFolder.images.length} Photos</p>
+                          <p style={{ margin: 0, color: "#211F1F", fontSize: '0.9rem' }}>Date: {currentFolder.subtitle} &bull; {currentFolder.images.length} Photos</p>
                         </div>
                         <div style={{ display: 'flex', gap: '10px' }}>
                           <button className="edit-btn" onClick={() => handleEditFolder(currentFolder)} style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 16px', borderRadius: '6px', border: 'none', backgroundColor: '#e2e8f0', color: '#1e293b', cursor: 'pointer', fontWeight: '600' }}>
@@ -640,7 +640,7 @@ const AdminDashboard = () => {
                           </td>
                           <td style={{ fontWeight: '600', color: '#1e293b' }}>
                             <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                              <Folder size={18} style={{ color: '#E32125' }} />
+                              <Folder size={18} style={{ color: '#B3191F' }} />
                               {folder.title}
                             </span>
                           </td>
@@ -655,7 +655,7 @@ const AdminDashboard = () => {
                       ))}
                       {adminFolders.length === 0 && (
                         <tr>
-                          <td colSpan="5" style={{ textAlign: 'center', padding: '30px', color: '#64748b' }}>No gallery folders found. Click "Add New" to create one!</td>
+                          <td colSpan="5" style={{ textAlign: 'center', padding: '30px', color: "#211F1F" }}>No gallery folders found. Click "Add New" to create one!</td>
                         </tr>
                       )}
                     </tbody>
@@ -763,10 +763,10 @@ const AdminDashboard = () => {
                       </div>
                     </div>
                     <div className="form-group" style={{ height: '380px', marginBottom: '50px' }}>
-                      <label style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#E32125', fontWeight: '700' }}>
+                      <label style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#B3191F', fontWeight: '700' }}>
                         <Code size={18} /> Page Content (HTML & CSS Editor)
                       </label>
-                      <p style={{ margin: '0 0 8px 0', fontSize: '0.8rem', color: '#64748b' }}>Write standard &lt;style&gt; tags and &lt;div&gt; structures here.</p>
+                      <p style={{ margin: '0 0 8px 0', fontSize: '0.8rem', color: "#211F1F" }}>Write standard &lt;style&gt; tags and &lt;div&gt; structures here.</p>
                       <textarea 
                         value={newPage.content} 
                         onChange={e => setNewPage({ ...newPage, content: e.target.value })} 
@@ -780,7 +780,7 @@ const AdminDashboard = () => {
                           borderRadius: '8px', 
                           border: '2px solid #1e293b',
                           lineHeight: '1.6', 
-                          fontSize: '14px',
+                          fontSize: "16px",
                           outline: 'none',
                           resize: 'vertical'
                         }} 
@@ -922,7 +922,7 @@ const AdminDashboard = () => {
                         <div className="form-group">
                           <label>Add New Photos to Folder (Dump Multiple Images)</label>
                           <div className="image-upload-wrapper" style={{ border: '2px dashed #cbd5e1', padding: '20px', borderRadius: '8px', textAlign: 'center', backgroundColor: '#f8fafc' }}>
-                            <label className="upload-dropzone" style={{ cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', color: '#64748b' }}>
+                            <label className="upload-dropzone" style={{ cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', color: "#211F1F" }}>
                               <input 
                                 type="file" 
                                 accept="image/*" 
@@ -930,13 +930,13 @@ const AdminDashboard = () => {
                                 multiple 
                                 hidden 
                               />
-                              <Upload size={28} style={{ color: '#E32125' }} />
+                              <Upload size={28} style={{ color: '#B3191F' }} />
                               <span style={{ fontWeight: '600' }}>Click to select and upload new images to this folder</span>
                               <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Supports PNG, JPG, JPEG, WEBP</span>
                             </label>
                           </div>
                           {uploadingMultiple && (
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '10px', color: '#E32125', fontWeight: '600' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '10px', color: '#B3191F', fontWeight: '600' }}>
                               <Loader2 className="spin" size={16} /> Uploading images... please wait
                             </div>
                           )}
@@ -987,7 +987,7 @@ const AdminDashboard = () => {
                         <div className="form-group">
                           <label>Upload Gallery Photos (Dump Multiple Images)</label>
                           <div className="image-upload-wrapper" style={{ border: '2px dashed #cbd5e1', padding: '20px', borderRadius: '8px', textAlign: 'center', backgroundColor: '#f8fafc' }}>
-                            <label className="upload-dropzone" style={{ cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', color: '#64748b' }}>
+                            <label className="upload-dropzone" style={{ cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', color: "#211F1F" }}>
                               <input 
                                 type="file" 
                                 accept="image/*" 
@@ -995,13 +995,13 @@ const AdminDashboard = () => {
                                 multiple 
                                 hidden 
                               />
-                              <Upload size={28} style={{ color: '#E32125' }} />
+                              <Upload size={28} style={{ color: '#B3191F' }} />
                               <span style={{ fontWeight: '600' }}>Click to select and upload multiple images</span>
                               <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Supports PNG, JPG, JPEG, WEBP</span>
                             </label>
                           </div>
                           {uploadingMultiple && (
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '10px', color: '#E32125', fontWeight: '600' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '10px', color: '#B3191F', fontWeight: '600' }}>
                               <Loader2 className="spin" size={16} /> Uploading images... please wait
                             </div>
                           )}

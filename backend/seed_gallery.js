@@ -10,7 +10,7 @@ const db = mysql.createConnection({
     database: process.env.DB_NAME || 'nivara_db'
 });
 
-const frontendImagesPath = path.join(__dirname, '..', 'frontend', 'src', 'assets', 'images');
+const frontendImagesPath = path.join(__dirname, '..', 'frontend', 'src', 'assets', 'images', 'gallery');
 const backendUploadsPath = path.join(__dirname, 'uploads');
 
 // Ensure uploads folder exists
@@ -26,7 +26,7 @@ const foldersToSeed = [
         alt: 'CSR Activity- General Medical Camp, Kolar, KA'
     },
     {
-        dir: 'Anniversary 10',
+        dir: 'Anniversary',
         category: 'Anniversary',
         folder_date: 'October 2025',
         alt: '10th Anniversary Celebration'
@@ -38,7 +38,7 @@ const foldersToSeed = [
         alt: 'Nivara Navaratri Celebration'
     },
     {
-        dir: 'Fire mock dril',
+        dir: 'Fire Mock Drill',
         category: 'Fire Mock Drill',
         folder_date: 'January 2026',
         alt: 'Fire Mock Drill & Safety Training'

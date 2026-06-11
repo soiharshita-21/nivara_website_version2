@@ -30,13 +30,13 @@
 }
 
 .testimonials-header h2 {
-  font-size: 46px;
+  font-size: 48px;
   font-weight: 700;
-  color: #E32125;
+  color: #B3191F;
 }
 
 .testimonials-header p {
-  color: #475569;
+  color: #211F1F;
   margin-top: 10px;
 }
 
@@ -59,18 +59,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 34px;
+  font-size: 36px;
   margin: auto;
 }
 
 .stars {
   color: #fbbf24;
-  font-size: 26px;
+  font-size: 28px;
   margin: 20px 0;
 }
 
 .testimonial-text {
-  font-size: 24px;
+  font-size: 26px;
   line-height: 1.7;
   color: #1e293b;
   max-width: 900px;
@@ -117,21 +117,21 @@
 
 
 .testimonial-user h4 {
-  color: #E32125;
-  font-size: 20px;
+  color: #B3191F;
+  font-size: 22px;
   margin-bottom: 4px;
 }
 
 .place {
   display: block;
-  font-size: 14px;
-  color: #475569;
+  font-size: 16px;
+  color: #211F1F;
 }
 
 .loan {
   display: block;
-  font-size: 13px;
-  color: #64748b;
+  font-size: 15px;
+  color: #211F1F;
 }
 
 
@@ -145,8 +145,8 @@
   border: 2px solid #f1c6cc;
   background: #7a1422;
   background: #fff;
-  color: #E32125;
-  font-size: 22px;
+  color: #B3191F;
+  font-size: 24px;
   cursor: pointer;
 }
 
@@ -177,7 +177,7 @@
 .dot.active {
   width: 34px;
   border-radius: 10px;
-  background: #E32125;
+  background: #B3191F;
 }
 
 .nav-btnn {

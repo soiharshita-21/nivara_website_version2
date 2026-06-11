@@ -9,7 +9,7 @@ const policies = [
   { name: "Nomination & Remuneration Policy", link: "/files/policy-nomination-remuneration.pdf" },
   { name: "Conversion Policy", link: "/files/policy-conversion.pdf" },
   { name: "Code of Conduct for Independent Directors", link: "/files/policy-code-independent-directors.pdf" },
-  { name: "Technical Valuation Policy", link: "/files/policy-technical-valuation.pdf" },
+
   { name: "Related Party Transaction Policy", link: "/files/policy-related-party.pdf" },
   { name: "Equal Opportunity Policy", link: "/files/policy-equal-opportunity.pdf" },
   { name: "Corporate Social Responsibility", link: "/files/policy-csr.pdf" },

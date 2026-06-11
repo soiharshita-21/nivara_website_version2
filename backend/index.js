@@ -16,8 +16,21 @@ const app = express();
 // Disable X-Powered-By header (OWASP A05:2021 - Security Misconfiguration)
 app.disable('x-powered-by');
 
+const allowedOrigins = [
+    'http://localhost:5173',
+    'http://localhost:5001',
+    'http://127.0.0.1:5173',
+    'http://localhost:3000'
+];
+
 app.use(cors({
-    origin: true,
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true
 }));
 
@@ -162,29 +175,23 @@ const validateBranch = (req, res, next) => {
 };
 
 
-// Database Connection
-const db = mysql.createConnection({
+// Database Connection Pool
+const db = mysql.createPool({
     host: process.env.DB_HOST || '127.0.0.1',
     user: process.env.DB_USER || 'root',
     password: process.env.DB_PASS || '',
-    database: process.env.DB_NAME || 'nivara_db'
+    database: process.env.DB_NAME || 'nivara_db',
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 });
 
-db.connect(err => {
+db.query("SELECT 1", err => {
     if (err) {
         console.error("❌ Database connection failed:", err.message);
         console.log("👉 Tip: Make sure your MySQL service (like XAMPP or WAMP) is running.");
     } else {
-        console.log(`✅ Successfully connected to MySQL Database (${process.env.DB_NAME || 'nivara_db'})`);
-
-    }
-});
-
-// Catch and handle database connection errors (OWASP & Resilience best practice)
-db.on('error', err => {
-    console.error("❌ Database connection error:", err.message);
-    if (err.code === 'PROTOCOL_CONNECTION_LOST' || err.code === 'ECONNRESET') {
-        console.log("👉 Database connection was lost. Consider restarting the server if the DB doesn't auto-reconnect.");
+        console.log(`✅ Successfully connected to MySQL Database (${process.env.DB_NAME || 'nivara_db'}) via Connection Pool`);
     }
 });
 
@@ -443,25 +450,25 @@ app.delete('/api/pages/:id', verifyToken, validateId, (req, res) => {
 
 // --- BRANCHES ROUTES ---
 app.get('/api/branches', (req, res) => {
-    db.query("SELECT * FROM branches ORDER BY city ASC", (err, results) => {
+    db.query("SELECT id, city, state, DATE_FORMAT(opened, '%Y-%m-%d') AS opened, address, contact, map_link, is_new FROM branches ORDER BY city ASC", (err, results) => {
         if (err) return res.status(500).json(err);
         res.json(results);
     });
 });
 
 app.post('/api/branches', verifyToken, validateBranch, (req, res) => {
-    const { city, state, opened, address, contact, is_new } = req.body;
-    const query = "INSERT INTO branches (city, state, opened, address, contact, is_new) VALUES (?, ?, ?, ?, ?, ?)";
-    db.query(query, [city, state, opened, address, contact, is_new ? 1 : 0], (err, result) => {
+    const { city, state, opened, address, contact, map_link, is_new } = req.body;
+    const query = "INSERT INTO branches (city, state, opened, address, contact, map_link, is_new) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    db.query(query, [city, state, opened, address, contact, map_link || null, is_new ? 1 : 0], (err, result) => {
         if (err) return res.status(500).json(err);
         res.json({ message: "Branch added successfully!", id: result.insertId });
     });
 });
 
 app.put('/api/branches/:id', verifyToken, validateId, validateBranch, (req, res) => {
-    const { city, state, opened, address, contact, is_new } = req.body;
-    const query = "UPDATE branches SET city = ?, state = ?, opened = ?, address = ?, contact = ?, is_new = ? WHERE id = ?";
-    db.query(query, [city, state, opened, address, contact, is_new ? 1 : 0, req.validatedId], (err, result) => {
+    const { city, state, opened, address, contact, map_link, is_new } = req.body;
+    const query = "UPDATE branches SET city = ?, state = ?, opened = ?, address = ?, contact = ?, map_link = ?, is_new = ? WHERE id = ?";
+    db.query(query, [city, state, opened, address, contact, map_link || null, is_new ? 1 : 0, req.validatedId], (err, result) => {
         if (err) return res.status(500).json(err);
         res.json({ message: "Branch updated successfully!" });
     });
@@ -625,8 +632,8 @@ app.post('/api/careers/apply', careerApplyLimiter, (req, res) => {
             subject: `New Job Application: ${safePosition} - ${safeFirstName} ${safeLastName}`,
             html: `
                 <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 600px; margin: auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-                    <div style="text-align: center; border-bottom: 2px solid #E32125; padding-bottom: 10px; margin-bottom: 20px;">
-                        <h2 style="color: #E32125; margin: 0;">Nivara Housing Finance</h2>
+                    <div style="text-align: center; border-bottom: 2px solid #B3191F; padding-bottom: 10px; margin-bottom: 20px;">
+                        <h2 style="color: #B3191F; margin: 0;">Nivara Housing Finance</h2>
                         <p style="margin: 5px 0 0; color: #666; font-size: 14px;">Careers Application Submission</p>
                     </div>
                     
@@ -655,7 +662,7 @@ app.post('/api/careers/apply', careerApplyLimiter, (req, res) => {
                     </table>
 
                     <h3 style="color: #333; margin-top: 20px;">Cover Letter / Message</h3>
-                    <div style="background: #f9f9f9; border-left: 4px solid #E32125; padding: 15px; border-radius: 4px; color: #555; white-space: pre-wrap; font-style: italic;">
+                    <div style="background: #f9f9f9; border-left: 4px solid #B3191F; padding: 15px; border-radius: 4px; color: #555; white-space: pre-wrap; font-style: italic;">
                         ${safeMessage}
                     </div>
 
@@ -745,8 +752,8 @@ app.post('/api/loans/apply', loanApplyLimiter, (req, res) => {
         subject: `New Loan Application: ${safeLoanFor} - ${safeFirstName} ${safeLastName}`,
         html: `
             <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 600px; margin: auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-                <div style="text-align: center; border-bottom: 2px solid #E32125; padding-bottom: 10px; margin-bottom: 20px;">
-                    <h2 style="color: #E32125; margin: 0;">Nivara Housing Finance</h2>
+                <div style="text-align: center; border-bottom: 2px solid #B3191F; padding-bottom: 10px; margin-bottom: 20px;">
+                    <h2 style="color: #B3191F; margin: 0;">Nivara Housing Finance</h2>
                     <p style="margin: 5px 0 0; color: #666; font-size: 14px;">Home Loan Application Submission</p>
                 </div>
                 
@@ -758,7 +765,7 @@ app.post('/api/loans/apply', loanApplyLimiter, (req, res) => {
                     </tr>
                     <tr>
                         <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">Requested Amount:</td>
-                        <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold; color: #E32125;">INR ${parseFloat(safeAmount).toLocaleString('en-IN')}</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold; color: #B3191F;">INR ${parseFloat(safeAmount).toLocaleString('en-IN')}</td>
                     </tr>
                 </table>
 
@@ -885,8 +892,8 @@ app.post('/api/appointments/apply', appointmentApplyLimiter, (req, res) => {
         subject: `New Appointment Request: ${safeLoanFor} - ${safeFirstName} ${safeLastName}`,
         html: `
             <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 600px; margin: auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-                <div style="text-align: center; border-bottom: 2px solid #E32125; padding-bottom: 10px; margin-bottom: 20px;">
-                    <h2 style="color: #E32125; margin: 0;">Nivara Housing Finance</h2>
+                <div style="text-align: center; border-bottom: 2px solid #B3191F; padding-bottom: 10px; margin-bottom: 20px;">
+                    <h2 style="color: #B3191F; margin: 0;">Nivara Housing Finance</h2>
                     <p style="margin: 5px 0 0; color: #666; font-size: 14px;">Appointment Request Submission</p>
                 </div>
                 
@@ -898,7 +905,7 @@ app.post('/api/appointments/apply', appointmentApplyLimiter, (req, res) => {
                     </tr>
                     <tr>
                         <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">Requested Amount:</td>
-                        <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold; color: #E32125;">INR ${parseFloat(safeAmount).toLocaleString('en-IN')}</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold; color: #B3191F;">INR ${parseFloat(safeAmount).toLocaleString('en-IN')}</td>
                     </tr>
                 </table>
 
@@ -991,8 +998,8 @@ app.post('/api/contacts/apply', contactApplyLimiter, (req, res) => {
         subject: `New General Contact Inquiry from ${safeName}`,
         html: `
             <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 600px; margin: auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-                <div style="text-align: center; border-bottom: 2px solid #E32125; padding-bottom: 10px; margin-bottom: 20px;">
-                    <h2 style="color: #E32125; margin: 0;">Nivara Housing Finance</h2>
+                <div style="text-align: center; border-bottom: 2px solid #B3191F; padding-bottom: 10px; margin-bottom: 20px;">
+                    <h2 style="color: #B3191F; margin: 0;">Nivara Housing Finance</h2>
                     <p style="margin: 5px 0 0; color: #666; font-size: 14px;">Contact Inquiry Submitted</p>
                 </div>
                 
@@ -1072,8 +1079,8 @@ app.post('/api/advisors/apply', advisorApplyLimiter, (req, res) => {
         subject: `New Advisor Request from ${safeName}`,
         html: `
             <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 600px; margin: auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-                <div style="text-align: center; border-bottom: 2px solid #E32125; padding-bottom: 10px; margin-bottom: 20px;">
-                    <h2 style="color: #E32125; margin: 0;">Nivara Housing Finance</h2>
+                <div style="text-align: center; border-bottom: 2px solid #B3191F; padding-bottom: 10px; margin-bottom: 20px;">
+                    <h2 style="color: #B3191F; margin: 0;">Nivara Housing Finance</h2>
                     <p style="margin: 5px 0 0; color: #666; font-size: 14px;">Advisor Consultation Request</p>
                 </div>
                 
@@ -1166,8 +1173,8 @@ app.post('/api/quotes/apply', quoteApplyLimiter, (req, res) => {
         subject: `New Quote Request: ${safeFullName} - INR ${parseFloat(safeAmount).toLocaleString('en-IN')}`,
         html: `
             <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 600px; margin: auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-                <div style="text-align: center; border-bottom: 2px solid #E32125; padding-bottom: 10px; margin-bottom: 20px;">
-                    <h2 style="color: #E32125; margin: 0;">Nivara Housing Finance</h2>
+                <div style="text-align: center; border-bottom: 2px solid #B3191F; padding-bottom: 10px; margin-bottom: 20px;">
+                    <h2 style="color: #B3191F; margin: 0;">Nivara Housing Finance</h2>
                     <p style="margin: 5px 0 0; color: #666; font-size: 14px;">Quote Request Submission</p>
                 </div>
                 
@@ -1199,7 +1206,7 @@ app.post('/api/quotes/apply', quoteApplyLimiter, (req, res) => {
                     </tr>
                     <tr>
                         <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; background: #fdfdfd;">Loan Amount Required:</td>
-                        <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold; color: #E32125;">INR ${parseFloat(safeAmount).toLocaleString('en-IN')}</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold; color: #B3191F;">INR ${parseFloat(safeAmount).toLocaleString('en-IN')}</td>
                     </tr>
                 </table>
 

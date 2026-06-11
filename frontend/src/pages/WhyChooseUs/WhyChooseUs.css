@@ -61,7 +61,7 @@
   font-weight: 700;
   margin-bottom: 20px;
   line-height: 1.1;
-  border-left: 8px solid #E32125;
+  border-left: 8px solid #B3191F;
   padding-left: 25px;
   text-transform: uppercase;
   letter-spacing: -1px;
@@ -94,14 +94,14 @@
 
 .why-intro h2 {
   font-size: 2.5rem;
-  color: #E32125;
+  color: #B3191F;
   margin-bottom: 20px;
   font-weight: 600;
 }
 
 .why-intro p {
   font-size: 1.1rem;
-  color: #666;
+  color: #211F1F;
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.8;
@@ -147,7 +147,7 @@
 }
 
 .benefit-icon {
-  color: #E32125;
+  color: #B3191F;
   width: 30px;
   height: 30px;
 }
@@ -160,7 +160,7 @@
 }
 
 .benefit-card p {
-  color: #666;
+  color: #211F1F;
   line-height: 1.6;
   font-size: 0.95rem;
 }
@@ -205,7 +205,7 @@
 .step-num {
   width: 40px;
   height: 40px;
-  background-color: #E32125;
+  background-color: #B3191F;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -221,7 +221,7 @@
 }
 
 .apply-btn-large {
-  background-color: #E32125;
+  background-color: #B3191F;
   color: white;
   border: none;
   padding: 18px 50px;

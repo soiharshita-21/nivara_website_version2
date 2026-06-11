@@ -16,7 +16,7 @@
 
 /* Heading */
 .interest-title {
-  font-size: 48px;
+  font-size: 50px;
   font-weight: 600;
   color: rgb(207, 10, 10);
 }
@@ -35,8 +35,8 @@
   border-radius: 6px;
 
   text-decoration: none;
-  color: #666;
-  font-size: 18px;
+  color: #211F1F;
+  font-size: 20px;
   font-weight: 500;
 
   transition: all 0.3s ease;
@@ -46,20 +46,20 @@
 
 /* Icon */
 .pdf-icon {
-  font-size: 22px;
-  color: #999;
+  font-size: 24px;
+  color: #211F1F;
   transition: 0.3s ease;
 }
 
 /* Hover effect */
 .download-btn:hover {
   background: #fdebed; /* Cohesive brand red light tint */
-  border-color: #E32125; /* Brand red border */
-  color: #E32125; /* Brand red text */
+  border-color: #B3191F; /* Brand red border */
+  color: #B3191F; /* Brand red text */
 }
 
 .download-btn:hover .pdf-icon {
-  color: #E32125; /* Brand red icon */
+  color: #B3191F; /* Brand red icon */
 }
 
 /* ROI Card Container */
@@ -96,10 +96,10 @@
 
 /* Card Header */
 .roi-card-header {
-  background: #E32125; /* Brand red color */
+  background: #B3191F; /* Brand red color */
   color: #ffffff;
   padding: 20px 24px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1.4;
   text-align: left;
@@ -127,7 +127,7 @@
 
 .roi-label, .roi-value {
   padding: 16px 24px;
-  font-size: 16px;
+  font-size: 18px;
   display: flex;
   align-items: center;
 }
@@ -154,7 +154,7 @@
 .roi-note {
   padding: 18px 24px;
   font-size: 13.5px;
-  color: #666666;
+  color: #211F1F;
   line-height: 1.5;
   background-color: #fafafa;
   border-top: none;
@@ -206,13 +206,13 @@
 @media (max-width: 480px) {
   .roi-card-header {
     padding: 16px 20px;
-    font-size: 16px;
+    font-size: 18px;
     min-height: 90px;
   }
 
   .roi-label, .roi-value, .roi-note {
     padding: 12px 18px;
-    font-size: 14px;
+    font-size: 16px;
   }
   
   .roi-value {

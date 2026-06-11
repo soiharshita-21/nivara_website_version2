@@ -393,7 +393,6 @@ const Navbar = () => {
               <ChevronDown size={16} className="chevron" />
             </div>
             <ul className="dropdown-menu">
-              <li><Link to="/contactus/branch/branch">Branch</Link></li>
               <li><Link to="/contactus/offices/offices">Office</Link></li>
             </ul>
           </li>
@@ -401,14 +400,16 @@ const Navbar = () => {
 
       </div>
 
-      <div className="hanging-banner-wrapper">
-        <div className="thread thread-left"></div>
-        <div className="thread thread-right"></div>
-        <div className="hanging-rating-banner">
-          <span>Credit Rating:</span>
-          <strong>A-; Stable</strong>
+      {location.pathname === "/" && (
+        <div className="hanging-banner-wrapper">
+          <div className="thread thread-left"></div>
+          <div className="thread thread-right"></div>
+          <div className="hanging-rating-banner">
+            <span>Credit Rating:</span>
+            <strong>A-; Stable</strong>
+          </div>
         </div>
-      </div>
+      )}
     </nav>
   );
 };

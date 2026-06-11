@@ -52,7 +52,7 @@
   top: 44px;
   left: 0;
   width: 58%;
-  background: linear-gradient(135deg, #E32125, #ff4d4d);
+  background: linear-gradient(135deg, #B3191F, #ff4d4d);
   clip-path: polygon(0 0, 100% 0, 93% 100%, 0% 100%);
 }
 
@@ -68,7 +68,7 @@
   bottom: 43px;
   left: 0;
   width: 80%;
-  background: linear-gradient(135deg, #E32125, #ff4d4d);
+  background: linear-gradient(135deg, #B3191F, #ff4d4d);
   clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
 }
 
@@ -108,7 +108,7 @@
 
 /* Theme Accents */
 .investor-modern-card.red {
-  border-top: 6px solid #E32125;
+  border-top: 6px solid #B3191F;
 }
 
 .investor-modern-card.green {
@@ -146,7 +146,7 @@
 
 /* Info */
 .investor-info h2 {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 600;
   color: #211F1F;
   margin-bottom: 15px;
@@ -155,7 +155,7 @@
 .investor-divider {
   width: 50px;
   height: 4px;
-  background: #E32125;
+  background: #B3191F;
   margin: 0 auto 25px;
   border-radius: 2px;
 }
@@ -165,14 +165,14 @@
 }
 
 .investor-info p {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.7;
-  color: #4b5563;
+  color: #211F1F;
   margin-bottom: 15px;
 }
 
 .extra-text {
-  font-size: 14px !important;
+  font-size: 16px !important;
   opacity: 0.8;
   font-style: italic;
 }
@@ -182,7 +182,7 @@
   display: inline-block;
   margin-top: 20px;
   padding: 12px 35px;
-  background: #E32125;
+  background: #B3191F;
   color: #fff;
   border-radius: 12px;
   font-weight: 600;
@@ -221,7 +221,7 @@
   }
 
   .investor-info h2 {
-    font-size: 24px;
+    font-size: 26px;
   }
 }
 

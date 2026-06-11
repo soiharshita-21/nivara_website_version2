@@ -60,9 +60,9 @@
   font-size: 4rem;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #E32125;
+  color: #B3191F;
   line-height: 1.1;
-  border-left: 8px solid #E32125;
+  border-left: 8px solid #B3191F;
   padding-left: 25px;
   text-transform: uppercase;
   letter-spacing: -1px;
@@ -109,7 +109,7 @@
 }
 
 .policy-icon {
-  color: #E32125;
+  color: #B3191F;
   width: 32px;
   height: 32px;
 }
@@ -124,7 +124,7 @@
 .policy-body p {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: #555;
+  color: #211F1F;
   margin-bottom: 20px;
 }
 
@@ -142,7 +142,7 @@
   align-items: center;
   gap: 12px;
   background-color: #fdf2f2;
-  color: #E32125;
+  color: #B3191F;
   padding: 15px;
   border-radius: 12px;
   font-weight: 600;
@@ -151,7 +151,7 @@
 
 .pillars-list li:hover {
   transform: scale(1.02);
-  background-color: #E32125;
+  background-color: #B3191F;
   color: white;
 }
 
@@ -169,7 +169,7 @@
 .list-marker {
   width: 10px;
   height: 10px;
-  background-color: #E32125;
+  background-color: #B3191F;
   border-radius: 50%;
   margin-top: 8px;
   flex-shrink: 0;
@@ -182,11 +182,11 @@
 .kyc-footer-note {
   text-align: center;
   margin-top: 40px;
-  color: #666;
+  color: #211F1F;
 }
 
 .kyc-footer-note a {
-  color: #E32125;
+  color: #B3191F;
   text-decoration: none;
   font-weight: 600;
   margin-left: 10px;
@@ -195,7 +195,7 @@
 }
 
 .kyc-footer-note a:hover {
-  border-bottom-color: #E32125;
+  border-bottom-color: #B3191F;
 }
 
 @media (max-width: 600px) {

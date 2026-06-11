@@ -18,7 +18,7 @@ const html = `<style>
     border: 1px solid #eaeaea;
   }
   .form-title {
-    color: #E32125;
+    color: #B3191F;
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;
@@ -44,7 +44,7 @@ const html = `<style>
   }
   .form-control:focus {
     outline: none;
-    border-color: #E32125;
+    border-color: #B3191F;
     box-shadow: 0 0 0 3px rgba(227, 33, 37, 0.1);
   }
   .text-muted {
@@ -61,13 +61,13 @@ const html = `<style>
   .checkbox-group input {
     width: 16px;
     height: 16px;
-    accent-color: #E32125;
+    accent-color: #B3191F;
     cursor: pointer;
   }
   .btn-submit {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(135deg, #E32125 0%, #b91825 100%);
+    background: linear-gradient(135deg, #B3191F 0%, #b91825 100%);
     color: white;
     border: none;
     border-radius: 8px;

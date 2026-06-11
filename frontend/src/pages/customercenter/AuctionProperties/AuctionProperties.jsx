@@ -7,23 +7,23 @@ import auctionBg from '../../../assets/images/auction.png';
 const AuctionProperties = () => {
   const documents = [
     {
-      title: "SALE CUM AUCTION NOTICE",
-      borrower: "BALASAHEB SUDAM TUPE",
+      title: "Sale Cum Auction Notice",
+      borrower: "Balasaheb Sudam Tupe",
       url: "/files/sale-notice-tupe.pdf"
     },
     {
-      title: "SALE CUM AUCTION NOTICE",
-      borrower: "MD MANJUNATH",
+      title: "Sale Cum Auction Notice",
+      borrower: "Md Manjunath",
       url: "/files/sale-notice-manjunath.pdf"
     },
     // {
-    //   title: "SALE CUM AUCTION NOTICE",
-    //   borrower: "DNYANESHWAR BALAJI MOTE",
+    //   title: "Sale Cum Auction Notice",
+    //   borrower: "Dnyaneshwar Balaji Mote",
     //   url: "/files/sale-notice-mote.pdf"
     // },
     {
-      title: "SALE CUM AUCTION NOTICE",
-      borrower: "AMARNATH",
+      title: "Sale Cum Auction Notice",
+      borrower: "Amarnath",
       url: "/files/sale-notice-amarnath.pdf"
     }
   ];

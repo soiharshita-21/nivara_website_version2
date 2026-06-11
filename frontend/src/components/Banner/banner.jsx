@@ -29,7 +29,7 @@ const Banner = () => {
           >
             <div className="banner-content">
               <div className="trusted-badge">
-                <span className="green-dot"></span> Trusted by 50,000+ Happy Families
+                <span className="green-dot"></span> Trusted by 20,000+ Happy Families
               </div>
  <h1>
   Your{" "}
@@ -77,7 +77,7 @@ const Banner = () => {
           >
              <div className="banner-content">
               <div className="trusted-badge">
-                <span className="green-dot"></span> Trusted by 50,000+ Happy Families
+                <span className="green-dot"></span> Trusted by 20,000+ Happy Families
               </div>
   <h1>
   Your{" "}
@@ -126,7 +126,7 @@ const Banner = () => {
           >
              <div className="banner-content">
               <div className="trusted-badge">
-                <span className="green-dot"></span> Trusted by 50,000+ Happy Families
+                <span className="green-dot"></span> Trusted by 20,000+ Happy Families
               </div>
   <h1>
   Your{" "}

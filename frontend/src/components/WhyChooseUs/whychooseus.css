@@ -12,17 +12,31 @@
 }
 
 .why-title {
-  font-size: 42px;
+  font-size: 44px;
   font-weight: 600;
-  color: #E32125;
-  margin-bottom: 12px;
+  color: #B3191F;
+  margin-bottom: 24px;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.why-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #B3191F;
+  border-radius: 2px;
 }
 
 .why-subtitle {
   max-width: 600px;
   margin: 0 auto 60px;
-  font-size: 16px;
-  color: #555;
+  font-size: 18px;
+  color: #211F1F;
 }
 
 /* GRID */
@@ -67,7 +81,7 @@
   background: linear-gradient(90deg,
   #c91b1f,
   #d61f23,
-  #E32125,
+  #B3191F,
   #ef3a3e,
   #f55256);
   background-size: 200% 100%;
@@ -159,15 +173,15 @@
 
 /* TEXT */
 .why-card-title {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
 .why-card-desc {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.6;
-  color: #475569;
+  color: #211F1F;
   max-width: 90%;
 }
 
@@ -204,17 +218,62 @@
 /* Berry Pink */
 
 /* TRUST SECTION */
+.trust-banner-container {
+  margin-top: 100px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 15px 35px rgba(33, 31, 31, 0.05),
+    0 1px 3px rgba(33, 31, 31, 0.02);
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.trust-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 320px;
+  padding: 60px 20px;
+  /* Extremely soft gradient wrapper blending with page white */
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(227, 33, 37, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(126, 181, 66, 0.03) 0%, transparent 40%),
+    linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+/* Elegant tech/finance-style grid pattern overlay in light mode */
+.trust-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.012) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black 65%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at center, black 65%, transparent 100%);
+  opacity: 0.8;
+  z-index: 1;
+  pointer-events: none;
+}
+
 .trust-badges {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  padding: 32px 50px;
+  /* Premium clean floating card design */
+  background: #ffffff;
+  padding: 32px 56px;
   border-radius: 24px;
-  box-shadow: 0 15px 45px rgba(33, 31, 31, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 10px 30px rgba(33, 31, 31, 0.06),
+    0 1px 3px rgba(33, 31, 31, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   max-width: 850px;
   position: relative;
   z-index: 5;
@@ -222,87 +281,76 @@
 }
 
 .trust-badges:hover {
-  background: rgba(255, 255, 255, 0.95);
-  transform: translateY(-8px);
-  box-shadow: 0 25px 55px rgba(33, 31, 31, 0.2);
-}
-
-.trust-banner-container {
-  margin-top: 100px;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 25px 60px -15px rgba(33, 31, 31, 0.2);
-}
-
-.trust-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 400px;
-  padding: 80px 20px;
-  background-image:
-    linear-gradient(rgba(33, 31, 31, 0.3), rgba(33, 31, 31, 0.5)),
-    url('../../assets/images/rbi.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-  transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
-}
-
-@media (max-width: 1024px) {
-  .trust-wrapper {
-    background-attachment: scroll;
-  }
-}
-
-.trust-banner-container:hover .trust-wrapper {
-  transform: none;
+  transform: translateY(-5px);
+  box-shadow: 
+    0 20px 40px rgba(33, 31, 31, 0.15),
+    0 1px 3px rgba(33, 31, 31, 0.02);
+  border-color: rgba(227, 33, 37, 0.25);
 }
 
 .trust-item {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
 }
 
 .trust-icon {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 24px;
   color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.trust-badges:hover .trust-icon {
+  transform: scale(1.05);
 }
 
 .trust-icon.rbi {
-  background: #E32125;
+  background: #B3191F;
+  box-shadow: 0 0 10px rgba(227, 33, 37, 0.2);
 }
 
 .trust-icon.iso {
   background: #16a34a;
+  box-shadow: 0 0 10px rgba(22, 163, 74, 0.25);
 }
 
 .trust-text span {
-  font-size: 14px;
-  color: #6b7280;
+  font-size: 16px;
+}
+
+.trust-text span.highlight-text {
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.3px;
+}
+
+.trust-text span.highlight-text.rbi-color {
+  color: #B3191F;
+}
+
+.trust-text span.highlight-text.iso-color {
+  color: #16a34a;
 }
 
 .trust-text h4 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
-  color: #211F1F;
-  margin: 0;
+  color: #1e293b; /* Slate gray text for optimal readability on light bg */
+  margin: 2px 0 0 0;
+  letter-spacing: 0.2px;
 }
 
 .divider {
   width: 1px;
-  height: 48px;
-  background: #e5e7eb;
-  margin: 0 32px;
+  height: 52px;
+  background: rgba(0, 0, 0, 0.08);
+  margin: 0 36px;
 }
 
 /* RESPONSIVE */
@@ -318,7 +366,7 @@
   }
 
   .why-title {
-    font-size: 32px;
+    font-size: 34px;
   }
 
   .trust-banner-container {
@@ -327,28 +375,28 @@
   }
 
   .trust-wrapper {
-    min-height: 450px;
-    background-attachment: scroll;
-    /* Fixed bg can be jittery on mobile */
+    min-height: 320px;
+    padding: 50px 20px;
   }
 
   .trust-badges {
     flex-direction: column;
-    padding: 30px 24px;
-    gap: 20px;
+    padding: 36px 24px;
+    gap: 24px;
     width: 90%;
   }
 
   .divider {
     width: 60%;
     height: 1px;
+    background: rgba(0, 0, 0, 0.08);
     margin: 0;
   }
 }
 
 @media (max-width: 480px) {
   .why-title {
-    font-size: 28px;
+    font-size: 30px;
   }
 
   .trust-item {

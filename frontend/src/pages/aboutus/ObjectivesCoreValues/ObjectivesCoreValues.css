@@ -20,7 +20,7 @@
 }
 
 .section-title {
-  font-size: 38px;
+  font-size: 40px;
   font-weight: 700;
   margin-bottom: 60px;
   color: #211F1F;
@@ -31,10 +31,18 @@
   content: "";
   width: 80px;
   height: 5px;
-  background: #E32125;
+  background: #B3191F;
   display: block;
   margin: 15px auto 0;
   border-radius: 3px;
+}
+
+.section-subtitle {
+  max-width: 800px;
+  margin: -40px auto 45px;
+  font-size: 19px;
+  line-height: 1.7;
+  color: #211F1F;
 }
 
 /* ================= OBJECTIVES CARDS ================= */
@@ -65,7 +73,7 @@
   top: 0;
   bottom: 0;
   width: 6px;
-  background: #E32125;
+  background: #B3191F;
 }
 
 .objective-card:hover {
@@ -74,9 +82,9 @@
 }
 
 .objective-card p {
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.7;
-  color: #4b5563;
+  color: #211F1F;
   margin: 0;
   text-align: left;
 }
@@ -120,7 +128,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 32px;
   color: var(--accent-color);
   transition: all 0.3s ease;
 }
@@ -132,16 +140,16 @@
 }
 
 .cv-content-container h3 {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 600;
   margin-bottom: 10px;
   color: #211F1F;
 }
 
 .cv-content-container p {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.6;
-  color: #64748b;
+  color: #211F1F;
   margin: 0;
 }
 
@@ -157,7 +165,7 @@
 
 @media (max-width: 768px) {
   .section-title {
-    font-size: 30px;
+    font-size: 32px;
   }
   
   .cv-horizontal-card {

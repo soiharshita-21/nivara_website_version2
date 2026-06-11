@@ -160,7 +160,7 @@
   border: 1px solid rgba(255, 255, 255, 0.22);
   backdrop-filter: blur(10px);
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.5px;
   box-shadow:
@@ -193,7 +193,7 @@
 .terms-hero-subtitle {
   max-width: 780px;
   margin: 0 auto;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.8;
   color: #f5f5f5;
   font-weight: 400;
@@ -214,9 +214,9 @@
 
 /* Intro Card */
 .mitc-intro {
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.9;
-  color: #4b5563;
+  color: #211F1F;
   text-align: justify;
   background: #fff;
   border-radius: 26px;
@@ -310,7 +310,7 @@
     linear-gradient(135deg,
       rgba(227, 33, 37, 0.08),
       rgba(122, 20, 34, 0.12));
-  color: #E32125;
+  color: #B3191F;
   flex-shrink: 0;
   transition: all 0.35s ease;
 }
@@ -320,7 +320,7 @@
   background:
     linear-gradient(135deg,
       #7a1422,
-      #E32125);
+      #B3191F);
   color: #fff;
   transform: rotate(6deg);
 }
@@ -328,7 +328,7 @@
 /* Heading */
 .accordion-header h3 {
   margin: 0;
-  font-size: 21px;
+  font-size: 23px;
   font-weight: 600;
   line-height: 1.5;
   color: #211F1F;
@@ -360,17 +360,17 @@
    DETAILS
 ========================= */
 .terms-detail h4 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
-  color: #E32125;
+  color: #B3191F;
   margin-bottom: 14px;
 }
 
 /* Paragraph */
 .terms-detail p {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.9;
-  color: #4b5563;
+  color: #211F1F;
   margin-bottom: 18px;
   text-align: justify;
 }
@@ -389,9 +389,9 @@
   position: relative;
   padding-left: 24px;
   margin-bottom: 12px;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.8;
-  color: #4b5563;
+  color: #211F1F;
 }
 
 /* Bullet */
@@ -400,7 +400,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #E32125;
+  background: #B3191F;
   position: absolute;
   left: 0;
   top: 10px;
@@ -417,7 +417,7 @@
 
 .mitc-dropdown-item {
   margin-bottom: 12px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
 }
 
@@ -456,20 +456,20 @@
 
   .terms-banner-container h1,
   .page-banner-title {
-    font-size: 52px;
+    font-size: 54px;
     padding: 10px 20px;
     border-radius: 10px;
     letter-spacing: -1px;
   }
 
   .terms-hero-subtitle {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.7;
   }
 
   .mitc-intro {
     padding: 28px;
-    font-size: 15px;
+    font-size: 17px;
   }
 
   .accordion-header {
@@ -477,7 +477,7 @@
   }
 
   .accordion-header h3 {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .content-inner {
@@ -494,17 +494,17 @@
 
 @media (max-width: 480px) {
   .terms-hero-badge {
-    font-size: 12px;
+    font-size: 14px;
     padding: 8px 18px;
   }
 
   .terms-banner-container h1 {
-    font-size: 38px;
+    font-size: 40px;
     padding: 10px 18px;
   }
 
   .terms-hero-subtitle {
-    font-size: 15px;
+    font-size: 17px;
   }
 
   .accordion-header {
@@ -516,7 +516,7 @@
   }
 
   .accordion-header h3 {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .content-inner {
@@ -525,12 +525,12 @@
   }
 
   .terms-detail h4 {
-    font-size: 17px;
+    font-size: 19px;
   }
 
   .terms-detail p,
   .terms-sub-list li {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -589,7 +589,7 @@
   color: #8b1d2c;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  border-left: 4px solid #E32125;
+  border-left: 4px solid #B3191F;
   padding-left: 12px;
 }
 
@@ -615,7 +615,7 @@
 }
 
 .escalation-box a {
-  color: #E32125;
+  color: #B3191F;
   font-weight: 600;
   text-decoration: none;
 }
@@ -637,9 +637,9 @@
    FEES TABS
 ========================= */
 .fees-intro-text {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.7;
-  color: #475569;
+  color: #211F1F;
   margin-bottom: 20px;
 }
 
@@ -657,7 +657,7 @@
   font-family: inherit;
   font-size: 14.5px;
   font-weight: 600;
-  color: #64748b;
+  color: #211F1F;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 8px;
@@ -668,13 +668,13 @@
 }
 
 .fees-tab-btn:hover {
-  color: #E32125;
+  color: #B3191F;
   background-color: #fdf2f2;
 }
 
 .fees-tab-btn.active {
   color: white;
-  background-color: #E32125;
+  background-color: #B3191F;
   box-shadow: 0 4px 12px rgba(227, 33, 37, 0.2);
 }
 

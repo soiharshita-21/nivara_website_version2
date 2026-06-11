@@ -35,7 +35,7 @@
 }
 
 .rq-title {
-  font-size: 52px;
+  font-size: 54px;
   font-weight: 700;
   color: var(--rq-theme);
   margin-bottom: 20px;
@@ -43,7 +43,7 @@
 }
 
 .rq-subtitle {
-  font-size: 20px;
+  font-size: 22px;
   color: #6b7a90;
   max-width: 700px;
   margin: 0 auto;
@@ -71,7 +71,7 @@
 }
 
 .rq-input-group label {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: #334155;
   text-transform: uppercase;
@@ -80,7 +80,7 @@
 
 .rq-input-group input {
   padding: 18px 24px;
-  font-size: 16px;
+  font-size: 18px;
   border: 2px solid #e2e8f0;
   border-radius: 12px;
   outline: none;
@@ -107,7 +107,7 @@
   color: #fff;
   border: none;
   padding: 20px 60px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   border-radius: 14px;
   cursor: pointer;
@@ -129,7 +129,7 @@
 }
 
 .btn-arrow {
-  font-size: 24px;
+  font-size: 26px;
   transition: transform 0.3s ease;
 }
 
@@ -150,7 +150,7 @@
     padding: 60px 40px;
   }
   .rq-title {
-    font-size: 42px;
+    font-size: 44px;
   }
 }
 
@@ -167,17 +167,17 @@
     border-radius: 20px;
   }
   .rq-title {
-    font-size: 32px;
+    font-size: 34px;
   }
   .rq-subtitle {
-    font-size: 16px;
+    font-size: 18px;
   }
   .rq-section {
     padding: 60px 15px;
   }
   .rq-submit-btn {
     padding: 16px 30px;
-    font-size: 16px;
+    font-size: 18px;
     width: 100%;
     justify-content: center;
   }

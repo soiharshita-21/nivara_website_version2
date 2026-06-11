@@ -45,7 +45,7 @@ const KycAmlMeasures = () => {
             </div>
             <div className="policy-body">
               <p>
-                NHB guidelines on <strong>‘KNOW YOUR CUSTOMER’</strong> & <strong>‘ANTI MONEY LAUNDERING MEASURES’</strong>
+                NHB guidelines on <strong>‘Know Your Customer’</strong> & <strong>‘Anti-Money Laundering Measures’</strong>
                 for HFCs issued vide circular no NHB/ND/DRS/Pol-No. 33/2010-11 dated 11th October 2010 and
                 subsequent revisions are the basis for Nivara’s policies and processes.
               </p>

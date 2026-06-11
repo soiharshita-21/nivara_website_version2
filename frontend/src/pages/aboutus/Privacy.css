@@ -44,7 +44,7 @@
   transform: translateY(-50%);
   width: 100%;
   height: 200px;
-  background: #E32125;
+  background: #B3191F;
   /* Red band */
   z-index: 1;
 }
@@ -95,7 +95,7 @@
 }
 
 .privacy-left h1 {
-  font-size: 58px;
+  font-size: 60px;
   font-weight: 700;
   margin-top: 180px; /* Further increased to center within the red band */
   margin-bottom: 0px; 
@@ -113,7 +113,7 @@
 }
 
 .privacy-text-band p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.7;
   color: #fff;
   /* White text on red background */
@@ -134,7 +134,7 @@
 .privacy-features li {
   display: flex;
   align-items: center;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   color: #333;
 }
@@ -143,7 +143,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 2px solid #E32125;
+  border: 2px solid #B3191F;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,7 +154,7 @@
 .feature-icon-inner {
   width: 8px;
   height: 8px;
-  background: #E32125;
+  background: #B3191F;
   border-radius: 50%;
 
 }
@@ -186,7 +186,7 @@
 .arc-inner {
   width: 320px;
   height: 320px;
-  border-color: #E32125;
+  border-color: #B3191F;
   /* Red */
   border-bottom-color: transparent;
   transform: rotate(45deg);
@@ -198,7 +198,7 @@
 .arc-outer-1 {
   width: 380px;
   height: 380px;
-  border-color: #E32125;
+  border-color: #B3191F;
   /* Red */
   border-right-color: transparent;
   border-bottom-color: transparent;
@@ -211,7 +211,7 @@
 .arc-outer-2 {
   width: 380px;
   height: 380px;
-  border-color: #E32125;
+  border-color: #B3191F;
   /* Red */
   border-left-color: transparent;
   border-top-color: transparent;
@@ -239,7 +239,7 @@
 .privacy-image-center {
   width: 260px;
   height: 260px;
-  background: #E32125;
+  background: #B3191F;
   /* Red background in center */
   border-radius: 50%;
   display: flex;
@@ -276,7 +276,7 @@
   }
 
   .privacy-left h1 {
-    font-size: 38px;
+    font-size: 40px;
     margin-top: 40px; /* Reduce large top margin on mobile viewports */
   }
 
@@ -329,12 +329,12 @@
   }
 
   .privacy-left h1 {
-    font-size: 28px;
+    font-size: 30px;
     margin-top: 20px;
   }
 
   .privacy-text-band p {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .privacy-image-wrapper {
@@ -367,7 +367,7 @@
 }
 
 .privacy-content h2 {
-  font-size: 22px;
+  font-size: 24px;
   margin-top: 40px;
   margin-bottom: 12px;
   color: maroon;
@@ -379,15 +379,15 @@
 }
 
 .privacy-content p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.9;
-  color: #374151;
+  color: #211F1F;
 }
 
 
 @media (max-width: 768px) {
   .privacy-hero-overlay h1 {
-    font-size: 32px;
+    font-size: 34px;
   }
 
   .privacy-content {
@@ -419,7 +419,7 @@
   }
 
   .privacy-page-banner-title {
-    font-size: 42px !important;
+    font-size: 44px !important;
     font-weight: 800 !important;
     color: #ffffff !important;
     background: transparent !important;
@@ -438,7 +438,7 @@
   }
 
   .privacy-page-banner-subtitle {
-    font-size: 12px !important;
+    font-size: 14px !important;
     color: rgba(255, 255, 255, 0.95) !important;
     font-weight: 500 !important;
     background: transparent !important;
@@ -476,7 +476,7 @@
   }
 
   .privacy-page-banner-title {
-    font-size: 32px !important;
+    font-size: 34px !important;
     background: transparent !important;
     backdrop-filter: none !important;
     border: none !important;

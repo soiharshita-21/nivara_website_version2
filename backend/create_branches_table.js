@@ -200,91 +200,106 @@ const defaultBranchesByState = {
       city: "Gadag",
       opened: "2025-04-30",
       address: "1st Floor, Plot No.19, Kalasapur Road, Ramanagar, near devarajaarasubhavan, Gadag, Karnataka - 582103",
-      contact: "1800-309-1516"
+      contact: "Jayalakshmi (+91 9591360411)",
+      map_link: "https://maps.app.goo.gl/G4iCKG1trMmgWCWJ9?g_st=ic"
     },
     {
       city: "Haveri",
       opened: "2025-05-15",
       address: "2nd Floor, Plot No 11B/1, ward no 10, Block no 12, Near JH Patel circle road, Haveri, Karnataka-581110",
-      contact: "1800-309-1516"
+      contact: "Srujanshree P B (+91 7975410976)",
+      map_link: "https://maps.app.goo.gl/Z8kb1nj83wJ1cgDL7"
     },
     {
       city: "Ballari",
       opened: "2025-06-20",
       address: "1st Floor, KMF Towers, Beside Baba Engg Works Kalamma Street, Ballari, Karnataka- 583101",
-      contact: "1800-309-1516"
+      contact: "H Ravichandra (+91 8971085401)",
+      map_link: "https://maps.app.goo.gl/ghJMpbtGgaVnkBFo9?g_st=ic"
     },
     {
       city: "Hospet",
       opened: "2025-07-25",
       address: "1st Floor, H No 479, Indira Nagar, Near Sapthagiri High School, Basaveshwara Badavane, Hospet, Bellary, Karnataka-583201",
-      contact: "1800-309-1516"
+      contact: "Shivaram H (+91 9663574680)",
+      map_link: "https://maps.app.goo.gl/tzXfRCaXb62DBd1v7?g_st=ic"
     },
     {
       city: "Belagavi",
       opened: "2025-08-19",
       address: "BENKE Complex, First Floor, 1283/B Ramlingkhind Galli, Belagavi-590001",
-      contact: "1800-309-1516"
+      contact: "Savita Narayan Kammar (+91 9632290307)",
+      map_link: "https://maps.app.goo.gl/1pz1aZyDUB5G6znU9?g_st=ic"
     },
     {
       city: "Gulbarga(Kalburgi)",
       opened: "2025-08-29",
       address: "No.2-907/23/2/1F, 2nd Floor 100 Feet Road, Badepur, Gulbarga 585105, Karnataka",
-      contact: "1800-309-1516"
+      contact: "Priyanka S (+91 7624918101)",
+      map_link: "https://maps.app.goo.gl/dHLFRQQzy8BJ6WPa8?g_st=ic"
     },
     {
       city: "Gangavathi",
       opened: "2025-09-09",
       address: "1st floor, Near udbhava Lakmi Temple, Kampli road, Gangavathi, Karnataka-583227",
-      contact: "1800-309-1516"
+      contact: "Mallesh (+91 7996357499)",
+      map_link: "https://maps.app.goo.gl/ZC8SMC8JerKacSEJ8?g_st=ic"
     },
     {
       city: "Gokak",
       opened: "2025-10-17",
       address: "2nd floor, No 3254/3, Hosapeth Galli, Gokak, Belgaum, Karnataka - 591307",
-      contact: "1800-309-1516"
+      contact: "Shreya Medar (+91 6363126322)",
+      map_link: "https://maps.app.goo.gl/gdbXd7JiAZCRwsKC7?g_st=ic"
     },
     {
       city: "Sindhanur",
       opened: "2025-11-12",
       address: "2nd floor, No 42B, Bagodi Heights, Ward No 19, Behind Kammavari, Bhavana Railway Station Road, Sindhanur, Raichur Dist., Karnataka- 584128",
-      contact: "1800-309-1516"
+      contact: "Sharanabasava (+91 8310330744)",
+      map_link: "https://maps.app.goo.gl/mbkKdZnU2obRaMZs9?g_st=ic"
     },
     {
       city: "Chikkodi",
       opened: "2025-11-14",
       address: "1st floor, Nooli commercial building Nippani-mudhol road, Basaveshwar Nagar, Opposite keb, besides Kamal hospital, Chikodi - 591201",
-      contact: "1800-309-1516"
+      contact: "Laxmi G (+91 8197159252)",
+      map_link: "https://maps.app.goo.gl/rNzi17UhQx6dL9SG8?g_st=ic"
     },
     {
       city: "Bidar",
       opened: "2025-11-25",
       address: "3rd floor, No 9-2-164, DCC Bank Opp, Shah Gunj, Bidar, Karnataka - 585401",
-      contact: "1800-309-1516"
+      contact: "Ashwini (+91 8197007286)",
+      map_link: "https://maps.app.goo.gl/DcAadJD3U3UXM6QY9?g_st=aw"
     },
     {
       city: "Vijayapura",
       opened: "2025-11-29",
       address: "1st floor, Mahalaxmi Arcade, Plot No. 65, Manas Residency, Darga Road, Vijayapura, Karnataka PIN - 586103",
-      contact: "1800-309-1516"
+      contact: "Anitha (+91 7338160082)",
+      map_link: "https://maps.app.goo.gl/CUX7ZdqfbbM3qxmf6?g_st=ic"
     },
     {
       city: "Raichur",
       opened: "2025-11-29",
       address: "1st floor, Santoshi Enclave, Door No 11-2-71/1 (New) Shop No - FFS-3, 1st Floor, Bresthwarpet Raichur, Karnataka - 584101",
-      contact: "1800-309-1516"
+      contact: "Pooja (+91 7337652360)",
+      map_link: "https://maps.app.goo.gl/h2JSb7fbzXdhkGnL8"
     },
     {
       city: "Ranebennur",
       opened: "2026-01-23",
       address: "1st Floor, Sri Kalmeshwar, Gourishankar Nagar, Old Magod Road, Ranebennur, Karnataka-581115",
-      contact: "1800-309-1516"
+      contact: "Vidya S Narayani (+91 7483012269 / +91 8904869819)",
+      map_link: "https://maps.app.goo.gl/jMB7NkRm5vLy6fP4A?g_st=ic"
     },
     {
       city: "Bangarpet",
       opened: "2026-03-30",
       address: "1st floor, #3191, opp Indian bank, Seshachalam Mudaliar Road, Bangarpet, Pincode - 563114",
-      contact: "+91 9742366443"
+      contact: "Akhila V (+91 7348969517)",
+      map_link: "https://maps.app.goo.gl/qfPSBtm48Getk2Hb6"
     }
   ],
   "TAMIL NADU": [
@@ -346,49 +361,57 @@ const defaultBranchesByState = {
       city: "Pollachi",
       opened: "2025-05-28",
       address: "1st Floor, No.2/6 Rasakkapalam, Palladam Main Road Puliampatti post, Pollachi T.K, Tamilnadu - 642002",
-      contact: "1800-309-1516"
+      contact: "Surya M (+91 6369952297)",
+      map_link: "https://maps.app.goo.gl/oeDXgxe2aMiCyZrt9?g_st=aw"
     },
     {
       city: "Tiruppur",
       opened: "2025-06-16",
       address: "1st Floor, No.27C10, Gandhi Road, Anuparpalayam, Tirupur, Tamilnadu-641652",
-      contact: "1800-309-1516"
+      contact: "Nivetha S (RO) (+91 9176776110)",
+      map_link: "https://maps.app.goo.gl/Qik9XfcNqKMwZ2tPA"
     },
     {
       city: "Coimbatore",
       opened: "2025-06-30",
       address: "1st Floor, No.273-3, Maruthamalai Road, Mullai Nagar, P.N.Pudur, Coimbatore, Tamil Nadu - 641041",
-      contact: "1800-309-1516"
+      contact: "R Silambharashan (+91 8608202031)",
+      map_link: "https://maps.app.goo.gl/zNn83AvdMeQp9ScH8?g_st=ic"
     },
     {
       city: "Pochampalli",
       opened: "2025-10-28",
       address: "Door No 1/31, 1st Floor, Canara bank Upstairs, Tirupathur main road, Pochampalli, Krishnagiri – 635206",
-      contact: "1800-309-1516"
+      contact: "Pradap C (+91 8637459290)",
+      map_link: "https://maps.app.goo.gl/HpHRJoGsVvLpC41A6?g_st=ic"
     },
     {
       city: "Arakkonam",
       opened: "2025-11-22",
       address: "Door No.22, First floor, Gandhi High Road, Arakkonam, Tamilnadu-631001",
-      contact: "1800-309-1516"
+      contact: "Girija M (+91 9994650424)",
+      map_link: "https://maps.app.goo.gl/kqYp6VrXQ6ZzuMTU8?g_st=aw"
     },
     {
       city: "Kancheepuram",
       opened: "2025-12-12",
       address: "2nd Floor, No.72-A Aladi Pillaiyar Koil Street, Kancheepuram, Tamilnadu-631501",
-      contact: "1800-309-1516"
+      contact: "Lalithambigai D (+91 6385820837)",
+      map_link: "https://maps.app.goo.gl/Gh2dchYHGX9K9LHf9?g_st=aw"
     },
     {
       city: "Thiruvallur",
       opened: "2026-02-28",
       address: "2nd Floor, Plot No.403, MIG TNUDP- Kakkalur Scheme, S.F.No. 196-2 Part, Block No.1, Bypass road, Kakkalur Village, Thiruvallur Taluk, Tamilnadu",
-      contact: "1800-309-1516"
+      contact: "Aarthi R (+91 7639374963)",
+      map_link: "https://maps.app.goo.gl/pLK2cAm92ZUZeZTp8?g_st=aw"
     },
     {
       city: "Viluppuram",
       opened: "2026-04-07",
       address: "3rd Floor, TNHB-SHOP SITE No. II(VPM-030A), KEELPERUMBAKKAM-Phase-II- Neighbourhood Scheme, 3rd Floor, T.S.No. 50/1, Viluppuram, Tamil Nadu - 605602",
-      contact: "+91 9865310336"
+      contact: "Yuvaraj Natarajan (+91 7397702149)",
+      map_link: "https://maps.app.goo.gl/BrWK45qUQqG9rV3s6?g_st=ic"
     },
     {
       city: "Chengalpattu",
@@ -400,7 +423,13 @@ const defaultBranchesByState = {
       city: "Padappai",
       opened: "2026-05-20",
       address: "Door No.2/403, Second Floor, Bazaar Street, Padappai Town, Poonamallee Taluk, Kanchipuram District, Tamilnadu, Padappai-601301",
-      contact: "1800-309-1516"
+      contact: "+91 9884234610"
+    },
+    {
+      city: "Gummidipoondi",
+      opened: "2026-05-28",
+      address: "S.F.No.339/2A1, Door No.67, Second floor, G.N.T Road, Gummidipoondi Town and Taluk, Tiruvallur District. Tamilnadu, Gummidipoondi-601 201",
+      contact: "+91 9884234610"
     }
   ],
   TELANGANA: [
@@ -456,25 +485,29 @@ const defaultBranchesByState = {
       city: "Nirmal",
       opened: "2025-04-22",
       address: "First Floor, 1-3-131/4 Shastri Nagar, Nirmal, Telangana-504106",
-      contact: "1800-309-1516"
+      contact: "B.Lavanya (+91 7671831461)",
+      map_link: "https://maps.app.goo.gl/em3o9TmGVUP6qq8t7"
     },
     {
       city: "Medchal",
       opened: "2025-07-11",
       address: "2nd Floor, MIGH-14, Housing Board Colony, Beside R R Shopping Mall, Medchal- 501401, Telangana",
-      contact: "1800-309-1516"
+      contact: "Chennuri Supraja (+91 7032476824)",
+      map_link: "https://maps.app.goo.gl/dwekCocRy5Hm2Gv1A?g_st=ic"
     },
     {
       city: "Mahabubnagar",
       opened: "2025-11-27",
       address: "D.No: 10-4-4/D, 1st Floor, Opp. SVS Hospital, Mahabubnagar, Telangana – 509002",
-      contact: "1800-309-1516"
+      contact: "A. Navaneetha (+91 9052484810)",
+      map_link: "https://maps.app.goo.gl/52sjrWKNxGVR1BgT6"
     },
     {
       city: "Suryapet",
       opened: "2025-12-29",
       address: "1st Floor, D No. 1-2-162/3/1, Shanker Vilas, KK Road, Suryapet, Telangana - 508213",
-      contact: "1800-309-1516"
+      contact: "P.Sravya (+91 7729096802)",
+      map_link: "https://maps.app.goo.gl/UDh6WnsPyGKmKxEA6?g_st=ic"
     }
   ],
   "ANDHRA PRADESH": [
@@ -536,67 +569,78 @@ const defaultBranchesByState = {
       city: "Adoni",
       opened: "2025-07-31",
       address: "No: 15/766/A, First Floor, Victoria Pet, Near Panduranga Swamy Temple, Adoni – 518301, Andhra Pradesh",
-      contact: "1800-309-1516"
+      contact: "S.Swapna (+91 9398329925)",
+      map_link: "https://share.google/IMgXJ7pmSvqpxKyva"
     },
     {
       city: "Tadepalligudem",
       opened: "2025-07-31",
       address: "Door No :1-47-5-2, 1St floor, Raghvendra complex, Opp - RTC complex IN gate, Tadepalligudem - 534101",
-      contact: "1800-309-1516"
+      contact: "Sowmya Mounavi (+91 7416231324)",
+      map_link: "https://maps.app.goo.gl/k2FRofUy5vaFyu9h6?g_st=aw"
     },
     {
       city: "Tirupati",
       opened: "2025-11-29",
       address: "2nd Floor ,Door NO: 14-40/1 , Mr Palli police station to Vaikunta Puram Arch road ,Dhanalakshmi Nagar, Gandhi Puram GP, Tirupati",
-      contact: "1800-309-1516"
+      contact: "G.Vennela (+91 6303348841)",
+      map_link: "https://maps.app.goo.gl/fXvoB22tBz8oFGiU6?g_st=ic"
     },
     {
       city: "Puttur",
       opened: "2026-01-23",
       address: "# 17-149/1, First floor, Ward NO 17, RTC Colony, KARVETI NAGARAM ROAD, PUTTUR - 517583",
-      contact: "1800-309-1516"
+      contact: "B Venkataharitha (+91 8179690530)",
+      map_link: "https://maps.app.goo.gl/AsHRbPJJqJFzwNbMA?g_st=ic"
     },
     {
       city: "Penukonda",
       opened: "2026-01-22",
       address: "1st Floor, 10-264, Narayanamma Colony, Revenue ward No 10, Penukonda, Andhra Pradesh-515110",
-      contact: "1800-309-1516"
+      contact: "Boya Ajay Kumar (+91 6301679384)",
+      map_link: "https://maps.app.goo.gl/97xGuRogfRMh6YXq5?g_st=ic"
     },
     {
       city: "Nuziveedu",
       opened: "2026-01-31",
       address: "D No-7-153/1, 1st floor, Jangalapeta, Revenue ward No 7, Near Bus stand main road, Nuziveedu, Eluru District, 521201.",
-      contact: "1800-309-1516"
+      contact: "Usha Rani (+91 9676828958)",
+      map_link: "https://maps.app.goo.gl/VB7nzjedXwcG7qoG6"
     },
     {
       city: "Machilipatnam",
       opened: "2026-01-31",
       address: "1st Floor, D No-10/400/-401 Balaramuni Peta Revenue Ward-10 Machilipatnam 521001",
-      contact: "1800-309-1516"
+      contact: "Jogi Suresh/Shaik Malika (+91 9666204616 / +91 9390753665)",
+      map_link: "https://maps.app.goo.gl/s9u3JMjDmiNW5vfi7?g_st=ic"
     },
     {
       city: "Kandukur",
       opened: "2026-02-12",
       address: "1st Floor, Simhadri Nagar, Revenue Ward No-2, Pamuru Road, Kandukur-523105",
-      contact: "1800-309-1516"
+      contact: "Brahmanakaka. Lakshmi Priyanka (+91 8187005368)",
+      map_link: "https://maps.app.goo.gl/8vxCtEWGa7watGc18"
     },
     {
       city: "Venkatagiri",
       opened: "2026-02-24",
       address: "No-5-8/4, First floor, Ammavaripet, Revenue Ward No 5, Palakendram Area, Venkatagiri-524132",
-      contact: "1800-309-1516"
+      contact: "Telu Surya (+91 8374488428)",
+      map_link: "https://maps.app.goo.gl/w477PJ1Yq4zwfMs78?g_st=ic"
     },
     {
       city: "Addanki",
       opened: "2026-02-28",
       address: "1st Floor, Door No-13-95/1/2/3/4, ward no- 15, Sanjeev Nagar, Addanki-523201, Prakasam District, Andhra Pradesh",
-      contact: "1800-309-1516"
+      contact: "Pallerla Navya Sri (+91 7207303889)",
+      map_link: "https://maps.app.goo.gl/MvoDYVAa7M5ZboYq8?g_st=ic"
     },
     {
       city: "Kurnool",
       opened: "2026-03-25",
       address: "Shop No. 420, 421 & 422, 4th Floor, Ucon Legend Complex, Kurnool District, Andhra Pradesh-518004.",
-      contact: "+91 9494438553"
+      contact: "Madhusudhan (+91 9121945895)",
+      map_link: "https://maps.app.goo.gl/RehThnUxW5tT34zEA?g_st=ic"
     }
   ],
   MAHARASHTRA: [
@@ -610,7 +654,8 @@ const defaultBranchesByState = {
       city: "Chinchwad",
       opened: "2020-03-09",
       address: "Office No. 7, First Floor, Avani Bizworld, Plot No. GP 184, Thermax Chowk, Chinchwad, MIDC, Pune 411019",
-      contact: "1800-309-1516"
+      contact: "Kajal (+91 9657530664)",
+      map_link: "https://maps.app.goo.gl/DQgbhwLuSRzbcapP9"
     },
     {
       city: "Ahmednagar",
@@ -640,18 +685,29 @@ const defaultBranchesByState = {
       city: "Kolhapur",
       opened: "2026-03-17",
       address: "No. 115-B, First Floor, Parag Complex, 596/1, E Ward, Shahupuri, 1st Lane, Kolhapur- 416001.",
+      contact: "Tejashri Arjunrav Rege (+91 7499291015)",
+      map_link: "https://maps.app.goo.gl/skwTbxEDqV6BASF7A?g_st=ic"
+    },
+    {
+      city: "Baramati",
+      opened: "2026-05-28",
+      address: "2nd floor, C.S.No.38/2, 38/3(Old C.S.No.38A/2/2), Atriya Business Centre, Office No.207,2nd Floor, Near Hotel Nilam Palace, Dhavan Patil Chowk, Baramati-413102",
+      contact: "+91 9373059622"
+    },
+    {
+      city: "Malegaon",
+      opened: "2026-05-31",
+      address: "1st Floor, Himani Sankul Near Dr. Ajit Powar Hospital,Patel nagar road Satana Naka Malegaon 423203",
       contact: "+91 9373059622"
     }
   ]
 };
 
 const defaultNewBranches = [
-  { city: "Padappai", state: "Tamil Nadu" },
-  { city: "Chengalpattu", state: "Tamil Nadu" },
-  { city: "Viluppuram", state: "Tamil Nadu" },
-  { city: "Bangarpet", state: "Karnataka" },
-  { city: "Kurnool", state: "Andhra Pradesh" },
-  { city: "Kolhapur", state: "Maharashtra" }
+  { city: "Gummidipoondi", state: "Tamil Nadu" },
+  { city: "Baramati", state: "Maharashtra" },
+  { city: "Malegaon", state: "Maharashtra" },
+  { city: "Padappai", state: "Tamil Nadu" }
 ];
 
 db.connect(err => {
@@ -666,6 +722,7 @@ db.connect(err => {
             opened DATE NOT NULL,
             address TEXT NOT NULL,
             contact VARCHAR(255) NOT NULL,
+            map_link VARCHAR(1000) DEFAULT NULL,
             is_new TINYINT(1) DEFAULT 0,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
@@ -718,12 +775,13 @@ db.connect(err => {
                         branch.opened,
                         branch.address,
                         branch.contact,
+                        branch.map_link || null,
                         isNew ? 1 : 0
                     ]);
                 });
             });
             
-            const insertSql = "INSERT INTO branches (city, state, opened, address, contact, is_new) VALUES ?";
+            const insertSql = "INSERT INTO branches (city, state, opened, address, contact, map_link, is_new) VALUES ?";
             db.query(insertSql, [values], (err, insertRes) => {
                 if (err) {
                     console.error("Error seeding branches:", err);

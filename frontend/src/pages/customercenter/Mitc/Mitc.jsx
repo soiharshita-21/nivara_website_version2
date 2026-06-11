@@ -361,7 +361,7 @@ const Mitc = () => {
             </div>
           )}
 
-          <div className="mt-3 text-muted" style={{ fontSize: "13px", lineHeight: "1.6" }}>
+          <div className="mt-3 text-muted" style={{ fontSize: "15px", lineHeight: "1.6" }}>
             <p className="mb-2">Above charges are the standard rates for all customers and would be subject to changes from time to time. Actual charges may differ at the time of sanction / disbursement which will be communicated to the customer.</p>
             <p>All charges, interest, taxes, fee, Service tax, levies etc. as prescribed by any statutory/regulatory bodies from time to time shall be borne by the Borrower.</p>
           </div>

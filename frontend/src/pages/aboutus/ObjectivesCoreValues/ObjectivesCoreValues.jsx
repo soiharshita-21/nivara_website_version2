@@ -118,6 +118,11 @@ const ObjectivesCoreValues = () => {
         <ScrollReveal direction="up">
           <h2 className="section-title">Our Core Values</h2>
         </ScrollReveal>
+        <ScrollReveal direction="up" delay={0.15}>
+          <p className="section-subtitle">
+            In all our actions, we are guided by strong values that define how we work, serve our customers, and grow responsibly with all stakeholders.
+          </p>
+        </ScrollReveal>
 
         <div className="cv-modern-grid">
           {coreValues.map((val, index) => (
@@ -130,7 +135,7 @@ const ObjectivesCoreValues = () => {
               <div 
                 className={`cv-horizontal-card ${index === coreValues.length - 1 ? "last-card" : ""}`}
                 style={{ 
-                  "--accent-color": index % 2 === 0 ? "#E32125" : "#E32125" 
+                  "--accent-color": index % 2 === 0 ? "#B3191F" : "#B3191F" 
                 }}
               >
                 <div className="cv-icon-container">

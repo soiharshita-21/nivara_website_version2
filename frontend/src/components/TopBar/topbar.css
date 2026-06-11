@@ -3,9 +3,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 8px 20px;
-  background: #E32125;
+  background: #B3191F;
   color: #fff;
-  font-size: 13px;
+  font-size: 15px;
   position: relative;
   z-index: 10001;
   /* Above navbar box-shadow but below menu overlay */
@@ -36,14 +36,14 @@
 }
 
 .location-icon {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .topbar {
     padding: 8px 15px;
-    font-size: 11px;
+    font-size: 13px;
     justify-content: center;
     flex-wrap: wrap;
     gap: 8px 16px;
@@ -60,7 +60,7 @@
 @media (max-width: 480px) {
   .topbar {
     padding: 8px 10px;
-    font-size: 10px;
+    font-size: 12px;
     justify-content: center;
     gap: 6px 12px;
   }
@@ -70,7 +70,7 @@
   }
 
   .topbar-link {
-    font-size: 10px;
+    font-size: 12px;
     gap: 4px;
     padding: 2px 4px;
   }

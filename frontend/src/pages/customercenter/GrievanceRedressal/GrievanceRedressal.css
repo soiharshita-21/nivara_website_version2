@@ -86,11 +86,11 @@
 }
 
 .grievance-card h2 {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 700;
   color: #8b1d2c;
   margin: 0 0 24px 0;
-  border-left: 5px solid #E32125;
+  border-left: 5px solid #B3191F;
   padding-left: 16px;
   line-height: 1.2;
 }
@@ -98,7 +98,7 @@
 .intro-text,
 .escalation-heading,
 .nhb-intro {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.8;
   color: #334155;
   margin-bottom: 24px;
@@ -118,9 +118,9 @@
   position: relative;
   padding-left: 28px;
   margin-bottom: 18px;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.8;
-  color: #475569;
+  color: #211F1F;
   text-align: justify;
 }
 
@@ -132,7 +132,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #E32125;
+  background-color: #B3191F;
 }
 
 .grievance-list li strong {
@@ -154,14 +154,14 @@
 
 .md-escalation-box h3 {
   margin: 0 0 8px 0;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
-  color: #E32125;
+  color: #B3191F;
 }
 
 .md-escalation-box strong {
   display: block;
-  font-size: 15px;
+  font-size: 17px;
   color: #1e293b;
   margin-bottom: 12px;
 }
@@ -169,7 +169,7 @@
 .md-escalation-box .address-detail {
   font-size: 14.5px;
   line-height: 1.8;
-  color: #475569;
+  color: #211F1F;
   margin: 0 0 16px 0;
 }
 
@@ -195,13 +195,13 @@
 }
 
 .secondary-list li::before {
-  background-color: #64748b; /* Gray bullet for secondary list */
+  background-color: #211F1F; /* Gray bullet for secondary list */
 }
 
 .or-divider {
   padding-left: 0 !important;
-  font-size: 14px !important;
-  color: #64748b !important;
+  font-size: 16px !important;
+  color: #211F1F !important;
   font-weight: 700 !important;
   letter-spacing: 0.5px;
   margin: 8px 0 !important;
@@ -222,7 +222,7 @@
    LINKS & ACCENTS
 ========================= */
 .red-link {
-  color: #E32125;
+  color: #B3191F;
   text-decoration: underline;
   font-weight: 600;
   transition: color 0.2s;
@@ -257,7 +257,7 @@
   }
 
   .grievance-card h2 {
-    font-size: 22px;
+    font-size: 24px;
     margin-bottom: 18px;
     padding-left: 12px;
   }
@@ -287,11 +287,11 @@
   }
 
   .md-escalation-box h3 {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .md-escalation-box .address-detail,
   .md-escalation-box .email-detail {
-    font-size: 13px;
+    font-size: 15px;
   }
 }

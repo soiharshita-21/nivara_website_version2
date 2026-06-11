@@ -55,7 +55,7 @@
   width: 80px;
   height: 80px;
   background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
-  color: #E32125;
+  color: #B3191F;
   border-radius: 1.25rem;
   margin: 0 auto 1.5rem;
   display: flex;
@@ -79,7 +79,7 @@
 }
 
 .login-header p {
-  color: #64748b;
+  color: #211F1F;
   font-size: 1rem;
   font-weight: 500;
 }
@@ -92,7 +92,7 @@
 
 .error-message {
   background-color: #fef2f2;
-  color: #E32125;
+  color: #B3191F;
   padding: 1rem;
   border-radius: 0.75rem;
   font-size: 0.9rem;
@@ -149,12 +149,12 @@
 
 .input-field input:focus {
   outline: none;
-  border-color: #E32125;
+  border-color: #B3191F;
   box-shadow: 0 0 0 4px rgba(227, 33, 37, 0.1);
 }
 
 .input-field input:focus ~ .field-icon {
-  color: #E32125;
+  color: #B3191F;
 }
 
 .password-toggle {
@@ -172,11 +172,11 @@
 }
 
 .password-toggle:hover {
-  color: #E32125;
+  color: #B3191F;
 }
 
 .login-btn {
-  background: linear-gradient(135deg, #E32125 0%, #b91825 100%);
+  background: linear-gradient(135deg, #B3191F 0%, #b91825 100%);
   color: white;
   padding: 1rem;
   border: none;
@@ -226,7 +226,7 @@
 
 .login-footer p {
   font-size: 0.85rem;
-  color: #64748b;
+  color: #211F1F;
   font-weight: 500;
 }
 

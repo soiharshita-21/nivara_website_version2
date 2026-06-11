@@ -118,7 +118,7 @@ const BlogDetail = () => {
                         className="apply-now-btn"
                         onClick={() => navigate("/apply-home-loan")}
                     >
-                        APPLY NOW
+                        Apply Now
                     </button>
                 </div>
             </div>

@@ -10,7 +10,6 @@ const AccessDenied = () => {
         <div className="accessdenied-icon-badge">
           <ShieldAlert size={48} className="accessdenied-icon" />
         </div>
-        <h1 className="accessdenied-code">403</h1>
         <h2 className="accessdenied-title">Access Denied / Restricted Document</h2>
         <div className="accessdenied-divider"></div>
         <p className="accessdenied-message">

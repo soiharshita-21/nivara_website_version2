@@ -24,7 +24,7 @@ describe('Navbar Component Render Tests', () => {
                 MemoryRouter,
                 null,
                 React.createElement(Navbar, null)
-            )
+            ) 
         );
 
         // Verify logo rendering

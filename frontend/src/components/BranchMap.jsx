@@ -103,7 +103,7 @@ const BranchMap = ({ branchesData = {} }) => {
                           outline: "none",
                         },
                         hover: {
-                          fill: highlight ? "#E32125" : "#DDE2E8",
+                          fill: highlight ? "#B3191F" : "#DDE2E8",
                           outline: "none",
                         },
                         pressed: {
@@ -130,7 +130,7 @@ const BranchMap = ({ branchesData = {} }) => {
                     strokeDasharray="3 3"
                     opacity={0.5}
                   />
-                  <circle r={5.5} fill="#FFFFFF" stroke="#E32125" strokeWidth={2.5} />
+                  <circle r={5.5} fill="#FFFFFF" stroke="#B3191F" strokeWidth={2.5} />
                   <g transform={`translate(${labelOffset.x}, ${labelOffset.y})`}>
                     <rect
                       x={-33}

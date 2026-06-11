@@ -138,7 +138,7 @@ const Calculator = () => {
 
           {/* EMI BOX */}
           <div className="emi-main hover-pop">
-            <span>MONTHLY EMI</span>
+            <span>Monthly EMI</span>
             <h2 className="animate-pop-up">₹{emi.toLocaleString("en-IN")}</h2>
           </div>
 

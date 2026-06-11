@@ -181,7 +181,7 @@ const HomeLoanPurchase = () => {
       />
 
 
-      <RequestQuote themeColor="#E32125" />
+      <RequestQuote themeColor="#B3191F" />
 
       {/* Help Section */}
       <div className="homeloan-help-section">
@@ -194,9 +194,8 @@ const HomeLoanPurchase = () => {
 
         <div className="homeloan-help-grid">
           {[
-            { icon: <FaCalendarAlt />, title: "APPLY FOR LOAN", text: "Looking to buy a home loan? then apply for loan now.", link: "Get Appointment", path: "/get-appointment" },
-            { icon: <FaPhoneAlt />, title: "CALL US AT", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", path: "/contact-inquiry", green: true },
-            { icon: <FaUserTie />, title: "TALK TO ADVISOR", text: "+91 80 26552822", text2: "Need to loan advise?", link: "Meet The Advisor", path: "/meet-advisor", green: true }
+            { icon: <FaCalendarAlt />, title: "Apply for Loan", text: "Looking to buy a home loan? then apply for loan now.", link: "Get Appointment", path: "/get-appointment" },
+            { icon: <FaPhoneAlt />, title: "Call Us At", text: "1800-309-1516", text2: "contact@nivarahousing.com", link: "Contact Us", path: "/contact-inquiry", green: true }
           ].map((card, index) => (
             <ScrollReveal
               key={index}

@@ -3,7 +3,7 @@
 }
 
 .page-banner-title {
-  font-size: 64px;
+  font-size: 66px;
   font-weight: 700;
   letter-spacing: -1px;
   text-transform: none;
@@ -11,14 +11,14 @@
 
 @media (max-width: 768px) {
   .page-banner-title {
-    font-size: 34px;
+    font-size: 36px;
     letter-spacing: -0.5px;
   }
 }
 
 @media (max-width: 480px) {
   .page-banner-title {
-    font-size: 26px;
+    font-size: 28px;
     padding: 6px 14px;
     letter-spacing: 0;
   }
@@ -154,7 +154,7 @@
   backdrop-filter: blur(10px);
 
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.5px;
 
@@ -195,7 +195,7 @@
   max-width: 760px;
   margin: 0 auto;
 
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.8;
 
   color: #f4f4f4;
@@ -248,8 +248,8 @@
   background: #ffffff;
   border: 1px solid #ececec;
 
-  color: #555;
-  font-size: 16px;
+  color: #211F1F;
+  font-size: 18px;
   font-weight: 600;
 
   cursor: pointer;
@@ -265,7 +265,7 @@
 .category-tab:hover {
   background: #fff5f5;
   border-color: rgba(227, 33, 37, 0.2);
-  color: #E32125;
+  color: #B3191F;
   transform: translateX(4px);
 }
 
@@ -274,7 +274,7 @@
   background:
     linear-gradient(135deg,
       #7a1422,
-      #E32125);
+      #B3191F);
 
   color: #fff;
 
@@ -312,10 +312,10 @@
 
 /* Section heading */
 .current-category-title {
-  font-size: 34px;
+  font-size: 36px;
   font-weight: 600;
 
-  color: #E32125;
+  color: #B3191F;
 
   margin-bottom: 18px;
   position: relative;
@@ -390,7 +390,7 @@
 .accordion-header h3 {
   margin: 0;
 
-  font-size: 19px;
+  font-size: 21px;
   line-height: 1.6;
   font-weight: 600;
 
@@ -412,7 +412,7 @@
 
   background: #f8fafc;
 
-  color: #666;
+  color: #211F1F;
 
   transition:
     all 0.35s ease;
@@ -423,7 +423,7 @@
   background:
     linear-gradient(135deg,
       #7a1422,
-      #E32125);
+      #B3191F);
 
   color: white;
 
@@ -460,10 +460,10 @@
 
   border-top: 1px solid #f1f5f9;
 
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.9;
 
-  color: #4b5563;
+  color: #211F1F;
 }
 
 /* =========================
@@ -512,12 +512,12 @@
   }
 
   .hero-subtitle {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.7;
   }
 
   .current-category-title {
-    font-size: 28px;
+    font-size: 30px;
   }
 
   .accordion-header {
@@ -525,7 +525,7 @@
   }
 
   .accordion-header h3 {
-    font-size: 17px;
+    font-size: 19px;
   }
 
   .accordion-body.visible {
@@ -533,28 +533,28 @@
   }
 
   .accordion-body p {
-    font-size: 15px;
+    font-size: 17px;
   }
 }
 
 @media (max-width: 480px) {
   .hero-badge {
-    font-size: 12px;
+    font-size: 14px;
     padding: 8px 18px;
   }
 
   .faq-title {
-    font-size: 38px;
+    font-size: 40px;
     padding: 10px 18px;
   }
 
   .hero-subtitle {
-    font-size: 15px;
+    font-size: 17px;
   }
 
   .category-tab {
     padding: 15px 18px;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .accordion-header {
@@ -562,7 +562,7 @@
   }
 
   .accordion-header h3 {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .accordion-body.visible {

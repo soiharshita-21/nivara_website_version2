@@ -48,7 +48,7 @@
   padding: 8px 18px;
   border-radius: 30px;
   color: #fff;
-  font-size: 15px;
+  font-size: 17px;
   backdrop-filter: blur(4px);
   margin-bottom: 24px;
 }
@@ -113,17 +113,17 @@
 }
 
 .banner-content h1 {
-  font-size: 45px;
+  font-size: 47px;
   line-height: 1.2;
   margin-bottom: 20px;
 }
 
 .banner-content h1 span {
-  color: #E32125;
+  color: #B3191F;
 }
 
 .banner-content p {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 30px;
   opacity: 0.9;
 }
@@ -135,12 +135,12 @@
 }
 
 .primary-btn {
-  background-color: #E32125;
+  background-color: #B3191F;
   color: #fff;
   padding: 12px 22px;
   border-radius: 6px;
   border: none;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
 }
 
@@ -154,7 +154,7 @@
   border: 1px solid #fff;
   padding: 12px 22px;
   border-radius: 6px;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
 }
 
@@ -169,7 +169,7 @@
   border: 1px solid #fff;
   padding: 12px 22px;
   border-radius: 6px;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
 
 }
@@ -193,11 +193,11 @@
   }
 
   .banner-content h1 {
-    font-size: 36px;
+    font-size: 38px;
   }
 
   .banner-content p {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .banner-slide {
@@ -222,11 +222,11 @@
   }
 
   .banner-content h1 {
-    font-size: 28px;
+    font-size: 30px;
   }
 
   .banner-content p {
-    font-size: 15px;
+    font-size: 17px;
   }
 
   .banner-buttons {
@@ -249,11 +249,11 @@
 @media (max-width: 480px) {
 
   .banner-content h1 {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .banner-content p {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .banner-slide {
