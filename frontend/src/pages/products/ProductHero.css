@@ -98,6 +98,10 @@
   max-width: 100%;
 }
 
+.no-wrap-title {
+  white-space: nowrap !important;
+}
+
 .hero-title .text-red {
   color: #211F1F !important; /* Force all parts of the title to solid black per user request */
 }
@@ -159,6 +163,12 @@
   color: #333333;
   width: 100%;
   box-sizing: border-box;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.35s ease;
+}
+
+.hero-glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
 }
 
 .hero-glass-card h3 {
@@ -239,6 +249,38 @@
 
   .product-hero.full-whitespace-hero .hero-glass-card {
     min-height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+/* Custom tight spacing ONLY for Composite and Construction Loan pages */
+.product-hero.tight-whitespace-hero .product-hero-container {
+  justify-content: center; /* Center content vertically */
+}
+
+@media (min-width: 1025px) {
+  .product-hero.tight-whitespace-hero .product-hero-container {
+    padding-top: clamp(80px, 9vh, 100px);
+    padding-bottom: clamp(30px, 4vh, 50px);
+    gap: 20px; /* Tight vertical layout spacing */
+  }
+
+  .product-hero.tight-whitespace-hero .product-hero-content {
+    max-width: clamp(380px, 32vw, 460px); /* Widened content column to fill more horizontal space */
+  }
+
+  .product-hero.tight-whitespace-hero .hero-subtitle_service {
+    max-width: clamp(380px, 32vw, 460px);
+  }
+
+  .product-hero.tight-whitespace-hero .product-hero-card {
+    max-width: clamp(380px, 32vw, 460px);
+  }
+
+  .product-hero.tight-whitespace-hero .hero-glass-card {
+    min-height: auto; /* Allow the card to size naturally to remove empty vertical height */
     display: flex;
     flex-direction: column;
     justify-content: center;

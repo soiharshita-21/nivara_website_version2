@@ -81,7 +81,7 @@ const BalanceTransfer = () => {
         <div className="product-hero-container">
           <div className="product-hero-content">
             <ScrollReveal direction="left">
-              <h1 className="hero-title">
+              <h1 className="hero-title no-wrap-title">
                 Balance <span className="text-red">Transfer</span>
               </h1>
               <p className="hero-subtitle_service">

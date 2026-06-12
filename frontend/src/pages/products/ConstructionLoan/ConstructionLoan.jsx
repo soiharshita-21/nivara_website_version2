@@ -85,7 +85,7 @@ const ConstructionLoan = () => {
 
   return (
     <div className="product-page-wrapper">
-      <section className="product-hero full-whitespace-hero">
+      <section className="product-hero tight-whitespace-hero">
         <div className="product-hero-bg">
           <img src={con} alt="Construction Loan" />
           <div className="product-hero-overlay"></div>
