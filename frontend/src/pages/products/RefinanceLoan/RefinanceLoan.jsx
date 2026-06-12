@@ -1,6 +1,6 @@
 import React from "react";
 import { FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
-import ref from "../../../assets/images/refinance.png";
+import ref from "../../../assets/images/refinance loan.png";
 import "./RefinanceLoan.css";
 import "../ProductHero.css";
 import { useNavigate } from "react-router-dom";

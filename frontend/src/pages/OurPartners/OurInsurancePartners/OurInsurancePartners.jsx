@@ -1,5 +1,5 @@
 import React from "react";
-import lenders2 from "../../../assets/images/lenders2.png";
+import len from "../../../assets/images/lender and partners.png";
 import "./OurInsurancePartners.css";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 
@@ -23,7 +23,7 @@ const OurInsurancePartners = () => {
 
       {/* Banner */}
       <ScrollReveal direction="down">
-        <section className="page-banner" style={{ backgroundImage: `url(${lenders2})` }}>
+        <section className="page-banner" style={{ backgroundImage: `url(${len})` }}>
           <div className="page-banner-overlay"></div>
           <div className="page-banner-content">
             <h1 className="page-banner-title">

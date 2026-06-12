@@ -11,7 +11,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/Nivara_logo.png";
+import logo from "../../assets/images/nivara_logo.png";
 import ScrollReveal from "../ScrollReveal/ScrollReveal";
 
 const Footer = () => {

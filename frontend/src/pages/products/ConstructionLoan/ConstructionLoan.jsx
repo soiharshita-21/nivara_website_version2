@@ -1,5 +1,5 @@
 import React from "react";
-import con from "../../../assets/images/Loan for construction.png";
+import con from "../../../assets/images/loan for construction.png";
 import { FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 import "./ConstructionLoan.css";
 import "../ProductHero.css";

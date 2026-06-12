@@ -3,9 +3,9 @@ import Carousel from "react-bootstrap/Carousel";
 import { useNavigate } from "react-router-dom";
 
 // slide images
-import slide1 from "../../assets/images/1.png";
-import slide2 from "../../assets/images/2.png";
-import slide3 from "../../assets/images/3.png";
+import h1 from "../../assets/images/homepage__img1.png";
+import h2 from "../../assets/images/homepage__img2.png";
+import h3 from "../../assets/images/homepage__img3.png";
 
 const Banner = () => {
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ const Banner = () => {
         <Carousel.Item>
           <div
             className="banner-slide"
-            style={{ backgroundImage: `url(${slide1})` }}
+            style={{ backgroundImage: `url(${h1})` }}
           >
             <div className="banner-content">
               <div className="trusted-badge">
@@ -73,7 +73,7 @@ const Banner = () => {
         <Carousel.Item>
           <div
             className="banner-slide"
-            style={{ backgroundImage: `url(${slide2})` }}
+            style={{ backgroundImage: `url(${h2})` }}
           >
              <div className="banner-content">
               <div className="trusted-badge">
@@ -122,7 +122,7 @@ const Banner = () => {
         <Carousel.Item>
           <div
             className="banner-slide"
-            style={{ backgroundImage: `url(${slide3})` }}
+            style={{ backgroundImage: `url(${h3})` }}
           >
              <div className="banner-content">
               <div className="trusted-badge">

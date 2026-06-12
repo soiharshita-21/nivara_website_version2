@@ -35,6 +35,12 @@
   display: block;
 }
 
+@media (min-width: 1025px) {
+  .product-hero-bg img.shift-left {
+    object-position: left center;
+  }
+}
+
 /* Overlay */
 .product-hero-overlay {
   position: absolute;
@@ -220,15 +226,15 @@
   }
 
   .product-hero.full-whitespace-hero .product-hero-content {
-    max-width: clamp(400px, 34vw, 520px); /* Dynamically scales to fill the white space without overlapping the slant */
+    max-width: clamp(350px, 28vw, 420px); /* Dynamically scales to fill the white space without overlapping the slant */
   }
 
   .product-hero.full-whitespace-hero .hero-subtitle_service {
-    max-width: clamp(400px, 34vw, 520px);
+    max-width: clamp(350px, 28vw, 420px);
   }
 
   .product-hero.full-whitespace-hero .product-hero-card {
-    max-width: clamp(400px, 34vw, 520px);
+    max-width: clamp(350px, 28vw, 420px);
   }
 
   .product-hero.full-whitespace-hero .hero-glass-card {

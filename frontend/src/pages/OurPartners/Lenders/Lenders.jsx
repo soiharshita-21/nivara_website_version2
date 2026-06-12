@@ -1,28 +1,28 @@
 import React from "react";
 import "./Lenders.css";
-import lenders2 from "../../../assets/images/lenders2.png";
+import len from "../../../assets/images/lender and partners.png";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 
-import img8 from "../../../assets/images/Lenders/8.jpg";
-import auB from "../../../assets/images/Lenders/AU-B.jpg";
-import bj from "../../../assets/images/Lenders/BJ.jpg";
-import bandhanB from "../../../assets/images/Lenders/Badhan-B.jpg";
-import csbBankNew from "../../../assets/images/Lenders/CSB-Bank-New.jpg";
-import federalB from "../../../assets/images/Lenders/Federal-b.jpg";
-import iciciBank1 from "../../../assets/images/Lenders/ICICI-bank-1.png";
-import iob2j from "../../../assets/images/Lenders/IOB2j.jpg";
-import kot1 from "../../../assets/images/Lenders/Kot1 (1).jpg";
-import mas from "../../../assets/images/Lenders/MAS.jpg";
-import mhfl1 from "../../../assets/images/Lenders/MHFL-1.jpg";
-import nhb from "../../../assets/images/Lenders/NHB.jpg";
-import piramal from "../../../assets/images/Lenders/Piramal.jpg";
-import sbi from "../../../assets/images/Lenders/SBI.jpg";
-import sf from "../../../assets/images/Lenders/SF.jpg";
-import utkarshSmallFinanceBank from "../../../assets/images/Lenders/Utakarsh-Small-Finance-Bank.jpg";
-import heroHf1 from "../../../assets/images/Lenders/hero-hf (1).jpg";
-import hhf1 from "../../../assets/images/Lenders/hhf-1.jpg";
-import idfc from "../../../assets/images/Lenders/idfc.jpg";
-import yes from "../../../assets/images/Lenders/yes.jpg";
+import img8 from "../../../assets/images/lenders/8.jpg";
+import auB from "../../../assets/images/lenders/au-b.jpg";
+import bj from "../../../assets/images/lenders/bj.jpg";
+import bandhanB from "../../../assets/images/lenders/badhan-b.jpg";
+import csbBankNew from "../../../assets/images/lenders/csb-bank-new.jpg";
+import federalB from "../../../assets/images/lenders/federal-b.jpg";
+import iciciBank1 from "../../../assets/images/lenders/icici-bank-1.png";
+import iob2j from "../../../assets/images/lenders/iob2j.jpg";
+import kot1 from "../../../assets/images/lenders/kot1 (1).jpg";
+import mas from "../../../assets/images/lenders/mas.jpg";
+import mhfl1 from "../../../assets/images/lenders/mhfl-1.jpg";
+import nhb from "../../../assets/images/lenders/nhb.jpg";
+import piramal from "../../../assets/images/lenders/piramal.jpg";
+import sbi from "../../../assets/images/lenders/sbi.jpg";
+import sf from "../../../assets/images/lenders/sf.jpg";
+import utkarshSmallFinanceBank from "../../../assets/images/lenders/utakarsh-small-finance-bank.jpg";
+import heroHf1 from "../../../assets/images/lenders/hero-hf (1).jpg";
+import hhf1 from "../../../assets/images/lenders/hhf-1.jpg";
+import idfc from "../../../assets/images/lenders/idfc.jpg";
+import yes from "../../../assets/images/lenders/yes.jpg";
 
 const lenders = [
   nhb, sbi, iob2j, iciciBank1, kot1, federalB, auB, bandhanB, csbBankNew,
@@ -37,7 +37,7 @@ const Lenders = () => {
         <section
           className="page-banner"
           style={{
-            backgroundImage: `url(${lenders2})`,
+            backgroundImage: `url(${len})`,
           }}
         >
           <div className="page-banner-overlay"></div>

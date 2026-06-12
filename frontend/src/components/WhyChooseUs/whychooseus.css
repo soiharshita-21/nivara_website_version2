@@ -237,10 +237,8 @@
   min-height: 320px;
   padding: 60px 20px;
   /* Extremely soft gradient wrapper blending with page white */
-  background: 
-    radial-gradient(circle at 10% 20%, rgba(227, 33, 37, 0.03) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(126, 181, 66, 0.03) 0%, transparent 40%),
-    linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  background: url("../../assets/images/rbi.png") center/cover no-repeat;
+  background-attachment: fixed;
   position: relative;
   overflow: hidden;
   transition: all 0.5s ease;
@@ -357,6 +355,9 @@
 @media (max-width: 1024px) {
   .why-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .trust-wrapper {
+    background-attachment: scroll;
   }
 }
 

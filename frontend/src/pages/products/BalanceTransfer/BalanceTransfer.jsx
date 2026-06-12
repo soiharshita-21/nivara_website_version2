@@ -1,6 +1,6 @@
 import React from "react";
 import { FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
-import bal from "../../../assets/images/Balance Transfer.png"; // you will replace this
+import bal from "../../../assets/images/balance transfer.png"; // you will replace this
 import "./BalanceTransfer.css";
 import "../ProductHero.css";
 import { useNavigate } from "react-router-dom";
@@ -75,7 +75,7 @@ const BalanceTransfer = () => {
     <div className="product-page-wrapper">
       <section className="product-hero full-whitespace-hero">
         <div className="product-hero-bg">
-          <img src={bal} alt="Balance Transfer" />
+          <img src={bal} alt="Balance Transfer" className="shift-left" />
           <div className="product-hero-overlay"></div>
         </div>
         <div className="product-hero-container">

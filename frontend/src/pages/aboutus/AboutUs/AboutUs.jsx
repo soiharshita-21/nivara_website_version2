@@ -1,6 +1,6 @@
 import React from "react";
 import "./AboutUs.css";
-import abus2 from "../../../assets/images/abus2.png";
+import about from "../../../assets/images/about_us.png";
 import { FaMoneyBillWave, FaHome, FaFileAlt, FaSyncAlt, FaCogs, FaHeadset, FaGlobe } from "react-icons/fa";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
  
@@ -8,7 +8,7 @@ const AboutUs = () => {
   return (
     <div className="about-page">
       <ScrollReveal direction="down">
-        <section className="page-banner about-banner" style={{ backgroundImage: `url(${abus2})` }}>
+        <section className="page-banner about-banner" style={{ backgroundImage: `url(${about})` }}>
           <div className="page-banner-overlay"></div>
           <div className="page-banner-content">
             {/* <h1 className="page-banner-title">

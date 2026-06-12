@@ -248,7 +248,7 @@
   /* remove rounded corners for full-width look */
   overflow: hidden;
 
-  background: url("../../assets/images/home3.jpeg") center/cover no-repeat;
+  background: url("../../assets/images/ap.png") center/cover no-repeat;
   background-attachment: fixed; 
   position: relative;
 }

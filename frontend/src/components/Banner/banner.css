@@ -89,9 +89,10 @@
   position: relative;
   min-height: 100vh;
   background-size: cover;
-  background-position: center;
+  background-position: center 30%;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   z-index: 0;
 }
 
@@ -100,7 +101,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: rgba(33, 31, 31, 0.45);
+  background: linear-gradient(90deg, rgba(33, 31, 31, 0.08) 0%, rgba(33, 31, 31, 0.4) 100%);
 }
 
 
@@ -109,7 +110,8 @@
   z-index: 2;
   color: #fff;
   max-width: 800px;
-  padding-left: 80px;
+  padding-right: 120px;
+  padding-left: 40px;
 }
 
 .banner-content h1 {
@@ -188,7 +190,8 @@
 @media (max-width: 1024px) {
 
   .banner-content {
-    padding-left: 40px;
+    padding-left: 20px;
+    padding-right: 40px;
     max-width: 500px;
   }
 
@@ -214,6 +217,10 @@
     min-height: 90vh;
     justify-content: center;
     text-align: center;
+  }
+
+  .banner-slide::before {
+    background: rgba(33, 31, 31, 0.3);
   }
 
   .banner-content {

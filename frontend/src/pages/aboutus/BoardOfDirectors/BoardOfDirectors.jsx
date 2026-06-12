@@ -1,14 +1,14 @@
 import React from "react";
 import "./BoardOfDirectors.css";
-import rao from "../../../assets/images/Director/Rao (1).jpg";
-import sunilb from "../../../assets/images/Director/sunilb.jpeg";
-import koticha from "../../../assets/images/Director/Koticha.jpg";
-import debanshi from "../../../assets/images/Director/Debanshi-Photo.png";
-import jayaraman from "../../../assets/images/Director/Nivara.jpg";
-import krishna from "../../../assets/images/Director/Mr. Krishna Gopalaraman.jpg";
-import shreyas from "../../../assets/images/Director/Shreyas.jpg";
+import rao from "../../../assets/images/director/rao (1).jpg";
+import sunilb from "../../../assets/images/director/sunilb.jpeg";
+import koticha from "../../../assets/images/director/koticha.jpg";
+import debanshi from "../../../assets/images/director/debanshi-photo.png";
+import jayaraman from "../../../assets/images/director/nivara.jpg";
+import krishna from "../../../assets/images/director/mr. krishna gopalaraman.jpg";
+import shreyas from "../../../assets/images/director/shreyas.jpg";
 import userPlaceholder from "../../../assets/images/user2.jpg";
-import maninder from "../../../assets/images/Directors/Maninder Singh Juneja.png";
+import maninder from "../../../assets/images/directors/maninder singh juneja.png";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import { AnimatePresence, motion } from "framer-motion";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { FaHome, FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
-import rev from "../../../assets/images/Improvement Extension.png";
+import imp from "../../../assets/images/improvement.png";
 import "./ImprovementandExtension.css";
 import "../ProductHero.css";
 import { useNavigate } from "react-router-dom";
@@ -79,7 +79,7 @@ const ImprovementandExtension = () => {
     <div className="product-page-wrapper">
       <section className="product-hero full-whitespace-hero">
         <div className="product-hero-bg">
-          <img src={rev} alt="Improvement and Extension Loan" />
+          <img src={imp} alt="Improvement and Extension Loan" />
           <div className="product-hero-overlay"></div>
         </div>
         <div className="product-hero-container">

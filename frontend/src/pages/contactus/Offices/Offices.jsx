@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Offices.css";
-import officeBanner from "../../../assets/images/office.png";
+import officeBanner from "../../../assets/images/off.png";
 import {
   MapPin,
   Phone,

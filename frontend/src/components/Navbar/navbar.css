@@ -9,14 +9,8 @@
   z-index: 9999;
   font-family: 'Poppins', sans-serif;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-  /* Limit transitions to background and box-shadow to avoid layout transition glitches on scroll */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  /* Force GPU acceleration and hint compositor layer behavior to prevent repaint tiling glitches and lag during scrolls */
-  transform: translate3d(0, 0, 0);
-  will-change: transform;
-  backface-visibility: hidden;
-  overflow: visible;
   border-bottom: 1px solid rgba(240, 240, 240, 0.8);
+  overflow: visible;
 }
  
 .navbar-container {

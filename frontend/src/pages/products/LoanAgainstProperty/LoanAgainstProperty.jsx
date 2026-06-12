@@ -1,5 +1,5 @@
 import React from "react";
-import lop from "../../../assets/images/LOP.png";
+import lap from "../../../assets/images/loan against property.png";
 import { FiHome } from "react-icons/fi";
 import { FaHome, FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 
@@ -89,7 +89,7 @@ const LoanAgainstProperty = () => {
     <div className="product-page-wrapper">
       <section className="product-hero full-whitespace-hero">
         <div className="product-hero-bg">
-          <img src={lop} alt="Loan Against Property" />
+          <img src={lap} alt="Loan Against Property" className="shift-left" />
           <div className="product-hero-overlay"></div>
         </div>
         <div className="product-hero-container">

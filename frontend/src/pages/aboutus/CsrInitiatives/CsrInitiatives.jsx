@@ -6,24 +6,24 @@ import { FaDownload } from "react-icons/fa";
 import csrhero from "../../../assets/images/csrhero.png";
 
 // Healthcare images
-import hcMain from "../../../assets/images/CSR2/Picture1.png";
-import hc1 from "../../../assets/images/CSR2/WhatsApp-Image-2026-01-24-at-11.16.08-AM-2 (1).webp";
-import hc2 from "../../../assets/images/CSR2/WhatsApp-Image-2026-02-23-at-5.57.12-PM-1.webp";
-import hc3 from "../../../assets/images/CSR2/WhatsApp-Image-2026-02-23-at-2.51.03-PM-1.webp";
-import hc4 from "../../../assets/images/CSR2/WhatsApp-Image-2026-02-23-at-2.51.01-PM-1.webp";
-import hc5 from "../../../assets/images/CSR2/WhatsApp-Image-2026-02-23-at-2.51.01-PM.webp";
-import hc6 from "../../../assets/images/CSR2/WhatsApp-Image-2026-02-06-at-4.21.35-PM.webp";
-import hc7 from "../../../assets/images/CSR2/CSR-Medical-Camp.webp";
+import hcMain from "../../../assets/images/csr2/picture1.png";
+import hc1 from "../../../assets/images/csr2/whatsapp-image-2026-01-24-at-11.16.08-am-2 (1).webp";
+import hc2 from "../../../assets/images/csr2/whatsapp-image-2026-02-23-at-5.57.12-pm-1.webp";
+import hc3 from "../../../assets/images/csr2/whatsapp-image-2026-02-23-at-2.51.03-pm-1.webp";
+import hc4 from "../../../assets/images/csr2/whatsapp-image-2026-02-23-at-2.51.01-pm-1.webp";
+import hc5 from "../../../assets/images/csr2/whatsapp-image-2026-02-23-at-2.51.01-pm.webp";
+import hc6 from "../../../assets/images/csr2/whatsapp-image-2026-02-06-at-4.21.35-pm.webp";
+import hc7 from "../../../assets/images/csr2/csr-medical-camp.webp";
 
 // Education images
-import eduMain from "../../../assets/images/CSR2/Picture5.png";
-import edu1 from "../../../assets/images/CSR2/Picture6.png";
-import edu2 from "../../../assets/images/CSR2/Picture7.png";
+import eduMain from "../../../assets/images/csr2/picture5.png";
+import edu1 from "../../../assets/images/csr2/picture6.png";
+import edu2 from "../../../assets/images/csr2/picture7.png";
 
 // Community images
-import commMain from "../../../assets/images/CSR2/Picture4.png";
-import comm1 from "../../../assets/images/CSR2/Picture3.png";
-import comm2 from "../../../assets/images/CSR2/Picture2.png";
+import commMain from "../../../assets/images/csr2/picture4.png";
+import comm1 from "../../../assets/images/csr2/picture3.png";
+import comm2 from "../../../assets/images/csr2/picture2.png";
 
 const TABS = ["Overview", "Healthcare", "Education", "Community", "CSR Approved Projects"];
 

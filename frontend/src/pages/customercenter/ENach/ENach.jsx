@@ -11,7 +11,7 @@ import React, { useEffect } from "react";
 import React, { useState } from "react";
 import "./ENach.css";
 import { FaFilePdf, FaEye } from "react-icons/fa";
-import logo from "../../../assets/images/Nivara_logo.png";
+import logo from "../../../assets/images/nivara_logo.png";
 
 const ENach = () => {
   // screen states: "main" | "login" | "register"

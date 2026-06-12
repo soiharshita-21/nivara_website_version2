@@ -11,7 +11,7 @@ import {
   BadgeCheck,
 } from "lucide-react";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
-import faqBg from "../../../assets/images/FAQ.png";
+import faqBg from "../../../assets/images/faq.png";
 
 const faqsData = [
   {

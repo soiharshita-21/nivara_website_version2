@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import "./Investors.css";
 import investors2 from "../../assets/images/investors2.png";
-import tnLogo from "../../assets/images/TN.png";
-import bpeLogo from "../../assets/images/BPE.png";
+import tnLogo from "../../assets/images/tn.png";
+import bpeLogo from "../../assets/images/bpe.png";
 
 const Investors = () => {
   useEffect(() => {

@@ -20,25 +20,25 @@ if (!fs.existsSync(backendUploadsPath)) {
 
 const foldersToSeed = [
     {
-        dir: 'CSR',
+        dir: 'csr',
         category: 'CSR',
         folder_date: 'January 2026',
         alt: 'CSR Activity- General Medical Camp, Kolar, KA'
     },
     {
-        dir: 'Anniversary',
+        dir: 'anniversary',
         category: 'Anniversary',
         folder_date: 'October 2025',
         alt: '10th Anniversary Celebration'
     },
     {
-        dir: 'Navaratri',
+        dir: 'navaratri',
         category: 'Navaratri',
         folder_date: 'September 2025',
         alt: 'Nivara Navaratri Celebration'
     },
     {
-        dir: 'Fire Mock Drill',
+        dir: 'fire mock drill',
         category: 'Fire Mock Drill',
         folder_date: 'January 2026',
         alt: 'Fire Mock Drill & Safety Training'

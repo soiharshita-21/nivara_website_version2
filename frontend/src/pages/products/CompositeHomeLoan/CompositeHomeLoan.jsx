@@ -1,6 +1,6 @@
 import React from "react";
 import { FaHome, FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
-import com from "../../../assets/images/Composite Home Loan.png";
+import com from "../../../assets/images/composite home_loan.png";
 import "./CompositeHomeLoan.css";
 import "../ProductHero.css";
 import { useNavigate } from "react-router-dom";

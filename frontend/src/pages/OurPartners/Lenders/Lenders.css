@@ -119,15 +119,15 @@
 
 .lenders-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 30px;
   justify-items: center;
 }
 
 .lender-card {
   width: 100%;
-  max-width: 310px;
-  height: 180px;
+  max-width: 400px;
+  height: 240px;
   background: #ffffff;
   border-radius: 20px;
   display: flex;
@@ -194,12 +194,12 @@
   }
 
   .lenders-grid {
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 18px;
   }
 
   .lender-card {
-    height: 135px;
+    height: 175px;
     border-radius: 16px;
   }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import pur from "../../../assets/images/Home Loan.png";
+import pur from "../../../assets/images/home loan for_purchase.png";
 import { FaHome, FaCheck, FaFileAlt, FaCoins, FaBriefcase, FaCalendarAlt, FaPhoneAlt, FaUserTie } from "react-icons/fa";
 import "./HomeLoanPurchase.css";
 import "../ProductHero.css";
