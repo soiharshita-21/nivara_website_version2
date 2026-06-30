@@ -380,23 +380,35 @@
 
 .construction-title {
   font-size: 44px;
-  font-weight: 600;
-  color: #B3191F !important;
-  margin-bottom: 10px;
+  font-weight: 700;
+  color: #B3191F;
+  margin-bottom: 16px;
+  text-align: center;
 }
 
 .construction-subtitle {
-  font-size: 22px;
-  font-weight: 500;
+  font-size: 28px;
+  font-weight: 600;
   color: #B3191F;
-  margin-bottom: 25px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.construction-heading {
+  font-size: 22px;
+  font-weight: 600;
+  color: #211F1F;
+  margin-bottom: 28px;
+  text-align: center;
 }
 
 .construction-text {
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.8;
-  color: black;
-  max-width: 950px;
+  color: #211F1F;
+  max-width: 900px;
+  margin: auto;
+  text-align: justify;
 }
 
 /* Benefits Section */

@@ -45,12 +45,12 @@ const Investors = () => {
 
 
           {/* Baring Card */}
-          <div className="investor-modern-card green animate-slide-up">
+          <div className="investor-modern-card red animate-slide-up">
             <div className="investor-logo-box">
               <img src={bpeLogo} alt="Baring Private Equity Logo" className="investor-logo" />
             </div>
             <div className="investor-info">
-              <h2>Baring Private Equity India</h2>
+              <h2>Baring Private Equity Partners India</h2>
               <div className="investor-divider"></div>
               <p>
                 Baring Private Equity India is one of the country’s oldest investors,

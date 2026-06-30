@@ -239,5 +239,25 @@
   }
 }
 
+/* Custom styling for Shreyas Ramanathan's card to fit the long role tag nicely */
+.board-card.shreyas-card .role-tag {
+  font-size: 13px;
+  padding: 8px 18px;
+  bottom: 15px;
+}
+
+.board-card.shreyas-card h3 {
+  font-size: 22px;
+}
+
+@media (max-width: 480px) {
+  .board-card.shreyas-card .role-tag {
+    font-size: 11px;
+    padding: 6px 12px;
+    bottom: 10px;
+  }
+}
+
+
 
 

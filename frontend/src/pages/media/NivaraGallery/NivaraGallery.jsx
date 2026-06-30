@@ -15,7 +15,7 @@ const NivaraGallery = () => {
   useEffect(() => {
     const fetchGallery = async () => {
       try {
-        const res = await axios.get("http://localhost:5001/api/gallery");
+        const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/gallery`);
         setGalleryItems(res.data);
       } catch (err) {
         console.error("Error fetching gallery:", err);

@@ -92,7 +92,7 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5001/api/pages")
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/api/pages`)
       .then(res => res.json())
       .then(data => {
         if(Array.isArray(data)) setDynamicPages(data);

@@ -40,8 +40,8 @@ describe('Backend OWASP Security and Route Verification Tests', () => {
         // Test an origin that is allowed by our whitelist
         const resAllowed = await request(app)
             .get('/')
-            .set('Origin', 'http://localhost:5173');
-        expect(resAllowed.headers['access-control-allow-origin']).toEqual('http://localhost:5173');
+            .set('Origin', 'http://localhost:3000');
+        expect(resAllowed.headers['access-control-allow-origin']).toEqual('http://localhost:3000');
 
         // Test an origin that is NOT in our whitelist
         const resBlocked = await request(app)

@@ -87,9 +87,9 @@ function AppContent() {
       <ScrollToTop />
       {!hideHeaderFooter && <TopBar />}
       {!hideHeaderFooter && <Navbar />}
+      {!hideHeaderFooter && <IsoBanner />}
 
       <div className={hideHeaderFooter ? "" : "page-content"}>
-        {!hideHeaderFooter && <IsoBanner />}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<AboutUs />} />

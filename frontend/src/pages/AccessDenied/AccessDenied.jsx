@@ -16,7 +16,7 @@ const AccessDenied = () => {
           You do not have permission to view this resource. Access to these specific Investor Relations documents is restricted to authorized stakeholders and compliance officers.
         </p>
         <p className="accessdenied-submessage">
-          If you are an active investor or shareholder and require access to these materials, please contact the compliance officer directly at <a href="mailto:info@nivarahousing.com">info@nivarahousing.com</a>.
+          If you are an active investor or shareholder and require access to these materials, please contact the compliance officer directly at <a href="mailto:contact@nivarahousing.com">contact@nivarahousing.com</a>.
         </p>
         <div className="accessdenied-actions">
           <Link to="/" className="btn-primary-action">

@@ -321,20 +321,43 @@
 }
 
 .home-loan-text-section {
-  max-width: 1100px;
-  margin: 80px auto 0 auto;
-  padding: 0px 20px;
-  text-align: left;
-  color: black
+  max-width: 1000px;
+  margin: 90px auto 60px;
+  text-align: center;
+  padding: 0 20px;
 }
 
 .home-loan-title {
-  margin-bottom: 30px;
-  color: #B3191F
+  font-size: 44px;
+  font-weight: 700;
+  color: #B3191F;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.home-loan-subtitle {
+  font-size: 28px;
+  font-weight: 600;
+  color: #B3191F;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.home-loan-heading {
+  font-size: 22px;
+  font-weight: 600;
+  color: #211F1F;
+  margin-bottom: 28px;
+  text-align: center;
 }
 
 .home-loan-text {
-  margin-top: 20px;
+  font-size: 19px;
+  line-height: 1.8;
+  color: #211F1F;
+  max-width: 900px;
+  margin: auto;
+  text-align: justify;
 }
 
 .help-section {

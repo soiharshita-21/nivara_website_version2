@@ -7,14 +7,14 @@ import { FaQuoteLeft, FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 const testimonials = [
   {
     text: "Exceptional customer service and competitive interest rates! Nivara Home Finance made my dream of owning a home a reality. The loan processing was smooth, and the staff was helpful throughout. Highly satisfied and would definitely recommend.",
-    name: "goutham 786",
+    name: "Goutham",
     rating: 5,
     place: "Bengaluru, Karnataka",
     date: "12th Apr 2026",
   },
   {
     text: "From the application stage until the disbursement, I had a fantastic experience. The staff was quite helpful. They were completely open and honest throughout the entire process. On the day of distribution, every employee in the bank was doing their part to assist me in completing the registration process on time. Nivara home finance is grateful.",
-    name: "Mano Cool",
+    name: "Mano",
     rating: 5,
     place: "Chennai, Tamil Nadu",
     date: "3rd May 2026",

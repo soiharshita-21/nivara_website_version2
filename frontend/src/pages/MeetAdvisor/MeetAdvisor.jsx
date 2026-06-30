@@ -26,7 +26,7 @@ const MeetAdvisor = () => {
     setAlertState({ type: "info", message: "Submitting request..." });
 
     try {
-      const response = await fetch("http://localhost:5001/api/advisors/apply", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/advisors/apply`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

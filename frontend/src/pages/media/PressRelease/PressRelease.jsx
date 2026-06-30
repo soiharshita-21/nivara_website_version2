@@ -66,7 +66,7 @@ const PressRelease = () => {
   React.useEffect(() => {
     const fetchPress = async () => {
       try {
-        const response = await axios.get(`http://${window.location.hostname}:5001/api/press`);
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/press`);
         const dbNews = response.data.map(n => ({
           img: n.image_url || n.image,
           title: n.title,

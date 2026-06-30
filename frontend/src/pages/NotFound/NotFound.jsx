@@ -17,7 +17,7 @@ const NotFound = () => {
           The requested document could not be retrieved. This resource might have been moved, archived, or is currently restricted to authorized personnel. 
         </p>
         <p className="notfound-submessage">
-          If you are an active investor or shareholder and require access to these materials, please contact the compliance officer directly at <a href="mailto:info@nivarahousing.com">info@nivarahousing.com</a>.
+          If you are an active investor or shareholder and require access to these materials, please contact the compliance officer directly at <a href="mailto:contact@nivarahousing.com">contact@nivarahousing.com</a>.
         </p>
         <div className="notfound-actions">
           <Link to="/" className="btn-primary-action">

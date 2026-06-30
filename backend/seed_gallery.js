@@ -85,7 +85,7 @@ db.connect(err => {
                 // Copy file to backend uploads
                 fs.copyFileSync(srcPath, destPath);
 
-                const imageUrl = `http://localhost:5001/uploads/${uniqueFilename}`;
+                const imageUrl = `/uploads/${uniqueFilename}`;
 
                 const p = new Promise((resolve, reject) => {
                     db.query(

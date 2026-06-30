@@ -97,7 +97,7 @@ const RefinanceLoan = () => {
           <div className="product-hero-card">
             <ScrollReveal direction="right">
               <div className="hero-glass-card">
-                <h3>Why Choose Us</h3>
+                <h3>Why <span className="underline-word">Choose</span> Us</h3>
                 <ul>
                   <li>Significantly lower your interest rate</li>
                   <li>Reduce your monthly EMI burden</li>
@@ -113,20 +113,14 @@ const RefinanceLoan = () => {
       <ScrollReveal direction="up" delay={0.1}>
         <div className="refinance-text-section">
           <h1 className="refinance-main-title">Refinance Loan</h1>
-          <h2 className="refinance-sub-heading">
+          <h3 className="refinance-sub-heading">
             Taking out a New Loan To Pay off an old one
-          </h2>
-          <h3 className="refinance-highlight">
-            Refinance Home Loan with Nivara Home Finance
           </h3>
+          <h2 className="refinance-heading">
+            Refinance Home Loan with Nivara Home Finance
+          </h2>
           <p className="refinance-description">
-            Refinancing your loan can help you save money and lower payments. Our
-            team of specialists will help you find the best refinance loan
-            solution. Get started today with our free rate quote calculator and
-            discover how much you could save. Refinancing a home loan is an
-            excellent way to reduce home loan liabilities. You may also think
-            about refinancing your loan if a lender offers lower interest rates or
-            better terms.
+            Refinancing your loan can help you save money and lower payments. Our team of specialists will help you find the best refinance loan solution. Get started today with our free rate quote calculator and discover how much you could save. Refinancing a home loan is an excellent way to reduce home loan liabilities. You may also think about refinancing your loan if a lender offers lower interest rates or better terms.
           </p>
         </div>
       </ScrollReveal>

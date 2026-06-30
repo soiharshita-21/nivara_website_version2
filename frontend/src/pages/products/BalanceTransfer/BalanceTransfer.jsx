@@ -101,7 +101,7 @@ const BalanceTransfer = () => {
           <div className="product-hero-card">
             <ScrollReveal direction="right">
               <div className="hero-glass-card">
-                <h3>Why Choose Us</h3>
+                <h3>Why <span className="underline-word">Choose</span> Us</h3>
                 <ul>
                   <li>Significantly lower interest rates</li>
                   <li>Attractive top-up loan facility</li>
@@ -116,19 +116,15 @@ const BalanceTransfer = () => {
 
       <ScrollReveal direction="up" delay={0.1}>
         <div className="balance-text-section">
-          <h2 className="balance-main-title">Balance Transfer</h2>
-          <p className="balance-tagline">We will lift your Loan Burden</p>
-
-          <h3 className="balance-subheading">
-            Home Loan Balance Transfer with Nivara Home Finance:
+          <h1 className="balance-title">Balance Transfer</h1>
+          <h3 className="balance-subtitle">
+            We will lift your loan burden
           </h3>
-
+          <h2 className="balance-heading">
+            Home Loan Balance Transfer with Nivara Home Finance
+          </h2>
           <p className="balance-description">
-            NIVARA Home Finance offers Balance Transfer Loans at attractive
-            interest rates to lower your loan repayments. Move your Home Loan
-            outstanding balances to NHFL, pay lower monthly installments and enjoy
-            the savings for the other things in life that really matter to you and
-            your family.
+            NIVARA Home Finance offers Balance Transfer Loans at attractive interest rates to lower your loan repayments. Move your Home Loan outstanding balances to NHFL, pay lower monthly installments and enjoy the savings for the other things in life that really matter to you and your family.
           </p>
         </div>
       </ScrollReveal>

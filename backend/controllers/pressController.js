@@ -1,16 +1,21 @@
 const db = require('../config/db');
+const { normalizeToRelative, getAbsoluteUrl } = require('../utils/urlHelper');
 
 const getPressReleases = (req, res) => {
     db.query("SELECT * FROM press_releases ORDER BY date DESC", (err, results) => {
         if (err) return res.status(500).json(err);
-        res.json(results);
+        const mapped = results.map(row => ({
+            ...row,
+            image_url: getAbsoluteUrl(req, row.image_url)
+        }));
+        res.json(mapped);
     });
 };
 
 const createPressRelease = (req, res) => {
     const { title, date, image_url, content } = req.body;
     const query = "INSERT INTO press_releases (title, date, image_url, content) VALUES (?, ?, ?, ?)";
-    db.query(query, [title, date, image_url, content], (err, result) => {
+    db.query(query, [title, date, normalizeToRelative(image_url), content], (err, result) => {
         if (err) return res.status(500).json(err);
         res.json({ message: "Press release added successfully!", id: result.insertId });
     });
@@ -19,7 +24,7 @@ const createPressRelease = (req, res) => {
 const updatePressRelease = (req, res) => {
     const { title, date, image_url, content } = req.body;
     const query = "UPDATE press_releases SET title = ?, date = ?, image_url = ?, content = ? WHERE id = ?";
-    db.query(query, [title, date, image_url, content, req.validatedId], (err, result) => {
+    db.query(query, [title, date, normalizeToRelative(image_url), content, req.validatedId], (err, result) => {
         if (err) return res.status(500).json(err);
         res.json({ message: "Press release updated successfully!" });
     });

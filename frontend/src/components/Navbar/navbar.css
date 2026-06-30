@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   padding: 0;
-  min-height: 70px;
+  min-height: 55px;
   background: #ffffff;
   z-index: 9999;
   font-family: 'Poppins', sans-serif;
@@ -17,10 +17,10 @@
   width: 100%;
   max-width: 100%;
   margin: 0;
-  padding: 16px 40px;
+  padding: 8px 40px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 20px;
   box-sizing: border-box;
   overflow: visible;
@@ -31,6 +31,7 @@
   align-items: center;
   flex-shrink: 0;
   text-decoration: none;
+  margin-right: auto;
 }
  
 .nav_logo {
@@ -38,7 +39,7 @@
   display: block;
   height: auto;
   margin: 0;
-  width: 180px;
+  width: 185px;
 }
  
 .nav_logo:hover {
@@ -58,7 +59,6 @@
  
 /* Search Group */
 .search-group {
-  margin-left: 20px;
   position: relative;
   z-index: 10002;
 }
@@ -81,12 +81,12 @@
  
 .search-wrapper input {
   width: 100%;
-  padding: 10px 40px 10px 16px;
+  padding: 8px 44px 8px 16px;
   border: none !important;
   background: transparent;
   outline: none;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 15px;
 }
  
 .search-icon {
@@ -132,12 +132,11 @@
 /* Desktop Menu */
 .navbar-menu {
   display: flex;
-  gap: 16px;
+  gap: 20px;
   list-style: none;
   margin: 0;
   padding: 0;
   align-items: center;
-  justify-content: flex-end;
   overflow: visible;
 }
  
@@ -230,7 +229,7 @@
 }
  
 /* Show dropdown on hover (Desktop) */
-@media (min-width: 1281px) {
+@media (min-width: 1025px) {
   .nav-item.dropdown:hover>.dropdown-menu {
     display: block;
     opacity: 1;
@@ -240,7 +239,20 @@
 }
  
 /* Mobile Responsive Styles */
-@media (max-width: 1280px) {
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 8px 20px;
+    justify-content: space-between;
+  }
+
+  .nav_logo-link {
+    margin-right: 0;
+  }
+
+  .nav_logo {
+    width: 140px;
+  }
+
   .search-group {
     margin-left: 20px;
     margin-right: 20px;
@@ -376,7 +388,7 @@
   box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
 }
  
-@media (max-width: 1280px) {
+@media (max-width: 1024px) {
   .admin-btn {
     margin-left: 0;
     margin-top: 10px;
@@ -475,7 +487,7 @@
   font-size: 19px;
 }
  
-@media (max-width: 1280px) {
+@media (max-width: 1024px) {
   .hanging-banner-wrapper {
     right: 30px;
   }
@@ -595,8 +607,8 @@
   color: #211F1F;
 }
  
-/* --- Desktop Flyout Logic (min-width: 1281px) --- */
-@media (min-width: 1281px) {
+/* --- Desktop Flyout Logic (min-width: 1025px) --- */
+@media (min-width: 1025px) {
   .dropdown-menu {
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(33, 31, 31, 0.15);
@@ -709,7 +721,7 @@
   }
 
   .navbar-menu > .nav-item:last-child {
-    margin-right: 40px;
+    margin-right: 0;
   }
  
   /* Hover Bridges to prevent menus from closing when crossing gaps */
@@ -749,8 +761,8 @@
  
 }
  
-/* --- Mobile Stacked Accordion Logic (max-width: 1280px) --- */
-@media (max-width: 1280px) {
+/* --- Mobile Stacked Accordion Logic (max-width: 1024px) --- */
+@media (max-width: 1024px) {
   .nested-menu {
     max-height: 0;
     overflow: hidden;
@@ -847,12 +859,12 @@
 /* --- Medium Desktop Spacing Optimization (Prevents Layout Wrapping) --- */
 @media (min-width: 1281px) and (max-width: 1600px) {
   .navbar-container {
-    padding: 14px 24px;
-    gap: 12px;
+    padding: 6px 24px;
+    gap: 14px;
   }
  
   .nav_logo {
-    width: 150px;
+    width: 165px;
   }
  
   .search-wrapper {
@@ -860,12 +872,43 @@
   }
  
   .navbar-menu {
-    gap: 8px;
+    gap: 14px;
   }
  
   .nav-link,
   .dropdown-trigger {
-    font-size: 15px !important;
+    font-size: 14px !important;
     padding: 6px 8px !important;
+  }
+}
+
+/* --- Small Desktop Spacing Optimization (Prevents Layout Wrapping) --- */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .navbar-container {
+    padding: 4px 16px;
+    gap: 10px;
+  }
+ 
+  .nav_logo {
+    width: 150px;
+  }
+ 
+  .search-wrapper {
+    width: 160px;
+  }
+  
+  .search-wrapper input {
+    font-size: 13px;
+    padding: 6px 42px 6px 12px;
+  }
+ 
+  .navbar-menu {
+    gap: 10px;
+  }
+ 
+  .nav-link,
+  .dropdown-trigger {
+    font-size: 13px !important;
+    padding: 4px 6px !important;
   }
 }

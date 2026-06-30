@@ -494,7 +494,7 @@ const Mitc = () => {
           <ul className="terms-sub-list">
             <li><strong>Branch Visit Hours:</strong> Between 10 a.m. and 5 p.m. from Monday to Friday &amp; from 10 a.m. to 1 p.m. on Saturdays (except on public holidays).</li>
             <li><strong>Telephone Contact:</strong> +91-80-2655 2822 between 10 a.m. and 5 p.m. from Monday to Friday &amp; from 10 a.m. to 1 p.m. on Saturdays (except on public holidays).</li>
-            <li><strong>Email Support:</strong> <a href="mailto:info@nivarahousing.com">info@nivarahousing.com</a></li>
+            <li><strong>Email Support:</strong> <a href="mailto:contact@nivarahousing.com">contact@nivarahousing.com</a></li>
             <li><strong>Service Delivery Timelines:</strong> Customers may obtain the following by means of a simple application:
               <ul className="sub-nested-list">
                 <li>Loan Account Statement: <strong>7 Days</strong></li>

@@ -29,7 +29,7 @@ const RequestQuote = ({ themeColor = "#7EB542", title = "Request Quote Now" }) =
     setAlertState({ type: "info", message: "Submitting request..." });
 
     try {
-      const response = await fetch("http://localhost:5001/api/quotes/apply", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/quotes/apply`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

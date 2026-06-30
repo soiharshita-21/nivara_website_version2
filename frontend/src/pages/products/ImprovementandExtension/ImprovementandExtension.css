@@ -527,31 +527,39 @@
   font-weight: 700;
   color: #B3191F;
   margin-bottom: 16px;
+  text-align: center;
 }
-
 
 .improv-sub-heading {
   font-size: 28px;
   font-weight: 600;
   color: #B3191F;
   margin-bottom: 14px;
+  text-align: center;
 }
 
-
-.improv-highlight {
+.improv-heading {
   font-size: 22px;
   font-weight: 600;
-  color: #2f3a4f;
+  color: #211F1F;
   margin-bottom: 28px;
+  text-align: center;
 }
 
+.improv-heading {
+  font-size: 22px;
+  font-weight: 600;
+  color: #211F1F;
+  margin-bottom: 28px;
+}
 
 .improv-description {
   font-size: 19px;
   line-height: 1.8;
-  color: #5f6c80;
+  color: #211F1F;
   max-width: 900px;
   margin: auto;
+  text-align: justify;
 }
 
 

@@ -16,17 +16,15 @@ const Banner = () => {
   fade
   controls={false}
   indicators={true}
-  interval={2500}   // slightly increased for smooth feel
+  interval={6000}   // Slowed down for smooth premium feel
   pause={false}     // IMPORTANT → keeps looping without stopping
   wrap={true}       // ensures infinite looping
 >
         
         {/* SLIDE 1 */}
         <Carousel.Item>
-          <div
-            className="banner-slide"
-            style={{ backgroundImage: `url(${h1})` }}
-          >
+          <div className="banner-slide">
+            <div className="banner-slide-bg" style={{ backgroundImage: `url(${h1})` }}></div>
             <div className="banner-content">
               <div className="trusted-badge">
                 <span className="green-dot"></span> Trusted by 20,000+ Happy Families
@@ -58,12 +56,12 @@ const Banner = () => {
                   Loan Calculator
                 </button>
 
-                <button
+                {/* <button
                   className="thrid-btn"
                   onClick={() => navigate("/contactus/branch/branch")}
                 >
                   Find Your Branch
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
@@ -71,10 +69,8 @@ const Banner = () => {
 
         {/* SLIDE 2 */}
         <Carousel.Item>
-          <div
-            className="banner-slide"
-            style={{ backgroundImage: `url(${h2})` }}
-          >
+          <div className="banner-slide">
+            <div className="banner-slide-bg" style={{ backgroundImage: `url(${h2})` }}></div>
              <div className="banner-content">
               <div className="trusted-badge">
                 <span className="green-dot"></span> Trusted by 20,000+ Happy Families
@@ -107,12 +103,12 @@ const Banner = () => {
                   Loan Calculator
                 </button>
 
-                <button
+                {/* <button
                   className="thrid-btn"
                   onClick={() => navigate("/contactus/branch/branch")}
                 >
                   Find Your Branch
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
@@ -120,10 +116,8 @@ const Banner = () => {
 
         {/* SLIDE 3 */}
         <Carousel.Item>
-          <div
-            className="banner-slide"
-            style={{ backgroundImage: `url(${h3})` }}
-          >
+          <div className="banner-slide">
+            <div className="banner-slide-bg" style={{ backgroundImage: `url(${h3})` }}></div>
              <div className="banner-content">
               <div className="trusted-badge">
                 <span className="green-dot"></span> Trusted by 20,000+ Happy Families

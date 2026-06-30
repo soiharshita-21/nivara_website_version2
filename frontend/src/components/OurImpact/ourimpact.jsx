@@ -1,6 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./ourimpact.css";
-import { FaChartLine, FaBuilding, FaMapMarkerAlt, FaHeart, FaBook, FaUsers } from "react-icons/fa";
+import {
+  FaChartLine,
+  FaBuilding,
+  FaMapMarkerAlt,
+  FaHeart,
+  FaUsers,
+} from "react-icons/fa";
 import ScrollReveal from "../ScrollReveal/ScrollReveal";
 
 const AnimatedNumber = ({ end, duration = 2000, suffix = "" }) => {
@@ -17,27 +23,46 @@ const AnimatedNumber = ({ end, duration = 2000, suffix = "" }) => {
       },
       { threshold: 0.1 }
     );
+
     if (nodeRef.current) observer.observe(nodeRef.current);
+
     return () => observer.disconnect();
   }, [hasStarted]);
 
   useEffect(() => {
     if (!hasStarted) return;
+
     let startTimestamp = null;
+
     const step = (timestamp) => {
       if (!startTimestamp) startTimestamp = timestamp;
-      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      const easing = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+
+      const progress = Math.min(
+        (timestamp - startTimestamp) / duration,
+        1
+      );
+
+      const easing =
+        progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+
       setCount(Math.floor(easing * end));
+
       if (progress < 1) {
         window.requestAnimationFrame(step);
       }
     };
+
     window.requestAnimationFrame(step);
   }, [hasStarted, end, duration]);
 
   const formattedCount = new Intl.NumberFormat("en-IN").format(count);
-  return <span ref={nodeRef}>{formattedCount}{suffix}</span>;
+
+  return (
+    <span ref={nodeRef}>
+      {formattedCount}
+      {suffix}
+    </span>
+  );
 };
 
 const OurImpact = () => {
@@ -64,12 +89,41 @@ const OurImpact = () => {
 
       <div className="impact-cards">
         {[
-          { color: "red", icon: <FaChartLine />, end: 12000, suffix: "+", label: "Loans Disbursed" },
-          { color: "red", icon: <FaMapMarkerAlt />, end: 5, suffix: "", label: "States Covered" },
-          { color: "red", icon: <FaBuilding />, end: 100, suffix: "+", label: "Branches" },
-          { color: "red", icon: <FaUsers />, end: 1300, suffix: "+", label: "Employee Strength" },
-          { color: "red", icon: <FaHeart />, end: 98, suffix: "%", label: "Customer Satisfaction" },
-          { color: "red", icon: <FaBook />,  end: 0, label: "Loan Books" },
+          {
+            color: "red",
+            icon: <FaChartLine />,
+            end: 19300,
+            suffix: "+",
+            label: "Loans Disbursed",
+          },
+          {
+            color: "red",
+            icon: <FaMapMarkerAlt />,
+            end: 5,
+            suffix: "",
+            label: "States Covered",
+          },
+          {
+            color: "red",
+            icon: <FaBuilding />,
+            end: 107,
+            suffix: "",
+            label: "Branches",
+          },
+          {
+            color: "red",
+            icon: <FaUsers />,
+            end: 1400,
+            suffix: "+",
+            label: "Employee Strength",
+          },
+          {
+            color: "red",
+            icon: <FaHeart />,
+            end: 98,
+            suffix: "%",
+            label: "Customer Satisfaction",
+          },
         ].map((item, index) => (
           <ScrollReveal
             key={index}
@@ -79,10 +133,13 @@ const OurImpact = () => {
             scale={0.9}
           >
             <div className={`impact-card ${item.color}`}>
-              <div className="impact-icon">
-                {item.icon}
-              </div>
-              <h3><AnimatedNumber end={item.end} suffix={item.suffix} /></h3>
+              <div className="impact-icon">{item.icon}</div>
+              <h3>
+                <AnimatedNumber
+                  end={item.end}
+                  suffix={item.suffix}
+                />
+              </h3>
               <p>{item.label}</p>
             </div>
           </ScrollReveal>
@@ -93,4 +150,3 @@ const OurImpact = () => {
 };
 
 export default OurImpact;
-

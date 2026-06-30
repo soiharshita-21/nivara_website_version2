@@ -109,7 +109,7 @@ const HomeLoanPurchase = () => {
           <div className="product-hero-card">
             <ScrollReveal direction="right">
               <div className="hero-glass-card">
-                <h3>Why Choose Us</h3>
+                <h3>Why <span className="underline-word">Choose</span> Us</h3>
                 <ul>
                   <li>Up to 90% financing</li>
                   <li>Tenure up to 30 years</li>
@@ -124,28 +124,15 @@ const HomeLoanPurchase = () => {
 
       <ScrollReveal direction="up" delay={0.1}>
         <div className="home-loan-text-section">
-          <h1 className="home-loan-title">
-            Secure Your Dream Home with Nivara Home Finance – Top Home Purchase
-            Loan Provider in Bangalore
-          </h1>
-
+          <h1 className="home-loan-title">Home Purchase Loan</h1>
+          <h3 className="home-loan-subtitle">
+            Secure your dream home with Nivara Home Finance
+          </h3>
+          <h2 className="home-loan-heading">
+            Get the Best Home Purchase Loan in Bangalore with Nivara Home Finance
+          </h2>
           <p className="home-loan-text">
-            Home purchase loans are given explicitly to borrowers looking to
-            purchase a house or flat with
-            <strong> Nivara Home Finance</strong>. With speedy approvals,
-            competitive rates, easy process, with or without Income Proof
-            Documents and minimum paperwork, we help bring you close to your
-            dreams of buying a new house in an easy and hassle-free manner. We
-            offer purchase loans for flats, houses, or bungalows from builders.
-          </p>
-
-          <p className="home-loan-text">
-            Our relationship officers will guide you through the Home Loan
-            application procedure. They will also provide guidance regarding the
-            selection of the right Home Loan mix to the calculation of suitable
-            Home Loan EMI value and tenure. Apart from guiding you through the
-            Home Loan application procedure, we also provide excellent
-            post-disbursement services.
+            Home purchase loans are given explicitly to borrowers looking to purchase a house or flat with Nivara Home Finance. With speedy approvals, competitive rates, easy process, with or without Income Proof Documents and minimum paperwork, we help bring you close to your dreams of buying a new house in an easy and hassle-free manner. We offer purchase loans for flats, houses, or bungalows from builders. Our relationship officers will guide you through the Home Loan application procedure. They will also provide guidance regarding the selection of the right Home Loan mix to the calculation of suitable Home Loan EMI value and tenure. Apart from guiding you through the Home Loan application procedure, we also provide excellent post-disbursement services.
           </p>
         </div>
       </ScrollReveal>

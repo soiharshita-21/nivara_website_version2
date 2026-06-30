@@ -372,21 +372,6 @@
   padding: 40px 50px 50px;
 }
 
-.balance-title {
-  font-size: 34px;
-  font-weight: 600;
-  color: #B3191F;
-  /* same Red heading */
-  margin-bottom: 12px;
-}
-
-.balance-subtitle {
-  font-size: 20px;
-  color: #211F1F;
-  margin-bottom: 25px;
-  text-align: left;
-}
-
 /* Features */
 .balance-features {
   list-style: none;
@@ -513,36 +498,42 @@
 
 .balance-text-section {
   max-width: 1000px;
-  margin: 70px auto 40px auto;
+  margin: 90px auto 60px;
+  text-align: center;
   padding: 0 20px;
+}
+
+.balance-title {
+  font-size: 44px;
+  font-weight: 700;
+  color: #B3191F;
+  margin-bottom: 16px;
   text-align: center;
 }
 
-.balance-main-title {
-  font-size: 38px;
+.balance-subtitle {
+  font-size: 28px;
   font-weight: 600;
   color: #B3191F;
-  margin-bottom: 8px;
+  margin-bottom: 14px;
+  text-align: center;
 }
 
-.balance-tagline {
-  font-size: 20px;
-  font-weight: 500;
-  color: #444;
-  margin-bottom: 28px;
-}
-
-.balance-subheading {
-  font-size: 24px;
+.balance-heading {
+  font-size: 22px;
   font-weight: 600;
   color: #211F1F;
-  margin-bottom: 14px;
+  margin-bottom: 28px;
+  text-align: center;
 }
 
 .balance-description {
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.8;
   color: #211F1F;
+  max-width: 900px;
+  margin: auto;
+  text-align: justify;
 }
 
 .balance-features-strip {

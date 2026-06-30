@@ -60,7 +60,7 @@
   max-width: none; /* Let container expand to full width to track screen right edge */
   height: 100%;
   margin: 0 auto;
-  padding: clamp(128px, 14vh, 148px) clamp(44px, 4.8vw, 86px) 64px 30px;
+  padding: clamp(35px, 4.5vh, 55px) clamp(44px, 4.8vw, 86px) 64px 30px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* Align top consistently to prevent bottom clipping */
@@ -113,8 +113,7 @@
   color: #4A4A4A;
   max-width: min(430px, 32vw);
   font-weight: 400; /* Cleaner look with reduced font weight */
-  text-align: justify;
-  text-align-last: left;
+  text-align: left;
 }
 
 .hero-actions {
@@ -179,13 +178,22 @@
   color: #211F1F;
   position: relative;
   padding-bottom: 8px;
+  display: inline-block;
 }
 
-.hero-glass-card h3::after {
+/* Underline should target the specific word span to align under the word "Choose" */
+.hero-glass-card h3 .underline-word {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.hero-glass-card h3 .underline-word::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 32px;
   height: 2px;
   background: #B3191F;
@@ -230,7 +238,7 @@
 /* Expanded Content Width styles for specific modules to cover the entire white/grey space on desktop */
 @media (min-width: 1025px) {
   .product-hero.full-whitespace-hero .product-hero-container {
-    padding-top: clamp(118px, 13vh, 138px);
+    padding-top: clamp(35px, 4.5vh, 55px);
     padding-bottom: clamp(58px, 7vh, 76px);
     gap: clamp(34px, 4.8vh, 54px);
   }
@@ -257,12 +265,12 @@
 
 /* Custom tight spacing ONLY for Composite and Construction Loan pages */
 .product-hero.tight-whitespace-hero .product-hero-container {
-  justify-content: center; /* Center content vertically */
+  justify-content: flex-start; /* Align top consistently */
 }
 
 @media (min-width: 1025px) {
   .product-hero.tight-whitespace-hero .product-hero-container {
-    padding-top: clamp(80px, 9vh, 100px);
+    padding-top: clamp(35px, 4.5vh, 55px);
     padding-bottom: clamp(30px, 4vh, 50px);
     gap: 20px; /* Tight vertical layout spacing */
   }
@@ -349,6 +357,7 @@
     font-size: 16px; /* Reduced from 15px */
     max-width: 600px;
     color: rgba(255, 255, 255, 0.95);
+    text-align: center;
   }
 
   .hero-actions {
@@ -376,10 +385,13 @@
     color: #ffffff;
     font-size: 20px;
     margin-bottom: 15px;
+    display: inline-block;
   }
 
-  .hero-glass-card h3::after {
+  .hero-glass-card h3 .underline-word::after {
     background: #B3191F;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .hero-glass-card li {

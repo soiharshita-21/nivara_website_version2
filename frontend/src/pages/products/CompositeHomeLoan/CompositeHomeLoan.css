@@ -413,37 +413,37 @@
   padding: 0 20px;
 }
 
-
-.composite-main-title {
+.composite-title {
   font-size: 44px;
   font-weight: 700;
   color: #B3191F;
   margin-bottom: 16px;
+  text-align: center;
 }
 
-
-.composite-sub-heading {
+.composite-subtitle {
   font-size: 28px;
   font-weight: 600;
   color: #B3191F;
   margin-bottom: 14px;
+  text-align: center;
 }
 
-
-.composite-highlight {
+.composite-heading {
   font-size: 22px;
   font-weight: 600;
-  color: #B3191F;
+  color: #211F1F;
   margin-bottom: 28px;
+  text-align: center;
 }
-
 
 .composite-description {
   font-size: 19px;
   line-height: 1.8;
-  color: #5f6c80;
+  color: #211F1F;
   max-width: 900px;
   margin: auto;
+  text-align: justify;
 }
 
 

@@ -38,11 +38,11 @@ const BlogDetail = () => {
         const fetchData = async () => {
             try {
                 // Fetch the specific post
-                const response = await axios.get(`http://localhost:5001/api/blogs/${slug}`);
+                const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/blogs/${slug}`);
                 const found = response.data;
 
                 // Fetch all posts for sidebar/related
-                const allRes = await axios.get("http://localhost:5001/api/blogs");
+                const allRes = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/blogs`);
                 setAllPosts(allRes.data);
 
                 if (found) {

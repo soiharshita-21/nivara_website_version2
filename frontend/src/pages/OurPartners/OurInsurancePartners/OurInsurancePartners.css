@@ -105,21 +105,21 @@
 
 .insurance-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: 30px;
   justify-items: center;
 }
 
 .insurance-card {
   width: 100%;
-  max-width: 310px;
-  height: 180px;
+  max-width: 380px;
+  height: 220px;
   background: #ffffff;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 16px;
   box-shadow: 0 8px 24px rgba(33, 31, 31, 0.04);
   transition: all 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border: 1px solid rgba(33, 31, 31, 0.03);
@@ -128,8 +128,8 @@
 }
 
 .insurance-card img {
-  max-width: 80%;
-  max-height: 80%;
+  max-width: 92%;
+  max-height: 92%;
   object-fit: contain;
   transition: transform 0.4s ease;
 }
@@ -159,6 +159,7 @@
   .insurance-card {
     height: 135px;
     border-radius: 16px;
+    padding: 10px;
   }
 
   .banner-title {

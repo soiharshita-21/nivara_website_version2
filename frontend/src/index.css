@@ -21,7 +21,8 @@ body {
   overflow-x: hidden;
   scrollbar-width: none;
   font-family: 'Poppins', sans-serif !important;
-  font-size: 18px;
+  font-size: 15px;
+  zoom: 0.92;
 }
 
 body,
@@ -30,7 +31,7 @@ input,
 textarea,
 select {
   font-family: 'Poppins', sans-serif !important;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 body::-webkit-scrollbar {
