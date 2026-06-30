@@ -247,23 +247,43 @@
 
 
 .lap-content {
-  padding: 40px 50px 50px;
-  max-width: 1200px;
+  max-width: 1000px;
+  margin: 90px auto 60px;
+  text-align: center;
+  padding: 0 20px;
 }
 
 .lap-title {
-  font-size: 34px;
-  font-weight: 600;
+  font-size: 44px;
+  font-weight: 700;
   color: #B3191F;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  text-align: center;
 }
 
-.lap-subtitle {
-  font-size: 20px;
-  color: #5f6f81;
-  margin-bottom: 25px;
-  line-height: 1.6;
-  text-align: left;
+.lap-subtitle-red {
+  font-size: 28px;
+  font-weight: 600;
+  color: #B3191F;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.lap-heading {
+  font-size: 22px;
+  font-weight: 600;
+  color: #211F1F;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.lap-text {
+  font-size: 19px;
+  line-height: 1.8;
+  color: #211F1F;
+  max-width: 900px;
+  margin: auto;
+  text-align: justify;
 }
 
 

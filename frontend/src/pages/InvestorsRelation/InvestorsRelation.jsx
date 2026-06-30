@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FaFileAlt, FaBullhorn, FaMicrophone, FaChevronRight } from "react-icons/fa";
 import "./InvestorsRelation.css";
 import ScrollReveal from "../../components/ScrollReveal/ScrollReveal";
+import InvestorPasswordModal from "./InvestorPasswordModal";
 
 const annualReturns = [
   { year: "2019–20", path: "/files/Annual-Return-2019-20.pdf" },
@@ -20,6 +21,7 @@ const notices = [
   { name: "Notice of 29th EGM 23.07.2025", path: "/files/Signed_Notice_of_29th_EGM-1.pdf" },
   { name: "Notice of 30th EGM 12.12.2025", path: "/files/Notice_of_30th_EGM_to_circulate.pdf" },
   { name: "Notice of 31st EGM 23.03.2026", path: "/files/Notice_of_31st_EGM_Signed.pdf" },
+  { name: "Notice of AGM 25.05.2026", path: "/files/Notice of AGM 25.05.2026.pdf" },
 ];
 
 const transcripts = [
@@ -35,6 +37,8 @@ const transcripts = [
 ];
 
 const InvestorsRelation = ({ section }) => {
+  const [showPasswordModal, setShowPasswordModal] = useState(false);
+
   useEffect(() => {
     if (window.location.hash) {
       const targetId = window.location.hash.slice(1);
@@ -141,20 +145,29 @@ const InvestorsRelation = ({ section }) => {
                   </div>
                 </div>
                 <div className="investor-links-list">
-                  {notices.map((item, i) => (
-                    <a 
-                      key={i} 
-                      className="investor-list-item" 
-                      href="/investorsrelation/restricted" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
-                      <div className="item-content">
-                        <span className="doc-name">{item.name}</span>
-                      </div>
-                      <FaChevronRight className="arrow-icon" />
-                    </a>
-                  ))}
+                  {notices.map((item, i) => {
+                    const isProtected = item.name === "Notice of AGM 25.05.2026";
+                    return (
+                      <a 
+                        key={i} 
+                        className="investor-list-item" 
+                        href={isProtected ? "#" : "/investorsrelation/restricted"}
+                        onClick={(e) => {
+                          if (isProtected) {
+                            e.preventDefault();
+                            setShowPasswordModal(true);
+                          }
+                        }}
+                        target={isProtected ? "_self" : "_blank"}
+                        rel="noopener noreferrer"
+                      >
+                        <div className="item-content">
+                          <span className="doc-name">{item.name}</span>
+                        </div>
+                        <FaChevronRight className="arrow-icon" />
+                      </a>
+                    );
+                  })}
                 </div>
               </ScrollReveal>
             </div>
@@ -194,6 +207,15 @@ const InvestorsRelation = ({ section }) => {
           )}
         </div>
       </div>
+      <InvestorPasswordModal
+        open={showPasswordModal}
+        documentName="Notice of AGM 25.05.2026"
+        onConfirm={() => {
+          setShowPasswordModal(false);
+          window.open("/files/Notice of AGM 25.05.2026.pdf", "_blank");
+        }}
+        onCancel={() => setShowPasswordModal(false)}
+      />
     </div>
   );
 };

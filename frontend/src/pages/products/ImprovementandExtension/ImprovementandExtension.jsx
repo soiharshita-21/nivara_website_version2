@@ -105,7 +105,7 @@ const ImprovementandExtension = () => {
           <div className="product-hero-card">
             <ScrollReveal direction="right">
               <div className="hero-glass-card">
-                <h3>Why Choose Us</h3>
+                <h3>Why <span className="underline-word">Choose</span> Us</h3>
                 <ul>
                   <li>Quick and hassle-free approval</li>
                   <li>Minimal documentation required</li>
@@ -121,23 +121,14 @@ const ImprovementandExtension = () => {
       <ScrollReveal direction="up" delay={0.1}>
         <div className="improv-text-section">
           <h1 className="improv-main-title">Improvement and Extension Loan</h1>
-          <h2 className="improv-sub-heading">
+          <h3 className="improv-sub-heading">
             Build Your dream house with a Nivara Improvement and Extension Loan
-          </h2>
-          <h3 className="improv-highlight">
-            Get the Best Improvement and Extension Loan with Nivara Home Finance
           </h3>
+          <h2 className="improv-heading">
+            Get the Best Improvement and Extension Loan with Nivara Home Finance
+          </h2>
           <p className="improv-description">
-            Now convert your house into a contemporary home with Home Improvement
-            (Repair and Renovation) Loan from Nivara Home Finance. This loan helps
-            you improve the present home into a pleasant environment to live with
-            Easy approvals, competitive rates, easy process, and minimum paperwork
-            and with or without income proof documents. Our relationship officers
-            will guide you through the Home Loan application procedure. They also
-            provide guidance regarding the selection of the right Home Loan mix to
-            the calculation of suitable Home Loan EMI value and tenure. Apart from
-            guiding you through the Home Loan application procedure, we also
-            provide excellent post-disbursement services.
+            Now convert your house into a contemporary home with Home Improvement (Repair and Renovation) Loan from Nivara Home Finance. This loan helps you improve the present home into a pleasant environment to live with Easy approvals, competitive rates, easy process, and minimum paperwork and with or without income proof documents. Our relationship officers will guide you through the Home Loan application procedure. They also provide guidance regarding the selection of the right Home Loan mix to the calculation of suitable Home Loan EMI value and tenure. Apart from guiding you through the Home Loan application procedure, we also provide excellent post-disbursement services.
           </p>
         </div>
       </ScrollReveal>

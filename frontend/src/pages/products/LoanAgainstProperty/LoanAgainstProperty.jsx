@@ -115,7 +115,7 @@ const LoanAgainstProperty = () => {
           <div className="product-hero-card">
             <ScrollReveal direction="right">
               <div className="hero-glass-card">
-                <h3>Why Choose Us</h3>
+                <h3>Why <span className="underline-word">Choose</span> Us</h3>
                 <ul>
                   <li>High loan amounts up to ₹1 Crore</li>
                   <li>Flexible usage for any personal or business need</li>
@@ -130,20 +130,15 @@ const LoanAgainstProperty = () => {
 
       <ScrollReveal direction="up" delay={0.1}>
         <div className="loan-against-text-section">
-          <h1 className="loan-against-title">Loan Against Property</h1>
-          <h3 className="loan-against-subtitle">
-            Unlock the Potential of Your Property with Nivara Loan Against Property
+          <h1 className="lap-title">Loan Against Property</h1>
+          <h3 className="lap-subtitle-red">
+            Unlock the potential of your property with Nivara
           </h3>
-          <p className="loan-against-text">
-            <strong>Loan Against Property</strong> helps you fund immediate or
-            urgent needs by unlocking the value of your property. It is one of the
-            greatest ways to get a loan for all your financial demands. Whether
-            you need money for further schooling, a family wedding, or medical
-            expenses, a loan against property is one of the quickest ways to get
-            rapid funding to meet your current financial needs. Explore this
-            information to understand how to obtain a simple, fast, and
-            hassle-free loan against property with <strong>Nivara</strong> and
-            unlock the true value of your asset.
+          <h2 className="lap-heading">
+            Loan Against Property with Nivara Home Finance
+          </h2>
+          <p className="lap-text">
+            Loan Against Property helps you fund immediate or urgent needs by unlocking the value of your property. It is one of the greatest ways to get a loan for all your financial demands. Whether you need money for further schooling, a family wedding, or medical expenses, a loan against property is one of the quickest ways to get rapid funding to meet your current financial needs. Explore this information to understand how to obtain a simple, fast, and hassle-free loan against property with Nivara and unlock the true value of your asset.
           </p>
         </div>
       </ScrollReveal>

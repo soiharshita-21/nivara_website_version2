@@ -1,9 +1,14 @@
 const db = require('../config/db');
+const { normalizeToRelative, getAbsoluteUrl } = require('../utils/urlHelper');
 
 const getGallery = (req, res) => {
     db.query("SELECT * FROM gallery ORDER BY created_at DESC", (err, results) => {
         if (err) return res.status(500).json(err);
-        const mapped = results.map(row => ({ ...row, title: row.category }));
+        const mapped = results.map(row => ({
+            ...row,
+            image_url: getAbsoluteUrl(req, row.image_url),
+            title: row.category
+        }));
         res.json(mapped);
     });
 };
@@ -19,7 +24,7 @@ const createGalleryItem = (req, res) => {
     const dateVal = folder_date || "";
 
     if (Array.isArray(image_urls) && image_urls.length > 0) {
-        const values = image_urls.map(url => [category, dateVal, url, alt_text || ""]);
+        const values = image_urls.map(url => [category, dateVal, normalizeToRelative(url), alt_text || ""]);
         const query = "INSERT INTO gallery (category, folder_date, image_url, alt_text) VALUES ?";
         db.query(query, [values], (err, result) => {
             if (err) return res.status(500).json(err);
@@ -31,7 +36,7 @@ const createGalleryItem = (req, res) => {
             return res.status(400).json({ message: "At least one Image URL or file upload is required." });
         }
         const query = "INSERT INTO gallery (category, folder_date, image_url, alt_text) VALUES (?, ?, ?, ?)";
-        db.query(query, [category, dateVal, url, alt_text || ""], (err, result) => {
+        db.query(query, [category, dateVal, normalizeToRelative(url), alt_text || ""], (err, result) => {
             if (err) return res.status(500).json(err);
             res.json({ message: "Gallery item added successfully!", id: result.insertId });
         });
@@ -57,7 +62,7 @@ const updateGalleryFolder = (req, res) => {
 const updateGalleryItem = (req, res) => {
     const { title, image_url } = req.body;
     const query = "UPDATE gallery SET category = ?, image_url = ? WHERE id = ?";
-    db.query(query, [title, image_url, req.validatedId], (err, result) => {
+    db.query(query, [title, normalizeToRelative(image_url), req.validatedId], (err, result) => {
         if (err) return res.status(500).json(err);
         res.json({ message: "Gallery item updated successfully!" });
     });

@@ -94,7 +94,7 @@ const AdminDashboard = () => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const baseUrl = "http://localhost:5001/api";
+      const baseUrl = `${import.meta.env.VITE_API_BASE_URL}/api`;
       if (activeTab === "overview") {
         const [blogRes, pressRes, galleryRes, pagesRes, branchRes] = await Promise.all([
           axios.get(`${baseUrl}/blogs`),
@@ -161,7 +161,7 @@ const AdminDashboard = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:5001/api/upload", formData, {
+      const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/upload`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           ...getAuthHeaders()
@@ -192,7 +192,7 @@ const AdminDashboard = () => {
 
     try {
       setUploadingMultiple(true);
-      const res = await axios.post("http://localhost:5001/api/upload-multiple", formData, {
+      const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/upload-multiple`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           ...getAuthHeaders()
@@ -276,7 +276,7 @@ const AdminDashboard = () => {
   const handleDelete = async (id, type) => {
     if (window.confirm(`Are you sure you want to delete this ${type}?`)) {
       try {
-        await axios.delete(`http://localhost:5001/api/${type === 'press' ? 'press' : type}/${id}`, {
+        await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/api/${type === 'press' ? 'press' : type}/${id}`, {
           headers: getAuthHeaders()
         });
         fetchData();
@@ -291,7 +291,7 @@ const AdminDashboard = () => {
     if (window.confirm(`Are you sure you want to delete the folder "${category}" and all its photos?`)) {
       try {
         setLoading(true);
-        await axios.delete(`http://localhost:5001/api/gallery/folder/${encodeURIComponent(category)}`, {
+        await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/api/gallery/folder/${encodeURIComponent(category)}`, {
           headers: getAuthHeaders()
         });
         if (activeFolder === category) {
@@ -311,7 +311,7 @@ const AdminDashboard = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const baseUrl = "http://localhost:5001/api";
+      const baseUrl = `${import.meta.env.VITE_API_BASE_URL}/api`;
       const headers = { headers: getAuthHeaders() };
 
       if (activeTab === "blogs") {

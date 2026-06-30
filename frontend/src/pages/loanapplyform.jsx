@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import "./LoanApplyForm.css";
+import "./loanapplyform.css";
 
 const servicesList = [
   "Home Loan for Purchase",
@@ -55,7 +55,7 @@ const LoanApplyForm = () => {
     setAlertState({ type: "info", message: "Submitting application..." });
 
     try {
-      const response = await fetch("http://localhost:5001/api/loans/apply", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/loans/apply`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

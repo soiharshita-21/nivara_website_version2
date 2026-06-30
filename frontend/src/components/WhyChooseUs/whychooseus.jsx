@@ -102,7 +102,7 @@ const WhyChooseUs = () => {
               <div className="trust-item">
                 <div className="trust-icon rbi">✓</div>
                 <div className="trust-text">
-                  <span className="highlight-text rbi-color">RBI Registered</span>
+                  <span className="highlight-text rbi-color">NHB Registered</span>
                   <h4>Housing Finance Company</h4>
                 </div>
               </div>

@@ -105,7 +105,7 @@ const CompositeHomeLoan = () => {
           <div className="product-hero-card">
             <ScrollReveal direction="right">
               <div className="hero-glass-card">
-                <h3>Why Choose Us</h3>
+                <h3>Why <span className="underline-word">Choose</span> Us</h3>
                 <ul>
                   <li>Single application for land & construction</li>
                   <li>End-to-end financing solutions</li>
@@ -120,13 +120,13 @@ const CompositeHomeLoan = () => {
 
       <ScrollReveal direction="up" delay={0.1}>
         <div className="composite-text-section">
-          <h1 className="composite-main-title">Composite Home Loan</h1>
-          <h2 className="composite-sub-heading">
+          <h1 className="composite-title">Composite Home Loan</h1>
+          <h3 className="composite-subtitle">
             Build Your dream house with a Nivara Composite Home loan
-          </h2>
-          <h3 className="composite-highlight">
-            Get the Best Composite Home Loan in Bangalore with Nivara Home Finance
           </h3>
+          <h2 className="composite-heading">
+            Get the Best Composite Home Loan in Bangalore with Nivara Home Finance
+          </h2>
           <p className="composite-description">
             The thought of building your own home can be exciting. You can plan
             and design the home just the way you want to suit your preference,

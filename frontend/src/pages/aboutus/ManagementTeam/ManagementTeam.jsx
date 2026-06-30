@@ -18,6 +18,7 @@ import bonojit from "../../../assets/images/directors/ukil-pic (1).jpg";
 import thimmaiah from "../../../assets/images/directors/c-g-thimmah (1).jpg";
 import userPlaceholder from "../../../assets/images/user2.jpg";
 import manoj from "../../../assets/images/directors/manoj patil.jpg";
+import radhakrishna from "../../../assets/images/directors/radhakrishna.jpg";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -26,7 +27,7 @@ const managementTeamData = [
     name: "Mr. C. V. Rao",
     role: "Founder, Managing Director & CEO",
     desc: "Brings over 30 years of leadership experience in banking and financial services, with deep expertise in retail lending and portfolio risk management.",
-    longDesc: "Mr. C. V. Rao is the Founder, Managing Director & Chief Executive Officer of the Company. He brings over 30 years of leadership experience in banking and financial services, with deep expertise in retail lending, portfolio risk management, and building scalable businesses across economic and credit cycles.\n\nHe holds an M.Com from Andhra University and an MBA from Osmania University, Hyderabad. Early in his career, he served as a Research Assistant in Finance and Accounting at IIM Ahmedabad, where he also published research in reputed academic journals.\n\nMr. Rao has held senior leadership roles with leading private sector banks, including ICICI Bank, IndusInd Bank, and ING Vysya Bank (now Kotak Mahindra Bank). At ICICI Bank, he was part of the core team that scaled the mortgage business into a ₹50,000+ crore portfolio, contributing to market leadership. At ING Vysya Bank, he led national portfolios in Agriculture & Rural Banking and Consumer Assets.\n\nUnder his founding leadership, the Company has built resilience, strengthened its market position, and continues to focus on sustainable, long‑term value creation.",
+    longDesc: "Mr. C. V. Rao is the Founder, Managing Director & Chief Executive Officer of the Company. He brings over 30 years of leadership experience in banking and financial services, with deep expertise in retail lending, portfolio risk management, and building scalable businesses across economic and credit cycles.\n\nHe holds an M.Com from Andhra University and an MBA from Osmania University, Hyderabad. Early in his career, he served as a Research Assistant in Finance and Accounting at IIM Ahmedabad, where he also published research in reputed academic journals.\n\nMr. Rao has held senior leadership roles with leading private sector banks, including ICICI Bank, IndusInd Bank, and ING Vysya Bank (now Kotak Mahindra Bank). At ICICI Bank, he was part of the core team that scaled the mortgage business into a ₹20,000+ crore portfolio, contributing to market leadership. At ING Vysya Bank, he led national portfolios in Agriculture & Rural Banking and Consumer Assets.\n\nUnder his founding leadership, the Company has built resilience, strengthened its market position, and continues to focus on sustainable, long‑term value creation.",
     color: "red",
     img: rao,
   },
@@ -71,13 +72,12 @@ const managementTeamData = [
     img: venkat,
   },
   {
-    name: "Mr. Radhakrishna",
-    role: "State Head", 
-    desc: "Experienced banking and financial services professional.",
-    longDesc: "Profile will be shared shortly.",
-    color: "red",
-    img: userPlaceholder,
-    hidden: true,
+    name: "Mr. Radhakrishna Eale",
+    role: "Chief Human Resources Officer",
+    desc: "Chief Human Resources Officer (CHRO) with over 27 years of experience in HR, Talent Management, and Learning & Development.",
+    longDesc: "Radhakrishna Eale is the Chief Human Resources Officer (CHRO) at Nivara Housing Finance, with over 27 years of extensive experience in Strategic Human Resources, Talent Management, Learning & Development, and Corporate Sustainability.\n\nHe has a proven track record of driving organizational and cultural transformation across diverse sectors, with deep expertise in aligning people strategies with business goals. His core strengths include designing and implementing strategic HR frameworks, leveraging HR technologies and processes, and building leadership development platforms that enable long-term organizational success.\n\nPrior to joining Nivara Housing Finance, Mr. Eale held key leadership roles at leading organizations such as Muthoot Microfin, Spandana, Satin, Fullerton, and Share Microfinance Ltd. Across these roles, he played a critical role in fostering high-performance cultures, enhancing employee engagement, and supporting sustainable growth. He holds a Postgraduate Degree  (MBA) from Annamalai University.",
+    color: "green",
+    img: radhakrishna,
   },
   {
     name: "Mr. Sidharth Vij",

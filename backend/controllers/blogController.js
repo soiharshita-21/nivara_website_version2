@@ -1,9 +1,14 @@
 const db = require('../config/db');
+const { normalizeToRelative, getAbsoluteUrl } = require('../utils/urlHelper');
 
 const getBlogs = (req, res) => {
     db.query("SELECT * FROM blogs ORDER BY date DESC", (err, results) => {
         if (err) return res.status(500).json(err);
-        res.json(results);
+        const mapped = results.map(row => ({
+            ...row,
+            image_url: getAbsoluteUrl(req, row.image_url)
+        }));
+        res.json(mapped);
     });
 };
 
@@ -12,14 +17,16 @@ const getBlogBySlug = (req, res) => {
     db.query("SELECT * FROM blogs WHERE slug = ?", [slug], (err, results) => {
         if (err) return res.status(500).json(err);
         if (results.length === 0) return res.status(404).json({ message: "Blog not found" });
-        res.json(results[0]);
+        const blog = results[0];
+        blog.image_url = getAbsoluteUrl(req, blog.image_url);
+        res.json(blog);
     });
 };
 
 const createBlog = (req, res) => {
     const { title, slug, author, date, content, tags, image_url } = req.body;
     const query = "INSERT INTO blogs (title, slug, author, date, content, tags, image_url) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    db.query(query, [title, slug, author, date, content, JSON.stringify(tags || []), image_url], (err, result) => {
+    db.query(query, [title, slug, author, date, content, JSON.stringify(tags || []), normalizeToRelative(image_url)], (err, result) => {
         if (err) return res.status(500).json(err);
         res.json({ message: "Blog added successfully!", id: result.insertId });
     });
@@ -28,7 +35,7 @@ const createBlog = (req, res) => {
 const updateBlog = (req, res) => {
     const { title, slug, author, date, content, tags, image_url } = req.body;
     const query = "UPDATE blogs SET title = ?, slug = ?, author = ?, date = ?, content = ?, tags = ?, image_url = ? WHERE id = ?";
-    db.query(query, [title, slug, author, date, content, JSON.stringify(tags || []), image_url, req.validatedId], (err, result) => {
+    db.query(query, [title, slug, author, date, content, JSON.stringify(tags || []), normalizeToRelative(image_url), req.validatedId], (err, result) => {
         if (err) return res.status(500).json(err);
         res.json({ message: "Blog updated successfully!" });
     });

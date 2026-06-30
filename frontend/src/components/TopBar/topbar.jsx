@@ -13,11 +13,11 @@ const TopBar = () => {
         </a>
 
         {/* Email */}
-        <a href="mailto:info@nivara.com" className="topbar-link">
+        <a href="mailto:contact@nivara.com" className="topbar-link">
           <FaEnvelope />
-          <span>info@nivarahousing.com</span>
+          <span>contact@nivarahousing.com</span>
         </a>
-        <a href="mailto:info@nivara.com" className="topbar-link">
+        <a href="mailto:contact@nivara.com" className="topbar-link">
           {/* <FaEnvelope /> */}
           <span>ISO 27001:2022 Certified!</span>
         </a>
@@ -26,10 +26,10 @@ const TopBar = () => {
       </div>
 
       {/* Find a Branch */}
-      <Link to="/contactus/branch/branch" className="topbar-link">
+      {/* <Link to="/contactus/branch/branch" className="topbar-link">
         <FaMapMarkerAlt className="location-icon" />
         <span>Find a Branch</span>
-      </Link>
+      </Link> */}
     </div>
   );
 };

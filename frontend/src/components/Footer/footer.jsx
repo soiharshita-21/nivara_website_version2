@@ -96,7 +96,7 @@ const Footer = () => {
 
             <div className="contact-item">
               <span className="icon"><FaEnvelope /></span>
-              <p>info@nivarahousing.com</p>
+              <p>contact@nivarahousing.com</p>
             </div>
 
             <div className="officers-item">

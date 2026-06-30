@@ -25,7 +25,7 @@ const boardMembers = [
     name: "Mr. C. V. Rao",
     role: "Founder, Managing Director & CEO",
     desc: "Brings over 30 years of leadership experience in banking and financial services, with deep expertise in retail lending and portfolio risk management.",
-    longDesc: "Mr. C. V. Rao is the Founder, Managing Director & Chief Executive Officer of the Company. He brings over 30 years of leadership experience in banking and financial services, with deep expertise in retail lending, portfolio risk management, and building scalable businesses across economic and credit cycles.\n\nHe holds an M.Com from Andhra University and an MBA from Osmania University, Hyderabad. Early in his career, he served as a Research Assistant in Finance and Accounting at IIM Ahmedabad, where he also published research in reputed academic journals.\n\nMr. Rao has held senior leadership roles with leading private sector banks, including ICICI Bank, IndusInd Bank, and ING Vysya Bank (now Kotak Mahindra Bank). At ICICI Bank, he was part of the core team that scaled the mortgage business into a ₹50,000+ crore portfolio, contributing to market leadership. At ING Vysya Bank, he led national portfolios in Agriculture & Rural Banking and Consumer Assets.\n\nUnder his founding leadership, the Company has built resilience, strengthened its market position, and continues to focus on sustainable, long‑term value creation.",
+    longDesc: "Mr. C. V. Rao is the Founder, Managing Director & Chief Executive Officer of the Company. He brings over 30 years of leadership experience in banking and financial services, with deep expertise in retail lending, portfolio risk management, and building scalable businesses across economic and credit cycles.\n\nHe holds an M.Com from Andhra University and an MBA from Osmania University, Hyderabad. Early in his career, he served as a Research Assistant in Finance and Accounting at IIM Ahmedabad, where he also published research in reputed academic journals.\n\nMr. Rao has held senior leadership roles with leading private sector banks, including ICICI Bank, IndusInd Bank, and ING Vysya Bank (now Kotak Mahindra Bank). At ICICI Bank, he was part of the core team that scaled the mortgage business into a ₹20,000+ crore portfolio, contributing to market leadership. At ING Vysya Bank, he led national portfolios in Agriculture & Rural Banking and Consumer Assets.\n\nUnder his founding leadership, the Company has built resilience, strengthened its market position, and continues to focus on sustainable, long‑term value creation.",
     color: "green",
     img: rao,
   },
@@ -108,7 +108,7 @@ const BoardOfDirectors = () => {
               scale={0.9}
             >
               <div
-                className={`board-card ${item.color}`}
+                className={`board-card ${item.color} ${item.name.includes("Shreyas") ? "shreyas-card" : ""}`}
                 onClick={() => {
                   setSelectedMember(item);
                   setIsExpanded(false);
@@ -116,7 +116,7 @@ const BoardOfDirectors = () => {
               >
                 <div className="image-wrapper">
                   <img src={item.img} alt={item.name} />
-                  <span className="role-tag">{item.role}</span>
+                  <span className={`role-tag ${item.name.includes("Shreyas") ? "shreyas-tag" : ""}`}>{item.role}</span>
                 </div>
 
                 <div className="board-content">

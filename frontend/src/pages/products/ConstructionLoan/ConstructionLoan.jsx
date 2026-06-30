@@ -113,7 +113,7 @@ const ConstructionLoan = () => {
           <div className="product-hero-card">
             <ScrollReveal direction="right">
               <div className="hero-glass-card">
-                <h3>Why Choose Us</h3>
+                <h3>Why <span className="underline-word">Choose</span> Us</h3>
                 <ul>
                   <li>Stage-wise disbursement</li>
                   <li>Flexible tenure up to 30 years</li>
@@ -138,11 +138,7 @@ const ConstructionLoan = () => {
             Flexible Home Construction Loans in Bangalore With Nivara Home Finance
           </h2>
           <p className="construction-text">
-            A Home Construction Loan is a type of home loan that allows customers to obtain the necessary funds
-            to finance the construction of residential house property on a piece of land. We bring over
-            <strong> 10 years of expertise</strong> in Home construction loans and our customers have been able to
-            expedite their home construction at competitive interest rates on Home construction loans,
-            affordable EMIs and a hassle-free online application process.
+            A Home Construction Loan is a type of home loan that allows customers to obtain the necessary funds to finance the construction of residential house property on a piece of land. We bring over 10 years of expertise in Home construction loans and our customers have been able to expedite their home construction at competitive interest rates on Home construction loans, affordable EMIs and a hassle-free online application process.
           </p>
         </div>
       </ScrollReveal>

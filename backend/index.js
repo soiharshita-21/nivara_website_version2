@@ -24,10 +24,7 @@ const app = express();
 app.disable('x-powered-by');
 
 const allowedOrigins = [
-    process.env.CORS,
-    process.env.EV,
-    process.env.LOCAL,
-    process.env.DEV
+    process.env.FRONTEND_URL
 ].filter(Boolean).map(url => url.trim());
 
 app.use(cors({

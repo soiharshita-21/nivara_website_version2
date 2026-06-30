@@ -14,7 +14,7 @@ const DynamicPage = () => {
     const fetchPage = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost:5001/api/pages/${slug}`);
+        const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/pages/${slug}`);
         setPageData(res.data);
       } catch (err) {
         console.error("Page not found", err);
