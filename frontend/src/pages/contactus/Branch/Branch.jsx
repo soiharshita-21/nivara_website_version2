@@ -7,8 +7,6 @@ import {
   FaDirections,
   FaMapMarkerAlt,
   FaPhoneAlt,
-  FaThLarge,
-  FaList,
 } from "react-icons/fa";
  
 import "./Branch.css";
@@ -751,18 +749,18 @@ const defaultNewBranches = [
  
 const Branch = () => {
   const [search, setSearch] = useState("");
-  const [openState, setOpenState] = useState(null);
+  const [openState, setOpenState] = useState("KARNATAKA");
   const [showResults, setShowResults] = useState(false);
   const [selectedBranch, setSelectedBranch] = useState(null);
   const [branchesData, setBranchesData] = useState(defaultBranchesData);
   const [newBranches, setNewBranches] = useState(defaultNewBranches);
-  const [loading, setLoading] = useState(true);
-  const [viewMode, setViewMode] = useState("grid");
+  const [openBranchDropdown, setOpenBranchDropdown] = useState(null);
+  const stateOrder = ["KARNATAKA", "TAMIL NADU", "TELANGANA", "ANDHRA PRADESH", "MAHARASHTRA"];
 
   useEffect(() => {
     const fetchBranches = async () => {
       try {
-        const response = await axios.get("http://localhost:5001/api/branches");
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/branches`);
         if (response.data && Array.isArray(response.data) && response.data.length > 0) {
           const grouped = {};
           const newB = [];
@@ -791,21 +789,40 @@ const Branch = () => {
             }
           });
           
+          // Sort by opened date descending, then slice first 4
+          newB.sort((a, b) => {
+            const dateA = a.opened ? new Date(a.opened) : new Date(0);
+            const dateB = b.opened ? new Date(b.opened) : new Date(0);
+            return dateB - dateA;
+          });
+          const limitedNewB = newB.slice(0, 4);
+          
           setBranchesData(grouped);
-          setNewBranches(newB);
+          setNewBranches(limitedNewB);
         }
       } catch (err) {
         console.error("Failed to load branches from backend, using fallback data:", err);
-      } finally {
-        setLoading(false);
       }
     };
     
     fetchBranches();
   }, []);
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (!event.target.closest(".custom-branch-dropdown")) {
+        setOpenBranchDropdown(null);
+      }
+    };
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
  
   const toggleState = (state) => {
     setOpenState(openState === state ? null : state);
+    setOpenBranchDropdown(null);
   };
  
   const handleSearchChange = (e) => {
@@ -833,7 +850,8 @@ const Branch = () => {
   const clearSearch = () => {
     setSearch("");
     setShowResults(false);
-    setOpenState(null);
+    setOpenState("KARNATAKA");
+    setOpenBranchDropdown(null);
   };
  
   const closeBranchModal = () => {
@@ -866,6 +884,16 @@ const Branch = () => {
     });
     return filtered;
   };
+
+  const getSortedStateKeys = () =>
+    Object.keys(getFilteredData()).sort((a, b) => {
+      const indexA = stateOrder.indexOf(a);
+      const indexB = stateOrder.indexOf(b);
+      if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+      if (indexA !== -1) return -1;
+      if (indexB !== -1) return 1;
+      return a.localeCompare(b);
+    });
  
   const openBranchMap = (city, mapLink) => {
     if (mapLink) {
@@ -946,71 +974,81 @@ const Branch = () => {
             </div>
           )}
         </div>
-        <div className="view-toggle-container animate-pop-up">
-          <button
-            className={`view-toggle-btn ${viewMode === "grid" ? "active" : ""}`}
-            onClick={() => setViewMode("grid")}
-          >
-            <FaThLarge className="toggle-icon" /> Grid View
-          </button>
-          <button
-            className={`view-toggle-btn ${viewMode === "list" ? "active" : ""}`}
-            onClick={() => setViewMode("list")}
-          >
-            <FaList className="toggle-icon" /> List View
-          </button>
-        </div>
       </div>
  
       {/* Branch Listings */}
-      {viewMode === "grid" ? (
-        /* State List (Accordion Grid View) */
-        <div className="state-list">
-          {Object.keys(getFilteredData()).sort((a, b) => {
-            const order = ["KARNATAKA", "TAMIL NADU", "TELANGANA", "ANDHRA PRADESH", "MAHARASHTRA"];
-            const indexA = order.indexOf(a);
-            const indexB = order.indexOf(b);
-            if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-            if (indexA !== -1) return -1;
-            if (indexB !== -1) return 1;
-            return a.localeCompare(b);
-          }).map((state) => (
+      <div className="state-list">
+          {getSortedStateKeys().map((state) => (
             <div
               className="state-wrapper"
               key={state}
               id={`state-${state.replace(/\s+/g, "-")}`}
             >
-              <div
+              <button
+                type="button"
                 className="state-card"
                 onClick={() => toggleState(state)}
+                aria-expanded={openState === state || Boolean(search)}
+                aria-controls={`branch-dropdown-${state.replace(/\s+/g, "-")}`}
               >
                 <span>{state}</span>
+                {/* <small>{getFilteredData()[state].length} branches</small> */}
 
                 <FaChevronDown
                   className={`down-icon ${
                     openState === state ? "rotate" : ""
                   }`}
                 />
-              </div>
+              </button>
 
               {(openState === state || search) && (
-                <div className="location-grid">
-                  {getFilteredData()[state].map((branch) => (
-                    <div
-                      key={branch.city}
-                      className={`location-item ${
-                        search &&
-                        branch.city.toLowerCase().includes(search.toLowerCase())
-                          ? "highlight-branch"
-                          : ""
-                      }`}
-                      onClick={() =>
-                        setSelectedBranch(branch)
-                      }
+                <div
+                  className="state-dropdown-container"
+                  id={`branch-dropdown-${state.replace(/\s+/g, "-")}`}
+                >
+                  <div
+                    className={`custom-branch-dropdown ${openBranchDropdown === state ? "active" : ""}`}
+                  >
+                    <button
+                      type="button"
+                      className="dropdown-trigger"
+                      onClick={() => setOpenBranchDropdown(openBranchDropdown === state ? null : state)}
+                      aria-expanded={openBranchDropdown === state}
                     >
-                      📍 {branch.city}
-                    </div>
-                  ))}
+                      <span>
+                        {selectedBranch && selectedBranch.state?.toUpperCase() === state
+                          ? selectedBranch.city
+                          : "Select a Branch"}
+                      </span>
+                      <FaChevronDown className="chevron-icon" />
+                    </button>
+                    {openBranchDropdown === state && (
+                      <div className="dropdown-options">
+                        {getFilteredData()[state].map((branch) => (
+                          <button
+                            type="button"
+                            key={branch.city}
+                            className="dropdown-option"
+                            onClick={() => {
+                              setSelectedBranch(branch);
+                              setOpenBranchDropdown(null);
+                            }}
+                          >
+                            <span className="option-pin">
+                              <FaMapMarkerAlt />
+                            </span>
+                            <span className="option-copy">
+                              <span className="option-city">{branch.city}</span>
+                              <span className="option-meta">
+                                {branch.contact || "1800-309-1516"}
+                              </span>
+                            </span>
+                            {branch.is_new && <span className="new-badge">NEW</span>}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
               )}
             </div>
@@ -1021,67 +1059,7 @@ const Branch = () => {
               <p>We couldn't find any branches matching "{search}". Try searching for another city.</p>
             </div>
           )}
-        </div>
-      ) : (
-        /* Detailed List View */
-        <div className="detailed-state-list">
-          {Object.keys(getFilteredData()).sort((a, b) => {
-            const order = ["KARNATAKA", "TAMIL NADU", "TELANGANA", "ANDHRA PRADESH", "MAHARASHTRA"];
-            const indexA = order.indexOf(a);
-            const indexB = order.indexOf(b);
-            if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-            if (indexA !== -1) return -1;
-            if (indexB !== -1) return 1;
-            return a.localeCompare(b);
-          }).map((state) => (
-            <div
-              className="detailed-state-section animate-pop-up"
-              key={state}
-              id={`state-detailed-${state.replace(/\s+/g, "-")}`}
-            >
-              <div className="detailed-state-header">
-                <h3>{state}</h3>
-                <span className="branch-count-badge">
-                  {getFilteredData()[state].length} {getFilteredData()[state].length === 1 ? "Branch" : "Branches"}
-                </span>
-              </div>
-              <div className="detailed-branch-grid">
-                {getFilteredData()[state].map((branch) => (
-                  <div className="detailed-branch-card" key={branch.city}>
-                    <div className="branch-card-title-row">
-                      <span className="branch-pin-icon">📍</span>
-                      <h4>{branch.city}</h4>
-                      {branch.is_new && <span className="new-badge">NEW</span>}
-                    </div>
-                    <div className="branch-card-details">
-                      <div className="branch-card-detail-item">
-                        <strong>Address</strong>
-                        <p>{branch.address || `${branch.city}, ${branch.state}`}</p>
-                      </div>
-                      <div className="branch-card-detail-item">
-                        <strong>Contact</strong>
-                        <p>{branch.contact || "1800-309-1516"}</p>
-                      </div>
-                    </div>
-                    <button
-                      className="branch-card-directions-btn"
-                      onClick={() => openBranchMap(branch.city, branch.map_link)}
-                    >
-                      <FaDirections className="btn-icon" /> Get Directions
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-          {Object.keys(getFilteredData()).length === 0 && (
-            <div className="no-branches-found animate-pop-up">
-              <h3>No branches found</h3>
-              <p>We couldn't find any branches matching "{search}". Try searching for another city.</p>
-            </div>
-          )}
-        </div>
-      )}
+      </div>
  
       {/* Newly Opened Branches */}
       <section className="new-branches-section" aria-label="Newly Opened Branches">

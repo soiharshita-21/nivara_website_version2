@@ -64,7 +64,7 @@
 
 .branch-map-content {
   display: grid;
-  grid-template-columns: minmax(540px, 1fr) 210px;
+  grid-template-columns: 1fr 210px;
   gap: 18px;
   align-items: center;
 }
@@ -72,7 +72,7 @@
 .branch-map-visual {
   position: relative;
   aspect-ratio: 4 / 3;
-  min-height: 520px;
+  width: 100%;
   overflow: hidden;
   border-radius: 20px;
   background:

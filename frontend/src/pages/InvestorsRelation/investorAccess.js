@@ -1,4 +1,4 @@
-const INVESTOR_RELATIONS_PASSWORD = "Welcome1234$";
+const INVESTOR_RELATIONS_PASSWORD = "welcome123";
 const TRANSCRIPT_ACCESS_KEY = "nivaraInvestorTranscriptAccess";
 const TRANSCRIPT_ACCESS_DURATION_MS = 60 * 1000;
 
