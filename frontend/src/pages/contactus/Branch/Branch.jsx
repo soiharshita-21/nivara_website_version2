@@ -545,6 +545,7 @@ const defaultBranchesByState = {
       address: "D.No. 24-1-5/1, 2nd Floor, Upstair of Sri Abhiruchi Restuarant, Juvvala palem Road, Bhimavaram -534202, Andhra Pradesh",
       contact: "1800-309-1516"
     },
+     
     {
       city: "Hindupur",
       opened: "2023-05-22",
@@ -645,6 +646,12 @@ const defaultBranchesByState = {
       address: "Shop No. 420, 421 & 422, 4th Floor, Ucon Legend Complex, Kurnool District, Andhra Pradesh-518004.",
       contact: "Madhusudhan (+91 9121945895)",
       map_link: "https://maps.app.goo.gl/RehThnUxW5tT34zEA?g_st=ic"
+    },
+    {
+      city: "Rajamahendravaram",
+      opened: "2026-06-28",
+      address: "D.No.45-22-9, 2nd Floor, Thadithota, Beside Neela Jear Hospital, East Godavari District, Rajamahendravaram-533103, Andhra Pradesh",
+      contact: "Nageswararao(9705999405)"
     }
   ],
   MAHARASHTRA: [
@@ -713,6 +720,14 @@ const defaultBranchesData = Object.keys(defaultBranchesByState).reduce((acc, sta
 }, {});
 
 const defaultNewBranches = [
+  {
+    city: "Rajamahendravaram",
+    state: "Andhra Pradesh",
+    opened: "2026-06-28",
+    address: "D.No.45-22-9, 2nd Floor, Thadithota, Beside Neela Jear Hospital, East Godavari District, Rajamahendravaram-533103, Andhra Pradesh",
+    contact: "Nageswararao(9705999405)",
+    is_new: true
+  },
   {
     city: "Malegaon",
     state: "Maharashtra",

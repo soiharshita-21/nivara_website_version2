@@ -9,7 +9,7 @@
   width: 100%;
   min-height: 420px;
   display: grid;
-  grid-template-columns: minmax(280px, 0.72fr) minmax(580px, 1.28fr);
+  grid-template-columns: minmax(280px, 0.72fr) minmax(680px, 1.28fr);
   align-items: center;
   gap: 44px;
   padding: 64px min(4.5vw, 72px);
@@ -28,7 +28,7 @@
   line-height: 1.05;
   margin-bottom: 22px;
 }
-
+ 
 .banner-con p {
   font-size: 20px;
   line-height: 1.7;
@@ -41,7 +41,6 @@
   justify-content: flex-end;
   width: 100%;
 }
-
 .new-branches-grid {
   width: 100%;
   margin: auto;
@@ -520,8 +519,10 @@
  
 .branch-card h3 {
   color: #B3191F;
-  font-size: 22px;
+  font-size: clamp(18px, 1.6vw, 22px);
   margin-bottom: 5px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
  
 .branch-card p {
@@ -818,9 +819,12 @@
  
 .branch-card-head h3 {
   color: #211F1F;
-  font-size: 22px;
+  font-size: clamp(18px, 1.6vw, 22px);
   line-height: 1.2;
   margin: 0 0 4px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
  
 .branch-card-head p {

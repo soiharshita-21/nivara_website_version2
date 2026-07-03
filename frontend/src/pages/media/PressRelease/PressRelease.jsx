@@ -190,7 +190,7 @@ const PressRelease = () => {
             <div className="press-content animate-pop-up">
               <h3 className="animate-pop-up">{item.title}</h3>
               <span className="press-meta">{item.meta ? item.meta.toUpperCase() : ""}</span>
-              <p>{item.desc}</p>
+              <p>{(item.desc || "").replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ")}</p>
               {item.link ? (
                 <a 
                   href={item.link} 

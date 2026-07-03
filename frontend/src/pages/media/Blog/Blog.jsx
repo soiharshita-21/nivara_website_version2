@@ -111,7 +111,7 @@ const Blog = () => {
                 <span className="author-name">BY {item.author || "ADMIN"}</span>
               </div>
 
-              <p>{item.content ? (item.content.length > 120 ? item.content.substring(0, 120) + "..." : item.content) : item.desc}</p>
+              <p>{(item.content || item.desc || "").replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ")}</p>
 
               <Link
                 className="read-more"
