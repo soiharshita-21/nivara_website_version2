@@ -23,10 +23,19 @@ const clampNumber = (value, min, max) => {
 const formatCurrency = (value) =>
   `₹${Math.round(value).toLocaleString("en-IN")}`;
 
+const sanitizeNumericInput = (value) => {
+  if (value === "") return "";
+  const parsed = Number(value);
+  return Number.isNaN(parsed) ? "" : parsed;
+};
+
 const Calculator = () => {
   const [amount, setAmount] = useState(defaultValues.amount);
   const [rate, setRate] = useState(defaultValues.rate);
   const [years, setYears] = useState(defaultValues.years);
+  const [amountInput, setAmountInput] = useState(String(defaultValues.amount));
+  const [rateInput, setRateInput] = useState(String(defaultValues.rate));
+  const [yearsInput, setYearsInput] = useState(String(defaultValues.years));
 
   const { emi, totalPayment, interest } = useMemo(() => {
     const principal = amount;
@@ -52,7 +61,11 @@ const Calculator = () => {
   const interestShare = totalPayment > 0 ? (interest / totalPayment) * 100 : 0;
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    if (typeof window === "undefined" || typeof window.IntersectionObserver === "undefined") {
+      return undefined;
+    }
+
+    const observer = new window.IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -72,21 +85,62 @@ const Calculator = () => {
   }, []);
 
   const handleAmountChange = (value) => {
-    setAmount(Math.round(clampNumber(value, limits.amount.min, limits.amount.max)));
+    setAmountInput(value);
+    const sanitized = sanitizeNumericInput(value);
+    if (sanitized === "") {
+      setAmount(0);
+      return;
+    }
+    setAmount(Number(sanitized));
   };
 
   const handleRateChange = (value) => {
-    setRate(Number(clampNumber(value, limits.rate.min, limits.rate.max).toFixed(1)));
+    setRateInput(value);
+    const sanitized = sanitizeNumericInput(value);
+    if (sanitized === "") {
+      setRate(0);
+      return;
+    }
+    setRate(Number(sanitized));
   };
 
   const handleYearsChange = (value) => {
-    setYears(Math.round(clampNumber(value, limits.years.min, limits.years.max)));
+    setYearsInput(value);
+    const sanitized = sanitizeNumericInput(value);
+    if (sanitized === "") {
+      setYears(0);
+      return;
+    }
+    setYears(Math.round(Number(sanitized)));
+  };
+
+  const handleBlur = (type) => {
+    if (type === "amount") {
+      const clamped = clampNumber(amount, limits.amount.min, limits.amount.max);
+      setAmount(Math.round(clamped));
+      setAmountInput(String(Math.round(clamped)));
+      return;
+    }
+
+    if (type === "rate") {
+      const clamped = clampNumber(rate, limits.rate.min, limits.rate.max);
+      setRate(Number(clamped.toFixed(1)));
+      setRateInput(String(Number(clamped.toFixed(1))));
+      return;
+    }
+
+    const clamped = clampNumber(years, limits.years.min, limits.years.max);
+    setYears(Math.round(clamped));
+    setYearsInput(String(Math.round(clamped)));
   };
 
   const resetCalculator = () => {
     setAmount(defaultValues.amount);
     setRate(defaultValues.rate);
     setYears(defaultValues.years);
+    setAmountInput(String(defaultValues.amount));
+    setRateInput(String(defaultValues.rate));
+    setYearsInput(String(defaultValues.years));
   };
 
   return (
@@ -117,11 +171,10 @@ const Calculator = () => {
               <input
                 id="loan-amount"
                 type="number"
-                min={limits.amount.min}
-                max={limits.amount.max}
                 step={limits.amount.step}
-                value={amount}
+                value={amountInput}
                 onChange={(e) => handleAmountChange(e.target.value)}
+                onBlur={() => handleBlur("amount")}
                 aria-label="Loan amount"
               />
             </div>
@@ -135,11 +188,10 @@ const Calculator = () => {
               <input
                 id="interest-rate"
                 type="number"
-                min={limits.rate.min}
-                max={limits.rate.max}
                 step={limits.rate.step}
-                value={rate}
+                value={rateInput}
                 onChange={(e) => handleRateChange(e.target.value)}
+                onBlur={() => handleBlur("rate")}
                 aria-label="Interest rate"
               />
               <span>%</span>
@@ -154,11 +206,10 @@ const Calculator = () => {
               <input
                 id="loan-tenure"
                 type="number"
-                min={limits.years.min}
-                max={limits.years.max}
                 step={limits.years.step}
-                value={years}
+                value={yearsInput}
                 onChange={(e) => handleYearsChange(e.target.value)}
+                onBlur={() => handleBlur("years")}
                 aria-label="Loan tenure in years"
               />
               <span>Years</span>

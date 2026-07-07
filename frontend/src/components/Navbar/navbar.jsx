@@ -92,12 +92,35 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_BASE_URL}/api/pages`)
-      .then(res => res.json())
-      .then(data => {
-        if(Array.isArray(data)) setDynamicPages(data);
+    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+    if (!apiBaseUrl) {
+      setDynamicPages([]);
+      return;
+    }
+
+    let isMounted = true;
+
+    fetch(`${apiBaseUrl}/api/pages`)
+      .then(async (res) => {
+        if (!res.ok) {
+          throw new Error(`Request failed with status ${res.status}`);
+        }
+
+        const data = await res.json();
+        if (isMounted && Array.isArray(data)) {
+          setDynamicPages(data);
+        }
       })
-      .catch(err => console.error("Error fetching dynamic pages:", err));
+      .catch((err) => {
+        if (isMounted) {
+          setDynamicPages([]);
+        }
+        console.warn("Dynamic pages unavailable:", err.message || err);
+      });
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   useEffect(() => {
@@ -393,6 +416,7 @@ const Navbar = () => {
               <ChevronDown size={16} className="chevron" />
             </div>
             <ul className="dropdown-menu">
+               <li><Link to="/contactus/branch/branch">Branch</Link></li>
               <li><Link to="/contactus/offices/offices">Office</Link></li>
             </ul>
           </li>

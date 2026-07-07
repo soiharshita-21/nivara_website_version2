@@ -89,8 +89,10 @@ const HomeLoanPurchase = () => {
         <div className="product-hero-container">
           <div className="product-hero-content">
             <ScrollReveal direction="left">
-              <h1 className="hero-title">
-                Home Purchase <span className="text-red">Loan</span>
+              <h1 className="hero-title home-purchase-title">
+                <span className="keep-together">Home Purchase</span>
+                <br />
+                <span className="text-red">Loan</span>
               </h1>
               <p className="hero-subtitle_service">
                 Finance your dream home with flexible repayment options, speedy approvals, and competitive rates.
