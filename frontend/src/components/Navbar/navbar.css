@@ -204,8 +204,8 @@
   left: 0;
   transform: translateY(0);
   background: #fff;
-  min-width: 250px;
-  max-width: 340px;
+  min-width: 330px;
+  max-width: 420px;
  
   border: 1px solid rgba(33, 31, 31, 0.08);
   display: none;
@@ -635,7 +635,8 @@
     display: none;
   }
  
-  .nested-dropdown:hover > .nested-menu {
+  .nested-dropdown:hover > .nested-menu,
+  .nested-dropdown.open > .nested-menu {
     display: block;
     opacity: 1;
     visibility: visible;
@@ -686,7 +687,8 @@
   }
  
  
-  .sub-nested-dropdown:hover > .sub-nested-menu {
+  .sub-nested-dropdown:hover > .sub-nested-menu,
+  .sub-nested-dropdown.open > .sub-nested-menu {
     display: block;
     opacity: 1;
     visibility: visible;

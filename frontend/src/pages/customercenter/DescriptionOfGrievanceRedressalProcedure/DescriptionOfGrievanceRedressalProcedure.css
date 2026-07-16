@@ -1,0 +1,385 @@
+/* ==========================================================================
+   DESCRIPTION OF GRIEVANCE REDRESSAL STYLE SHEET (MODERN MODE CARDS DESIGN)
+   ========================================================================== */
+
+:root {
+  --dg-primary: #0f4c81;
+  --dg-secondary: #1769aa;
+  --dg-accent: #B3191F;
+  --dg-accent-hover: #d90429;
+  --dg-bg-card: #ffffff;
+  --dg-bg-body: #f8fafc;
+  --dg-text-main: #334155;
+  --dg-text-dark: #1e293b;
+  --dg-border: #e2e8f0;
+}
+
+.desc-grievance-page {
+  width: 100%;
+  background: var(--dg-bg-body);
+  font-family: 'Poppins', sans-serif;
+  color: var(--dg-text-main);
+}
+
+/* Page Banner */
+.desc-grievance-page .page-banner {
+  position: relative;
+  width: 100%;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.desc-grievance-page .page-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.desc-grievance-page .page-banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+}
+
+.desc-grievance-page .page-banner-title {
+  margin: 0;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.desc-grievance-page .page-banner-subtitle {
+  margin: 10px 0 0;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Content Container */
+.desc-grievance-content-section {
+  padding: 60px 20px;
+}
+
+.desc-grievance-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Main Content Card */
+.desc-grievance-main-card {
+  background: white;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(15, 76, 129, 0.04);
+}
+
+.desc-grievance-main-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--dg-accent);
+  margin-bottom: 20px;
+  line-height: 1.3;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.desc-grievance-main-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--dg-accent), var(--dg-accent-hover));
+  border-radius: 2px;
+}
+
+.desc-grievance-intro-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--dg-text-main);
+  margin-bottom: 40px;
+}
+
+/* Modes Grid Layout */
+.desc-modes-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* Mode Cards */
+.desc-mode-card {
+  background: var(--dg-bg-card);
+  border: 1px solid var(--dg-border);
+  border-radius: 20px;
+  padding: 30px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02), 0 10px 15px rgba(15, 76, 129, 0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+.desc-mode-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(15, 76, 129, 0.08);
+  border-color: #cbd5e1;
+}
+
+.desc-mode-badge {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background: #fee2e2;
+  color: var(--dg-accent);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  border-radius: 30px;
+  border: 1px solid #fca5a5;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.desc-mode-icon {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  line-height: 1;
+  color: var(--dg-accent);
+}
+
+.desc-mode-card h3 {
+  font-size: 1.3rem;
+  font-weight: 650;
+  color: var(--dg-accent);
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+  padding-right: 70px; /* Leave space for badge */
+}
+
+.desc-mode-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--dg-text-main);
+  margin: 0 0 15px 0;
+  text-align: justify;
+}
+
+.desc-mode-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Highlight Card for MD Escalation (Mode 5) */
+.desc-mode-card.desc-highlight-card {
+  border-left: 5px solid var(--dg-accent);
+  background: linear-gradient(to bottom right, #ffffff, #fffafb);
+}
+
+.desc-mode-badge.desc-escalation-badge {
+  background: #fee2e2;
+  color: var(--dg-accent);
+  border-color: #fca5a5;
+}
+
+.desc-md-details-box {
+  background: #f8fafc;
+  border: 1px solid var(--dg-border);
+  border-radius: 12px;
+  padding: 20px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--dg-text-dark);
+  margin-top: auto;
+}
+
+.desc-md-email-link {
+  color: var(--dg-accent);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.desc-md-email-link:hover {
+  color: var(--dg-accent-hover);
+}
+
+/* NHB Card Styling (Mode 6) - Spans Full Width */
+.desc-mode-card.desc-nhb-card {
+  grid-column: span 2;
+  border-left: 5px solid var(--dg-accent);
+  background: linear-gradient(to bottom right, #ffffff, #fafcfe);
+}
+
+.desc-mode-badge.desc-nhb-badge {
+  background: #fee2e2;
+  color: var(--dg-accent);
+  border-color: #fca5a5;
+}
+
+.desc-nhb-channels {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.desc-nhb-sub-channel {
+  background: white;
+  border: 1px solid var(--dg-border);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.desc-nhb-sub-channel strong {
+  color: var(--dg-accent);
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.desc-nhb-btn {
+  display: inline-block;
+  background-color: var(--dg-accent);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin-top: 12px;
+  transition: all 0.3s ease;
+}
+
+.desc-nhb-btn:hover {
+  background-color: var(--dg-accent-hover);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.desc-nhb-pdf-link {
+  display: inline-block;
+  color: var(--dg-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.desc-nhb-pdf-link:hover {
+  color: var(--dg-accent-hover);
+}
+
+.desc-nhb-address {
+  border-top: 1px solid var(--dg-border);
+  margin-top: 15px;
+  padding-top: 15px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* Address details block inside Mode 4 */
+.desc-address-sub-box {
+  background: #f8fafc;
+  border: 1px solid var(--dg-border);
+  border-radius: 12px;
+  padding: 18px;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--dg-text-dark);
+  margin-top: auto;
+}
+
+.desc-grievance-link {
+  color: var(--dg-accent);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.desc-grievance-link:hover {
+  color: var(--dg-accent-hover);
+}
+
+/* Persons with Disabilities Section Alert style */
+.desc-grievance-pwd-alert {
+  display: flex;
+  gap: 20px;
+  background-color: #f8fafc;
+  border-left: 4px solid var(--dg-accent);
+  border-radius: 12px;
+  padding: 24px;
+  width: 100%;
+  margin-top: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+  text-align: left;
+}
+
+.desc-pwd-alert-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--dg-accent);
+}
+
+.desc-pwd-alert-content h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--dg-accent);
+  margin-bottom: 8px;
+}
+
+.desc-pwd-alert-content p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--dg-text-main);
+  margin-bottom: 12px;
+}
+
+.desc-pwd-alert-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Queries */
+@media (max-width: 992px) {
+  .desc-modes-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .desc-mode-card.desc-nhb-card {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .desc-grievance-page .page-banner-title {
+    font-size: 2rem;
+  }
+  
+  .desc-grievance-main-card {
+    padding: 24px;
+  }
+  
+  .desc-grievance-main-title {
+    font-size: 1.6rem;
+  }
+
+  .desc-nhb-channels {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .desc-grievance-pwd-alert {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .desc-pwd-alert-icon {
+    font-size: 2rem;
+  }
+}

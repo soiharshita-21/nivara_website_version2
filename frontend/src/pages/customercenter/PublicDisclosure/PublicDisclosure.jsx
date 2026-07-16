@@ -28,7 +28,8 @@ const PublicDisclosure = () => {
     { name: "Public Disclosure June 2025", path: "/files/pd-jun-2025.pdf" },
     { name: "Public Disclosure September 2025", path: "/files/pd-sep-2025.pdf" },
     { name: "Public Disclosure December 2025", path: "/files/pd-dec-2025.pdf" },
-    { name: "Public Disclosure March 2026", path: "/files/Public disclosure on liquidity_March 2026.pdf" },
+    { name: "Public Disclosure March 2026", path: "/files/pd-mar-2026.pdf" },
+    { name: "Public Disclosure June 2026", path: "/files/pd-jun-2026.pdf" },
   ];
 
   const sarfaesiDocs = [

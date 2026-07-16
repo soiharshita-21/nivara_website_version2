@@ -49,6 +49,7 @@ const allPages = [
   { name: "Corporate Governance", path: "/customercenter/corporategovernance" },
   { name: "Public Disclosure", path: "/customercenter/publicdisclosure" },
   { name: "Grievance Redressal", path: "/customercenter/grievance-redressal" },
+  { name: "Complaint", path: "/customercenter/complaint" },
   { name: "Branch Locations", path: "/contactus/branch/branch" },
   { name: "Office Locations", path: "/contactus/offices/offices" },
   { name: "Why Choose Us", path: "/why-choose-us" },
@@ -163,6 +164,31 @@ const Navbar = () => {
     }
   };
 
+  const handleMouseEnter = (item) => {
+    if (window.innerWidth > 1024) {
+      setActiveNestedDropdown(item);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (window.innerWidth > 1024) {
+      setActiveNestedDropdown(null);
+      setActiveSubNestedDropdown(null);
+    }
+  };
+
+  const handleSubMouseEnter = (item) => {
+    if (window.innerWidth > 1024) {
+      setActiveSubNestedDropdown(item);
+    }
+  };
+
+  const handleSubMouseLeave = () => {
+    if (window.innerWidth > 1024) {
+      setActiveSubNestedDropdown(null);
+    }
+  };
+
   return (
     <nav className={`navbar ${isOpen ? "menu-open" : ""}`}>
       <div className="navbar-container">
@@ -223,7 +249,11 @@ const Navbar = () => {
             </div>
             <ul className="dropdown-menu">
               {/* About Nivara */}
-              <li className={`nested-dropdown ${activeNestedDropdown === "about-nivara" ? "open" : ""}`}>
+              <li 
+                className={`nested-dropdown ${activeNestedDropdown === "about-nivara" ? "open" : ""}`}
+                onMouseEnter={() => handleMouseEnter("about-nivara")}
+                onMouseLeave={handleMouseLeave}
+              >
                 <div className="nested-trigger" onClick={() => toggleNestedDropdown("about-nivara")}>
                   <span>About Nivara</span>
                   <ChevronRight size={14} className="nested-chevron" />
@@ -236,7 +266,11 @@ const Navbar = () => {
               </li>
 
               {/* Leadership */}
-              <li className={`nested-dropdown ${activeNestedDropdown === "leadership" ? "open" : ""}`}>
+              <li 
+                className={`nested-dropdown ${activeNestedDropdown === "leadership" ? "open" : ""}`}
+                onMouseEnter={() => handleMouseEnter("leadership")}
+                onMouseLeave={handleMouseLeave}
+              >
                 <div className="nested-trigger" onClick={() => toggleNestedDropdown("leadership")}>
                   <span>Leadership</span>
                   <ChevronRight size={14} className="nested-chevron" />
@@ -249,13 +283,21 @@ const Navbar = () => {
               </li>
 
               {/* Governance & Ethics */}
-              <li className={`nested-dropdown ${activeNestedDropdown === "governance" ? "open" : ""}`}>
+              <li 
+                className={`nested-dropdown ${activeNestedDropdown === "governance" ? "open" : ""}`}
+                onMouseEnter={() => handleMouseEnter("governance")}
+                onMouseLeave={handleMouseLeave}
+              >
                 <div className="nested-trigger" onClick={() => toggleNestedDropdown("governance")}>
                   <span>Governance & Ethics</span>
                   <ChevronRight size={14} className="nested-chevron" />
                 </div>
                 <ul className="nested-menu">
-                  <li className={`sub-nested-dropdown ${activeSubNestedDropdown === "corporate-governance" ? "open" : ""}`}>
+                  <li 
+                    className={`sub-nested-dropdown ${activeSubNestedDropdown === "corporate-governance" ? "open" : ""}`}
+                    onMouseEnter={() => handleSubMouseEnter("corporate-governance")}
+                    onMouseLeave={handleSubMouseLeave}
+                  >
                     <div className="sub-nested-trigger" onClick={(e) => {
                       e.stopPropagation();
                       toggleSubNestedDropdown("corporate-governance");
@@ -273,7 +315,11 @@ const Navbar = () => {
               </li>
 
               {/* Social Responsibility */}
-              <li className={`nested-dropdown ${activeNestedDropdown === "social" ? "open" : ""}`}>
+              <li 
+                className={`nested-dropdown ${activeNestedDropdown === "social" ? "open" : ""}`}
+                onMouseEnter={() => handleMouseEnter("social")}
+                onMouseLeave={handleMouseLeave}
+              >
                 <div className="nested-trigger" onClick={() => toggleNestedDropdown("social")}>
                   <span>Social Responsibility</span>
                   <ChevronRight size={14} className="nested-chevron" />
@@ -323,6 +369,7 @@ const Navbar = () => {
               <li><Link to="/customercenter/calculator">EMI Calculator</Link></li>
               <li><Link to="/customercenter/mitc">MITC</Link></li>
               <li><Link to="/customercenter/fair-practice-code">Fair Practice Code</Link></li>
+              <li><Link to="/customercenter/complaint">Complaint</Link></li>
 
               {/* Support & Assistance */}
               <li className={`nested-dropdown ${activeNestedDropdown === "support" ? "open" : ""}`}>

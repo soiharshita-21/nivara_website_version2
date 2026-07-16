@@ -77,6 +77,7 @@ const Footer = () => {
          
               <li><Link to="/why-choose-us" onClick={handleLinkClick}>Why Choose Us</Link></li>
               <li><Link to="/customercenter/grievance-redressal" onClick={handleLinkClick}>Grievance Redressal</Link></li>
+              <li><Link to="/customercenter/complaint" onClick={handleLinkClick}>Complaint</Link></li>
               {/* <li><Link to="/kyc-aml-measures" onClick={handleLinkClick}>KYC & AML Measures</Link></li> */}
             </ul>
           </div>

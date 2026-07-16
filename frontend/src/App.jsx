@@ -39,6 +39,7 @@ import PublicDisclosure from "./pages/customercenter/PublicDisclosure/PublicDisc
 import CorporateGovernance from "./pages/customercenter/corporategovernance";
 import Faqs from "./pages/customercenter/Faqs/Faqs";
 import AuctionProperties from "./pages/customercenter/AuctionProperties/AuctionProperties";
+import Complaint from "./pages/customercenter/Complaint/Complaint";
 import Lenders from "./pages/OurPartners/Lenders/Lenders";
 import OurInsurancePartners from "./pages/OurPartners/OurInsurancePartners/OurInsurancePartners";
 import Blog from "./pages/media/Blog/Blog";
@@ -57,6 +58,7 @@ import KycAmlMeasures from "./pages/KycAmlMeasures/KycAmlMeasures";
 import RecoveryAgents from "./pages/customercenter/RecoveryAgents/RecoveryAgents";
 import Mitc from "./pages/customercenter/Mitc/Mitc";
 import GrievanceRedressal from "./pages/customercenter/GrievanceRedressal/GrievanceRedressal";
+import DescriptionOfGrievanceRedressalProcedure from "./pages/customercenter/DescriptionOfGrievanceRedressalProcedure/DescriptionOfGrievanceRedressalProcedure";
 import CsrInitiatives from "./pages/aboutus/CsrInitiatives/CsrInitiatives";
 import DynamicPage from "./pages/DynamicPage/DynamicPage";
 import GetAppointment from "./pages/GetAppointment/GetAppointment";
@@ -149,6 +151,10 @@ function AppContent() {
             element={<PublicDisclosure />}
           />
           <Route
+            path="/customercenter/complaint"
+            element={<Complaint />}
+          />
+          <Route
             path="/customercenter/corporategovernance"
             element={<CorporateGovernance />}
           />
@@ -178,6 +184,7 @@ function AppContent() {
           <Route path="/customercenter/recovery-agents" element={<RecoveryAgents />} />
           <Route path="/customercenter/mitc" element={<Mitc />} />
           <Route path="/customercenter/grievance-redressal" element={<GrievanceRedressal />} />
+          <Route path="/customercenter/description-of-grievance-redressal-procedure" element={<DescriptionOfGrievanceRedressalProcedure />} />
           <Route path="/terms-conditions" element={<Mitc />} />
           <Route path="/aboutus/csr-initiatives" element={<CsrInitiatives />} />
           <Route path="/p/:slug" element={<DynamicPage />} />

@@ -3,7 +3,7 @@ import { FaLock, FaTimes } from "react-icons/fa";
 import "./InvestorPasswordModal.css";
 import { isInvestorRelationsPassword } from "./investorAccess";
 
-const InvestorPasswordModal = ({ open, documentName, onConfirm, onCancel }) => {
+const InvestorPasswordModal = ({ open, documentName, onConfirm, onCancel, expectedPassword }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const inputRef = useRef(null);
@@ -23,7 +23,11 @@ const InvestorPasswordModal = ({ open, documentName, onConfirm, onCancel }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (isInvestorRelationsPassword(password)) {
+    const isValid = expectedPassword 
+      ? password === expectedPassword
+      : isInvestorRelationsPassword(password);
+
+    if (isValid) {
       onConfirm();
       return;
     }

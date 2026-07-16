@@ -21,7 +21,7 @@ const notices = [
   { name: "Notice of 29th EGM 23.07.2025", path: "/files/Signed_Notice_of_29th_EGM-1.pdf" },
   { name: "Notice of 30th EGM 12.12.2025", path: "/files/Notice_of_30th_EGM_to_circulate.pdf" },
   { name: "Notice of 31st EGM 23.03.2026", path: "/files/Notice_of_31st_EGM_Signed.pdf" },
-  { name: "Notice of AGM 25.05.2026", path: "/files/Notice of AGM 25.05.2026.pdf" },
+  { name: "Notice of AGM 25.05.2026", path: "/files/Notice of AGM 25.05.2026.pdf", password: "Welcome_1234$" },
 ];
 
 const transcripts = [
@@ -34,10 +34,11 @@ const transcripts = [
   { name: "Transcript of EGM 23.07.2025", path: "/files/Transcript-EGM-23.07.2025-.pdf" },
   { name: "Transcript of EGM 12.12.2025", path: "/files/Transcript_EGM_12.12.2025.pdf" },
   { name: "Transcript of EGM 23.03.2026", path: "/files/Transcript-EGM-23.03.2026.pdf" },
+  { name: "Transcript of AGM 25.05.2026", path: "/files/Transcript of AGM 25.05.2026.pdf", password: "Welcome_1234$" },
 ];
 
 const InvestorsRelation = ({ section }) => {
-  const [showPasswordModal, setShowPasswordModal] = useState(false);
+  const [selectedDoc, setSelectedDoc] = useState(null);
 
   useEffect(() => {
     if (window.location.hash) {
@@ -146,7 +147,7 @@ const InvestorsRelation = ({ section }) => {
                 </div>
                 <div className="investor-links-list">
                   {notices.map((item, i) => {
-                    const isProtected = item.name === "Notice of AGM 25.05.2026";
+                    const isProtected = !!item.password;
                     return (
                       <a 
                         key={i} 
@@ -155,7 +156,7 @@ const InvestorsRelation = ({ section }) => {
                         onClick={(e) => {
                           if (isProtected) {
                             e.preventDefault();
-                            setShowPasswordModal(true);
+                            setSelectedDoc(item);
                           }
                         }}
                         target={isProtected ? "_self" : "_blank"}
@@ -187,20 +188,29 @@ const InvestorsRelation = ({ section }) => {
                   </div>
                 </div>
                 <div className="investor-links-list">
-                  {transcripts.map((item, i) => (
-                    <a 
-                      key={i} 
-                      className="investor-list-item" 
-                      href="/investorsrelation/restricted"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <div className="item-content">
-                        <span className="doc-name">{item.name}</span>
-                      </div>
-                      <FaChevronRight className="arrow-icon" />
-                    </a>
-                  ))}
+                  {transcripts.map((item, i) => {
+                    const isProtected = !!item.password;
+                    return (
+                      <a 
+                        key={i} 
+                        className="investor-list-item" 
+                        href={isProtected ? "#" : "/investorsrelation/restricted"}
+                        onClick={(e) => {
+                          if (isProtected) {
+                            e.preventDefault();
+                            setSelectedDoc(item);
+                          }
+                        }}
+                        target={isProtected ? "_self" : "_blank"}
+                        rel="noopener noreferrer"
+                      >
+                        <div className="item-content">
+                          <span className="doc-name">{item.name}</span>
+                        </div>
+                        <FaChevronRight className="arrow-icon" />
+                      </a>
+                    );
+                  })}
                 </div>
               </ScrollReveal>
             </div>
@@ -208,13 +218,15 @@ const InvestorsRelation = ({ section }) => {
         </div>
       </div>
       <InvestorPasswordModal
-        open={showPasswordModal}
-        documentName="Notice of AGM 25.05.2026"
+        open={!!selectedDoc}
+        documentName={selectedDoc?.name}
+        expectedPassword={selectedDoc?.password}
         onConfirm={() => {
-          setShowPasswordModal(false);
-          window.open("/files/Notice of AGM 25.05.2026.pdf", "_blank");
+          const path = selectedDoc.path;
+          setSelectedDoc(null);
+          window.open(path, "_blank");
         }}
-        onCancel={() => setShowPasswordModal(false)}
+        onCancel={() => setSelectedDoc(null)}
       />
     </div>
   );
