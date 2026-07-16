@@ -80,7 +80,7 @@ const RequestQuote = ({ themeColor = "#7EB542", title = "Request Quote Now" }) =
               padding: '12px 16px',
               borderRadius: '8px',
               marginBottom: '24px',
-              fontSize: "16px",
+              fontSize: "18px",
               fontWeight: 500,
               textAlign: 'center',
               background: alertState.type === 'success' ? '#e6f4ea' : alertState.type === 'error' ? '#fce8e6' : '#e8f0fe',

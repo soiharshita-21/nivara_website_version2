@@ -57,7 +57,7 @@
 }
 
 .kyc-hero-content h1 {
-  font-size: 4rem;
+  font-size: 4.15rem;
   font-weight: 700;
   margin-bottom: 20px;
   color: #B3191F;
@@ -69,7 +69,7 @@
 }
 
 .kyc-hero-content p {
-  font-size: 1.4rem;
+  font-size: 1.55rem;
   opacity: 0.9;
   max-width: 500px;
   color: #444;
@@ -115,14 +115,14 @@
 }
 
 .policy-header h2 {
-  font-size: 1.8rem;
+  font-size: 1.95rem;
   font-weight: 600;
   color: #222;
   margin: 0;
 }
 
 .policy-body p {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   line-height: 1.8;
   color: #211F1F;
   margin-bottom: 20px;
@@ -200,11 +200,11 @@
 
 @media (max-width: 600px) {
   .kyc-hero-content h1 {
-    font-size: 2.2rem;
+    font-size: 2.35rem;
   }
 
   .policy-header h2 {
-    font-size: 1.4rem;
+    font-size: 1.55rem;
   }
 
   .policy-card {

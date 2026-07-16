@@ -34,8 +34,8 @@ const managementTeamData = [
   {
     name: "Mr. Shreyas Ramanathan",
     role: "Executive Director & Chief Business Officer",
-    desc: "Qualified Chartered Accountant and MBA with over 20+ years of experience across retail banking and financial services.",
-    longDesc: "Shreyas Ramanathan serves as Executive Director on the Board of Nivara and Chief Business Officer of the Company. A qualified Chartered Accountant, he holds an MBA from the Asian Institute of Management, Manila, and brings over 20+ years of experience across retail banking and financial services. In his current role, he is instrumental in advancing Nivara's mission of \"Housing for All\" by pioneering lending solutions tailored to the unserved and underserved segments of India's informal economy.\n\nDrawing on deep expertise in credit underwriting and portfolio management, and a proven track record of scaling businesses, Shreyas has developed sustainable lending models for self-employed professionals and micro-entrepreneurs in the EWS and LIG segments, many of whom are first-time borrowers. He also oversees collections and asset quality, ensuring Nivara upholds the highest standards of responsible lending while expanding access to affordable housing finance across urban and semi-urban markets.\n\nEarlier in his career, Shreyas built Ola Cabs leasing business from inception to over 10,000 vehicles with zero credit cost, establishing it as the country's largest captive leasing company in a record timeframe. Prior to that, he spent 12 years at ICICI Bank, where his final role was Policy Head for a ₹1.25 trillion secured assets portfolio. During his tenure at the bank, he held diverse roles across sales, credit, and risk in multiple geographies, spanning the retail, mid-corporate, and agri-business verticals.\n\nHis career reflects a consistent commitment to building transformative financial services businesses that serve underserved communities. Shreyas brings deep expertise in credit policy, risk management, and portfolio optimization, guided by the conviction that access to home finance is a fundamental enabler of dignified living and sustainable development for communities across India.",
+    desc: "Chartered Accountant and MBA with over 20+ years of experience across retail banking and financial services.",
+    longDesc: "Shreyas Ramanathan serves as Executive Director on the Board of Nivara and Chief Business Officer of the Company. A Chartered Accountant, he holds an MBA from the Asian Institute of Management, Manila, and brings over 20+ years of experience across retail banking and financial services. In his current role, he is instrumental in advancing Nivara's mission of \"Housing for All\" by pioneering lending solutions tailored to the unserved and underserved segments of India's informal economy.\n\nDrawing on deep expertise in credit underwriting and portfolio management, and a proven track record of scaling businesses, Shreyas has developed sustainable lending models for self-employed professionals and micro-entrepreneurs in the EWS and LIG segments, many of whom are first-time borrowers. He also oversees collections and asset quality, ensuring Nivara upholds the highest standards of responsible lending while expanding access to affordable housing finance across urban and semi-urban markets.\n\nEarlier in his career, Shreyas built Ola Cabs leasing business from inception to over 10,000 vehicles with zero credit cost, establishing it as the country's largest captive leasing company in a record timeframe. Prior to that, he spent 12 years at ICICI Bank, where his final role was Policy Head for a ₹1.25 trillion secured assets portfolio. During his tenure at the bank, he held diverse roles across sales, credit, and risk in multiple geographies, spanning the retail, mid-corporate, and agri-business verticals.\n\nHis career reflects a consistent commitment to building transformative financial services businesses that serve underserved communities. Shreyas brings deep expertise in credit policy, risk management, and portfolio optimization, guided by the conviction that access to home finance is a fundamental enabler of dignified living and sustainable development for communities across India.",
     color: "green",
     img: shreyas,
   },
@@ -62,11 +62,12 @@ const managementTeamData = [
     longDesc: "Nagesh holds an MBA and brings a strong combination of industry knowledge, leadership, and execution capability to the Company. A founder member of Nivara, Mr. Nagesh is now in his second innings with the Company, spearheading sales for Karnataka. He has been instrumental in driving growth through strong branch expansion and customer outreach, while ensuring operational excellence in the region.\n\nAn experienced mortgage professional with nearly 20 years in the banking and financial services industry. He has deep expertise in setting up retail branch networks and distribution channels, and has a proven history of building and scaling mortgage businesses.\n\nOver the course of his career, he has held senior positions at Karvy Financial Services, Aviom India Housing Finance, and IDFC First Bank.",
     color: "red",
     img: nagesh,
+    imagePosition: "center 5%",
   },
   {
     name: "Mr. Venkat Sharma Konduri",
     role: "State Head – AP & Telangana",
-    desc: "Nearly 24 years of rich experience in sales distribution across home loans, mortgages, and business loans.",
+    desc: "Nearly 26 years of rich experience in sales distribution across home loans, mortgages, and business loans.",
     longDesc: "Venkat Sharma Konduri holds an MBA in Sales and Marketing (Digital Marketing) from IIM Amritsar and brings nearly 24 years of rich experience in sales distribution across home loans, mortgages, and business loans. Mr. Konduri is currently the State Head for Andhra Pradesh and Telangana, spearheading growth and strengthening Nivara’s presence in the region.\n\nHe is well-versed in business development, credit, collections, product-based marketing, and business strategies. Over the course of his career, he has worked extensively with Adani Capital, Vistaar Finance, and Karvy Financial Services (now SBFC), where he successfully built businesses from inception to portfolios of several thousand crores in assets under management (AUM).",
     color: "green",
     img: venkat,
@@ -82,8 +83,8 @@ const managementTeamData = [
   {
     name: "Mr. Sidharth Vij",
     role: "National Credit Manager",
-    desc: "Qualified Chartered Accountant and MBA with over two decades of experience in strategic credit solutions and risk management.",
-    longDesc: "Sidharth Vij is a National Credit Manager of the Company. He is a qualified Chartered Accountant, a Certified Associate of the Indian Institute of Bankers (CAIIB), and has completed the Master of Business Finance (MBF) program from ICAI. In addition, he holds an MBA from IIM Raipur. At Nivara, instrumental in strengthening credit approvals with efficient turnaround times and ensuring robust risk management practices. His leadership has significantly enhanced operational efficiency and asset quality.\n\nHe is a seasoned finance professional with over two decades of experience in driving strategic credit solutions and risk management in the housing finance business. He has a proven track record of establishing mortgage businesses and has been pivotal in setting up branch networks, developing guidelines for mortgage products, and establishing credit and risk policies.\n\nOver the course of his career, he has been associated with renowned organizations such as ICICI Bank, GE Money, HDFC Bank Ltd., DBS Bank, and India Shelter Finance Corporation.",
+    desc: "Chartered Accountant and MBA with over two decades of experience in strategic credit solutions and risk management.",
+    longDesc: "Sidharth Vij is a National Credit Manager of the Company. He is a Chartered Accountant, a Certified Associate of the Indian Institute of Bankers (CAIIB), and has completed the Master of Business Finance (MBF) program from ICAI. In addition, he holds an MBA from IIM Raipur. At Nivara, instrumental in strengthening credit approvals with efficient turnaround times and ensuring robust risk management practices. His leadership has significantly enhanced operational efficiency and asset quality.\n\nHe is a seasoned finance professional with over two decades of experience in driving strategic credit solutions and risk management in the housing finance business. He has a proven track record of establishing mortgage businesses and has been pivotal in setting up branch networks, developing guidelines for mortgage products, and establishing credit and risk policies.\n\nOver the course of his career, he has been associated with renowned organizations such as ICICI Bank, GE Money, HDFC Bank Ltd., DBS Bank, and India Shelter Finance Corporation.",
     color: "red",
     img: sidharth,
   },
@@ -206,7 +207,11 @@ const ManagementTeam = () => {
                   }}
                 >
                   <div className="management-image">
-                    <img src={item.img} alt={item.name} />
+                    <img
+                      src={item.img}
+                      alt={item.name}
+                      style={item.imagePosition ? { objectPosition: item.imagePosition } : {}}
+                    />
                   </div>
 
                   <div className="management-content">
@@ -224,7 +229,7 @@ const ManagementTeam = () => {
               </ScrollReveal>
             ))}
         </div>
-        {/* <p className="management-updated-date" style={{ textAlign: "center", marginTop: "40px", color: "#211F1F", fontSize: "16px" }}>
+        {/* <p className="management-updated-date" style={{ textAlign: "center", marginTop: "40px", color: "#211F1F", fontSize: "18px" }}>
           Updated 30.04.2026
         </p> */}
       </section>
@@ -289,7 +294,7 @@ const ManagementTeam = () => {
                   border: 'none',
                   background: '#f3f4f6',
                   cursor: 'pointer',
-                  fontSize: "26px",
+                  fontSize: "28px",
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center'
@@ -307,18 +312,18 @@ const ManagementTeam = () => {
                   />
                 </div>
                 <div style={{ flex: '0 0 55%', padding: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: '#fff', overflowY: 'auto' }}>
-                  <h2 style={{ fontWeight: 700, fontSize: "34px", margin: '0 0 5px 0', color: '#211F1F', lineHeight: '1.1' }}>
+                  <h2 style={{ fontWeight: 700, fontSize: "36px", margin: '0 0 5px 0', color: '#211F1F', lineHeight: '1.1' }}>
                     {selectedMember.name}
                   </h2>
-                  <span style={{ display: 'block', fontSize: "15px", textTransform: 'uppercase', fontWeight: 600, letterSpacing: '1.2px', color: '#B3191F', marginBottom: '20px' }}>
+                  <span style={{ display: 'block', fontSize: "17px", textTransform: 'uppercase', fontWeight: 600, letterSpacing: '1.2px', color: '#B3191F', marginBottom: '20px' }}>
                     {selectedMember.role}
                   </span>
                   <div style={{ width: '60px', height: '6px', backgroundColor: '#B3191F', marginBottom: '30px', borderRadius: '3px' }}></div>
-                  <p style={{ fontSize: "18px", fontWeight: 600, color: '#211F1F', marginBottom: '25px', lineHeight: '1.5' }}>
+                  <p style={{ fontSize: "20px", fontWeight: 600, color: '#211F1F', marginBottom: '25px', lineHeight: '1.5' }}>
                     {selectedMember.desc}        
                   </p>
                   <div>
-                    <p style={{ fontSize: "16px", lineHeight: '1.8', color: "#211F1F", fontWeight: 400, textAlign: 'justify', whiteSpace: 'pre-line' }}>
+                    <p style={{ fontSize: "18px", lineHeight: '1.8', color: "#211F1F", fontWeight: 400, textAlign: 'justify', whiteSpace: 'pre-line' }}>
                       {isExpanded ? selectedMember.longDesc : `${selectedMember.longDesc.substring(0, 200)}...`}
                     </p>
                     {selectedMember.longDesc.length > 200 && (
@@ -332,7 +337,7 @@ const ManagementTeam = () => {
                           cursor: 'pointer',
                           padding: '0',
                           marginTop: '10px',
-                          fontSize: "17px",
+                          fontSize: "19px",
                           textDecoration: 'underline'
                         }}
                       >

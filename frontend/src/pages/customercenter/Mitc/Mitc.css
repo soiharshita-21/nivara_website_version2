@@ -51,7 +51,7 @@
 
 .page-banner-title {
   margin: 0;
-  font-size: clamp(42px, 6vw, 72px);
+  font-size: clamp(45px, 6vw, 75px);
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.03em;
@@ -61,7 +61,7 @@
 .page-banner-subtitle {
   margin: 24px auto 0;
   max-width: 760px;
-  font-size: clamp(16px, 2vw, 20px);
+  font-size: clamp(19px, 2vw, 23px);
   line-height: 1.8;
   color: #f5f5f5;
   font-weight: 400;
@@ -160,7 +160,7 @@
   border: 1px solid rgba(255, 255, 255, 0.22);
   backdrop-filter: blur(10px);
   color: #fff;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 600;
   letter-spacing: 0.5px;
   box-shadow:
@@ -171,7 +171,7 @@
    HERO TITLE
 ========================= */
 /* .terms-banner-container h1 {
-  font-size: clamp(40px, 5vw, 90px);
+  font-size: clamp(43px, 5vw, 93px);
   font-weight: 600;
   line-height: 1;
   letter-spacing: -2px;
@@ -193,7 +193,7 @@
 .terms-hero-subtitle {
   max-width: 780px;
   margin: 0 auto;
-  font-size: 20px;
+  font-size: 23px;
   line-height: 1.8;
   color: #f5f5f5;
   font-weight: 400;
@@ -214,7 +214,7 @@
 
 /* Intro Card */
 .mitc-intro {
-  font-size: 19px;
+  font-size: 22px;
   line-height: 1.9;
   color: #211F1F;
   text-align: justify;
@@ -328,7 +328,7 @@
 /* Heading */
 .accordion-header h3 {
   margin: 0;
-  font-size: 23px;
+  font-size: 26px;
   font-weight: 600;
   line-height: 1.5;
   color: #211F1F;
@@ -360,7 +360,7 @@
    DETAILS
 ========================= */
 .terms-detail h4 {
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 600;
   color: #B3191F;
   margin-bottom: 14px;
@@ -368,7 +368,7 @@
 
 /* Paragraph */
 .terms-detail p {
-  font-size: 17px;
+  font-size: 20px;
   line-height: 1.9;
   color: #211F1F;
   margin-bottom: 18px;
@@ -389,7 +389,7 @@
   position: relative;
   padding-left: 24px;
   margin-bottom: 12px;
-  font-size: 17px;
+  font-size: 20px;
   line-height: 1.8;
   color: #211F1F;
 }
@@ -417,7 +417,7 @@
 
 .mitc-dropdown-item {
   margin-bottom: 12px;
-  font-size: 18px;
+  font-size: 21px;
   line-height: 1.5;
 }
 
@@ -456,20 +456,20 @@
 
   .terms-banner-container h1,
   .page-banner-title {
-    font-size: 54px;
+    font-size: 57px;
     padding: 10px 20px;
     border-radius: 10px;
     letter-spacing: -1px;
   }
 
   .terms-hero-subtitle {
-    font-size: 18px;
+    font-size: 21px;
     line-height: 1.7;
   }
 
   .mitc-intro {
     padding: 28px;
-    font-size: 17px;
+    font-size: 20px;
   }
 
   .accordion-header {
@@ -477,7 +477,7 @@
   }
 
   .accordion-header h3 {
-    font-size: 20px;
+    font-size: 23px;
   }
 
   .content-inner {
@@ -494,17 +494,17 @@
 
 @media (max-width: 480px) {
   .terms-hero-badge {
-    font-size: 14px;
+    font-size: 17px;
     padding: 8px 18px;
   }
 
   .terms-banner-container h1 {
-    font-size: 40px;
+    font-size: 43px;
     padding: 10px 18px;
   }
 
   .terms-hero-subtitle {
-    font-size: 17px;
+    font-size: 20px;
   }
 
   .accordion-header {
@@ -516,7 +516,7 @@
   }
 
   .accordion-header h3 {
-    font-size: 18px;
+    font-size: 21px;
   }
 
   .content-inner {
@@ -525,12 +525,12 @@
   }
 
   .terms-detail h4 {
-    font-size: 19px;
+    font-size: 22px;
   }
 
   .terms-detail p,
   .terms-sub-list li {
-    font-size: 16px;
+    font-size: 19px;
   }
 }
 
@@ -541,7 +541,7 @@
   width: 100%;
   border-collapse: collapse;
   margin: 24px 0 35px;
-  font-size: 14.5px;
+  font-size: 18px;
   text-align: left;
   border-radius: 14px;
   overflow: hidden;
@@ -556,7 +556,7 @@
   padding: 18px 24px;
   border-bottom: 3px solid #cbd5e1;
   text-transform: uppercase;
-  font-size: 13.5px;
+  font-size: 16px;
   letter-spacing: 0.7px;
 }
 
@@ -584,7 +584,7 @@
 .mitc-table-title {
   margin-top: 45px;
   margin-bottom: 20px;
-  font-size: 17.5px;
+  font-size: 20px;
   font-weight: 600;
   color: #8b1d2c;
   text-transform: uppercase;
@@ -637,7 +637,7 @@
    FEES TABS
 ========================= */
 .fees-intro-text {
-  font-size: 17px;
+  font-size: 20px;
   line-height: 1.7;
   color: #211F1F;
   margin-bottom: 20px;
@@ -655,7 +655,7 @@
   background: transparent;
   border: none;
   font-family: inherit;
-  font-size: 14.5px;
+  font-size: 18px;
   font-weight: 600;
   color: #211F1F;
   padding: 10px 20px;

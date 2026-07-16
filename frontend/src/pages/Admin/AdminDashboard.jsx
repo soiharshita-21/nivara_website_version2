@@ -440,7 +440,7 @@ const AdminDashboard = () => {
                 <>
                   <div className="filter-bar" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', padding: '15px 20px', backgroundColor: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', gap: '15px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                      <span style={{ fontWeight: '600', color: "#211F1F", fontSize: '0.9rem' }}>Filter by State:</span>
+                      <span style={{ fontWeight: '600', color: "#211F1F", fontSize: '1rem' }}>Filter by State:</span>
                       <select 
                         value={selectedStateFilter} 
                         onChange={(e) => setSelectedStateFilter(e.target.value)}
@@ -463,7 +463,7 @@ const AdminDashboard = () => {
                         <option value="Maharashtra">Maharashtra</option>
                       </select>
                     </div>
-                    <div style={{ color: "#211F1F", fontSize: '0.9rem', fontWeight: '500' }}>
+                    <div style={{ color: "#211F1F", fontSize: '1rem', fontWeight: '500' }}>
                       Showing <strong>{getFilteredBranches().length}</strong> of <strong>{branches.length}</strong> branches
                     </div>
                   </div>
@@ -481,7 +481,7 @@ const AdminDashboard = () => {
                             <span className={`status-pill ${b.is_new ? 'status-active' : 'status-draft'}`} style={{
                               padding: '4px 8px',
                               borderRadius: '12px',
-                              fontSize: '0.75rem',
+                              fontSize: '0.85rem',
                               fontWeight: '600',
                               backgroundColor: b.is_new ? '#ecfdf5' : '#f3f4f6',
                               color: b.is_new ? '#059669' : '#6b7280'
@@ -583,7 +583,7 @@ const AdminDashboard = () => {
                             <X size={16} /> Back to Folders
                           </button>
                           <h2 style={{ margin: '0 0 4px 0', color: '#1e293b' }}>{currentFolder.title}</h2>
-                          <p style={{ margin: 0, color: "#211F1F", fontSize: '0.9rem' }}>Date: {currentFolder.subtitle} &bull; {currentFolder.images.length} Photos</p>
+                          <p style={{ margin: 0, color: "#211F1F", fontSize: '1rem' }}>Date: {currentFolder.subtitle} &bull; {currentFolder.images.length} Photos</p>
                         </div>
                         <div style={{ display: 'flex', gap: '10px' }}>
                           <button className="edit-btn" onClick={() => handleEditFolder(currentFolder)} style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 16px', borderRadius: '6px', border: 'none', backgroundColor: '#e2e8f0', color: '#1e293b', cursor: 'pointer', fontWeight: '600' }}>
@@ -635,7 +635,7 @@ const AdminDashboard = () => {
                             {folder.latestImage ? (
                               <img src={folder.latestImage} alt="" style={{ width: 60, height: 60, objectFit: 'cover', borderRadius: 6, border: '1px solid #e2e8f0' }} />
                             ) : (
-                              <div className="no-img-placeholder" style={{ width: 60, height: 60, borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f1f5f9', color: '#94a3b8', fontSize: '0.8rem' }}>No Img</div>
+                              <div className="no-img-placeholder" style={{ width: 60, height: 60, borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f1f5f9', color: '#94a3b8', fontSize: '0.9rem' }}>No Img</div>
                             )}
                           </td>
                           <td style={{ fontWeight: '600', color: '#1e293b' }}>
@@ -647,7 +647,7 @@ const AdminDashboard = () => {
                           <td>{folder.subtitle}</td>
                           <td style={{ fontWeight: '500' }}>{folder.images.length} Photos</td>
                           <td className="actions">
-                            <button className="edit-btn" onClick={() => setActiveFolder(folder.title)} title="Open Folder" style={{ padding: '6px 12px', fontSize: '0.85rem', marginRight: '6px' }}>Open</button>
+                            <button className="edit-btn" onClick={() => setActiveFolder(folder.title)} title="Open Folder" style={{ padding: '6px 12px', fontSize: '0.95rem', marginRight: '6px' }}>Open</button>
                             <button className="edit-btn" onClick={() => handleEditFolder(folder)} title="Rename / Edit details"><Edit size={16} /></button>
                             <button className="delete-btn" onClick={() => handleDeleteFolder(folder.title)} title="Delete Folder"><Trash2 size={16} /></button>
                           </td>
@@ -766,7 +766,7 @@ const AdminDashboard = () => {
                       <label style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#B3191F', fontWeight: '700' }}>
                         <Code size={18} /> Page Content (HTML & CSS Editor)
                       </label>
-                      <p style={{ margin: '0 0 8px 0', fontSize: '0.8rem', color: "#211F1F" }}>Write standard &lt;style&gt; tags and &lt;div&gt; structures here.</p>
+                      <p style={{ margin: '0 0 8px 0', fontSize: '0.9rem', color: "#211F1F" }}>Write standard &lt;style&gt; tags and &lt;div&gt; structures here.</p>
                       <textarea 
                         value={newPage.content} 
                         onChange={e => setNewPage({ ...newPage, content: e.target.value })} 
@@ -780,7 +780,7 @@ const AdminDashboard = () => {
                           borderRadius: '8px', 
                           border: '2px solid #1e293b',
                           lineHeight: '1.6', 
-                          fontSize: "16px",
+                          fontSize: "18px",
                           outline: 'none',
                           resize: 'vertical'
                         }} 
@@ -932,7 +932,7 @@ const AdminDashboard = () => {
                               />
                               <Upload size={28} style={{ color: '#B3191F' }} />
                               <span style={{ fontWeight: '600' }}>Click to select and upload new images to this folder</span>
-                              <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Supports PNG, JPG, JPEG, WEBP</span>
+                              <span style={{ fontSize: '0.9rem', color: '#94a3b8' }}>Supports PNG, JPG, JPEG, WEBP</span>
                             </label>
                           </div>
                           {uploadingMultiple && (
@@ -943,7 +943,7 @@ const AdminDashboard = () => {
                           
                           {editingFolder.image_urls && editingFolder.image_urls.length > 0 && (
                             <div style={{ marginTop: '20px' }}>
-                              <label style={{ display: 'block', fontWeight: '600', marginBottom: '8px', fontSize: '0.9rem' }}>New Photos to Add ({editingFolder.image_urls.length})</label>
+                              <label style={{ display: 'block', fontWeight: '600', marginBottom: '8px', fontSize: '1rem' }}>New Photos to Add ({editingFolder.image_urls.length})</label>
                               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(80px, 1fr))', gap: '10px' }}>
                                 {editingFolder.image_urls.map((url, idx) => (
                                   <div key={idx} style={{ position: 'relative', borderRadius: '6px', overflow: 'hidden', border: '1px solid #cbd5e1', height: '80px' }}>
@@ -997,7 +997,7 @@ const AdminDashboard = () => {
                               />
                               <Upload size={28} style={{ color: '#B3191F' }} />
                               <span style={{ fontWeight: '600' }}>Click to select and upload multiple images</span>
-                              <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Supports PNG, JPG, JPEG, WEBP</span>
+                              <span style={{ fontSize: '0.9rem', color: '#94a3b8' }}>Supports PNG, JPG, JPEG, WEBP</span>
                             </label>
                           </div>
                           {uploadingMultiple && (
@@ -1008,7 +1008,7 @@ const AdminDashboard = () => {
                           
                           {newGallery.image_urls && newGallery.image_urls.length > 0 && (
                             <div style={{ marginTop: '20px' }}>
-                              <label style={{ display: 'block', fontWeight: '600', marginBottom: '8px', fontSize: '0.9rem' }}>Uploaded Photos ({newGallery.image_urls.length})</label>
+                              <label style={{ display: 'block', fontWeight: '600', marginBottom: '8px', fontSize: '1rem' }}>Uploaded Photos ({newGallery.image_urls.length})</label>
                               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(80px, 1fr))', gap: '10px' }}>
                                 {newGallery.image_urls.map((url, idx) => (
                                   <div key={idx} style={{ position: 'relative', borderRadius: '6px', overflow: 'hidden', border: '1px solid #cbd5e1', height: '80px' }}>

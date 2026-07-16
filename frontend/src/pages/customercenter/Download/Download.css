@@ -84,7 +84,7 @@
   backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #ffffff;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 600;
   letter-spacing: 0.4px;
   box-shadow: 0 8px 30px rgba(33, 31, 31, 0.15);
@@ -92,7 +92,7 @@
 
 /* Main Heading */
 .download-title {
-  font-size: clamp(42px, 7vw, 72px);
+  font-size: clamp(45px, 7vw, 75px);
   font-weight: 700;
   line-height: 1.08;
   letter-spacing: -0.04em;
@@ -112,7 +112,7 @@
 .hero-subtitle {
   max-width: 760px;
   margin: 0 auto;
-  font-size: 20px;
+  font-size: 23px;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.9);
   font-weight: 400;
@@ -131,7 +131,7 @@
 }
 
 .download-category h2 {
-  font-size: 32px;
+  font-size: 35px;
   font-weight: 600;
   color: #211F1F;
   margin-bottom: 30px;
@@ -207,7 +207,7 @@
       #ffffff,
       #fff5f5);
   color: #B3191F;
-  font-size: 28px;
+  font-size: 31px;
   position: relative;
   z-index: 2;
 }
@@ -215,7 +215,7 @@
 /* FILE TITLE */
 .download-card span {
   flex: 1;
-  font-size: 18px;
+  font-size: 21px;
   line-height: 1.6;
   color: #334155;
   font-weight: 500;
@@ -230,7 +230,7 @@
 
 /* DOWNLOAD ICON */
 .dl-icon {
-  font-size: 22px;
+  font-size: 25px;
   color: #94a3b8;
   transition: all 0.3s ease;
   position: relative;
@@ -261,12 +261,12 @@
   }
 
   .download-title {
-    font-size: 44px;
+    font-size: 47px;
     line-height: 1.15;
   }
 
   .hero-subtitle {
-    font-size: 18px;
+    font-size: 21px;
     line-height: 1.7;
   }
 
@@ -281,27 +281,27 @@
   }
 
   .download-category h2 {
-    font-size: 28px;
+    font-size: 31px;
   }
 }
 
 @media (max-width: 480px) {
   .download-title {
-    font-size: 36px;
+    font-size: 39px;
   }
 
   .hero-badge {
-    font-size: 14px;
+    font-size: 17px;
     padding: 10px 18px;
   }
 
   .pdf-icon {
     width: 54px;
     height: 54px;
-    font-size: 24px;
+    font-size: 27px;
   }
 
   .download-card span {
-    font-size: 17px;
+    font-size: 20px;
   }
 }

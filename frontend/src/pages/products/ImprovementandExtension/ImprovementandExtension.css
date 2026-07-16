@@ -114,13 +114,13 @@
 }
 
 .improv-feature-icon {
-  font-size: 42px;
+  font-size: 45px;
   margin-bottom: 18px;
   color: #B3191F;
 }
 
 .improv-feature-box h3 {
-  font-size: 24px;
+  font-size: 27px;
   font-weight: 600;
   color: #B3191F !important;
 }
@@ -135,7 +135,7 @@
 }
 
 .improv-benefits-title {
-  font-size: 36px;
+  font-size: 39px;
   font-weight: 600;
   color: #B3191F !important;
   margin-bottom: 45px;
@@ -152,7 +152,7 @@
 .improv-benefit-item {
   background: #ffffff;
   padding: 24px 30px;
-  font-size: 18px;
+  font-size: 21px;
   line-height: 1.6;
   color: #211F1F;
   border-left: 5px solid #B3191F;
@@ -178,7 +178,7 @@
 }
 
 .improv-help-title {
-  font-size: 44px;
+  font-size: 47px;
   font-weight: 700;
   color: #B3191F !important;
   margin-bottom: 12px;
@@ -186,7 +186,7 @@
 }
 
 .improv-help-subtitle {
-  font-size: 20px;
+  font-size: 23px;
   color: #6b7a90;
   text-align: center;
   margin-bottom: 60px;
@@ -218,28 +218,28 @@
 
 /* Icon */
 .improv-help-icon {
-  font-size: 42px;
+  font-size: 45px;
   color: #B3191F;
   margin-bottom: 20px;
 }
 
 /* Text */
 .improv-help-card h3 {
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 600;
   color: #0a2540;
   margin-bottom: 16px;
 }
 
 .improv-help-card p {
-  font-size: 18px;
+  font-size: 21px;
   color: #6b7a90;
   line-height: 1.6;
 }
 
 .improv-help-green {
   color: #B3191F;
-  font-size: 24px;
+  font-size: 27px;
   margin: 10px 0;
   font-weight: 600;
 }
@@ -296,7 +296,7 @@
 }
 
 .improv-rotate-icon {
-  font-size: 30px;
+  font-size: 33px;
   color: #B3191F;
   transition: transform 0.7s ease;
 }
@@ -335,7 +335,7 @@
   border-radius: 10px;
 
   background: #fff;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 600;
   color: #222;
 
@@ -348,7 +348,7 @@
   height: 22px;
   background: #B3191F;
   color: #fff;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: bold;
 
   display: flex;
@@ -364,7 +364,7 @@
 }
 
 .improv-image-points .points-title {
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 600;
   color: #B3191F;
   margin-bottom: 5px;
@@ -383,14 +383,14 @@
 }
 
 .improv-content h2 {
-  font-size: 34px;
+  font-size: 37px;
   font-weight: 700;
   color: #B3191F;
   margin-bottom: 12px;
 }
 
 .improv-subtitle {
-  font-size: 20px;
+  font-size: 23px;
   color: #6b7a90;
   margin-bottom: 25px;
   text-align: left;
@@ -405,7 +405,7 @@
 
 .improv-features li {
   margin-bottom: 12px;
-  font-size: 18px;
+  font-size: 21px;
   color: #425466;
   position: relative;
   padding-left: 35px;
@@ -425,7 +425,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 600;
 }
 
@@ -523,7 +523,7 @@
 }
 
 .improv-main-title {
-  font-size: 44px;
+  font-size: 47px;
   font-weight: 700;
   color: #B3191F;
   margin-bottom: 16px;
@@ -531,7 +531,7 @@
 }
 
 .improv-sub-heading {
-  font-size: 28px;
+  font-size: 31px;
   font-weight: 600;
   color: #B3191F;
   margin-bottom: 14px;
@@ -539,7 +539,7 @@
 }
 
 .improv-heading {
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 600;
   color: #211F1F;
   margin-bottom: 28px;
@@ -547,14 +547,14 @@
 }
 
 .improv-heading {
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 600;
   color: #211F1F;
   margin-bottom: 28px;
 }
 
 .improv-description {
-  font-size: 19px;
+  font-size: 22px;
   line-height: 1.8;
   color: #211F1F;
   max-width: 900px;
@@ -594,7 +594,7 @@
 }
 
 .improv-feature-icon {
-  font-size: 42px;
+  font-size: 45px;
   margin-bottom: 20px;
   color: #B3191F;
   display: flex;
@@ -611,12 +611,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 26px;
+  font-size: 29px;
   margin: 0 auto 20px;
 }
 
 .improv-feature-box h3 {
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 600;
   color: #211F1F !important;
   margin: 0;
@@ -662,7 +662,7 @@
 }
 
 .improv-keyfeatures-title {
-  font-size: 40px;
+  font-size: 43px;
   font-weight: 600;
   margin-bottom: 35px;
   color: #B3191F;
@@ -673,7 +673,7 @@
 
 .improv-keyfeatures-content {
   max-width: 1100px;
-  font-size: 19px;
+  font-size: 22px;
   line-height: 1.9;
   color: #2f3e46;
 }
@@ -709,7 +709,7 @@
 
 
 .improv-quote-ti {
-  font-size: 44px;
+  font-size: 47px;
   font-weight: 600;
   color: #B3191F;
   margin-bottom: 10px;
@@ -717,7 +717,7 @@
 
 
 .improv-quote-subti {
-  font-size: 20px;
+  font-size: 23px;
   color: #6b7c93;
   margin-bottom: 50px;
 }
@@ -740,7 +740,7 @@
 .improv-form-grid input {
   width: 100%;
   padding: 18px 20px;
-  font-size: 18px;
+  font-size: 21px;
   border-radius: 6px;
   border: 2px solid #e3eaf0;
   outline: none;
@@ -762,7 +762,7 @@
   color: #fff;
   border: none;
   padding: 18px;
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 600;
   letter-spacing: 1px;
   border-radius: 6px;
@@ -790,14 +790,14 @@
 }
 
 .improv-support-header h2 {
-  font-size: 44px;
+  font-size: 47px;
   font-weight: 700;
   color: #B3191F;
   margin-bottom: 12px;
 }
 
 .improv-support-header p {
-  font-size: 20px;
+  font-size: 23px;
   color: #6b7a90;
 }
 
@@ -828,28 +828,28 @@
 }
 
 .improv-support-icon {
-  font-size: 42px;
+  font-size: 45px;
   color: #66b500;
   margin-bottom: 20px;
 }
 
 
 .improv-support-card h3 {
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 600;
   color: #B3191F;
   margin-bottom: 16px;
 }
 
 .improv-support-card p {
-  font-size: 18px;
+  font-size: 21px;
   color: #0a2540;
   line-height: 1.6;
 }
 
 .improv-support-phone {
   color: black;
-  font-size: 24px;
+  font-size: 27px;
   margin: 10px 0;
   font-weight: 600;
 }
@@ -885,11 +885,11 @@
 
 @media(max-width: 600px) {
   .improv-quote-title {
-    font-size: 34px;
+    font-size: 37px;
   }
 
   .improv-quote-subti {
-    font-size: 18px;
+    font-size: 21px;
   }
 }
 
@@ -901,11 +901,11 @@
   }
 
   .improv-keyfeatures-title {
-    font-size: 32px;
+    font-size: 35px;
   }
 
   .improv-keyfeatures-content {
-    font-size: 18px;
+    font-size: 21px;
   }
 }
 

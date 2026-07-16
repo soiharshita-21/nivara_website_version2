@@ -86,7 +86,7 @@
   background: transparent;
   outline: none;
   font-family: inherit;
-  font-size: 15px;
+  font-size: 18px;
 }
  
 .search-icon {
@@ -120,7 +120,7 @@
   padding: 10px 16px;
   text-decoration: none;
   color: #1e293b;
-  font-size: 16px;
+  font-size: 19px;
   transition: all 0.2s;
 }
  
@@ -159,7 +159,7 @@
   font-weight: 500 !important;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  font-size: 14.5px !important;
+  font-size: 18px !important;
   display: flex !important;
   align-items: center;
   justify-content: center;
@@ -216,7 +216,7 @@
   display: block;
   padding: 10px 20px;
   color: #444;
-  font-size: 16px;
+  font-size: 19px;
   text-decoration: none;
   transition: all 0.2s ease;
   white-space: nowrap;
@@ -306,7 +306,7 @@
     padding: 15px 10px;
     border-radius: 0;
     justify-content: space-between;
-    font-size: 18px;
+    font-size: 21px;
   }
  
   /* --- Mobile Dropdown Logic --- */
@@ -346,7 +346,7 @@
     display: block;
     padding: 12px 30px !important;
     color: #444;
-    font-size: 16px;
+    font-size: 19px;
     text-decoration: none;
     border-bottom: 1px solid #eee;
   }
@@ -442,7 +442,7 @@
   color: #fff;
   padding: 8px 24px 14px;
   font-family: 'Poppins', sans-serif;
-  font-size: 18px;
+  font-size: 21px;
   border-radius: 8px;
   /* Fully rounded now it's floating */
   box-shadow: 0 8px 20px rgba(227, 33, 37, 0.4), inset 0 2px 4px rgba(33, 31, 31, 0.1);
@@ -484,7 +484,7 @@
 .hanging-rating-banner strong {
   font-weight: 600;
   letter-spacing: 0.3px;
-  font-size: 19px;
+  font-size: 22px;
 }
  
 @media (max-width: 1024px) {
@@ -494,12 +494,12 @@
  
   .hanging-rating-banner {
     padding: 6px 16px 10px;
-    font-size: 16px;
+    font-size: 19px;
     margin-top: 18px;
   }
  
   .hanging-rating-banner strong {
-    font-size: 17px;
+    font-size: 20px;
   }
  
   .thread {
@@ -533,7 +533,7 @@
   justify-content: space-between;
   padding: 10px 20px !important;
   color: #2f3b52 !important;
-  font-size: 16px !important;
+  font-size: 19px !important;
   font-weight: 500 !important;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -565,7 +565,7 @@
   justify-content: space-between;
   padding: 10px 20px !important;
   color: #2f3b52 !important;
-  font-size: 16px !important;
+  font-size: 19px !important;
   font-weight: 500 !important;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -594,7 +594,7 @@
 /* Indented sub-items (e.g. Policy, Public Disclosure under Governance) */
 .dropdown-menu li a.dropdown-subitem {
   padding-left: 36px !important;
-  font-size: 13.5px !important;
+  font-size: 16px !important;
   color: #211F1F !important; /* Slightly lighter gray for subitems */
   position: relative;
 }
@@ -651,7 +651,7 @@
     display: block;
     padding: 8px 16px;
     color: #444;
-    font-size: 16px;
+    font-size: 19px;
     text-decoration: none;
     transition: all 0.2s ease;
     white-space: nowrap;
@@ -701,7 +701,7 @@
     display: block;
     padding: 8px 16px;
     color: #444;
-    font-size: 16px;
+    font-size: 19px;
     text-decoration: none;
     transition: all 0.2s ease;
     white-space: nowrap;
@@ -797,7 +797,7 @@
     padding: 12px 30px !important;
     padding-left: 45px !important;
     color: #211F1F;
-    font-size: 16px;
+    font-size: 19px;
     text-decoration: none;
     border-bottom: 1px solid #f8fafc;
     background-color: #fafafa !important;
@@ -843,7 +843,7 @@
     padding: 12px 30px !important;
     padding-left: 55px !important; /* Level 4 indent */
     color: #211F1F;
-    font-size: 13.5px;
+    font-size: 16px;
     text-decoration: none;
     border-bottom: 1px solid #f8fafc;
     background-color: #fafafa !important;
@@ -877,7 +877,7 @@
  
   .nav-link,
   .dropdown-trigger {
-    font-size: 14px !important;
+    font-size: 17px !important;
     padding: 6px 8px !important;
   }
 }
@@ -898,7 +898,7 @@
   }
   
   .search-wrapper input {
-    font-size: 13px;
+    font-size: 16px;
     padding: 6px 42px 6px 12px;
   }
  
@@ -908,7 +908,7 @@
  
   .nav-link,
   .dropdown-trigger {
-    font-size: 13px !important;
+    font-size: 16px !important;
     padding: 4px 6px !important;
   }
 }

@@ -48,9 +48,9 @@ const PublicDisclosure = () => {
     <div className="public-page">
 
       {/* Hero Section */}
-      <div className="public-hero" style={{ backgroundImage: `url(${home3})` }}>
+      <section className="page-banner public-page-banner" style={{ backgroundImage: `url(${home3})` }}>
         <div className="page-banner-overlay"></div>
-        <ScrollReveal direction="down" distance={30} className="hero-content-wrapper">
+        <ScrollReveal direction="down" distance={30} className="page-banner-content">
           <h1 className="page-banner-title">
             Public <span className="text-red">Disclosure</span>
           </h1>
@@ -58,7 +58,7 @@ const PublicDisclosure = () => {
             Transparency and regulatory compliance in housing finance
           </p>
         </ScrollReveal>
-      </div> 
+      </section>
 
       {/* Content */}
       <div className="public-content">

@@ -240,7 +240,7 @@ const Career = () => {
                   padding: '12px 16px',
                   borderRadius: '8px',
                   marginBottom: '20px',
-                  fontSize: "16px",
+                  fontSize: "18px",
                   fontWeight: 500,
                   textAlign: 'center',
                   background: alert.type === 'success' ? '#e6f4ea' : alert.type === 'error' ? '#fce8e6' : '#e8f0fe',
@@ -307,7 +307,7 @@ const Career = () => {
                     {file ? (
                       <div>
                         <p style={{ fontWeight: 600, color: '#333', margin: '5px 0' }}>Selected: {file.name}</p>
-                        <span style={{ fontSize: "14px", color: "#211F1F" }}>(${(file.size / (1024 * 1024)).toFixed(2)} MB)</span>
+                        <span style={{ fontSize: "16px", color: "#211F1F" }}>(${(file.size / (1024 * 1024)).toFixed(2)} MB)</span>
                         <button 
                           type="button" 
                           className="remove-file-btn" 
@@ -320,7 +320,7 @@ const Career = () => {
                             color: 'white',
                             border: 'none',
                             borderRadius: '4px',
-                            fontSize: "14px",
+                            fontSize: "16px",
                             fontWeight: '600',
                             cursor: 'pointer'
                           }}

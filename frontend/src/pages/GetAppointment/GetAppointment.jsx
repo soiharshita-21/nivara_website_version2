@@ -82,7 +82,7 @@ const GetAppointment = () => {
   return (
     <div className="loan-form-page">
       <form className="loan-form" onSubmit={handleSubmit}>
-        <h2 className="form-title" style={{ fontSize: "30px", fontWeight: 600, textAlign: 'center', marginBottom: '35px' }}>
+        <h2 className="form-title" style={{ fontSize: "32px", fontWeight: 600, textAlign: 'center', marginBottom: '35px' }}>
           Schedule an Appointment
         </h2>
 
@@ -91,7 +91,7 @@ const GetAppointment = () => {
             padding: '12px 16px',
             borderRadius: '8px',
             marginBottom: '20px',
-            fontSize: "16px",
+            fontSize: "18px",
             fontWeight: 500,
             textAlign: 'center',
             background: alertState.type === 'success' ? '#e6f4ea' : alertState.type === 'error' ? '#fce8e6' : '#e8f0fe',

@@ -101,7 +101,7 @@ const Testimonials = () => {
           <div className="testimonial-content">
             {/* Quote */}
             <div className="quote-icon">
-              <FaQuoteLeft style={{ color: "#B3191F", fontSize: "30px" }} />
+              <FaQuoteLeft style={{ color: "#B3191F", fontSize: "32px" }} />
             </div>
 
             {/* Stars */}

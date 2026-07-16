@@ -34,7 +34,7 @@
     left: 80px;
     z-index: 10;
     color: #fff;
-    font-size: 0.9rem;
+    font-size: 1.05rem;
     font-weight: 500;
     letter-spacing: 0.5px;
     background: rgba(33, 31, 31, 0.2);
@@ -73,7 +73,7 @@
 }
 
 .blog-detail-hero-content h1 {
-    font-size: 50px;
+    font-size: 53px;
     color: #fff;
     max-width: 800px;
     line-height: 1.2;
@@ -89,7 +89,7 @@
     padding: 16px 50px;
     font-weight: 600;
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 1.15rem;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     letter-spacing: 1px;
@@ -130,7 +130,7 @@
     align-items: center;
     gap: 30px;
     color: #211F1F;
-    font-size: 0.9rem;
+    font-size: 1.05rem;
     margin-bottom: 40px;
     padding-bottom: 25px;
     border-bottom: 1px solid #f1f5f9;
@@ -144,7 +144,7 @@
 
 .meta-item i {
     color: #D23430;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
 }
 
 .post-image.main-image {
@@ -162,19 +162,19 @@
 
 .post-body {
     color: #334155;
-    font-size: 1.15rem;
+    font-size: 1.3rem;
     line-height: 1.8;
 }
 
 .post-body h2 {
-    font-size: 2rem;
+    font-size: 2.15rem;
     color: #1e293b;
     margin: 40px 0 20px;
     font-weight: 600;
 }
 
 .post-body h3 {
-    font-size: 1.5rem;
+    font-size: 1.65rem;
     color: #1e293b;
     margin: 30px 0 15px;
     font-weight: 600;
@@ -196,7 +196,7 @@
 }
 
 .tags-label {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     color: #1e293b;
     margin-bottom: 20px;
     font-weight: 600;
@@ -213,7 +213,7 @@
     color: #211F1F;
     padding: 10px 22px;
     border-radius: 50px;
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 500;
     transition: all 0.3s;
     cursor: pointer;
@@ -235,7 +235,7 @@
 }
 
 .related-blogs-section h3 {
-    font-size: 1.6rem;
+    font-size: 1.75rem;
     margin-bottom: 35px;
     color: #1e293b;
     font-weight: 600;
@@ -263,7 +263,7 @@
 }
 
 .related-item .category {
-    font-size: 0.8rem;
+    font-size: 0.95rem;
     color: #D23430;
     font-weight: 600;
     display: block;
@@ -273,7 +273,7 @@
 }
 
 .related-item h4 {
-    font-size: 1.2rem;
+    font-size: 1.35rem;
     line-height: 1.4;
     margin-bottom: 10px;
     color: #1e293b;
@@ -300,20 +300,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
+    font-size: 2.65rem;
     font-weight: 600;
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .author-info h4 {
-    font-size: 1.5rem;
+    font-size: 1.65rem;
     margin-bottom: 5px;
     color: #fff;
 }
 
 .author-info p {
     color: #94a3b8;
-    font-size: 1rem;
+    font-size: 1.15rem;
     margin: 0;
 }
 
@@ -333,7 +333,7 @@
 }
 
 .sidebar-widget h3 {
-    font-size: 1.3rem;
+    font-size: 1.45rem;
     color: #211F1F;
     margin-bottom: 30px;
     font-weight: 600;
@@ -364,7 +364,7 @@
     border: none;
     background: transparent;
     padding: 18px;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
 }
 
 .search-box button {
@@ -397,7 +397,7 @@
 }
 
 .recent-date {
-    font-size: 0.8rem;
+    font-size: 0.95rem;
     color: #94a3b8;
 }
 
@@ -407,7 +407,7 @@
 }
 
 .comment-section h3 {
-    font-size: 2rem;
+    font-size: 2.15rem;
     margin-bottom: 15px;
     color: #211F1F;
     font-weight: 600;
@@ -425,7 +425,7 @@
     background: #f8fafc;
     border: 1px solid #e2e8f0;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 1.15rem;
     margin-bottom: 25px;
     transition: all 0.3s;
 }
@@ -450,7 +450,7 @@
     border: none;
     padding: 20px 50px;
     border-radius: 6px;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -483,7 +483,7 @@
     }
     
     .blog-detail-hero-content h1 {
-        font-size: 34px;
+        font-size: 37px;
     }
     
     .blog-main-content {

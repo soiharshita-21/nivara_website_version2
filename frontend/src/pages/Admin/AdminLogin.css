@@ -71,7 +71,7 @@
 }
 
 .login-header h1 {
-  font-size: 2rem;
+  font-size: 2.15rem;
   color: #1e293b;
   margin-bottom: 0.5rem;
   font-weight: 700;
@@ -80,7 +80,7 @@
 
 .login-header p {
   color: #211F1F;
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 500;
 }
 
@@ -95,7 +95,7 @@
   color: #B3191F;
   padding: 1rem;
   border-radius: 0.75rem;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -111,7 +111,7 @@
 }
 
 .input-group label {
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: #334155;
   margin-left: 0.25rem;
@@ -135,7 +135,7 @@
   padding: 1rem 1rem 1rem 3rem;
   border: 2px solid #e2e8f0;
   border-radius: 0.75rem;
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 500;
   transition: all 0.3s ease;
   background-color: #ffffff;
@@ -181,7 +181,7 @@
   padding: 1rem;
   border: none;
   border-radius: 0.75rem;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -225,7 +225,7 @@
 }
 
 .login-footer p {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: #211F1F;
   font-weight: 500;
 }

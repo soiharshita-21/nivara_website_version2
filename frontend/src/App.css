@@ -7,7 +7,7 @@
 .loan-form-page h2 {
   text-align: center;
   margin-bottom: 40px;
-  font-size: 32px;
+  font-size: 35px;
   color: #1f3c88;
 }
 
@@ -34,7 +34,7 @@ input {
   padding: 12px;
   border: 1px solid #444;
   outline: none;
-  font-size: 17px;
+  font-size: 20px;
 }
 
 .submit-btn {
@@ -43,6 +43,6 @@ input {
   background: #e03131;
   color: white;
   border: none;
-  font-size: 20px;
+  font-size: 23px;
   cursor: pointer;
 }

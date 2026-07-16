@@ -14,59 +14,19 @@
 
 /* =========================
    HERO SECTION
-   Same premium style as About Us
+   Shared page-banner style for Public Disclosure
 ========================= */
-.public-hero {
+.public-page .page-banner {
+  height: 100vh;
+  min-height: 100vh;
+}
+
+.public-page .page-banner-content {
   position: relative;
+  z-index: 5;
+  max-width: 1100px;
   width: 100%;
-  min-height: 88vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 120px 5%;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Dark overlay */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(135deg,
-      rgba(33, 31, 31, 0.65),
-      rgba(33, 31, 31, 0.45));
-  z-index: 1;
-}
-
-/* Soft white glow */
-.public-hero::before {
-  content: "";
-  position: absolute;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle,
-      rgba(255, 255, 255, 0.12) 0%,
-      transparent 70%);
-  top: -180px;
-  right: -150px;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Bottom fade */
-.public-hero::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 140px;
-  background: linear-gradient(to top, #fff, transparent);
-  z-index: 2;
-  pointer-events: none;
+  text-align: center;
 }
 
 /* =========================
@@ -108,7 +68,7 @@
   backdrop-filter: blur(10px);
 
   color: #fff;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 600;
   letter-spacing: 0.5px;
 
@@ -120,7 +80,7 @@
    Taken from About Us style
 ========================= */
 .public-title {
-  font-size: clamp(48px, 7vw, 90px);
+  font-size: clamp(51px, 7vw, 93px);
   font-weight: 600;
   line-height: 1;
   letter-spacing: -2px;
@@ -146,7 +106,7 @@
   max-width: 760px;
   margin: 0 auto;
 
-  font-size: 20px;
+  font-size: 23px;
   line-height: 1.8;
   color: #f4f4f4;
   font-weight: 400;
@@ -164,7 +124,7 @@
 /* Section heading */
 .public-note {
   text-align: center;
-  font-size: 36px;
+  font-size: 39px;
   font-weight: 600;
   color: #B3191F;
   margin-bottom: 50px;
@@ -265,7 +225,7 @@
 
 /* Card heading */
 .public-card-content h2 {
-  font-size: 28px;
+  font-size: 31px;
   font-weight: 600;
   line-height: 1.3;
 
@@ -300,7 +260,7 @@
   text-decoration: none;
 
   color: #211F1F;
-  font-size: 17px;
+  font-size: 20px;
   line-height: 1.7;
   font-weight: 500;
 
@@ -366,12 +326,12 @@
   }
 
   .hero-subtitle {
-    font-size: 18px;
+    font-size: 21px;
     line-height: 1.7;
   }
 
   .public-note {
-    font-size: 30px;
+    font-size: 33px;
   }
 
   .public-card-content {
@@ -379,23 +339,23 @@
   }
 
   .public-card-content h2 {
-    font-size: 25px;
+    font-size: 28px;
   }
 }
 
 @media (max-width: 480px) {
   .hero-badge {
-    font-size: 14px;
+    font-size: 17px;
     padding: 8px 18px;
   }
 
   .public-title {
-    font-size: 40px;
+    font-size: 43px;
     padding: 10px 18px;
   }
 
   .hero-subtitle {
-    font-size: 17px;
+    font-size: 20px;
   }
 
   .public-card-image {
@@ -407,6 +367,6 @@
   }
 
   .public-links a {
-    font-size: 16px;
+    font-size: 19px;
   }
 }

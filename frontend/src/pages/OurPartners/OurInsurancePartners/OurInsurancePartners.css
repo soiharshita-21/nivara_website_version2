@@ -61,7 +61,7 @@
 
 .banner-title {
   color: #fff;
-  font-size: 102px;
+  font-size: 105px;
   font-weight: 600;
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -163,7 +163,7 @@
   }
 
   .banner-title {
-    font-size: 34px;
+    font-size: 37px;
   }
   .banner-title::after {
     width: 60px;

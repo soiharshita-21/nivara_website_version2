@@ -34,7 +34,7 @@
 }
 
 .how-title {
-  font-size: 56px;
+  font-size: 59px;
   font-weight: 700;
   color: #E32125;
   margin-bottom: 20px;
@@ -43,7 +43,7 @@
 
 .how-subtitle {
   color: #6b7280;
-  font-size: 18px;
+  font-size: 21px;
   margin-bottom: 100px;
   max-width: 600px;
   margin-left: auto;
@@ -90,7 +90,7 @@
 }
 
 .how-step-number {
-  font-size: 100px;
+  font-size: 103px;
   font-weight: 600;
   opacity: 0.08;
   position: absolute;
@@ -122,7 +122,7 @@
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 32px;
+  font-size: 35px;
   position: relative;
   z-index: 2;
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -182,14 +182,14 @@
 }
 
 .how-step h3 {
-  font-size: 24px;
+  font-size: 27px;
   font-weight: 600;
   margin-bottom: 12px;
 }
 
 .how-step p {
   color: #6b7280;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.6;
   max-width: 200px;
   margin: auto;
@@ -209,7 +209,7 @@
 }
 
 .how-cta p {
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 500;
   margin-bottom: 20px;
   color: #374151;
@@ -221,7 +221,7 @@
   border: none;
   padding: 18px 45px;
   border-radius: 50px;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -293,7 +293,7 @@
 
 /* Text */
 .how-cta-content p {
-  font-size: 36px;
+  font-size: 39px;
   font-weight: 600;
   margin-bottom: 0;
   text-shadow: 0 2px 10px rgba(33, 31, 31, 0.3);
@@ -306,7 +306,7 @@
   border: none;
   padding: 16px 45px;
   border-radius: 50px;
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -351,7 +351,7 @@
   }
 
   .how-title {
-    font-size: 40px;
+    font-size: 43px;
   }
 }
 

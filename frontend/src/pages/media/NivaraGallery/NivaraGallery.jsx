@@ -116,7 +116,7 @@ const NivaraGallery = () => {
 
       {loading ? (
         <div className="loading-container" style={{ textAlign: "center", padding: "80px 20px" }}>
-          <p style={{ fontSize: "1.2rem", color: "#211F1F" }}>Loading Nivara Gallery...</p>
+          <p style={{ fontSize: "1.3rem", color: "#211F1F" }}>Loading Nivara Gallery...</p>
         </div>
       ) : selectedFolder ? (
         <div className="folder-open-view">
@@ -150,7 +150,7 @@ const NivaraGallery = () => {
           })}
           {folders.length === 0 && (
             <div style={{ gridColumn: "1 / -1", textAlign: "center", padding: "80px 20px" }}>
-              <p style={{ color: "#211F1F", fontSize: "1.1rem" }}>No folders found in the gallery.</p>
+              <p style={{ color: "#211F1F", fontSize: "1.2rem" }}>No folders found in the gallery.</p>
             </div>
           )}
         </div>

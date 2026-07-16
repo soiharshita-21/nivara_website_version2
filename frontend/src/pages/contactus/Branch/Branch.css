@@ -22,7 +22,7 @@
 }
  
 .banner-con h1 {
-  font-size: clamp(34px, 4vw, 52px);
+  font-size: clamp(37px, 4vw, 55px);
   color: #B3191F;
   letter-spacing: 1px;
   line-height: 1.05;
@@ -30,7 +30,7 @@
 }
  
 .banner-con p {
-  font-size: 20px;
+  font-size: 23px;
   line-height: 1.7;
   color: #2B2B2B;
   margin-bottom: 35px;
@@ -100,14 +100,14 @@
  
 .branch-locator h2 {
   color: #B3191F;
-  font-size: 27px;
+  font-size: 30px;
   font-weight: 700;
   text-align: center;
 }
  
 .new-branches-title {
   color: #B3191F;
-  font-size: 27px;
+  font-size: 30px;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -118,7 +118,7 @@
  
 .pin-icon {
   color: #B3191F;
-  font-size: 30px;
+  font-size: 33px;
   display: inline-block;
   vertical-align: middle;
   margin-right: 12px;
@@ -136,7 +136,7 @@
   padding: 18px 50px 18px 22px;
   border-radius: 12px;
   border: 1px solid #ddd;
-  font-size: 20px;
+  font-size: 23px;
   outline: none;
   box-shadow: 0 4px 10px rgba(33, 31, 31, 0.06);
   transition: 0.3s ease;
@@ -149,7 +149,7 @@
   transform: translateY(-50%);
   background: transparent;
   border: none;
-  font-size: 26px;
+  font-size: 29px;
   color: #211F1F;
   cursor: pointer;
   z-index: 10;
@@ -196,7 +196,7 @@
 }
  
 .res-state {
-  font-size: 14px;
+  font-size: 17px;
   text-transform: uppercase;
   color: #211F1F;
   letter-spacing: 1px;
@@ -232,7 +232,7 @@
 }
 
 .state-card span {
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 800;
   letter-spacing: 0;
 }
@@ -242,7 +242,7 @@
   border-radius: 999px;
   background: rgba(179, 25, 31, 0.08);
   color: #7f1d1d;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -254,7 +254,7 @@
 }
  
 .down-icon {
-  font-size: 22px;
+  font-size: 25px;
   color: #B3191F;
   transition: transform 0.25s ease;
 }
@@ -296,7 +296,7 @@
   background: #fbf6f6;
   padding: 12px 14px;
   border-radius: 10px;
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 600;
   color: #7a0f1b;
   cursor: pointer;
@@ -365,11 +365,24 @@
   height: auto !important;
   max-height: 85vh;
  
-  overflow-y: auto;
+  overflow: hidden !important;
 }
  
 .branch-modal-card::-webkit-scrollbar {
-  display: none;
+  width: 10px;
+}
+
+.branch-modal-card::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.branch-modal-card::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+}
+
+.branch-modal-card::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.18);
 }
  
 .close-btn {
@@ -386,7 +399,7 @@
   align-items: center !important;
   justify-content: center !important;
   color: #211F1F !important;
-  font-size: 20px !important;
+  font-size: 23px !important;
   transition: 0.2s !important;
 }
  
@@ -416,19 +429,19 @@
 }
  
 .modal-icon {
-  font-size: 28px !important;
+  font-size: 31px !important;
   color: #B3191F !important;
 }
  
 .modal-header h3 {
-  font-size: 28px !important;
+  font-size: 31px !important;
   color: #B3191F !important;
   margin: 0 !important;
   font-weight: 700 !important;
 }
  
 .modal-state-label {
-  font-size: 15px !important;
+  font-size: 18px !important;
   color: #B3191F !important;
   font-weight: 600 !important;
   text-transform: uppercase !important;
@@ -439,8 +452,12 @@
 .modal-body {
   width: 100% !important;
   margin-bottom: 5px !important;
+  padding-bottom: 0 !important;
   display: flex !important;
   flex-direction: column !important;
+  max-height: 55vh !important;
+  overflow-y: auto !important;
+  padding-right: 8px !important;
 }
  
 .info-item {
@@ -451,14 +468,14 @@
 }
  
 .info-label {
-  font-size: 13px !important;
+  font-size: 16px !important;
   color: #211F1F !important;
   font-weight: 600 !important;
   text-transform: uppercase !important;
 }
  
 .info-item p {
-  font-size: 18px !important;
+  font-size: 21px !important;
   color: #333 !important;
   margin: 0 !important;
   font-weight: 600 !important;
@@ -470,11 +487,12 @@
   width: 100% !important;
 }
  
+ 
 .modal-actions-container {
-  position: sticky;
-  bottom: 0;
+  position: relative;
   background: #fff;
-  padding-top: 10px;
+  padding: 20px 0 0 !important;
+  margin-top: 10px !important;
 }
  
 .btn-get-directions-final {
@@ -485,7 +503,7 @@
   padding: 16px !important;
   border-radius: 14px !important;
   font-weight: 600 !important;
-  font-size: 18px !important;
+  font-size: 21px !important;
   cursor: pointer !important;
   box-shadow: 0 8px 20px rgba(227, 33, 37, 0.25) !important;
   transition: all 0.3s ease !important;
@@ -519,14 +537,14 @@
  
 .branch-card h3 {
   color: #B3191F;
-  font-size: clamp(18px, 1.6vw, 22px);
+  font-size: clamp(21px, 1.6vw, 25px);
   margin-bottom: 5px;
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
  
 .branch-card p {
-  font-size: 16px;
+  font-size: 19px;
   color: #211F1F;
   margin: 0;
 }
@@ -539,7 +557,7 @@
   border-radius: 10px;
   color: #B3191F;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 19px;
   cursor: pointer;
   transition: 0.2s;
 }
@@ -579,7 +597,7 @@
   gap: 8px;
   width: fit-content;
   color: #B3191F;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 700;
   letter-spacing: 1.5px;
   line-height: 1.2;
@@ -590,7 +608,7 @@
 .branch-map-copy h2,
 .new-branches-header h2 {
   color: #211F1F;
-  font-size: clamp(30px, 3vw, 42px);
+  font-size: clamp(33px, 3vw, 45px);
   font-weight: 500;
   line-height: 1.08;
   margin: 0 0 16px;
@@ -599,7 +617,7 @@
 .branch-map-copy>p,
 .new-branches-header>p {
   color: #596272;
-  font-size: 18px;
+  font-size: 21px;
   line-height: 1.7;
   margin: 0;
 }
@@ -636,14 +654,14 @@
 .branch-map-info-item strong {
   display: block;
   color: #211F1F;
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 2px;
 }
  
 .branch-map-info-item p {
   color: #211F1F;
-  font-size: 16px;
+  font-size: 19px;
   line-height: 1.35;
   margin: 0;
 }
@@ -663,7 +681,7 @@
   gap: 8px;
   min-height: 46px;
   border-radius: 14px;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
@@ -718,7 +736,7 @@
 .branch-map-topbar span {
   display: block;
   color: #B3191F;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -727,7 +745,7 @@
 .branch-map-topbar strong {
   display: block;
   color: #211F1F;
-  font-size: 19px;
+  font-size: 22px;
   font-weight: 600;
   margin-top: 3px;
 }
@@ -819,7 +837,7 @@
  
 .branch-card-head h3 {
   color: #211F1F;
-  font-size: clamp(18px, 1.6vw, 22px);
+  font-size: clamp(21px, 1.6vw, 25px);
   line-height: 1.2;
   margin: 0 0 4px;
   overflow-wrap: break-word;
@@ -829,7 +847,7 @@
  
 .branch-card-head p {
   color: #B3191F;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.8px;
   margin: 0;
@@ -851,7 +869,7 @@
  
 .branch-card-detail p {
   color: #555d69;
-  font-size: 16px;
+  font-size: 19px;
   line-height: 1.55;
   margin: 0;
 }
@@ -859,7 +877,7 @@
 .branch-card-detail strong {
   display: block;
   color: #211F1F;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 600;
   letter-spacing: 0.8px;
   margin-bottom: 2px;
@@ -937,7 +955,7 @@
 }
 
 .state-filter-label {
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 700;
   color: #7f8c9d;
   text-transform: uppercase;
@@ -961,7 +979,7 @@
   padding: 8px 20px;
   border-radius: 50px;
   border: none;
-  font-size: 13.5px;
+  font-size: 16px;
   font-weight: 600;
   color: #4a5568;
   background: transparent;
@@ -992,7 +1010,7 @@
   }
   .filter-pill {
     padding: 8px 14px;
-    font-size: 12.5px;
+    font-size: 16px;
     flex-grow: 1;
     justify-content: center;
   }
@@ -1008,13 +1026,13 @@
 }
 
 .no-branches-found h3 {
-  font-size: 22px;
+  font-size: 25px;
   color: #B3191F;
   margin-bottom: 8px;
 }
 
 .no-branches-found p {
-  font-size: 16px;
+  font-size: 19px;
   color: #211F1F;
   margin: 0;
 }
@@ -1047,7 +1065,7 @@
   background: #ffffff;
   border: 1px solid #dbe3ee;
   border-radius: 14px;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 700;
   font-family: inherit;
   color: #253047;
@@ -1075,7 +1093,7 @@
 }
 
 .custom-branch-dropdown .chevron-icon {
-  font-size: 14px;
+  font-size: 17px;
   color: #6b7a90;
   flex-shrink: 0;
   transition: transform 0.25s ease;
@@ -1153,7 +1171,7 @@
   justify-content: center;
   background: rgba(179, 25, 31, 0.08);
   color: #B3191F;
-  font-size: 14px;
+  font-size: 17px;
 }
 
 .option-copy {
@@ -1165,14 +1183,14 @@
 
 .option-city {
   color: #211F1F;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 800;
   line-height: 1.2;
 }
 
 .option-meta {
   color: #6f7d91;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 1.2;
 }
@@ -1180,7 +1198,7 @@
 .new-badge {
   background: #B3191F;
   color: #ffffff;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 800;
   padding: 4px 7px;
   border-radius: 999px;
@@ -1206,7 +1224,7 @@
 
   .custom-branch-dropdown .dropdown-trigger {
     padding: 12px 16px;
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .custom-branch-dropdown .dropdown-option {

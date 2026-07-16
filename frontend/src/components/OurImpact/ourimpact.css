@@ -12,14 +12,14 @@
 
 
 .impact-title {
-  font-size: 46px;
+  font-size: 49px;
   font-weight: 600;
   color: #B3191F;
   margin-bottom: 16px;
 }
 
 .impact-subtitle {
-  font-size: 20px;
+  font-size: 23px;
   color: #5f6c7b;
   max-width: 800px;
   margin: 0 auto 60px;
@@ -80,7 +80,7 @@
   border-radius: 20px;
   position: relative;
 
-  font-size: 34px;
+  font-size: 37px;
 
   transition: transform 0.4s ease;
 }
@@ -151,13 +151,13 @@
 
 
 .impact-card h3 {
-  font-size: 44px;
+  font-size: 47px;
   color: #1f2937;
   margin-bottom: 10px;
 }
 
 .impact-card p {
-  font-size: 18px;
+  font-size: 21px;
   color: #211F1F;
   font-weight: 500;
 }
@@ -196,7 +196,7 @@
   }
 
   .impact-title {
-    font-size: 36px;
+    font-size: 39px;
   }
 }
 

@@ -3,7 +3,7 @@
 }
 
 .page-banner-title {
-  font-size: 66px;
+  font-size: 69px;
   font-weight: 700;
   letter-spacing: -1px;
   text-transform: none;
@@ -11,14 +11,14 @@
 
 @media (max-width: 768px) {
   .page-banner-title {
-    font-size: 36px;
+    font-size: 39px;
     letter-spacing: -0.5px;
   }
 }
 
 @media (max-width: 480px) {
   .page-banner-title {
-    font-size: 28px;
+    font-size: 31px;
     padding: 6px 14px;
     letter-spacing: 0;
   }
@@ -154,7 +154,7 @@
   backdrop-filter: blur(10px);
 
   color: #fff;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 600;
   letter-spacing: 0.5px;
 
@@ -166,7 +166,7 @@
    TITLE
 ========================= */
 .faq-title {
-  font-size: clamp(48px, 7vw, 90px);
+  font-size: clamp(51px, 7vw, 93px);
   font-weight: 400;
 
   line-height: 1;
@@ -195,7 +195,7 @@
   max-width: 760px;
   margin: 0 auto;
 
-  font-size: 20px;
+  font-size: 23px;
   line-height: 1.8;
 
   color: #f4f4f4;
@@ -249,7 +249,7 @@
   border: 1px solid #ececec;
 
   color: #211F1F;
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 600;
 
   cursor: pointer;
@@ -312,7 +312,7 @@
 
 /* Section heading */
 .current-category-title {
-  font-size: 36px;
+  font-size: 39px;
   font-weight: 600;
 
   color: #B3191F;
@@ -390,7 +390,7 @@
 .accordion-header h3 {
   margin: 0;
 
-  font-size: 21px;
+  font-size: 24px;
   line-height: 1.6;
   font-weight: 600;
 
@@ -460,7 +460,7 @@
 
   border-top: 1px solid #f1f5f9;
 
-  font-size: 18px;
+  font-size: 21px;
   line-height: 1.9;
 
   color: #211F1F;
@@ -512,12 +512,12 @@
   }
 
   .hero-subtitle {
-    font-size: 18px;
+    font-size: 21px;
     line-height: 1.7;
   }
 
   .current-category-title {
-    font-size: 30px;
+    font-size: 33px;
   }
 
   .accordion-header {
@@ -525,7 +525,7 @@
   }
 
   .accordion-header h3 {
-    font-size: 19px;
+    font-size: 22px;
   }
 
   .accordion-body.visible {
@@ -533,28 +533,28 @@
   }
 
   .accordion-body p {
-    font-size: 17px;
+    font-size: 20px;
   }
 }
 
 @media (max-width: 480px) {
   .hero-badge {
-    font-size: 14px;
+    font-size: 17px;
     padding: 8px 18px;
   }
 
   .faq-title {
-    font-size: 40px;
+    font-size: 43px;
     padding: 10px 18px;
   }
 
   .hero-subtitle {
-    font-size: 17px;
+    font-size: 20px;
   }
 
   .category-tab {
     padding: 15px 18px;
-    font-size: 16px;
+    font-size: 19px;
   }
 
   .accordion-header {
@@ -562,7 +562,7 @@
   }
 
   .accordion-header h3 {
-    font-size: 18px;
+    font-size: 21px;
   }
 
   .accordion-body.visible {

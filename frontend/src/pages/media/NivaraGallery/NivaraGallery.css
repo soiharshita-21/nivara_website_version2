@@ -32,7 +32,7 @@
 .gallery-title {
   position: relative;
   z-index: 3;
-  font-size: 5rem;
+  font-size: 5.15rem;
   font-weight: 700;
   color: #B3191F;
   line-height: 1;
@@ -49,7 +49,7 @@
   top: 100px;
   left: 8%;
   z-index: 10;
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 500;
 }
 
@@ -76,14 +76,14 @@
 }
  
 .gallery-section-header h2 {
-  font-size: 34px;
+  font-size: 37px;
   font-weight: 600;
   color: #B3191F;
   margin-bottom: 8px;
 }
  
 .gallery-section-header p {
-  font-size: 20px;
+  font-size: 23px;
   color: #6b7c93;
   font-weight: 500;
 }
@@ -169,7 +169,7 @@
   top: 30px;
   right: 40px;
   color: #fff;
-  font-size: 38px;
+  font-size: 41px;
   cursor: pointer;
   transition: 0.2s;
   z-index: 100000;
@@ -198,7 +198,7 @@
   }
  
   .gallery-title{
-    font-size: 38px;
+    font-size: 41px;
   }
 }
  
@@ -210,7 +210,7 @@
   }
  
   .gallery-title{
-    font-size: 30px;
+    font-size: 33px;
     left:20px;
     bottom:20px;
   }
@@ -352,14 +352,14 @@
 }
  
 .folder-info h3 {
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 600;
   color: #333;
   margin-bottom: 6px;
 }
  
 .folder-info p {
-  font-size: 17px;
+  font-size: 20px;
   color: #6b7c93;
 }
  
@@ -378,7 +378,7 @@
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 30px;
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 600;
   color: #333;
   cursor: pointer;
