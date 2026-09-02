@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./Policy.css";
 import policy2 from "../../assets/images/policy2.png";
 
-const policies = [
+const defaultPolicies = [
   { name: "POSH Policy", link: "/files/policy-posh.pdf" },
   { name: "Whistle Blower Policy", link: "/files/policy-whistle-blower.pdf" },
   { name: "KYC & AML Policy", link: "/files/policy-kyc-aml.pdf" },
@@ -20,6 +21,46 @@ const policies = [
 ];
 
 const PolicyPage = () => {
+  const [policies, setPolicies] = useState(defaultPolicies);
+
+  useEffect(() => {
+    const fetchLivePolicies = async () => {
+      try {
+        const baseUrl = import.meta.env.VITE_API_BASE_URL || (typeof window !== 'undefined' && window.location.port === '3000' ? 'http://localhost:5001' : '');
+        const res = await axios.get(`${baseUrl}/api/documents?category=policies`);
+        if (Array.isArray(res.data) && res.data.length > 0) {
+          const apiPolicies = res.data.map(doc => ({
+            name: doc.title,
+            link: doc.full_url || doc.file_url
+          }));
+
+          const existingLinks = new Set(defaultPolicies.map(p => p.link.toLowerCase()));
+          const uniqueApiPolicies = apiPolicies.filter(p => !existingLinks.has(p.link.toLowerCase()));
+          setPolicies([...uniqueApiPolicies, ...defaultPolicies]);
+        }
+      } catch (err) {
+        console.error("Failed to load live policies:", err);
+      }
+    };
+
+    fetchLivePolicies();
+
+    const handleUpdate = () => fetchLivePolicies();
+    const handleStorage = (e) => {
+      if (e.key === "nivara_document_update_timestamp") fetchLivePolicies();
+    };
+
+    window.addEventListener("documentsUpdated", handleUpdate);
+    window.addEventListener("storage", handleStorage);
+    window.addEventListener("focus", handleUpdate);
+
+    return () => {
+      window.removeEventListener("documentsUpdated", handleUpdate);
+      window.removeEventListener("storage", handleStorage);
+      window.removeEventListener("focus", handleUpdate);
+    };
+  }, []);
+
   return (
     <section className="policy-section animate-pop-up">
       <section className="page-banner policy-page-banner animate-pop-up" style={{ backgroundImage: `url(${policy2})` }}>
@@ -49,9 +90,6 @@ const PolicyPage = () => {
           ))}
         </ul>
       </div>
-
-
-
     </section>
   );
 };

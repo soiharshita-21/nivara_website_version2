@@ -739,3 +739,103 @@
     padding: 1.5rem 0.5rem;
   }
 }
+
+/* Document / PDF Manager Custom Styles */
+.doc-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 0.3px;
+}
+
+.doc-badge-sarfaesi {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.doc-badge-public_disclosure {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.doc-badge-auction {
+  background-color: #ede9fe;
+  color: #6d28d9;
+}
+
+.doc-badge-investor_reports,
+.doc-badge-investor_notices,
+.doc-badge-investor_transcripts {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.doc-badge-policies {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.doc-badge-general {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+.copy-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copy-link-btn:hover {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border-color: #fca5a5;
+}
+
+.copy-link-btn.copied {
+  background-color: #dcfce7;
+  color: #15803d;
+  border-color: #86efac;
+}
+
+.doc-file-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.doc-size-tag {
+  font-size: 0.75rem;
+  background-color: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #64748b;
+}
+
+.doc-tip-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  background: #fdf2f8;
+  border: 1px solid #fbcfe8;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  color: #9d174d;
+  font-size: 0.9rem;
+}
+

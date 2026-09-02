@@ -334,72 +334,62 @@
   }
 }
  
-/* --- CLEAN PREMIUM MODAL --- */
+/* --- CLEAN COMPACT PREMIUM MODAL --- */
 .branch-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(33, 31, 31, 0.7);
-  backdrop-filter: blur(8px);
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(6px);
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   z-index: 99999;
-  padding: 24px;
+  padding: 16px;
 }
  
 .branch-modal-card {
   background: #ffffff !important;
-  width: min(900px, 100%) !important;
-  max-width: 900px !important;
-  border-radius: 28px !important;
-  padding: 30px !important;
+  width: 100% !important;
+  max-width: 520px !important;
+  border-radius: 20px !important;
+  padding: 22px 24px !important;
   display: flex !important;
   flex-direction: column !important;
   position: relative !important;
-  box-shadow: 0 25px 60px -12px rgba(33, 31, 31, 0.4) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05) !important;
   height: auto !important;
-  max-height: 88vh;
-  overflow: hidden !important;
+  max-height: none !important;
+  overflow: visible !important;
 }
- 
+
 .branch-modal-card::-webkit-scrollbar {
-  width: 10px;
-}
-
-.branch-modal-card::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.branch-modal-card::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.12);
-  border-radius: 999px;
-}
-
-.branch-modal-card::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.18);
+  display: none !important;
+  width: 0 !important;
 }
  
 .close-btn {
   position: absolute !important;
-  top: 20px !important;
-  right: 20px !important;
-  background: #f5f5f5 !important;
+  top: 14px !important;
+  right: 14px !important;
+  background: #f1f5f9 !important;
   border: none !important;
-  width: 34px !important;
-  height: 34px !important;
+  width: 30px !important;
+  height: 30px !important;
   border-radius: 50% !important;
   cursor: pointer !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  color: #211F1F !important;
-  font-size: 20px !important;
-  transition: 0.2s !important;
+  color: #64748b !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
+  transition: all 0.2s ease !important;
 }
  
 .close-btn:hover {
-  background: #eee !important;
-  color: #333 !important;
+  background: #e2e8f0 !important;
+  color: #0f172a !important;
+  transform: scale(1.05) !important;
 }
  
 .modal-header {
@@ -407,153 +397,302 @@
   flex-direction: column !important;
   align-items: center !important;
   text-align: center !important;
-  margin-bottom: 24px !important;
+  margin-bottom: 14px !important;
   width: 100% !important;
 }
  
 .modal-icon-container {
-  width: 62px !important;
-  height: 62px !important;
-  background: #FFF5F5 !important;
-  border-radius: 50% !important;
+  width: 44px !important;
+  height: 44px !important;
+  background: #fff1f2 !important;
+  border: 1px solid #ffe4e6 !important;
+  border-radius: 12px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  margin-bottom: 12px !important;
+  margin-bottom: 8px !important;
 }
  
 .modal-icon {
-  font-size: 26px !important;
+  font-size: 20px !important;
   color: #B3191F !important;
 }
  
 .modal-header h3 {
-  font-size: clamp(24px, 3vw, 32px) !important;
+  font-size: 22px !important;
   color: #B3191F !important;
   margin: 0 !important;
   font-weight: 700 !important;
+  letter-spacing: -0.3px !important;
+  line-height: 1.2 !important;
 }
  
 .modal-state-label {
-  font-size: 14px !important;
-  color: #B3191F !important;
+  font-size: 11px !important;
+  color: #64748b !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
-  letter-spacing: 1.8px !important;
-  margin-top: 6px !important;
+  letter-spacing: 1.5px !important;
+  margin-top: 3px !important;
 }
  
 .modal-body {
   width: 100% !important;
-  margin-bottom: 6px !important;
-  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
   display: flex !important;
   flex-direction: column !important;
-  gap: 12px !important;
-  max-height: 56vh !important;
-  overflow-y: auto !important;
-  padding-right: 8px !important;
+  gap: 9px !important;
+  max-height: none !important;
+  overflow: visible !important;
 }
 
 .modal-highlight-row {
   display: grid !important;
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 12px !important;
-  margin-bottom: 8px !important;
+  gap: 9px !important;
+  margin-bottom: 0 !important;
 }
 
 .modal-highlight-box {
-  background: #fff7f7 !important;
-  border: 1px solid #f1d4d6 !important;
-  border-radius: 18px !important;
-  padding: 16px !important;
+  background: #fff8f8 !important;
+  border: 1px solid #fee2e2 !important;
+  border-radius: 12px !important;
+  padding: 9px 12px !important;
   display: flex !important;
   flex-direction: column !important;
-  gap: 6px !important;
+  gap: 2px !important;
 }
  
 .info-item {
-  padding: 14px 0 !important;
+  padding: 9px 12px !important;
   display: flex !important;
   flex-direction: column !important;
-  gap: 6px !important;
+  gap: 2px !important;
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
 }
  
 .info-label {
-  font-size: 12px !important;
-  color: #211F1F !important;
+  font-size: 10.5px !important;
+  color: #64748b !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.8px !important;
+  letter-spacing: 0.6px !important;
+}
+
+.modal-highlight-box .info-label {
+  color: #991b1b !important;
 }
  
 .info-item p,
 .modal-highlight-box p {
-  font-size: 15px !important;
-  line-height: 1.6 !important;
-  color: #333 !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  color: #1e293b !important;
   margin: 0 !important;
   font-weight: 600 !important;
 }
- 
-.info-divider {
-  height: 1px !important;
-  background: #eee !important;
-  width: 100% !important;
+
+.info-item p {
+  color: #334155 !important;
+  font-weight: 500 !important;
 }
  
+.info-divider {
+  display: none !important;
+}
  
 .modal-actions-container {
   position: relative;
-  background: #fff;
-  padding: 20px 0 0 !important;
-  margin-top: 8px !important;
+  background: transparent !important;
+  padding: 12px 0 0 !important;
+  margin-top: 2px !important;
 }
 
 .modal-actions-row {
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
-  gap: 12px !important;
+  gap: 10px !important;
 }
  
 .btn-get-directions-final,
 .btn-view-microsite-final {
   width: 100% !important;
   border: none !important;
-  padding: 16px !important;
-  border-radius: 14px !important;
-  font-weight: 700 !important;
-  font-size: 15px !important;
+  padding: 11px 16px !important;
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  font-size: 13.5px !important;
   cursor: pointer !important;
-  transition: all 0.3s ease !important;
+  transition: all 0.25s ease !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 8px !important;
+  gap: 6px !important;
 }
 
 .btn-get-directions-final {
-  background: linear-gradient(135deg, #B3191F, #b71c1c) !important;
+  background: linear-gradient(135deg, #B3191F, #991b1b) !important;
   color: #fff !important;
-  box-shadow: 0 8px 20px rgba(227, 33, 37, 0.25) !important;
+  box-shadow: 0 4px 12px rgba(179, 25, 31, 0.25) !important;
 }
 
 .btn-view-microsite-final {
-  background: #211F1F !important;
+  background: #1e293b !important;
   color: #fff !important;
-  box-shadow: 0 8px 20px rgba(33, 31, 31, 0.2) !important;
+  box-shadow: 0 4px 12px rgba(30, 41, 59, 0.2) !important;
 }
  
 .btn-get-directions-final:hover {
-  background: linear-gradient(135deg, #b71c1c, #9c1717) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 12px 24px rgba(227, 33, 37, 0.35) !important;
+  background: linear-gradient(135deg, #991b1b, #7f1d1d) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 16px rgba(179, 25, 31, 0.35) !important;
 }
 
 .btn-view-microsite-final:hover {
-  background: #171515 !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 12px 24px rgba(33, 31, 31, 0.3) !important;
+  background: #0f172a !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.3) !important;
+}
+
+/* Modal Tablet & Mobile Responsiveness */
+@media (max-width: 768px) {
+  .branch-modal-overlay {
+    padding: 14px !important;
+  }
+
+  .branch-modal-card {
+    max-width: 480px !important;
+    padding: 20px !important;
+    border-radius: 18px !important;
+  }
+
+  .modal-header h3 {
+    font-size: 20px !important;
+  }
+
+  .modal-icon-container {
+    width: 40px !important;
+    height: 40px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .modal-icon {
+    font-size: 18px !important;
+  }
+
+  .modal-actions-row {
+    gap: 8px !important;
+  }
+
+  .btn-get-directions-final,
+  .btn-view-microsite-final {
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .branch-modal-overlay {
+    padding: 10px !important;
+  }
+
+  .branch-modal-card {
+    padding: 16px 14px !important;
+    max-width: 100% !important;
+    border-radius: 16px !important;
+    max-height: 94vh !important;
+    overflow-y: auto !important;
+  }
+
+  .modal-header {
+    margin-bottom: 10px !important;
+  }
+
+  .modal-header h3 {
+    font-size: 18px !important;
+  }
+
+  .modal-icon-container {
+    width: 36px !important;
+    height: 36px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .modal-icon {
+    font-size: 16px !important;
+  }
+
+  .modal-state-label {
+    font-size: 10px !important;
+    letter-spacing: 1px !important;
+  }
+
+  .modal-body {
+    gap: 7px !important;
+  }
+
+  .modal-highlight-row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 7px !important;
+  }
+
+  .modal-highlight-box {
+    padding: 7px 10px !important;
+    border-radius: 10px !important;
+  }
+
+  .modal-highlight-box .info-label,
+  .info-item .info-label {
+    font-size: 9.5px !important;
+  }
+
+  .modal-highlight-box p,
+  .info-item p {
+    font-size: 12px !important;
+    line-height: 1.35 !important;
+  }
+
+  .info-item {
+    padding: 7px 10px !important;
+    border-radius: 10px !important;
+  }
+
+  .modal-actions-container {
+    padding-top: 10px !important;
+  }
+
+  .modal-actions-row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .btn-get-directions-final,
+  .btn-view-microsite-final {
+    padding: 9px 8px !important;
+    font-size: 12px !important;
+    border-radius: 8px !important;
+  }
+
+  .close-btn {
+    top: 10px !important;
+    right: 10px !important;
+    width: 26px !important;
+    height: 26px !important;
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .modal-highlight-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .modal-actions-row {
+    grid-template-columns: 1fr !important;
+  }
 }
  
 /* --- NEWLY OPENED BRANCH CARD STYLES --- */
@@ -588,24 +727,7 @@
   margin: 0;
 }
  
-.branch-card-directions {
-  margin-top: 15px;
-  padding: 12px;
-  background: #f8f9fa;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  color: #B3191F;
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.2s;
-}
- 
-.branch-card-directions:hover {
-  background: #B3191F;
-  color: #fff;
-  border-color: #B3191F;
-}
+
  
 /* Redesigned map and new branch feature sections */
 .branch-map-section {
@@ -712,8 +834,7 @@
 }
  
 .branch-map-primary-btn,
-.branch-map-secondary-btn,
-.branch-card-directions {
+.branch-map-secondary-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -727,8 +848,7 @@
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
  
-.branch-map-primary-btn,
-.branch-card-directions {
+.branch-map-primary-btn {
   border: none;
   background: #B3191F;
   color: #ffffff;
@@ -747,8 +867,7 @@
 }
  
 .branch-map-primary-btn:hover,
-.branch-map-secondary-btn:hover,
-.branch-card-directions:hover {
+.branch-map-secondary-btn:hover {
   transform: translateY(-2px);
 }
  
@@ -828,7 +947,7 @@
  
 .branch-openings-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
   gap: 22px;
 }
  
@@ -929,55 +1048,79 @@
   display: flex;
   gap: 10px;
   margin-top: auto;
+  padding-top: 18px;
   width: 100%;
 }
 
 .branch-card-directions,
 .branch-card-microsite {
-  flex: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
   height: 42px;
+  padding: 0 12px;
   border-radius: 10px;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 0.2px;
   cursor: pointer;
   white-space: nowrap;
   text-decoration: none;
   transition: all 0.25s ease;
   min-height: auto !important;
+  box-sizing: border-box;
 }
 
 .branch-card-directions {
+  flex: 1.12;
+  gap: 8px;
   background: #B3191F !important;
   color: #ffffff !important;
   border: none !important;
-  box-shadow: none !important;
+  box-shadow: 0 4px 12px rgba(179, 25, 31, 0.18) !important;
+}
+
+.branch-card-directions svg {
+  font-size: 14px;
+  flex-shrink: 0;
 }
 
 .branch-card-directions:hover {
   background: #9d1419 !important;
   transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(179, 25, 31, 0.28) !important;
 }
 
 .branch-card-microsite {
+  flex: 0.95;
   background: #211F1F !important;
   color: #fff !important;
   border: none !important;
-  box-shadow: none !important;
+  box-shadow: 0 4px 12px rgba(33, 31, 31, 0.12) !important;
 }
 
 .branch-card-microsite:hover {
   background: #171515 !important;
   transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(33, 31, 31, 0.22) !important;
 }
  
 .branch-openings-grid .branch-card-directions {
   width: auto;
   margin-top: 0;
-  padding: 0;
+}
+
+@media (max-width: 480px) {
+  .branch-card-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .branch-card-directions,
+  .branch-card-microsite {
+    width: 100%;
+    flex: none;
+  }
 }
  
 .branch-page>.new-branches-title,
@@ -1645,28 +1788,361 @@
   white-space: nowrap;
 }
 
-/* Responsive Dropdown */
-@media(max-width: 768px) {
-  .state-dropdown-container {
-    padding: 16px;
+/* ==========================================================================
+   COMPREHENSIVE RESPONSIVE STYLES (TABLET & MOBILE)
+   ========================================================================== */
+
+/* --- TABLET BREAKPOINT (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+  .branch-banner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 48px 24px;
+    gap: 32px;
+  }
+
+  .banner-con {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .banner-con h1 {
+    font-size: clamp(30px, 4vw, 42px);
+    margin-bottom: 14px;
+  }
+
+  .banner-con p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .banner-map {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .banner-map img {
+    max-width: 420px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .search-container {
+    width: min(92%, 640px);
+  }
+
+  .state-list {
+    width: min(92%, 880px);
+    margin: 40px auto;
+  }
+
+  .new-branches-section {
+    width: min(92%, 960px);
+    margin: 56px auto 64px;
+  }
+
+  .branch-openings-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+/* --- MOBILE LANDSCAPE & SMALL TABLET (max-width: 768px) --- */
+@media (max-width: 768px) {
+  .branch-page {
+    overflow-x: hidden;
+  }
+
+  .branch-banner {
+    padding: 36px 18px;
+    gap: 24px;
+  }
+
+  .banner-con h1 {
+    font-size: 28px;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+
+  .banner-con p {
+    font-size: 14.5px;
+    line-height: 1.55;
+    margin-bottom: 18px;
+  }
+
+  .banner-map img {
+    max-width: 320px;
+  }
+
+  .branch-locator {
+    margin-top: 24px;
+    padding: 0 12px;
+  }
+
+  .branch-locator h2 {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .pin-icon {
+    font-size: 20px;
+    margin-right: 0;
+    margin-top: 0;
+  }
+
+  .search-container {
+    width: 100%;
+    margin: 18px auto 22px;
+  }
+
+  .branch-locator input {
+    padding: 14px 44px 14px 16px;
+    font-size: 15px;
+    border-radius: 12px;
+  }
+
+  .search-clear-btn {
+    right: 12px;
+    font-size: 20px;
+  }
+
+  .search-results-dropdown {
+    max-height: 280px;
+    border-radius: 12px;
+  }
+
+  .search-result-item {
+    padding: 10px 14px;
+  }
+
+  .res-city {
+    font-size: 14px;
+  }
+
+  .res-state {
+    font-size: 12px;
+  }
+
+  .state-list {
+    width: calc(100% - 24px);
+    margin: 28px auto;
+    gap: 12px;
   }
 
   .state-card {
     grid-template-columns: minmax(0, 1fr) auto;
-    padding: 20px;
+    padding: 16px 18px;
+    border-radius: 14px;
+    gap: 12px;
   }
 
-  .state-card small {
-    grid-column: 1 / -1;
-    width: fit-content;
+  .state-card span {
+    font-size: 17px;
+  }
+
+  .down-icon {
+    font-size: 16px;
+  }
+
+  .state-dropdown-container {
+    padding: 14px;
+    border-radius: 14px;
+    margin-top: 6px;
   }
 
   .custom-branch-dropdown .dropdown-trigger {
-    padding: 12px 16px;
-    font-size: 15px;
+    padding: 12px 14px;
+    font-size: 14.5px;
+    border-radius: 12px;
+  }
+
+  .custom-branch-dropdown .dropdown-options {
+    max-height: 260px;
+    padding: 6px;
+    border-radius: 12px;
   }
 
   .custom-branch-dropdown .dropdown-option {
+    padding: 9px 10px;
+    gap: 10px;
+    border-radius: 10px;
+  }
+
+  .option-pin {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .option-city {
+    font-size: 14px;
+  }
+
+  .option-meta {
+    font-size: 12px;
+  }
+
+  .new-branches-section {
+    width: calc(100% - 24px);
+    margin: 40px auto 52px;
+  }
+
+  .new-branches-header {
+    margin-bottom: 24px;
+  }
+
+  .new-branches-header h2 {
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+
+  .new-branches-header p {
+    font-size: 14.5px;
+    line-height: 1.5;
+  }
+
+  .branch-openings-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .branch-openings-grid .branch-card {
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .branch-card-head {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .branch-card-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+  }
+
+  .branch-card-head h3 {
+    font-size: 18px;
+  }
+
+  .branch-card-detail {
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .branch-card-detail strong {
+    font-size: 13px;
+  }
+
+  .branch-card-detail p {
+    font-size: 14px;
+  }
+
+  .branch-card-actions {
+    padding-top: 14px;
+    gap: 10px;
+  }
+
+  .branch-card-directions,
+  .branch-card-microsite {
+    height: 40px;
+    font-size: 13px;
+  }
+}
+
+/* --- MOBILE PORTRAIT (max-width: 480px) --- */
+@media (max-width: 480px) {
+  .branch-banner {
+    padding: 26px 14px;
+    gap: 18px;
+  }
+
+  .banner-con h1 {
+    font-size: 24px;
+  }
+
+  .banner-con p {
+    font-size: 13.5px;
+    margin-bottom: 14px;
+  }
+
+  .banner-map img {
+    max-width: 260px;
+  }
+
+  .branch-locator h2 {
+    font-size: 18px;
+  }
+
+  .branch-locator input {
+    font-size: 14px;
+    padding: 12px 38px 12px 14px;
+  }
+
+  .state-list {
+    width: calc(100% - 20px);
+    margin: 20px auto;
+    gap: 10px;
+  }
+
+  .state-card {
+    padding: 14px 16px;
+    border-radius: 12px;
+  }
+
+  .state-card span {
+    font-size: 15px;
+  }
+
+  .state-dropdown-container {
     padding: 10px;
+  }
+
+  .custom-branch-dropdown .dropdown-trigger {
+    padding: 11px 12px;
+    font-size: 13.5px;
+  }
+
+  .new-branches-section {
+    width: calc(100% - 20px);
+    margin: 32px auto 40px;
+  }
+
+  .new-branches-header h2 {
+    font-size: 22px;
+  }
+
+  .branch-openings-grid .branch-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .branch-card-actions {
+    gap: 8px;
+  }
+
+  .branch-card-directions,
+  .branch-card-microsite {
+    height: 38px;
+    font-size: 12px;
+    padding: 0 8px;
+  }
+}
+
+/* --- ULTRA-COMPACT MOBILE (max-width: 360px) --- */
+@media (max-width: 360px) {
+  .branch-card-actions {
+    flex-direction: column;
+  }
+
+  .branch-card-directions,
+  .branch-card-microsite {
+    width: 100%;
+    flex: none;
   }
 }

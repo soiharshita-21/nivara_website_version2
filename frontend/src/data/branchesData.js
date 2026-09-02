@@ -306,6 +306,12 @@ export const defaultBranchesByState = {
       address: "1st floor, #3191, opp Indian bank, Seshachalam Mudaliar Road, Bangarpet, Pincode - 563114",
       contact: "Akhila V (+91 7348969517)",
       map_link: "https://maps.app.goo.gl/qfPSBtm48Getk2Hb6"
+    },
+    {
+      city: "Kollegala",
+      opened: "2026-07-15",
+      address: "2nd Floor, Chikka Linga Gowda Street, Jaya Intitu Road, Kollegala, Karnataka-571440",
+      contact: "9742366443"
     }
   ],
   "TAMIL NADU": [
@@ -712,6 +718,24 @@ export const defaultBranchesByState = {
       opened: "2026-05-31",
       address: "1st Floor, Himani Sankul Near Dr. Ajit Powar Hospital,Patel nagar road Satana Naka Malegaon 423203",
       contact: "+91 9373059622"
+    },
+    {
+      city: "Jalna",
+      opened: "2026-06-24",
+      address: "1st Floor Plot No. 22P, Serve No. 467 CTS No. 11406/19, Yeshwant Nagar, Opp Naresh Complex, Near Bhakti Wheel Alignment  Ambad Road, Jalna 431203",
+      contact: "Maanoj Jagannath Patil(9373059622)"
+    },
+    {
+      city: "Shahada",
+      opened: "2026-06-25",
+      address: "First Floor, Plot No.11, Survey No.50, Rachana Commercial Complex, Shop No.FF-3 and FF-4, Near Patel Residency,Dongargaon Road, Shahada, Tal. Shahada, Disrtict-Nandurbar-425409",
+      contact: "Maanoj Jagannath Patil(9373059622)"
+    },
+    {
+      city: "Shirpur",
+      opened: "2026-08-20",
+      address: "Survey No.21/1/22/1, Plot No.4, 1st Floor Sahada Road, Near Mukeshbhai Recreation Garden, Anmol Nagar, Mandal, Shirpur, Pincode-425405 Maharashtra",
+      contact: "1800-309-1516"
     }
   ]
 };
@@ -723,11 +747,43 @@ export const defaultBranchesData = Object.keys(defaultBranchesByState).reduce((a
 
 export const defaultNewBranches = [
   {
+    city: "Shirpur",
+    state: "Maharashtra",
+    opened: "2026-08-20",
+    address: "Survey No.21/1/22/1, Plot No.4, 1st Floor Sahada Road, Near Mukeshbhai Recreation Garden, Anmol Nagar, Mandal, Shirpur, Pincode-425405 Maharashtra",
+    contact: "1800-309-1516",
+    is_new: true
+  },
+  {
+    city: "Kollegala",
+    state: "Karnataka",
+    opened: "2026-07-15",
+    address: "2nd Floor, Chikka Linga Gowda Street, Jaya Intitu Road, Kollegala, Karnataka-571440",
+    contact: "9742366443",
+    is_new: true
+  },
+  {
     city: "Rajamahendravaram",
     state: "Andhra Pradesh",
     opened: "2026-06-28",
     address: "D.No.45-22-9, 2nd Floor, Thadithota, Beside Neela Jear Hospital, East Godavari District, Rajamahendravaram-533103, Andhra Pradesh",
     contact: "Nageswararao(9705999405)",
+    is_new: true
+  },
+  {
+    city: "Shahada",
+    state: "Maharashtra",
+    opened: "2026-06-25",
+    address: "First Floor, Plot No.11, Survey No.50, Rachana Commercial Complex, Shop No.FF-3 and FF-4, Near Patel Residency,Dongargaon Road, Shahada, Tal. Shahada, Disrtict-Nandurbar-425409",
+    contact: "Maanoj Jagannath Patil(9373059622)",
+    is_new: true
+  },
+  {
+    city: "Jalna",
+    state: "Maharashtra",
+    opened: "2026-06-24",
+    address: "1st Floor Plot No. 22P, Serve No. 467 CTS No. 11406/19, Yeshwant Nagar, Opp Naresh Complex, Near Bhakti Wheel Alignment  Ambad Road, Jalna 431203",
+    contact: "Maanoj Jagannath Patil(9373059622)",
     is_new: true
   },
   {
@@ -774,12 +830,24 @@ export const getTotalBranchesCount = (branchesByState = defaultBranchesByState) 
 };
 
 export const defaultTotalBranches = getTotalBranchesCount(defaultBranchesByState);
+export const defaultTotalStates = Object.keys(defaultBranchesByState).length;
+
+export const getBranchesApiUrl = () => {
+  const envBase = import.meta.env?.VITE_API_BASE_URL;
+  if (envBase) return `${envBase}/api/branches`;
+  if (typeof window !== "undefined" && window.location) {
+    if (window.location.port === "3000" || window.location.port === "5173") {
+      return "http://localhost:5001/api/branches";
+    }
+    return `${window.location.origin}/api/branches`;
+  }
+  return "http://localhost:5001/api/branches";
+};
 
 export const fetchBranchesFromApi = async () => {
-  const apiBaseUrl = import.meta.env?.VITE_API_BASE_URL;
-  if (!apiBaseUrl) return null;
   try {
-    const response = await axios.get(`${apiBaseUrl}/api/branches`);
+    const url = getBranchesApiUrl();
+    const response = await axios.get(url);
     if (response.data && Array.isArray(response.data) && response.data.length > 0) {
       return response.data;
     }
@@ -789,22 +857,68 @@ export const fetchBranchesFromApi = async () => {
   return null;
 };
 
-export const useBranchesCount = () => {
-  const [count, setCount] = useState(defaultTotalBranches);
+export const useBranchesStats = () => {
+  const [stats, setStats] = useState(() => ({
+    totalBranches: defaultTotalBranches,
+    totalStates: defaultTotalStates,
+    isLoading: true,
+  }));
+
+  const updateStats = async () => {
+    const apiBranches = await fetchBranchesFromApi();
+    if (apiBranches && Array.isArray(apiBranches) && apiBranches.length > 0) {
+      const uniqueStates = new Set(
+        apiBranches
+          .map((b) => (b.state || "").trim().toUpperCase())
+          .filter(Boolean)
+      );
+      setStats({
+        totalBranches: apiBranches.length,
+        totalStates: uniqueStates.size > 0 ? uniqueStates.size : defaultTotalStates,
+        isLoading: false,
+      });
+    } else {
+      setStats((prev) => ({ ...prev, isLoading: false }));
+    }
+  };
 
   useEffect(() => {
-    let isMounted = true;
-    fetchBranchesFromApi().then((apiBranches) => {
-      if (isMounted && apiBranches && apiBranches.length > 0) {
-        setCount(apiBranches.length);
+    updateStats();
+
+    const handleBranchUpdate = () => {
+      updateStats();
+    };
+
+    const handleStorage = (e) => {
+      if (e.key === "nivara_branch_update_timestamp") {
+        updateStats();
       }
-    });
+    };
+
+    const handleFocus = () => {
+      updateStats();
+    };
+
+    window.addEventListener("branchesUpdated", handleBranchUpdate);
+    window.addEventListener("storage", handleStorage);
+    window.addEventListener("focus", handleFocus);
+
+    const intervalId = setInterval(updateStats, 30000);
+
     return () => {
-      isMounted = false;
+      window.removeEventListener("branchesUpdated", handleBranchUpdate);
+      window.removeEventListener("storage", handleStorage);
+      window.removeEventListener("focus", handleFocus);
+      clearInterval(intervalId);
     };
   }, []);
 
-  return count;
+  return stats;
+};
+
+export const useBranchesCount = () => {
+  const { totalBranches } = useBranchesStats();
+  return totalBranches;
 };
 
 export const useBranchesData = () => {
@@ -813,58 +927,68 @@ export const useBranchesData = () => {
   const [totalCount, setTotalCount] = useState(defaultTotalBranches);
   const [isLoading, setIsLoading] = useState(false);
 
+  const loadData = async () => {
+    setIsLoading(true);
+    const apiBranches = await fetchBranchesFromApi();
+
+    if (apiBranches && apiBranches.length > 0) {
+      const grouped = {};
+      const newB = [];
+
+      apiBranches.forEach((branch) => {
+        const stateKey = (branch.state || "").toUpperCase();
+        if (!grouped[stateKey]) {
+          grouped[stateKey] = [];
+        }
+
+        const formattedBranch = {
+          id: branch.id,
+          city: branch.city,
+          state: branch.state,
+          opened: branch.opened ? String(branch.opened).split("T")[0] : "",
+          address: branch.address,
+          contact: branch.contact,
+          map_link: branch.map_link,
+          is_new: !!branch.is_new,
+        };
+
+        grouped[stateKey].push(formattedBranch);
+        if (branch.is_new) {
+          newB.push(formattedBranch);
+        }
+      });
+
+      newB.sort((a, b) => {
+        const dateA = a.opened ? new Date(a.opened) : new Date(0);
+        const dateB = b.opened ? new Date(b.opened) : new Date(0);
+        return dateB - dateA;
+      });
+
+      setBranchesData(grouped);
+      setNewBranches(newB.slice(0, 4));
+      setTotalCount(apiBranches.length);
+    }
+    setIsLoading(false);
+  };
+
   useEffect(() => {
-    let isMounted = true;
-    const load = async () => {
-      setIsLoading(true);
-      const apiBranches = await fetchBranchesFromApi();
-      if (!isMounted) return;
+    loadData();
 
-      if (apiBranches && apiBranches.length > 0) {
-        const grouped = {};
-        const newB = [];
-
-        apiBranches.forEach((branch) => {
-          const stateKey = (branch.state || "").toUpperCase();
-          if (!grouped[stateKey]) {
-            grouped[stateKey] = [];
-          }
-
-          const formattedBranch = {
-            id: branch.id,
-            city: branch.city,
-            state: branch.state,
-            opened: branch.opened ? String(branch.opened).split("T")[0] : "",
-            address: branch.address,
-            contact: branch.contact,
-            map_link: branch.map_link,
-            is_new: !!branch.is_new,
-          };
-
-          grouped[stateKey].push(formattedBranch);
-          if (branch.is_new) {
-            newB.push(formattedBranch);
-          }
-        });
-
-        newB.sort((a, b) => {
-          const dateA = a.opened ? new Date(a.opened) : new Date(0);
-          const dateB = b.opened ? new Date(b.opened) : new Date(0);
-          return dateB - dateA;
-        });
-
-        setBranchesData(grouped);
-        setNewBranches(newB.slice(0, 4));
-        setTotalCount(apiBranches.length);
-      }
-      setIsLoading(false);
+    const handleUpdate = () => loadData();
+    const handleStorage = (e) => {
+      if (e.key === "nivara_branch_update_timestamp") loadData();
     };
 
-    load();
+    window.addEventListener("branchesUpdated", handleUpdate);
+    window.addEventListener("storage", handleStorage);
+    window.addEventListener("focus", handleUpdate);
+
     return () => {
-      isMounted = false;
+      window.removeEventListener("branchesUpdated", handleUpdate);
+      window.removeEventListener("storage", handleStorage);
+      window.removeEventListener("focus", handleUpdate);
     };
   }, []);
 
-  return { branchesData, newBranches, totalCount, isLoading };
+  return { branchesData, newBranches, totalCount, isLoading, refresh: loadData };
 };

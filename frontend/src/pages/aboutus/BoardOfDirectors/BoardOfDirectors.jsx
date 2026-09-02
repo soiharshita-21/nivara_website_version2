@@ -15,9 +15,10 @@ import { AnimatePresence, motion } from "framer-motion";
 const boardMembers = [
   {
     name: "Mr. Sunil Rohokale",
-    role: "Founder and Chairman",
-    desc: "Over 29 years of experience in banking and financial services, encompassing lending, asset, and wealth management.",
-    longDesc: "Mr. Sunil Rohokale has over 29 years of experience in banking and financial services, encompassing lending, asset, and wealth management. He is responsible for setting the vision for ASK Asset & Wealth Management Group and spearheads the strategy of the Group. He has strong credentials in building new businesses and leading high-performance teams.\n\nUnder his leadership, ASK Investment Managers became the largest discretionary PMS house in India, while the Private Wealth and Property Fund businesses have grown into formidable verticals. He was instrumental in driving ASK’s foray into Alternates, with the successful launch of Hedge Fund and Private Credit businesses.\n\nEarlier in his career, he was credited with setting up ICICI Bank’s Mortgage Financing Business and served as the Managing Director and CEO of ICICI Home Finance Co. Ltd., a wholly owned subsidiary of ICICI Bank.\n\nIn addition to his corporate leadership, Sunil plays an active role in shaping industry standards and policy. He currently serves as a Board Director at the Association of Portfolio Managers of India (APMI), has chaired SEBI’s ‘Ease of Doing Business’ (EODB) committee for portfolio managers, and is a member of the Confederation of Indian Industry’s (CII) National Committee on Real Estate.\n\nHe holds a degree in Mechanical Engineering from the Government College of Engineering, Pune, and a master’s degree in management from Symbiosis Institute of Management.",
+    role: "Founder & Chairman",
+    modalRole: "Founder & Chairman, Nivara Home Finance Limited",
+    desc: "Sunil Rohokale is a distinguished leader in India’s banking and financial services industry, with over 32 years of experience in building and scaling high-performing financial institutions.",
+    longDesc: "Recognized for his strategic vision and execution excellence, he has consistently created customer-centric, governance-driven businesses that have delivered sustainable growth and long-term stakeholder value.\n\nAs Founder and Chairman of Nivara Home Finance Limited, Mr. Rohokale is leading a new generation housing finance institution focused on advancing financial inclusion. Nivara leverages technology and innovative underwriting models to expand access to affordable home finance for self-employed individuals and underserved households.\n\nPrior to founding Nivara, he was Co-Founder, CEO and Managing Director of ASK Asset & Wealth Management Group, where he helped build one of India’s leading financial services platforms with over ₹78,000 crore (US$10 billion) in assets under management and advisory. Earlier, as Managing Director and CEO of ICICI Home Finance, he played a pivotal role in establishing ICICI Bank’s mortgage financing business of Rs 83,000 cr. As an industry leader creating one of India’s pioneering housing finance platforms.\n\nBeyond business, Mr. Rohokale is Co-Chair of the Geetanjali and Sunil Rohokale Foundation, which supports initiatives in education, healthcare, women’s empowerment, senior citizen welfare, and farmer livelihoods. A Mechanical Engineering graduate from Government College of Engineering, Pune, with a management degree from Symbiosis Institute of Management, he is also a mentor to entrepreneurs and young leaders, reflecting his enduring commitment to institution building and inclusive nation-building.",
     color: "red",
     img: sunilb,
   },
@@ -220,7 +221,7 @@ const BoardOfDirectors = () => {
                     {selectedMember.name}
                   </h2>
                   <span style={{ display: 'block', fontSize: "17px", textTransform: 'uppercase', fontWeight: 600, letterSpacing: '1.2px', color: '#B3191F', marginBottom: '20px' }}>
-                    {selectedMember.role}
+                    {selectedMember.modalRole || selectedMember.role}
                   </span>
                   <div style={{ width: '60px', height: '6px', backgroundColor: '#B3191F', marginBottom: '30px', borderRadius: '3px' }}></div>
                   <p style={{ fontSize: "20px", fontWeight: 600, color: '#211F1F', marginBottom: '25px', lineHeight: '1.5' }}>

@@ -1,32 +1,69 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './AuctionProperties.css';
 import { FileText, Download, ExternalLink, ShieldCheck } from 'lucide-react';
+import axios from 'axios';
 import ScrollReveal from '../../../components/ScrollReveal/ScrollReveal';
 import auctionBg from '../../../assets/images/auction.png';
 
+const defaultAuctionDocuments = [
+  {
+    title: "Sale Cum Auction Notice",
+    borrower: "Balasaheb Sudam Tupe",
+    url: "/files/sale-notice-tupe.pdf"
+  },
+  {
+    title: "Sale Cum Auction Notice",
+    borrower: "Md Manjunath",
+    url: "/files/sale-notice-manjunath.pdf"
+  },
+  {
+    title: "Sale Cum Auction Notice",
+    borrower: "Amarnath",
+    url: "/files/sale-notice-amarnath.pdf"
+  }
+];
+
 const AuctionProperties = () => {
-  const documents = [
-    {
-      title: "Sale Cum Auction Notice",
-      borrower: "Balasaheb Sudam Tupe",
-      url: "/files/sale-notice-tupe.pdf"
-    },
-    {
-      title: "Sale Cum Auction Notice",
-      borrower: "Md Manjunath",
-      url: "/files/sale-notice-manjunath.pdf"
-    },
-    // {
-    //   title: "Sale Cum Auction Notice",
-    //   borrower: "Dnyaneshwar Balaji Mote",
-    //   url: "/files/sale-notice-mote.pdf"
-    // },
-    {
-      title: "Sale Cum Auction Notice",
-      borrower: "Amarnath",
-      url: "/files/sale-notice-amarnath.pdf"
-    }
-  ];
+  const [documents, setDocuments] = useState(defaultAuctionDocuments);
+
+  useEffect(() => {
+    const fetchAuctionDocs = async () => {
+      try {
+        const baseUrl = import.meta.env.VITE_API_BASE_URL || (typeof window !== 'undefined' && window.location.port === '3000' ? 'http://localhost:5001' : '');
+        const res = await axios.get(`${baseUrl}/api/documents?category=auction`);
+        if (Array.isArray(res.data) && res.data.length > 0) {
+          const apiDocs = res.data.map(doc => ({
+            title: doc.title,
+            borrower: doc.extra_info || "Auction Property Notice",
+            url: doc.full_url || doc.file_url
+          }));
+
+          const existingUrls = new Set(defaultAuctionDocuments.map(d => d.url.toLowerCase()));
+          const uniqueApiDocs = apiDocs.filter(d => !existingUrls.has(d.url.toLowerCase()));
+          setDocuments([...uniqueApiDocs, ...defaultAuctionDocuments]);
+        }
+      } catch (err) {
+        console.error("Failed to load live auction documents:", err);
+      }
+    };
+
+    fetchAuctionDocs();
+
+    const handleUpdate = () => fetchAuctionDocs();
+    const handleStorage = (e) => {
+      if (e.key === "nivara_document_update_timestamp") fetchAuctionDocs();
+    };
+
+    window.addEventListener("documentsUpdated", handleUpdate);
+    window.addEventListener("storage", handleStorage);
+    window.addEventListener("focus", handleUpdate);
+
+    return () => {
+      window.removeEventListener("documentsUpdated", handleUpdate);
+      window.removeEventListener("storage", handleStorage);
+      window.removeEventListener("focus", handleUpdate);
+    };
+  }, []);
 
   return (
     <div className="auction-page">

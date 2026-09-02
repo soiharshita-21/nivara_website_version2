@@ -46,7 +46,40 @@ const resumeUpload = multer({
     }
 });
 
+const fs = require('fs');
+
+// Dedicated Multer configuration for documents/PDFs
+const documentStorage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        const destDir = path.join('uploads', 'documents');
+        if (!fs.existsSync(destDir)) {
+            fs.mkdirSync(destDir, { recursive: true });
+        }
+        cb(null, destDir);
+    },
+    filename: (req, file, cb) => {
+        const ext = path.extname(file.originalname).toLowerCase();
+        const baseName = path.basename(file.originalname, ext).replace(/[^a-zA-Z0-9.\-_]/g, '_');
+        cb(null, `doc-${Date.now()}-${baseName}${ext}`);
+    }
+});
+
+const documentUpload = multer({
+    storage: documentStorage,
+    limits: { fileSize: 35 * 1024 * 1024 }, // 35MB limit to accommodate larger regulatory reports
+    fileFilter: (req, file, cb) => {
+        const ext = path.extname(file.originalname).toLowerCase();
+        if (ext === '.pdf' || file.mimetype === 'application/pdf') {
+            cb(null, true);
+        } else {
+            cb(new Error('Invalid file format. Only PDF files are allowed.'));
+        }
+    }
+});
+
 module.exports = {
     upload,
-    resumeUpload
+    resumeUpload,
+    documentUpload
 };
+

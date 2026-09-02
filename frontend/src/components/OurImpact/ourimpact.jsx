@@ -8,11 +8,13 @@ import {
   FaUsers,
 } from "react-icons/fa";
 import ScrollReveal from "../ScrollReveal/ScrollReveal";
+import { useBranchesStats } from "../../data/branchesData";
 
 const AnimatedNumber = ({ end, duration = 2000, suffix = "" }) => {
   const [count, setCount] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
   const nodeRef = useRef(null);
+  const prevEndRef = useRef(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,6 +35,9 @@ const AnimatedNumber = ({ end, duration = 2000, suffix = "" }) => {
     if (!hasStarted) return;
 
     let startTimestamp = null;
+    let animationFrameId = null;
+    const startVal = prevEndRef.current;
+    const diff = end - startVal;
 
     const step = (timestamp) => {
       if (!startTimestamp) startTimestamp = timestamp;
@@ -45,14 +50,20 @@ const AnimatedNumber = ({ end, duration = 2000, suffix = "" }) => {
       const easing =
         progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
 
-      setCount(Math.floor(easing * end));
+      setCount(Math.floor(startVal + easing * diff));
 
       if (progress < 1) {
-        window.requestAnimationFrame(step);
+        animationFrameId = window.requestAnimationFrame(step);
+      } else {
+        setCount(end);
+        prevEndRef.current = end;
       }
     };
 
-    window.requestAnimationFrame(step);
+    animationFrameId = window.requestAnimationFrame(step);
+    return () => {
+      if (animationFrameId) window.cancelAnimationFrame(animationFrameId);
+    };
   }, [hasStarted, end, duration]);
 
   const formattedCount = new Intl.NumberFormat("en-IN").format(count);
@@ -66,6 +77,8 @@ const AnimatedNumber = ({ end, duration = 2000, suffix = "" }) => {
 };
 
 const OurImpact = () => {
+  const { totalBranches, totalStates } = useBranchesStats();
+
   return (
     <section className="impact-section">
       <ScrollReveal direction="down">
@@ -99,14 +112,14 @@ const OurImpact = () => {
           {
             color: "red",
             icon: <FaMapMarkerAlt />,
-            end: 5,
+            end: totalStates,
             suffix: "",
             label: "States Covered",
           },
           {
             color: "red",
             icon: <FaBuilding />,
-            end: 107,
+            end: totalBranches,
             suffix: "",
             label: "Branches",
           },

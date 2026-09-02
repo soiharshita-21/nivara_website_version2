@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { FaFileAlt, FaBullhorn, FaMicrophone, FaChevronRight } from "react-icons/fa";
 import "./InvestorsRelation.css";
 import ScrollReveal from "../../components/ScrollReveal/ScrollReveal";
 import InvestorPasswordModal from "./InvestorPasswordModal";
 
-const annualReturns = [
+const defaultAnnualReturns = [
   { year: "2019–20", path: "/files/Annual-Return-2019-20.pdf" },
   { year: "2020–21", path: "/files/Annual-Return-2020-21.pdf" },
   { year: "2021–22", path: "/files/Annual-Return-2021-22.pdf" },
@@ -13,7 +14,7 @@ const annualReturns = [
   { year: "2024–25", path: "/files/Annual_Return_2024-25.pdf" },
 ];
 
-const notices = [
+const defaultNotices = [
   { name: "Notice of AGM 26.06.2024", path: "/files/Notice-of-AGM_26.06.2024.pdf" },
   { name: "Notice of EGM 11.09.2024", path: "/files/Notice-of-EGM_11.09.2024.pdf" },
   { name: "Notice of EGM 09.01.2025", path: "/files/Notice-of-EGM_09.01.2025.pdf" },
@@ -24,7 +25,7 @@ const notices = [
   { name: "Notice of AGM 25.05.2026", path: "/files/Notice of AGM 25.05.2026.pdf", password: "Welcome_1234$" },
 ];
 
-const transcripts = [
+const defaultTranscripts = [
   { name: "Transcript of AGM 26.06.2024", path: "/files/Transcript_10th-AGM_26.06.2024.pdf" },
   { name: "Transcript of EGM 11.09.2024", path: "/files/Transcript_25th-EGM_11.09.2024-1.pdf" },
   { name: "Transcript of EGM 09.01.2025", path: "/files/Transcript_26th-EGM_09.01.2025.pdf" },
@@ -39,6 +40,92 @@ const transcripts = [
 
 const InvestorsRelation = ({ section }) => {
   const [selectedDoc, setSelectedDoc] = useState(null);
+  const [annualReturns, setAnnualReturns] = useState(defaultAnnualReturns);
+  const [notices, setNotices] = useState(defaultNotices);
+  const [transcripts, setTranscripts] = useState(defaultTranscripts);
+
+  useEffect(() => {
+    const fetchLiveDocs = async () => {
+      try {
+        const baseUrl = import.meta.env.VITE_API_BASE_URL || (typeof window !== 'undefined' && window.location.port === '3000' ? 'http://localhost:5001' : '');
+        const res = await axios.get(`${baseUrl}/api/documents?t=${Date.now()}`);
+        if (Array.isArray(res.data)) {
+          const apiNotices = [];
+          const apiReturns = [];
+          const apiTranscripts = [];
+
+          res.data.forEach(doc => {
+            const path = doc.full_url || doc.file_url;
+            const extra = doc.extra_info ? (typeof doc.extra_info === 'string' ? doc.extra_info : JSON.stringify(doc.extra_info)) : null;
+
+            if (doc.category === 'investor_notices') {
+              apiNotices.push({
+                name: doc.title,
+                path: path,
+                password: extra
+              });
+            } else if (doc.category === 'investor_reports') {
+              apiReturns.push({
+                year: doc.title.replace(/[^0-9–-]/g, '') || doc.title,
+                name: doc.title,
+                path: path
+              });
+            } else if (doc.category === 'investor_transcripts') {
+              apiTranscripts.push({
+                name: doc.title,
+                path: path,
+                password: extra
+              });
+            }
+          });
+
+          // Always merge dynamic docs onto default docs, avoiding duplicates by title or path
+          const existingNoticeNames = new Set(defaultNotices.map(n => (n.name || "").toLowerCase().trim()));
+          const existingNoticePaths = new Set(defaultNotices.map(n => (n.path || "").toLowerCase().trim()));
+          const uniqueNotices = apiNotices.filter(n => 
+            !existingNoticeNames.has((n.name || "").toLowerCase().trim()) &&
+            !existingNoticePaths.has((n.path || "").toLowerCase().trim())
+          );
+          setNotices([...uniqueNotices, ...defaultNotices]);
+
+          const existingReturnNames = new Set(defaultAnnualReturns.map(r => (r.year || "").toLowerCase().trim()));
+          const uniqueReturns = apiReturns.filter(r => 
+            !existingReturnNames.has((r.year || "").toLowerCase().trim())
+          );
+          setAnnualReturns([...uniqueReturns, ...defaultAnnualReturns]);
+
+          const existingTranscriptNames = new Set(defaultTranscripts.map(t => (t.name || "").toLowerCase().trim()));
+          const existingTranscriptPaths = new Set(defaultTranscripts.map(t => (t.path || "").toLowerCase().trim()));
+          const uniqueTranscripts = apiTranscripts.filter(t => 
+            !existingTranscriptNames.has((t.name || "").toLowerCase().trim()) &&
+            !existingTranscriptPaths.has((t.path || "").toLowerCase().trim())
+          );
+          setTranscripts([...uniqueTranscripts, ...defaultTranscripts]);
+        }
+      } catch (err) {
+        console.error("Failed to load live investor documents:", err);
+      }
+    };
+
+    fetchLiveDocs();
+
+    const handleUpdate = () => fetchLiveDocs();
+    const handleStorage = (e) => {
+      if (e.key === "nivara_document_update_timestamp") fetchLiveDocs();
+    };
+
+    window.addEventListener("documentsUpdated", handleUpdate);
+    window.addEventListener("storage", handleStorage);
+    window.addEventListener("focus", handleUpdate);
+    const interval = setInterval(fetchLiveDocs, 10000);
+
+    return () => {
+      window.removeEventListener("documentsUpdated", handleUpdate);
+      window.removeEventListener("storage", handleStorage);
+      window.removeEventListener("focus", handleUpdate);
+      clearInterval(interval);
+    };
+  }, [section]);
 
   useEffect(() => {
     if (window.location.hash) {
@@ -122,7 +209,7 @@ const InvestorsRelation = ({ section }) => {
                     >
                       <div className="item-content">
                         <span className="year-label">FY {item.year}</span>
-                        <span className="doc-name">Annual Return</span>
+                        <span className="doc-name">{item.name || "Annual Return"}</span>
                       </div>
                       <FaChevronRight className="arrow-icon" />
                     </a>

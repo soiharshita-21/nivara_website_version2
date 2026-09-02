@@ -60,7 +60,11 @@ const BranchMap = ({ branchesData = {} }) => {
     })
     .filter((state) => state.count > 0);
  
-  const totalBranches = stateStats.reduce((sum, state) => sum + state.count, 0);
+  const totalBranches =
+    Object.values(branchesData).reduce(
+      (sum, list) => sum + (Array.isArray(list) ? list.length : 0),
+      0
+    ) || stateStats.reduce((sum, state) => sum + state.count, 0);
  
   return (
     <section className="branch-map-card" aria-label="State wise branch presence">

@@ -21,11 +21,27 @@ import {
   Folder,
   FolderOpen,
   MapPin,
-  Bell
+  Bell,
+  FileUp,
+  Copy,
+  Check,
+  ExternalLink,
+  File
 } from "lucide-react";
 import ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.snow.css";
 import "./AdminDashboard.css";
+
+const documentCategories = [
+  { id: "sarfaesi", label: "Public Disclosure: SARFAESI Attachments", target: "/customercenter/publicdisclosure" },
+  { id: "public_disclosure", label: "Public Disclosure: Quarterly Disclosures", target: "/customercenter/publicdisclosure" },
+  { id: "auction", label: "Auction Properties: Sale Cum Auction Notices", target: "/customercenter/auctionproperties" },
+  { id: "investor_reports", label: "Investor Relations: Annual Returns", target: "/investorsrelation/annual-returns" },
+  { id: "investor_notices", label: "Investor Relations: AGM / EGM Notices", target: "/investorsrelation/notices" },
+  { id: "investor_transcripts", label: "Investor Relations: Transcripts", target: "/investorsrelation/transcripts" },
+  { id: "policies", label: "Company Policies", target: "/aboutus/policy" },
+  { id: "general", label: "General / Custom (Copy link to use anywhere)", target: "Anywhere" }
+];
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -36,7 +52,11 @@ const AdminDashboard = () => {
   const [pages, setPages] = useState([]);
   const [branches, setBranches] = useState([]);
   const [popups, setPopups] = useState([]);
+  const [documents, setDocuments] = useState([]);
   const [selectedStateFilter, setSelectedStateFilter] = useState("All");
+  const [selectedDocCategoryFilter, setSelectedDocCategoryFilter] = useState("All");
+  const [copiedDocId, setCopiedDocId] = useState(null);
+  const [docFile, setDocFile] = useState(null);
 
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -63,6 +83,13 @@ const AdminDashboard = () => {
     end_date: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
     is_active: true
   });
+  const [newDocument, setNewDocument] = useState({
+    title: "",
+    category: "sarfaesi",
+    publish_date: new Date().toISOString().split('T')[0],
+    is_active: true,
+    extra_info: ""
+  });
 
   const [isHtmlMode, setIsHtmlMode] = useState(false);
 
@@ -86,7 +113,8 @@ const AdminDashboard = () => {
     { id: "press", label: "Press Releases", icon: Newspaper },
     { id: "gallery", label: "Gallery", icon: ImageIcon },
     { id: "branches", label: "Manage Branches", icon: MapPin },
-    { id: "popups", label: "Pop-Ups", icon: Bell }
+    { id: "popups", label: "Pop-Ups", icon: Bell },
+    { id: "documents", label: "Documents / PDFs", icon: FileUp }
   ];
 
   // Helper to get auth headers
@@ -109,13 +137,14 @@ const AdminDashboard = () => {
     try {
       const baseUrl = `${import.meta.env.VITE_API_BASE_URL}/api`;
       if (activeTab === "overview") {
-        const [blogRes, pressRes, galleryRes, pagesRes, branchRes, popupRes] = await Promise.all([
+        const [blogRes, pressRes, galleryRes, pagesRes, branchRes, popupRes, docRes] = await Promise.all([
           axios.get(`${baseUrl}/blogs`),
           axios.get(`${baseUrl}/press`),
           axios.get(`${baseUrl}/gallery`),
           axios.get(`${baseUrl}/pages`),
           axios.get(`${baseUrl}/branches`),
-          axios.get(`${baseUrl}/popups`, { headers: getAuthHeaders() })
+          axios.get(`${baseUrl}/popups`, { headers: getAuthHeaders() }),
+          axios.get(`${baseUrl}/documents?include_inactive=true`)
         ]);
         setBlogs(blogRes.data);
         setPress(pressRes.data);
@@ -123,6 +152,7 @@ const AdminDashboard = () => {
         setPages(pagesRes.data);
         setBranches(branchRes.data);
         setPopups(popupRes.data);
+        setDocuments(docRes.data);
       } else if (activeTab === "blogs") {
         const res = await axios.get(`${baseUrl}/blogs`);
         setBlogs(res.data);
@@ -141,6 +171,9 @@ const AdminDashboard = () => {
       } else if (activeTab === "popups") {
         const res = await axios.get(`${baseUrl}/popups`, { headers: getAuthHeaders() });
         setPopups(res.data);
+      } else if (activeTab === "documents") {
+        const res = await axios.get(`${baseUrl}/documents?include_inactive=true`);
+        setDocuments(res.data);
       }
     } catch (err) {
       console.error("Fetch error:", err);
@@ -155,6 +188,11 @@ const AdminDashboard = () => {
   const getFilteredBranches = () => {
     if (selectedStateFilter === "All") return branches;
     return branches.filter(b => b.state && b.state.toLowerCase() === selectedStateFilter.toLowerCase());
+  };
+
+  const getFilteredDocuments = () => {
+    if (selectedDocCategoryFilter === "All") return documents;
+    return documents.filter(d => (d.category || "").toLowerCase() === selectedDocCategoryFilter.toLowerCase());
   };
 
   const resetForm = () => {
@@ -175,6 +213,14 @@ const AdminDashboard = () => {
       end_date: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
       is_active: true
     });
+    setNewDocument({
+      title: "",
+      category: "sarfaesi",
+      publish_date: new Date().toISOString().split('T')[0],
+      is_active: true,
+      extra_info: ""
+    });
+    setDocFile(null);
 
     setIsHtmlMode(false);
     setShowModal(false);
@@ -300,6 +346,15 @@ const AdminDashboard = () => {
         end_date: item.end_date ? new Date(item.end_date).toISOString().split('T')[0] : "",
         is_active: !!item.is_active
       });
+    } else if (type === "documents") {
+      setNewDocument({
+        title: item.title || "",
+        category: item.category || "sarfaesi",
+        publish_date: item.publish_date || new Date().toISOString().split('T')[0],
+        is_active: item.is_active === 1 || item.is_active === true,
+        extra_info: item.extra_info ? (typeof item.extra_info === 'object' ? JSON.stringify(item.extra_info) : item.extra_info) : ""
+      });
+      setDocFile(null);
     }
     setShowModal(true);
   };
@@ -320,6 +375,13 @@ const AdminDashboard = () => {
         await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/api/${type === 'press' ? 'press' : type}/${id}`, {
           headers: getAuthHeaders()
         });
+        if (type === 'branches') {
+          localStorage.setItem("nivara_branch_update_timestamp", Date.now().toString());
+          window.dispatchEvent(new CustomEvent("branchesUpdated"));
+        } else if (type === 'documents') {
+          localStorage.setItem("nivara_document_update_timestamp", Date.now().toString());
+          window.dispatchEvent(new CustomEvent("documentsUpdated"));
+        }
         fetchData();
       } catch (err) {
         alert("Error deleting item: " + (err.response?.data?.message || err.message));
@@ -406,12 +468,49 @@ const AdminDashboard = () => {
         } else {
           await axios.post(`${baseUrl}/branches`, newBranch, headers);
         }
+        localStorage.setItem("nivara_branch_update_timestamp", Date.now().toString());
+        window.dispatchEvent(new CustomEvent("branchesUpdated"));
       } else if (activeTab === "popups") {
         if (editingId) {
           await axios.put(`${baseUrl}/popups/${editingId}`, newPopup, headers);
         } else {
           await axios.post(`${baseUrl}/popups`, newPopup, headers);
         }
+      } else if (activeTab === "documents") {
+        const formData = new FormData();
+        formData.append("title", newDocument.title);
+        formData.append("category", newDocument.category);
+        formData.append("publish_date", newDocument.publish_date);
+        formData.append("is_active", newDocument.is_active ? 1 : 0);
+        if (newDocument.extra_info) {
+          formData.append("extra_info", newDocument.extra_info);
+        }
+        if (docFile) {
+          formData.append("file", docFile);
+        }
+
+        if (editingId) {
+          await axios.put(`${baseUrl}/documents/${editingId}`, formData, {
+            headers: {
+              "Content-Type": "multipart/form-data",
+              ...getAuthHeaders()
+            }
+          });
+        } else {
+          if (!docFile) {
+            alert("Please select a PDF file to upload.");
+            setLoading(false);
+            return;
+          }
+          await axios.post(`${baseUrl}/documents`, formData, {
+            headers: {
+              "Content-Type": "multipart/form-data",
+              ...getAuthHeaders()
+            }
+          });
+        }
+        localStorage.setItem("nivara_document_update_timestamp", Date.now().toString());
+        window.dispatchEvent(new CustomEvent("documentsUpdated"));
       }
       resetForm();
       fetchData();
@@ -422,6 +521,43 @@ const AdminDashboard = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleToggleDocument = async (id, currentStatus) => {
+    try {
+      setLoading(true);
+      const baseUrl = `${import.meta.env.VITE_API_BASE_URL}/api`;
+      await axios.put(`${baseUrl}/documents/${id}`, { is_active: !currentStatus }, {
+        headers: getAuthHeaders()
+      });
+      localStorage.setItem("nivara_document_update_timestamp", Date.now().toString());
+      window.dispatchEvent(new CustomEvent("documentsUpdated"));
+      fetchData();
+    } catch (err) {
+      alert("Error updating document status: " + (err.response?.data?.message || err.message));
+      if (err.response?.status === 401 || err.response?.status === 403) handleLogout();
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleCopyDocLink = (doc) => {
+    const fullUrl = doc.full_url || `${window.location.origin}${doc.file_url}`;
+    navigator.clipboard.writeText(fullUrl).then(() => {
+      setCopiedDocId(doc.id);
+      setTimeout(() => setCopiedDocId(null), 2500);
+    }).catch(err => {
+      console.error("Failed to copy link:", err);
+      prompt("Copy document link:", fullUrl);
+    });
+  };
+
+  const formatFileSize = (bytes) => {
+    if (!bytes || bytes === 0) return "0 KB";
+    if (bytes < 1024 * 1024) {
+      return (bytes / 1024).toFixed(1) + " KB";
+    }
+    return (bytes / (1024 * 1024)).toFixed(2) + " MB";
   };
 
   const handleTogglePopup = async (id) => {
@@ -790,6 +926,134 @@ const AdminDashboard = () => {
                 );
               })()}
 
+              {activeTab === "documents" && (
+                <>
+                  <div className="doc-tip-box">
+                    <FileUp size={24} style={{ flexShrink: 0 }} />
+                    <div>
+                      <strong>Document & PDF Manager:</strong> Upload PDFs here to automatically publish them into dedicated pages (such as SARFAESI Attachments, Public Disclosures, Auction Notices, Investor Relations, Policies) or click <strong>Copy Link</strong> to paste the direct URL anywhere across the website (Page Builder, Blogs, Pop-ups, etc.).
+                    </div>
+                  </div>
+
+                  <div className="filter-bar" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', padding: '15px 20px', backgroundColor: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', gap: '15px', flexWrap: 'wrap' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <span style={{ fontWeight: '600', color: "#211F1F", fontSize: '1rem' }}>Filter by Category:</span>
+                      <select 
+                        value={selectedDocCategoryFilter} 
+                        onChange={(e) => setSelectedDocCategoryFilter(e.target.value)}
+                        style={{
+                          padding: '8px 16px',
+                          borderRadius: '8px',
+                          border: '1px solid #cbd5e1',
+                          outline: 'none',
+                          fontWeight: '600',
+                          color: '#1e293b',
+                          backgroundColor: '#fff',
+                          cursor: 'pointer'
+                        }}
+                      >
+                        <option value="All">All Categories</option>
+                        {documentCategories.map(cat => (
+                          <option key={cat.id} value={cat.id}>{cat.label}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div style={{ color: "#211F1F", fontSize: '1rem', fontWeight: '500' }}>
+                      Showing <strong>{getFilteredDocuments().length}</strong> of <strong>{documents.length}</strong> documents
+                    </div>
+                  </div>
+
+                  <table className="data-table">
+                    <thead>
+                      <tr>
+                        <th>Title</th>
+                        <th>Category / Location</th>
+                        <th>File & Size</th>
+                        <th>Date</th>
+                        <th>Direct URL</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {getFilteredDocuments().map(doc => (
+                        <tr key={doc.id}>
+                          <td style={{ fontWeight: '600', color: '#1e293b', maxWidth: '280px' }}>
+                            {doc.title}
+                          </td>
+                          <td>
+                            <span className={`doc-badge doc-badge-${doc.category || 'general'}`}>
+                              {documentCategories.find(c => c.id === doc.category)?.label.split(':')[0] || (doc.category ? doc.category.toUpperCase() : "GENERAL")}
+                            </span>
+                          </td>
+                          <td>
+                            <div className="doc-file-info">
+                              <File size={16} color="#ef4444" />
+                              <span style={{ maxWidth: '160px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} title={doc.file_name}>
+                                {doc.file_name}
+                              </span>
+                              <span className="doc-size-tag">{formatFileSize(doc.file_size)}</span>
+                            </div>
+                          </td>
+                          <td>{doc.publish_date ? new Date(doc.publish_date).toLocaleDateString() : ""}</td>
+                          <td>
+                            <button
+                              type="button"
+                              onClick={() => handleCopyDocLink(doc)}
+                              className={`copy-link-btn ${copiedDocId === doc.id ? 'copied' : ''}`}
+                              title="Copy direct public URL to clipboard"
+                            >
+                              {copiedDocId === doc.id ? <Check size={14} /> : <Copy size={14} />}
+                              <span>{copiedDocId === doc.id ? "Copied!" : "Copy Link"}</span>
+                            </button>
+                          </td>
+                          <td>
+                            <button 
+                              onClick={() => handleToggleDocument(doc.id, doc.is_active)}
+                              className={`status-pill ${doc.is_active ? 'status-active' : 'status-draft'}`} 
+                              style={{
+                                padding: '5px 10px',
+                                borderRadius: '12px',
+                                fontSize: '0.8rem',
+                                fontWeight: '600',
+                                backgroundColor: doc.is_active ? '#ecfdf5' : '#fee2e2',
+                                color: doc.is_active ? '#059669' : '#ef4444',
+                                border: 'none',
+                                cursor: 'pointer'
+                              }}
+                              title="Click to toggle active visibility"
+                            >
+                              {doc.is_active ? "Active" : "Inactive"}
+                            </button>
+                          </td>
+                          <td className="actions">
+                            <a 
+                              href={doc.full_url || `${window.location.origin}${doc.file_url}`} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="edit-btn" 
+                              title="View / Download PDF"
+                              style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}
+                            >
+                              <ExternalLink size={16} />
+                            </a>
+                            <button className="edit-btn" onClick={() => handleEdit(doc, 'documents')} title="Edit details"><Edit size={16} /></button>
+                            <button className="delete-btn" onClick={() => handleDelete(doc.id, 'documents')} title="Delete document"><Trash2 size={16} /></button>
+                          </td>
+                        </tr>
+                      ))}
+                      {getFilteredDocuments().length === 0 && (
+                        <tr>
+                          <td colSpan="7" style={{ textAlign: 'center', padding: '30px', color: "#211F1F" }}>
+                            No documents found. Click "Add New" to upload a PDF!
+                          </td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                </>
+              )}
+
               {activeTab === "overview" && (
                 <div className="overview-stats">
                   <div className="stat-card">
@@ -844,6 +1108,15 @@ const AdminDashboard = () => {
                     <div className="stat-info">
                       <h3>Total Pop-Ups</h3>
                       <p>{popups.length}</p>
+                    </div>
+                  </div>
+                  <div className="stat-card">
+                    <div className="stat-icon" style={{ backgroundColor: '#fee2e2', color: '#B3191F' }}>
+                      <FileUp size={28} />
+                    </div>
+                    <div className="stat-info">
+                      <h3>Total Documents</h3>
+                      <p>{documents.length}</p>
                     </div>
                   </div>
 
@@ -1307,6 +1580,89 @@ const AdminDashboard = () => {
                         </div>
                       </>
                     )}
+                  </>
+                )}
+
+                {activeTab === "documents" && (
+                  <>
+                    <div className="form-group">
+                      <label>Document Title / Display Name *</label>
+                      <input 
+                        type="text" 
+                        value={newDocument.title} 
+                        onChange={e => setNewDocument({ ...newDocument, title: e.target.value })} 
+                        required 
+                        placeholder="e.g. Updated list of properties under SARFAESI Act as on 31st August 2026" 
+                      />
+                    </div>
+
+                    <div className="form-row">
+                      <div className="form-group">
+                        <label>Target Category / Website Location *</label>
+                        <select 
+                          value={newDocument.category} 
+                          onChange={e => setNewDocument({ ...newDocument, category: e.target.value })}
+                        >
+                          {documentCategories.map(cat => (
+                            <option key={cat.id} value={cat.id}>{cat.label}</option>
+                          ))}
+                        </select>
+                      </div>
+
+                      <div className="form-group">
+                        <label>Publish / Effective Date</label>
+                        <input 
+                          type="date" 
+                          value={newDocument.publish_date} 
+                          onChange={e => setNewDocument({ ...newDocument, publish_date: e.target.value })} 
+                          required 
+                        />
+                      </div>
+                    </div>
+
+                    <div className="form-group">
+                      <label>{editingId ? "Replace PDF Document (Leave empty to keep existing)" : "Upload PDF Document *"}</label>
+                      <div className="image-upload-wrapper">
+                        <label className="upload-dropzone" style={{ cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '24px', border: '2px dashed #cbd5e1', borderRadius: '12px', background: '#f8fafc' }}>
+                          <input 
+                            type="file" 
+                            accept=".pdf,application/pdf" 
+                            onChange={(e) => setDocFile(e.target.files[0] || null)} 
+                            hidden 
+                          />
+                          <FileUp size={32} color="#B3191F" style={{ marginBottom: '8px' }} />
+                          <span style={{ fontWeight: '600', color: '#1e293b' }}>
+                            {docFile ? docFile.name : (editingId ? "Click or drag to replace PDF" : "Click or drag to select PDF document")}
+                          </span>
+                          <span style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '4px' }}>
+                            {docFile ? `${(docFile.size / (1024 * 1024)).toFixed(2)} MB • Ready to upload` : "Maximum size 35MB • PDF format only"}
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div className="form-group">
+                      <label>Additional Notes / Metadata (Optional)</label>
+                      <input 
+                        type="text" 
+                        value={newDocument.extra_info} 
+                        onChange={e => setNewDocument({ ...newDocument, extra_info: e.target.value })} 
+                        placeholder="e.g. Borrower name for auction notices, password for protected files, or reference ID" 
+                      />
+                    </div>
+
+                    <div className="form-group" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px', marginTop: '10px' }}>
+                      <input 
+                        type="checkbox" 
+                        id="doc_is_active" 
+                        checked={newDocument.is_active} 
+                        onChange={e => setNewDocument({ ...newDocument, is_active: e.target.checked })} 
+                        style={{ width: '20px', height: '20px', cursor: 'pointer' }}
+                      />
+                      <label htmlFor="doc_is_active" style={{ cursor: 'pointer', userSelect: 'none', fontWeight: '600' }}>
+                        Active (Visible in public lists & accessible immediately)
+                      </label>
+                    </div>
                   </>
                 )}
               </div>
