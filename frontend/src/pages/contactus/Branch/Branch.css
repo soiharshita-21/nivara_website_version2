@@ -30,7 +30,7 @@
 }
  
 .banner-con p {
-  font-size: 23px;
+  font-size: 20px;
   line-height: 1.7;
   color: #2B2B2B;
   margin-bottom: 35px;
@@ -100,14 +100,14 @@
  
 .branch-locator h2 {
   color: #B3191F;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 700;
   text-align: center;
 }
  
 .new-branches-title {
   color: #B3191F;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -118,7 +118,7 @@
  
 .pin-icon {
   color: #B3191F;
-  font-size: 33px;
+  font-size: 28px;
   display: inline-block;
   vertical-align: middle;
   margin-right: 12px;
@@ -136,7 +136,7 @@
   padding: 18px 50px 18px 22px;
   border-radius: 12px;
   border: 1px solid #ddd;
-  font-size: 23px;
+  font-size: 20px;
   outline: none;
   box-shadow: 0 4px 10px rgba(33, 31, 31, 0.06);
   transition: 0.3s ease;
@@ -149,7 +149,7 @@
   transform: translateY(-50%);
   background: transparent;
   border: none;
-  font-size: 29px;
+  font-size: 25px;
   color: #211F1F;
   cursor: pointer;
   z-index: 10;
@@ -196,7 +196,7 @@
 }
  
 .res-state {
-  font-size: 17px;
+  font-size: 14px;
   text-transform: uppercase;
   color: #211F1F;
   letter-spacing: 1px;
@@ -232,7 +232,7 @@
 }
 
 .state-card span {
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 800;
   letter-spacing: 0;
 }
@@ -242,7 +242,7 @@
   border-radius: 999px;
   background: rgba(179, 25, 31, 0.08);
   color: #7f1d1d;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -254,7 +254,7 @@
 }
  
 .down-icon {
-  font-size: 25px;
+  font-size: 21px;
   color: #B3191F;
   transition: transform 0.25s ease;
 }
@@ -296,7 +296,7 @@
   background: #fbf6f6;
   padding: 12px 14px;
   border-radius: 10px;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   color: #7a0f1b;
   cursor: pointer;
@@ -344,27 +344,21 @@
   align-items: center !important;
   justify-content: center !important;
   z-index: 99999;
-  padding: 20px;
+  padding: 24px;
 }
  
 .branch-modal-card {
   background: #ffffff !important;
-  width: 100% !important;
-  max-width: 550px !important;
-  /* 🔥 increase from 400px → 550px */
- 
-  border-radius: 32px !important;
+  width: min(900px, 100%) !important;
+  max-width: 900px !important;
+  border-radius: 28px !important;
   padding: 30px !important;
-  /* 🔥 good inner spacing */
- 
   display: flex !important;
   flex-direction: column !important;
   position: relative !important;
- 
   box-shadow: 0 25px 60px -12px rgba(33, 31, 31, 0.4) !important;
   height: auto !important;
-  max-height: 85vh;
- 
+  max-height: 88vh;
   overflow: hidden !important;
 }
  
@@ -399,7 +393,7 @@
   align-items: center !important;
   justify-content: center !important;
   color: #211F1F !important;
-  font-size: 23px !important;
+  font-size: 20px !important;
   transition: 0.2s !important;
 }
  
@@ -413,13 +407,13 @@
   flex-direction: column !important;
   align-items: center !important;
   text-align: center !important;
-  margin-bottom: 25px !important;
+  margin-bottom: 24px !important;
   width: 100% !important;
 }
  
 .modal-icon-container {
-  width: 56px !important;
-  height: 56px !important;
+  width: 62px !important;
+  height: 62px !important;
   background: #FFF5F5 !important;
   border-radius: 50% !important;
   display: flex !important;
@@ -429,53 +423,74 @@
 }
  
 .modal-icon {
-  font-size: 31px !important;
+  font-size: 26px !important;
   color: #B3191F !important;
 }
  
 .modal-header h3 {
-  font-size: 31px !important;
+  font-size: clamp(24px, 3vw, 32px) !important;
   color: #B3191F !important;
   margin: 0 !important;
   font-weight: 700 !important;
 }
  
 .modal-state-label {
-  font-size: 18px !important;
+  font-size: 14px !important;
   color: #B3191F !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   text-transform: uppercase !important;
-  letter-spacing: 2px !important;
-  margin-top: 4px !important;
+  letter-spacing: 1.8px !important;
+  margin-top: 6px !important;
 }
  
 .modal-body {
   width: 100% !important;
-  margin-bottom: 5px !important;
+  margin-bottom: 6px !important;
   padding-bottom: 0 !important;
   display: flex !important;
   flex-direction: column !important;
-  max-height: 55vh !important;
+  gap: 12px !important;
+  max-height: 56vh !important;
   overflow-y: auto !important;
   padding-right: 8px !important;
 }
- 
-.info-item {
-  padding: 12px 0 !important;
+
+.modal-highlight-row {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  margin-bottom: 8px !important;
+}
+
+.modal-highlight-box {
+  background: #fff7f7 !important;
+  border: 1px solid #f1d4d6 !important;
+  border-radius: 18px !important;
+  padding: 16px !important;
   display: flex !important;
   flex-direction: column !important;
-  gap: 4px !important;
+  gap: 6px !important;
+}
+ 
+.info-item {
+  padding: 14px 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
 }
  
 .info-label {
-  font-size: 16px !important;
+  font-size: 12px !important;
   color: #211F1F !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   text-transform: uppercase !important;
+  letter-spacing: 0.8px !important;
 }
  
-.info-item p {
-  font-size: 21px !important;
+.info-item p,
+.modal-highlight-box p {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
   color: #333 !important;
   margin: 0 !important;
   font-weight: 600 !important;
@@ -492,29 +507,53 @@
   position: relative;
   background: #fff;
   padding: 20px 0 0 !important;
-  margin-top: 10px !important;
+  margin-top: 8px !important;
+}
+
+.modal-actions-row {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
 }
  
-.btn-get-directions-final {
+.btn-get-directions-final,
+.btn-view-microsite-final {
   width: 100% !important;
-  background: linear-gradient(135deg, #B3191F, #b71c1c) !important;
-  color: #fff !important;
   border: none !important;
   padding: 16px !important;
   border-radius: 14px !important;
-  font-weight: 600 !important;
-  font-size: 21px !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
   cursor: pointer !important;
-  box-shadow: 0 8px 20px rgba(227, 33, 37, 0.25) !important;
   transition: all 0.3s ease !important;
-  display: block !important;
-  text-align: center;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+.btn-get-directions-final {
+  background: linear-gradient(135deg, #B3191F, #b71c1c) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 20px rgba(227, 33, 37, 0.25) !important;
+}
+
+.btn-view-microsite-final {
+  background: #211F1F !important;
+  color: #fff !important;
+  box-shadow: 0 8px 20px rgba(33, 31, 31, 0.2) !important;
 }
  
 .btn-get-directions-final:hover {
   background: linear-gradient(135deg, #b71c1c, #9c1717) !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 12px 24px rgba(227, 33, 37, 0.35) !important;
+}
+
+.btn-view-microsite-final:hover {
+  background: #171515 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 24px rgba(33, 31, 31, 0.3) !important;
 }
  
 /* --- NEWLY OPENED BRANCH CARD STYLES --- */
@@ -544,7 +583,7 @@
 }
  
 .branch-card p {
-  font-size: 19px;
+  font-size: 16px;
   color: #211F1F;
   margin: 0;
 }
@@ -557,7 +596,7 @@
   border-radius: 10px;
   color: #B3191F;
   font-weight: 600;
-  font-size: 19px;
+  font-size: 16px;
   cursor: pointer;
   transition: 0.2s;
 }
@@ -597,7 +636,7 @@
   gap: 8px;
   width: fit-content;
   color: #B3191F;
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 1.5px;
   line-height: 1.2;
@@ -617,7 +656,7 @@
 .branch-map-copy>p,
 .new-branches-header>p {
   color: #596272;
-  font-size: 21px;
+  font-size: 18px;
   line-height: 1.7;
   margin: 0;
 }
@@ -654,14 +693,14 @@
 .branch-map-info-item strong {
   display: block;
   color: #211F1F;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   margin-bottom: 2px;
 }
  
 .branch-map-info-item p {
   color: #211F1F;
-  font-size: 19px;
+  font-size: 16px;
   line-height: 1.35;
   margin: 0;
 }
@@ -681,7 +720,7 @@
   gap: 8px;
   min-height: 46px;
   border-radius: 14px;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
@@ -736,7 +775,7 @@
 .branch-map-topbar span {
   display: block;
   color: #B3191F;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -745,7 +784,7 @@
 .branch-map-topbar strong {
   display: block;
   color: #211F1F;
-  font-size: 22px;
+  font-size: 19px;
   font-weight: 600;
   margin-top: 3px;
 }
@@ -789,7 +828,7 @@
  
 .branch-openings-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 22px;
 }
  
@@ -803,6 +842,8 @@
     linear-gradient(180deg, #ffffff 0%, #fffafa 100%);
   box-shadow: 0 18px 40px rgba(33, 31, 31, 0.08);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
  
 .branch-openings-grid .branch-card::before {
@@ -837,17 +878,17 @@
  
 .branch-card-head h3 {
   color: #211F1F;
-  font-size: clamp(21px, 1.6vw, 25px);
+  font-size: clamp(16px, 1.4vw, 20px);
   line-height: 1.2;
   margin: 0 0 4px;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-word;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
  
 .branch-card-head p {
   color: #B3191F;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.8px;
   margin: 0;
@@ -869,7 +910,7 @@
  
 .branch-card-detail p {
   color: #555d69;
-  font-size: 19px;
+  font-size: 16px;
   line-height: 1.55;
   margin: 0;
 }
@@ -877,17 +918,66 @@
 .branch-card-detail strong {
   display: block;
   color: #211F1F;
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.8px;
   margin-bottom: 2px;
   text-transform: uppercase;
 }
+
+.branch-card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  width: 100%;
+}
+
+.branch-card-directions,
+.branch-card-microsite {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 42px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  min-height: auto !important;
+}
+
+.branch-card-directions {
+  background: #B3191F !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.branch-card-directions:hover {
+  background: #9d1419 !important;
+  transform: translateY(-2px);
+}
+
+.branch-card-microsite {
+  background: #211F1F !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.branch-card-microsite:hover {
+  background: #171515 !important;
+  transform: translateY(-2px);
+}
  
 .branch-openings-grid .branch-card-directions {
-  width: 100%;
-  margin-top: auto;
-  padding: 0 16px;
+  width: auto;
+  margin-top: 0;
+  padding: 0;
 }
  
 .branch-page>.new-branches-title,
@@ -905,41 +995,390 @@
   }
 }
  
+.branch-microsite-page {
+  padding: 48px 20px 72px;
+  background: linear-gradient(180deg, #fff8f8 0%, #ffffff 50%, #fffdfd 100%);
+}
+
+.branch-microsite-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.branch-microsite-hero {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.branch-microsite-trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.branch-microsite-trust-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #B3191F;
+  font-weight: 700;
+  background: #fff6f6;
+  border: 1px solid #f0d8da;
+  border-radius: 999px;
+  padding: 8px 12px;
+}
+
+.branch-microsite-hero-copy,
+.branch-microsite-card,
+.branch-microsite-info-card,
+.branch-microsite-section {
+  background: #ffffff;
+  border: 1px solid #f0d8da;
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(33, 31, 31, 0.08);
+}
+
+.branch-microsite-hero-copy {
+  padding: 32px;
+}
+
+.branch-crumb {
+  display: inline-flex;
+  background: #fff4f4;
+  color: #B3191F;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+.branch-microsite-hero-copy h1 {
+  margin: 16px 0 8px;
+  color: #211F1F;
+  font-size: clamp(34px, 4vw, 54px);
+}
+
+.branch-microsite-subtitle {
+  margin: 0 0 10px;
+  color: #B3191F;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.branch-microsite-description {
+  margin: 0;
+  color: #4b4a4a;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.branch-microsite-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.branch-microsite-primary-btn,
+.branch-microsite-secondary-btn,
+.branch-microsite-back-link,
+.branch-microsite-quick-link {
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.branch-microsite-primary-btn,
+.branch-microsite-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border-radius: 14px;
+  font-weight: 700;
+}
+
+.branch-microsite-primary-btn {
+  background: linear-gradient(135deg, #B3191F, #9d1419);
+  color: #fff;
+}
+
+.branch-microsite-secondary-btn {
+  background: #211F1F;
+  color: #fff;
+}
+
+.branch-microsite-primary-btn:hover,
+.branch-microsite-secondary-btn:hover,
+.branch-microsite-back-link:hover,
+.branch-microsite-quick-link:hover {
+  transform: translateY(-2px);
+}
+
+.branch-microsite-card {
+  padding: 28px;
+}
+
+.branch-microsite-card h3 {
+  margin: 0 0 18px;
+  color: #211F1F;
+  font-size: 20px;
+}
+
+.branch-microsite-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.branch-microsite-stat {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+.branch-microsite-stat svg {
+  color: #B3191F;
+  margin-top: 3px;
+}
+
+.branch-microsite-stat span {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #211F1F;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.branch-microsite-stat strong {
+  color: #4b4a4a;
+  font-size: 14px;
+}
+
+.branch-microsite-section {
+  padding: 26px 28px;
+}
+
+.branch-microsite-section-heading h2 {
+  margin: 0 0 6px;
+  color: #211F1F;
+  font-size: 24px;
+}
+
+.branch-microsite-section-heading p {
+  margin: 0 0 16px;
+  color: #555d69;
+  font-size: 14px;
+}
+
+.branch-microsite-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.branch-microsite-benefit-card {
+  background: #fff;
+  border: 1px solid #f0d8da;
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 12px 32px rgba(33, 31, 31, 0.06);
+}
+
+.branch-microsite-benefit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #fff4f4;
+  color: #B3191F;
+  font-size: 19px;
+  margin-bottom: 12px;
+}
+
+.branch-microsite-benefit-card h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  color: #211F1F;
+}
+
+.branch-microsite-benefit-card p {
+  margin: 0;
+  color: #555d69;
+  line-height: 1.7;
+}
+
+.branch-microsite-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.branch-microsite-info-card {
+  padding: 20px;
+}
+
+.branch-microsite-info-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #B3191F;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.branch-microsite-info-card p {
+  margin: 0;
+  color: #4b4a4a;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.branch-microsite-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.branch-microsite-chip {
+  background: #fff4f4;
+  color: #B3191F;
+  padding: 9px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 1px solid #f0d8da;
+}
+
+.branch-microsite-cta-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: linear-gradient(135deg, #211F1F, #4a1d20);
+  color: #fff;
+}
+
+.branch-microsite-cta-banner .branch-microsite-section-heading,
+.branch-microsite-cta-banner h2,
+.branch-microsite-cta-banner p,
+.branch-microsite-cta-banner .branch-microsite-info-label {
+  color: #fff;
+}
+
+.branch-microsite-cta-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.branch-microsite-quick-links {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.branch-microsite-quick-link {
+  background: #fff;
+  border: 1px solid #f0d8da;
+  padding: 14px 16px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #211F1F;
+  font-weight: 700;
+}
+
+.branch-microsite-not-found,
+.branch-microsite-loader {
+  background: #fff;
+  border: 1px solid #f0d8da;
+  border-radius: 24px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: 0 18px 40px rgba(33, 31, 31, 0.08);
+}
+
+.branch-microsite-back-link {
+  display: inline-flex;
+  margin-top: 18px;
+  background: #B3191F;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
 @media (max-width: 700px) {
   .branch-map-section,
   .new-branches-section {
     width: calc(100% - 28px);
   }
- 
+
   .branch-map-section {
     padding: 16px;
     border-radius: 20px;
   }
- 
+
   .branch-map-copy {
     padding: 10px;
   }
- 
+
   .branch-map-actions {
     flex-direction: column;
   }
- 
+
   .branch-map-primary-btn,
   .branch-map-secondary-btn {
     width: 100%;
   }
- 
+
   .branch-map-embed-card {
     min-height: auto;
     border-radius: 18px;
   }
- 
+
   .branch-map-embed-card .map-frame {
     height: 340px;
   }
- 
+
   .branch-openings-grid {
     grid-template-columns: 1fr;
+  }
+
+  .branch-microsite-hero,
+  .branch-microsite-benefit-grid,
+  .branch-microsite-info-grid,
+  .branch-microsite-quick-links {
+    grid-template-columns: 1fr;
+  }
+
+  .branch-microsite-cta-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .branch-microsite-hero-copy,
+  .branch-microsite-card,
+  .branch-microsite-section {
+    padding: 22px;
   }
 }
 
@@ -955,7 +1394,7 @@
 }
 
 .state-filter-label {
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 700;
   color: #7f8c9d;
   text-transform: uppercase;
@@ -979,7 +1418,7 @@
   padding: 8px 20px;
   border-radius: 50px;
   border: none;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   color: #4a5568;
   background: transparent;
@@ -1010,7 +1449,7 @@
   }
   .filter-pill {
     padding: 8px 14px;
-    font-size: 16px;
+    font-size: 14px;
     flex-grow: 1;
     justify-content: center;
   }
@@ -1026,13 +1465,13 @@
 }
 
 .no-branches-found h3 {
-  font-size: 25px;
+  font-size: 21px;
   color: #B3191F;
   margin-bottom: 8px;
 }
 
 .no-branches-found p {
-  font-size: 19px;
+  font-size: 16px;
   color: #211F1F;
   margin: 0;
 }
@@ -1065,7 +1504,7 @@
   background: #ffffff;
   border: 1px solid #dbe3ee;
   border-radius: 14px;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 700;
   font-family: inherit;
   color: #253047;
@@ -1093,7 +1532,7 @@
 }
 
 .custom-branch-dropdown .chevron-icon {
-  font-size: 17px;
+  font-size: 14px;
   color: #6b7a90;
   flex-shrink: 0;
   transition: transform 0.25s ease;
@@ -1171,7 +1610,7 @@
   justify-content: center;
   background: rgba(179, 25, 31, 0.08);
   color: #B3191F;
-  font-size: 17px;
+  font-size: 14px;
 }
 
 .option-copy {
@@ -1183,14 +1622,14 @@
 
 .option-city {
   color: #211F1F;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 800;
   line-height: 1.2;
 }
 
 .option-meta {
   color: #6f7d91;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 600;
   line-height: 1.2;
 }
@@ -1198,7 +1637,7 @@
 .new-badge {
   background: #B3191F;
   color: #ffffff;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 800;
   padding: 4px 7px;
   border-radius: 999px;
@@ -1224,7 +1663,7 @@
 
   .custom-branch-dropdown .dropdown-trigger {
     padding: 12px 16px;
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .custom-branch-dropdown .dropdown-option {

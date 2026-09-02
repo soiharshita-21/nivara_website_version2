@@ -86,6 +86,26 @@ const validateBranch = (req, res, next) => {
     next();
 };
 
+const validatePopup = (req, res, next) => {
+    const { title, start_date, end_date } = req.body;
+    if (!title || typeof title !== 'string' || title.trim().length === 0) {
+        return res.status(400).json({ message: "Popup title is required." });
+    }
+    const start = start_date ? new Date(start_date) : null;
+    const end = end_date ? new Date(end_date) : null;
+
+    if (start_date && isNaN(start.getTime())) {
+        return res.status(400).json({ message: "Start date must be a valid date." });
+    }
+    if (end_date && isNaN(end.getTime())) {
+        return res.status(400).json({ message: "End date must be a valid date." });
+    }
+    if (start && end && end <= start) {
+        return res.status(400).json({ message: "End date must be after start date." });
+    }
+    next();
+};
+
 const escapeHtml = (text) => {
     if (!text) return '';
     return String(text)
@@ -103,5 +123,6 @@ module.exports = {
     validateGalleryItem,
     validatePage,
     validateBranch,
+    validatePopup,
     escapeHtml
 };

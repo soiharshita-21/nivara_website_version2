@@ -5,7 +5,7 @@
   padding: 8px 20px;
   background: #B3191F;
   color: #fff;
-  font-size: 18px;
+  font-size: 15px;
   position: relative;
   z-index: 10001;
   /* Above navbar box-shadow but below menu overlay */
@@ -36,14 +36,14 @@
 }
 
 .location-icon {
-  font-size: 19px;
+  font-size: 16px;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .topbar {
     padding: 8px 15px;
-    font-size: 16px;
+    font-size: 14px;
     justify-content: center;
     flex-wrap: wrap;
     gap: 8px 16px;
@@ -60,7 +60,7 @@
 @media (max-width: 480px) {
   .topbar {
     padding: 8px 10px;
-    font-size: 15px;
+    font-size: 13px;
     justify-content: center;
     gap: 6px 12px;
   }
@@ -70,12 +70,123 @@
   }
 
   .topbar-link {
-    font-size: 15px;
+    font-size: 13px;
     gap: 4px;
     padding: 2px 4px;
   }
 
   .topbar-link span {
     display: inline !important; /* Ensure phone number and email text are fully visible */
+  }
+}
+
+/* Search Bar Styles in TopBar */
+.search-group {
+  position: relative;
+  z-index: 10002;
+}
+
+.search-wrapper {
+  position: relative;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white to fit red topbar nicely */
+  border-radius: 8px;
+  width: 250px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.search-wrapper.active,
+.search-wrapper:focus-within {
+  background: white;
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 6px 36px 6px 12px;
+  border: none !important;
+  background: transparent;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  color: #fff; /* White text when in standard state on red bg */
+  transition: color 0.3s;
+}
+
+.search-wrapper.active input,
+.search-wrapper:focus-within input {
+  color: #211F1F; /* Dark text when input is active (white background) */
+}
+
+.search-wrapper input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-wrapper.active input::placeholder,
+.search-wrapper:focus-within input::placeholder {
+  color: #666;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  pointer-events: none;
+  transition: color 0.3s;
+}
+
+.search-wrapper.active .search-icon,
+.search-wrapper:focus-within .search-icon {
+  color: #211F1F;
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0; /* Align dropdown to the right edge of topbar search wrapper */
+  width: 320px; /* Wider for better reading */
+  max-height: 300px;
+  overflow-y: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  border: 1px solid #f1f5f9;
+}
+
+.search-results li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #1e293b;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.search-results li a:hover {
+  background: #fdf2f2;
+  color: #B3191F;
+}
+
+/* Mobile Responsiveness for Search */
+@media (max-width: 768px) {
+  .search-group {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .search-wrapper {
+    width: 100%;
+  }
+  .search-results {
+    width: 100%;
+    left: 0;
   }
 }

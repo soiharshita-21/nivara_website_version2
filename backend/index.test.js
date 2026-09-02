@@ -1,4 +1,5 @@
 const request = require('supertest');
+const jwt = require('jsonwebtoken');
 
 // Mock MySQL connection/pool to avoid database dependency in testing
 jest.mock('mysql2', () => {
@@ -18,6 +19,7 @@ jest.mock('mysql2', () => {
 });
 
 const app = require('./index');
+const { JWT_SECRET } = require('./middleware/auth');
 
 describe('Backend OWASP Security and Route Verification Tests', () => {
 
@@ -56,6 +58,24 @@ describe('Backend OWASP Security and Route Verification Tests', () => {
             .send({ title: 'New Test Blog' });
         expect(res.statusCode).toEqual(403);
         expect(res.body.message).toContain('No token provided');
+    });
+
+    test('POST /api/popups route should be registered and protected', async () => {
+        const res = await request(app)
+            .post('/api/popups')
+            .send({ title: 'Test Popup' });
+        expect(res.statusCode).toEqual(403);
+        expect(res.body.message).toContain('No token provided');
+    });
+
+    test('POST /api/popups should accept title-only payload and default optional fields', async () => {
+        const token = jwt.sign({ id: 1 }, JWT_SECRET);
+        const res = await request(app)
+            .post('/api/popups')
+            .set('Authorization', `Bearer ${token}`)
+            .send({ title: 'Test Popup' });
+        expect(res.statusCode).toEqual(201);
+        expect(res.body.message).toContain('Popup created successfully');
     });
 
     test('GET /api/pages/:slug should use prepared statement and handle not found gracefully (A03:2021)', async () => {

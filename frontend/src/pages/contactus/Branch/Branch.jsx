@@ -11,6 +11,19 @@ import {
  
 import "./Branch.css";
 import BranchMap from "../../../components/BranchMap";
+
+const slugify = (value = "") =>
+  String(value)
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+const getBranchSlug = (branch = {}) => {
+  const citySlug = slugify(branch.city);
+  const stateSlug = slugify(branch.state);
+  return [citySlug, stateSlug].filter(Boolean).join("-");
+};
  
 const defaultBranchesByState = {
   KARNATAKA: [
@@ -872,6 +885,22 @@ const Branch = () => {
   const closeBranchModal = () => {
     setSelectedBranch(null);
   };
+
+  const openBranchMicrosite = (branch) => {
+    if (!branch) return;
+
+    const slug = getBranchSlug(branch);
+    const query = new URLSearchParams({
+      city: branch.city || "",
+      state: branch.state || "",
+      opened: branch.opened || "",
+      address: branch.address || "",
+      contact: branch.contact || "",
+      map_link: branch.map_link || ""
+    }).toString();
+
+    window.open(`/branch/${slug}?${query}`, "_blank", "noopener,noreferrer");
+  };
  
   const getAllResults = () => {
     const results = [];
@@ -1124,12 +1153,20 @@ const Branch = () => {
                 </div>
               </div>
  
-              <button
-                className="branch-card-directions"
-                onClick={() => openBranchMap(branch.city, branch.map_link)}
-              >
-                <FaDirections /> Get Directions
-              </button>
+              <div className="branch-card-actions">
+                <button
+                  className="branch-card-directions"
+                  onClick={() => openBranchMap(branch.city, branch.map_link)}
+                >
+                  <FaDirections /> Get Directions
+                </button>
+                <button
+                  className="branch-card-microsite"
+                  onClick={() => openBranchMicrosite(branch)}
+                >
+                  View Microsite
+                </button>
+              </div>
             </div>
           ))}
         </div>
@@ -1165,35 +1202,47 @@ const Branch = () => {
             </div>
  
             <div className="modal-body">
-              <div className="info-item">
-                <span className="info-label">🏢 Company</span>
-                <p>Nivara Home Finance LTD.</p>
+              <div className="modal-highlight-row">
+                <div className="modal-highlight-box">
+                  <span className="info-label">🏢 Company</span>
+                  <p>Nivara Home Finance Ltd.</p>
+                </div>
+                <div className="modal-highlight-box">
+                  <span className="info-label">📞 Support</span>
+                  <p>{selectedBranch.contact || "1800-309-1516"}</p>
+                </div>
               </div>
- 
-              <div className="info-divider"></div>
- 
+
               <div className="info-item">
                 <span className="info-label">📍 Address</span>
                 <p>
                   {selectedBranch.address || `${selectedBranch.city}, ${selectedBranch.state}, India`}
                 </p>
               </div>
- 
+
               <div className="info-divider"></div>
- 
+
               <div className="info-item">
-                <span className="info-label">📞 Contact Support</span>
-                <p>{selectedBranch.contact || "1800-309-1516"}</p>
+                <span className="info-label">💼 Services</span>
+                <p>Home Loans, Loan Against Property, Balance Transfer, and Construction Finance support.</p>
               </div>
             </div>
  
             <div className="modal-actions-container">
-              <button
-                className="btn-get-directions-final"
-                onClick={() => openBranchMap(selectedBranch.city, selectedBranch.map_link)}
-              >
-                Get Directions
-              </button>
+              <div className="modal-actions-row">
+                <button
+                  className="btn-get-directions-final"
+                  onClick={() => openBranchMap(selectedBranch.city, selectedBranch.map_link)}
+                >
+                  Get Directions
+                </button>
+                <button
+                  className="btn-view-microsite-final"
+                  onClick={() => openBranchMicrosite(selectedBranch)}
+                >
+                  View Microsite
+                </button>
+              </div>
             </div>
           </div>
         </div>

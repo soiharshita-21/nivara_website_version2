@@ -12,7 +12,7 @@
 }
 
 .why-title {
-  font-size: 47px;
+  font-size: 40px;
   font-weight: 600;
   color: #B3191F;
   margin-bottom: 24px;
@@ -35,7 +35,7 @@
 .why-subtitle {
   max-width: 600px;
   margin: 0 auto 60px;
-  font-size: 21px;
+  font-size: 18px;
   color: #211F1F;
 }
 
@@ -173,13 +173,13 @@
 
 /* TEXT */
 .why-card-title {
-  font-size: 27px;
+  font-size: 23px;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
 .why-card-desc {
-  font-size: 20px;
+  font-size: 17px;
   line-height: 1.6;
   color: #211F1F;
   max-width: 90%;
@@ -299,7 +299,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 27px;
+  font-size: 23px;
   color: #fff;
   transition: transform 0.3s ease;
 }
@@ -319,12 +319,12 @@
 }
 
 .trust-text span {
-  font-size: 19px;
+  font-size: 16px;
 }
 
 .trust-text span.highlight-text {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 17px;
   letter-spacing: 0.3px;
 }
 
@@ -337,7 +337,7 @@
 }
 
 .trust-text h4 {
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 600;
   color: #1e293b; /* Slate gray text for optimal readability on light bg */
   margin: 2px 0 0 0;
@@ -367,7 +367,7 @@
   }
 
   .why-title {
-    font-size: 37px;
+    font-size: 31px;
   }
 
   .trust-banner-container {
@@ -397,7 +397,7 @@
 
 @media (max-width: 480px) {
   .why-title {
-    font-size: 33px;
+    font-size: 28px;
   }
 
   .trust-item {

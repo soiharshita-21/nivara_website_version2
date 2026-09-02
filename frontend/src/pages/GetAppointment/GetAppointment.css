@@ -20,7 +20,7 @@
 .appointment-form .form-title {
   text-align: center;
   margin-bottom: 8px;
-  font-size: 33px;
+  font-size: 28px;
   font-weight: 600;
   color: #333;
 }
@@ -47,7 +47,7 @@
   padding: 13px 14px;
   border: 1px solid #ddd;
   outline: none;
-  font-size: 20px;
+  font-size: 17px;
   border-radius: 6px;
   transition: all 0.3s ease;
   background: #fafafa;
@@ -77,7 +77,7 @@
   background: #B3191F;
   color: white;
   border: none;
-  font-size: 22px;
+  font-size: 19px;
   font-weight: 600;
   cursor: pointer;
   border-radius: 6px;

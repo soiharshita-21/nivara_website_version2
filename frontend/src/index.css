@@ -19,10 +19,14 @@ html,
 body {
   width: 100%;
   overflow-x: hidden;
-  scrollbar-width: none;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #B3191F #f7f2f0;
   font-family: 'Poppins', sans-serif !important;
-  font-size: 19px;
+  font-size: 16px;
   zoom: 0.92;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 body,
@@ -31,11 +35,25 @@ input,
 textarea,
 select {
   font-family: 'Poppins', sans-serif !important;
-  font-size: 19px;
+  font-size: 16px;
 }
 
 body::-webkit-scrollbar {
-  display: none;
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f7f2f0;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #B3191F;
+  border: 3px solid #f7f2f0;
+  border-radius: 999px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #7a1825;
 }
 
 /* Multi-color Line Animation (Defaulted to Nivara Red & Green) */
@@ -87,11 +105,11 @@ body::-webkit-scrollbar {
 
 .section-badge-spark {
   color: #B3191F;
-  font-size: 23px;
+  font-size: 20px;
 }
 
 .section-badge-title {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   letter-spacing: 1.2px;
   color: #B3191F;
@@ -158,7 +176,7 @@ body::-webkit-scrollbar {
 }
 
 .page-banner-title {
-  font-size: 61px;
+  font-size: 52px;
   font-weight: 600;
   margin-bottom: 15px;
   color: #fff;
@@ -176,7 +194,7 @@ body::-webkit-scrollbar {
 }
 
 .page-banner-subtitle {
-  font-size: 25px;
+  font-size: 21px;
   font-weight: 400;
   line-height: 1.5;
   color: #f0f0f0;
@@ -189,11 +207,11 @@ body::-webkit-scrollbar {
   }
 
   .page-banner-title {
-    font-size: 35px;
+    font-size: 30px;
   }
 
   .page-banner-subtitle {
-    font-size: 19px;
+    font-size: 16px;
   }
 }
 
@@ -204,11 +222,11 @@ body::-webkit-scrollbar {
   }
 
   .page-banner-title {
-    font-size: 29px;
+    font-size: 25px;
     padding: 6px 16px;
   }
 
   .page-banner-subtitle {
-    font-size: 17px;
+    font-size: 14px;
   }
 }

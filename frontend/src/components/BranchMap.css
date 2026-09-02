@@ -19,7 +19,7 @@
 .branch-map-eyebrow {
   display: block;
   color: #B3191F;
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 1.5px;
   line-height: 1.2;
@@ -29,7 +29,7 @@
 
 .branch-map-header h3 {
   color: #211F1F;
-  font-size: 29px;
+  font-size: 25px;
   font-weight: 700;
   line-height: 1.15;
   margin: 0;
@@ -47,7 +47,7 @@
 .branch-total-pill strong {
   display: block;
   color: #B3191F;
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 600;
   line-height: 1;
 }
@@ -55,7 +55,7 @@
 .branch-total-pill span {
   color: #211F1F;
   display: block;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.2;
   margin-top: 4px;
@@ -119,20 +119,20 @@
   background: #B3191F;
   border-radius: 12px;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
 }
 
 .branch-state-name {
   color: #211F1F;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 1.25;
 }
 
 .branch-state-count strong {
   color: #211F1F;
-  font-size: 27px;
+  font-size: 23px;
   font-weight: 600;
 }
 

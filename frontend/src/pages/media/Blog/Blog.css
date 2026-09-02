@@ -138,7 +138,7 @@
 }
 
 .blog-content h3 {
-  font-size: 25px;
+  font-size: 21px;
   line-height: 1.4;
   color: #1e293b;
   margin-bottom: 12px;
@@ -150,7 +150,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 17px;
+  font-size: 14px;
   color: #B3191F;
   margin-bottom: 16px;
   text-transform: uppercase;
@@ -170,7 +170,7 @@
 
 /* Description */
 .blog-content p {
-  font-size: 19px;
+  font-size: 16px;
   color: #211F1F;
   line-height: 1.6;
   margin-bottom: 24px;
@@ -183,7 +183,7 @@
   border: 1px solid #B3191F;
   border-radius: 9999px;
   color: #B3191F;
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;

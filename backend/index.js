@@ -17,6 +17,7 @@ const pageRoutes = require('./routes/pageRoutes');
 const branchRoutes = require('./routes/branchRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
 const formRoutes = require('./routes/formRoutes');
+const popupRoutes = require('./routes/popupRoutes');
 
 const app = express();
 
@@ -89,6 +90,7 @@ app.use('/api', pageRoutes);
 app.use('/api', branchRoutes);
 app.use('/api', dashboardRoutes);
 app.use('/api', formRoutes);
+app.use('/api', popupRoutes);
 
 // TEST ROUTE
 app.get('/', (req, res) => {

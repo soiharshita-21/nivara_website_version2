@@ -16,7 +16,7 @@
 
 /* Heading */
 .interest-title {
-  font-size: 53px;
+  font-size: 45px;
   font-weight: 600;
   color: rgb(207, 10, 10);
 }
@@ -36,7 +36,7 @@
 
   text-decoration: none;
   color: #211F1F;
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 500;
 
   transition: all 0.3s ease;
@@ -46,7 +46,7 @@
 
 /* Icon */
 .pdf-icon {
-  font-size: 27px;
+  font-size: 23px;
   color: #211F1F;
   transition: 0.3s ease;
 }
@@ -99,7 +99,7 @@
   background: #B3191F; /* Brand red color */
   color: #ffffff;
   padding: 20px 24px;
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1.4;
   text-align: left;
@@ -127,7 +127,7 @@
 
 .roi-label, .roi-value {
   padding: 16px 24px;
-  font-size: 21px;
+  font-size: 18px;
   display: flex;
   align-items: center;
 }
@@ -153,7 +153,7 @@
 /* Note at bottom */
 .roi-note {
   padding: 18px 24px;
-  font-size: 16px;
+  font-size: 14px;
   color: #211F1F;
   line-height: 1.5;
   background-color: #fafafa;
@@ -166,7 +166,7 @@
 
 .roi-date {
   display: block;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 400;
   margin-top: 6px;
   color: rgba(255, 255, 255, 0.95);
@@ -206,13 +206,13 @@
 @media (max-width: 480px) {
   .roi-card-header {
     padding: 16px 20px;
-    font-size: 21px;
+    font-size: 18px;
     min-height: 90px;
   }
 
   .roi-label, .roi-value, .roi-note {
     padding: 12px 18px;
-    font-size: 19px;
+    font-size: 16px;
   }
   
   .roi-value {

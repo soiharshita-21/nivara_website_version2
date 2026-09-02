@@ -69,7 +69,7 @@
 
 .vm-label {
   display: block;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -78,7 +78,7 @@
 }
 
 .vm-modern-card h2 {
-  font-size: 43px;
+  font-size: 37px;
   font-weight: 700;
   color: #211F1F;
   margin-bottom: 20px;
@@ -93,7 +93,7 @@
 }
 
 .vm-modern-card p {
-  font-size: 22px;
+  font-size: 19px;
   line-height: 1.7;
   color: #211F1F;
 }
@@ -104,7 +104,7 @@
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 115px;
+  font-size: 98px;
   font-weight: 600;
   color: rgba(33, 31, 31, 0.03);
   pointer-events: none;
@@ -119,14 +119,14 @@
 }
 
 .vm-main-mission {
-  font-size: 31px !important;
+  font-size: 26px !important;
   font-weight: 600 !important;
   color: #211F1F !important;
   margin-top: 0 !important;
 }
 
 .vm-mission-text {
-  font-size: 21px !important;
+  font-size: 18px !important;
 }
 
 /* Impact Row */
@@ -156,7 +156,7 @@
 
 .impact-item span {
   font-weight: 600;
-  font-size: 21px;
+  font-size: 18px;
 }
 
 .impact-item:hover {
@@ -182,7 +182,7 @@
   }
   
   .vm-modern-card h2 {
-    font-size: 35px;
+    font-size: 30px;
   }
   
   .vm-impact-row {
@@ -191,7 +191,7 @@
   }
   
   .vm-bg-text {
-    font-size: 55px;
+    font-size: 47px;
   }
 }
 

@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import "./banner.css";
 import Carousel from "react-bootstrap/Carousel";
 import { useNavigate } from "react-router-dom";
@@ -9,17 +10,28 @@ import h3 from "../../assets/images/homepage__img3.png";
 
 const Banner = () => {
   const navigate = useNavigate();
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex) => {
+    setIndex(selectedIndex);
+  };
+
+  useEffect(() => {
+    setIndex(0);
+  }, []);
 
   return (
     <section className="banner">
-    <Carousel
-  fade
-  controls={false}
-  indicators={true}
-  interval={6000}   // Slowed down for smooth premium feel
-  pause={false}     // IMPORTANT → keeps looping without stopping
-  wrap={true}       // ensures infinite looping
->
+      <Carousel
+        activeIndex={index}
+        onSelect={handleSelect}
+        fade
+        controls={false}
+        indicators={true}
+        interval={6000}   // Slowed down for smooth premium feel
+        pause={false}     // IMPORTANT → keeps looping without stopping
+        wrap={true}       // ensures infinite looping
+      >
         
         {/* SLIDE 1 */}
         <Carousel.Item>
@@ -27,15 +39,15 @@ const Banner = () => {
             <div className="banner-slide-bg" style={{ backgroundImage: `url(${h1})` }}></div>
             <div className="banner-content">
               <div className="trusted-badge">
-                <span className="green-dot"></span> Trusted by 20,000+ Happy Families
+                <span className="green-dot"></span> Trusted by 19,300+ Happy Families
               </div>
  <h1>
   Your{" "}
   <span className="flip-wrapper">
-    <span className="flip-inner">Trusted</span>
+    <span className="flip-inner">Reliable</span>
   </span>{" "}
-  Partner <br />
-  for <span>Housing Finance</span>
+  Partner
+  in <br/><span>Home Finance</span>
 </h1>
               <p>
                 Affordable home loans with transparent processes.
@@ -73,15 +85,15 @@ const Banner = () => {
             <div className="banner-slide-bg" style={{ backgroundImage: `url(${h2})` }}></div>
              <div className="banner-content">
               <div className="trusted-badge">
-                <span className="green-dot"></span> Trusted by 20,000+ Happy Families
+                <span className="green-dot"></span> Trusted by 19,300+ Happy Families
               </div>
   <h1>
   Your{" "}
   <span className="flip-wrapper">
-    <span className="flip-inner">Trusted</span>
+    <span className="flip-inner">Reliable</span>
   </span>{" "}
-  Partner <br />
-  for <span>Housing Finance</span>
+  Partner
+  in <br/><span>Home Finance</span>
 </h1>
 
               <p>
@@ -120,15 +132,15 @@ const Banner = () => {
             <div className="banner-slide-bg" style={{ backgroundImage: `url(${h3})` }}></div>
              <div className="banner-content">
               <div className="trusted-badge">
-                <span className="green-dot"></span> Trusted by 20,000+ Happy Families
+                <span className="green-dot"></span> Trusted by 19,300+ Happy Families
               </div>
-  <h1>
+ <h1>
   Your{" "}
   <span className="flip-wrapper">
-    <span className="flip-inner">Trusted</span>
+    <span className="flip-inner">Reliable</span>
   </span>{" "}
-  Partner <br />
-  for <span>Housing Finance</span>
+  Partner
+  in <br/><span>Home Finance</span>
 </h1>
               <p>
                 Affordable home loans with transparent processes.

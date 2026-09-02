@@ -18,8 +18,10 @@ const AdminLogin = () => {
     setLoading(true);
 
     try {
+      const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001').replace(/\/$/, '');
+
       // POST to our real Backend API
-      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/login`, {
+      const response = await axios.post(`${apiBaseUrl}/api/login`, {
         username,
         password
       });

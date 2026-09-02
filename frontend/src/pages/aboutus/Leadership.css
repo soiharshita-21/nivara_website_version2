@@ -1,0 +1,69 @@
+.leadership-page {
+  width: 100%;
+  background: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+.leadership-tabs-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto 20px;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.leadership-tabs {
+  display: inline-flex;
+  background-color: #f7f2f0;
+  padding: 6px;
+  border-radius: 50px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.tab-btn {
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #555555;
+  border: none;
+  background: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.tab-btn:hover {
+  color: #B3191F;
+}
+
+.tab-btn.active {
+  background-color: #B3191F;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(179, 25, 31, 0.2);
+}
+
+.leadership-tab-content {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.leadership-tab-content .board-section,
+.leadership-tab-content .management-section,
+.leadership-tab-content .investors-grid-container {
+  padding-top: 20px !important;
+}
+
+@media (max-width: 768px) {
+  .leadership-tabs {
+    flex-direction: column;
+    border-radius: 20px;
+    width: 100%;
+    gap: 5px;
+  }
+  .tab-btn {
+    width: 100%;
+    padding: 10px 20px;
+  }
+}

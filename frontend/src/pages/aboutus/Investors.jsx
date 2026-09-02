@@ -4,7 +4,7 @@ import investors2 from "../../assets/images/investors2.png";
 import tnLogo from "../../assets/images/tn.png";
 import bpeLogo from "../../assets/images/bpe.png";
 
-const Investors = () => {
+const Investors = ({ hideBanner = false }) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -28,17 +28,19 @@ const Investors = () => {
   return (
     <div className="investors-page">
 
-      <section className="page-banner animate-pop-up" style={{ backgroundImage: `url(${investors2})` }}>
-        <div className="page-banner-overlay"></div>
-        <div className="page-banner-content">
-          <h1 className="page-banner-title">
-            Our <span className="text-red">Investors</span>
-          </h1>
-          <p className="page-banner-subtitle">
-            Partnering with visionary leaders to build a stronger, more sustainable future in housing finance.
-          </p>
-        </div>
-      </section>
+      {!hideBanner && (
+        <section className="page-banner animate-pop-up" style={{ backgroundImage: `url(${investors2})` }}>
+          <div className="page-banner-overlay"></div>
+          <div className="page-banner-content">
+            <h1 className="page-banner-title">
+              Our <span className="text-red">Investors</span>
+            </h1>
+            <p className="page-banner-subtitle">
+              Partnering with visionary leaders to build a stronger, more sustainable future in housing finance.
+            </p>
+          </div>
+        </section>
+      )}
 
       <section className="investors-grid-container">
         <div className="investors-grid">

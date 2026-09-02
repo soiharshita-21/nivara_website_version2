@@ -8,11 +8,7 @@ import Footer from "./components/Footer/footer";
 import IsoBanner from "./components/IsoBanner/IsoBanner";
 
 import AboutUs from "./pages/aboutus/AboutUs/AboutUs";
-import VisionMission from "./pages/aboutus/VisionMission/VisionMission";
-import ObjectivesCoreValues from "./pages/aboutus/ObjectivesCoreValues/ObjectivesCoreValues";
-import Investors from "./pages/aboutus/Investors";
-import BoardOfDirectors from "./pages/aboutus/BoardOfDirectors/BoardOfDirectors";
-import ManagementTeam from "./pages/aboutus/ManagementTeam/ManagementTeam";
+import Leadership from "./pages/aboutus/Leadership";
 import Privacy from "./pages/aboutus/Privacy";
 import Policy from "./pages/aboutus/Policy";
 
@@ -23,7 +19,6 @@ import LoanAgainstProperty from "./pages/products/LoanAgainstProperty/LoanAgains
 import BalanceTransfer from "./pages/products/BalanceTransfer/BalanceTransfer";
 import RefinanceLoan from "./pages/products/RefinanceLoan/RefinanceLoan";
 import ImprovementAndExtension from "./pages/products/ImprovementandExtension/ImprovementandExtension";
-// import ENach from "./pages/customercenter/Enach/Enach"; // commented per request — E-NACH now opens external site
 import EcsMandate from "./pages/customercenter/EcsMandate/EcsMandate";
 import ENachBankCode from "./pages/customercenter/ENachBankCode/ENachBankCode";
 import ConsumerEducation from "./pages/customercenter/ConsumerEducation/ConsumerEducation";
@@ -48,6 +43,7 @@ import PressRelease from "./pages/media/PressRelease/PressRelease";
 import NivaraGallery from "./pages/media/NivaraGallery/NivaraGallery";
 import Career from "./pages/Career/Career";
 import Branch from "./pages/contactus/Branch/Branch";
+import BranchMicrosite from "./pages/contactus/Branch/BranchMicrosite";
 import Offices from "./pages/contactus/Offices/Offices";
 import FairPracticeCode from "./pages/customercenter/FairPracticeCode/FairPracticeCode";
 import LoanApplyForm from "./pages/loanapplyform";
@@ -82,7 +78,9 @@ function AppContent() {
   const location = useLocation();
   const isAdminPath = location.pathname.startsWith('/admin');
   const isRestrictedPath = location.pathname === '/investorsrelation/restricted';
+  const isBranchMicrositePath = location.pathname.startsWith('/branch/');
   const hideHeaderFooter = isAdminPath || isRestrictedPath;
+  const hideFooter = isBranchMicrositePath;
 
   return (
     <>
@@ -95,15 +93,12 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/aboutus/vision-mission" element={<VisionMission />} />
-          <Route
-            path="/aboutus/core-values"
-            element={<ObjectivesCoreValues />}
-          />
-          <Route path="/aboutus/investors" element={<Investors />} />
-
-          <Route path="/aboutus/board" element={<BoardOfDirectors />} />
-          <Route path="/aboutus/management" element={<ManagementTeam />} />
+          <Route path="/aboutus/vision-mission" element={<AboutUs />} />
+          <Route path="/aboutus/core-values" element={<AboutUs />} />
+          <Route path="/aboutus/investors" element={<Leadership />} />
+          <Route path="/aboutus/board" element={<Leadership />} />
+          <Route path="/aboutus/management" element={<Leadership />} />
+          <Route path="/aboutus/leadership" element={<Leadership />} />
           <Route path="/aboutus/privacy" element={<Privacy />} />
           <Route path="/aboutus/policy" element={<Policy />} />
 
@@ -131,7 +126,6 @@ function AppContent() {
           <Route path="/investorsrelation/notices" element={<InvestorsRelation section="notices" />} />
           <Route path="/investorsrelation/transcripts" element={<InvestorsRelation section="transcripts" />} />
           <Route path="/investorsrelation/transcript" element={<TranscriptViewer />} />
-          {/* <Route path="/customercenter/e-nach" element={<ENach />} /> */} // commented per request — navigation now leads to external NACH site
           <Route path="/customercenter/ecs-mandate" element={<EcsMandate />} />
           <Route path="/customercenter/enach-bankcode" element={<ENachBankCode />} />
           <Route path="/customercenter/consumer-education" element={<ConsumerEducation />} />
@@ -175,6 +169,7 @@ function AppContent() {
           <Route path="/media/nivara-gallery/nivara-gallery" element={<NivaraGallery />} />
           <Route path="/career/career" element={<Career />} />
           <Route path="/contactus/branch/branch" element={<Branch />} />
+          <Route path="/branch/:branchSlug" element={<BranchMicrosite />} />
           <Route path="/contactus/offices/offices" element={<Offices />} />
           <Route path="/apply-home-loan" element={<LoanApplyForm />} />
           <Route path="/admin" element={<AdminLogin />} />
@@ -195,7 +190,7 @@ function AppContent() {
           <Route path="/investorsrelation/restricted" element={<AccessDenied />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        {!hideHeaderFooter && <Footer />}
+        {!hideHeaderFooter && !hideFooter && <Footer />}
       </div>
     </>
   );

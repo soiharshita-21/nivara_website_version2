@@ -131,7 +131,7 @@
 }
 
 .lap-rotate-icon {
-  font-size: 33px;
+  font-size: 28px;
   color: #B3191F;
   transition: transform 0.7s ease;
 }
@@ -170,7 +170,7 @@
   border-radius: 10px;
 
   background: #fff;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 600;
   color: #222;
 
@@ -183,7 +183,7 @@
   height: 22px;
   background: #B3191F;
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
 
   display: flex;
@@ -199,7 +199,7 @@
 }
 
 .lap-image-points .points-title {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   color: #B3191F;
   margin-bottom: 2px;
@@ -221,14 +221,14 @@
 }
 
 .loan-against-title {
-  font-size: 37px;
+  font-size: 31px;
   font-weight: 600;
   margin-bottom: 20px;
   color: #211F1F;
 }
 
 .loan-against-text {
-  font-size: 21px;
+  font-size: 18px;
   line-height: 1.8;
   color: #211F1F;
   margin-bottom: 15px;
@@ -254,7 +254,7 @@
 }
 
 .lap-title {
-  font-size: 47px;
+  font-size: 40px;
   font-weight: 700;
   color: #B3191F;
   margin-bottom: 16px;
@@ -262,7 +262,7 @@
 }
 
 .lap-subtitle-red {
-  font-size: 31px;
+  font-size: 26px;
   font-weight: 600;
   color: #B3191F;
   margin-bottom: 14px;
@@ -270,7 +270,7 @@
 }
 
 .lap-heading {
-  font-size: 25px;
+  font-size: 21px;
   font-weight: 600;
   color: #211F1F;
   margin-bottom: 28px;
@@ -278,7 +278,7 @@
 }
 
 .lap-text {
-  font-size: 22px;
+  font-size: 19px;
   line-height: 1.8;
   color: #211F1F;
   max-width: 900px;
@@ -294,7 +294,7 @@
 }
 
 .lap-features li {
-  font-size: 21px;
+  font-size: 18px;
   color: #2f3e46;
   margin-bottom: 12px;
   position: relative;
@@ -315,7 +315,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -370,12 +370,12 @@
 }
 
 .lap-feature-icon {
-  font-size: 45px;
+  font-size: 38px;
   margin-bottom: 18px;
 }
 
 .lap-feature-box h3 {
-  font-size: 27px;
+  font-size: 23px;
   font-weight: 600;
   color: #B3191F !important;
 }
@@ -389,7 +389,7 @@
 }
 
 .lap-benefits-title {
-  font-size: 39px;
+  font-size: 33px;
   font-weight: 600;
   color: #B3191F !important;
   margin-bottom: 45px;
@@ -406,7 +406,7 @@
 .lap-benefit-item {
   background: #ffffff;
   padding: 24px 30px;
-  font-size: 21px;
+  font-size: 18px;
   line-height: 1.6;
   color: #211F1F;
   border-left: 5px solid #B3191F;
@@ -432,7 +432,7 @@
 }
 
 .lap-help-title {
-  font-size: 47px;
+  font-size: 40px;
   font-weight: 700;
   color: #B3191F !important;
   margin-bottom: 12px;
@@ -440,7 +440,7 @@
 }
 
 .lap-help-subtitle {
-  font-size: 23px;
+  font-size: 20px;
   color: #6b7a90;
   text-align: center;
   margin-bottom: 60px;
@@ -472,28 +472,28 @@
 
 /* Icon */
 .lap-help-icon {
-  font-size: 45px;
+  font-size: 38px;
   color: #B3191F;
   margin-bottom: 20px;
 }
 
 /* Text */
 .lap-help-card h3 {
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 600;
   color: #0a2540;
   margin-bottom: 16px;
 }
 
 .lap-help-card p {
-  font-size: 21px;
+  font-size: 18px;
   color: #6b7a90;
   line-height: 1.6;
 }
 
 .lap-help-green {
   color: #B3191F;
-  font-size: 27px;
+  font-size: 23px;
   margin: 10px 0;
   font-weight: 600;
 }
@@ -609,7 +609,7 @@
 }
 
 .lap-feature-icon {
-  font-size: 45px;
+  font-size: 38px;
   margin-bottom: 20px;
   color: #B3191F;
   display: flex;
@@ -626,12 +626,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 29px;
+  font-size: 25px;
   margin: 0 auto 20px;
 }
 
 .lap-feature-box h3 {
-  font-size: 25px;
+  font-size: 21px;
   font-weight: 600;
   color: #211F1F !important;
   margin: 0;
@@ -678,7 +678,7 @@
 }
 
 .lap-section-heading {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 600;
   margin-bottom: 30px;
   color: #B3191F;
@@ -695,7 +695,7 @@
 }
 
 .lap-keyfeatures-list li {
-  font-size: 21px;
+  font-size: 18px;
   color: #444;
   line-height: 1.6;
   position: relative;
@@ -717,7 +717,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -743,7 +743,7 @@
 
 /* Title */
 .lap-quote-ti {
-  font-size: 47px;
+  font-size: 40px;
   font-weight: 600;
   color: #B3191F;
   margin-bottom: 10px;
@@ -751,7 +751,7 @@
 
 /* Subtitle */
 .lap-quote-subti {
-  font-size: 23px;
+  font-size: 20px;
   color: #6b7c93;
   margin-bottom: 50px;
 }
@@ -772,7 +772,7 @@
 .lap-form-grid input {
   width: 100%;
   padding: 18px 20px;
-  font-size: 21px;
+  font-size: 18px;
   border-radius: 6px;
   border: 2px solid #e3eaf0;
   outline: none;
@@ -792,7 +792,7 @@
   color: #fff;
   border: none;
   padding: 18px;
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: 1px;
   border-radius: 6px;
@@ -820,11 +820,11 @@
 
 @media(max-width: 600px) {
   .lap-quote-ti {
-    font-size: 37px;
+    font-size: 31px;
   }
 
   .lap-quote-subti {
-    font-size: 21px;
+    font-size: 18px;
   }
 }
 
@@ -837,14 +837,14 @@
 }
 
 .lap-help-title {
-  font-size: 47px;
+  font-size: 40px;
   font-weight: 600;
   color: #B3191F;
   margin-bottom: 12px;
 }
 
 .help-subtitle {
-  font-size: 23px;
+  font-size: 20px;
   color: #6b7a90;
   margin-bottom: 60px;
 }
@@ -872,12 +872,12 @@
 }
 
 .help-icon {
-  font-size: 47px;
+  font-size: 40px;
   margin-bottom: 20px;
 }
 
 .help-card h3 {
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 600;
   color: #1f2937;
   margin-bottom: 16px;
@@ -885,7 +885,7 @@
 }
 
 .help-card p {
-  font-size: 21px;
+  font-size: 18px;
   color: #6b7a90;
   line-height: 1.6;
 }

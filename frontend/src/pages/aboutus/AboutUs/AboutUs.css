@@ -14,7 +14,7 @@
 
 .features-title {
   text-align: center;
-  font-size: 37px;
+  font-size: 31px;
   margin-bottom: 40px;
   color: #211F1F;
 }
@@ -62,20 +62,20 @@
 
 /* Icon */
 .feature-card .icon {
-  font-size: 37px;
+  font-size: 31px;
   display: block;
   margin-bottom: 12px;
 }
 
 /* Text */
 .feature-card h3 {
-  font-size: 23px;
+  font-size: 20px;
   margin-bottom: 10px;
   color: #211F1F;
 }
 
 .feature-card p {
-  font-size: 19px;
+  font-size: 16px;
   color: #211F1F;
 }
 
@@ -131,13 +131,13 @@
 }
 
 .hero-subtitle {
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 500;
   color: #333;
 }
 
 .hero-subtitle-heading {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 500;
   color: #B3191F;
   margin-bottom: 12px;
@@ -155,7 +155,7 @@
 }
 
 .hero-purpose-text {
-  font-size: 20px;
+  font-size: 17px;
   line-height: 1.6;
   color: #444;
   text-align: justify;
@@ -212,7 +212,7 @@
 }
 
 .hero-philosophy h2 {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 500;
   margin-bottom: 15px;
   color: #B3191F;
@@ -220,7 +220,7 @@
 }
 
 .hero-philosophy p {
-  font-size: 20px;
+  font-size: 17px;
   line-height: 1.6;
   color: #333;
   margin-bottom: 12px;
@@ -278,7 +278,7 @@
 }
 
 .features-section h2 {
-  font-size: 35px;
+  font-size: 30px;
   margin-bottom: 18px;
   color: #B3191F;
   position: relative;
@@ -298,12 +298,12 @@
 
 .feature-card .icon {
   color: #B3191F;
-  font-size: 33px;
+  font-size: 28px;
   margin-bottom: 10px;
 }
 
 .about-section h2 {
-  font-size: 35px;
+  font-size: 30px;
   margin-bottom: 18px;
   color: #B3191F;
   position: relative;
@@ -320,7 +320,7 @@
 }
 
 .about-section p {
-  font-size: 22px;
+  font-size: 19px;
   line-height: 1.8;
   color: #444;
   max-width: 900px;
@@ -345,7 +345,7 @@
 
 
 .about-section blockquote {
-  font-size: 25px;
+  font-size: 21px;
   font-weight: 600;
   color: #B3191F;
   margin: 20px auto;
@@ -354,15 +354,15 @@
 
 @media (max-width: 768px) {
   .about-hero h1 {
-    font-size: 37px;
+    font-size: 31px;
   }
 
   .about-section h2 {
-    font-size: 29px;
+    font-size: 25px;
   }
 
   .about-section p {
-    font-size: 21px;
+    font-size: 18px;
   }
 
   .vm-card {
@@ -411,13 +411,13 @@
 
   .about-banner .page-banner-title {
     margin-top: 10px;
-    font-size: 33px;
+    font-size: 28px;
     padding: 4px 12px;
   }
 
   .about-banner .page-banner-subtitle {
     margin-bottom: 10px;
     padding: 8px 16px;
-    font-size: 20px;
+    font-size: 17px;
   }
 }

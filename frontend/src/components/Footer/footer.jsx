@@ -26,7 +26,7 @@ const Footer = () => {
 
         <div className="footer-newsletter">
           <div className="newsletter-container">
-            <h2 className="newsletter-title">Signup Our Newsletter</h2>
+            <h2 className="newsletter-title">Signup For Our Newsletter</h2>
             <div className="newsletter-form">
               <input type="email" placeholder="Write E-Mail Address" />
               <button type="submit">GO!</button>
@@ -36,9 +36,9 @@ const Footer = () => {
 
         <div className="footer-container">
           <div className="footer-col brand">
-            <div className="brand-logo">
+            <Link to="/" className="brand-logo" onClick={handleLinkClick}>
               <img src={logo} alt="Nivara Logo" className="footer-logo" />
-            </div>
+            </Link>
 
             <p className="brand-desc">
               Empowering dreams of homeownership with affordable and accessible

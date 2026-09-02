@@ -124,7 +124,7 @@
 }
 
 .hero-subtitle_service {
-  font-size: 19px;
+  font-size: 16px;
   line-height: 1.65;
   margin-bottom: 24px;
   color: #4A4A4A;
@@ -144,7 +144,7 @@
   color: #fff;
   border: none;
   border-radius: 8px;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -188,7 +188,7 @@
 }
 
 .hero-glass-card h3 {
-  font-size: 22px; /* Sized down slightly for a tighter card design */
+  font-size: 19px; /* Sized down slightly for a tighter card design */
   font-weight: 600;
   margin-top: 0; /* Clear default margin for perfect spacing */
   margin-bottom: 16px;
@@ -223,7 +223,7 @@
 }
 
 .hero-glass-card li {
-  font-size: 18px; /* Sized down for elegance inside card */
+  font-size: 15px; /* Sized down for elegance inside card */
   margin-bottom: 13px; /* Tighter list spacing */
   display: flex;
   align-items: flex-start;
@@ -246,7 +246,7 @@
   background: #B3191F;
   color: #fff;
   border-radius: 50%;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   flex-shrink: 0;
   margin-top: 1px;
@@ -371,7 +371,7 @@
 
   .hero-subtitle_service {
     margin: 0 auto 20px;
-    font-size: 19px; /* Reduced from 15px */
+    font-size: 16px; /* Reduced from 15px */
     max-width: 600px;
     color: rgba(255, 255, 255, 0.95);
     text-align: center;
@@ -400,7 +400,7 @@
 
   .hero-glass-card h3 {
     color: #ffffff;
-    font-size: 23px;
+    font-size: 20px;
     margin-bottom: 15px;
     display: inline-block;
   }
@@ -413,7 +413,7 @@
 
   .hero-glass-card li {
     color: rgba(255, 255, 255, 0.9);
-    font-size: 19px;
+    font-size: 16px;
     margin-bottom: 10px;
     text-align: left;
     justify-content: flex-start;
@@ -445,7 +445,7 @@
   }
 
   .hero-subtitle_service {
-    font-size: 18px; /* Reduced from 14px */
+    font-size: 15px; /* Reduced from 14px */
   }
 
   .hero-btn-primary {
@@ -483,7 +483,7 @@
   .lap-benefits-title,
   .improv-benefits-title,
   .refinance-benefits-title {
-    font-size: 31px !important;
+    font-size: 26px !important;
     margin-bottom: 30px !important;
     text-align: center !important;
   }

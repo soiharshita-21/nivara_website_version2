@@ -114,7 +114,7 @@
 }
 
 .homeloan-rotate-icon {
-  font-size: 33px;
+  font-size: 28px;
   color: #B3191F;
   transition: transform 0.7s ease;
 }
@@ -153,7 +153,7 @@
   border-radius: 10px;
 
   background: #fff;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 600;
   color: #222;
 
@@ -166,7 +166,7 @@
   height: 22px;
   background: #B3191F;
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
 
   display: flex;
@@ -182,7 +182,7 @@
 }
 
 .homeloan-image-points .points-title {
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 600;
   color: #B3191F;
   margin-bottom: 5px;
@@ -202,7 +202,7 @@
 
 .loan-content h2 {
   color: #B3191F;
-  font-size: 37px;
+  font-size: 31px;
   font-weight: 700;
   margin-bottom: 12px;
   text-align: left;
@@ -210,7 +210,7 @@
 
 .home-page .subtitle {
   color: #211F1F;
-  font-size: 23px;
+  font-size: 20px;
   margin-bottom: 25px;
   text-align: left;
   line-height: 1.6;
@@ -225,7 +225,7 @@
 }
 
 .homefeatures li {
-  font-size: 21px;
+  font-size: 18px;
   color: #211F1F;
   margin-bottom: 12px;
   position: relative;
@@ -246,7 +246,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -328,7 +328,7 @@
 }
 
 .home-loan-title {
-  font-size: 47px;
+  font-size: 40px;
   font-weight: 700;
   color: #B3191F;
   margin-bottom: 16px;
@@ -336,7 +336,7 @@
 }
 
 .home-loan-subtitle {
-  font-size: 31px;
+  font-size: 26px;
   font-weight: 600;
   color: #B3191F;
   margin-bottom: 14px;
@@ -344,7 +344,7 @@
 }
 
 .home-loan-heading {
-  font-size: 25px;
+  font-size: 21px;
   font-weight: 600;
   color: #211F1F;
   margin-bottom: 28px;
@@ -352,7 +352,7 @@
 }
 
 .home-loan-text {
-  font-size: 22px;
+  font-size: 19px;
   line-height: 1.8;
   color: #211F1F;
   max-width: 900px;
@@ -368,14 +368,14 @@
 }
 
 .help-title {
-  font-size: 47px;
+  font-size: 40px;
   font-weight: 600;
   color: #B3191F;
   margin-bottom: 12px;
 }
 
 .help-subtitle {
-  font-size: 23px;
+  font-size: 20px;
   color: black;
   margin-bottom: 60px;
 }
@@ -395,7 +395,7 @@
 }
 
 .homeloan-help-title {
-  font-size: 47px;
+  font-size: 40px;
   font-weight: 700;
   color: #B3191F !important;
   margin-bottom: 12px;
@@ -403,7 +403,7 @@
 }
 
 .homeloan-help-subtitle {
-  font-size: 23px;
+  font-size: 20px;
   color: #6b7a90;
   text-align: center;
   margin-bottom: 60px;
@@ -435,28 +435,28 @@
 
 /* Icon */
 .homeloan-help-icon {
-  font-size: 45px;
+  font-size: 38px;
   color: #B3191F;
   margin-bottom: 20px;
 }
 
 /* Text */
 .homeloan-help-card h3 {
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 600;
   color: #0a2540;
   margin-bottom: 16px;
 }
 
 .homeloan-help-card p {
-  font-size: 21px;
+  font-size: 18px;
   color: #6b7a90;
   line-height: 1.6;
 }
 
 .homeloan-help-green {
   color: #B3191F;
-  font-size: 27px;
+  font-size: 23px;
   margin: 10px 0;
   font-weight: 600;
 }
@@ -506,7 +506,7 @@
 }
 
 .homeloan-feature-icon {
-  font-size: 45px;
+  font-size: 38px;
   margin-bottom: 20px;
   color: #B3191F;
   display: flex;
@@ -523,12 +523,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 29px;
+  font-size: 25px;
   margin: 0 auto 20px;
 }
 
 .homeloan-feature-box h3 {
-  font-size: 25px;
+  font-size: 21px;
   font-weight: 600;
   color: #211F1F !important;
   margin: 0;
@@ -575,7 +575,7 @@
 }
 
 .homeloan-benefits-title {
-  font-size: 39px;
+  font-size: 33px;
   font-weight: 600;
   color: #B3191F !important;
   margin-bottom: 45px;
@@ -606,7 +606,7 @@
 .homeloan-benefit-item {
   background: #ffffff;
   padding: 24px 30px;
-  font-size: 21px;
+  font-size: 18px;
   line-height: 1.6;
   color: #211F1F;
   border-left: 5px solid #B3191F;
@@ -660,14 +660,14 @@
 }
 
 .quote-title {
-  font-size: 57px;
+  font-size: 48px;
   font-weight: 700;
   color: #B3191F;
   margin-bottom: 10px;
 }
 
 .quote-subtitle {
-  font-size: 23px;
+  font-size: 20px;
   color: #6b7a90;
 }
 
@@ -688,7 +688,7 @@
 .quote-form-grid input {
   width: 100%;
   padding: 20px 22px;
-  font-size: 21px;
+  font-size: 18px;
   border-radius: 8px;
   border: 2px solid #e3eaf0;
   outline: none;
@@ -708,7 +708,7 @@
   color: #fff;
   border: none;
   padding: 20px;
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
@@ -728,7 +728,7 @@
   }
 
   .benefits-title {
-    font-size: 35px;
+    font-size: 30px;
   }
 }
 
@@ -751,7 +751,7 @@
   }
 
   .benefits-title {
-    font-size: 33px;
+    font-size: 28px;
   }
 }
 

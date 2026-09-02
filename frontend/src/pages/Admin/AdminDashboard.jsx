@@ -20,7 +20,8 @@ import {
   Code,
   Folder,
   FolderOpen,
-  MapPin
+  MapPin,
+  Bell
 } from "lucide-react";
 import ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.snow.css";
@@ -34,6 +35,7 @@ const AdminDashboard = () => {
   const [gallery, setGallery] = useState([]);
   const [pages, setPages] = useState([]);
   const [branches, setBranches] = useState([]);
+  const [popups, setPopups] = useState([]);
   const [selectedStateFilter, setSelectedStateFilter] = useState("All");
 
   const [loading, setLoading] = useState(false);
@@ -51,6 +53,16 @@ const AdminDashboard = () => {
   const [newGallery, setNewGallery] = useState({ title: "", folder_date: "", image_url: "", image_urls: [] });
   const [newPage, setNewPage] = useState({ title: "", slug: "", content: "", menu_location: "none", banner_image: "" });
   const [newBranch, setNewBranch] = useState({ city: "", state: "Karnataka", opened: new Date().toISOString().split('T')[0], address: "", contact: "1800-309-1516", is_new: false });
+  const [newPopup, setNewPopup] = useState({
+    title: "",
+    message: "",
+    image_url: "",
+    link_url: "",
+    link_text: "Learn More",
+    start_date: new Date().toISOString().split('T')[0],
+    end_date: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+    is_active: true
+  });
 
   const [isHtmlMode, setIsHtmlMode] = useState(false);
 
@@ -73,7 +85,8 @@ const AdminDashboard = () => {
     { id: "blogs", label: "Manage Blogs", icon: FileText },
     { id: "press", label: "Press Releases", icon: Newspaper },
     { id: "gallery", label: "Gallery", icon: ImageIcon },
-    { id: "branches", label: "Manage Branches", icon: MapPin }
+    { id: "branches", label: "Manage Branches", icon: MapPin },
+    { id: "popups", label: "Pop-Ups", icon: Bell }
   ];
 
   // Helper to get auth headers
@@ -96,18 +109,20 @@ const AdminDashboard = () => {
     try {
       const baseUrl = `${import.meta.env.VITE_API_BASE_URL}/api`;
       if (activeTab === "overview") {
-        const [blogRes, pressRes, galleryRes, pagesRes, branchRes] = await Promise.all([
+        const [blogRes, pressRes, galleryRes, pagesRes, branchRes, popupRes] = await Promise.all([
           axios.get(`${baseUrl}/blogs`),
           axios.get(`${baseUrl}/press`),
           axios.get(`${baseUrl}/gallery`),
           axios.get(`${baseUrl}/pages`),
-          axios.get(`${baseUrl}/branches`)
+          axios.get(`${baseUrl}/branches`),
+          axios.get(`${baseUrl}/popups`, { headers: getAuthHeaders() })
         ]);
         setBlogs(blogRes.data);
         setPress(pressRes.data);
         setGallery(galleryRes.data);
         setPages(pagesRes.data);
         setBranches(branchRes.data);
+        setPopups(popupRes.data);
       } else if (activeTab === "blogs") {
         const res = await axios.get(`${baseUrl}/blogs`);
         setBlogs(res.data);
@@ -123,6 +138,9 @@ const AdminDashboard = () => {
       } else if (activeTab === "branches") {
         const res = await axios.get(`${baseUrl}/branches`);
         setBranches(res.data);
+      } else if (activeTab === "popups") {
+        const res = await axios.get(`${baseUrl}/popups`, { headers: getAuthHeaders() });
+        setPopups(res.data);
       }
     } catch (err) {
       console.error("Fetch error:", err);
@@ -147,6 +165,16 @@ const AdminDashboard = () => {
     setNewGallery({ title: "", folder_date: "", image_url: "", image_urls: [] });
     setNewPage({ title: "", slug: "", content: "", menu_location: "none", banner_image: "" });
     setNewBranch({ city: "", state: "Karnataka", opened: new Date().toISOString().split('T')[0], address: "", contact: "1800-309-1516", is_new: false });
+    setNewPopup({
+      title: "",
+      message: "",
+      image_url: "",
+      link_url: "",
+      link_text: "Learn More",
+      start_date: new Date().toISOString().split('T')[0],
+      end_date: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+      is_active: true
+    });
 
     setIsHtmlMode(false);
     setShowModal(false);
@@ -173,6 +201,7 @@ const AdminDashboard = () => {
       else if (type === "press") setNewPress(prev => ({ ...prev, image_url: imageUrl }));
       else if (type === "gallery") setNewGallery(prev => ({ ...prev, image_url: imageUrl }));
       else if (type === "pages") setNewPage(prev => ({ ...prev, banner_image: imageUrl }));
+      else if (type === "popups") setNewPopup(prev => ({ ...prev, image_url: imageUrl }));
     } catch (err) {
       alert("Image upload failed: " + (err.response?.data?.message || err.message));
       if (err.response?.status === 401 || err.response?.status === 403) handleLogout();
@@ -224,6 +253,7 @@ const AdminDashboard = () => {
     else if (type === "press") setNewPress({ ...newPress, image_url: "" });
     else if (type === "gallery") setNewGallery({ ...newGallery, image_url: "" });
     else if (type === "pages") setNewPage({ ...newPage, banner_image: "" });
+    else if (type === "popups") setNewPopup({ ...newPopup, image_url: "" });
   };
 
   const removeMultipleImage = (indexToRemove) => {
@@ -258,6 +288,17 @@ const AdminDashboard = () => {
         address: item.address,
         contact: item.contact,
         is_new: !!item.is_new
+      });
+    } else if (type === "popups") {
+      setNewPopup({
+        title: item.title || "",
+        message: item.message || "",
+        image_url: item.image_url || "",
+        link_url: item.link_url || "",
+        link_text: item.link_text || "Learn More",
+        start_date: item.start_date ? new Date(item.start_date).toISOString().split('T')[0] : "",
+        end_date: item.end_date ? new Date(item.end_date).toISOString().split('T')[0] : "",
+        is_active: !!item.is_active
       });
     }
     setShowModal(true);
@@ -365,12 +406,33 @@ const AdminDashboard = () => {
         } else {
           await axios.post(`${baseUrl}/branches`, newBranch, headers);
         }
+      } else if (activeTab === "popups") {
+        if (editingId) {
+          await axios.put(`${baseUrl}/popups/${editingId}`, newPopup, headers);
+        } else {
+          await axios.post(`${baseUrl}/popups`, newPopup, headers);
+        }
       }
       resetForm();
       fetchData();
     } catch (err) {
       console.error("Submit error:", err);
       alert(`Error saving item: ${err.response?.data?.message || err.message}`);
+      if (err.response?.status === 401 || err.response?.status === 403) handleLogout();
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleTogglePopup = async (id) => {
+    try {
+      setLoading(true);
+      await axios.patch(`${import.meta.env.VITE_API_BASE_URL}/api/popups/${id}/toggle`, {}, {
+        headers: getAuthHeaders()
+      });
+      fetchData();
+    } catch (err) {
+      alert("Error toggling popup status: " + (err.response?.data?.message || err.message));
       if (err.response?.status === 401 || err.response?.status === 403) handleLogout();
     } finally {
       setLoading(false);
@@ -503,6 +565,71 @@ const AdminDashboard = () => {
                     </tbody>
                   </table>
                 </>
+              )}
+
+              {activeTab === "popups" && (
+                <table className="data-table">
+                  <thead>
+                    <tr>
+                      <th>Image</th>
+                      <th>Title</th>
+                      <th>Message</th>
+                      <th>Duration</th>
+                      <th>Active Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {popups.map(p => (
+                      <tr key={p.id}>
+                        <td>
+                          {p.image_url ? (
+                            <img src={p.image_url} alt="" style={{ width: 50, height: 50, objectFit: 'cover', borderRadius: 4 }} />
+                          ) : (
+                            <div className="no-img-placeholder" style={{ width: 50, height: 50, borderRadius: 4, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f1f5f9', color: '#94a3b8', fontSize: '0.8rem' }}>No Img</div>
+                          )}
+                        </td>
+                        <td style={{ fontWeight: '600' }}>{p.title}</td>
+                        <td style={{ maxWidth: '200px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                          {p.message}
+                        </td>
+                        <td style={{ fontSize: '0.9rem' }}>
+                          <div><strong>Start:</strong> {p.start_date ? new Date(p.start_date).toLocaleDateString() : ""}</div>
+                          <div><strong>End:</strong> {p.end_date ? new Date(p.end_date).toLocaleDateString() : ""}</div>
+                        </td>
+                        <td>
+                          <button 
+                            onClick={() => handleTogglePopup(p.id)}
+                            className={`status-pill ${p.is_active ? 'status-active' : 'status-draft'}`} 
+                            style={{
+                              padding: '6px 12px',
+                              borderRadius: '12px',
+                              fontSize: '0.85rem',
+                              fontWeight: '600',
+                              backgroundColor: p.is_active ? '#ecfdf5' : '#fee2e2',
+                              color: p.is_active ? '#059669' : '#ef4444',
+                              border: 'none',
+                              cursor: 'pointer'
+                            }}
+                          >
+                            {p.is_active ? "Active" : "Inactive"}
+                          </button>
+                        </td>
+                        <td className="actions">
+                          <button className="edit-btn" onClick={() => handleEdit(p, 'popups')}><Edit size={16} /></button>
+                          <button className="delete-btn" onClick={() => handleDelete(p.id, 'popups')}><Trash2 size={16} /></button>
+                        </td>
+                      </tr>
+                    ))}
+                    {popups.length === 0 && (
+                      <tr>
+                        <td colSpan="6" style={{ textAlign: 'center', padding: '30px', color: "#211F1F" }}>
+                          No popups found. Click "Add New" to create one!
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
               )}
 
               {activeTab === "blogs" && (
@@ -710,6 +837,15 @@ const AdminDashboard = () => {
                       <p>{branches.length}</p>
                     </div>
                   </div>
+                  <div className="stat-card">
+                    <div className="stat-icon popups-icon" style={{ backgroundColor: '#fef2f2', color: '#B3191F' }}>
+                      <Bell size={28} />
+                    </div>
+                    <div className="stat-info">
+                      <h3>Total Pop-Ups</h3>
+                      <p>{popups.length}</p>
+                    </div>
+                  </div>
 
                 </div>
               )}
@@ -786,6 +922,149 @@ const AdminDashboard = () => {
                         }} 
                         placeholder="<style> .my-style { ... } </style> &#10;<div class='container'> ... </div>"
                       />
+                    </div>
+                  </>
+                )}
+                {activeTab === "popups" && (
+                  <>
+                    <div className="form-group">
+                      <label>Popup Title</label>
+                      <input 
+                        type="text" 
+                        value={newPopup.title} 
+                        onChange={e => setNewPopup({ ...newPopup, title: e.target.value })} 
+                        required 
+                        placeholder="e.g. Festival Special Offer!" 
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label>Popup Message / Announcement (Optional)</label>
+                      <textarea 
+                        rows="3" 
+                        value={newPopup.message} 
+                        onChange={e => setNewPopup({ ...newPopup, message: e.target.value })} 
+                        placeholder="Type the message to display on the popup..." 
+                      />
+                    </div>
+                    
+                    <div className="form-group">
+                      <label>Popup Image</label>
+                      <div className="image-upload-wrapper">
+                        {newPopup.image_url ? (
+                          <div className="image-preview-container">
+                            <img src={newPopup.image_url} alt="Preview" className="image-preview" />
+                            <div className="image-path-overlay">{newPopup.image_url}</div>
+                            <button type="button" className="remove-image-btn" onClick={() => removeImage('popups')}><X size={16} /></button>
+                          </div>
+                        ) : (
+                          <label className="upload-dropzone">
+                            <input type="file" accept="image/*" onChange={(e) => handleImageUpload(e, 'popups')} hidden />
+                            <Upload size={20} />
+                            <span>Upload Popup Image</span>
+                          </label>
+                        )}
+                        <div className="or-divider"><span>OR URL</span></div>
+                        <input 
+                          type="text" 
+                          className="small-input" 
+                          placeholder="https://example.com/popup-image.jpg" 
+                          value={newPopup.image_url} 
+                          onChange={e => setNewPopup({ ...newPopup, image_url: e.target.value })} 
+                        />
+                      </div>
+                    </div>
+
+                    <div className="form-row">
+                      <div className="form-group">
+                        <label>Redirect Link (Optional)</label>
+                        <input 
+                          type="text" 
+                          value={newPopup.link_url} 
+                          onChange={e => setNewPopup({ ...newPopup, link_url: e.target.value })} 
+                          placeholder="e.g. /apply-home-loan or external link" 
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label>Link Button Text (Optional)</label>
+                        <input 
+                          type="text" 
+                          value={newPopup.link_text} 
+                          onChange={e => setNewPopup({ ...newPopup, link_text: e.target.value })} 
+                          placeholder="e.g. Learn More" 
+                        />
+                      </div>
+                    </div>
+
+                    <div className="form-row">
+                      <div className="form-group">
+                        <label>Start Date (Optional)</label>
+                        <input 
+                          type="date" 
+                          value={newPopup.start_date} 
+                          onChange={e => {
+                            const newStart = e.target.value;
+                            setNewPopup(prev => ({ ...prev, start_date: newStart }));
+                          }} 
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label>End Date (Optional)</label>
+                        <input 
+                          type="date" 
+                          value={newPopup.end_date} 
+                          onChange={e => setNewPopup({ ...newPopup, end_date: e.target.value })} 
+                        />
+                      </div>
+                    </div>
+
+                    <div className="form-group">
+                      <label style={{ marginBottom: '5px' }}>Quick Duration Presets</label>
+                      <div style={{ display: 'flex', gap: '10px' }}>
+                        <button 
+                          type="button" 
+                          onClick={() => {
+                            const start = newPopup.start_date ? new Date(newPopup.start_date) : new Date();
+                            const end = new Date(start.getTime() + 7 * 24 * 60 * 60 * 1000);
+                            setNewPopup(prev => ({ ...prev, end_date: end.toISOString().split('T')[0] }));
+                          }}
+                          style={{ padding: '6px 12px', border: '1px solid #cbd5e1', borderRadius: '6px', cursor: 'pointer', backgroundColor: '#f8fafc', fontWeight: '600' }}
+                        >
+                          7 Days
+                        </button>
+                        <button 
+                          type="button" 
+                          onClick={() => {
+                            const start = newPopup.start_date ? new Date(newPopup.start_date) : new Date();
+                            const end = new Date(start.getTime() + 15 * 24 * 60 * 60 * 1000);
+                            setNewPopup(prev => ({ ...prev, end_date: end.toISOString().split('T')[0] }));
+                          }}
+                          style={{ padding: '6px 12px', border: '1px solid #cbd5e1', borderRadius: '6px', cursor: 'pointer', backgroundColor: '#f8fafc', fontWeight: '600' }}
+                        >
+                          15 Days
+                        </button>
+                        <button 
+                          type="button" 
+                          onClick={() => {
+                            const start = newPopup.start_date ? new Date(newPopup.start_date) : new Date();
+                            const end = new Date(start.getTime() + 30 * 24 * 60 * 60 * 1000);
+                            setNewPopup(prev => ({ ...prev, end_date: end.toISOString().split('T')[0] }));
+                          }}
+                          style={{ padding: '6px 12px', border: '1px solid #cbd5e1', borderRadius: '6px', cursor: 'pointer', backgroundColor: '#f8fafc', fontWeight: '600' }}
+                        >
+                          30 Days
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="form-group" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px', marginTop: '10px' }}>
+                      <input 
+                        type="checkbox" 
+                        id="is_active_popup" 
+                        checked={newPopup.is_active} 
+                        onChange={e => setNewPopup({ ...newPopup, is_active: e.target.checked })} 
+                        style={{ width: '20px', height: '20px', cursor: 'pointer' }}
+                      />
+                      <label htmlFor="is_active_popup" style={{ cursor: 'pointer', userSelect: 'none', fontWeight: '600' }}>Is Active (Enabled)</label>
                     </div>
                   </>
                 )}

@@ -35,7 +35,7 @@ const GrievanceRedressal = () => {
                   By way of physically visiting the Branch and post a complaint in the Complaint Register maintained at our branches. Customers can visit our branch during visiting hours between 10 a.m. and 5 p.m. from Monday to Friday &amp; from 10 a.m. to 1 p.m. on Saturdays (except on public holidays)
                 </li>
                 <li>
-                  Customers can contact us at <strong>+91-80-2655 2822</strong> between 10 a.m. and 5 p.m. from Monday to Friday &amp; from 10 a.m. to 1 p.m. on Saturdays (except on public holidays)
+                  Customers can contact us at <strong>  Grievance Officer: Rajesh CA - +91-80-2655 2822 </strong> between 10 a.m. and 5 p.m. from Monday to Friday &amp; from 10 a.m. to 1 p.m. on Saturdays (except on public holidays)
                 </li>
                 <li>
                   Customers can also reach us vide E-mail: <a href="mailto:contact@nivarahousing.com" className="red-link">contact@nivarahousing.com</a>
