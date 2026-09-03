@@ -13,11 +13,10 @@ const Complaint = () => {
   return (
     <div className="complaint-page">
       {/* Banner */}
-      <section className="page-banner" style={{ backgroundImage: `url(${termsImage})` }}>
-        <div className="page-banner-overlay"></div>
+      <section className="page-banner no-image-banner">
         <ScrollReveal direction="down">
           <div className="page-banner-content">
-            <h1 className="page-banner-title">Complaint</h1>
+            <h1 className="page-banner-title">Grievance & Complaint</h1>
             <p className="page-banner-subtitle">Customer Complaint Redressal Process</p>
           </div>
         </ScrollReveal>

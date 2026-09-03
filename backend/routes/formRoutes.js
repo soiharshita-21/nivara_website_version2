@@ -11,7 +11,17 @@ const {
     quoteApplyLimiter
 } = require('../middleware/rateLimiters');
 
-router.post('/careers/apply', careerApplyLimiter, formController.applyCareer);
+const handleResumeUpload = (req, res, next) => {
+    resumeUpload.single('resume')(req, res, (err) => {
+        if (err) {
+            console.error("❌ Resume upload error:", err.message);
+            return res.status(400).json({ message: err.message || "File upload error." });
+        }
+        next();
+    });
+};
+
+router.post('/careers/apply', careerApplyLimiter, handleResumeUpload, formController.applyCareer);
 router.post('/loans/apply', loanApplyLimiter, formController.applyLoan);
 router.post('/appointments/apply', appointmentApplyLimiter, formController.applyAppointment);
 router.post('/contacts/apply', contactApplyLimiter, formController.applyContact);

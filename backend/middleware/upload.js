@@ -15,7 +15,11 @@ const upload = multer({ storage: storage });
 // Secure Multer configuration for resumes
 const resumeStorage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'uploads/');
+        const destDir = 'uploads/';
+        if (!fs.existsSync(destDir)) {
+            fs.mkdirSync(destDir, { recursive: true });
+        }
+        cb(null, destDir);
     },
     filename: (req, file, cb) => {
         const cleanName = file.originalname.replace(/[^a-zA-Z0-9.\-_]/g, '_');

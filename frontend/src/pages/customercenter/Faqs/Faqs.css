@@ -40,21 +40,22 @@
    HERO SECTION
    Same style as About Us
 ========================= */
-.faq-hero {
+.page-banner.no-image-banner {
   position: relative;
   width: 100%;
-  min-height: 88vh;
-
+  min-height: 45vh;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  padding: 120px 5%;
+  padding: 130px 20px 70px;
+  background: linear-gradient(135deg, #B3191F 0%, #01335c 100%);
   overflow: hidden;
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 10px 30px rgba(1, 51, 92, 0.2);
+  margin-bottom: 50px;
 }
 
 /* Overlay */

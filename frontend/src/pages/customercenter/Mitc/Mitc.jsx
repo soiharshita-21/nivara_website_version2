@@ -566,11 +566,9 @@ const Mitc = () => {
 
   return (
     <div className="terms-page">
-      <section className="page-banner" style={{ backgroundImage: "url(/src/assets/images/terms.png)" }}>
-        <div className="page-banner-overlay"></div>
+      <section className="page-banner no-image-banner">
         <ScrollReveal direction="down">
           <div className="page-banner-content">
-
             <h1 className="page-banner-title">MITC</h1>
             <p className="page-banner-subtitle">Most Important Terms and Conditions (MITC) for Nivara Home Loans</p>
           </div>

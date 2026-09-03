@@ -16,22 +16,17 @@
 .page-banner {
   position: relative;
   width: 100%;
-  min-height: 80vh;
+  min-height: 45vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 20px 100px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
+  padding: 130px 20px 70px;
+  background: linear-gradient(135deg, #B3191F 0%, #01335c 100%);
   overflow: hidden;
   color: white;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
-  box-shadow: 0 10px 30px rgba(33, 31, 31, 0.15);
-  /* Premium load entrance transition */
-  animation: bannerEntrance 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  box-shadow: 0 10px 30px rgba(1, 51, 92, 0.2);
 }
 
 .page-banner-overlay {

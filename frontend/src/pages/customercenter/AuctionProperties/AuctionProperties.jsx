@@ -80,13 +80,12 @@ const AuctionProperties = () => {
 
   return (
     <div className="auction-page">
-      <div className="page-banner" style={{ backgroundImage: `url(${auctionBg})` }}>
-        <div className="page-banner-overlay"></div>
+      <section className="page-banner no-image-banner">
         <div className="page-banner-content">
-          <h1 className="page-banner-title">Properties for <span className="text-red"> Auction</span></h1>
+          <h1 className="page-banner-title">Properties for Auction</h1>
           <p className="page-banner-subtitle">Realization of dues through public e-auction</p>
         </div>
-      </div>
+      </section>
 
       <div className="auction-container">
         <ScrollReveal direction="up" distance={40} delay={0.2}>

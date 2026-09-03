@@ -60,12 +60,9 @@ const FairPracticeCode = () => {
 
       {/* Hero Section */}
       <ScrollReveal direction="down">
-        <section className="page-banner" style={{ backgroundImage: `url(${faircodepractice2})` }}>
-          <div className="page-banner-overlay"></div>
+        <section className="page-banner no-image-banner">
           <div className="page-banner-content">
-            <h1 className="page-banner-title">
-              Fair Practice <span className="text-red">Code</span>
-            </h1>
+            <h1 className="page-banner-title">Fair Practice Code</h1>
             <p className="page-banner-subtitle">
               Ensuring ethical and transparent dealings with all our customers.
             </p>

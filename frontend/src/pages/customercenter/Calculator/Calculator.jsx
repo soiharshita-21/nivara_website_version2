@@ -145,12 +145,12 @@ const Calculator = () => {
 
   return (
     <div className="emi-page">
-
-      <div className="emi-heading animate-pop-up">
-        <span className="emi-eyebrow">Nivara Home Finance</span>
-        <h1 className="emi-title">EMI Calculator</h1>
-        <p className="emi-subtitle">Calculate your monthly payment and plan your finances</p>
-      </div>
+      <section className="page-banner no-image-banner">
+        <div className="page-banner-content">
+          <h1 className="page-banner-title">EMI Calculator</h1>
+          <p className="page-banner-subtitle">Calculate your monthly payment and plan your finances</p>
+        </div>
+      </section>
       
       <div className="emi-card animate-pop-up">
 

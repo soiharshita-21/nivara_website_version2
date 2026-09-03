@@ -11,11 +11,43 @@
 }
 
 .emi-page {
-  min-height: 100vh;
-  padding: 64px 24px;
+  width: 100%;
+  padding-bottom: 64px;
   color: #211F1F;
-  background:
-    linear-gradient(180deg, #ffffff 0%, #f8fafc 48%, #fff7f7 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 48%, #fff7f7 100%);
+}
+
+.page-banner.no-image-banner {
+  position: relative;
+  width: 100%;
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 130px 20px 70px;
+  background: linear-gradient(135deg, #B3191F 0%, #01335c 100%);
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 10px 30px rgba(1, 51, 92, 0.2);
+  margin-bottom: 40px;
+}
+
+.page-banner-title {
+  margin: 0;
+  font-size: clamp(34px, 5vw, 50px);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+}
+
+.page-banner-subtitle {
+  margin: 16px auto 0;
+  font-size: clamp(15px, 1.8vw, 18px);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 780px;
 }
 
 .emi-heading {

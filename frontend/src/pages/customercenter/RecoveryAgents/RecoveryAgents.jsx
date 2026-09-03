@@ -7,15 +7,10 @@ import { FaFilePdf, FaDownload } from "react-icons/fa";
 const RecoveryAgents = () => {
   return (
     <div className="about-page">
-      <section className="recovery-banner">
-        <div className="page-banner-overlay"></div>
+      <section className="page-banner no-image-banner">
         <ScrollReveal direction="down" distance={30} className="recovery-container">
-          {/* <div className="recovery-hero-badge">
-            <UserCheck size={16} />
-            <span>Authorised Agencies</span>
-          </div> */}
-          <h1 className="page-banner-title">Recovery <span className="text-red">Agents</span></h1>
-          <p className="recovery-hero-subtitle">
+          <h1 className="page-banner-title">Recovery Agents</h1>
+          <p className="page-banner-subtitle">
             Details of agencies engaged by Nivara for recovery of dues as per RBI guidelines.
           </p>
         </ScrollReveal>

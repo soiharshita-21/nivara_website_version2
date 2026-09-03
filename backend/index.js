@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const fs = require('fs');
 const dotenv = require('dotenv');
 
 dotenv.config();
@@ -76,7 +77,26 @@ app.use((req, res, next) => {
 });
 
 // Set up folders for uploaded files and public documents
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+const uploadsDir = path.join(__dirname, 'uploads');
+app.use('/uploads', (req, res, next) => {
+    const reqFilename = path.basename(decodeURIComponent(req.path)).toLowerCase();
+    if (!reqFilename) return next();
+    const requestedPath = path.join(uploadsDir, decodeURIComponent(req.path));
+    if (fs.existsSync(requestedPath)) {
+        return next();
+    }
+    // Case-insensitive file fallback for cross-platform/Linux compatibility
+    try {
+        const files = fs.readdirSync(uploadsDir);
+        const foundFile = files.find(f => f.toLowerCase() === reqFilename);
+        if (foundFile) {
+            return res.sendFile(path.join(uploadsDir, foundFile));
+        }
+    } catch (e) {
+        // Fallback error handling
+    }
+    next();
+}, express.static(uploadsDir));
 app.use('/files', express.static(path.join(__dirname, '../frontend/public/files')));
 
 // General API Rate Limiter
