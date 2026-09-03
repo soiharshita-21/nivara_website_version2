@@ -27,7 +27,7 @@ const getDocuments = (req, res) => {
     }
 
     if (category && category.trim() !== '' && category.toLowerCase() !== 'all') {
-        conditions.push("category = ?");
+        conditions.push("LOWER(category) = LOWER(?)");
         params.push(category.trim());
     }
 
@@ -73,8 +73,8 @@ const createDocument = (req, res) => {
     const activeVal = is_active !== undefined ? (is_active === 'false' || is_active === false ? 0 : 1) : 1;
 
     let extraInfoStr = null;
-    if (extra_info) {
-        extraInfoStr = typeof extra_info === 'object' ? JSON.stringify(extra_info) : extra_info;
+    if (extra_info !== undefined && extra_info !== null && extra_info !== '') {
+        extraInfoStr = typeof extra_info === 'object' ? JSON.stringify(extra_info) : JSON.stringify(extra_info);
     }
 
     const query = `
@@ -138,10 +138,15 @@ const updateDocument = (req, res) => {
             newFileSize = req.file.size;
 
             // Delete old file if present
-            if (current.file_url && current.file_url.startsWith('/uploads/documents/')) {
-                const oldFilePath = path.join(__dirname, '..', current.file_url);
-                if (fs.existsSync(oldFilePath)) {
-                    try { fs.unlinkSync(oldFilePath); } catch (e) { console.error("Error unlinking old file:", e); }
+            const oldPaths = [
+                current.file_url ? path.join(__dirname, '..', current.file_url) : null,
+                current.file_name ? path.join(__dirname, '..', 'uploads', 'documents', current.file_name) : null,
+                current.file_name ? path.join(__dirname, '..', '..', 'frontend', 'public', 'files', current.file_name) : null
+            ].filter(Boolean);
+
+            for (const oldP of oldPaths) {
+                if (fs.existsSync(oldP)) {
+                    try { fs.unlinkSync(oldP); } catch (e) { console.error("Error unlinking old file:", e.message); }
                 }
             }
         }
@@ -151,8 +156,8 @@ const updateDocument = (req, res) => {
         const newPubDate = publish_date !== undefined && publish_date.trim() !== '' ? publish_date : current.publish_date;
         const newActive = is_active !== undefined ? (is_active === 'false' || is_active === false ? 0 : 1) : current.is_active;
         let newExtraInfo = current.extra_info;
-        if (extra_info !== undefined) {
-            newExtraInfo = typeof extra_info === 'object' ? JSON.stringify(extra_info) : extra_info;
+        if (extra_info !== undefined && extra_info !== null && extra_info !== '') {
+            newExtraInfo = typeof extra_info === 'object' ? JSON.stringify(extra_info) : JSON.stringify(extra_info);
         }
 
         const updateQuery = `
@@ -190,14 +195,20 @@ const deleteDocument = (req, res) => {
                 return res.status(500).json({ message: "Failed to delete document from database", error: delErr });
             }
 
-            // Remove file from disk
-            if (doc.file_url && doc.file_url.startsWith('/uploads/documents/')) {
-                const filePath = path.join(__dirname, '..', doc.file_url);
+            // Remove file from disk across both uploads/documents and frontend/public/files
+            const candidatePaths = [
+                doc.file_url ? path.join(__dirname, '..', doc.file_url) : null,
+                doc.file_name ? path.join(__dirname, '..', 'uploads', 'documents', doc.file_name) : null,
+                doc.file_name ? path.join(__dirname, '..', '..', 'frontend', 'public', 'files', doc.file_name) : null,
+                doc.file_url ? path.join(__dirname, '..', '..', 'frontend', 'public', doc.file_url) : null
+            ].filter(Boolean);
+
+            for (const filePath of candidatePaths) {
                 if (fs.existsSync(filePath)) {
                     try {
                         fs.unlinkSync(filePath);
                     } catch (unlinkErr) {
-                        console.error("Error deleting file from disk:", unlinkErr);
+                        console.error("Error deleting file from disk:", unlinkErr.message);
                     }
                 }
             }

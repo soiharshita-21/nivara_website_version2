@@ -27,19 +27,20 @@ const PolicyPage = () => {
     const fetchLivePolicies = async () => {
       try {
         const baseUrl = import.meta.env.VITE_API_BASE_URL || (typeof window !== 'undefined' && window.location.port === '3000' ? 'http://localhost:5001' : '');
-        const res = await axios.get(`${baseUrl}/api/documents?category=policies`);
-        if (Array.isArray(res.data) && res.data.length > 0) {
-          const apiPolicies = res.data.map(doc => ({
-            name: doc.title,
-            link: doc.full_url || doc.file_url
-          }));
-
-          const existingLinks = new Set(defaultPolicies.map(p => p.link.toLowerCase()));
-          const uniqueApiPolicies = apiPolicies.filter(p => !existingLinks.has(p.link.toLowerCase()));
-          setPolicies([...uniqueApiPolicies, ...defaultPolicies]);
+        const res = await axios.get(`${baseUrl}/api/documents?category=policies&t=${Date.now()}`);
+        if (Array.isArray(res.data)) {
+          if (res.data.length > 0) {
+            setPolicies(res.data.map(doc => ({
+              name: doc.title,
+              link: doc.full_url || doc.file_url
+            })));
+          } else {
+            setPolicies([]);
+          }
         }
       } catch (err) {
-        console.error("Failed to load live policies:", err);
+        console.error("Failed to load live policies, using fallback:", err);
+        setPolicies(defaultPolicies);
       }
     };
 

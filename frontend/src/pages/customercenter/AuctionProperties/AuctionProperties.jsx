@@ -30,20 +30,33 @@ const AuctionProperties = () => {
     const fetchAuctionDocs = async () => {
       try {
         const baseUrl = import.meta.env.VITE_API_BASE_URL || (typeof window !== 'undefined' && window.location.port === '3000' ? 'http://localhost:5001' : '');
-        const res = await axios.get(`${baseUrl}/api/documents?category=auction`);
-        if (Array.isArray(res.data) && res.data.length > 0) {
-          const apiDocs = res.data.map(doc => ({
-            title: doc.title,
-            borrower: doc.extra_info || "Auction Property Notice",
-            url: doc.full_url || doc.file_url
-          }));
-
-          const existingUrls = new Set(defaultAuctionDocuments.map(d => d.url.toLowerCase()));
-          const uniqueApiDocs = apiDocs.filter(d => !existingUrls.has(d.url.toLowerCase()));
-          setDocuments([...uniqueApiDocs, ...defaultAuctionDocuments]);
+        const res = await axios.get(`${baseUrl}/api/documents?category=auction&t=${Date.now()}`);
+        if (Array.isArray(res.data)) {
+          if (res.data.length > 0) {
+            const apiDocs = res.data.map(doc => {
+              let borrowerName = "Auction Property Notice";
+              if (doc.extra_info) {
+                try {
+                  const parsed = typeof doc.extra_info === 'string' ? JSON.parse(doc.extra_info) : doc.extra_info;
+                  borrowerName = parsed?.borrower || parsed || "Auction Property Notice";
+                } catch (e) {
+                  borrowerName = doc.extra_info;
+                }
+              }
+              return {
+                title: doc.title,
+                borrower: borrowerName,
+                url: doc.full_url || doc.file_url
+              };
+            });
+            setDocuments(apiDocs);
+          } else {
+            setDocuments([]);
+          }
         }
       } catch (err) {
-        console.error("Failed to load live auction documents:", err);
+        console.error("Failed to load live auction documents, using fallback:", err);
+        setDocuments(defaultAuctionDocuments);
       }
     };
 

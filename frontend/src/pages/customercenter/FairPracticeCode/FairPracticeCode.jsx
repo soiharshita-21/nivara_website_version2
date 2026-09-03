@@ -1,17 +1,59 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./FairPracticeCode.css";
 import { ShieldCheck, FileText, Download } from 'lucide-react';
 import ScrollReveal from '../../../components/ScrollReveal/ScrollReveal';
 import faircodepractice2 from "../../../assets/images/fairpracticecode2.png";
 
+const defaultDocuments = [
+  { name: "Fair Practice Code English", path: "/files/fpc-english.pdf" },
+  { name: "Fair Practice Code Kannada", path: "/files/fpc-kannada.pdf" },
+  { name: "Fair Practice Code Telugu", path: "/files/fpc-telugu.pdf" },
+  { name: "Fair Practice Code Marathi", path: "/files/fpc-marathi.pdf" },
+  { name: "Fair Practice Code Tamil", path: "/files/fpc-tamil.pdf" },
+];
+
 const FairPracticeCode = () => {
-  const documents = [
-    { name: "Fair Practice Code English", path: "/files/fpc-english.pdf" },
-    { name: "Fair Practice Code Kannada", path: "/files/fpc-kannada.pdf" },
-    { name: "Fair Practice Code Telugu", path: "/files/fpc-telugu.pdf" },
-    { name: "Fair Practice Code Marathi", path: "/files/fpc-marathi.pdf" },
-    { name: "Fair Practice Code Tamil", path: "/files/fpc-tamil.pdf" },
-  ];
+  const [documents, setDocuments] = useState(defaultDocuments);
+
+  useEffect(() => {
+    const fetchLiveFpc = async () => {
+      try {
+        const baseUrl = import.meta.env.VITE_API_BASE_URL || (typeof window !== 'undefined' && window.location.port === '3000' ? 'http://localhost:5001' : '');
+        const res = await axios.get(`${baseUrl}/api/documents?category=fair_practice_code&t=${Date.now()}`);
+        if (Array.isArray(res.data)) {
+          if (res.data.length > 0) {
+            setDocuments(res.data.map(d => ({
+              name: d.title,
+              path: d.full_url || d.file_url
+            })));
+          } else {
+            setDocuments([]);
+          }
+        }
+      } catch (err) {
+        console.error("Failed to load live FPC documents:", err);
+        setDocuments(defaultDocuments);
+      }
+    };
+
+    fetchLiveFpc();
+
+    const handleUpdate = () => fetchLiveFpc();
+    const handleStorage = (e) => {
+      if (e.key === "nivara_document_update_timestamp") fetchLiveFpc();
+    };
+
+    window.addEventListener("documentsUpdated", handleUpdate);
+    window.addEventListener("storage", handleStorage);
+    window.addEventListener("focus", handleUpdate);
+
+    return () => {
+      window.removeEventListener("documentsUpdated", handleUpdate);
+      window.removeEventListener("storage", handleStorage);
+      window.removeEventListener("focus", handleUpdate);
+    };
+  }, []);
 
   return (
     <div className="fair-page">

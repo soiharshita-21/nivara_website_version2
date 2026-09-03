@@ -75,8 +75,9 @@ app.use((req, res, next) => {
     next();
 });
 
-// Set up a folder for uploaded images
+// Set up folders for uploaded files and public documents
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/files', express.static(path.join(__dirname, '../frontend/public/files')));
 
 // General API Rate Limiter
 app.use(globalLimiter);

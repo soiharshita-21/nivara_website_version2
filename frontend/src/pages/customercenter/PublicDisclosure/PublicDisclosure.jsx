@@ -72,21 +72,22 @@ const PublicDisclosure = () => {
             }
           });
 
-          // Prepend newly uploaded documents, avoiding duplicates
           if (apiSarfaesi.length > 0) {
-            const existingNames = new Set(defaultSarfaesiDocs.map(d => d.name.toLowerCase().trim()));
-            const uniqueNewSarfaesi = apiSarfaesi.filter(d => !existingNames.has(d.name.toLowerCase().trim()));
-            setSarfaesiDocs([...uniqueNewSarfaesi, ...defaultSarfaesiDocs]);
+            setSarfaesiDocs(apiSarfaesi);
+          } else {
+            setSarfaesiDocs([]);
           }
 
           if (apiDisclosures.length > 0) {
-            const existingNames = new Set(defaultDisclosures.map(d => d.name.toLowerCase().trim()));
-            const uniqueNewDisclosures = apiDisclosures.filter(d => !existingNames.has(d.name.toLowerCase().trim()));
-            setDisclosures([...uniqueNewDisclosures, ...defaultDisclosures]);
+            setDisclosures(apiDisclosures);
+          } else {
+            setDisclosures([]);
           }
         }
       } catch (err) {
         console.error("Failed to load live documents, using fallback:", err);
+        setSarfaesiDocs(defaultSarfaesiDocs);
+        setDisclosures(defaultDisclosures);
       }
     };
 

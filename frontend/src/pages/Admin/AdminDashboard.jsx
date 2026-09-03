@@ -40,6 +40,10 @@ const documentCategories = [
   { id: "investor_notices", label: "Investor Relations: AGM / EGM Notices", target: "/investorsrelation/notices" },
   { id: "investor_transcripts", label: "Investor Relations: Transcripts", target: "/investorsrelation/transcripts" },
   { id: "policies", label: "Company Policies", target: "/aboutus/policy" },
+  { id: "fair_practice_code", label: "Fair Practice Code", target: "/customercenter/fairpracticecode" },
+  { id: "mitc", label: "MITC (Terms & Conditions)", target: "/customercenter/mitc" },
+  { id: "customer_forms", label: "Customer Forms & Disclosures", target: "/customercenter/download" },
+  { id: "csr", label: "CSR Documents", target: "/aboutus/csr" },
   { id: "general", label: "General / Custom (Copy link to use anywhere)", target: "Anywhere" }
 ];
 
@@ -57,6 +61,7 @@ const AdminDashboard = () => {
   const [selectedDocCategoryFilter, setSelectedDocCategoryFilter] = useState("All");
   const [copiedDocId, setCopiedDocId] = useState(null);
   const [docFile, setDocFile] = useState(null);
+  const [docSearchQuery, setDocSearchQuery] = useState("");
 
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -191,8 +196,19 @@ const AdminDashboard = () => {
   };
 
   const getFilteredDocuments = () => {
-    if (selectedDocCategoryFilter === "All") return documents;
-    return documents.filter(d => (d.category || "").toLowerCase() === selectedDocCategoryFilter.toLowerCase());
+    let list = documents;
+    if (selectedDocCategoryFilter !== "All") {
+      list = list.filter(d => (d.category || "").toLowerCase() === selectedDocCategoryFilter.toLowerCase());
+    }
+    if (docSearchQuery.trim() !== "") {
+      const q = docSearchQuery.toLowerCase().trim();
+      list = list.filter(d => 
+        (d.title || "").toLowerCase().includes(q) || 
+        (d.file_name || "").toLowerCase().includes(q) ||
+        (d.category || "").toLowerCase().includes(q)
+      );
+    }
+    return list;
   };
 
   const resetForm = () => {
@@ -936,29 +952,71 @@ const AdminDashboard = () => {
                   </div>
 
                   <div className="filter-bar" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', padding: '15px 20px', backgroundColor: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', gap: '15px', flexWrap: 'wrap' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                      <span style={{ fontWeight: '600', color: "#211F1F", fontSize: '1rem' }}>Filter by Category:</span>
-                      <select 
-                        value={selectedDocCategoryFilter} 
-                        onChange={(e) => setSelectedDocCategoryFilter(e.target.value)}
-                        style={{
-                          padding: '8px 16px',
-                          borderRadius: '8px',
-                          border: '1px solid #cbd5e1',
-                          outline: 'none',
-                          fontWeight: '600',
-                          color: '#1e293b',
-                          backgroundColor: '#fff',
-                          cursor: 'pointer'
-                        }}
-                      >
-                        <option value="All">All Categories</option>
-                        {documentCategories.map(cat => (
-                          <option key={cat.id} value={cat.id}>{cat.label}</option>
-                        ))}
-                      </select>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '15px', flexWrap: 'wrap' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <span style={{ fontWeight: '600', color: "#211F1F", fontSize: '0.95rem' }}>Category:</span>
+                        <select 
+                          value={selectedDocCategoryFilter} 
+                          onChange={(e) => setSelectedDocCategoryFilter(e.target.value)}
+                          style={{
+                            padding: '8px 14px',
+                            borderRadius: '8px',
+                            border: '1px solid #cbd5e1',
+                            outline: 'none',
+                            fontWeight: '600',
+                            color: '#1e293b',
+                            backgroundColor: '#fff',
+                            cursor: 'pointer',
+                            fontSize: '0.9rem'
+                          }}
+                        >
+                          <option value="All">All Categories ({documents.length})</option>
+                          {documentCategories.map(cat => {
+                            const count = documents.filter(d => (d.category || "").toLowerCase() === cat.id.toLowerCase()).length;
+                            return (
+                              <option key={cat.id} value={cat.id}>{cat.label} ({count})</option>
+                            );
+                          })}
+                        </select>
+                      </div>
+
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <input 
+                          type="text"
+                          value={docSearchQuery}
+                          onChange={(e) => setDocSearchQuery(e.target.value)}
+                          placeholder="Search title, file..."
+                          style={{
+                            padding: '8px 14px',
+                            borderRadius: '8px',
+                            border: '1px solid #cbd5e1',
+                            outline: 'none',
+                            fontSize: '0.9rem',
+                            color: '#1e293b',
+                            width: '200px'
+                          }}
+                        />
+                        {docSearchQuery && (
+                          <button
+                            type="button"
+                            onClick={() => setDocSearchQuery("")}
+                            style={{
+                              padding: '4px 8px',
+                              borderRadius: '6px',
+                              border: '1px solid #cbd5e1',
+                              background: '#fff',
+                              cursor: 'pointer',
+                              fontSize: '0.8rem',
+                              color: '#64748b'
+                            }}
+                          >
+                            Clear
+                          </button>
+                        )}
+                      </div>
                     </div>
-                    <div style={{ color: "#211F1F", fontSize: '1rem', fontWeight: '500' }}>
+
+                    <div style={{ color: "#211F1F", fontSize: '0.95rem', fontWeight: '500' }}>
                       Showing <strong>{getFilteredDocuments().length}</strong> of <strong>{documents.length}</strong> documents
                     </div>
                   </div>
@@ -983,7 +1041,7 @@ const AdminDashboard = () => {
                           </td>
                           <td>
                             <span className={`doc-badge doc-badge-${doc.category || 'general'}`}>
-                              {documentCategories.find(c => c.id === doc.category)?.label.split(':')[0] || (doc.category ? doc.category.toUpperCase() : "GENERAL")}
+                              {documentCategories.find(c => c.id === doc.category)?.label || (doc.category ? doc.category.toUpperCase() : "GENERAL")}
                             </span>
                           </td>
                           <td>

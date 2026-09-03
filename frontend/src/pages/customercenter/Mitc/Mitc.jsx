@@ -1,14 +1,50 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./Mitc.css";
 import { ShieldCheck, ChevronDown, ChevronUp, FileText, Percent, Calendar, Shield, ClipboardCheck, RefreshCw, AlertCircle, Headset, MessageSquare } from "lucide-react";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 
+const defaultMitcDocs = [
+  { name: "MITC English", path: "/files/mitc-english.pdf" },
+  { name: "MITC Kannada", path: "/files/mitc-kannada.pdf" },
+  { name: "MITC Telugu", path: "/files/mitc-telugu.pdf" },
+  { name: "MITC Tamil", path: "/files/mitc-tamil.pdf" },
+  { name: "MITC Marathi", path: "/files/mitc-marathi.pdf" }
+];
+
 const Mitc = () => {
   const [activeAccordion, setActiveAccordion] = useState(null);
   const [feesTab, setFeesTab] = useState("hl");
+  const [mitcDocs, setMitcDocs] = useState(defaultMitcDocs);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    const fetchMitc = async () => {
+      try {
+        const baseUrl = import.meta.env.VITE_API_BASE_URL || (typeof window !== 'undefined' && window.location.port === '3000' ? 'http://localhost:5001' : '');
+        const res = await axios.get(`${baseUrl}/api/documents?category=mitc&t=${Date.now()}`);
+        if (Array.isArray(res.data)) {
+          if (res.data.length > 0) {
+            setMitcDocs(res.data.map(d => ({
+              name: d.title,
+              path: d.full_url || d.file_url
+            })));
+          } else {
+            setMitcDocs([]);
+          }
+        }
+      } catch (e) {
+        console.error("Failed to load live MITC documents:", e);
+        setMitcDocs(defaultMitcDocs);
+      }
+    };
+
+    fetchMitc();
+
+    const handleUpdate = () => fetchMitc();
+    window.addEventListener("documentsUpdated", handleUpdate);
+    return () => window.removeEventListener("documentsUpdated", handleUpdate);
   }, []);
 
   const toggleAccordion = (index) => {
@@ -515,31 +551,13 @@ const Mitc = () => {
       content: (
         <div className="terms-detail">
           <ul className="mitc-dropdown-list">
-            <li className="mitc-dropdown-item">
-              <a href="/files/MITC-English copy.pdf" target="_blank" rel="noopener noreferrer" className="mitc-dropdown-link mitc-link-red">
-                MITC_English
-              </a>
-            </li>
-            <li className="mitc-dropdown-item">
-              <a href="/files/MITC-Kannada-updated-1.pdf" target="_blank" rel="noopener noreferrer" className="mitc-dropdown-link mitc-link-red">
-                MITC_Kannada
-              </a>
-            </li>
-            <li className="mitc-dropdown-item">
-              <a href="/files/MITC-Telugu-updated-1.pdf" target="_blank" rel="noopener noreferrer" className="mitc-dropdown-link mitc-link-red">
-                MITC_Telugu
-              </a>
-            </li>
-            <li className="mitc-dropdown-item">
-              <a href="/files/MITC-Tamil-updated-1.pdf" target="_blank" rel="noopener noreferrer" className="mitc-dropdown-link mitc-link-red">
-                MITC_Tamil
-              </a>
-            </li>
-            <li className="mitc-dropdown-item">
-              <a href="/files/MITC_Marathi-updated.pdf" target="_blank" rel="noopener noreferrer" className="mitc-dropdown-link mitc-link-red">
-                MITC_Marathi
-              </a>
-            </li>
+            {mitcDocs.map((item, idx) => (
+              <li key={idx} className="mitc-dropdown-item">
+                <a href={item.path} target="_blank" rel="noopener noreferrer" className="mitc-dropdown-link mitc-link-red">
+                  {item.name}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       )

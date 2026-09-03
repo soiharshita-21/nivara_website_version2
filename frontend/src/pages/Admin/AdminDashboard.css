@@ -778,6 +778,26 @@
   color: #15803d;
 }
 
+.doc-badge-fair_practice_code {
+  background-color: #fef08a;
+  color: #854d0e;
+}
+
+.doc-badge-mitc {
+  background-color: #ffedd5;
+  color: #c2410c;
+}
+
+.doc-badge-customer_forms {
+  background-color: #ccfbf1;
+  color: #0f766e;
+}
+
+.doc-badge-csr {
+  background-color: #fce7f3;
+  color: #be185d;
+}
+
 .doc-badge-general {
   background-color: #f1f5f9;
   color: #475569;

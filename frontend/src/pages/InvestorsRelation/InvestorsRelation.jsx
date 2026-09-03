@@ -79,31 +79,29 @@ const InvestorsRelation = ({ section }) => {
             }
           });
 
-          // Always merge dynamic docs onto default docs, avoiding duplicates by title or path
-          const existingNoticeNames = new Set(defaultNotices.map(n => (n.name || "").toLowerCase().trim()));
-          const existingNoticePaths = new Set(defaultNotices.map(n => (n.path || "").toLowerCase().trim()));
-          const uniqueNotices = apiNotices.filter(n => 
-            !existingNoticeNames.has((n.name || "").toLowerCase().trim()) &&
-            !existingNoticePaths.has((n.path || "").toLowerCase().trim())
-          );
-          setNotices([...uniqueNotices, ...defaultNotices]);
+          if (apiNotices.length > 0) {
+            setNotices(apiNotices);
+          } else {
+            setNotices([]);
+          }
 
-          const existingReturnNames = new Set(defaultAnnualReturns.map(r => (r.year || "").toLowerCase().trim()));
-          const uniqueReturns = apiReturns.filter(r => 
-            !existingReturnNames.has((r.year || "").toLowerCase().trim())
-          );
-          setAnnualReturns([...uniqueReturns, ...defaultAnnualReturns]);
+          if (apiReturns.length > 0) {
+            setAnnualReturns(apiReturns);
+          } else {
+            setAnnualReturns([]);
+          }
 
-          const existingTranscriptNames = new Set(defaultTranscripts.map(t => (t.name || "").toLowerCase().trim()));
-          const existingTranscriptPaths = new Set(defaultTranscripts.map(t => (t.path || "").toLowerCase().trim()));
-          const uniqueTranscripts = apiTranscripts.filter(t => 
-            !existingTranscriptNames.has((t.name || "").toLowerCase().trim()) &&
-            !existingTranscriptPaths.has((t.path || "").toLowerCase().trim())
-          );
-          setTranscripts([...uniqueTranscripts, ...defaultTranscripts]);
+          if (apiTranscripts.length > 0) {
+            setTranscripts(apiTranscripts);
+          } else {
+            setTranscripts([]);
+          }
         }
       } catch (err) {
-        console.error("Failed to load live investor documents:", err);
+        console.error("Failed to load live investor documents, using fallbacks:", err);
+        setNotices(defaultNotices);
+        setAnnualReturns(defaultAnnualReturns);
+        setTranscripts(defaultTranscripts);
       }
     };
 
