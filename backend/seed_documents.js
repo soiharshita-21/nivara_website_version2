@@ -45,7 +45,7 @@ const documentList = [
     { title: "Notice of 29th EGM 23.07.2025", category: "investor_notices", file: "Signed_Notice_of_29th_EGM-1.pdf", date: "2025-07-23" },
     { title: "Notice of 30th EGM 12.12.2025", category: "investor_notices", file: "Notice_of_30th_EGM_to_circulate.pdf", date: "2025-12-12" },
     { title: "Notice of 31st EGM 23.03.2026", category: "investor_notices", file: "Notice_of_31st_EGM_Signed.pdf", date: "2026-03-23" },
-    { title: "Notice of AGM 25.05.2026", category: "investor_notices", file: "Notice of AGM 25.05.2026.pdf", date: "2026-05-25", extra_info: "Welcome_1234$" },
+    { title: "Notice of AGM 25.05.2026", category: "investor_notices", file: "Notice of AGM 25.05.2026.pdf", date: "2026-05-25" },
 
     // --- INVESTOR RELATIONS: TRANSCRIPTS ---
     { title: "Transcript of AGM 26.06.2024", category: "investor_transcripts", file: "Transcript_10th-AGM_26.06.2024.pdf", date: "2024-06-26" },
@@ -57,7 +57,7 @@ const documentList = [
     { title: "Transcript of EGM 23.07.2025", category: "investor_transcripts", file: "Transcript-EGM-23.07.2025-.pdf", date: "2025-07-23" },
     { title: "Transcript of EGM 12.12.2025", category: "investor_transcripts", file: "Transcript_EGM_12.12.2025.pdf", date: "2025-12-12" },
     { title: "Transcript of EGM 23.03.2026", category: "investor_transcripts", file: "Transcript-EGM-23.03.2026.pdf", date: "2026-03-23" },
-    { title: "Transcript of AGM 25.05.2026", category: "investor_transcripts", file: "Transcript of AGM 25.05.2026.pdf", date: "2026-05-25", extra_info: "Welcome_1234$" },
+    { title: "Transcript of AGM 25.05.2026", category: "investor_transcripts", file: "Transcript of AGM 25.05.2026.pdf", date: "2026-05-25" },
 
     // --- SARFAESI ATTACHMENTS ---
     { title: "Updated list of properties under SARFAESI Act as on 31st August 2025", category: "sarfaesi", file: "sarfaesi-aug-2025.pdf", date: "2025-08-31" },

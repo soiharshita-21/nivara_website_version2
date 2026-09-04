@@ -56,7 +56,7 @@ const Investors = ({ hideBanner = false }) => {
               <div className="investor-divider"></div>
               <p>
                 Baring Private Equity India is one of the country’s oldest investors,
-                with nearly three decades of experience across economic cycles.
+                with nearly 30 years of experience across economic cycles.
                 They focus on growth-stage equity in high-quality businesses.
               </p>
               <p className="extra-text">

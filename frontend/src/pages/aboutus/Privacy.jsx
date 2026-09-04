@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
           <div className="page-banner-overlay"></div>
           <div className="page-banner-content privacy-page-banner-content">
             <h1 className="page-banner-title privacy-page-banner-title">
-              Privacy <span className="text-red">Policy</span>
+              Privacy
             </h1>
             <p className="page-banner-subtitle privacy-page-banner-subtitle">
               Your trust is our priority. We safeguard your personal information with the highest standards.

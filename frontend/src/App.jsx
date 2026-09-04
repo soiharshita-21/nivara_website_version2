@@ -121,10 +121,10 @@ function AppContent() {
             path="/services/improvementandextension"
             element={<ImprovementAndExtension />}
           />
-          <Route path="/investorsrelation" element={<InvestorsRelation />} />
-          <Route path="/investorsrelation/annual-returns" element={<InvestorsRelation section="annual-returns" />} />
-          <Route path="/investorsrelation/notices" element={<InvestorsRelation section="notices" />} />
-          <Route path="/investorsrelation/transcripts" element={<InvestorsRelation section="transcripts" />} />
+          <Route path="/investorsrelation" element={<CorporateGovernance initialTab="investors" />} />
+          <Route path="/investorsrelation/annual-returns" element={<CorporateGovernance initialTab="investors" initialSub="annual-returns" />} />
+          <Route path="/investorsrelation/notices" element={<CorporateGovernance initialTab="investors" initialSub="notices" />} />
+          <Route path="/investorsrelation/transcripts" element={<CorporateGovernance initialTab="investors" initialSub="transcripts" />} />
           <Route path="/investorsrelation/transcript" element={<TranscriptViewer />} />
           <Route path="/customercenter/ecs-mandate" element={<EcsMandate />} />
           <Route path="/customercenter/enach-bankcode" element={<ENachBankCode />} />

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import "./navbar.css";
@@ -9,12 +9,26 @@ const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [dynamicPages, setDynamicPages] = useState([]);
   const location = useLocation();
+  const navRef = useRef(null);
 
   // Close menu when location changes
   useEffect(() => {
     setIsOpen(false);
     setActiveDropdown(null);
   }, [location]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setActiveDropdown(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleLogoClick = () => {
     if (location.pathname === "/") {
@@ -57,15 +71,18 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const toggleDropdown = (index) => {
-    if (activeDropdown === index) {
+    setActiveDropdown((prev) => (prev === index ? null : index));
+  };
+
+  const handleMenuClick = (e) => {
+    if (e.target.closest("a")) {
       setActiveDropdown(null);
-    } else {
-      setActiveDropdown(index);
+      setIsOpen(false);
     }
   };
 
   return (
-    <nav className={`navbar ${isOpen ? "menu-open" : ""}`}>
+    <nav className={`navbar ${isOpen ? "menu-open" : ""}`} ref={navRef}>
       <div className="navbar-container">
         <Link to="/" className="nav_logo-link" onClick={handleLogoClick}>
           <img src={logo} alt="Nivara Logo" className="nav_logo"  />
@@ -76,7 +93,7 @@ const Navbar = () => {
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        <ul className={`navbar-menu ${isOpen ? "active" : ""}`}>
+        <ul className={`navbar-menu ${isOpen ? "active" : ""}`} onClick={handleMenuClick}>
 
           {/* ABOUT US */}
           <li className={`nav-item dropdown ${activeDropdown === 0 ? "open" : ""}`}>
@@ -87,9 +104,7 @@ const Navbar = () => {
             <ul className="dropdown-menu">
               <li><Link to="/aboutus">About Nivara</Link></li>
               <li><Link to="/aboutus/leadership">Leadership</Link></li>
-              <li><Link to="/aboutus/policy">Company Policies</Link></li>
-              <li><Link to="/customercenter/publicdisclosure">Public Disclosures</Link></li>
-              <li><Link to="/aboutus/privacy">Privacy Policy</Link></li>
+              <li><Link to="/aboutus/privacy">Privacy</Link></li>
               <li><Link to="/aboutus/csr-initiatives">CSR Initiatives</Link></li>
               <li><Link to="/ourpartners/lenders/lenders">Lenders</Link></li>
               <li><Link to="/ourpartners/ourinsurancepartners/ourinsurancepartners">Insurance Partners</Link></li>
@@ -130,7 +145,7 @@ const Navbar = () => {
                   <li><a href="https://nach.nivarahousing.com/auth/nach-mandate-login" target="_blank" rel="noopener noreferrer">E-NACH Mandate</a></li>
                   <li><Link to="/customercenter/ecs-mandate">ECS Mandate</Link></li>
                   <li><Link to="/customercenter/enach-bankcode">E-NACH Bank Code</Link></li>
-                  <li><Link to="/customercenter/app-form">App Form</Link></li>
+                  <li><Link to="/customercenter/app-form">Application Form</Link></li>
                   <li><Link to="/customercenter/consumer-education">Consumer Education</Link></li>
                 </ul>
               </div>
@@ -159,17 +174,19 @@ const Navbar = () => {
             </div>
           </li>
 
-          {/* INVESTOR RELATIONS */}
-          <li className={`nav-item dropdown ${activeDropdown === 3 ? "open" : ""}`}>
-            <div className="dropdown-trigger" onClick={() => toggleDropdown(3)}>
-              <span>Investor Relations</span>
-              <ChevronDown size={16} className="chevron" />
-            </div>
-            <ul className="dropdown-menu">
-              <li><Link to="/investorsrelation/annual-returns">Annual Returns</Link></li>
-              <li><Link to="/investorsrelation/notices">Meeting Notices</Link></li>
-              <li><Link to="/investorsrelation/transcripts">Meeting Transcripts</Link></li>
-            </ul>
+          {/* CORPORATE GOVERNANCE */}
+          <li className="nav-item">
+            <Link
+              to="/customercenter/corporategovernance"
+              className={`nav-link ${
+                location.pathname.startsWith("/customercenter/corporategovernance") ||
+                location.pathname.startsWith("/investorsrelation")
+                  ? "active"
+                  : ""
+              }`}
+            >
+              <span>Corporate Governance</span>
+            </Link>
           </li>
 
           {/* MEDIA */}
