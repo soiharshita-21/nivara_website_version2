@@ -197,8 +197,8 @@
 @media(max-width:640px){
   .press-container{
     grid-template-columns: 1fr;
-    padding:40px 20px;
-    margin-top: -40px;
+    padding:20px 16px 40px;
+    margin-top: 20px;
   }
 
   .press-title{

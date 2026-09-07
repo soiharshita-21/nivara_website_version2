@@ -184,9 +184,30 @@
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
+  .impact-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .impact-section {
+    padding: 60px 16px;
+  }
+
   .impact-cards {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .impact-card {
+    padding: 30px 20px;
+    min-height: 240px;
+  }
+
+  .impact-title {
+    font-size: 33px;
   }
 }
 
@@ -196,7 +217,7 @@
   }
 
   .impact-title {
-    font-size: 33px;
+    font-size: 28px;
   }
 }
 

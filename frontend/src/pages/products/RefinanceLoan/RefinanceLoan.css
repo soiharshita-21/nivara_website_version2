@@ -940,6 +940,11 @@
   .refinance-keyfeatures-content {
     font-size: 18px;
   }
+
+  .refinance-help-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 }
 
 

@@ -3,7 +3,7 @@ import BoardOfDirectors from "./BoardOfDirectors/BoardOfDirectors";
 import ManagementTeam from "./ManagementTeam/ManagementTeam";
 import Investors from "./Investors";
 import ScrollReveal from "../../components/ScrollReveal/ScrollReveal";
-import about from "../../assets/images/about_us.png";
+import ab from "../../assets/images/ab.png";
 import "./Leadership.css";
 
 const Leadership = () => {
@@ -12,7 +12,7 @@ const Leadership = () => {
   return (
     <div className="leadership-page">
       <ScrollReveal direction="down">
-        <section className="page-banner about-banner" style={{ backgroundImage: `url(${about})` }}>
+        <section className="page-banner about-banner" style={{ backgroundImage: `url(${ab})` }}>
           <div className="page-banner-overlay"></div>
           {/* <div className="page-banner-content">
             <h1 className="page-banner-title">

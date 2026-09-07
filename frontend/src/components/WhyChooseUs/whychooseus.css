@@ -237,7 +237,7 @@
   min-height: 320px;
   padding: 60px 20px;
   /* Extremely soft gradient wrapper blending with page white */
-  background: url("../../assets/images/rbi.png") center/cover no-repeat;
+  background: url("../../assets/images/homepage.png") center/cover no-repeat;
   background-attachment: fixed;
   position: relative;
   overflow: hidden;
@@ -358,6 +358,15 @@
   }
   .trust-wrapper {
     background-attachment: scroll;
+  }
+}
+
+@media (max-width: 1024px) {
+  .why-card {
+    padding: 36px 20px;
+  }
+  .why-grid {
+    gap: 20px;
   }
 }
 

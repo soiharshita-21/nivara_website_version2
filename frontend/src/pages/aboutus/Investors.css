@@ -20,15 +20,17 @@
 
 @media (max-width: 768px) {
   .investors-page .page-banner {
-    height: 40vh;
+    height: auto;
     min-height: 280px;
+    padding: 60px 20px 48px;
   }
 }
 
 @media (max-width: 480px) {
   .investors-page .page-banner {
-    height: 35vh;
-    min-height: 240px;
+    height: auto;
+    min-height: 250px;
+    padding: 50px 16px 40px;
   }
 }
 

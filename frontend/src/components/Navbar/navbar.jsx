@@ -17,6 +17,18 @@ const Navbar = () => {
     setActiveDropdown(null);
   }, [location]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -83,19 +95,54 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${isOpen ? "menu-open" : ""}`} ref={navRef}>
+      {/* Mobile Drawer Backdrop */}
+      <div
+        className={`mobile-nav-backdrop ${isOpen ? "active" : ""}`}
+        onClick={() => {
+          setIsOpen(false);
+          setActiveDropdown(null);
+        }}
+        aria-hidden="true"
+      />
+
       <div className="navbar-container">
-        <Link to="/" className="nav_logo-link" onClick={handleLogoClick}>
-          <img src={logo} alt="Nivara Logo" className="nav_logo"  />
-        </Link>
+          <Link to="/" className="nav_logo-link" onClick={handleLogoClick}>
+            <img src={logo} alt="Nivara Logo" className="nav_logo"  />
+          </Link>
 
-        {/* Hamburger Icon */}
-        <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle Navigation">
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+          {/* Hamburger Icon */}
+          <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle Navigation">
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
 
-        <ul className={`navbar-menu ${isOpen ? "active" : ""}`} onClick={handleMenuClick}>
+          <div className={`navbar-drawer ${isOpen ? "active" : ""}`}>
+            {/* Mobile Drawer Header */}
+            <div className="mobile-drawer-header">
+              <Link
+                to="/"
+                className="mobile-drawer-logo"
+                onClick={() => {
+                  setIsOpen(false);
+                  handleLogoClick();
+                }}
+              >
+                <img src={logo} alt="Nivara" />
+              </Link>
+              <button
+                className="mobile-drawer-close"
+                onClick={() => {
+                  setIsOpen(false);
+                  setActiveDropdown(null);
+                }}
+                aria-label="Close Navigation"
+              >
+                <X size={24} />
+              </button>
+            </div>
 
-          {/* ABOUT US */}
+            <ul className="navbar-menu" onClick={handleMenuClick}>
+
+              {/* ABOUT US */}
           <li className={`nav-item dropdown ${activeDropdown === 0 ? "open" : ""}`}>
             <div className="dropdown-trigger" onClick={() => toggleDropdown(0)}>
               <span>About Us</span>
@@ -213,12 +260,13 @@ const Navbar = () => {
             </div>
             <ul className="dropdown-menu">
                <li><Link to="/contactus/branch/branch">Branch</Link></li>
-              <li><Link to="/contactus/offices/offices">Office</Link></li>
+               <li><Link to="/contactus/offices/offices">Office</Link></li>
             </ul>
           </li>
         </ul>
-
       </div>
+
+    </div>
 
       {location.pathname === "/" && (
         <div className="hanging-banner-wrapper">

@@ -15,9 +15,9 @@ import {
   FaRegFilePdf,
 } from "react-icons/fa";
 import ScrollReveal from "../../components/ScrollReveal/ScrollReveal";
-import bannerImg from "../../assets/images/about_us.png";
-import pb1 from "../../assets/images/publicdisclosure1.png";
-import pb2 from "../../assets/images/saf.png";
+import ab from "../../assets/images/ab.png";
+import pub from "../../assets/images/public.jpg";
+import sar from "../../assets/images/sar.png";
 import "./CorporateGovernance.css";
 
 /* --------------------------------------------------------------------------
@@ -333,7 +333,7 @@ const CorporateGovernance = ({ initialTab, initialSub }) => {
       <ScrollReveal direction="down">
         <section
           className="page-banner gov-hero-banner"
-          style={{ backgroundImage: `url(${bannerImg})` }}
+          style={{ backgroundImage: `url(${ab})` }}
         >
           <div className="gov-banner-overlay"></div>
           <div className="gov-banner-content">
@@ -599,7 +599,7 @@ const CorporateGovernance = ({ initialTab, initialSub }) => {
               {/* Public Disclosure Card */}
               <ScrollReveal className="public-card" direction="up" distance={30} delay={0.1}>
                 <div className="public-card-image">
-                  <img src={pb1} alt="Public Disclosure" />
+                  <img src={pub} alt="Public Disclosure" />
                 </div>
                 <div className="public-card-content">
                   <h2>Public Disclosure</h2>
@@ -624,7 +624,7 @@ const CorporateGovernance = ({ initialTab, initialSub }) => {
               {/* SARFAESI Attachments Card */}
               <ScrollReveal className="public-card" direction="up" distance={30} delay={0.2}>
                 <div className="public-card-image">
-                  <img src={pb2} alt="SARFAESI Attachments" />
+                  <img src={sar} alt="SARFAESI Attachments" />
                 </div>
                 <div className="public-card-content">
                   <h2>SARFAESI Attachments</h2>

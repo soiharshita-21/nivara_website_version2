@@ -46,3 +46,26 @@ input {
   font-size: 20px;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .loan-form-page {
+    padding: 36px 16px;
+  }
+
+  .loan-form-page h2 {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 12px 24px;
+    font-size: 17px;
+  }
+}

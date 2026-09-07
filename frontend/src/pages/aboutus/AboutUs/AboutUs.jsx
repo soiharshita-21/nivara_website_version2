@@ -3,7 +3,7 @@ import "./AboutUs.css";
 import "../VisionMission/VisionMission.css";
 import "../ObjectivesCoreValues/ObjectivesCoreValues.css";
 
-import about from "../../../assets/images/about_us.png";
+import about from "../../../assets/images/ab.png";
 import { 
   FaMoneyBillWave, 
   FaHome, 

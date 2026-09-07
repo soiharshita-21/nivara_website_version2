@@ -15,7 +15,7 @@
 }
 
 .office-banner {
-  min-height: 62vh;
+  min-height: 480px;
   max-height: 680px;
   background-size: cover;
   background-position: center;
@@ -26,9 +26,7 @@
 .office-banner .page-banner-overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.45)),
-    radial-gradient(circle at 28% 35%, rgba(227, 33, 37, 0.22), transparent 30%);
+  background: transparent !important;
 }
 
 .office-split-container {
@@ -405,8 +403,17 @@
 }
 
 @media (max-width: 768px) {
+  .office-banner {
+    min-height: 220px !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+    background-size: contain !important;
+    background-position: center !important;
+    background-color: #f7f9fc !important;
+  }
+
   .office-split-container {
-    margin-top: -70px;
+    margin-top: 10px;
     padding: 0 16px;
   }
 
@@ -437,7 +444,16 @@
 
 @media (max-width: 480px) {
   .office-banner {
-    min-height: 48vh;
+    min-height: 180px !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+    background-size: contain !important;
+    background-position: center !important;
+    background-color: #f7f9fc !important;
+  }
+
+  .office-split-container {
+    margin-top: 10px;
   }
 
   .pane-title {

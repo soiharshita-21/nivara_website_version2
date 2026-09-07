@@ -59,18 +59,23 @@
 
 @media (max-width: 480px) {
   .topbar {
-    padding: 8px 10px;
-    font-size: 13px;
+    padding: 6px 10px;
+    font-size: 12.5px;
     justify-content: center;
-    gap: 6px 12px;
+    gap: 4px 10px;
   }
 
   .topbar-left {
-    display: contents; /* Break layout grouping to let all items wrap together inside topbar container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    width: 100%;
   }
 
   .topbar-link {
-    font-size: 13px;
+    font-size: 12px;
     gap: 4px;
     padding: 2px 4px;
   }
