@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./GrievanceRedressal.css";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
+import grievanceBanner from "../../../assets/images/grievance.png";
 
 const GrievanceRedressal = () => {
   useEffect(() => {
@@ -10,7 +11,7 @@ const GrievanceRedressal = () => {
   return (
     <div className="grievance-page">
       {/* Banner */}
-      <section className="page-banner" style={{ backgroundImage: "url(/src/assets/images/terms.png)" }}>
+      <section className="page-banner" style={{ backgroundImage: `url(${grievanceBanner})` }}>
         <div className="page-banner-overlay"></div>
         <ScrollReveal direction="down">
           <div className="page-banner-content">

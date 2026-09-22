@@ -3,7 +3,7 @@ import axios from "axios";
 import "./FairPracticeCode.css";
 import { ShieldCheck, FileText, Download } from 'lucide-react';
 import ScrollReveal from '../../../components/ScrollReveal/ScrollReveal';
-import faircodepractice2 from "../../../assets/images/fairpracticecode2.png";
+import faircodepractice2 from "../../../assets/images/fairpractice.png";
 
 const defaultDocuments = [
   { name: "Fair Practice Code English", path: "/files/fpc-english.pdf" },
@@ -60,7 +60,10 @@ const FairPracticeCode = () => {
 
       {/* Hero Section */}
       <ScrollReveal direction="down">
-        <section className="page-banner no-image-banner">
+        <section
+          className="page-banner no-image-banner"
+          style={{ backgroundImage: `url(${faircodepractice2})` }}
+        >
           <div className="page-banner-content">
             <h1 className="page-banner-title">Fair Practice Code</h1>
             <p className="page-banner-subtitle">

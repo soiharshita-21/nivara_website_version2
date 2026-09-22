@@ -21,7 +21,10 @@
   align-items: center;
   justify-content: center;
   padding: 130px 20px 70px;
-  background: linear-gradient(135deg, #B3191F 0%, #01335c 100%);
+  background-color: #01335c;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow: hidden;
   color: white;
   border-bottom-left-radius: 40px;

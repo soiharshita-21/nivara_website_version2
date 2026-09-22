@@ -3,11 +3,15 @@ import "./RecoveryAgents.css";
 import { ShieldCheck, UserCheck } from "lucide-react";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import { FaFilePdf, FaDownload } from "react-icons/fa";
+import recoveryBanner from "../../../assets/images/recovery.png";
 
 const RecoveryAgents = () => {
   return (
     <div className="about-page">
-      <section className="page-banner no-image-banner">
+      <section
+        className="page-banner no-image-banner"
+        style={{ backgroundImage: `url(${recoveryBanner})` }}
+      >
         <ScrollReveal direction="down" distance={30} className="recovery-container">
           <h1 className="page-banner-title">Recovery Agents</h1>
           <p className="page-banner-subtitle">

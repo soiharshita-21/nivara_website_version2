@@ -11,12 +11,15 @@
 .page-banner {
   position: relative;
   width: 100%;
-  min-height: 45vh;
+  min-height: 56.25vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 130px 20px 70px;
+  padding: 80px 20px;
   background: linear-gradient(135deg, #B3191F 0%, #01335c 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow: hidden;
   color: white;
   text-align: center;
@@ -175,6 +178,11 @@
 }
 
 @media (max-width: 600px) {
+  .page-banner {
+    min-height: 60vh;
+    padding: 110px 20px 90px;
+  }
+
   .fair-doc-row {
     padding: 16px 20px;
   }

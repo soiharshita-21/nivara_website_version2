@@ -1,6 +1,7 @@
 
 import React, { useMemo, useState, useEffect } from "react";
 import "./Calculator.css";
+import emiBanner from "../../../assets/images/emi.png";
 
 const defaultValues = {
   amount: 2500000,
@@ -145,7 +146,10 @@ const Calculator = () => {
 
   return (
     <div className="emi-page">
-      <section className="page-banner no-image-banner">
+      <section
+        className="page-banner no-image-banner"
+        style={{ backgroundImage: `url(${emiBanner})` }}
+      >
         <div className="page-banner-content">
           <h1 className="page-banner-title">EMI Calculator</h1>
           <p className="page-banner-subtitle">Calculate your monthly payment and plan your finances</p>

@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Mitc.css";
 import { ShieldCheck, ChevronDown, ChevronUp, FileText, Percent, Calendar, Shield, ClipboardCheck, RefreshCw, AlertCircle, Headset, MessageSquare } from "lucide-react";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
+import mitcBanner from "../../../assets/images/mitc.png";
 
 const defaultMitcDocs = [
   { name: "MITC English", path: "/files/mitc-english.pdf" },
@@ -566,7 +567,10 @@ const Mitc = () => {
 
   return (
     <div className="terms-page">
-      <section className="page-banner no-image-banner">
+      <section
+        className="page-banner no-image-banner"
+        style={{ backgroundImage: `url(${mitcBanner})` }}
+      >
         <ScrollReveal direction="down">
           <div className="page-banner-content">
             <h1 className="page-banner-title">MITC</h1>

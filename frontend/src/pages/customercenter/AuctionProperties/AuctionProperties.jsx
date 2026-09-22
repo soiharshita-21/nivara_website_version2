@@ -80,7 +80,10 @@ const AuctionProperties = () => {
 
   return (
     <div className="auction-page">
-      <section className="page-banner no-image-banner">
+      <section
+        className="page-banner no-image-banner"
+        style={{ backgroundImage: `url(${auctionBg})` }}
+      >
         <div className="page-banner-content">
           <h1 className="page-banner-title">Properties for Auction</h1>
           <p className="page-banner-subtitle">Realization of dues through public e-auction</p>

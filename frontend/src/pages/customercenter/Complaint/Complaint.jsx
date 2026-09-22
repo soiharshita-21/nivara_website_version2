@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Complaint.css";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
-import termsImage from "../../../assets/images/terms.png";
+import grievanceImage from "../../../assets/images/grievance.png";
 import { FaBuilding, FaPhoneAlt, FaEnvelope, FaPencilAlt, FaGlobe, FaInbox, FaWheelchair } from "react-icons/fa";
 
 const Complaint = () => {
@@ -13,7 +13,10 @@ const Complaint = () => {
   return (
     <div className="complaint-page">
       {/* Banner */}
-      <section className="page-banner no-image-banner">
+      <section
+        className="page-banner no-image-banner"
+        style={{ backgroundImage: `url(${grievanceImage})` }}
+      >
         <ScrollReveal direction="down">
           <div className="page-banner-content">
             <h1 className="page-banner-title">Grievance & Complaint</h1>

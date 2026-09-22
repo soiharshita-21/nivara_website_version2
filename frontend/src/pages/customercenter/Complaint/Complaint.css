@@ -50,7 +50,7 @@
 }
 
 .complaint-page .page-banner-title {
-  font-size: 2.8rem;
+  font-size: 3.2rem;
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -481,7 +481,7 @@
 /* Responsive queries */
 @media (max-width: 768px) {
   .complaint-page .page-banner-title {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
   .flowchart {
     padding: 24px;

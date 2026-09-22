@@ -111,7 +111,10 @@ function Faqs() {
     <div className="faq-page">
 
       {/* ================= HERO ================= */}
-      <section className="page-banner no-image-banner">
+      <section
+        className="page-banner no-image-banner"
+        style={{ backgroundImage: `url(${faqBg})` }}
+      >
         <ScrollReveal direction="down" distance={30} className="hero-content-wrapper">
           <h1 className="page-banner-title">FAQs</h1>
           <p className="page-banner-subtitle">Find answers to commonly asked questions about our home loan solutions</p>
