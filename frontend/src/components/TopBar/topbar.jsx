@@ -32,7 +32,7 @@ const allPages = [
   { name: "Press Release", path: "/media/pressrelease/pressrelease" },
   { name: "Gallery", path: "/media/nivara-gallery/nivara-gallery" },
   { name: "Careers", path: "/career/career" },
-  { name: "E-Nach Mandate", path: "https://nach.nivarahousing.com/auth/nach-mandate-login" },
+  { name: "E-Nach Mandate", path: "/customercenter/e-nach" },
   { name: "ECS Mandate", path: "/customercenter/ecs-mandate" },
   { name: "E-NACH Net Banking & Debit Card", path: "/customercenter/enach-bankcode" },
   { name: "Consumer Education Literature", path: "/customercenter/consumer-education" },

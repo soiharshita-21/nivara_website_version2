@@ -104,15 +104,15 @@ const Mitc = () => {
       content: (
         <div className="terms-detail">
           <p className="fees-intro-text">Select your loan type to view applicable processing fees, administrative charges, and foreclosure terms:</p>
-          
+
           <div className="fees-tab-container">
-            <button 
+            <button
               className={`fees-tab-btn ${feesTab === "hl" ? "active" : ""}`}
               onClick={() => setFeesTab("hl")}
             >
               🏠 Home Loan (HL) Dues
             </button>
-            <button 
+            <button
               className={`fees-tab-btn ${feesTab === "nhl" ? "active" : ""}`}
               onClick={() => setFeesTab("nhl")}
             >
@@ -450,7 +450,7 @@ const Mitc = () => {
         <div className="terms-detail">
           <p><strong>Insurance of Property</strong></p>
           <p>The borrower shall ensure that property is properly insured for fire, earthquake, flood, explosion, storm and other allied perils for an amount equal to the cost of the property during the pendency of the loan. The policy has to be assigned in favour of Nivara Home Finance Ltd. and the borrower is also required to provide evidence to that extent each year.</p>
-          
+
           <p><strong>Insurance of Borrower</strong></p>
           <p>The Borrower is further advised to keep his/her life insured at all times to the extent of loan outstanding during the continuity of the loan with Nivara as the sole beneficiary.</p>
         </div>

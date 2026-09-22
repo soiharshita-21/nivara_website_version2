@@ -15,7 +15,7 @@ import {
   FaRegFilePdf,
 } from "react-icons/fa";
 import ScrollReveal from "../../components/ScrollReveal/ScrollReveal";
-import ab from "../../assets/images/ab.png";
+import ab from "../../assets/images/corporate.png";
 import pub from "../../assets/images/public.jpg";
 import sar from "../../assets/images/sar.png";
 import "./CorporateGovernance.css";
@@ -199,10 +199,10 @@ const CorporateGovernance = ({ initialTab, initialSub }) => {
                 path: path,
                 date: doc.created_at
                   ? new Date(doc.created_at).toLocaleDateString("en-IN", {
-                      day: "2-digit",
-                      month: "short",
-                      year: "numeric",
-                    })
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                  })
                   : "Notice",
               });
             } else if (doc.category === "investor_reports") {
@@ -217,10 +217,10 @@ const CorporateGovernance = ({ initialTab, initialSub }) => {
                 path: path,
                 date: doc.created_at
                   ? new Date(doc.created_at).toLocaleDateString("en-IN", {
-                      day: "2-digit",
-                      month: "short",
-                      year: "numeric",
-                    })
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                  })
                   : "Transcript",
               });
             } else if (doc.category === "public_disclosure") {

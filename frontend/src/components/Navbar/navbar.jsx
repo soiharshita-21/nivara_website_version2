@@ -189,7 +189,7 @@ const Navbar = () => {
               <div className="mega-menu-column">
                 <h4>Mandates & Forms</h4>
                 <ul>
-                  <li><a href="https://nach.nivarahousing.com/auth/nach-mandate-login" target="_blank" rel="noopener noreferrer">E-NACH Mandate</a></li>
+                  <li><Link to="/customercenter/e-nach">E-NACH Mandate</Link></li>
                   <li><Link to="/customercenter/ecs-mandate">ECS Mandate</Link></li>
                   <li><Link to="/customercenter/enach-bankcode">E-NACH Bank Code</Link></li>
                   <li><Link to="/customercenter/app-form">Application Form</Link></li>
