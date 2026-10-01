@@ -105,7 +105,7 @@
 
 .insurance-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   justify-items: center;
 }
@@ -125,6 +125,8 @@
   border: 1px solid rgba(33, 31, 31, 0.03);
   cursor: pointer;
   position: relative;
+  text-decoration: none;
+  color: inherit;
 }
 
 .insurance-card img {
@@ -132,6 +134,28 @@
   max-height: 92%;
   object-fit: contain;
   transition: transform 0.4s ease;
+}
+
+.insurance-card-name {
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.15;
+}
+
+.kotak-life .insurance-card-name {
+  color: #c8102e;
+}
+
+.go-digit .insurance-card-name {
+  color: #111;
+  font-size: 28px;
+  letter-spacing: -1px;
+}
+
+.creditaccess-life .insurance-card-name {
+  color: #07549a;
+  font-family: Georgia, serif;
 }
 
 .insurance-card:hover {
@@ -152,7 +176,7 @@
   }
   
   .insurance-grid {
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
 
@@ -168,6 +192,14 @@
   .banner-title::after {
     width: 60px;
     height: 3px;
+  }
+
+  .insurance-card-name {
+    font-size: 18px;
+  }
+
+  .go-digit .insurance-card-name {
+    font-size: 21px;
   }
 }
 

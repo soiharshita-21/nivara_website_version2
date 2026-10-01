@@ -32,9 +32,11 @@ const applyCareer = (req, res) => {
     const safeLocation = escapeHtml(location);
     const safeMessage = escapeHtml(message || 'No cover letter / message provided.');
 
+    const targetEmail = process.env.CAREERS_EMAIL || 'careers@nivarahousing.com';
     const mailOptions = {
-        from: process.env.SMTP_USER || '"Nivara Careers" <careers-noreply@nivarahousing.com>',
-        to: 'konduruharshita21@gmail.com',
+        from: process.env.SMTP_USER || '"Nivara Careers" <careers@nivarahousing.com>',
+        to: targetEmail,
+        replyTo: safeEmail,
         subject: `New Job Application: ${safePosition} - ${safeFirstName} ${safeLastName}`,
         html: `
             <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 600px; margin: auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
@@ -138,9 +140,11 @@ const applyLoan = (req, res) => {
     const safeLoanFor = escapeHtml(loanFor);
     const safeAmount = escapeHtml(loanAmount);
 
+    const targetEmail = process.env.CONTACT_EMAIL || 'contact@nivarahousing.com';
     const mailOptions = {
-        from: process.env.SMTP_USER || '"Nivara Home Loans" <loans-noreply@nivarahousing.com>',
-        to: 'konduruharshita21@gmail.com',
+        from: process.env.SMTP_USER || '"Nivara Home Loans" <contact@nivarahousing.com>',
+        to: targetEmail,
+        replyTo: safeEmail,
         subject: `New Loan Application: ${safeLoanFor} - ${safeFirstName} ${safeLastName}`,
         html: `
             <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 600px; margin: auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
@@ -246,9 +250,11 @@ const applyAppointment = (req, res) => {
     const safeLoanFor = escapeHtml(loanFor);
     const safeAmount = escapeHtml(loanAmount);
 
+    const targetEmail = process.env.CONTACT_EMAIL || 'contact@nivarahousing.com';
     const mailOptions = {
-        from: process.env.SMTP_USER || '"Nivara Home Loans" <loans-noreply@nivarahousing.com>',
-        to: 'konduruharshita21@gmail.com',
+        from: process.env.SMTP_USER || '"Nivara Home Loans" <contact@nivarahousing.com>',
+        to: targetEmail,
+        replyTo: safeEmail,
         subject: `New Appointment Request: ${safeLoanFor} - ${safeFirstName} ${safeLastName}`,
         html: `
             <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 600px; margin: auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
@@ -349,9 +355,11 @@ const applyContact = (req, res) => {
     const safeLocation = escapeHtml(location);
     const safeMessage = escapeHtml(message);
 
+    const targetEmail = process.env.CONTACT_EMAIL || 'contact@nivarahousing.com';
     const mailOptions = {
-        from: process.env.SMTP_USER || '"Nivara Home Loans" <loans-noreply@nivarahousing.com>',
-        to: 'konduruharshita21@gmail.com',
+        from: process.env.SMTP_USER || '"Nivara Contact Inquiry" <contact@nivarahousing.com>',
+        to: targetEmail,
+        replyTo: safeEmail,
         subject: `New General Contact Inquiry from ${safeName}`,
         html: `
             <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 600px; margin: auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
@@ -427,9 +435,11 @@ const applyAdvisor = (req, res) => {
     const safeLocation = escapeHtml(location);
     const safeMessage = escapeHtml(message);
 
+    const targetEmail = process.env.CONTACT_EMAIL || 'contact@nivarahousing.com';
     const mailOptions = {
-        from: process.env.SMTP_USER || '"Nivara Home Loans" <loans-noreply@nivarahousing.com>',
-        to: 'konduruharshita21@gmail.com',
+        from: process.env.SMTP_USER || '"Nivara Advisor Consultation" <contact@nivarahousing.com>',
+        to: targetEmail,
+        replyTo: safeEmail,
         subject: `New Advisor Request from ${safeName}`,
         html: `
             <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 600px; margin: auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
@@ -507,9 +517,11 @@ const applyQuote = (req, res) => {
     const safePreferredDate = escapeHtml(preferredDate);
     const safeAmount = escapeHtml(loanAmount);
 
+    const targetEmail = process.env.CONTACT_EMAIL || 'contact@nivarahousing.com';
     const mailOptions = {
-        from: process.env.SMTP_USER || '"Nivara Quote Requests" <quotes-noreply@nivarahousing.com>',
-        to: 'konduruharshita21@gmail.com',
+        from: process.env.SMTP_USER || '"Nivara Quote Requests" <contact@nivarahousing.com>',
+        to: targetEmail,
+        replyTo: safeEmail,
         subject: `New Quote Request: ${safeFullName} - INR ${parseFloat(safeAmount).toLocaleString('en-IN')}`,
         html: `
             <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 600px; margin: auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">

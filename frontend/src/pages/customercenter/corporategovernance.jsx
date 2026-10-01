@@ -15,10 +15,22 @@ import {
   FaRegFilePdf,
 } from "react-icons/fa";
 import ScrollReveal from "../../components/ScrollReveal/ScrollReveal";
+import InvestorPasswordModal from "../InvestorsRelation/InvestorPasswordModal";
 import ab from "../../assets/images/corporate.png";
 import pub from "../../assets/images/public.jpg";
 import sar from "../../assets/images/sar.png";
 import "./CorporateGovernance.css";
+
+const protectedDocumentPassword = "Nivara@1234";
+const protectedDocumentTitles = new Set([
+  "notice of agm 25.05.2026",
+  "transcript of agm 25.05.2026",
+]);
+
+const getProtectedDocumentPassword = (title) => {
+  const normalizedTitle = title?.replace(/\.pdf$/i, "").trim().toLowerCase();
+  return protectedDocumentTitles.has(normalizedTitle) ? protectedDocumentPassword : undefined;
+};
 
 /* --------------------------------------------------------------------------
    Default Fallback Data
@@ -136,6 +148,7 @@ const CorporateGovernance = ({ initialTab, initialSub }) => {
   const [transcripts, setTranscripts] = useState(defaultTranscripts);
   const [disclosures, setDisclosures] = useState(defaultDisclosures);
   const [sarfaesiDocs, setSarfaesiDocs] = useState(defaultSarfaesiDocs);
+  const [selectedDoc, setSelectedDoc] = useState(null);
 
   // Synchronize Tab from Props or URL
   useEffect(() => {
@@ -505,23 +518,32 @@ const CorporateGovernance = ({ initialTab, initialSub }) => {
                   </div>
 
                   <div className="gov-col-items-list">
-                    {notices.map((item, idx) => (
-                      <a
-                        key={idx}
-                        href="/investorsrelation/restricted"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="gov-investor-item"
-                      >
-                        <div className="gov-item-left">
-                          <span className="gov-item-badge">{item.date}</span>
-                          <span className="gov-item-name">{item.name}</span>
-                        </div>
-                        <div className="gov-item-right">
-                          <FaChevronRight size={12} />
-                        </div>
-                      </a>
-                    ))}
+                    {notices.map((item, idx) => {
+                      const password = getProtectedDocumentPassword(item.name);
+                      return (
+                        <a
+                          key={idx}
+                          href={password ? "#" : "/investorsrelation/restricted"}
+                          onClick={(event) => {
+                            if (password) {
+                              event.preventDefault();
+                              setSelectedDoc({ ...item, password });
+                            }
+                          }}
+                          target={password ? "_self" : "_blank"}
+                          rel="noopener noreferrer"
+                          className="gov-investor-item"
+                        >
+                          <div className="gov-item-left">
+                            <span className="gov-item-badge">{item.date}</span>
+                            <span className="gov-item-name">{item.name}</span>
+                          </div>
+                          <div className="gov-item-right">
+                            <FaChevronRight size={12} />
+                          </div>
+                        </a>
+                      );
+                    })}
                   </div>
                 </div>
 
@@ -538,23 +560,32 @@ const CorporateGovernance = ({ initialTab, initialSub }) => {
                   </div>
 
                   <div className="gov-col-items-list">
-                    {transcripts.map((item, idx) => (
-                      <a
-                        key={idx}
-                        href="/investorsrelation/restricted"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="gov-investor-item"
-                      >
-                        <div className="gov-item-left">
-                          <span className="gov-item-badge">{item.date}</span>
-                          <span className="gov-item-name">{item.name}</span>
-                        </div>
-                        <div className="gov-item-right">
-                          <FaChevronRight size={12} />
-                        </div>
-                      </a>
-                    ))}
+                    {transcripts.map((item, idx) => {
+                      const password = getProtectedDocumentPassword(item.name);
+                      return (
+                        <a
+                          key={idx}
+                          href={password ? "#" : "/investorsrelation/restricted"}
+                          onClick={(event) => {
+                            if (password) {
+                              event.preventDefault();
+                              setSelectedDoc({ ...item, password });
+                            }
+                          }}
+                          target={password ? "_self" : "_blank"}
+                          rel="noopener noreferrer"
+                          className="gov-investor-item"
+                        >
+                          <div className="gov-item-left">
+                            <span className="gov-item-badge">{item.date}</span>
+                            <span className="gov-item-name">{item.name}</span>
+                          </div>
+                          <div className="gov-item-right">
+                            <FaChevronRight size={12} />
+                          </div>
+                        </a>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -649,6 +680,17 @@ const CorporateGovernance = ({ initialTab, initialSub }) => {
           </div>
         )}
       </div>
+      <InvestorPasswordModal
+        open={!!selectedDoc}
+        documentName={selectedDoc?.name}
+        expectedPassword={selectedDoc?.password}
+        onConfirm={() => {
+          const path = selectedDoc.path;
+          setSelectedDoc(null);
+          window.open(path, "_blank", "noopener,noreferrer");
+        }}
+        onCancel={() => setSelectedDoc(null)}
+      />
     </div>
   );
 };

@@ -31,8 +31,8 @@ const CsrInitiatives = () => {
   const [activeTab, setActiveTab] = useState("Overview");
   const [popupData, setPopupData] = useState({ isOpen: false, images: [], index: 0 });
 
-  const openPopup = (images) => {
-    setPopupData({ isOpen: true, images, index: 0 });
+  const openPopup = (images, index = 0) => {
+    setPopupData({ isOpen: true, images, index });
   };
 
   const closePopup = () => {
@@ -90,7 +90,9 @@ const CsrInitiatives = () => {
       {activeTab === "Overview" && (
         <div className="csr-tab-content">
           <div className="csr-main-img-wrap">
-            <img src={csrhero} alt="CSR Overview" className="csr-main-img" />
+            <button className="csr-main-img-button" onClick={() => openPopup([csrhero])} aria-label="View CSR overview image">
+              <img src={csrhero} alt="CSR Overview" className="csr-main-img" />
+            </button>
           </div>
           <div className="csr-commitment">
             <h2>Commitment to Inclusive Growth</h2>
@@ -107,7 +109,9 @@ const CsrInitiatives = () => {
       {activeTab === "Healthcare" && (
         <div className="csr-tab-content text-center">
           <div className="csr-main-img-wrap">
-            <img src={hcMain} alt="Healthcare" className="csr-main-img" />
+            <button className="csr-main-img-button" onClick={() => openPopup([hcMain, hc1, hc2, hc3, hc4, hc5, hc6, hc7])} aria-label="View healthcare images">
+              <img src={hcMain} alt="Healthcare" className="csr-main-img" />
+            </button>
           </div>
           <div className="csr-commitment">
             <ul className="csr-bullet-list">
@@ -126,7 +130,9 @@ const CsrInitiatives = () => {
       {activeTab === "Education" && (
         <div className="csr-tab-content text-center">
           <div className="csr-main-img-wrap">
-            <img src={eduMain} alt="Education" className="csr-main-img" />
+            <button className="csr-main-img-button" onClick={() => openPopup([eduMain, edu1, edu2])} aria-label="View education images">
+              <img src={eduMain} alt="Education" className="csr-main-img" />
+            </button>
           </div>
           <div className="csr-commitment">
             <ul className="csr-bullet-list">
@@ -145,7 +151,9 @@ const CsrInitiatives = () => {
       {activeTab === "Community" && (
         <div className="csr-tab-content text-center">
           <div className="csr-main-img-wrap">
-            <img src={commMain} alt="Community" className="csr-main-img" />
+            <button className="csr-main-img-button" onClick={() => openPopup([commMain, comm1, comm2])} aria-label="View community images">
+              <img src={commMain} alt="Community" className="csr-main-img" />
+            </button>
           </div>
           <div className="csr-commitment">
             <ul className="csr-bullet-list">

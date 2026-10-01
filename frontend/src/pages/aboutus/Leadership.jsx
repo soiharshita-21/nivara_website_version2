@@ -13,7 +13,7 @@ const Leadership = () => {
     <div className="leadership-page">
       <ScrollReveal direction="down">
         <section className="page-banner about-banner" style={{ backgroundImage: `url(${ab})` }}>
-          <div className="page-banner-overlay"></div>
+          {/* <div className="page-banner-overlay"></div> */}
           {/* <div className="page-banner-content">
             <h1 className="page-banner-title">
               Our <span className="text-red">Leadership</span>

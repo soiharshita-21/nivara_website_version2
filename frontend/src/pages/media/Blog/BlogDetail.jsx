@@ -1,28 +1,11 @@
 import React, { useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-// import { blogData } from "./blogData"; // Removed in favor of initialBlogData fallback
+import { initialBlogData } from "./blogData";
 
 import "./BlogDetail.css";
-import home2 from "../../../assets/images/home2.png";
+import media2 from "../../../assets/images/media2.png";
 
 import axios from "axios";
-
-const parseTags = (tags) => {
-    if (!tags) return ["Blog", "Nivara"];
-    if (Array.isArray(tags)) return tags;
-    if (typeof tags === 'string') {
-        try {
-            const parsed = JSON.parse(tags);
-            if (Array.isArray(parsed)) return parsed;
-            if (typeof parsed === 'string') {
-                return parsed.split(',').map(t => t.trim()).filter(Boolean);
-            }
-        } catch (e) {
-            return tags.split(',').map(t => t.trim()).filter(Boolean);
-        }
-    }
-    return ["Blog", "Nivara"];
-};
 
 const BlogDetail = () => {
     const { slug } = useParams();
@@ -46,15 +29,24 @@ const BlogDetail = () => {
                 setAllPosts(allRes.data);
 
                 if (found) {
+                    const localPost = initialBlogData.find((blog) =>
+                        blog.slug === slug || String(blog.id) === String(slug) || blog.title === found.title
+                    );
+                    const apiContent = found.content;
+                    const localContent = localPost?.content;
+                    const apiText = typeof apiContent === 'string' ? apiContent.trim() : '';
+                    const useLocalContent = typeof apiContent === 'string'
+                        && typeof localContent === 'string'
+                        && (/(?:\.\.\.|…)\s*(?:<\/[^>]+>\s*)*$/i.test(apiText)
+                            || localContent.trim().length > apiText.length);
                     setPost({
                         ...found,
                         image: found.image_url || found.image,
-                        content: typeof found.content === 'string'
-                            ? <div dangerouslySetInnerHTML={{ __html: found.content }} />
-                            : found.content,
+                        content: typeof apiContent === 'string'
+                            ? <div dangerouslySetInnerHTML={{ __html: useLocalContent ? localContent : apiContent }} />
+                            : apiContent,
                         author: found.author || "ADMIN",
                         comments: found.comments || "0 comments",
-                        tags: parseTags(found.tags)
                     });
                 }
             } catch (error) {
@@ -72,7 +64,6 @@ const BlogDetail = () => {
                             : found.content,
                         author: found.author || "ADMIN",
                         comments: found.comments || "0 comments",
-                        tags: parseTags(found.tags)
                     });
                 }
             } finally {
@@ -101,7 +92,7 @@ const BlogDetail = () => {
         <div className="blog-detail-page">
             {/* Banner */}
             <div className="blog-detail-hero">
-                <img src={home2} alt="Blog Banner" />
+                <img src={media2} alt="Blog Banner" />
 
                 <div className="blog-detail-breadcrumb">
                     <Link to="/">Nivara Home</Link>
@@ -140,18 +131,6 @@ const BlogDetail = () => {
 
                         <div className="post-body">
                             {post.content}
-                        </div>
-
-                        <div className="post-tags-container">
-                            <h4 className="tags-label">Tags:</h4>
-                            <div className="post-tags">
-                                {post.tags.map((tag, idx) => {
-                                    const cleanTag = typeof tag === 'string'
-                                        ? tag.replace(/^[\[\]"']+|[\[\]"']+$/g, '').trim()
-                                        : tag;
-                                    return <span key={idx}>{cleanTag}</span>;
-                                })}
-                            </div>
                         </div>
 
                         <div className="related-blogs-section">

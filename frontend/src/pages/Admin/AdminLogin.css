@@ -254,3 +254,269 @@
     padding: 2rem 1.5rem;
   }
 }
+
+/* Admin sign-in refresh */
+html:has(.admin-login-page),
+body:has(.admin-login-page) {
+  zoom: 1 !important;
+  background: #f7f8fb;
+}
+
+.admin-login-page {
+  height: 100vh;
+  height: 100svh;
+  min-height: 0;
+  justify-content: flex-end;
+  padding: 16px max(7vw, 48px);
+  background: #f7f8fb;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.admin-login-page::before {
+  content: 'NIVARA\A HOME FINANCE';
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: 0;
+  width: 44%;
+  height: auto;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 7%;
+  border-radius: 0 40px 40px 0;
+  background:
+    radial-gradient(circle at 20% 25%, rgba(255, 255, 255, 0.16), transparent 26rem),
+    linear-gradient(145deg, #78151b 0%, #a5161d 48%, #c3262d 100%);
+  color: rgba(255, 255, 255, 0.96);
+  font-size: clamp(2.2rem, 4.4vw, 4.6rem);
+  font-weight: 750;
+  letter-spacing: -0.075em;
+  line-height: 1.08;
+  white-space: pre;
+  box-shadow: 22px 0 60px rgba(71, 21, 26, 0.1);
+}
+
+.admin-login-page::after {
+  width: min(31vw, 460px);
+  height: min(31vw, 460px);
+  top: auto;
+  right: auto;
+  bottom: 7%;
+  left: 13%;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.13), transparent 69%);
+  box-shadow: 0 0 0 42px rgba(255, 255, 255, 0.035), 0 0 0 84px rgba(255, 255, 255, 0.025);
+}
+
+.login-card {
+  width: min(100%, 450px);
+  max-width: 450px;
+  margin-right: 4vw;
+  padding: 1.55rem 2.35rem 1.2rem;
+  border: 1px solid #e9ecf2;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 24px 70px rgba(29, 39, 57, 0.1);
+  backdrop-filter: none;
+}
+
+.login-header {
+  margin-bottom: 1.15rem;
+}
+
+.logo-icon-container {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 0.75rem;
+  border-radius: 14px;
+  background: #fff0f0;
+  color: #b3191f;
+  box-shadow: none;
+  transform: none;
+}
+
+.login-card:hover .logo-icon-container {
+  transform: translateY(-2px);
+}
+
+.login-header h1 {
+  margin-bottom: 0.35rem;
+  color: #172033 !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.55rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.05em !important;
+  line-height: 1.2 !important;
+}
+
+.login-header p {
+  color: #778195;
+  font-size: 0.96rem;
+  font-weight: 400;
+}
+
+.login-form {
+  gap: 0.8rem;
+}
+
+.input-group {
+  gap: 0.55rem;
+}
+
+.input-group label {
+  color: #374257;
+  font-size: 0.87rem;
+  font-weight: 600;
+}
+
+.input-field input {
+  min-height: 46px;
+  padding: 0.7rem 1rem 0.7rem 2.9rem;
+  border: 1px solid #dfe4ec;
+  border-radius: 9px;
+  background: #fbfcfe;
+  color: #172033;
+  font-size: 0.95rem;
+}
+
+.input-field input:focus {
+  border-color: #b3191f;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(179, 25, 31, 0.1);
+}
+
+.field-icon {
+  left: 1rem;
+  width: 18px;
+  height: 18px;
+}
+
+.password-toggle {
+  right: 0.85rem;
+}
+
+.login-btn {
+  min-height: 46px;
+  margin-top: 0.1rem;
+  border-radius: 9px;
+  background: #b3191f;
+  box-shadow: 0 9px 18px rgba(179, 25, 31, 0.18);
+  font-size: 0.98rem;
+  font-weight: 650;
+}
+
+.login-btn:hover:not(:disabled) {
+  background: #94191f;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 22px rgba(179, 25, 31, 0.22);
+}
+
+.login-footer {
+  margin-top: 1.05rem;
+  padding-top: 0.75rem;
+  border-color: #edf0f4;
+}
+
+.login-footer p {
+  color: #929bad;
+  font-size: 0.73rem;
+  font-weight: 400;
+}
+
+.error-message {
+  padding: 0.8rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+}
+
+.admin-login-page input,
+.admin-login-page button {
+  font-family: 'Inter', sans-serif !important;
+}
+
+@media (max-width: 1000px) {
+  .admin-login-page {
+    justify-content: flex-end;
+    padding: 16px 24px;
+  }
+
+  .admin-login-page::before {
+    width: 32%;
+    padding-left: 4%;
+    font-size: clamp(1.7rem, 4vw, 3rem);
+  }
+
+  .admin-login-page::after {
+    left: 5%;
+    width: 28vw;
+    height: 28vw;
+  }
+
+  .login-card {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 680px) {
+  .admin-login-page {
+    align-items: flex-end;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 0 14px 14px;
+    background: #a91c23;
+    overflow-y: auto;
+  }
+
+  .admin-login-page::before {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    width: 100%;
+    height: 34%;
+    min-height: 0;
+    align-items: flex-start;
+    padding: 42px 28px 0;
+    border-radius: 0;
+    font-size: 1.8rem;
+  }
+
+  .admin-login-page::after {
+    top: 2%;
+    right: -14%;
+    bottom: auto;
+    left: auto;
+    width: 58vw;
+    height: 58vw;
+  }
+
+  .login-card {
+    position: relative;
+    z-index: 1;
+    max-width: 480px;
+    padding: 2rem 1.35rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  .login-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .logo-icon-container {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 0.9rem;
+  }
+
+  .login-header h1 {
+    font-size: 1.5rem !important;
+  }
+
+  .login-header p {
+    font-size: 0.88rem;
+  }
+}

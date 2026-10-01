@@ -292,8 +292,19 @@
   margin-bottom: 24px;
 }
 
-.csr-main-img {
+.csr-main-img-button {
+  display: block;
   width: 80%;
+  max-width: 800px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.csr-main-img {
+  width: 100%;
   max-width: 800px;
   display: block;
   border-radius: 10px;

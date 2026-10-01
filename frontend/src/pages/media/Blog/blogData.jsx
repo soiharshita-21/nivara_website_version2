@@ -1,6 +1,7 @@
-import blogimg1 from "../../../assets/images/blogimg1.png";
-import cbo1 from "../../../assets/images/cbo1.jpg";
-import cbo2 from "../../../assets/images/cbo2.jpg";
+import blogimg1 from "../../../assets/images/media2.png";
+import cbo1 from "../../../../../backend/uploads/cbo1.jpg";
+import cbo2 from "../../../../../backend/uploads/cbo2.jpg";
+
 
 export const initialBlogData = [
     {

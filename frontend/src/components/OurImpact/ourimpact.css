@@ -15,7 +15,21 @@
   font-size: 42px;
   font-weight: 600;
   color: #B3191F;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.impact-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #B3191F;
+  border-radius: 2px;
 }
 
 .impact-subtitle {
@@ -151,7 +165,9 @@
 
 
 .impact-card h3 {
-  font-size: 40px;
+  font-size: clamp(30px, 2.2vw, 36px);
+  font-weight: 700;
+  line-height: 1.2;
   color: #1f2937;
   margin-bottom: 10px;
 }
@@ -209,6 +225,10 @@
   .impact-title {
     font-size: 33px;
   }
+
+  .impact-card h3 {
+    font-size: 42px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -218,6 +238,10 @@
 
   .impact-title {
     font-size: 28px;
+  }
+
+  .impact-card h3 {
+    font-size: 38px;
   }
 }
 

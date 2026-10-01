@@ -92,16 +92,16 @@ const Footer = () => {
 
             <div className="contact-item">
               <span className="icon"><FaPhoneAlt /></span>
-              <p>1800-309-1516</p>
+              <p>Toll-Free: 1800-309-1516</p>
             </div>
 
             <div className="contact-item">
               <span className="icon"><FaEnvelope /></span>
-              <p>contact@nivarahousing.com</p>
+              <p><a href="mailto:contact@nivarahousing.com" style={{ color: "inherit", textDecoration: "none" }}>contact@nivarahousing.com</a></p>
             </div>
 
             <div className="officers-item">
-              <p>Grievance Officer: - Rajesh CA<br/>Phone: +91 80 26552822</p>
+              <p>Grievance Officer: Rajesh CA<br/>Phone: +91 80 26552822<br/>Email: contact@nivarahousing.com</p>
             </div>
 
             <div className="rating-item">

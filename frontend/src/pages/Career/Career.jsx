@@ -207,7 +207,7 @@ const Career = () => {
                     willingness to learn and evolve.
                   </p>
                 </div>
-                <button className="apply-btn-outline" onClick={() => setShowModal(true)}>Apply Now <MdOutlineArrowForwardIos /></button>
+                <button className="apply-btn-outline" onClick={() => setShowModal(true)}>Know More <MdOutlineArrowForwardIos /></button>
               </div>
 
               <div className="job-modern-card">
@@ -222,7 +222,7 @@ const Career = () => {
                     willingness to learn and evolve.
                   </p>
                 </div>
-                <button className="apply-btn-outline" onClick={() => setShowModal(true)}>Apply Now <MdOutlineArrowForwardIos /></button>
+                <button className="apply-btn-outline" onClick={() => setShowModal(true)}>Know More <MdOutlineArrowForwardIos /></button>
               </div>
             </div>
           </div>

@@ -3,9 +3,8 @@ import "./PublicDisclosure.css";
 import { FileText } from 'lucide-react';
 import axios from 'axios';
 import ScrollReveal from '../../../components/ScrollReveal/ScrollReveal';
-import home3 from "../../../assets/images/public disclosure.png";
-import pb1 from "../../../assets/images/publicdisclosure1.png";
-import pb2 from "../../../assets/images/saf.png";
+import publicBanner from "../../../assets/images/public.jpg";
+import sarImg from "../../../assets/images/sar.png";
 
 const defaultDisclosures = [
   { name: "Public Disclosure March 2021", path: "/files/pd-mar-2021.pdf" },
@@ -115,7 +114,7 @@ const PublicDisclosure = () => {
     <div className="public-page">
 
       {/* Hero Section */}
-      <section className="page-banner public-page-banner" style={{ backgroundImage: `url(${home3})` }}>
+      <section className="page-banner public-page-banner" style={{ backgroundImage: `url(${publicBanner})` }}>
         <div className="page-banner-overlay"></div>
         <ScrollReveal direction="down" distance={30} className="page-banner-content">
           <h1 className="page-banner-title">
@@ -142,16 +141,16 @@ const PublicDisclosure = () => {
           {/* Public Disclosure Section */}
           <ScrollReveal className="public-card" direction="up" distance={30} delay={0.1}>
             <div className="public-card-image">
-              <img src={pb1} alt="Public Disclosure" />
+              <img src={publicBanner} alt="Public Disclosure" />
             </div>
             <div className="public-card-content">
               <h2>Public Disclosure</h2>
               <div className="public-links">
                 {disclosures.map((doc, index) => (
-                  <a 
-                    key={index} 
-                    href={doc.path} 
-                    target="_blank" 
+                  <a
+                    key={index}
+                    href={doc.path}
+                    target="_blank"
                     rel="noopener noreferrer"
                   >
                     {doc.name}
@@ -164,16 +163,16 @@ const PublicDisclosure = () => {
           {/* Sarfaesi Section */}
           <ScrollReveal className="public-card" direction="up" distance={30} delay={0.2}>
             <div className="public-card-image">
-              <img src={pb2} alt="Sarfaesi Attachments" />
+              <img src={sarImg} alt="Sarfaesi Attachments" />
             </div>
             <div className="public-card-content">
               <h2>SARFAESI Attachments</h2>
               <div className="public-links">
                 {sarfaesiDocs.map((doc, index) => (
-                  <a 
-                    key={index} 
-                    href={doc.path} 
-                    target="_blank" 
+                  <a
+                    key={index}
+                    href={doc.path}
+                    target="_blank"
                     rel="noopener noreferrer"
                   >
                     {doc.name}

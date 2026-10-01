@@ -3,12 +3,11 @@ import "./BoardOfDirectors.css";
 import rao from "../../../assets/images/director/rao (1).jpg";
 import sunilb from "../../../assets/images/director/sunilb.jpeg";
 import koticha from "../../../assets/images/director/koticha.jpg";
-import debanshi from "../../../assets/images/director/debanshi-photo.png";
+import debanshi from "../../../assets/images/director/debanshi.png";
 import jayaraman from "../../../assets/images/director/nivara.jpg";
 import krishna from "../../../assets/images/director/mr. krishna gopalaraman.jpg";
 import shreyas from "../../../assets/images/director/shreyas.jpg";
-import userPlaceholder from "../../../assets/images/user2.jpg";
-import maninder from "../../../assets/images/directors/maninder singh juneja.png";
+import maninder from "../../../assets/images/director/maninder singh juneja.png";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -101,38 +100,38 @@ const BoardOfDirectors = () => {
           {boardMembers
             .filter((item) => !item.hidden)
             .map((item, index) => (
-            <ScrollReveal
-              key={index}
-              direction="up"
-              delay={0.1 + (index % 3) * 0.15}
-              distance={40}
-              scale={0.9}
-            >
-              <div
-                className={`board-card ${item.color} ${item.name.includes("Shreyas") ? "shreyas-card" : ""}`}
-                onClick={() => {
-                  setSelectedMember(item);
-                  setIsExpanded(false);
-                }}
+              <ScrollReveal
+                key={index}
+                direction="up"
+                delay={0.1 + (index % 3) * 0.15}
+                distance={40}
+                scale={0.9}
               >
-                <div className="image-wrapper">
-                  <img src={item.img} alt={item.name} />
-                  <span className={`role-tag ${item.name.includes("Shreyas") ? "shreyas-tag" : ""}`}>{item.role}</span>
-                </div>
-
-                <div className="board-content">
-                  <h3>{item.name}</h3>
-                  <p>{item.desc}</p>
-                  <button className="view-bio-btn" onClick={() => {
+                <div
+                  className={`board-card ${item.color} ${item.name.includes("Shreyas") ? "shreyas-card" : ""}`}
+                  onClick={() => {
                     setSelectedMember(item);
                     setIsExpanded(false);
-                  }}>View Details</button>
-                </div>
+                  }}
+                >
+                  <div className="image-wrapper">
+                    <img src={item.img} alt={item.name} />
+                    <span className={`role-tag ${item.name.includes("Shreyas") ? "shreyas-tag" : ""}`}>{item.role}</span>
+                  </div>
 
-                <div className="leadership-strip-animated"></div>
-              </div>
-            </ScrollReveal>
-          ))}
+                  <div className="board-content">
+                    <h3>{item.name}</h3>
+                    <p>{item.desc}</p>
+                    <button className="view-bio-btn" onClick={() => {
+                      setSelectedMember(item);
+                      setIsExpanded(false);
+                    }}>View Details</button>
+                  </div>
+
+                  <div className="leadership-strip-animated"></div>
+                </div>
+              </ScrollReveal>
+            ))}
         </div>
         {/* <p className="board-updated-date" style={{ textAlign: "center", marginTop: "40px", color: "#211F1F", fontSize: "18px" }}>
           Updated 30.04.2026
@@ -201,7 +200,7 @@ const BoardOfDirectors = () => {
                   cursor: 'pointer',
                   fontSize: "28px",
                   display: 'flex',
-                  alignItems: 'center',              
+                  alignItems: 'center',
                   justifyContent: 'center'
                 }}
               >

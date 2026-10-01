@@ -36,10 +36,10 @@ const GrievanceRedressal = () => {
                   By way of physically visiting the Branch and post a complaint in the Complaint Register maintained at our branches. Customers can visit our branch during visiting hours between 10 a.m. and 5 p.m. from Monday to Friday &amp; from 10 a.m. to 1 p.m. on Saturdays (except on public holidays)
                 </li>
                 <li>
-                  Customers can contact us at <strong>  Grievance Officer: Rajesh CA - +91-80-2655 2822 </strong> between 10 a.m. and 5 p.m. from Monday to Friday &amp; from 10 a.m. to 1 p.m. on Saturdays (except on public holidays)
+                  Customer Care Toll-Free Number: <strong><a href="tel:18003091516" className="red-link">1800-309-1516</a></strong>
                 </li>
                 <li>
-                  Customers can also reach us vide E-mail: <a href="mailto:contact@nivarahousing.com" className="red-link">contact@nivarahousing.com</a>
+                  Customers can contact our Grievance Officer: <strong>Rajesh CA</strong> at Phone: <strong><a href="tel:+918026552822" className="red-link">+91 80 26552822</a></strong> or vide E-mail: <strong><a href="mailto:contact@nivarahousing.com" className="red-link">contact@nivarahousing.com</a></strong> between 10 a.m. and 5 p.m. from Monday to Friday &amp; from 10 a.m. to 1 p.m. on Saturdays (except on public holidays)
                 </li>
                 <li>
                   By way of written letter addressed to Registered office of the company – <strong>To The Customer Service Manager – Home Loans</strong>, Nivara Home Finance Ltd., 22, 23, 24, 25/101/3, 3rd Floor, BNR Complex, Sri Rama Layout, Opp. RBI Layout, 7th Phase, JP Nagar, Bangalore – 560078.

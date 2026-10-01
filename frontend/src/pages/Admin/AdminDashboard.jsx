@@ -609,21 +609,21 @@ const AdminDashboard = () => {
             </button>
           ))}
         </nav>
-        <div className="sidebar-footer">
-          <button className="logout-btn" onClick={handleLogout}>
-            <LogOut size={20} /><span>Logout</span>
-          </button>
-        </div>
       </aside>
 
       <main className="dashboard-content">
         <header className="content-header">
           <h1>{menuItems.find(i => i.id === activeTab)?.label}</h1>
-          {activeTab !== "overview" && (
-            <button className="add-new-btn" onClick={() => { setEditingId(null); setShowModal(true); }}>
-              <Plus size={20} /><span>Add New</span>
+          <div className="header-actions">
+            {activeTab !== "overview" && (
+              <button className="add-new-btn" onClick={() => { setEditingId(null); setShowModal(true); }}>
+                <Plus size={20} /><span>Add New</span>
+              </button>
+            )}
+            <button className="logout-btn" onClick={handleLogout}>
+              <LogOut size={18} /><span>Logout</span>
             </button>
-          )}
+          </div>
         </header>
 
         <section className="content-body">

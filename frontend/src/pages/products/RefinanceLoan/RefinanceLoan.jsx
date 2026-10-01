@@ -111,8 +111,8 @@ const RefinanceLoan = () => {
       </section>
 
       <ScrollReveal direction="up" delay={0.1}>
-        <div className="refinance-text-section">
-          <h1 className="refinance-main-title">Refinance Loan</h1>
+        <div className="refinance-text-section loan-product-intro">
+          <p className="refinance-main-title">Refinance Loan</p>
           <h3 className="refinance-sub-heading">
             Taking out a New Loan To Pay off an old one
           </h3>

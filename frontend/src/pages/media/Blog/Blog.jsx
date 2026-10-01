@@ -1,17 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Blog.css";
-
-// Banner image
-import media2 from "../../../assets/images/media2.png"
-
-// Blog images (you will replace with your real images)
-import cbo from "../../../assets/images/blogimg1.png";
-import cbo1 from "../../../assets/images/cbo1.jpg";
-import cbo2 from "../../../assets/images/cbo2.jpg";
-// Hardcoded blogs array removed - using blogData.initialBlogData
-
-
+import media2 from "../../../assets/images/media2.png";
 import axios from "axios";
 
 const formatDate = (dateStr) => {
@@ -92,8 +82,8 @@ const Blog = () => {
       {/* Blog Cards */}
       <div className="blog-container">
         {allBlogs.map((item, index) => (
-          <div 
-            className="blog-card animate-pop-up" 
+          <div
+            className="blog-card animate-pop-up"
             key={index}
             style={{ transitionDelay: `${(index % 3) * 150}ms` }}
           >

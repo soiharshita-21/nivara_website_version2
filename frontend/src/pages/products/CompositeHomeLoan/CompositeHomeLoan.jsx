@@ -119,8 +119,8 @@ const CompositeHomeLoan = () => {
       </section>
 
       <ScrollReveal direction="up" delay={0.1}>
-        <div className="composite-text-section">
-          <h1 className="composite-title">Composite Home Loan</h1>
+        <div className="composite-text-section loan-product-intro">
+          <p className="composite-title">Composite Home Loan</p>
           <h3 className="composite-subtitle">
             Build Your dream house with a Nivara Composite Home loan
           </h3>

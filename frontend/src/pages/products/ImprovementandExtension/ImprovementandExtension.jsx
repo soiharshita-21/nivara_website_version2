@@ -119,8 +119,8 @@ const ImprovementandExtension = () => {
       </section>
 
       <ScrollReveal direction="up" delay={0.1}>
-        <div className="improv-text-section">
-          <h1 className="improv-main-title">Improvement and Extension Loan</h1>
+        <div className="improv-text-section loan-product-intro">
+          <p className="improv-main-title">Improvement and Extension Loan</p>
           <h3 className="improv-sub-heading">
             Build Your dream house with a Nivara Improvement and Extension Loan
           </h3>

@@ -92,12 +92,12 @@
 }
 
 .hero-title {
-  font-size: clamp(31px, 3.6vw, 51px);
-  font-weight: 600;
+  font-size: clamp(1.6rem, 2.3vw, 2.7rem);
+  font-weight: 500;
   margin-bottom: 14px;
-  line-height: 1.05;
+  line-height: 1.08;
   text-transform: uppercase;
-  letter-spacing: -1px;
+  letter-spacing: -0.04em;
   color: #211F1F !important;
   background: none;
   backdrop-filter: none;
@@ -234,6 +234,16 @@
 
 .hero-glass-card li:last-child {
   margin-bottom: 0;
+}
+
+.loan-product-intro > h1 {
+  color: #B3191F !important;
+  font-size: 32px;
+}
+
+.loan-product-intro > h2,
+.loan-product-intro > h3 {
+  font-size: 21px;
 }
 
 .hero-glass-card li::before {

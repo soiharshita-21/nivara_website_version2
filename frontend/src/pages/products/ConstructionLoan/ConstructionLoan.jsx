@@ -127,10 +127,10 @@ const ConstructionLoan = () => {
       </section>
 
       <ScrollReveal direction="up" delay={0.1}>
-        <div className="construction-text-section">
-          <h1 className="construction-title">
+        <div className="construction-text-section loan-product-intro">
+          <p className="construction-title">
             Home Construction Loan
-          </h1>
+          </p>
           <h3 className="construction-subtitle">
             Build the home of your dreams with the loan of your choice
           </h3>

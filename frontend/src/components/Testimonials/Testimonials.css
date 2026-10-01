@@ -33,6 +33,21 @@
   font-size: 43px;
   font-weight: 700;
   color: #B3191F;
+  margin-bottom: 24px;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.testimonials-header h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #B3191F;
+  border-radius: 2px;
 }
 
 .testimonials-header p {

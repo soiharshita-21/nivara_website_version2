@@ -129,8 +129,8 @@ const LoanAgainstProperty = () => {
       </section>
 
       <ScrollReveal direction="up" delay={0.1}>
-        <div className="loan-against-text-section">
-          <h1 className="lap-title">Loan Against Property</h1>
+        <div className="loan-against-text-section loan-product-intro">
+          <p className="lap-title">Loan Against Property</p>
           <h3 className="lap-subtitle-red">
             Unlock the potential of your property with Nivara
           </h3>

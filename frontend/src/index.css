@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 /* #B3191F #7EB542 #211F1F */
+
+:root {
+  --site-title-font: 'Poppins', sans-serif;
+  --site-title-size: clamp(1.45rem, 1.6vw, 2.1rem);
+}
 
 #root {
   width: 100%;
@@ -48,6 +55,64 @@ textarea,
 select {
   font-family: 'Poppins', sans-serif !important;
   font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.page-banner-title,
+.section-badge-title,
+.hero-title,
+.recovery-container h1,
+.why-hero-content h1,
+.kyc-hero-content h1,
+.blog-detail-hero-content h1,
+.investor-header-simple h1,
+.terms-banner-container h1,
+.lenders-overlay h1,
+.corporate-governance-page .public-card-content h2,
+.complaint-page .page-banner-title,
+.desc-grievance-page .page-banner-title,
+.grievance-card h2,
+.download-category h2,
+.public-card-content h2,
+.auction-documents-section h2,
+.why-intro h2,
+.our-impact-section h2,
+.our-impact-section h3,
+.banner-con h1,
+.branch-locator h2,
+.new-branches-header h2,
+.emi-main h2,
+.policy-left h1,
+.privacy-left h1,
+.csr-header h1,
+.board-header h2,
+.management-header h2,
+.vm-modern-card h2 {
+  font-family: var(--site-title-font) !important;
+  font-size: var(--site-title-size) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.1 !important;
+  color: inherit !important;
+}
+
+/* Impact Section Numbers - subtly increased font size */
+.impact-card h3 {
+  font-size: clamp(30px, 2.2vw, 36px) !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+}
+
+/* Banner Hero Heading - subtly increased font size */
+.banner-content h1 {
+  font-size: clamp(32px, 2.5vw, 40px) !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
 }
 
 body::-webkit-scrollbar {
@@ -189,8 +254,8 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .page-banner-title {
-  font-size: 52px;
-  font-weight: 600;
+  font-size: clamp(1.7rem, 2.2vw, 2.6rem);
+  font-weight: 500;
   margin-bottom: 15px;
   color: #fff;
   background: rgba(33, 31, 31, 0.55);

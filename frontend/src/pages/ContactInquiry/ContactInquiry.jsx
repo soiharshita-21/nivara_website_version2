@@ -155,14 +155,21 @@ const ContactInquiry = () => {
             </div>
 
             <div className="feedback-info-block">
-              <h3 className="feedback-info-heading">Customer care toll free number:</h3>
+              <h3 className="feedback-info-heading">Customer Care Toll-Free Number:</h3>
+              <p className="feedback-info-detail">
+                <a href="tel:18003091516"><strong>1800-309-1516</strong></a>
+              </p>
+            </div>
+
+            <div className="feedback-info-block">
+              <h3 className="feedback-info-heading">Grievance Redressal:</h3>
               <div className="feedback-grievance-block">
                 <p className="feedback-info-subheading">Grievance Officer</p>
                 <p className="feedback-info-highlight">Rajesh CA</p>
               </div>
-              <p className="feedback-info-detail"><strong>Phone:</strong> 1800-309-1516</p>
+              <p className="feedback-info-detail"><strong>Phone:</strong> <a href="tel:+918026552822">+91 80 26552822</a></p>
               <p className="feedback-info-detail">
-                <strong>E-mail:</strong> <a href="mailto:contact@nivarahousing.com">contact@nivarahousing.com</a>
+                <strong>Email:</strong> <a href="mailto:contact@nivarahousing.com">contact@nivarahousing.com</a>
               </p>
             </div>
           </div>

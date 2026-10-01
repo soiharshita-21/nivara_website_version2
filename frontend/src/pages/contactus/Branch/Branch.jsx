@@ -343,9 +343,6 @@ const Branch = () => {
                             </span>
                             <span className="option-copy">
                               <span className="option-city">{branch.city}</span>
-                              <span className="option-meta">
-                                {branch.contact || "1800-309-1516"}
-                              </span>
                             </span>
                           </button>
                         ))}
@@ -404,13 +401,13 @@ const Branch = () => {
                 </div>
               </div>
  
-              <div className="branch-card-detail">
+              {/* <div className="branch-card-detail">
                 <FaPhoneAlt />
                 <div>
                   <strong>Contact</strong>
                   <p>{branch.contact}</p>
                 </div>
-              </div>
+              </div> */}
  
               <div className="branch-card-actions">
                 <button

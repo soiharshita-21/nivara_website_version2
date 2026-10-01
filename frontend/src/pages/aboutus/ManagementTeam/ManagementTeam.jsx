@@ -2,28 +2,27 @@ import React from "react";
 import "./ManagementTeam.css";
 import rao from "../../../assets/images/director/rao (1).jpg";
 import shreyas from "../../../assets/images/director/shreyas.jpg";
-import srinivasan from "../../../assets/images/directors/srinivasan-cv_new (2).jpg";
-import suresh from "../../../assets/images/directors/suresh g.jpg";
-import venkat from "../../../assets/images/directors/befe9b7bf680b2ac (1).jpeg";
-import nagesh from "../../../assets/images/directors/nagesh (2).jpg";
-import sidharth from "../../../assets/images/directors/sisharth-1 (1).jpg";
-import prakash from "../../../assets/images/directors/prakash.jpg";
-import hema from "../../../assets/images/directors/_dsc6348 copy.jpg";
-import erica from "../../../assets/images/directors/erica gonsalves(1).jpg";
-import aditya from "../../../assets/images/directors/aditya (3).jpg";
-import raja from "../../../assets/images/directors/raja shankarasubramanian (2).png";
-import babu from "../../../assets/images/directors/babu-abraham (2).png";
-import raina from "../../../assets/images/directors/raina d'silva.png";
-import bonojit from "../../../assets/images/directors/ukil-pic (1).jpg";
-import thimmaiah from "../../../assets/images/directors/c-g-thimmah (1).jpg";
-import userPlaceholder from "../../../assets/images/user2.jpg";
-import manoj from "../../../assets/images/directors/manoj patil.jpg";
-import radhakrishna from "../../../assets/images/directors/radhakrishna.jpg";
+import srinivasan from "../../../assets/images/managementteam/srinivasan.jpg";
+import suresh from "../../../assets/images/managementteam/sureshg.jpg";
+import venkat from "../../../assets/images/managementteam/venkatsharmakonduri.jpeg";
+import nagesh from "../../../assets/images/managementteam/nagesh.jpg";
+import sidharth from "../../../assets/images/managementteam/sidharth.jpg";
+import prakash from "../../../assets/images/managementteam/prakash.jpg";
+import hema from "../../../assets/images/managementteam/hemamadhukar.jpg";
+import erica from "../../../assets/images/managementteam/ericagonsalves.jpg";
+import aditya from "../../../assets/images/managementteam/aditya.jpg";
+import raja from "../../../assets/images/managementteam/rajashankarasubramanian.jpg";
+import babu from "../../../assets/images/managementteam/babuabraham.png";
+import raina from "../../../assets/images/managementteam/raina.png";
+import bonojit from "../../../assets/images/managementteam/bonojitukil.jpg";
+import thimmaiah from "../../../assets/images/managementteam/thimmah.jpg";
+import manoj from "../../../assets/images/managementteam/manojpatil.jpg";
+import radhakrishna from "../../../assets/images/managementteam/radhakrishna.jpg";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
 import { AnimatePresence, motion } from "framer-motion";
 
 const managementTeamData = [
-  { 
+  {
     name: "Mr. C. V. Rao",
     role: "Founder, Managing Director & CEO",
     desc: "Brings over 30 years of leadership experience in banking and financial services, with deep expertise in retail lending and portfolio risk management.",
@@ -121,14 +120,6 @@ const managementTeamData = [
     img: raja,
   },
   {
-    name: "Mr. Aditya Babu PVN",
-    role: "Head-Human Resources",
-    desc: "Senior human resource professional with over 25 years of experience across Banking, NBFC, Retail Finance, and Telecom sectors.",
-    longDesc: "Aditya Babu PVN is the Head of Human Resources of our Company. He is an engineering graduate with advanced qualifications in management and human resources and has completed executive education in Talent Management from XLRI. As a Head- HR he is responsible for the enterprisewide human resources strategy, including talent management, leadership and succession planning, performance and rewards governance, statutory and regulatory compliance, and workforce productivity. He has contributed significantly to multistate business operations and expansion, strengthening leadership depth and institutionalizing standardized HR processes aligned with long term organizational objectives.\n\nAs a senior human resource professional with over 25 years of experience across the Banking, NBFC, Retail Finance, and Telecom sectors. He has extensive experience in developing scalable and governanceoriented people frameworks that support sustainable growth in regulated, multilocation institutions\n\nPrior to joining us in January 2021, Aditya held senior HR leadership roles at Jana Small Finance Bank Ltd. (Bengaluru), Reliance Jio Infocomm Ltd. (Bengaluru), Idea Cellular Ltd. (Bhubaneswar), and Tata Teleservices Ltd. (Bhopal).",
-    color: "red",
-    img: aditya,
-  },
-  {
     name: "Mr. Babu Abraham",
     role: "Head- Legal",
     desc: "Over 20 years of in-house legal counsel experience across corporate and practice.",
@@ -146,19 +137,11 @@ const managementTeamData = [
   },
   {
     name: "Ms. Hema Madhukar",
-    role: "Head – Inbound Sales & Client Relations",
+    role: "State Head- ROTN",
     desc: "Over 30 years of experience across leading financial institutions including HSBC, ICICI Bank, and Tata Capital.",
     longDesc: "Hema heads Inbound Sales and Marketing of the Company. She is a Bachelor of Arts and has over 30 years of experience across leading financial institutions including HSBC, ICICI Bank, Tata Capital Housing Finance, and emerging fintech organizations. Her experience spans retail banking, mortgage lending, affordable housing finance, and digital lending solutions. At Nivara her focus is on strengthening customer relationships, enhancing brand visibility, and expanding Nivara’s footprint through innovative marketing strategies.\n\nOver the course of her career, she have held leadership roles across sales, business development, and strategic initiatives, managing large teams and driving business growth across multiple regions. Her professional journey combines banking domain expertise with fintech innovation, enabling her to bridge traditional financial services with evolving digital ecosystems",
     color: "green",
     img: hema,
-  },
-  {
-    name: "Mr. Bonojit Ukil",
-    role: "Chief Compliance Officer",
-    desc: "Veteran in Banking and financial Services space with about 40 years of experience.",
-    longDesc: "Bonojit Ukil is the Chief Compliance Officer of the Company. His qualification includes M.Sc in Chemistry and advance banking certification from CAIIB. At Nivara, he brings in effective governance within the organization by ensuring compliance with laws, regulatory requirements, policies, and procedures along with the internal control and risk management processes.\n\nHe is a veteran in Banking and financial Services space with about 40 years of experience in overall policy formulation and process management with an innate ability to evaluate complex, multi-dimensional situations and compliance risk characteristics.\n\nPreviously, he has worked across the wide spectrum of reputed Banks/NBFCs like UCO Bank, Bank of Punjab, First Blue Home Finance, Ujjivan Small Finance Bank, Aye Finance and Rural Mandi Fintech Pvt. Ltd.",
-    color: "red",
-    img: bonojit,
   },
   {
     name: "Mr. C. G. Thimmaiah",
@@ -320,7 +303,7 @@ const ManagementTeam = () => {
                   </span>
                   <div style={{ width: '60px', height: '6px', backgroundColor: '#B3191F', marginBottom: '30px', borderRadius: '3px' }}></div>
                   <p style={{ fontSize: "20px", fontWeight: 600, color: '#211F1F', marginBottom: '25px', lineHeight: '1.5' }}>
-                    {selectedMember.desc}        
+                    {selectedMember.desc}
                   </p>
                   <div>
                     <p style={{ fontSize: "18px", lineHeight: '1.8', color: "#211F1F", fontWeight: 400, textAlign: 'justify', whiteSpace: 'pre-line' }}>

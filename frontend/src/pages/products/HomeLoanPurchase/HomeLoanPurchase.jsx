@@ -125,8 +125,8 @@ const HomeLoanPurchase = () => {
       </section>
 
       <ScrollReveal direction="up" delay={0.1}>
-        <div className="home-loan-text-section">
-          <h1 className="home-loan-title">Home Purchase Loan</h1>
+        <div className="home-loan-text-section loan-product-intro">
+          <p className="home-loan-title">Home Purchase Loan</p>
           <h3 className="home-loan-subtitle">
             Secure your dream home with Nivara Home Finance
           </h3>

@@ -333,8 +333,8 @@
 }
 
 .about-justified-section p {
-  text-align: justify;
-  text-align-last: left;
+  text-align: center;
+  text-align-last: center;
 }
 
 .about-section.light {

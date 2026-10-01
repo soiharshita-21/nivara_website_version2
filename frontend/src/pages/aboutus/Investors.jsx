@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import "./Investors.css";
-import investors2 from "../../assets/images/investors2.png";
-import tnLogo from "../../assets/images/tn.png";
-import bpeLogo from "../../assets/images/bpe.png";
+import tnLogo from "../../assets/images/investors/tn.png";
+import bpeLogo from "../../assets/images/investors/bpe.png";
+import investorsBanner from "../../assets/images/ab.png";
 
 const Investors = ({ hideBanner = false }) => {
   useEffect(() => {
@@ -29,7 +29,7 @@ const Investors = ({ hideBanner = false }) => {
     <div className="investors-page">
 
       {!hideBanner && (
-        <section className="page-banner animate-pop-up" style={{ backgroundImage: `url(${investors2})` }}>
+        <section className="page-banner animate-pop-up" style={{ backgroundImage: `url(${investorsBanner})` }}>
           <div className="page-banner-overlay"></div>
           <div className="page-banner-content">
             <h1 className="page-banner-title">

@@ -313,11 +313,11 @@ const ENach = () => {
               <p className="support-heading">Need Mandate Assistance?</p>
               <div className="support-item">
                 <FaPhoneAlt className="support-icon" />
-                <a href="tel:18004195444">1800-419-5444 (Toll-Free)</a>
+                <a href="tel:18003091516">1800-309-1516 (Toll-Free)</a>
               </div>
               <div className="support-item">
                 <FaEnvelope className="support-icon" />
-                <a href="mailto:customercare@nivarahousing.com">customercare@nivarahousing.com</a>
+                <a href="mailto:contact@nivarahousing.com">contact@nivarahousing.com</a>
               </div>
             </div>
           </div>

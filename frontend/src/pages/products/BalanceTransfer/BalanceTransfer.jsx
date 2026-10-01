@@ -115,8 +115,8 @@ const BalanceTransfer = () => {
       </section>
 
       <ScrollReveal direction="up" delay={0.1}>
-        <div className="balance-text-section">
-          <h1 className="balance-title">Balance Transfer</h1>
+        <div className="balance-text-section loan-product-intro">
+          <p className="balance-title">Balance Transfer</p>
           <h3 className="balance-subtitle">
             We will lift your loan burden
           </h3>

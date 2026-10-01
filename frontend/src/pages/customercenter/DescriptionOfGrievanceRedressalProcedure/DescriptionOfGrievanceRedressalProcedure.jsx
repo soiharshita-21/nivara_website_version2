@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./DescriptionOfGrievanceRedressalProcedure.css";
 import ScrollReveal from "../../../components/ScrollReveal/ScrollReveal";
-import termsImage from "../../../assets/images/terms.png";
+import grievanceBanner from "../../../assets/images/grievance.png";
 import { FaBuilding, FaPhoneAlt, FaEnvelope, FaPencilAlt, FaGlobe, FaInbox, FaWheelchair } from "react-icons/fa";
 
 const DescriptionOfGrievanceRedressalProcedure = () => {
@@ -12,7 +12,7 @@ const DescriptionOfGrievanceRedressalProcedure = () => {
   return (
     <div className="desc-grievance-page">
       {/* Banner */}
-      <section className="page-banner" style={{ backgroundImage: `url(${termsImage})` }}>
+      <section className="page-banner" style={{ backgroundImage: `url(${grievanceBanner})` }}>
         <div className="page-banner-overlay"></div>
         <ScrollReveal direction="down">
           <div className="page-banner-content">
@@ -54,7 +54,7 @@ const DescriptionOfGrievanceRedressalProcedure = () => {
                   </div>
                   <h3>Over Phone</h3>
                   <p>
-                    Customers can contact us over phone at <strong>+91 80 2655 2822</strong> between <strong>10:00 AM and 5:00 PM (Monday to Friday)</strong> &amp; between <strong>10:00 AM and 1:00 PM (Saturday)</strong> (except on public holidays).
+                    Customers can contact our Customer Care Toll-Free Number at <strong><a href="tel:18003091516" className="desc-grievance-link">1800-309-1516</a></strong> or reach our Grievance Officer at <strong><a href="tel:+918026552822" className="desc-grievance-link">+91 80 2655 2822</a></strong> between <strong>10:00 AM and 5:00 PM (Monday to Friday)</strong> &amp; between <strong>10:00 AM and 1:00 PM (Saturday)</strong> (except on public holidays).
                   </p>
                 </div>
 
@@ -66,7 +66,7 @@ const DescriptionOfGrievanceRedressalProcedure = () => {
                   </div>
                   <h3>Via E-mail</h3>
                   <p>
-                    Customers can reach us via email at: contact@nivarahousing.com
+                    Customers can reach us via email at: <a href="mailto:contact@nivarahousing.com" className="desc-grievance-link">contact@nivarahousing.com</a>
                   </p>
                 </div>
 
@@ -81,8 +81,9 @@ const DescriptionOfGrievanceRedressalProcedure = () => {
                     Customers can make a complaint by way of a written letter addressed to the registered office of the company:
                   </p>
                   <div className="desc-address-sub-box">
-                    <strong>To: Chief of Quality Control and Customer Retention</strong><br />
-                    Mr. Rajesh C A<br />
+                    <strong>Grievance Officer:</strong> Rajesh CA<br />
+                    <strong>Phone:</strong> +91 80 2655 2822<br />
+                    <strong>Email:</strong> contact@nivarahousing.com<br />
                     Nivara Home Finance Ltd., 22, 23, 24, 25/101/3, 3rd Floor,<br />
                     BNR Complex, Sri Rama Layout, Opp. RBI Layout, 7th Phase,<br />
                     JP Nagar, Bangalore – 560078.
@@ -119,7 +120,7 @@ const DescriptionOfGrievanceRedressalProcedure = () => {
                   <p>
                     In case the complainant does not receive a response from the Company within a period of one month or is dissatisfied with the response received, they may approach the <strong>Complaint Redressal Cell of National Housing Bank (NHB)</strong>:
                   </p>
-                  
+
                   <div className="desc-nhb-channels">
                     <div className="desc-nhb-sub-channel">
                       <strong>Option A: Online Complaint</strong><br />

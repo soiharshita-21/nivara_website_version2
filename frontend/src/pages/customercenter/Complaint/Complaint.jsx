@@ -69,7 +69,8 @@ const Complaint = () => {
                   </div>
                   <h3>Call Us</h3>
                   <p className="channel-details">
-                    <strong>+91 80 2655 2822</strong><br /><br />
+                    Toll-Free: <strong><a href="tel:18003091516" style={{ color: "inherit", textDecoration: "none" }}>1800-309-1516</a></strong><br /><br />
+                    Phone: <strong><a href="tel:+918026552822" style={{ color: "inherit", textDecoration: "none" }}>+91 80 2655 2822</a></strong><br /><br />
                     <strong>Monday to Friday</strong><br />
                     10:00 AM – 5:00 PM<br /><br />
                     <strong>Saturday</strong><br />
@@ -84,10 +85,10 @@ const Complaint = () => {
                   </div>
                   <h3>Email Us</h3>
                   <p className="channel-details">
-                    <strong>Chief of Quality & Customer Retention</strong><br /><br />
+                    <strong>Grievance Officer</strong><br /><br />
                     <strong>Name:</strong> Rajesh CA<br />
-                    <strong>Email:</strong> contact@nivarahousing.com<br />
-                    <strong>Phone:</strong> +91 80 2655 2822
+                    <strong>Email:</strong> <a href="mailto:contact@nivarahousing.com" style={{ color: "inherit", textDecoration: "none" }}>contact@nivarahousing.com</a><br />
+                    <strong>Phone:</strong> <a href="tel:+918026552822" style={{ color: "inherit", textDecoration: "none" }}>+91 80 2655 2822</a>
                   </p>
                 </div>
 
